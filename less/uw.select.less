@@ -1,0 +1,47 @@
+ul.uw-select
+{
+
+  z-index: 1;
+
+  &.open {
+     li {
+       opacity: 1;
+
+       &.inactive a {
+         display:block;
+       }
+
+     }
+   }
+
+  li {
+    cursor: pointer;
+    color: #565656;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: padding-left .5s;
+    opacity: 0;
+    transition: opacity .5s;
+    padding-left: 15px;
+    padding-bottom: 0;
+    margin: 0 1px 0 5px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #fff;
+    position: relative;
+
+    &.active {
+      width: 225px;
+      padding-left: 35px;
+      opacity: 1;
+      background: 0 0;
+      display:block;
+    }
+
+    &.inactive a {
+      display:none;
+    }
+
+
+  }
+}
