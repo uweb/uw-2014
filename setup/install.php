@@ -25,7 +25,7 @@ class UW_Install_Theme
       'fern' => array(
         'url' => '%s/img/header/fern.jpg',
         'thumbnail_url' => '%s/img/header/fern-thumbnail.jpg',
-        'description' => 'Fern' 
+        'description' => 'Fern'
       ),
       'globe' => array(
         'url' => '%s/img/header/globe.jpg',
@@ -70,7 +70,7 @@ class UW_Install_Theme
     $defaultImage = reset($this->DEFAULT_HEADERS);
 	  add_theme_support( 'automatic-feed-links' );
 	  add_theme_support( 'post-thumbnails' );
-    add_theme_support( 'custom-header', array( 
+    add_theme_support( 'custom-header', array(
       'default-image'  => $defaultImage['url'],
       'random-default' => false,
       'header-text' => false,
@@ -82,16 +82,16 @@ class UW_Install_Theme
     register_default_headers( $this->DEFAULT_HEADERS );
 
     $this->register_navigation_menus();
-  
+
   }
 
   function register_navigation_menus()
   {
-	  register_nav_menu( 'primary', __( 'Primary Menu', 'uw' ) );
-	  register_nav_menu( 'footer', __( 'Footer Menu', 'uw' ) );
+	  // register_nav_menu( 'primary', __( 'Primary Menu', 'uw' ) );
+	  // register_nav_menu( 'footer', __( 'Footer Menu', 'uw' ) );
   }
 
-  function uw_category_rss_link($arg, $show) 
+  function uw_category_rss_link($arg, $show)
   {
     if ($show == 'url' && is_feed() && is_category() )
     {

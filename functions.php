@@ -13,6 +13,10 @@ require( get_template_directory() . '/setup/filters.php' );
 require( get_template_directory() . '/setup/mimes.php' );
 require( get_template_directory() . '/setup/users.php' );
 
+
+require( get_template_directory() . '/setup/dropdowns.php' );
+require( get_template_directory() . '/setup/dropdowns-walker.php' );
+
 // Custom shivs to help Wordpress and some plugins with our server architecture
 //require( get_template_directory() . '/shivs/remove-http-cms.php' );
 //require( get_template_directory() . '/shivs/plugin-hooks.php' );
@@ -55,4 +59,5 @@ require( get_template_directory() . '/setup/users.php' );
 
 // Adds functioning enclosure to rss2
 //require( get_template_directory() . '/inc/prep-uw-rss2.php' );
-?>
+
+require( get_template_directory() . '/inc/template-functions.php' );
