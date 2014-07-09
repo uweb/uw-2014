@@ -7292,3 +7292,32 @@ ul.uw-select li.inactive a {
   width: 100%;
   background: grey;
 }
+.uw-thinstrip .container {
+  position: relative;
+}
+.uw-thinstrip .uw-patch {
+  display: block;
+  text-indent: -9999px;
+  width: 123px;
+  height: 117px;
+  background: url(assets/svg/w.svg) no-repeat center center #4b2e83;
+  background-size: 71px 48px;
+  position: absolute;
+  top: 0;
+  left: -100px;
+}
+.uw-thinstrip .uw-wordmark {
+  display: block;
+  text-indent: -9999px;
+  width: 249px;
+  height: 24px;
+  background: url(assets/svg/wordmark.svg) no-repeat center center transparent;
+  background-size: 238px;
+  margin: 9px 0 0 22px;
+}
+/*==========  Mobile First Method  ==========*/
+/* Custom, iPhone Retina */
+/* Extra Small Devices, Phones */
+/* Small Devices, Tablets */
+/* Medium Devices, Desktops */
+/* Large Devices, Wide Screens */
