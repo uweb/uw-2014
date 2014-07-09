@@ -38,7 +38,7 @@
   <div id="dawgdrops" aria-label="Main menu" role="navigation">
     <h3 class="assistive-text">Main menu</h3>
 
-    <div class="dawgdrops-inner">
+    <div class="dawgdrops-inner container">
       <ul id="menu-dropdowns" class="dawgdrops-nav" role="menubar">
         <li role="presentation" class="dawgdrops-item">
           <a href="#"  class=

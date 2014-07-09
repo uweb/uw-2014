@@ -904,7 +904,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #16a085;
+  color: #407ba0;
   text-decoration: none;
 }
 a:hover,
@@ -3371,7 +3371,7 @@ fieldset[disabled] .btn-danger.active {
   background-color: #ffffff;
 }
 .btn-link {
-  color: #16a085;
+  color: #407ba0;
   font-weight: normal;
   cursor: pointer;
   border-radius: 0;
@@ -3990,7 +3990,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav .open > a:hover,
 .nav .open > a:focus {
   background-color: #eeeeee;
-  border-color: #16a085;
+  border-color: #407ba0;
 }
 .nav .nav-divider {
   height: 1px;
@@ -4929,7 +4929,7 @@ a.badge:focus {
 }
 a.list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
-  color: #16a085;
+  color: #407ba0;
   background-color: #ffffff;
 }
 .nav-pills > li > a > .badge {
@@ -4993,7 +4993,7 @@ a.list-group-item.active > .badge,
 a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
-  border-color: #16a085;
+  border-color: #407ba0;
 }
 .thumbnail .caption {
   padding: 9px;
@@ -6720,13 +6720,13 @@ td.visible-print {
 }
 @font-face {
   font-family: 'Metronic';
-  src: url('../assets/fonts/metronic-light.woff') format('woff');
+  src: url('assets/fonts/metronic-light.woff') format('woff');
   font-weight: 900;
   font-style: normal;
 }
 @font-face {
   font-family: 'Maven';
-  src: url('../assets/fonts/maven-light.woff') format('woff');
+  src: url('assets/fonts/maven-light.woff') format('woff');
   font-style: normal;
 }
 @font-face {
@@ -6895,7 +6895,7 @@ body {
   background-color: #ffffff;
 }
 a {
-  color: #16a085;
+  color: #407ba0;
   text-decoration: none;
   -o-transition: 0.25s;
   -webkit-transition: 0.25s;
@@ -7313,7 +7313,43 @@ ul.uw-select li.inactive a {
   height: 24px;
   background: url(assets/svg/wordmark.svg) no-repeat center center transparent;
   background-size: 238px;
-  margin: 9px 0 0 22px;
+  margin: 9px 0 0 32px;
+}
+.assistive-text {
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  z-index: -1;
+}
+#dawgdrops {
+  box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+}
+#dawgdrops li {
+  list-style: none;
+  display: inline-block;
+}
+#dawgdrops ul {
+  margin: 0;
+}
+.dawgdrops-item a {
+  font-family: "Metronic", Helvetica, Arial, sans-serif;
+  color: #4b2e83;
+  font-size: 18px;
+  padding: 19px 30px 19px 0;
+  display: block;
+  position: relative;
+}
+.dawgdrops-item a:after {
+  content: "/";
+  position: absolute;
+  right: 8px;
+  font-size: 24px;
+  top: 12px;
+  color: #ddd;
+  font-family: "Maven", Helvetica, Arial, sans-serif;
+}
+.dawgdrops-menu {
+  display: none;
 }
 /*==========  Mobile First Method  ==========*/
 /* Custom, iPhone Retina */

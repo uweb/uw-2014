@@ -1,2 +1,49 @@
 // UW Drowpdowns
 
+.assistive-text {
+	position: absolute;
+	clip: rect(1px 1px 1px 1px);
+	clip: rect(1px,1px,1px,1px);
+	z-index: -1;
+}
+
+// Resets 
+
+#dawgdrops {
+	box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+	li {
+		list-style: none;
+		display: inline-block;
+	}
+	ul {
+		margin: 0;
+	}
+}
+
+.dawgdrops-nav {
+
+}
+
+.dawgdrops-item {
+	a {
+		font-family: @font-family-headline;
+		color: @purple;
+		font-size: @font-size-h4;
+		padding: 19px 30px 19px 0;
+		display: block;
+		position: relative;
+		&:after {
+			content: "/";
+			position: absolute;
+			right: 8px;
+			font-size: 24px;
+			top: 12px;
+			color: #ddd;
+			font-family: @font-family-base;
+		}
+	}
+}
+
+.dawgdrops-menu {
+	display: none;
+}
