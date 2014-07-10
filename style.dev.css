@@ -7329,15 +7329,18 @@ ul.uw-select li.inactive a {
   float: left;
 }
 .uw-thinstrip ul.uw-audience {
-  float: right;
   margin: 0;
 }
 .uw-thinstrip ul.uw-audience li {
   list-style: none;
-  display: inline-block;
-  margin: 5px 24px 0 0;
 }
-.uw-thinstrip ul.uw-audience li:last-child a:after {
+.uw-thinstrip ul.uw-audience li:first-child a:after {
+  display: none;
+}
+.uw-thinstrip ul.uw-audience li:nth-child(3) a {
+  padding-right: 10px;
+}
+.uw-thinstrip ul.uw-audience li:nth-child(3) a:after {
   display: none;
 }
 .uw-thinstrip ul.uw-audience li a {
@@ -7345,14 +7348,54 @@ ul.uw-select li.inactive a {
   color: #fff;
   font-size: 15px;
   position: relative;
+  float: right;
+  padding: 9px 25px 6px 0;
 }
 .uw-thinstrip ul.uw-audience li a:after {
   position: absolute;
-  right: -22px;
+  right: 6px;
   height: 24px;
   width: 12px;
-  top: -3px;
+  top: 10px;
   content: url('assets/svg/slash.svg');
+}
+.uw-thinstrip ul.uw-audience li.uw-search a {
+  text-indent: -99999px;
+  background: url(assets/svg/search.svg) no-repeat center center transparent;
+  position: relative;
+  -webkit-background-size: 22px;
+  -moz-background-size: 22px;
+  -o-background-size: 22px;
+  background-size: 22px;
+  padding-right: 78px;
+}
+.uw-thinstrip ul.uw-audience li.uw-quicklinks a {
+  background: url(assets/svg/plug.svg) no-repeat right center transparent;
+  padding-left: 10px;
+  margin-right: 10px;
+  padding-right: 30px;
+  -webkit-background-size: 22px;
+  -moz-background-size: 22px;
+  -o-background-size: 22px;
+  background-size: 22px;
+  position: relative;
+}
+.uw-thinstrip ul.uw-audience li.uw-quicklinks a:before {
+  position: absolute;
+  content: "";
+  width: 60px;
+  height: 40px;
+  background-color: #333;
+  -webkit-transform: skewX(-27deg) skewY(0);
+  -o-transform: skewX(-27deg) skewY(0);
+  transform: skewX(-27deg) skewY(0);
+  -webkit-transform: skew(-27deg, 0);
+  -ms-transform: skewX(-27deg) skewY(0);
+  transform: skew(-27deg, 0);
+  display: block;
+  top: 0;
+  left: -71px;
+  border-left: 7px solid rgba(255, 255, 255, 0.5);
 }
 .assistive-text {
   position: absolute;

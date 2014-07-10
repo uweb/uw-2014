@@ -2,10 +2,12 @@
    
   <div class="uw-thin-strip-nav">
       <ul class="uw-audience">
+      	<li class="uw-quicklinks"><a href="#">Quick Links</a></li>
+     	<li class="uw-search"><a href="#">Search</a></li>
+      	<li><a href="#">Students</a></li>
+      	<li><a href="#">Admissions</a></li>
     	<li><a href="#">Faculty & Staff</a></li>
-    	<li><a href="#">Admissions</a></li>
-    	<li><a href="#">Students</a></li>
-    </ul>
+      </ul>
   </div>
 
   <div class="container">
