@@ -1,0 +1,25 @@
+// UW Hero
+
+.uw-hero-image {
+	height: 240px;
+	background: url('assets/temp/ima.jpg') center top;
+	.background-size(cover);
+	position: relative;
+	z-index: -1;
+	&:after {
+		position:absolute;
+		bottom: 0;
+		height: 80px;
+		width: 100%;
+		content: "";
+		background: url('assets/images/stripes.png');
+	}
+	&:before {
+		position:absolute;
+		bottom: 0;
+		height: 80px;
+		width: 100%;
+		content: "";
+		background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, .8))) 0 0 no-repeat;
+	}
+}
