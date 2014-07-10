@@ -1,10 +1,50 @@
 <?php
 
 /**
+ *  UW_MenuItem is an object used by UW_Dropdowns to create a default menu
+ */
+class UW_MenuItem {
+    public $args;
+    public $child_items;
+
+    function __construct()
+    {
+        $args = func_get_args();
+        $num_args = func_num_args();
+        if ($num_args == 2){
+            $this->constructBase($args);
+        }
+        else {
+            $this->constructChildren($args);
+        }
+    }
+
+    private function constructBase($args)   //$args[0] is name, $args[1] is url
+    {
+        $this->args = array(
+            'menu-item-title'  => __($args[0]),
+            'menu-item-url'    => $args[1],
+            'menu-item-status' => 'publish',
+        );
+    }
+
+    private function constructChildren($args) //$args[2] is array of children
+    {
+        $this->child_items = array_pop($args);
+        $this->constructBase($args);
+    }
+
+    public function setParentItemID($id)
+    {
+        $this->args['menu-item-parent-id'] = $id;
+    }
+}
+
+
+/**
  * UW Dropdowns
  * This installs the default dropdowns for the UW Theme
  */
-
 class UW_Dropdowns
 {
 
@@ -36,11 +76,10 @@ class UW_Dropdowns
     //      then set that ID as the menu-item-parent-id for each child.  Then save each child.
     //      We can add another layer of depth for grandchildren
     foreach ( $menu_items as $menu_item ) {
-        $menu_item_id = wp_update_nav_menu_item($this->MENU_ID. $menu_item_db_id=0, $menu_item->args);
+        $nav_item_id = wp_update_nav_menu_item( $this->MENU_ID, $menu_item_db_id=0, $menu_item->args );
         if (!empty($menu_item->child_items)) {
             foreach ( $menu_item->child_items as $child_item ){
-                wp_die(print_r($child_item));
-                $child_item->args['menu-item-parent-id'] = $menu;
+                $child_item->setParentItemID($nav_item_id);
                 wp_update_nav_menu_item($this->MENU_ID, $menu_item_db_id=0, $child_item->args);
             }
         }
@@ -59,65 +98,22 @@ class UW_Dropdowns
   function menu_list()
   {
 
-    return array(
+    $discover           = new UW_MenuItem ('Discover', 'http://uw.edu/discover/', array(
+                                                                        new UW_MenuItem('Vision and Values', 'http://uw.edu/discover/visionvalues'),
+                                                                        new UW_MenuItem('Mission Statement', 'http://uw.edu/admin/rules/policies/BRG/RP5.html'),
+                                                                    ));
 
-        'Discover' => array(
-            'args' => array(
-                'menu-item-title'  => __('Discover'),
-                'menu-item-url'    => 'http://uw.edu/discover/',
-                'menu-item-status' => 'publish',
-            ),
+    $current_students   = new UW_MenuItem('Current Students', 'http://uw.edu/students/');
 
-            'child_items' => array(
-                'Vision and Values' => array(
-                    'args' => array(
-                        'menu-item-title'       => __('Vision and Values'),
-                        'menu-item-url'         => 'http://uw.edu/discover/visionvalues',
-                        'menu-item-status'      => 'publish',
-                    ),
-                ),
-                'Mission Statement' => array(
-                    'args' => array(
-                        'menu-item-title'       => __('Mission Statement'),
-                        'menu-item-url'         => 'http://uw.edu/admin/rules/policies/BRG/RP5.html',
-                        'menu-item-status'      => 'publish',
-                    ),
-                ),
-            ),
-        ),
+    $future_students    = new UW_MenuItem('Future Students', 'http://uw.edu/discover/admissions/');
 
+    $faculty_staff      = new UW_MenuItem('Faculty & Staff', 'http://uw.edu/facultystaff/');
 
-      'Current Students' => array(
-        'menu-item-title'  => __('Current Students'),
-        'menu-item-url'    => 'http://uw.edu/students/',
-        'menu-item-status' => 'publish',
-      ),
+    $alumni             = new UW_MenuItem('Alumni', 'http://uw.edu/alumni/');
 
-      'Future Students' => array(
-        'menu-item-title'  => __('Future Students'),
-        'menu-item-url'    => 'http://uw.edu/discover/admissions/',
-        'menu-item-status' => 'publish',
-      ),
+    $nw_neighbors       = new UW_MenuItem('NW Neighbors', 'http://uw.edu/nwneighbors/');
 
-      'Faculty & Staff' => array(
-        'menu-item-title'  => __('Faculty & Staff'),
-        'menu-item-url'    => 'http://uw.edu/facultystaff/',
-        'menu-item-status' => 'publish',
-      ),
-
-      'Alumni' => array(
-        'menu-item-title'  => __('Alumni'),
-        'menu-item-url'    => 'http://uw.edu/alumni/',
-        'menu-item-status' => 'publish',
-      ),
-
-      'NW Neighbors' => array(
-        'menu-item-title'  => __('NW Neighbors'),
-        'menu-item-url'    => 'http://uw.edu/nwneighbors/',
-        'menu-item-status' => 'publish',
-      )
-
-    );
+    return array($discover, $current_students, $future_students, $faculty_staff, $alumni, $nw_neighbors);
   }
 
 }
