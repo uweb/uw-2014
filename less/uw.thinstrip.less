@@ -41,8 +41,11 @@
 
 	// Audience
 
-	ul.uw-audience {
+	ul.uw-thin-links {
 		margin: 0;
+		position: relative;
+		z-index: 1; 
+		font-weight: 700;
 		li {
 			list-style: none;
 			&:first-child a:after {
@@ -84,23 +87,25 @@
 			}
 			&.uw-quicklinks {
 				a {
-					background: url(assets/svg/plug.svg) no-repeat right center transparent;
-					padding-left: 10px;
-					margin-right: 10px;
-					padding-right: 30px;
-					.background-size(22px);
+					background: url(assets/svg/plug.svg) no-repeat 125px center transparent;
+					padding-left: 38px;
+					margin-left: -30px;
+					margin-right: 0;
+					padding-right: 44px;
+					background-color: #4d4d4d;
 					position: relative;
+					.background-size(22px);
 					&:before {
 						position: absolute;
 						content: "";
 						width: 60px;
 						height: 40px;
-						background-color: #333;
+						background-color: #9E9E9E;
 						.skew(-27deg,0);
 						display: block;
 						top: 0;
-						left: -71px;
-						border-left: 7px solid rgba(255,255,255,.5);
+						left: -37px;
+						border-right: 6px solid rgba(116, 116, 116, 0.5);
 					}
 				}
 			}

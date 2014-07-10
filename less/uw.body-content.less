@@ -1,9 +1,30 @@
-// UW Drowpdowns
+// Wrapper
 
-.body-content {
+.uw-body {
 	&.container {
 		background-color: white;
 		margin-top: -50px;
 		height: 800px;
+	}
+}
+
+// Actual content area
+
+.uw-body {
+	padding-left: 40px;
+	padding-top: 10px;
+	.uw-site-title {
+		position: absolute;
+		top: -100px;
+		left: 11px;
+		color: #fff;
+		font-weight: 900;
+		font-size: 32px;
+		background-color: @purple;
+		padding: 22px 30px 16px;
+		-webkit-font-smoothing: antialiased;
+		span {
+			font-weight: 700;
+		}
 	}
 }
