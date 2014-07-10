@@ -26,5 +26,4 @@
 
     <?php get_template_part('thinstrip'); ?>
 
-
     <?php uw_dropdowns(); ?>

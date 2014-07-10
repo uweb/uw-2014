@@ -27,7 +27,7 @@ class UW_Install_Scripts
       'site'   => array (
         'id'      => 'site',
         'url'     => get_bloginfo('template_directory') . '/js/site' . $this->dev_script() . '.js',
-        'deps'    => array( 'jquery', 'swfobject' ),
+        'deps'    => array( 'backbone' ),
         'version' => '1.0.3',
         'admin'   => false
       ),
@@ -39,14 +39,14 @@ class UW_Install_Scripts
         'version' => '1.0',
         'admin'   => true
       ),
-
-      'jquery.searchposts' => array (
-        'id'      => 'jquery.searchposts',
-        'url'     => get_bloginfo('template_directory') . '/js/admin/jquery.wp.searchposts.js',
-        'deps'    => array( 'jquery', 'jquery-ui-autocomplete' ),
-        'version' => '1.0',
-        'admin'   => true
-      )
+      //
+      // 'jquery.searchposts' => array (
+      //   'id'      => 'jquery.searchposts',
+      //   'url'     => get_bloginfo('template_directory') . '/js/admin/jquery.wp.searchposts.js',
+      //   'deps'    => array( 'jquery', 'jquery-ui-autocomplete' ),
+      //   'version' => '1.0',
+      //   'admin'   => true
+      // )
 
     ), $this->get_child_theme_scripts() );
 

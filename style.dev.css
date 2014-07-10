@@ -7484,6 +7484,16 @@ ul.uw-select li.inactive a {
   margin-top: -50px;
   height: 800px;
 }
+.uw-search-bar-container {
+  margin-top: -36px;
+  transition: margin-top 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.uw-search-bar-container.open {
+  margin-top: 0px;
+}
+.uw-search {
+  float: right;
+}
 /*==========  Mobile First Method  ==========*/
 /* Custom, iPhone Retina */
 /* Extra Small Devices, Phones */

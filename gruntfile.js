@@ -8,31 +8,29 @@ module.exports = function(grunt) {
       },
       dist: {
         libraries: [
-          "js/jquery.easing.js",
-          "js/jquery.tinynav.js",
-          "js/jquery.tinyscrollbar.js",
-          "js/imagesloaded.pkgd.js",
-          "js/jquery.transit.js",
-          "js/widgets/jquery.fullcalendar.js",
-          "js/widgets/jquery.fullcalendar.gcal.js"
+          "js/libraries/jquery.easing.js"
         ],
-        custom: [
-          "js/globals.js", 
-          "js/alert.js",
-          "js/weather.js",
-          "js/thin-strip.js",
-          "js/dropdowns.js",
-          "js/dropdowns-accessibility.js",
-          "js/sidebar-menu.js",
-          "js/mobile-menu.js",
-          "js/search-expanded.js",
-          "js/gallery.js",
-          "js/widgets/community-photos.js",
-          "js/widgets/slideshow.js",
-          "js/widgets/uw-calendar.js",
-          "js/widgets/youtube-playlist.js"
+        theme : [
+          // "js/uw.intro.js",
+          "js/uw.core.js",
+          "js/uw.init.js",
+          "js/uw.search.js",
+          "js/uw.slideshow.js",
+          "js/uw.player.js",
+          "js/uw.vimeo.js",
+          "js/uw.checkbox.js",
+          "js/uw.radio.js",
+          "js/uw.dropdowns.js",
+          "js/uw.accordion.js",
+          "js/uw.select.js",
+          "js/uw.image.js",
+          "js/uw.social.js",
+          // "js/uw.outro.js"
         ],
-        src: [ '<%= concat.dist.libraries %>', '<%= concat.dist.custom %>' ],
+        components : [
+          // todo: put just external components here for the uw.js we will give out
+        ],
+        src: [ 'js/uw.intro.js', '<%= concat.dist.libraries %>', '<%= concat.dist.theme %>', 'js/uw.outro.js' ],
         dest: 'js/site.dev.js'
       }
     },
@@ -47,7 +45,7 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      files: [ 'Gruntfile.js', '<%= concat.dist.custom %>' ],
+      files: [ 'Gruntfile.js', '<%= concat.dist.theme %>' ],
       options: {
         asi: true,
         smarttabs: true,
@@ -83,12 +81,12 @@ module.exports = function(grunt) {
 			files: {
 				'style.dev.css': 'less/style.less'
 			}
-		}	
+		}
 	},
     watch: {
       js: {
         files: ['<%= concat.dist.src %>'],
-        tasks: ['default']
+        tasks: ['js']
       },
       css: {
         files: ['less/*.less'],
@@ -103,8 +101,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  
+
 
   grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'notify', 'less']);
+  grunt.registerTask('js', ['jshint', 'concat', 'uglify', 'notify' ]);
 
 };
