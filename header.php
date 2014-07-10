@@ -12,8 +12,6 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="<?php bloginfo("template_directory"); ?>/style.css">
-
         <?php wp_head(); ?>
 
     </head>
