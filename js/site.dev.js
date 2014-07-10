@@ -233,7 +233,7 @@ UW.VERSION = '0.1'
 ;// List out the classes that each component searches for
 UW.elements = {
 
-  search    : '.uw-search-bar-container',
+  search    : '.uw-search',
   slideshow : '.uw-slideshow',
   social    : '.uw-social',
   vimeo     : '.uw-vimeo',
@@ -263,36 +263,38 @@ jQuery(document).ready( UW.initialize )
 
 UW.Search = Backbone.View.extend({
 
-  // el : '.uw-search-bar-container',
+  body : 'body',
 
-  // template : '<div class="uw-search-bar-container">'+
-  //              '<div class="container">' +
-  //               '<form action="/search/">' +
-  //                 '<input type="search" name="q" value="" class="fui-search" />' +
-  //                 '<input type="submit" value="Search" />' +
-  //                 '</form>'+
-  //               '</div>'+
-  //             '</div>',
+  searchbar : '<div class="uw-search-bar-container">'+
+               '<div class="container">' +
+                '<form action="/search/">' +
+                  '<input type="search" name="q" value="" class="fui-search" />' +
+                  '<input type="submit" value="Search" />' +
+                  '</form>'+
+                '</div>'+
+              '</div>',
 
   events : {
-    'click .close' : 'close'
+    'click' : 'toggleSearchBar'
   },
 
   initialize :function ( options )
   {
-    // console.log('here')
-    _.bindAll( this, 'open', 'close' )
-    this.$searchButton = $('li.uw-search') // todo: is there another view to use so we can bind via backbone?
-    this.$searchButton.bind( 'click', this.open )
+    _.bindAll( this, 'toggleSearchBar' )
+    this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
+    this.$searchbar = $( _.template( this.searchbar , this.settings ) )
+    this.render()
   },
 
-  open: function() {
-    this.$el.toggleClass('open')
+  render : function()
+  {
+    $( this.body ).prepend( this.$searchbar )
   },
 
-  close: function() {
-    this.$el.removeClass('open')
-  }
+  toggleSearchBar: function() {
+    this.$searchbar.toggleClass('open')
+    return false;
+  },
 
 })
 ;// ### UW Slideshow

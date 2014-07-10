@@ -1,7 +1,7 @@
 // List out the classes that each component searches for
 UW.elements = {
 
-  search    : '.uw-search-bar-container',
+  search    : '.uw-search',
   slideshow : '.uw-slideshow',
   social    : '.uw-social',
   vimeo     : '.uw-vimeo',
