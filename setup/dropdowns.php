@@ -48,73 +48,73 @@ class UW_MenuItem {
 class UW_Dropdowns
 {
 
-  const NAME         = 'White Bar';
-  const LOCATION     = 'white-bar';
-  const DISPLAY_NAME = 'Dropdowns';
+    const NAME         = 'White Bar';
+    const LOCATION     = 'white-bar';
+    const DISPLAY_NAME = 'Dropdowns';
 
-  function UW_Dropdowns()
-  {
-    add_action( 'after_setup_theme', array( $this, 'register_white_bar_menu') );
-    add_action( 'after_setup_theme', array( $this, 'install_default_white_bar_menu') );
-  }
-
-  function register_white_bar_menu()
-  {
-	  register_nav_menu( self::LOCATION, __( self::NAME ) );
-  }
-
-  function install_default_white_bar_menu()
-  {
-    $menu_items = $this->menu_list();
-    $this->MENU_ID = wp_create_nav_menu( self::DISPLAY_NAME );
-
-    // wp_create_nav_menu returns a WP_Error if the menu already exists;
-    if ( is_wp_error( $this->MENU_ID ) ) return;
-
-
-    //      Each site in the network will have a different menu item ID for each thing.  Make the first menu and save its id
-    //      then set that ID as the menu-item-parent-id for each child.  Then save each child.
-    //      We can add another layer of depth for grandchildren
-    foreach ( $menu_items as $menu_item ) {
-        $nav_item_id = wp_update_nav_menu_item( $this->MENU_ID, $menu_item_db_id=0, $menu_item->args );
-        if (!empty($menu_item->child_items)) {
-            foreach ( $menu_item->child_items as $child_item ){
-                $child_item->setParentItemID($nav_item_id);
-                wp_update_nav_menu_item($this->MENU_ID, $menu_item_db_id=0, $child_item->args);
-            }
-        }
+    function UW_Dropdowns()
+    {
+        add_action( 'after_setup_theme', array( $this, 'register_white_bar_menu') );
+        add_action( 'after_setup_theme', array( $this, 'install_default_white_bar_menu') );
     }
 
-    $this->set_uw_menu_location();
-  }
+    function register_white_bar_menu()
+    {
+	    register_nav_menu( self::LOCATION, __( self::NAME ) );
+    }
 
-  function set_uw_menu_location()
-  {
-    $locations = (ARRAY) get_theme_mod( 'nav_menu_locations' );
-    $locations[ 'white-bar' ] = $this->MENU_ID;
-    set_theme_mod( 'nav_menu_locations', $locations );
-  }
+    function install_default_white_bar_menu()
+    {
+        $menu_items = $this->menu_list();
+        $this->MENU_ID = wp_create_nav_menu( self::DISPLAY_NAME );
 
-  function menu_list()
-  {
+        // wp_create_nav_menu returns a WP_Error if the menu already exists;
+        if ( is_wp_error( $this->MENU_ID ) ) return;
 
-    $discover           = new UW_MenuItem ('Discover', 'http://uw.edu/discover/', array(
-                                                                        new UW_MenuItem('Vision and Values', 'http://uw.edu/discover/visionvalues'),
-                                                                        new UW_MenuItem('Mission Statement', 'http://uw.edu/admin/rules/policies/BRG/RP5.html'),
-                                                                    ));
 
-    $current_students   = new UW_MenuItem('Current Students', 'http://uw.edu/students/');
+        //      Each site in the network will have a different menu item ID for each thing.  Make the first menu and save its id
+        //      then set that ID as the menu-item-parent-id for each child.  Then save each child.
+        //      We can add another layer of depth for grandchildren
+        foreach ( $menu_items as $menu_item ) {
+            $nav_item_id = wp_update_nav_menu_item( $this->MENU_ID, $menu_item_db_id=0, $menu_item->args );
+            if (!empty($menu_item->child_items)) {
+                foreach ( $menu_item->child_items as $child_item ){
+                    $child_item->setParentItemID($nav_item_id);
+                    wp_update_nav_menu_item($this->MENU_ID, $menu_item_db_id=0, $child_item->args);
+                }
+            }
+        }
 
-    $future_students    = new UW_MenuItem('Future Students', 'http://uw.edu/discover/admissions/');
+        $this->set_uw_menu_location();
+    }
 
-    $faculty_staff      = new UW_MenuItem('Faculty & Staff', 'http://uw.edu/facultystaff/');
+    function set_uw_menu_location()
+    {
+        $locations = (ARRAY) get_theme_mod( 'nav_menu_locations' );
+        $locations[ 'white-bar' ] = $this->MENU_ID;
+        set_theme_mod( 'nav_menu_locations', $locations );
+    }
 
-    $alumni             = new UW_MenuItem('Alumni', 'http://uw.edu/alumni/');
+    function menu_list()
+    {
 
-    $nw_neighbors       = new UW_MenuItem('NW Neighbors', 'http://uw.edu/nwneighbors/');
+        $discover           = new UW_MenuItem ('Discover', 'http://uw.edu/discover/', array(
+                                                                            new UW_MenuItem('Vision and Values', 'http://uw.edu/discover/visionvalues'),
+                                                                            new UW_MenuItem('Mission Statement', 'http://uw.edu/admin/rules/policies/BRG/RP5.html'),
+                                                                        ));
 
-    return array($discover, $current_students, $future_students, $faculty_staff, $alumni, $nw_neighbors);
-  }
+        $current_students   = new UW_MenuItem('Current Students', 'http://uw.edu/students/');
+
+        $future_students    = new UW_MenuItem('Future Students', 'http://uw.edu/discover/admissions/');
+
+        $faculty_staff      = new UW_MenuItem('Faculty & Staff', 'http://uw.edu/facultystaff/');
+
+        $alumni             = new UW_MenuItem('Alumni', 'http://uw.edu/alumni/');
+
+        $nw_neighbors       = new UW_MenuItem('NW Neighbors', 'http://uw.edu/nwneighbors/');
+
+        return array($discover, $current_students, $future_students, $faculty_staff, $alumni, $nw_neighbors);
+    }
 
 }
 
