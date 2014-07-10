@@ -10,13 +10,8 @@ class UW_Dropdowns_Walker_Menu extends Walker_Nav_Menu
 
   private $CURRENT = '';
 
-  function UW_Dropdowns_Walker_Menu()
+  function __construct()
   {
-    // $menuLocations = get_nav_menu_locations();
-
-    // if ( ! wp_get_nav_menu_object( $menuLocations['white-bar']))
-      // $this->initial_dropdowns();
-
     add_filter('wp_nav_menu', array($this, 'add_role_menubar'));
 	}
 
@@ -54,7 +49,6 @@ class UW_Dropdowns_Walker_Menu extends Walker_Nav_Menu
     $this->CURRENT = $item->post_name;
     $title = ! empty( $item->title ) ? $item->title : $item->post_title;
 
-    $caret  = $depth == 0 && $item->has_children ? '<b class="caret"></b>' : '';
     $controls = $depth == 0 && $item->has_children ? 'aria-controls="menu-'.$item->post_name.'"' : '';
 
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
@@ -71,9 +65,11 @@ class UW_Dropdowns_Walker_Menu extends Walker_Nav_Menu
 		$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
 		$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
 		$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
-		$attributes .=   $depth == 0                ? ' class="dropdown-toggle"' : '';
-		$attributes .=   $depth == 1                ? ' tabindex="-1" '                                : '';
-		$attributes .=  ' title="'. $title .'" ';
+
+		$attributes .= $depth == 0 && $item->has_children ? ' class="dropdown-toggle"' : '';
+
+		$attributes .= $depth == 1                ? ' tabindex="-1" '                                : '';
+		$attributes .= ' title="'. $title .'" ';
     $attributes .= $controls;
 
 		$item_output = $args->before;
@@ -86,24 +82,4 @@ class UW_Dropdowns_Walker_Menu extends Walker_Nav_Menu
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 	}
 
-
-  // function initial_dropdowns()
-  // {
-  //
-  //   $pages = get_pages('number=1');
-  //   $page = $pages[0];
-  //
-  //   echo
-  //     '<div id="dawgdrops" aria-label="Main menu" role="navigation">
-  //      <h3 class="assistive-text">Main menu</h3>
-  //      <div class="dawgdrops-inner container">
-  //       <ul id="menu-dropdowns" class="dawgdrops-nav" role="menubar">
-  //         <li role="presentation" class="dawgdrops-item">
-  //         <a href="'. get_permalink( $page->ID ) .'" class="dropdown-toggle" title="'. $page->post_title .'">' . $page->post_title . '</a>
-  //         </li>
-  //       </ul>
-  //      </div>
-  //     </div>';
-  //
-  // }
 }
