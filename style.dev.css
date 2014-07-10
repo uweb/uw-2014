@@ -7429,9 +7429,12 @@ ul.uw-select li.inactive a {
   font-weight: 700;
   -webkit-font-smoothing: antialiased;
   font-size: 19px;
-  padding: 20px 30px 17px 15px;
+  padding: 20px 15px 17px 15px;
   display: block;
   position: relative;
+}
+.dawgdrops-item a.dropdown-toggle {
+  padding-right: 30px;
 }
 .dawgdrops-item a.dropdown-toggle:before {
   content: "";
