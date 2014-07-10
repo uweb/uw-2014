@@ -36,6 +36,36 @@
 		background: url(assets/svg/wordmark.svg) no-repeat center center transparent;
 		background-size: 238px;
 		margin: 9px 0 0 32px;
+		float: left;
+	}
+
+	// Audience
+
+	ul.uw-audience {
+		float: right;
+		margin: 0;
+		li {
+			list-style: none;
+			display: inline-block;
+			margin: 5px 24px 0 0;
+			&:last-child a:after {
+				display: none;
+			}
+			a {
+				font-family: @font-family-headline;
+				color: #fff;
+				font-size: 15px;
+				position: relative;
+				&:after {
+					position: absolute;
+					right: -22px;
+					height: 24px;
+					width: 12px;
+					top: -3px;
+					content: url('assets/svg/slash.svg');
+				}
+			}
+		}
 	}
 
 }
