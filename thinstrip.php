@@ -1,12 +1,3 @@
-<div class="uw-search-bar-container">
-  <div class="container">
-    <form action="/search/">
-        <input type="search" name="q" value="" class="fui-search" />
-        <input type="submit" value="Search" />
-    </form>
-  </div>
-</div>
-
 <header class="uw-thinstrip">
 
   <div class="uw-thin-strip-nav">
