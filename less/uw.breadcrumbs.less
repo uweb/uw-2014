@@ -1,0 +1,48 @@
+// UW Breadcrumbs
+
+.uw-breadcrumbs {
+	margin: 30px 0 -10px;
+	ul {
+		padding: 0;
+	}
+	li {
+		list-style: none;
+		display: inline-block;
+		&:first-child a {
+			background: url('assets/svg/home.svg') no-repeat left 9px;
+			text-indent: -99999px;
+			width: 50px;
+		}
+		&.current {
+			a {
+				color: #B9B7B7;		
+				&:before {
+					display: none;
+				}	
+			}
+		} 
+	}
+	a {
+		font-family: @font-family-headline;
+		color: #6F6F6F;
+		font-weight: 700;
+		font-size: 16px;
+		padding: 5px 25px 5px 0;
+		display: block;
+		position: relative;
+		//Caret
+
+		&:before {
+			content: "";
+			position: absolute;			
+			height: 10px;
+			width: 10px;
+			right: 7px;
+			top: 10px;
+			.opacity(.8);
+			background: url('assets/svg/caret.svg') no-repeat;
+			.background-size(7px 5px);
+			.rotate(-90deg);
+		}
+	}
+}
