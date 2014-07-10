@@ -14,7 +14,7 @@ require( get_template_directory() . '/setup/mimes.php' );
 require( get_template_directory() . '/setup/users.php' );
 
 
-require( get_template_directory() . '/setup/dropdowns.php' );
+require( get_template_directory() . '/setup/class.uw_dropdowns.php' );
 require( get_template_directory() . '/setup/dropdowns-walker.php' );
 
 // Custom shivs to help Wordpress and some plugins with our server architecture
