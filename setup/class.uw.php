@@ -23,6 +23,7 @@ class UW
     private function includes()
     {
         require_once('class.install.php');
+        require_once('class.install_scripts.php');
         require_once('class.dropdowns.php');
         require_once('class.menu_item.php');
         require_once('class.images.php');
@@ -35,6 +36,7 @@ class UW
     private function initialize()
     {
         $this->Install = new UW_Install_Theme;
+        $this->Scripts = new UW_Install_Scripts;
         $this->Images = new UW_Images;
         $this->SquishBugs = new UW_SquishBugs;
         $this->Filters = new UW_Filters;
