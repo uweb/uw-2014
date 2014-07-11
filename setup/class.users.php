@@ -3,10 +3,10 @@
  * Adds Affiliations, Office, Twitter, and Facebook to user profiles
  * Removes yim, aim and jabber from user profiles
  */
-class UW_User 
+class UW_Users
 {
 
-  function UW_User()
+  function __construct()
   {
     add_filter( 'user_contactmethods', array( $this, 'additional_contact_fields'), 10, 1 );
   }
@@ -26,5 +26,3 @@ class UW_User
   }
 
 }
-
-new UW_User;
