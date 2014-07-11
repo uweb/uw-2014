@@ -11,7 +11,6 @@ module.exports = function(grunt) {
           "js/libraries/jquery.easing.js"
         ],
         theme : [
-          // "js/uw.intro.js",
           "js/uw.core.js",
           "js/uw.init.js",
           "js/uw.search.js",
@@ -25,7 +24,6 @@ module.exports = function(grunt) {
           "js/uw.select.js",
           "js/uw.image.js",
           "js/uw.social.js",
-          // "js/uw.outro.js"
         ],
         components : [
           // todo: put just external components here for the uw.js we will give out
@@ -45,7 +43,7 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      files: [ 'Gruntfile.js', '<%= concat.dist.theme %>' ],
+      files: [ 'gruntfile.js', '<%= concat.dist.theme %>' ],
       options: {
         asi: true,
         smarttabs: true,
@@ -84,6 +82,12 @@ module.exports = function(grunt) {
 		}
 	},
     watch: {
+      config : {
+        files : ['gruntfile.js'],
+        options : {
+          reload: true
+        }
+      },
       js: {
         files: ['<%= concat.dist.src %>'],
         tasks: ['js']
