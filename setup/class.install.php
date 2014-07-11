@@ -59,7 +59,7 @@ class UW_Install_Theme
       ),
   );
 
-  function UW_Install_Theme()
+  function __construct()
   {
     add_action( 'after_setup_theme', array( $this, 'uw_setup' ) );
     add_filter( 'bloginfo_rss', array( $this, 'uw_category_rss_link'), 10, 2);
@@ -103,5 +103,3 @@ class UW_Install_Theme
   }
 
 }
-
-new UW_Install_Theme;

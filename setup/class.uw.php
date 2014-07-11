@@ -7,6 +7,7 @@
 
 class UW
 {
+    public static $Install;
     public static $Images;
     public static $SquishBugs;
     public static $Filters;
@@ -20,6 +21,7 @@ class UW
 
     private function includes()
     {
+        require_once('class.install.php');
         require_once('class.dropdowns.php');
         require_once('class.menu_item.php');
         require_once('class.images.php');
@@ -29,10 +31,11 @@ class UW
 
     private function initialize()
     {
-        $this->Images = new UW_Images();
-        $this->SquishBugs = new UW_SquishBugs();
-        $this->filters = new UW_Filters();
-        $this->Dropdowns = new Dropdowns();
+        $this->Install = new UW_Install_Theme;
+        $this->Images = new UW_Images;
+        $this->SquishBugs = new UW_SquishBugs;
+        $this->filters = new UW_Filters;
+        $this->Dropdowns = new Dropdowns;
     }
 }
 new UW();
