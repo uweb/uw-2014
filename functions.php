@@ -13,7 +13,6 @@ require( get_template_directory() . '/setup/users.php' );
 
 
 require( get_template_directory() . '/setup/class.uw.php' );
-require( get_template_directory() . '/setup/dropdowns-walker.php' );
 
 // Custom shivs to help Wordpress and some plugins with our server architecture
 //require( get_template_directory() . '/shivs/remove-http-cms.php' );

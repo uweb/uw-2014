@@ -27,6 +27,7 @@ class UW
         require_once('class.images.php');
         require_once('class.squish_bugs.php');
         require_once('class.filters.php');
+        require_once('class.dropdowns_walker.php');  // no initialization needed because it extends a WP class
     }
 
     private function initialize()
