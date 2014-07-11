@@ -52,4 +52,3 @@ class UW
         $this->Dropdowns = new Dropdowns;
     }
 }
-new UW();

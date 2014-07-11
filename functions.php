@@ -13,6 +13,7 @@ require( get_template_directory() . '/setup/settings.php' );
 
 
 require( get_template_directory() . '/setup/class.uw.php' );
+$UW = new UW();
 
 // Custom shivs to help Wordpress and some plugins with our server architecture
 //require( get_template_directory() . '/shivs/remove-http-cms.php' );
