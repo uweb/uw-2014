@@ -4,16 +4,44 @@
  * UW Dropdowns
  * This installs the default dropdowns for the UW Theme
  */
-require(class.uw_menuitems.php);
 
-class UW_Dropdowns
+class Dropdowns
 {
 
     const NAME         = 'White Bar';
     const LOCATION     = 'white-bar';
     const DISPLAY_NAME = 'Dropdowns';
 
-    function UW_Dropdowns()
+    public static $menu_items;
+
+    function __construct()
+    {
+        $this->instantiate_menu_list();
+        $this->add_hooks();
+    }
+
+    private function instantiate_menu_list()
+    {
+
+        $discover           = new MenuItem ('Discover', 'http://uw.edu/discover/', array(
+                                                                            new MenuItem('Vision and Values', 'http://uw.edu/discover/visionvalues'),
+                                                                            new MenuItem('Mission Statement', 'http://uw.edu/admin/rules/policies/BRG/RP5.html'),
+                                                                        ));
+
+        $current_students   = new MenuItem('Current Students', 'http://uw.edu/students/');
+
+        $future_students    = new MenuItem('Future Students', 'http://uw.edu/discover/admissions/');
+
+        $faculty_staff      = new MenuItem('Faculty & Staff', 'http://uw.edu/facultystaff/');
+
+        $alumni             = new MenuItem('Alumni', 'http://uw.edu/alumni/');
+
+        $nw_neighbors       = new MenuItem('NW Neighbors', 'http://uw.edu/nwneighbors/');
+
+        $this->menu_items = array($discover, $current_students, $future_students, $faculty_staff, $alumni, $nw_neighbors);
+    }
+
+    function add_hooks()
     {
         add_action( 'after_setup_theme', array( $this, 'register_white_bar_menu') );
         add_action( 'after_setup_theme', array( $this, 'install_default_white_bar_menu') );
@@ -26,7 +54,6 @@ class UW_Dropdowns
 
     function install_default_white_bar_menu()
     {
-        $menu_items = $this->menu_list();
         $this->MENU_ID = wp_create_nav_menu( self::DISPLAY_NAME );
 
         // wp_create_nav_menu returns a WP_Error if the menu already exists;
@@ -36,7 +63,7 @@ class UW_Dropdowns
         //      Each site in the network will have a different menu item ID for each thing.  Make the first menu and save its id
         //      then set that ID as the menu-item-parent-id for each child.  Then save each child.
         //      We can add another layer of depth for grandchildren
-        foreach ( $menu_items as $menu_item ) {
+        foreach ( $this->menu_items as $menu_item ) {
             $nav_item_id = wp_update_nav_menu_item( $this->MENU_ID, $menu_item_db_id=0, $menu_item->args );
             if (!empty($menu_item->child_items)) {
                 foreach ( $menu_item->child_items as $child_item ){
@@ -55,28 +82,4 @@ class UW_Dropdowns
         $locations[ 'white-bar' ] = $this->MENU_ID;
         set_theme_mod( 'nav_menu_locations', $locations );
     }
-
-    function menu_list()
-    {
-
-        $discover           = new UW_MenuItem ('Discover', 'http://uw.edu/discover/', array(
-                                                                            new UW_MenuItem('Vision and Values', 'http://uw.edu/discover/visionvalues'),
-                                                                            new UW_MenuItem('Mission Statement', 'http://uw.edu/admin/rules/policies/BRG/RP5.html'),
-                                                                        ));
-
-        $current_students   = new UW_MenuItem('Current Students', 'http://uw.edu/students/');
-
-        $future_students    = new UW_MenuItem('Future Students', 'http://uw.edu/discover/admissions/');
-
-        $faculty_staff      = new UW_MenuItem('Faculty & Staff', 'http://uw.edu/facultystaff/');
-
-        $alumni             = new UW_MenuItem('Alumni', 'http://uw.edu/alumni/');
-
-        $nw_neighbors       = new UW_MenuItem('NW Neighbors', 'http://uw.edu/nwneighbors/');
-
-        return array($discover, $current_students, $future_students, $faculty_staff, $alumni, $nw_neighbors);
-    }
-
 }
-
-new UW_Dropdowns();

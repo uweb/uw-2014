@@ -3,7 +3,7 @@
 /**
  *  UW_MenuItem is an object used by UW_Dropdowns to create a default menu
  */
-class UW_MenuItem {
+class MenuItem {
     public $args;
     public $child_items;
 
