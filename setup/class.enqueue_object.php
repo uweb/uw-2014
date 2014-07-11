@@ -1,12 +1,12 @@
 <?php
 
 /*
- * This is the UW Script class that defines what scripts to load
+ * This is the EnqueueObject class that defines what scripts/styles to load
  * each script has an id, a url, a version, an array of dependencies,
  * an a boolean specifying whether or not it's for the backend
  */
 
-class UW_Script
+class EnqueueObject
 {
     public $id;
     public $url;

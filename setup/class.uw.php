@@ -24,6 +24,7 @@ class UW
     private function includes()
     {
         require_once('class.install.php');
+        require_once('class.enqueue_object.php');
         require_once('class.install_scripts.php');
         require_once('class.dropdowns.php');
         require_once('class.menu_item.php');

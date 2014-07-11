@@ -13,7 +13,6 @@ class UW_Install_Scripts
 
     function UW_Install_Scripts()
     {
-        require_once('class.script.php');
         $this->add_scripts();
         $this->add_actions();
     }
@@ -22,20 +21,20 @@ class UW_Install_Scripts
     {
         $this->SCRIPTS = array_merge( array(
 
-            new UW_Script(array (
+            new EnqueueObject(array (
                 'id'      => 'jquery',
                 'url'     => 'https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
                 'version' => '1.9.1',
             )),
 
-            new UW_Script(array (
+            new EnqueueObject(array (
                 'id'      => 'site',
                 'url'     => get_bloginfo('template_directory') . '/js/site' . $this->dev_script() . '.js',
                 'deps'    => array( 'backbone' ),
                 'version' => '1.0.3',
             )),
 
-            new UW_Script(array (
+            new EnqueueObject(array (
                 'id'      => 'wp.admin',
                 'url'     => get_bloginfo('template_directory') . '/js/admin/admin.js',
                 'deps'    => array( 'jquery' ),
@@ -43,7 +42,7 @@ class UW_Install_Scripts
                 'admin'   => true
             )),
             //
-            // new UW_Script => array (
+            // new EnqueueObject => array (
             //   'id'      => 'jquery.searchposts',
             //   'url'     => get_bloginfo('template_directory') . '/js/admin/jquery.wp.searchposts.js',
             //   'deps'    => array( 'jquery', 'jquery-ui-autocomplete' ),
