@@ -8,6 +8,8 @@
 class UW
 {
     public static $Install;
+    public static $Scripts;
+    public static $Styles;
     public static $Images;
     public static $SquishBugs;
     public static $Filters;
@@ -26,6 +28,7 @@ class UW
         require_once('class.install.php');
         require_once('class.enqueue_object.php');
         require_once('class.install_scripts.php');
+        require_once('class.install_styles.php');
         require_once('class.dropdowns.php');
         require_once('class.menu_item.php');
         require_once('class.images.php');
@@ -40,6 +43,7 @@ class UW
     {
         $this->Install = new UW_Install_Theme;
         $this->Scripts = new UW_Install_Scripts;
+        $this->Styles = new UW_Install_Styles;
         $this->Images = new UW_Images;
         $this->SquishBugs = new UW_SquishBugs;
         $this->Filters = new UW_Filters;
