@@ -58,5 +58,3 @@ class UW_Filters
 
 
 }
-
-new UW_Filters;

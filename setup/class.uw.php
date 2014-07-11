@@ -7,9 +7,10 @@
 
 class UW
 {
-    public static $Dropdowns;
     public static $Images;
     public static $SquishBugs;
+    public static $Filters;
+    public static $Dropdowns;
 
     function __construct()
     {
@@ -23,13 +24,15 @@ class UW
         require_once('class.menu_item.php');
         require_once('class.images.php');
         require_once('class.squish_bugs.php');
+        require_once('class.filters.php');
     }
 
     private function initialize()
     {
-        $this->Dropdowns = new Dropdowns();
         $this->Images = new UW_Images();
         $this->SquishBugs = new UW_SquishBugs();
+        $this->filters = new UW_Filters();
+        $this->Dropdowns = new Dropdowns();
     }
 }
 new UW();
