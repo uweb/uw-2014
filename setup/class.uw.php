@@ -11,6 +11,7 @@ class UW
     public static $Images;
     public static $SquishBugs;
     public static $Filters;
+    public static $Mimes;
     public static $Dropdowns;
 
     function __construct()
@@ -27,6 +28,7 @@ class UW
         require_once('class.images.php');
         require_once('class.squish_bugs.php');
         require_once('class.filters.php');
+        require_once('class.mimes.php');
         require_once('class.dropdowns_walker.php');  // no initialization needed because it extends a WP class
     }
 
@@ -35,7 +37,8 @@ class UW
         $this->Install = new UW_Install_Theme;
         $this->Images = new UW_Images;
         $this->SquishBugs = new UW_SquishBugs;
-        $this->filters = new UW_Filters;
+        $this->Filters = new UW_Filters;
+        $this->Mimes = new UW_Mimes;
         $this->Dropdowns = new Dropdowns;
     }
 }

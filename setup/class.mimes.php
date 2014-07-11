@@ -12,7 +12,7 @@ class UW_Mimes
     'ai|eps' => 'application/postscript'
   );
 
-  function UW_Mimes()
+  function __construct()
   {
     add_filter('upload_mimes', array( $this, 'uw_add_custom_upload_mimes'), 10, 2);
   }
@@ -24,5 +24,3 @@ class UW_Mimes
   
 
 }
-
-new UW_Mimes;
