@@ -8,7 +8,6 @@ require( get_template_directory() . '/setup/settings.php' );
 require( get_template_directory() . '/setup/install.php' );
 require( get_template_directory() . '/setup/scripts.php' );
 require( get_template_directory() . '/setup/styles.php' );
-require( get_template_directory() . '/setup/images.php' );
 require( get_template_directory() . '/setup/filters.php' );
 require( get_template_directory() . '/setup/mimes.php' );
 require( get_template_directory() . '/setup/users.php' );

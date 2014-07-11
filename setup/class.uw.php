@@ -8,6 +8,7 @@
 class UW
 {
     public static $Dropdowns;
+    public static $Images;
 
     function __construct()
     {
@@ -19,11 +20,13 @@ class UW
     {
         require_once('class.dropdowns.php');
         require_once('class.menu_item.php');
+        require_once('class.images.php');
     }
 
     private function initialize()
     {
         $this->Dropdowns = new Dropdowns();
+        $this->Images = new UW_Images();
     }
 }
 new UW();

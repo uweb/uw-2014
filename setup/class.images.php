@@ -76,9 +76,8 @@ class UW_Images
   
   );
 
-  function UW_Images()
+  function __construct()
   {
-
     add_action( 'after_setup_theme', array( $this, 'add_uw_image_sizes' ) );
     add_filter( 'image_size_names_choose', array( $this, 'show_image_sizes') );
   }
@@ -115,5 +114,3 @@ class UW_Images
   }
 
 }
-
-new UW_Images;
