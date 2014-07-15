@@ -11,7 +11,6 @@ require( get_template_directory() . '/setup/settings.php' );
 //require( get_template_directory() . '/setup/mimes.php' );
 //require( get_template_directory() . '/setup/users.php' );
 
-
 require( get_template_directory() . '/setup/class.uw.php' );
 $UW = new UW();
 

@@ -37,18 +37,20 @@ class UW
         require_once('class.mimes.php');
         require_once('class.users.php');
         require_once('class.dropdowns_walker.php');  // no initialization needed because it extends a WP class
+        require_once( 'class.uw-directory.php' );
     }
 
     private function initialize()
     {
-        $this->Install = new UW_Install_Theme;
-        $this->Scripts = new UW_Install_Scripts;
-        $this->Styles = new UW_Install_Styles;
-        $this->Images = new UW_Images;
+        $this->Install    = new UW_Install_Theme;
+        $this->Scripts    = new UW_Install_Scripts;
+        $this->Styles     = new UW_Install_Styles;
+        $this->Images     = new UW_Images;
         $this->SquishBugs = new UW_SquishBugs;
-        $this->Filters = new UW_Filters;
-        $this->Mimes = new UW_Mimes;
-        $this->Users = new UW_Users;
-        $this->Dropdowns = new Dropdowns;
+        $this->Filters    = new UW_Filters;
+        $this->Mimes      = new UW_Mimes;
+        $this->Users      = new UW_Users;
+        $this->Dropdowns  = new Dropdowns;
+        $this->Directory  = new UW_Directory;
     }
 }
