@@ -7299,6 +7299,29 @@ ul.uw-select li.active {
 ul.uw-select li.inactive a {
   display: none;
 }
+/*
+ *  All styles for UW accordion
+ */
+.uw-accordion h3 {
+  background-color: #4b2e83;
+  color: white;
+  padding: 10px;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.uw-accordion h3:after {
+  font-family: Flat-UI-Icons;
+  content: '\e009';
+  float: right;
+}
+.uw-accordion div {
+  height: 0px;
+  overflow: hidden;
+}
+.uw-accordion div.active {
+  height: auto;
+}
 .uw-thinstrip {
   height: 40px;
   width: 100%;
