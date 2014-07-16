@@ -18,7 +18,7 @@ UW.initialize = function( $ )
   UW.social     = _.map( $( UW.elements.social ),    function( element ) { return new UW.Social({ el : element }) } )
   UW.vimeo      = _.map( $( UW.elements.vimeo ),     function( element ) { return new UW.Vimeo({ el : element }) } )
   UW.select     = _.map( $( UW.elements.select ),    function( element ) { return new UW.Select({ el : element }) } )
-  // UW.players    = new UW.PlayerCollection()
+  UW.players    = new UW.PlayerCollection()
 }
 
 jQuery(document).ready( UW.initialize )
