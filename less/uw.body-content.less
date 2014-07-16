@@ -15,16 +15,29 @@
 	padding-top: 10px;
 	.uw-site-title {
 		position: absolute;
-		top: -100px;
+		top: -108px;
 		left: 11px;
 		color: #fff;
 		font-weight: 900;
 		font-size: 32px;
 		background-color: @purple;
-		padding: 22px 30px 16px;
+		padding: 25px 35px 19px;
 		-webkit-font-smoothing: antialiased;
 		span {
 			font-weight: 700;
+		}
+	}
+	.uw-body-copy {
+		a {
+			//-webkit-font-smoothing: antialiased;
+			text-decoration: none;
+			background-image: -moz-linear-gradient();
+			background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(0,0,0,0.2) 50%);
+			background-image: -o-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(0,0,0,0.2) 50%);
+			background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0, 0, 0, 0.2) 50%);
+			background-repeat: repeat-x;
+			background-size: 2px 2px;
+			background-position: 0 15px;
 		}
 	}
 }

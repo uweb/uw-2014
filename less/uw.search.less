@@ -20,7 +20,8 @@
     input
     {
       width: 100%;
-      padding:10px;
+      padding: 12px;
+      border: none;
     }
 
   }
@@ -55,14 +56,26 @@
   {
 
     .result {
-      background-color: white;
       z-index: 1;
-      width: 620px;
+      width: 690px;
+      border-bottom: 1px solid #666;
       top: 116px;
       display: block;
       float: left;
-      margin-top: -36px;
-      margin-bottom: 35px;
+      margin-top: -10px;
+      margin-bottom: 10px;
+      &:last-child  {
+        border: none;
+        margin-bottom: 60px;
+      }
+    }
+    h4 
+    {
+      font-size: 18px;
+      color: #fff;
+      margin-left: 14px;
+      text-transform: uppercase;
+      cursor: pointer;
     }
   }
 
