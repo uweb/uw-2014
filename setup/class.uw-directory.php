@@ -21,9 +21,9 @@ class UW_Directory
     $ds = ldap_connect( self::HOST );
     if ( $ds )
     {
-        $r = ldap_bind( $ds );
-        $result = @ldap_search( $ds, self::SEARCH_BASE, $this->search_filter(), $attributes=array(), $attrsonly=0, $sizelimit = 10 );
-        $info = ldap_get_entries($ds, $result);
+        $r      = ldap_bind( $ds );
+        $result = @ldap_search( $ds, self::SEARCH_BASE, $this->search_filter(), $attributes=array(), $attrsonly=0, $sizelimit=10 );
+        $info   = ldap_get_entries($ds, $result);
         echo json_encode($info);
     }
     die();
@@ -33,7 +33,7 @@ class UW_Directory
   {
     $args = wp_parse_args($_GET);
     $search = $args['search'];
-    return "(|(mail=*{$search}*)(sn=*{$search}*)(givenname=*{$search}*)(cn=*{$search}))";
+    return "(|(mail=*{$search}*)(sn=*{$search}*)(givenname=*{$search}*)(cn=*{$search}*)(telephonenumber=*{$search}*))";
   }
 
 }
