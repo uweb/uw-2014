@@ -7560,14 +7560,55 @@ ul.uw-select li.inactive a {
   font-weight: 700;
 }
 .uw-search-bar-container {
-  margin-top: -36px;
+  min-height: 130px;
+  margin-top: -130px;
+  background-color: #4d4d4d;
   transition: margin-top 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.uw-search-bar-container .uw-search-wrapper {
+  width: 890px;
+  margin-top: 30px;
+}
+.uw-search-bar-container form {
+  float: left;
+  width: 620px;
+}
+.uw-search-bar-container form input {
+  width: 100%;
+  padding: 10px;
+}
+.uw-search-bar-container div.labels {
+  float: left;
+  display: block;
+  margin-left: 40px;
+  margin-top: -30px;
+  color: white;
+}
+.uw-search-bar-container a {
+  float: left;
+  display: block;
+  height: 54px;
+  text-indent: -99999px;
+  background: url(assets/svg/search.svg) no-repeat center center #808080;
+  position: relative;
+  -webkit-background-size: 22px;
+  -moz-background-size: 22px;
+  -o-background-size: 22px;
+  background-size: 22px;
+  padding-right: 78px;
+}
+.uw-search-bar-container .uw-results .result {
+  background-color: white;
+  z-index: 1;
+  width: 620px;
+  top: 116px;
+  display: block;
+  float: left;
+  margin-top: -36px;
+  margin-bottom: 35px;
 }
 .uw-search-bar-container.open {
   margin-top: 0px;
-}
-.uw-search {
-  float: right;
 }
 .uw-sidebar {
   margin-top: -45px;
