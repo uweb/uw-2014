@@ -238,7 +238,8 @@ UW.elements = {
   slideshow : '.uw-slideshow',
   social    : '.uw-social',
   vimeo     : '.uw-vimeo',
-  select    : '.uw-select'
+  select    : '.uw-select',
+  accordion : '.uw-accordion'
 
 }
 // Initialize all components when the DOM is ready
@@ -250,6 +251,7 @@ UW.initialize = function( $ )
   UW.social     = _.map( $( UW.elements.social ),    function( element ) { return new UW.Social({ el : element }) } )
   UW.vimeo      = _.map( $( UW.elements.vimeo ),     function( element ) { return new UW.Vimeo({ el : element }) } )
   UW.select     = _.map( $( UW.elements.select ),    function( element ) { return new UW.Select({ el : element }) } )
+  UW.accordion  = _.map( $( UW.elements.accordion ), function( element ) { return new UW.Accordion( { el : element }) } )
   UW.players    = new UW.PlayerCollection()
 }
 
@@ -936,6 +938,55 @@ UW.Vimeo.Playlist = Backbone.Collection.extend({
     }
 
 })
+;// ### UW Accordion
+
+// This creates a UW Accordion
+// For usage, refer to the [UW Web Components webpage](http://uw.edu/brand/web#accordion)
+
+UW.Accordion = Backbone.View.extend({
+
+    //what element becomes an accordion
+    el: '.uw-accordion',
+
+    events: {
+        'click h3' : 'animate'
+    },
+
+    initialize: function () {
+        _.bindAll(this, 'animate');
+        this.$el.find('h3').addClass('inactive');
+        this.$el.find('div').addClass('inactive');
+    },
+
+    animate: function (e) {
+        var $target = $(e.target);
+        if ($target.hasClass('inactive')) {
+            this.$el.find('h3.active').removeClass('active').addClass('inactive');
+            this.$el.find('div.active').animate({height: '0px'}, 500, function () {
+                var $this = $(this);
+                $this.removeClass('active').addClass('inactive');
+                $this.removeAttr('style');
+            });
+            $target.removeClass('inactive').addClass('active');
+            var $next = $target.next('div.inactive');
+            $next.removeClass('inactive').addClass('active');
+            var $next_height = $next.outerHeight(true);
+            $next.removeClass('active');
+            $next.animate({height: $next_height}, 500, function() {
+                $next.addClass('active');
+                $next.removeAttr('style');
+            });
+        }
+        else {
+            $target.removeClass('active').addClass('inactive');
+            $target.next('div.active').animate({height: '0px'}, 500, function () {
+                var $this = $(this);
+                $this.removeClass('active').addClass('inactive');
+                $this.removeAttr('style');
+            });
+        }
+    },
+});
 ;// ### UW Select
 
 // This function creates the UW select menu

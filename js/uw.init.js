@@ -6,7 +6,8 @@ UW.elements = {
   slideshow : '.uw-slideshow',
   social    : '.uw-social',
   vimeo     : '.uw-vimeo',
-  select    : '.uw-select'
+  select    : '.uw-select',
+  accordion : '.uw-accordion'
 
 }
 // Initialize all components when the DOM is ready
@@ -18,6 +19,7 @@ UW.initialize = function( $ )
   UW.social     = _.map( $( UW.elements.social ),    function( element ) { return new UW.Social({ el : element }) } )
   UW.vimeo      = _.map( $( UW.elements.vimeo ),     function( element ) { return new UW.Vimeo({ el : element }) } )
   UW.select     = _.map( $( UW.elements.select ),    function( element ) { return new UW.Select({ el : element }) } )
+  UW.accordion  = _.map( $( UW.elements.accordion ), function( element ) { return new UW.Accordion( { el : element }) } )
   UW.players    = new UW.PlayerCollection()
 }
 
