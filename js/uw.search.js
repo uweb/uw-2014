@@ -107,8 +107,11 @@ UW.Search = Backbone.View.extend({
     this.empty()
 
     _.each(data, function( person, index ) {
-      var template = _.template( result, person )
-      $results.append( template )
+      if ( person.cn )
+      {
+        var template = _.template( result, person )
+        $results.append( template )
+      }
     })
 
   }
