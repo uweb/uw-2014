@@ -1,0 +1,26 @@
+/*
+ *  All styles for UW accordion
+ */
+
+.uw-accordion {
+    h3 {
+        background-color: @purple;
+        color: white;
+        padding: 10px;
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    h3:after {
+        font-family: Flat-UI-Icons;
+        content: '\e009';
+        float: right;
+    }
+    div {
+        height: 0px;
+        overflow: hidden;
+    }
+    div.active {
+        height: auto;
+    }
+}
