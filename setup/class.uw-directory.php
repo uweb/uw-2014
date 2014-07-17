@@ -24,7 +24,7 @@ class UW_Directory
         $r      = ldap_bind( $ds );
         $result = @ldap_search( $ds, self::SEARCH_BASE, $this->search_filter(), $attributes=array(), $attrsonly=0, $sizelimit=10 );
         $info   = ldap_get_entries($ds, $result);
-        echo json_encode($info);
+        echo json_encode( $this->parse( $info ) );
     }
     die();
   }
@@ -34,6 +34,25 @@ class UW_Directory
     $args = wp_parse_args($_GET);
     $search = $args['search'];
     return "(|(mail=*{$search}*)(sn=*{$search}*)(givenname=*{$search}*)(cn=*{$search}*)(telephonenumber=*{$search}*))";
+  }
+
+  function parse( $info )
+  {
+    array_shift( $info );
+    foreach ( $info as $index => $person )
+    {
+
+        $people[$index]['commonname'] = $person['cn'][0];
+
+        $people[$index]['title'] = $person['title'][0];
+
+        $people[$index]['postaladdress'] = $person['postaladdress'][0];
+
+        $people[$index]['mail'] = str_replace( 'u.washington.edu', 'uw.edu', $person['mail'][0] );
+
+        $people[$index]['telephonenumber'] = $person['telephonenumber'][0];
+    }
+    return $people;
   }
 
 }
