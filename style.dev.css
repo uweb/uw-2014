@@ -7806,7 +7806,7 @@ ul.uw-select li.inactive a {
 }
 .uw-search-bar-container form input {
   width: 100%;
-  padding: 12px;
+  padding: 1px 0 1px 15px;
   border: none;
 }
 .uw-search-bar-container div.labels {
