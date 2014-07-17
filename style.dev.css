@@ -7618,6 +7618,9 @@ ul.uw-select li.inactive a {
   margin-top: -30px;
   color: white;
 }
+.uw-search-bar-container div.labels .radio {
+  margin-bottom: -5px;
+}
 .uw-search-bar-container a {
   float: left;
   display: block;
