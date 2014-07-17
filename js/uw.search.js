@@ -9,7 +9,7 @@ UW.Search = Backbone.View.extend({
   value : '',
   body : 'body',
 
-  searchbar : '<div class="uw-search-bar-container">'+
+  searchbar : '<div class="uw-search-bar-container open">'+
                '<div class="container">'+
                   '<div class="center-block uw-search-wrapper">'+
                     '<form class="uw-search" action="/search/">'+
@@ -43,7 +43,14 @@ UW.Search = Backbone.View.extend({
               '</div>',
 
   result :  '<div class="result">' +
-              '<h4><%= cn[0] %></h4>'+
+              '<h4><%= commonname %></h4>'+
+              '<a href="#" title="<%= commonname %>">More</a>'+
+              '<div class="information hidden">'+
+                '<p class="pull-left"><% if ( title ) { %><span class="title"><%= title %></span><% } %>'+
+                '<% if ( postaladdress ) { %><span class="postaladdress"><%= postaladdress %></span><% } %></p>'+
+                '<% if ( mail ) { %><span class="mail"><%= mail %></span><% } %>'+
+                '<% if ( telephonenumber ) { %><span class="telephonenumber"><%= telephonenumber %></span><% } %>'+
+              '</div>'+
             '</div>',
 
   defaults :
@@ -53,9 +60,8 @@ UW.Search = Backbone.View.extend({
 
   events :
   {
-    'click' : 'toggleSearchBar',
-    // 'keydown input' : 'searchDirectory'
-
+    'keydown input' : 'searchDirectory',
+    'click .result' : 'showPersonInformation'
   },
 
   initialize :function ( options )
@@ -70,7 +76,11 @@ UW.Search = Backbone.View.extend({
   render : function()
   {
     $( this.body ).prepend( this.$searchbar )
-    this.$searchbar.find('input').bind('keydown', this.searchDirectory )
+
+    this.$toggle = this.$el;
+    this.$toggle.bind( 'click', this.toggleSearchBar )
+
+    this.setElement( this.$searchbar )
   },
 
   toggleSearchBar: function()
@@ -94,7 +104,7 @@ UW.Search = Backbone.View.extend({
 
   empty : function()
   {
-    $('.uw-results').empty()
+    this.$('.uw-results').empty()
   },
 
   parse : function ( response )
@@ -107,10 +117,18 @@ UW.Search = Backbone.View.extend({
     this.empty()
 
     _.each(data, function( person, index ) {
-      var template = _.template( result, person )
-      $results.append( template )
+      if ( person.commonname )
+      {
+        var template = _.template( result, person )
+        $results.append( template )
+      }
     })
 
+  },
+
+  showPersonInformation : function( e )
+  {
+    this.$( e.currentTarget ).toggleClass('open').find('.information').toggleClass( 'hidden' )
   }
 
 

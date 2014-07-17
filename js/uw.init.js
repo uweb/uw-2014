@@ -7,7 +7,8 @@ UW.elements = {
   social    : '.uw-social',
   vimeo     : '.uw-vimeo',
   select    : '.uw-select',
-  accordion : '.uw-accordion'
+  accordion : '.uw-accordion',
+  radio     : ':radio'
 
 }
 // Initialize all components when the DOM is ready
@@ -21,6 +22,7 @@ UW.initialize = function( $ )
   UW.select     = _.map( $( UW.elements.select ),    function( element ) { return new UW.Select({ el : element }) } )
   UW.accordion  = _.map( $( UW.elements.accordion ), function( element ) { return new UW.Accordion( { el : element }) } )
   UW.players    = new UW.PlayerCollection()
+  UW.radio      = _.map( $( UW.elements.radio ),     function( element ) { return new UW.Radio({ el : element }) } )
 }
 
 jQuery(document).ready( UW.initialize )

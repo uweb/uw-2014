@@ -239,7 +239,8 @@ UW.elements = {
   social    : '.uw-social',
   vimeo     : '.uw-vimeo',
   select    : '.uw-select',
-  accordion : '.uw-accordion'
+  accordion : '.uw-accordion',
+  radio     : ':radio'
 
 }
 // Initialize all components when the DOM is ready
@@ -253,6 +254,7 @@ UW.initialize = function( $ )
   UW.select     = _.map( $( UW.elements.select ),    function( element ) { return new UW.Select({ el : element }) } )
   UW.accordion  = _.map( $( UW.elements.accordion ), function( element ) { return new UW.Accordion( { el : element }) } )
   UW.players    = new UW.PlayerCollection()
+  UW.radio      = _.map( $( UW.elements.radio ),     function( element ) { return new UW.Radio({ el : element }) } )
 }
 
 jQuery(document).ready( UW.initialize )
@@ -271,7 +273,7 @@ UW.Search = Backbone.View.extend({
   value : '',
   body : 'body',
 
-  searchbar : '<div class="uw-search-bar-container">'+
+  searchbar : '<div class="uw-search-bar-container open">'+
                '<div class="container">'+
                   '<div class="center-block uw-search-wrapper">'+
                     '<form class="uw-search" action="/search/">'+
@@ -305,7 +307,14 @@ UW.Search = Backbone.View.extend({
               '</div>',
 
   result :  '<div class="result">' +
-              '<h4><%= cn[0] %></h4>'+
+              '<h4><%= commonname %></h4>'+
+              '<a href="#" title="<%= commonname %>">More</a>'+
+              '<div class="information hidden">'+
+                '<p class="pull-left"><% if ( title ) { %><span class="title"><%= title %></span><% } %>'+
+                '<% if ( postaladdress ) { %><span class="postaladdress"><%= postaladdress %></span><% } %></p>'+
+                '<% if ( mail ) { %><span class="mail"><%= mail %></span><% } %>'+
+                '<% if ( telephonenumber ) { %><span class="telephonenumber"><%= telephonenumber %></span><% } %>'+
+              '</div>'+
             '</div>',
 
   defaults :
@@ -315,9 +324,8 @@ UW.Search = Backbone.View.extend({
 
   events :
   {
-    'click' : 'toggleSearchBar',
-    // 'keydown input' : 'searchDirectory'
-
+    'keydown input' : 'searchDirectory',
+    'click .result' : 'showPersonInformation'
   },
 
   initialize :function ( options )
@@ -332,7 +340,11 @@ UW.Search = Backbone.View.extend({
   render : function()
   {
     $( this.body ).prepend( this.$searchbar )
-    this.$searchbar.find('input').bind('keydown', this.searchDirectory )
+
+    this.$toggle = this.$el;
+    this.$toggle.bind( 'click', this.toggleSearchBar )
+
+    this.setElement( this.$searchbar )
   },
 
   toggleSearchBar: function()
@@ -356,7 +368,7 @@ UW.Search = Backbone.View.extend({
 
   empty : function()
   {
-    $('.uw-results').empty()
+    this.$('.uw-results').empty()
   },
 
   parse : function ( response )
@@ -369,10 +381,18 @@ UW.Search = Backbone.View.extend({
     this.empty()
 
     _.each(data, function( person, index ) {
-      var template = _.template( result, person )
-      $results.append( template )
+      if ( person.commonname )
+      {
+        var template = _.template( result, person )
+        $results.append( template )
+      }
     })
 
+  },
+
+  showPersonInformation : function( e )
+  {
+    this.$( e.currentTarget ).toggleClass('open').find('.information').toggleClass( 'hidden' )
   }
 
 
@@ -936,6 +956,107 @@ UW.Vimeo.Playlist = Backbone.Collection.extend({
     {
       return _.where( data, { embed_privacy : 'anywhere' })
     }
+
+})
+;/* RADIO PUBLIC CLASS DEFINITION
+ * ============================== */
+
+UW.Radio = Backbone.View.extend({
+
+  states :
+  {
+    checked  : 'checked',
+    disabled : 'disabled'
+  },
+
+  events :
+  {
+    'click .radio' : 'toggle'
+  },
+
+  template: '<span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span>',
+
+  initialize : function( options )
+  {
+    _.bindAll( this, 'toggle' )
+    this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
+    this.$el.before( this.template )
+    this.setState()
+    this.$el.closest('label').bind( 'click' , this.toggle )
+  },
+
+  setState: function()
+  {
+
+    var $parent = this.$el.closest( '.radio' )
+
+    if ( this.$el.prop('disabled') ) $parent.addClass('disabled')
+    if ( this.$el.prop('checked') ) $parent.addClass('checked')
+
+  },
+
+  toggle : function()
+  {
+    var this_ = this;
+       var checked = this.$el.prop( this.states.checked )
+       , $parent = this.$el.closest('.radio')
+       , $parentWrap = this.$el.closest('form').length ? this.$el.closest('form') : this.$el.closest('body')
+       , $elemGroup = $parentWrap.find(':radio[name="' + this.$el.attr('name') + '"]')
+       , e = $.Event('toggle')
+
+       $elemGroup.not(this.$el).each(function () {
+
+         var $el = $(this)
+           , $parent = $el.closest('.radio');
+
+           if ( $el.prop( this_.states.disabled ) === false &&
+                $parent.removeClass( this_.states.checked ) )  {
+             $el.removeAttr( this_.states.checked ).trigger('change');
+           }
+       });
+
+       if (this.$el.prop( this.states.disabled ) === false)
+       {
+
+        // if (checked === false) $parent.addClass( this.states.checked ) && $el.prop( this.states.checked , true);
+          if (checked === false && $parent.addClass( this.states.checked ) ) this.$el.prop( this.states.checked , true);
+          this.$el.trigger(e);
+
+          if (checked !== this.$el.prop( this.states.checked )) {
+            this.$el.trigger('change');
+          }
+
+       }
+  },
+
+  // setCheck : function( option )
+  // {
+  //    var ch = 'checked'
+  //      , $el = this.$element
+  //      , $parent = $el.closest('.radio')
+  //      , checkAction = option == 'check' ? true : false
+  //      , checked = $el.prop(ch)
+  //      , $parentWrap = $el.closest('form').length ? $el.closest('form') : $el.closest('body')
+  //      , $elemGroup = $parentWrap.find(':radio[name="' + $el.attr('name') + '"]')
+  //      , e = $.Event(option)
+  //
+  //    $elemGroup.not($el).each(function () {
+  //      var $el = $(this)
+  //        , $parent = $(this).closest('.radio');
+  //
+  //        $parent.removeClass(ch)
+  //        $el.removeAttr(ch);
+  //
+  //    });
+  //
+  //    $parent[checkAction ? 'addClass' : 'removeClass'](ch)
+  //    if ( checkAction ) { $el.prop(ch, ch) } else { $el.removeAttr(ch); }
+  //    $el.trigger(e);
+  //
+  //    if (checked !== $el.prop(ch)) {
+  //      $el.trigger('change');
+  //    }
+  // },
 
 })
 ;// ### UW Accordion
