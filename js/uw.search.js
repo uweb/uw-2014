@@ -43,13 +43,13 @@ UW.Search = Backbone.View.extend({
               '</div>',
 
   result :  '<div class="result">' +
-              '<h4><%= commonname %></h4>'+
-              '<a href="#" title="<%= commonname %>">More</a>'+
+              '<h4 class="commonname"><%= commonname %></h4>'+
+              '<a href="#" title="<%= commonname %>" class="more">More</a>'+
               '<div class="information hidden">'+
                 '<p class="pull-left"><% if ( title ) { %><span class="title"><%= title %></span><% } %>'+
                 '<% if ( postaladdress ) { %><span class="postaladdress"><%= postaladdress %></span><% } %></p>'+
-                '<% if ( mail ) { %><span class="mail"><%= mail %></span><% } %>'+
-                '<% if ( telephonenumber ) { %><span class="telephonenumber"><%= telephonenumber %></span><% } %>'+
+                '<% if ( mail ) { %><span class="mail"><a href="mailto:<%= mail %>" title="Email <%= commonname %>"><%= mail %></a></span><% } %>'+
+                '<% if ( telephonenumber ) { %><span class="telephonenumber"><a href="tel:<%= telephonenumber %>"><%= telephonenumber %></a></span><% } %>'+
               '</div>'+
             '</div>',
 
@@ -60,8 +60,9 @@ UW.Search = Backbone.View.extend({
 
   events :
   {
-    'keydown input' : 'searchDirectory',
-    'click .result' : 'showPersonInformation'
+    'keydown input'             : 'searchDirectory',
+    'click .result .more'       : 'showPersonInformation',
+    'click .result .commonname' : 'showPersonInformation'
   },
 
   initialize :function ( options )
@@ -128,7 +129,11 @@ UW.Search = Backbone.View.extend({
 
   showPersonInformation : function( e )
   {
-    this.$( e.currentTarget ).toggleClass('open').find('.information').toggleClass( 'hidden' )
+    this.$( e.currentTarget )
+      .closest('.result')
+        .toggleClass('open')
+      .find('.information')
+        .toggleClass( 'hidden' )
   }
 
 
