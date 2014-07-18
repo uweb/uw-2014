@@ -14,11 +14,11 @@ UW.Search = Backbone.View.extend({
     directory : 'directory'
   },
 
-  searchbar : '<div class="uw-search-bar-container open">'+
+  searchbar : '<div class="uw-search-bar-container">'+
                '<div class="container">'+
                   '<div class="center-block uw-search-wrapper">'+
                     '<form class="uw-search" action="<%= Backbone.history.location.pathname %>">'+
-                      '<input type="search" name="s" value="" autocomplete="off" />'+
+                      '<input id="uw-search-bar" type="search" name="s" value="" autocomplete="off" />'+
                     '</form>'+
                     '<a href="#" value="" class="search" />'+
 
@@ -103,6 +103,7 @@ UW.Search = Backbone.View.extend({
   {
     this.empty()
     this.$searchbar.toggleClass('open')
+      .find('#uw-search-bar').focus()
     return false;
   },
 
