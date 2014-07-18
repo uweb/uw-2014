@@ -3,33 +3,38 @@
 // This function creates a UW Search
 // For usage please refer to the [UW Web Components Search](http://uw.edu/brand/web/#search)
 
-// todo: separate search into different views
 UW.Search = Backbone.View.extend({
 
   value : '',
   body : 'body',
 
+  searchFeatures : {
+    uw        : 'uw',
+    site      : 'site',
+    directory : 'directory'
+  },
+
   searchbar : '<div class="uw-search-bar-container open">'+
                '<div class="container">'+
                   '<div class="center-block uw-search-wrapper">'+
-                    '<form class="uw-search" action="/search/">'+
-                      '<input type="search" name="q" value="" autocomplete="off" />'+
+                    '<form class="uw-search" action="<%= Backbone.history.location.pathname %>">'+
+                      '<input type="search" name="s" value="" autocomplete="off" />'+
                     '</form>'+
                     '<a href="#" value="" class="search" />'+
 
                     '<div class="labels">'+
                       '<label class="radio">'+
-                        '<input type="radio" name="group1" value="1" data-toggle="radio">'+
+                        '<input type="radio" name="search" value="uw" data-toggle="radio">'+
                         'All the UW'+
                       '</label>'+
 
                     '<label class="radio">'+
-                      '<input type="radio" name="group1" value="2" data-toggle="radio">'+
+                      '<input type="radio" name="search" value="site" data-toggle="radio">'+
                       'Current Site'+
                     '</label>'+
 
                     '<label class="radio">'+
-                      '<input type="radio" name="group1" value="2" data-toggle="radio" checked>'+
+                      '<input type="radio" name="search" value="directory" data-toggle="radio" checked>'+
                       'People Directory'+
                     '</label>'+
 
@@ -62,15 +67,25 @@ UW.Search = Backbone.View.extend({
   {
     'keydown input'             : 'searchDirectory',
     'click .result .more'       : 'showPersonInformation',
-    'click .result .commonname' : 'showPersonInformation'
+    'click .result .commonname' : 'showPersonInformation',
+    'click input:radio'         : 'toggleSearchFeature',
+    'submit form'              : 'submitSearch'
   },
 
   initialize :function ( options )
   {
     _.bindAll( this, 'toggleSearchBar', 'searchDirectory', 'parse' )
+
     this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
+
     this.$searchbar = $( _.template( this.searchbar , this.settings ) )
+
     this.render()
+
+    this.$results  = this.$( '.uw-results' )
+
+    this.searchFeature = this.$el.find(':radio:checked').val()
+
     this.model.on( 'change:results', this.parse, this )
   },
 
@@ -91,6 +106,17 @@ UW.Search = Backbone.View.extend({
     return false;
   },
 
+  toggleSearchFeature : function( e )
+  {
+    this.empty()
+    this.searchFeature = e.currentTarget.value
+  },
+
+  submitSearch : function()
+  {
+    return this.searchFeature !== this.searchFeatures.directory
+  },
+
   searchDirectory : _.debounce( function( e ) {
 
     if ( this.value === e.target.value ) return
@@ -105,14 +131,14 @@ UW.Search = Backbone.View.extend({
 
   empty : function()
   {
-    this.$('.uw-results').empty()
+    this.$results.empty()
   },
 
   parse : function ( response )
   {
     var data = response.attributes.results
       , result   = this.result
-      , $results = $('.uw-results')
+      , $results = this.$results
 
 
     this.empty()
@@ -134,6 +160,7 @@ UW.Search = Backbone.View.extend({
         .toggleClass('open')
       .find('.information')
         .toggleClass( 'hidden' )
+    return false;
   }
 
 
