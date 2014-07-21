@@ -14,6 +14,7 @@ module.exports = function(grunt) {
           "js/uw.core.js",
           "js/uw.init.js",
           "js/uw.search.js",
+          "js/uw.quicklinks.js",
           "js/uw.slideshow.js",
           "js/uw.player.js",
           "js/uw.vimeo.js",
