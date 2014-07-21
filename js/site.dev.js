@@ -457,18 +457,18 @@ UW.Search.DirectoryModel = Backbone.Model.extend({
 ;UW.QuickLinks = Backbone.View.extend({
     
     links: [
-        {text: 'Maps', url: 'uw.edu/maps', image: false},
-        {text: 'Directories', url: 'uw.edu/directory', image: false},
-        {text: 'Calendar', url: 'uw.edu/calendar', image: false},
-        {text: 'Libraries', url: 'uw.edu/libraries', image: false},
-        {text: 'MyUW', url: 'myuw.washington.edu', image: false},
-        {text: 'UW Today', url: 'uw.edu/news', image: false},
+        {text: 'Maps', url: 'http://uw.edu/maps', image: false},
+        {text: 'Directories', url: 'http://uw.edu/directory', image: false},
+        {text: 'Calendar', url: 'http://uw.edu/calendar', image: false},
+        {text: 'Libraries', url: 'http://uw.edu/libraries', image: false},
+        {text: 'MyUW', url: 'http://myuw.washington.edu', image: false},
+        {text: 'UW Today', url: 'http://uw.edu/news', image: false},
        ], 
 
     container: 'div#uw-container',
     
     events: {
-        'click li.quicklinks': 'animate'
+        'click li.uw-quicklinks': 'animate'
     },
 
     initialize: function () {
@@ -500,6 +500,7 @@ UW.Search.DirectoryModel = Backbone.Model.extend({
 
     animate: function () {
         console.log('animating');
+        this.$container.addClass('open');
         //if not open:
         //slide body/container over amount of width of nav#quicklinks_drawer and dim it
         //slide quicklinks over the proper location (fully revealed)
