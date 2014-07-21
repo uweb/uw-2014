@@ -2,7 +2,8 @@
 UW.elements = {
 
   // quicklinks : '.uw-quicklinks',
-  search     : '.uw-search',
+  search    : '.uw-search',
+  //quicklinks: '#uw-container',
   slideshow : '.uw-slideshow',
   social    : '.uw-social',
   vimeo     : '.uw-vimeo',
@@ -16,7 +17,8 @@ UW.elements = {
 UW.initialize = function( $ )
 {
   UW.search     = _.map( $( UW.elements.search ),    function( element ) { return new UW.Search( { el : element, model : new UW.Search.DirectoryModel() }) } )
-  // UW.quicklinks = _.map( $( UW.elements.quicklinks ),function( element ) { return new UW.QuickLinks( { el : element }) } )
+  //UW.quicklinks = _.map( $( UW.elements.quicklinks ),function( element ) { return new UW.QuickLinks( { el : element }) } )
+  UW.quicklinks = new UW.QuickLinks()
   UW.slideshows = _.map( $( UW.elements.slideshow ), function( element ) { return new UW.Slideshow( { el : element }) } )
   UW.social     = _.map( $( UW.elements.social ),    function( element ) { return new UW.Social({ el : element }) } )
   UW.vimeo      = _.map( $( UW.elements.vimeo ),     function( element ) { return new UW.Vimeo({ el : element }) } )
