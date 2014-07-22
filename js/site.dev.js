@@ -250,7 +250,6 @@ UW.initialize = function( $ )
 {
   UW.search     = _.map( $( UW.elements.search ),    function( element ) { return new UW.Search( { el : element, model : new UW.Search.DirectoryModel() }) } )
   //UW.quicklinks = _.map( $( UW.elements.quicklinks ),function( element ) { return new UW.QuickLinks( { el : element }) } )
-  UW.quicklinks = new UW.QuickLinks()
   UW.slideshows = _.map( $( UW.elements.slideshow ), function( element ) { return new UW.Slideshow( { el : element }) } )
   UW.social     = _.map( $( UW.elements.social ),    function( element ) { return new UW.Social({ el : element }) } )
   UW.vimeo      = _.map( $( UW.elements.vimeo ),     function( element ) { return new UW.Vimeo({ el : element }) } )
@@ -259,6 +258,7 @@ UW.initialize = function( $ )
   UW.players    = new UW.PlayerCollection()
   UW.radio      = _.map( $( UW.elements.radio ),     function( element ) { return new UW.Radio({ el : element }) } )
   UW.dropdowns  = _.map( $( UW.elements.dropdowns ),     function( element ) { return new UW.Dropdowns({ el : element }) } )
+  UW.quicklinks = new UW.QuickLinks()
 }
 
 jQuery(document).ready( UW.initialize )
@@ -467,13 +467,15 @@ UW.Search.DirectoryModel = Backbone.Model.extend({
 
     container: 'div#uw-container',
     
-    events: {
-        'click li.uw-quicklinks': 'animate'
-    },
+    //not working
+    //events: {
+    //    'click li.uw-quicklinks': 'animate'
+    //},
 
     initialize: function () {
         this.make_drawer();
         this.add_links();
+        this.bind_click();
     },
 
     make_drawer: function () {
@@ -484,23 +486,31 @@ UW.Search.DirectoryModel = Backbone.Model.extend({
         }
         this.$container.append("<nav id='quicklinks'><ul></ul></nav>");
         this.$drawer = $('nav#quicklinks');
-        this.$list = this.$drawer.find('ul');
-        for (var i = 0; i < this.links.length; i++){
-            this.$list.append('<li><a href="' + this.links[i].url + '">' + this.links[i].text + '</a></li>');
-        }
         //create element (will be nav#quicklinks_drawer)
         //add element to right place.  Will be on the right, 50% off canvas, overflow of body hidden.  Container covering the other half
     },
 
     add_links: function () {
-        console.log('adding links');
+        this.$list = this.$drawer.find('ul');
+        for (var i = 0; i < this.links.length; i++){
+            this.$list.append('<li><a href="' + this.links[i].url + '">' + this.links[i].text + '</a></li>');
+        }
         //add default links from javascript
         //unless we can get the new menu from ajax
     },
 
+    bind_click: function () {
+        var quicklinks_view = this;
+        $('li.uw-quicklinks a').click(function(e) {
+            e.preventDefault();
+            quicklinks_view.animate();
+        });
+    },  
+
     animate: function () {
         console.log('animating');
-        this.$container.addClass('open');
+        this.$container.toggleClass('open');
+        this.$drawer.toggleClass('open');
         //if not open:
         //slide body/container over amount of width of nav#quicklinks_drawer and dim it
         //slide quicklinks over the proper location (fully revealed)
