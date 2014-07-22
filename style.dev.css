@@ -7861,8 +7861,11 @@ ul.uw-select li.inactive a {
   color: #ffd800;
 }
 .uw-search-bar-container .uw-search-wrapper {
+  position: relative;
   width: 890px;
   margin-top: 30px;
+  top: -20px;
+  transition: top 1s;
 }
 .uw-search-bar-container form {
   float: left;
@@ -7969,6 +7972,9 @@ ul.uw-select li.inactive a {
 .uw-search-bar-container.open {
   margin-top: 0px;
   padding: 40px 0 50px;
+}
+.uw-search-bar-container.open .uw-search-wrapper {
+  top: 0px;
 }
 .uw-sidebar {
   margin-top: -80px;

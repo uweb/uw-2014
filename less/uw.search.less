@@ -13,8 +13,12 @@
 
   .uw-search-wrapper
   {
+    position:relative;
     width:890px;
     margin-top: 30px;
+    top:-20px;
+    // transition: top 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: top 1s;
   }
 
   form
@@ -146,6 +150,11 @@
   {
     margin-top:0px;
     padding: 40px 0 50px;
+
+    .uw-search-wrapper
+    {
+      top:0px;
+    }
   }
 
 
