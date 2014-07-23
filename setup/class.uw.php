@@ -38,6 +38,7 @@ class UW
         require_once('class.users.php');
         require_once('class.dropdowns_walker.php');  // no initialization needed because it extends a WP class
         require_once( 'class.uw-directory.php' );
+        require_once( 'class.uw-quicklinks.php' );
     }
 
     private function initialize()
@@ -52,5 +53,6 @@ class UW
         $this->Users      = new UW_Users;
         $this->Dropdowns  = new Dropdowns;
         $this->Directory  = new UW_Directory;
+        $this->Quicklinks = new UW_QuickLinks;
     }
 }
