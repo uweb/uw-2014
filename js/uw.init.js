@@ -15,6 +15,7 @@ UW.elements = {
 // Initialize all components when the DOM is ready
 UW.initialize = function( $ )
 {
+  UW.$body       = $('body');
   UW.accordion  = _.map( $( UW.elements.accordion ), function( element ) { return new UW.Accordion( { el : element }) } )
   UW.dropdowns  = _.map( $( UW.elements.dropdowns ),     function( element ) { return new UW.Dropdowns({ el : element }) } )
   UW.select     = _.map( $( UW.elements.select ),    function( element ) { return new UW.Select({ el : element }) } )
