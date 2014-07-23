@@ -12,6 +12,14 @@ UW.elements = {
   vimeo     : '.uw-vimeo'
 
 }
+
+// List the responsive and adaptive breakpoints for targeted browsers and devices
+UW.restive = {
+  breakpoints   : [ '768', '992', '10000' ],
+  classes       : [ 'uw-small', 'uw-medium', 'uw-large' ],
+  turbo_classes : 'is_portrait=portrait,is_landscape=landscape'
+}
+
 // Initialize all components when the DOM is ready
 UW.initialize = function( $ )
 {
@@ -26,6 +34,9 @@ UW.initialize = function( $ )
   UW.slideshows = _.map( $( UW.elements.slideshow ), function( element ) { return new UW.Slideshow( { el : element }) } )
   UW.social     = _.map( $( UW.elements.social ),    function( element ) { return new UW.Social({ el : element }) } )
   UW.vimeo      = _.map( $( UW.elements.vimeo ),     function( element ) { return new UW.Vimeo({ el : element }) } )
+
+  UW.$body.restive( UW.restive )
+
 }
 
 jQuery(document).ready( UW.initialize )
