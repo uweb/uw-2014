@@ -8,12 +8,14 @@ module.exports = function(grunt) {
       },
       dist: {
         libraries: [
-          "js/libraries/jquery.easing.js"
+          "js/libraries/jquery.easing.js",
+          "js/libraries/restive.js"
         ],
         theme : [
           "js/uw.core.js",
           "js/uw.init.js",
           "js/uw.search.js",
+          "js/uw.quicklinks.js",
           "js/uw.slideshow.js",
           "js/uw.player.js",
           "js/uw.vimeo.js",
