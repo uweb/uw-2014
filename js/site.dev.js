@@ -482,7 +482,8 @@ UW.Search.DirectoryModel = Backbone.Model.extend({
     make_drawer: function () {
         this.$container = $(this.container);
         if (this.$container.length === 0) {
-            $('body').wrapInner("<div id='uw-container'></div>");
+            var $adminbar = $('#wpadminbar');
+            UW.$body.children().not('#wpadminbar').not('script').wrapAll('<div id="uw-container"></div>');
             this.$container = $(this.container);
         }
         this.$container.prepend("<nav id='quicklinks'><ul></ul></nav>");
