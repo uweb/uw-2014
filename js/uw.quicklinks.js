@@ -1,5 +1,5 @@
 UW.QuickLinks = Backbone.View.extend({
-    
+
     links: [
         {text: 'Maps', url: 'http://uw.edu/maps', image: false},
         {text: 'Directories', url: 'http://uw.edu/directory', image: false},
@@ -7,19 +7,20 @@ UW.QuickLinks = Backbone.View.extend({
         {text: 'Libraries', url: 'http://uw.edu/libraries', image: false},
         {text: 'MyUW', url: 'http://myuw.washington.edu', image: false},
         {text: 'UW Today', url: 'http://uw.edu/news', image: false},
-       ], 
+       ],
 
     container: 'div#uw-container',
-    
+
     //not working
-    //events: {
-    //    'click li.uw-quicklinks': 'animate'
-    //},
+    events: {
+      //  'click li.uw-quicklinks': 'animate'
+       'click': 'animate'
+    },
 
     initialize: function () {
         this.make_drawer();
         this.add_links();
-        this.bind_click();
+        // this.bind_click();
     },
 
     make_drawer: function () {
@@ -43,16 +44,16 @@ UW.QuickLinks = Backbone.View.extend({
         //unless we can get the new menu from ajax
     },
 
-    bind_click: function () {
-        var quicklinks_view = this;
-        $('li.uw-quicklinks a').click(function(e) {
-            e.preventDefault();
-            quicklinks_view.animate();
-        });
-    },  
+    // bind_click: function () {
+    //     var quicklinks_view = this;
+    //     $('li.uw-quicklinks a').click(function(e) {
+    //         e.preventDefault();
+    //         quicklinks_view.animate();
+    //     });
+    // },
 
     animate: function () {
-        console.log('animating');
+        // console.log('animating');
         this.$container.toggleClass('open');
         this.$drawer.toggleClass('open');
         //if not open:
