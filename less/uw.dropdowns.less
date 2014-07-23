@@ -7,7 +7,7 @@
 	z-index: -1;
 }
 
-// Resets 
+// Resets
 
 #dawgdrops {
 	.box-shadow(0 1px 3px rgba(34, 25, 25, 0.4));
@@ -17,8 +17,12 @@
 		display: inline-block;
 	}
 	ul {
-		margin: 0;	
+		margin: 0;
 	}
+}
+
+.dawgdrops-inner {
+	position: relative;
 }
 
 .dawgdrops-nav {
@@ -40,7 +44,7 @@
 			padding-right: 30px;
 			&:before {
 				content: "";
-				position: absolute;			
+				position: absolute;
 				height: 10px;
 				width: 10px;
 				right: 8px;
@@ -59,9 +63,66 @@
 			top: 25px;
 			background: url('assets/svg/slash.svg') no-repeat;
 		}
+		&:focus {
+			outline: thin solid red;
+		}
+	}
+	&:hover .dawgdrops-menu {
+		display: block;
 	}
 }
 
 .dawgdrops-menu {
-	display: none;
+	top: 66px;
+	left: 0;
+	position: absolute;
+	display:none;
+	// visibility: hidden;
+	border: 0;
+	border-top: 4px solid @purple;
+	padding: 0;
+	margin: -1px 0 0;
+	background: #fff;
+	overflow: hidden;
+	z-index:1;
+	// -webkit-transition: opacity;
+	// -moz-transition: opacity;
+	// -o-transition: opacity;
+	// transition: opacity;
+	// -webkit-transition-duration: .3s;
+	// -moz-transition-duration: .3s;
+	// -o-transition-duration: .3s;
+	// transition-duration: .3s;
+	// background-color: #fff;
+	// background: rgba(255,255,255,.98);
+	// opacity: 0;
+	// -webkit-box-shadow: 1px 1px 5px gray;
+	// -moz-box-shadow: 1px 1px 5px gray;
+	// box-shadow: 1px 1px 5px gray;
+
+	li {
+		float:left;
+		clear:left;
+
+		a {
+			color: gray;
+			font-size: 17px;
+			border-bottom: thin solid #eee;
+			margin: 20px 50px 0px 30px;
+			text-align: left;
+			padding: 0px;
+			&:after {
+					background:none;
+			}
+
+		}
+
+		&:first-child {
+			margin-top: 5px;
+		}
+		&:last-child {
+			margin-bottom: 30px;
+		}
+	}
+
 }

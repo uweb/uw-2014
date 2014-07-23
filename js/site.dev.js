@@ -240,7 +240,8 @@ UW.elements = {
   vimeo     : '.uw-vimeo',
   select    : '.uw-select',
   accordion : '.uw-accordion',
-  radio     : ':radio'
+  radio     : ':radio',
+  dropdowns : '#dawgdrops'
 
 }
 // Initialize all components when the DOM is ready
@@ -255,6 +256,7 @@ UW.initialize = function( $ )
   UW.accordion  = _.map( $( UW.elements.accordion ), function( element ) { return new UW.Accordion( { el : element }) } )
   UW.players    = new UW.PlayerCollection()
   UW.radio      = _.map( $( UW.elements.radio ),     function( element ) { return new UW.Radio({ el : element }) } )
+  UW.dropdowns  = _.map( $( UW.elements.dropdowns ),     function( element ) { return new UW.Dropdowns({ el : element }) } )
 }
 
 jQuery(document).ready( UW.initialize )
@@ -267,33 +269,38 @@ jQuery(document).ready( UW.initialize )
 // This function creates a UW Search
 // For usage please refer to the [UW Web Components Search](http://uw.edu/brand/web/#search)
 
-// todo: separate search into different views
 UW.Search = Backbone.View.extend({
 
   value : '',
   body : 'body',
 
-  searchbar : '<div class="uw-search-bar-container open">'+
+  searchFeatures : {
+    uw        : 'uw',
+    site      : 'site',
+    directory : 'directory'
+  },
+
+  searchbar : '<div class="uw-search-bar-container">'+
                '<div class="container">'+
                   '<div class="center-block uw-search-wrapper">'+
-                    '<form class="uw-search" action="/search/">'+
-                      '<input type="search" name="q" value="" autocomplete="off" />'+
+                    '<form class="uw-search" action="<%= Backbone.history.location.pathname %>">'+
+                      '<input id="uw-search-bar" type="search" name="s" value="" autocomplete="off" />'+
                     '</form>'+
                     '<a href="#" value="" class="search" />'+
 
                     '<div class="labels">'+
                       '<label class="radio">'+
-                        '<input type="radio" name="group1" value="1" data-toggle="radio">'+
+                        '<input type="radio" name="search" value="uw" data-toggle="radio">'+
                         'All the UW'+
                       '</label>'+
 
                     '<label class="radio">'+
-                      '<input type="radio" name="group1" value="2" data-toggle="radio">'+
+                      '<input type="radio" name="search" value="site" data-toggle="radio">'+
                       'Current Site'+
                     '</label>'+
 
                     '<label class="radio">'+
-                      '<input type="radio" name="group1" value="2" data-toggle="radio" checked>'+
+                      '<input type="radio" name="search" value="directory" data-toggle="radio" checked>'+
                       'People Directory'+
                     '</label>'+
 
@@ -326,15 +333,25 @@ UW.Search = Backbone.View.extend({
   {
     'keydown input'             : 'searchDirectory',
     'click .result .more'       : 'showPersonInformation',
-    'click .result .commonname' : 'showPersonInformation'
+    'click .result .commonname' : 'showPersonInformation',
+    'click input:radio'         : 'toggleSearchFeature',
+    'submit form'              : 'submitSearch'
   },
 
   initialize :function ( options )
   {
     _.bindAll( this, 'toggleSearchBar', 'searchDirectory', 'parse' )
+
     this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
+
     this.$searchbar = $( _.template( this.searchbar , this.settings ) )
+
     this.render()
+
+    this.$results  = this.$( '.uw-results' )
+
+    this.searchFeature = this.$el.find(':radio:checked').val()
+
     this.model.on( 'change:results', this.parse, this )
   },
 
@@ -352,7 +369,19 @@ UW.Search = Backbone.View.extend({
   {
     this.empty()
     this.$searchbar.toggleClass('open')
+      .find('#uw-search-bar').focus()
     return false;
+  },
+
+  toggleSearchFeature : function( e )
+  {
+    this.empty()
+    this.searchFeature = e.currentTarget.value
+  },
+
+  submitSearch : function()
+  {
+    return this.searchFeature !== this.searchFeatures.directory
   },
 
   searchDirectory : _.debounce( function( e ) {
@@ -369,14 +398,14 @@ UW.Search = Backbone.View.extend({
 
   empty : function()
   {
-    this.$('.uw-results').empty()
+    this.$results.empty()
   },
 
   parse : function ( response )
   {
     var data = response.attributes.results
       , result   = this.result
-      , $results = $('.uw-results')
+      , $results = this.$results
 
 
     this.empty()
@@ -398,6 +427,7 @@ UW.Search = Backbone.View.extend({
         .toggleClass('open')
       .find('.information')
         .toggleClass( 'hidden' )
+    return false;
   }
 
 
@@ -1062,6 +1092,152 @@ UW.Radio = Backbone.View.extend({
   //      $el.trigger('change');
   //    }
   // },
+
+})
+;// ### UW Dropdowns
+
+// This function creates the UW Dropdowns
+// For usage please refer to the [UW Web Components Dropdowns](http://uw.edu/brand/web/#dropdowns)
+
+
+
+UW.Dropdowns = Backbone.View.extend({
+
+  index : {
+    topmenu : 0,
+    submenu : 0
+  },
+
+  elements : {
+    toplevel : '.dawgdrops-item'
+  },
+
+  keys : {
+    enter    :   13,
+    esc      :   27,
+    tab      :   9,
+    left     :   37,
+    up       :   38,
+    right    :   39,
+    down     :   40,
+    spacebar :   32
+  },
+
+
+  events : {
+    'keydown .dawgdrops-menu a' : 'moveFocusInSubMenu',
+    'keydown .dawgdrops-item > a' : 'toggleSubMenu'
+  },
+
+
+  initialize : function(options)
+  {
+    _.bindAll( this, 'toggleSubMenu' )
+    this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
+    this.$topLevelNav = this.$el.find( this.elements.toplevel )
+    this.render()
+  },
+
+  render : function()
+  {
+    _.map( this.$topLevelNav, this.positionSubmenu )
+  },
+
+  positionSubmenu : function( el )
+  {
+    var $el = $(el)
+    $el.find('ul').css({ left : $el.position().left })
+  },
+
+  toggleSubMenu : function( e )
+  {
+    switch ( e.keyCode )
+    {
+
+      case this.keys.enter :
+      case this.keys.down  :
+
+        this.currentSubMenu = $(e.currentTarget).siblings('ul')
+        this.currentSubMenuAnchors = this.currentSubMenu.find('a')
+
+        this.currentSubMenu
+            .attr( 'aria-expanded', 'true' )
+            .show()
+          .find('a')
+            .eq(0)
+            .focus()
+
+        return false
+
+      case this.keys.left :
+        $(e.currentTarget).parent().prev().children('a').first().focus()
+        return false
+
+
+      case this.keys.right :
+        $(e.currentTarget).parent().next().children('a').first().focus()
+        return false
+
+      case this.keys.spacebar:
+        window.location.href = $(e.currentTarget).attr('href')
+        return false;
+
+    }
+
+  },
+
+  moveFocusInSubMenu : function(e)
+  {
+    switch ( e.keyCode ) {
+
+      case this.keys.tab:
+        if ( this.currentSubMenu )
+        {
+          this.currentSubMenu.hide()
+          this.currentSubMenu = null
+          this.index.submenu = 0
+        }
+        break
+
+      case this.keys.down:
+        this.index.submenu = this.index.submenu === this.currentSubMenuAnchors.length-1 ? 0 : this.index.submenu + 1
+        this.currentSubMenuAnchors.eq( this.index.submenu ).focus()
+        return false
+
+      case this.keys.up :
+        this.index.submenu = this.index.submenu === 0 ? this.currentSubMenuAnchors.length-1 : this.index.submenu - 1
+        this.currentSubMenuAnchors.eq( this.index.submenu ).focus()
+        return false
+
+      case this.keys.left:
+        this.currentSubMenu.attr( 'aria-expanded', 'false' )
+          .hide().parent().prev().children('a').first().focus()
+        return false;
+
+      case this.keys.right:
+        this.currentSubMenu.attr( 'aria-expanded', 'false' )
+          .hide().parent().next().children('a').first().focus()
+        return false;
+
+      case this.keys.spacebar:
+      case this.keys.enter:
+        window.location.href = $(e.currentTarget).attr('href')
+        return false;
+
+      default:
+        var chr = String.fromCharCode(e.which)
+        , exists = false;
+
+        this.currentSubMenuAnchors.filter(function() {
+          exists = this.innerHTML.charAt(0) === chr
+          return exists;
+        }).first().focus();
+
+        return !exists;
+
+
+    }
+  }
 
 })
 ;// ### UW Accordion
