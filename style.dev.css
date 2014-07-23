@@ -7195,6 +7195,9 @@ address {
   margin-bottom: 30px;
   line-height: 1.72222;
 }
+body {
+  overflow: hidden;
+}
 #uw-container {
   width: 100%;
   height: 100%;
