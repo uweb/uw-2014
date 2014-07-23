@@ -28,7 +28,7 @@ UW.QuickLinks = Backbone.View.extend({
             $('body').wrapInner("<div id='uw-container'></div>");
             this.$container = $(this.container);
         }
-        this.$container.append("<nav id='quicklinks'><ul></ul></nav>");
+        this.$container.prepend("<nav id='quicklinks'><ul></ul></nav>");
         this.$drawer = $('nav#quicklinks');
         //create element (will be nav#quicklinks_drawer)
         //add element to right place.  Will be on the right, 50% off canvas, overflow of body hidden.  Container covering the other half
