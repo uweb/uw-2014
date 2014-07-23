@@ -1,15 +1,17 @@
 UW.QuickLinks = Backbone.View.extend({
 
     links: [
-        {text: 'Maps', url: 'http://uw.edu/maps', image: false},
-        {text: 'Directories', url: 'http://uw.edu/directory', image: false},
-        {text: 'Calendar', url: 'http://uw.edu/calendar', image: false},
-        {text: 'Libraries', url: 'http://uw.edu/libraries', image: false},
-        {text: 'MyUW', url: 'http://myuw.washington.edu', image: false},
-        {text: 'UW Today', url: 'http://uw.edu/news', image: false},
+        {text: 'Maps', url: 'http://uw.edu/maps', icon: 'maps'},
+        {text: 'Directories', url: 'http://uw.edu/directory', icon: 'directories'},
+        {text: 'Calendar', url: 'http://uw.edu/calendar', icon: 'calendar'},
+        {text: 'Libraries', url: 'http://uw.edu/libraries', icon: 'libraries'},
+        {text: 'MyUW', url: 'http://myuw.washington.edu', icon: 'myuw'},
+        {text: 'UW Today', url: 'http://uw.edu/news', icon: 'uwtoday'},
        ],
 
     container: 'div#uw-container',
+
+    menu_item : '<li><span class="icon-<%= icon %>"></span><a href="<%= url %>"><%= text %></a></li>',
 
     //not working
     events: {
@@ -18,6 +20,7 @@ UW.QuickLinks = Backbone.View.extend({
     },
 
     initialize: function () {
+        _.bindAll( this, 'append_menu_item' )
         this.make_drawer();
         this.add_links();
         // this.bind_click();
@@ -38,11 +41,17 @@ UW.QuickLinks = Backbone.View.extend({
 
     add_links: function () {
         this.$list = this.$drawer.find('ul');
-        for (var i = 0; i < this.links.length; i++){
-            this.$list.append('<li><a href="' + this.links[i].url + '">' + this.links[i].text + '</a></li>');
-        }
+        _.each( this.links, this.append_menu_item )
+        // for (var i = 0; i < this.links.length; i++){
+        //     this.$list.append('<li><a href="' + this.links[i].url + '">' + this.links[i].text + '</a></li>');
+        // }
         //add default links from javascript
         //unless we can get the new menu from ajax
+    },
+
+    append_menu_item : function( item )
+    {
+        this.$list.append( _.template( this.menu_item, item ) )
     },
 
     // bind_click: function () {
