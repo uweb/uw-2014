@@ -248,6 +248,7 @@ UW.elements = {
 // Initialize all components when the DOM is ready
 UW.initialize = function( $ )
 {
+  UW.quicklinks = new UW.QuickLinks()
   UW.search     = _.map( $( UW.elements.search ),    function( element ) { return new UW.Search( { el : element, model : new UW.Search.DirectoryModel() }) } )
   //UW.quicklinks = _.map( $( UW.elements.quicklinks ),function( element ) { return new UW.QuickLinks( { el : element }) } )
   UW.slideshows = _.map( $( UW.elements.slideshow ), function( element ) { return new UW.Slideshow( { el : element }) } )
@@ -258,7 +259,6 @@ UW.initialize = function( $ )
   UW.players    = new UW.PlayerCollection()
   UW.radio      = _.map( $( UW.elements.radio ),     function( element ) { return new UW.Radio({ el : element }) } )
   UW.dropdowns  = _.map( $( UW.elements.dropdowns ),     function( element ) { return new UW.Dropdowns({ el : element }) } )
-  UW.quicklinks = new UW.QuickLinks()
 }
 
 jQuery(document).ready( UW.initialize )
@@ -485,7 +485,7 @@ UW.Search.DirectoryModel = Backbone.Model.extend({
             $('body').wrapInner("<div id='uw-container'></div>");
             this.$container = $(this.container);
         }
-        this.$container.append("<nav id='quicklinks'><ul></ul></nav>");
+        this.$container.prepend("<nav id='quicklinks'><ul></ul></nav>");
         this.$drawer = $('nav#quicklinks');
         //create element (will be nav#quicklinks_drawer)
         //add element to right place.  Will be on the right, 50% off canvas, overflow of body hidden.  Container covering the other half
