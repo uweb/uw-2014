@@ -1,28 +1,119 @@
-body {
-    overflow: hidden;
-}
-#uw-container {
+#uw-container
+{
+    position:relative;
     width: 100%;
     height: 100%;
-    transition: all .5s;
-    &.open {
-        transform: matrix(1, 0, 0, 1, -300, 0);
-    }
-    nav#quicklinks {
-        background-color: #333333;
+    transition: margin-left .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    // transition: transform .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    // z-index:10;
+    margin-left:0;
+    background-color: white;
+
+    #quicklinks
+    {
         position: absolute;
-        z-index: -2;
-        right: 0px;
+        background-color: #4d4d4d;
+        z-index: -1;
         top: 0px;
+        right: -150px;
         height: 100%;
         width: 300px;
-        transform: matrix(1, 0, 0, 1, 150, 0);
-        transition: all .5s;
-        &.open{
-            transform: matrix(1, 0, 0, 1, 300, 0);
-        }
+        transition: right .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        // transition: transform .5s;
+        // transform: matrix(1, 0, 0, 1, 150, 0);
+
+background: #4d4d4d;
+background: rgba(46,46,46,1);
+background: -moz-linear-gradient(left, rgba(46,46,46,1) 0%, rgba(77,77,77,1) 4%, rgba(77,77,77,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(46,46,46,1)), color-stop(4%, rgba(77,77,77,1)), color-stop(100%, rgba(77,77,77,1)));
+background: -webkit-linear-gradient(left, rgba(46,46,46,1) 0%, rgba(77,77,77,1) 4%, rgba(77,77,77,1) 100%);
+background: -o-linear-gradient(left, rgba(46,46,46,1) 0%, rgba(77,77,77,1) 4%, rgba(77,77,77,1) 100%);
+background: -ms-linear-gradient(left, rgba(46,46,46,1) 0%, rgba(77,77,77,1) 4%, rgba(77,77,77,1) 100%);
+background: linear-gradient(to right, rgba(46,46,46,1) 0%, rgba(77,77,77,1) 4%, rgba(77,77,77,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e2e2e', endColorstr='#4d4d4d', GradientType=1 );
+
         ul {
-            margin-top: 50px;
+          list-style: none;
+          margin-top: 10px;
+
+          li
+          {
+            display: block;
+            float: left;
+            width: 100%;
+            padding: 14px 0 0 0;
+
+            a {
+              font-family: @font-family-headline;
+              font-size: @font-size-h6;
+              margin-left: 15px;
+              &:hover {
+                color: @brightgold;
+              }
+            }
+
+            span {
+              display: block;
+              float: left;
+              width:30px;
+              height:30px;
+              background: url(assets/svg/uw-sprite.svg) no-repeat 0 0;
+              &.icon-maps
+              {
+                background-position: 6px -303px;
+              }
+
+              &.icon-directories
+              {
+                background-position: -84px -303px;
+              }
+
+              &.icon-calendar
+              {
+                background-position: -39px -303px;
+              }
+
+              &.icon-libraries
+              {
+                background-position: -129px -303px;
+              }
+
+              &.icon-myuw
+              {
+                background-position: -174px -303px;
+              }
+
+              &.icon-uwtoday
+              {
+                background-position: -219px -303px;
+              }
+            }
+
+
+          }
+
         }
+
+        a
+        {
+          color: white;
+          font-size: 23px;
+        }
+
+        &.open
+        {
+          right:-300px;
+          // transform: matrix(1, 0, 0, 1, 300, 0);
+          // transform: translate3d( 0, 0, 0);
+        }
+
     }
+
+
+    &.open
+    {
+      margin-left: -300px;
+      // transform: matrix(1, 0, 0, 1, -300, 0);
+    }
+
 }

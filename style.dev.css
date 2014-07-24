@@ -1091,7 +1091,7 @@ h5,
 }
 h6,
 .h6 {
-  font-size: 22px;
+  font-size: 20px;
 }
 p {
   margin: 0 0 15px;
@@ -7012,7 +7012,7 @@ h5,
 }
 h6,
 .h6 {
-  font-size: 22px;
+  font-size: 20px;
 }
 p {
   font-size: 18px;
@@ -7195,33 +7195,85 @@ address {
   margin-bottom: 30px;
   line-height: 1.72222;
 }
-body {
-  overflow: hidden;
-}
 #uw-container {
+  position: relative;
   width: 100%;
   height: 100%;
-  transition: all .5s;
+  transition: margin-left 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  margin-left: 0;
+  background-color: white;
 }
-#uw-container.open {
-  transform: matrix(1, 0, 0, 1, -300, 0);
-}
-#uw-container nav#quicklinks {
-  background-color: #333333;
+#uw-container #quicklinks {
   position: absolute;
-  z-index: -2;
-  right: 0px;
+  background-color: #4d4d4d;
+  z-index: -1;
   top: 0px;
+  right: -150px;
   height: 100%;
   width: 300px;
-  transform: matrix(1, 0, 0, 1, 150, 0);
-  transition: all .5s;
+  transition: right 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background: #4d4d4d;
+  background: #2e2e2e;
+  background: -moz-linear-gradient(left, #2e2e2e 0%, #4d4d4d 4%, #4d4d4d 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, #2e2e2e), color-stop(4%, #4d4d4d), color-stop(100%, #4d4d4d));
+  background: -webkit-linear-gradient(left, #2e2e2e 0%, #4d4d4d 4%, #4d4d4d 100%);
+  background: -o-linear-gradient(left, #2e2e2e 0%, #4d4d4d 4%, #4d4d4d 100%);
+  background: -ms-linear-gradient(left, #2e2e2e 0%, #4d4d4d 4%, #4d4d4d 100%);
+  background: linear-gradient(to right, #2e2e2e 0%, #4d4d4d 4%, #4d4d4d 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2e2e2e', endColorstr='#4d4d4d', GradientType=1);
 }
-#uw-container nav#quicklinks.open {
-  transform: matrix(1, 0, 0, 1, 300, 0);
+#uw-container #quicklinks ul {
+  list-style: none;
+  margin-top: 10px;
 }
-#uw-container nav#quicklinks ul {
-  margin-top: 50px;
+#uw-container #quicklinks ul li {
+  display: block;
+  float: left;
+  width: 100%;
+  padding: 14px 0 0 0;
+}
+#uw-container #quicklinks ul li a {
+  font-family: "Metronic", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  margin-left: 15px;
+}
+#uw-container #quicklinks ul li a:hover {
+  color: #ffd800;
+}
+#uw-container #quicklinks ul li span {
+  display: block;
+  float: left;
+  width: 30px;
+  height: 30px;
+  background: url(assets/svg/uw-sprite.svg) no-repeat 0 0;
+}
+#uw-container #quicklinks ul li span.icon-maps {
+  background-position: 6px -303px;
+}
+#uw-container #quicklinks ul li span.icon-directories {
+  background-position: -84px -303px;
+}
+#uw-container #quicklinks ul li span.icon-calendar {
+  background-position: -39px -303px;
+}
+#uw-container #quicklinks ul li span.icon-libraries {
+  background-position: -129px -303px;
+}
+#uw-container #quicklinks ul li span.icon-myuw {
+  background-position: -174px -303px;
+}
+#uw-container #quicklinks ul li span.icon-uwtoday {
+  background-position: -219px -303px;
+}
+#uw-container #quicklinks a {
+  color: white;
+  font-size: 23px;
+}
+#uw-container #quicklinks.open {
+  right: -300px;
+}
+#uw-container.open {
+  margin-left: -300px;
 }
 div.uw-slideshow {
   position: relative;
@@ -7562,6 +7614,7 @@ ul.uw-select li.inactive a {
   position: absolute;
   top: 0;
   left: -100px;
+  z-index: 1;
 }
 .uw-thinstrip .uw-wordmark {
   display: block;
@@ -7618,7 +7671,7 @@ ul.uw-select li.inactive a {
   padding-right: 78px;
 }
 .uw-thinstrip ul.uw-thin-links li.uw-quicklinks a {
-  background: url(assets/svg/plug.svg) no-repeat 125px center transparent;
+  font-family: "Metronic", Helvetica, Arial, sans-serif !important;
   padding-left: 38px;
   margin-left: -30px;
   margin-right: 0;
@@ -7646,6 +7699,22 @@ ul.uw-select li.inactive a {
   top: 0;
   left: -37px;
   border-right: 6px solid rgba(116, 116, 116, 0.5);
+}
+.uw-thinstrip ul.uw-thin-links li.uw-quicklinks a:after {
+  position: absolute;
+  content: "";
+  background: url(assets/svg/uw-sprite.svg) no-repeat -283px 1px;
+  height: 25px;
+  width: 27px;
+  display: block;
+  top: 8px;
+  right: 14px;
+}
+#uw-container.open .uw-quicklinks a {
+  color: #ffd800;
+}
+#uw-container.open .uw-quicklinks a:after {
+  background-position: -283px -24px;
 }
 .assistive-text {
   position: absolute;
@@ -7755,7 +7824,6 @@ ul.uw-select li.inactive a {
   -o-background-size: cover;
   background-size: cover;
   position: relative;
-  z-index: -1;
 }
 .uw-hero-image:after {
   position: absolute;
@@ -7822,10 +7890,12 @@ ul.uw-select li.inactive a {
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
+.uw-body {
+  position: relative;
+}
 .uw-body.container {
   background-color: white;
   margin-top: -50px;
-  height: 800px;
 }
 .uw-body {
   padding-left: 40px;
