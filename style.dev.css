@@ -7199,7 +7199,7 @@ address {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
   margin-left: 0;
   background-color: white;
 }
@@ -7212,8 +7212,6 @@ address {
   height: 100%;
   width: 300px;
   transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-  transform: matrix(1, 0, 0, 1, 150, 0);
-  -webkit-transform: matrix(1, 0, 0, 1, 150, 0);
   background: #4d4d4d;
   background: #2e2e2e;
   background: -moz-linear-gradient(left, #2e2e2e 0%, #4d4d4d 4%, #4d4d4d 100%);
@@ -7223,6 +7221,12 @@ address {
   background: -ms-linear-gradient(left, #2e2e2e 0%, #4d4d4d 4%, #4d4d4d 100%);
   background: linear-gradient(to right, #2e2e2e 0%, #4d4d4d 4%, #4d4d4d 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2e2e2e', endColorstr='#4d4d4d', GradientType=1);
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-transform: matrix(1, 0, 0, 1, 150, 0);
+  -moz-transform: matrix(1, 0, 0, 1, 150, 0);
+  -ms-transform: matrix(1, 0, 0, 1, 150, 0);
+  -o-transform: matrix(1, 0, 0, 1, 150, 0);
+  transform: matrix(1, 0, 0, 1, 150, 0);
 }
 #uw-container #quicklinks ul {
   list-style: none;
@@ -7273,8 +7277,16 @@ address {
 }
 #uw-container #quicklinks.open {
   -webkit-transform: matrix(1, 0, 0, 1, 300, 0);
+  -moz-transform: matrix(1, 0, 0, 1, 300, 0);
+  -ms-transform: matrix(1, 0, 0, 1, 300, 0);
+  -o-transform: matrix(1, 0, 0, 1, 300, 0);
+  transform: matrix(1, 0, 0, 1, 300, 0);
 }
 #uw-container.open {
+  -webkit-transform: matrix(1, 0, 0, 1, -300, 0);
+  -moz-transform: matrix(1, 0, 0, 1, -300, 0);
+  -ms-transform: matrix(1, 0, 0, 1, -300, 0);
+  -o-transform: matrix(1, 0, 0, 1, -300, 0);
   transform: matrix(1, 0, 0, 1, -300, 0);
 }
 #uw-container div#uw-container-inner {
