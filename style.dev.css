@@ -7881,6 +7881,7 @@ ul.uw-select li.inactive a {
   padding: 2px 0 1px 15px;
   border: none;
   font-size: 30px;
+  outline: none;
 }
 .uw-search-bar-container div.labels {
   float: left;
@@ -7943,6 +7944,9 @@ ul.uw-select li.inactive a {
 .uw-search-bar-container .uw-results .result.open h4 {
   color: #ffd800;
 }
+.uw-search-bar-container .uw-results .result.open a.more {
+  background-position: -283px -24px;
+}
 .uw-search-bar-container .uw-results .result:last-child {
   border: none;
   margin-bottom: 20px;
@@ -7957,20 +7961,13 @@ ul.uw-select li.inactive a {
   cursor: pointer;
 }
 .uw-search-bar-container .uw-results a.more {
-  float: right;
-  display: block;
   text-indent: -99999px;
-  background: url(assets/svg/plug.svg) no-repeat center center;
-  position: relative;
-  -webkit-background-size: 22px;
-  -moz-background-size: 22px;
-  -o-background-size: 22px;
-  background-size: 22px;
-  padding-right: 78px;
-  padding-top: 15px;
-  right: 0px;
-  top: 1px;
+  background: url(assets/svg/uw-sprite.svg) no-repeat -283px 0;
+  height: 25px;
+  right: 25px;
+  top: 14px;
   position: absolute;
+  width: 30px;
 }
 .uw-search-bar-container .uw-results .information {
   float: left;
