@@ -3,8 +3,8 @@
     position:relative;
     width: 100%;
     height: 100%;
-    transition: margin-left .5s cubic-bezier(0.165, 0.84, 0.44, 1);
-    // transition: transform .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    //transition: margin-left .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: transform .5s cubic-bezier(0.165, 0.84, 0.44, 1);
     // z-index:10;
     margin-left:0;
     background-color: white;
@@ -13,14 +13,19 @@
     {
         position: absolute;
         background-color: #4d4d4d;
+<<<<<<< HEAD
         z-index: -1;
+=======
+        //z-index: -2;
+>>>>>>> e93873b7e872035417bc2b12442715bb2b2cc06e
         top: 0px;
-        right: -150px;
+        //right: -150px;
+        right: 0px;
         height: 100%;
         width: 300px;
-        transition: right .5s cubic-bezier(0.165, 0.84, 0.44, 1);
-        // transition: transform .5s;
-        // transform: matrix(1, 0, 0, 1, 150, 0);
+        //transition: right .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition: transform .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transform: matrix(1, 0, 0, 1, 150, 0);
 
 background: #4d4d4d;
 background: rgba(46,46,46,1);
@@ -102,8 +107,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e2e2e', end
 
         &.open
         {
-          right:-300px;
-          // transform: matrix(1, 0, 0, 1, 300, 0);
+          //right:-300px;
+          transform: matrix(1, 0, 0, 1, 300, 0);
           // transform: translate3d( 0, 0, 0);
         }
 
@@ -112,8 +117,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e2e2e', end
 
     &.open
     {
-      margin-left: -300px;
-      // transform: matrix(1, 0, 0, 1, -300, 0);
+      transform: matrix(1, 0, 0, 1, -300, 0);
+    }
+
+    div#uw-container-inner {
+        position: relative;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        background-color: white;
+        box-shadow: 10px 0px 11px -6px #1f1f1f;
     }
 
 }
