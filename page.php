@@ -3,7 +3,7 @@
 
 
 <div class="uw-hero-image">
-    
+
 </div>
 
 
@@ -14,12 +14,8 @@
 
   <div class="col-md-8 uw-content">
       <h2 class="uw-site-title">The Office <span>of the</span> President</h2>
-      <div class="uw-breadcrumbs">
-        <ul>
-          <li><a href="http://www.uw.edu">Home</a><li><a href="#" >Discover the UW</a></li><li class="current"><a href="#">Visit us</a></li>
-        </ul>
-      </div>
-
+      
+      <?php uw_breadcrumbs() ?>
 
       <div class="uw-body-copy">
         <h1>Enim varius iaculis a massa</h1>
@@ -45,7 +41,7 @@
       </div>
 
   </div>
-  
+
   <div class="col-md-4 uw-sidebar">
       <img src="http://127.0.0.1/cms/wp-content/themes/uw-2014/assets/temp/rightnav.png">
   </div>
