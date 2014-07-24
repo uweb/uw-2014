@@ -1,13 +1,53 @@
-UW.QuickLinks = Backbone.View.extend({
+UW.QuickLink = Backbone.Model.extend({
+});
 
-    links: [
-        {text: 'Maps', url: 'http://uw.edu/maps', icon: 'maps'},
-        {text: 'Directories', url: 'http://uw.edu/directory', icon: 'directories'},
-        {text: 'Calendar', url: 'http://uw.edu/calendar', icon: 'calendar'},
-        {text: 'Libraries', url: 'http://uw.edu/libraries', icon: 'libraries'},
-        {text: 'MyUW', url: 'http://myuw.washington.edu', icon: 'myuw'},
-        {text: 'UW Today', url: 'http://uw.edu/news', icon: 'uwtoday'},
+UW.QuickLinks = Backbone.Collection.extend({
+
+    model: UW.QuickLink,
+    models: [],
+    url: 'http://128.208.132.98/wordpress/2014/wp-admin/admin-ajax.php?action=quicklinks',
+
+    initialize: function () {
+        console.log('initializing quicklinks');
+        this.fetch({success: this.use_ajax, error: this.use_defaults});
+    },
+
+    default_links: [
+        {text: 'Maps', link_url: 'http://uw.edu/maps', classes: ['icon-maps']},
+        {text: 'Directories', link_url: 'http://uw.edu/directory', classes: ['icon-directories']},
+        {text: 'Calendar', link_url: 'http://uw.edu/calendar', classes: ['icon-calendar']},
+        {text: 'Libraries', link_url: 'http://uw.edu/libraries', classes: ['icon-libraries']},
+        {text: 'MyUW', link_url: 'http://myuw.washington.edu', classes: ['icon-myuw']},
+        {text: 'UW Today', link_url: 'http://uw.edu/news', classes: ['icon-uwtoday']},
        ],
+
+    use_ajax: function (response) {
+        console.log(response);
+        if (Object.keys(response).length === 0){
+            this.use_defaults();
+        }
+        else {
+            for (var key in response) {
+                this.models.append(new this.model({text: response.key.title, link_url: response.key.url, classes: response.key.classes}));
+            }
+            this.make_view();
+        }
+    },
+
+    use_defaults: function () {
+        for (var i = 0; i < this.default_links.length; i++){
+            this.models.append(new this.model({text: this.default_links.text, link_url: this.default_links.link_url, classes: this.default_links.classes}));
+        }
+        this.make_view();
+    },
+
+    make_view: function () {
+        console.log('making view');
+    }
+});
+
+
+UW.QuickLinksView = Backbone.View.extend({
 
     container: 'div#uw-container',
 
@@ -30,7 +70,7 @@ UW.QuickLinks = Backbone.View.extend({
         this.$container = $(this.container);
         if (this.$container.length === 0) {
             var $adminbar = $('#wpadminbar');
-            UW.$body.children().not('#wpadminbar').not('script').wrapAll('<div id="uw-container"></div>');
+            UW.$body.children().not('#wpadminbar').not('script').wrapAll('<div id="uw-container"><div id="uw-container"></div></div>');
             this.$container = $(this.container);
         }
         this.$container.prepend("<nav id='quicklinks'><ul></ul></nav>");
@@ -74,3 +114,5 @@ UW.QuickLinks = Backbone.View.extend({
         //undo all that
     }
 });
+
+
