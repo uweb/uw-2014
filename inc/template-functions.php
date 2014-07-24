@@ -44,16 +44,20 @@ if( ! function_exists('get_uw_breadcrumbs') ) :
 
   function get_uw_breadcrumbs()
   {
+
     global $post;
 
     $ancestors = array_reverse( get_post_ancestors( $post->ID ) );
-    $ancestors[] = $post->ID;
 
-    $html = '<li><a href="http://uw.edu" title="University of Washington">Home</a><li>';
+    if ( !is_home() || ! is_front_page() )
+      $ancestors[] = $post->ID;
+
+    $html = '<li><a href="http://uw.edu" title="University of Washington">Home</a></li>';
+    $html .= '<li' . ($ancestors ? '' : ' class="current"') . '><a href="' . get_bloginfo('url') . '" title="' . get_bloginfo('title') . '">' . get_bloginfo('title') . '</a><li>';
 
     foreach ( $ancestors as $index=>$ancestor )
     {
-      $class = $index+1 == count($ancestors) ? ' class="current" ' : '';
+      $class      = $index+1 == count($ancestors) ? ' class="current" ' : '';
       $page       = get_post( $ancestor );
       $url        = get_permalink( $page->ID );
       $title_attr = esc_attr( $page->post_title );
