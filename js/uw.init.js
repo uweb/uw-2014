@@ -13,6 +13,10 @@ UW.elements = {
 
 }
 
+UW.sources = {
+  quicklinks: 'http://128.208.132.98/wordpress/2014/wp-admin/admin-ajax.php?action=quicklinks'
+}
+
 // List the responsive and adaptive breakpoints for targeted browsers and devices
 UW.restive = {
   breakpoints   : [ '768', '992', '10000' ],
@@ -28,7 +32,7 @@ UW.initialize = function( $ )
 
   // UW Utilities
   UW.dropdowns  = _.map( $( UW.elements.dropdowns ),     function( element ) { return new UW.Dropdowns({ el : element }) } )
-  UW.quicklinks = _.map( $( UW.elements.quicklinks ),    function( element ) { return new UW.QuickLinks( { el : element }) } )
+  UW.quicklinks = _.map( $( UW.elements.quicklinks ),    function( element ) { return new UW.QuickLinks( { el : element, url : UW.sources.quicklinks }) } )
   UW.search     = _.map( $( UW.elements.search ),    function( element ) { return new UW.Search( { el : element, model : new UW.Search.DirectoryModel() }) } )
 
   // UW Modules

@@ -4,10 +4,10 @@ UW.QuickLink = Backbone.Model.extend({
 UW.QuickLinks = Backbone.Collection.extend({
 
     model: UW.QuickLink,
-    url: 'http://128.208.132.98/wordpress/2014/wp-admin/admin-ajax.php?action=quicklinks',
 
     initialize: function (args) {
         this.el = args.el;
+        this.url = args.url;
         _.bindAll(this, 'use_ajax', 'use_defaults', 'make_view');
         this.fetch({success: this.use_ajax, error: this.use_defaults});
     },
