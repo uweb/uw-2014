@@ -7195,6 +7195,10 @@ address {
   margin-bottom: 30px;
   line-height: 1.72222;
 }
+/* Styles necessary for quicklinks */
+body {
+  overflow-x: hidden;
+}
 #uw-container {
   position: relative;
   width: 100%;
