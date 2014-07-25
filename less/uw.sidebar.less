@@ -2,6 +2,109 @@
 
 .uw-sidebar {
 	margin-top: -80px;
-	padding-right: 0;
-	padding-left: 47px;
+	padding: 10px;
+	// padding-left: 47px;
+	background-color:white;
+
+	ul,li {
+		display: block;
+		float: left;
+		width: 100%;
+		list-style:none;
+		padding:0;
+		margin:0;
+	}
+
+	a {
+		float:left;
+		margin: 15px;
+	}
+
+	ul.first-level  {
+
+		padding: 10px;
+
+		li.pagenav {
+
+				a.homelink
+				{
+					display:none;
+					color:@purple;
+					font-size:25px;
+				}
+
+				ul {
+
+					font-size:20px;
+
+					li.current_page_item, li.current_page_parent {
+						background-color: gray;
+						a {
+							color:white;
+							border-bottom:none;
+						}
+					}
+
+					li
+					{
+						a
+						{
+							color: @purple;
+							border-bottom: thin solid #eee;
+							width: 90%;
+						}
+
+						&.current_page_item ul.children, &.current_page_ancestor ul.children
+						{
+							display:block;
+							font-size: 17px;
+							background-color:white;
+
+							li
+							{
+								padding: 5px;
+								background-color:#eee;
+
+								a
+								{
+									color:gray;
+									margin: 0 0 0 10px;
+								}
+
+							}
+
+							li.current_page_item
+							{
+								background-color:white;
+								a
+								{
+									color:gray;
+								}
+							}
+
+
+						}
+
+
+					}
+
+					li:last-child, li:first-child
+					{
+						a
+						{
+							// color:@purple;
+							border-bottom: none;
+						}
+					}
+
+				}
+
+			}
+
+		}
+
+		ul.children {
+			display:none;
+		}
+
 }
