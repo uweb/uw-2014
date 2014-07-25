@@ -88,7 +88,7 @@
 			}
 			&.uw-quicklinks {
 				a {
-					background: url(assets/svg/plug.svg) no-repeat 125px center transparent;
+					font-family: @font-family-headline !important;
 					padding-left: 38px;
 					margin-left: -30px;
 					margin-right: 0;
@@ -108,9 +108,27 @@
 						left: -37px;
 						border-right: 6px solid rgba(116, 116, 116, 0.5);
 					}
+					&:after {
+						position: absolute;
+						content: "";
+						background: url(assets/svg/uw-sprite.svg) no-repeat -283px 1px;
+						height: 25px;
+						width: 27px;
+						display: block;
+						top: 8px;
+						right: 14px;
+					}
 				}
 			}
 		}
 	}
+}
 
+#uw-container {
+	&.open .uw-quicklinks a {
+		color: @brightgold;
+		&:after {
+			background-position: -283px -24px;
+		}
+	}
 }

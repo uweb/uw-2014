@@ -70,7 +70,7 @@ UW.QuickLinksView = Backbone.View.extend({
         this.$container = $(this.container);
         if (this.$container.length === 0) {
             var $adminbar = $('#wpadminbar');
-            UW.$body.children().not('#wpadminbar').not('script').wrapAll('<div id="uw-container"><div id="uw-container"></div></div>');
+            UW.$body.children().not('#wpadminbar').not('script').wrapAll('<div id="uw-container"><div id="uw-container-inner"></div></div>');
             this.$container = $(this.container);
         }
         this.$container.prepend("<nav id='quicklinks'><ul></ul></nav>");

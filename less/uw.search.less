@@ -16,9 +16,13 @@
     position:relative;
     width:890px;
     margin-top: 30px;
-    top:-20px;
+    -webkit-transform: matrix(1,0,0,1,0,-20);
+       -moz-transform: matrix(1,0,0,1,0,-20);
+        -ms-transform: matrix(1,0,0,1,0,-20);
+         -o-transform: matrix(1,0,0,1,0,-20);
+            transform: matrix(1,0,0,1,0,-20);
     // transition: top 2s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: top 1s;
+    transition: all 1s;
   }
 
   form
@@ -33,6 +37,7 @@
       padding: 2px 0 1px 15px;
       border: none;
       font-size: 30px;
+      outline: none;
     }
 
   }
@@ -104,6 +109,9 @@
         h4 {
           color: @brightgold;
         }
+        a.more {
+          background-position: -283px -24px;
+        }
       }
       &:last-child  {
         border: none;
@@ -122,20 +130,13 @@
     }
 
     a.more {
-      float: right;
-      display: block;
       text-indent: -99999px;
-      background: url(assets/svg/plug.svg) no-repeat center center;
-      position: relative;
-      -webkit-background-size: 22px;
-      -moz-background-size: 22px;
-      -o-background-size: 22px;
-      background-size: 22px;
-      padding-right: 78px;
-      padding-top: 15px;
-      right: 0px;
-      top: 1px;
+      background: url(assets/svg/uw-sprite.svg) no-repeat -283px 0;
+      height: 25px;
+      right: 25px;
+      top: 14px;
       position: absolute;
+      width: 30px;
     }
 
     .information {
@@ -161,7 +162,11 @@
 
     .uw-search-wrapper
     {
-      top:0px;
+        -webkit-transform: matrix(1,0,0,1,0,0);
+           -moz-transform: matrix(1,0,0,1,0,0);
+            -ms-transform: matrix(1,0,0,1,0,0);
+             -o-transform: matrix(1,0,0,1,0,0);
+                transform: matrix(1,0,0,1,0,0);
     }
   }
 
