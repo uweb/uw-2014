@@ -16,9 +16,13 @@
     position:relative;
     width:890px;
     margin-top: 30px;
-    top:-20px;
+    -webkit-transform: matrix(1,0,0,1,0,-20);
+       -moz-transform: matrix(1,0,0,1,0,-20);
+        -ms-transform: matrix(1,0,0,1,0,-20);
+         -o-transform: matrix(1,0,0,1,0,-20);
+            transform: matrix(1,0,0,1,0,-20);
     // transition: top 2s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: top 1s;
+    transition: all 1s;
   }
 
   form
@@ -158,7 +162,11 @@
 
     .uw-search-wrapper
     {
-      top:0px;
+        -webkit-transform: matrix(1,0,0,1,0,0);
+           -moz-transform: matrix(1,0,0,1,0,0);
+            -ms-transform: matrix(1,0,0,1,0,0);
+             -o-transform: matrix(1,0,0,1,0,0);
+                transform: matrix(1,0,0,1,0,0);
     }
   }
 
