@@ -63,8 +63,8 @@ module.exports = function(grunt) {
     notify: {
       watch: {
         options: {
-          title: 'Task Complete',
-          message: 'JS uglified successfully'
+          title: 'Dun\' Grunted',
+          message: 'All is good'
         }
       }
     },
@@ -96,7 +96,7 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['less/*.less', 'less/flat/*.less', 'less/bootstrap/*.less'],
-        tasks: ['less']
+        tasks: ['css']
       }
     }
   });
@@ -111,5 +111,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'notify', 'less']);
   grunt.registerTask('js', ['jshint', 'concat', 'uglify', 'notify' ]);
+  grunt.registerTask( 'css', ['less', 'notify'] );
 
 };
