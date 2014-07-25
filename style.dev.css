@@ -7878,9 +7878,14 @@ ul.uw-select li.inactive a {
   display: inline-block;
 }
 .uw-breadcrumbs li:first-child a {
-  background: url('assets/svg/home.svg') no-repeat left 9px;
+  background: url(assets/svg/uw-sprite.svg) no-repeat -249px 0;
   text-indent: -99999px;
-  width: 50px;
+  width: 30px;
+  padding: 5px 0 5px 0;
+  margin-right: 25px;
+}
+.uw-breadcrumbs li:first-child a:before {
+  right: -18px;
 }
 .uw-breadcrumbs li.current a {
   color: #B9B7B7;
