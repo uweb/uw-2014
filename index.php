@@ -43,7 +43,8 @@
   </div>
 
   <div class="col-md-4 uw-sidebar">
-      <img src="http://127.0.0.1/cms/wp-content/themes/uw-2014/assets/temp/rightnav.png">
+    <?php uw_sidebar(); ?>
+      <!-- <img src="http://127.0.0.1/cms/wp-content/themes/uw-2014/assets/temp/rightnav.png"> -->
   </div>
 
 </div>
