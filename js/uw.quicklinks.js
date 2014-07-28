@@ -64,6 +64,10 @@ UW.QuickLinks = Backbone.Collection.extend({
 UW.QuickLinksView = Backbone.View.extend({
 
     container: 'div#uw-container',
+    $little_list_header: $('<h3>Helpful Links</h3>'),
+    $drawer: $("<nav id='quicklinks'></nav>"),
+    $big_list: $('<ul id="big_links"></ul>'),
+    $little_list: $('<ul id="little_list"></ul>'),
 
     menu_item : '<li><% if (classes) { %><span class="<%= classes %>"></span><% } %><a href="<%= url %>"><%= text %></a></li>',
 
@@ -75,6 +79,7 @@ UW.QuickLinksView = Backbone.View.extend({
         _.bindAll( this, 'append_menu_item' )
         this.make_drawer();
         this.add_links();
+        this.add_lists();
     },
 
     make_drawer: function () {
@@ -84,10 +89,6 @@ UW.QuickLinksView = Backbone.View.extend({
             UW.$body.children().not('#wpadminbar').not('script').wrapAll('<div id="uw-container"><div id="uw-container-inner"></div></div>');
             this.$container = $(this.container);
         }
-        this.$container.prepend("<nav id='quicklinks'><ul id='big_links'></ul></nav>");
-        this.$drawer = $('nav#quicklinks');
-        this.$list = this.$drawer.find('ul#big_links');
-        this.$little_list = false;
     },
 
     add_links: function () {
@@ -103,15 +104,22 @@ UW.QuickLinksView = Backbone.View.extend({
         };
         if (model.get('has_icon')) {
             item.classes = model.get('classes').join(' ');
-            this.$list.append( _.template( this.menu_item, item ) );
+            this.$big_list.append( _.template( this.menu_item, item ) );
         }
         else {
-            if (!this.$little_list) {
-                this.$drawer.append('<h3>Helpful Links</h3><ul id="little_links"></ul>');
-                this.$little_list = this.$drawer.find('ul#little_links');
-            }
             this.$little_list.append(_.template(this.menu_item, item));
         }
+    },
+
+    add_lists : function () {
+        if (this.$big_list.find('li').length > 0) {
+            this.$drawer.append(this.$big_list);
+        }
+        if (this.$little_list.find('li').length > 0) {
+            this.$drawer.append(this.$little_list_header);
+            this.$drawer.append(this.$little_list);
+        }
+        this.$container.prepend(this.$drawer);
     },
 
     animate: function () {
