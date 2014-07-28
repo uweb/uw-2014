@@ -13,8 +13,11 @@ UW.elements = {
 
 }
 
+UW.baseUrl = Backbone.history.location.origin +
+             Backbone.history.location.pathname
+
 UW.sources = {
-  quicklinks: 'http://128.208.132.98/wordpress/2014/wp-admin/admin-ajax.php?action=quicklinks'
+  quicklinks: UW.baseUrl + 'wp-admin/admin-ajax.php?action=quicklinks'
 }
 
 // List the responsive and adaptive breakpoints for targeted browsers and devices

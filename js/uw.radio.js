@@ -11,91 +11,64 @@ UW.Radio = Backbone.View.extend({
 
   events :
   {
-    'click .radio' : 'toggle'
+    'click input' : 'toggle'
   },
 
   template: '<span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span>',
 
   initialize : function( options )
   {
-    _.bindAll( this, 'toggle' )
+    _.bindAll( this, 'toggle', 'getGroup', 'toggleCheckBox' )
+
     this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
+
     this.$el.before( this.template )
+
+    this.$input = this.$el
+
+    this.name   = this.$el.attr( 'name' )
+
+    this.setElement( this.$el.closest('label') )
+
     this.setState()
-    this.$el.closest('label').bind( 'click' , this.toggle )
   },
 
   setState: function()
   {
-
-    var $parent = this.$el.closest( '.radio' )
-
-    if ( this.$el.prop('disabled') ) $parent.addClass('disabled')
-    if ( this.$el.prop('checked') ) $parent.addClass('checked')
-
+    if ( this.$input.prop( this.states.disabled ) ) this.$el.addClass( this.states.disabled )
+    if ( this.$input.prop( this.states.checked ) ) this.$el.addClass( this.states.checked )
   },
 
-  toggle : function()
+  getGroup : function()
   {
-    var this_ = this;
-       var checked = this.$el.prop( this.states.checked )
-       , $parent = this.$el.closest('.radio')
-       , $parentWrap = this.$el.closest('form').length ? this.$el.closest('form') : this.$el.closest('body')
-       , $elemGroup = $parentWrap.find(':radio[name="' + this.$el.attr('name') + '"]')
-       , e = $.Event('toggle')
-
-       $elemGroup.not(this.$el).each(function () {
-
-         var $el = $(this)
-           , $parent = $el.closest('.radio');
-
-           if ( $el.prop( this_.states.disabled ) === false &&
-                $parent.removeClass( this_.states.checked ) )  {
-             $el.removeAttr( this_.states.checked ).trigger('change');
-           }
-       });
-
-       if (this.$el.prop( this.states.disabled ) === false)
-       {
-
-        // if (checked === false) $parent.addClass( this.states.checked ) && $el.prop( this.states.checked , true);
-          if (checked === false && $parent.addClass( this.states.checked ) ) this.$el.prop( this.states.checked , true);
-          this.$el.trigger(e);
-
-          if (checked !== this.$el.prop( this.states.checked )) {
-            this.$el.trigger('change');
-          }
-
-       }
+    return _.where( UW.radio, { name : this.name })
   },
 
-  // setCheck : function( option )
-  // {
-  //    var ch = 'checked'
-  //      , $el = this.$element
-  //      , $parent = $el.closest('.radio')
-  //      , checkAction = option == 'check' ? true : false
-  //      , checked = $el.prop(ch)
-  //      , $parentWrap = $el.closest('form').length ? $el.closest('form') : $el.closest('body')
-  //      , $elemGroup = $parentWrap.find(':radio[name="' + $el.attr('name') + '"]')
-  //      , e = $.Event(option)
-  //
-  //    $elemGroup.not($el).each(function () {
-  //      var $el = $(this)
-  //        , $parent = $(this).closest('.radio');
-  //
-  //        $parent.removeClass(ch)
-  //        $el.removeAttr(ch);
-  //
-  //    });
-  //
-  //    $parent[checkAction ? 'addClass' : 'removeClass'](ch)
-  //    if ( checkAction ) { $el.prop(ch, ch) } else { $el.removeAttr(ch); }
-  //    $el.trigger(e);
-  //
-  //    if (checked !== $el.prop(ch)) {
-  //      $el.trigger('change');
-  //    }
-  // },
+  toggle : function(e )
+  {
+      _.each( this.getGroup() , this.toggleCheckBox )
+  },
+
+  toggleCheckBox : function( view )
+  {
+    var checked  = view.$input.prop( this.states.checked )
+      , disabled = view.$input.prop( this.states.disabled )
+
+    if ( ! disabled &&
+          view.$el.removeClass( this.states.checked ) )
+        view.$el.removeAttr( this.states.checked ).trigger( 'change' )
+
+    if ( ! disabled )
+    {
+
+      if ( checked && view.$el.addClass( this.states.checked ) )
+        view.$el.trigger( $.Event('toggle') )
+
+      if ( checked !== view.$el.prop( this.states.checked ) )
+        view.$el.trigger( 'change' )
+
+    }
+
+  }
 
 })
