@@ -9,6 +9,7 @@ module.exports = function(grunt) {
       dist: {
         libraries: [
           "js/libraries/jquery.easing.js",
+          "js/libraries/video.dev.js",
           "js/libraries/restive.js"
         ],
         theme : [
@@ -17,7 +18,7 @@ module.exports = function(grunt) {
           "js/uw.search.js",
           "js/uw.quicklinks.js",
           "js/uw.slideshow.js",
-          "js/uw.player.js",
+          "js/uw.youtube.js",
           "js/uw.vimeo.js",
           "js/uw.checkbox.js",
           "js/uw.radio.js",
@@ -25,6 +26,7 @@ module.exports = function(grunt) {
           "js/uw.accordion.js",
           "js/uw.select.js",
           "js/uw.image.js",
+          "js/uw.player.js",
           "js/uw.social.js",
         ],
         components : [
