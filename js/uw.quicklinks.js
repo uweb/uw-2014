@@ -1,3 +1,5 @@
+// This section builds and populates the quicklinks section (off-canvas right)
+
 UW.QuickLink = Backbone.Model.extend({
 });
 
@@ -28,7 +30,11 @@ UW.QuickLinks = Backbone.Collection.extend({
         else {
             this.models = [];
             for (var key in response) {
-                this.models.push(new this.model({text: response[key].title, link_url: response[key].url, classes: response[key].classes}));
+                if (response[key].classes.length > 0){
+                    this.models.push(new this.model({text: response[key].title, link_url: response[key].url, classes: response[key].classes}));
+                }
+                else {
+                    
             }
             this.make_view();
         }
@@ -37,7 +43,7 @@ UW.QuickLinks = Backbone.Collection.extend({
     use_defaults: function () {
         this.models = [];
         for (var i = 0; i < this.default_links.length; i++){
-            this.models.push(new this.model({text: this.default_links.text, link_url: this.default_links.link_url, classes: this.default_links.classes}));
+            this.models.push(new this.model({text: this.default_links[i].text, link_url: this.default_links[i].link_url, classes: this.default_links[i].classes}));
         }
         this.make_view();
     },
