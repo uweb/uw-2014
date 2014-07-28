@@ -36,14 +36,13 @@
              -o-transform: matrix(1, 0, 0, 1, 150, 0);
                 transform: matrix(1, 0, 0, 1, 150, 0);
 
-        ul {
+        ul#big_links {
           list-style: none;
           margin-top: 10px;
 
           li
           {
             display: block;
-            float: left;
             width: 100%;
             padding: 14px 0 0 0;
 
@@ -51,6 +50,7 @@
               font-family: @font-family-headline;
               font-size: @font-size-h6;
               margin-left: 15px;
+              font-size: 23px;
               &:hover {
                 color: @brightgold;
               }
@@ -98,10 +98,23 @@
 
         }
 
+      h3{
+        font-size: 23px;
+        color: @brightgold;
+        margin-left: 40px;
+      }
+      ul#little_links{
+        padding-left: 60px;
+        li {
+          a{
+            font-family: @font-family-headline;
+          }
+        }
+      }
+
         a
         {
           color: white;
-          font-size: 23px;
         }
 
         &.open
