@@ -14,9 +14,9 @@ UW.Player = Backbone.View.extend({
 
     // _.bindAll( this )
 
-    this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
+    // this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
 
-    console.log(videojs);
+    // console.log(videojs);
 
 
   }
