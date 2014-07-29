@@ -5,7 +5,30 @@ UW.QuickLink = Backbone.Model.extend({
         has_icon: false,
         classes: ''
     },
+    
+    initialize: function () {
+        this.create_view();
+    },
+
+    create_view: function () {
+        this.view = new UW.QuickLinkView({model: this});
+    }
 });
+
+UW.QuickLinkView = Backbone.View.extend({
+    menu_template : '<li><% if (classes) { %><span class="<%= classes %>"></span><% } %><a href="<%= link_url %>"><%= title %></a></li>',
+
+    initialize: function () {
+        this.create_menu_item();
+    },
+
+    create_menu_item : function ()
+    {
+        item = this.model.toJSON();
+        this.$menu_item = $(_.template( this.menu_template, item ));
+    }
+});
+
 
 UW.QuickLinks = Backbone.Collection.extend({
 
@@ -64,7 +87,6 @@ UW.QuickLinksView = Backbone.View.extend({
     $big_list: $('<ul id="big_links"></ul>'),
     $little_list: $('<ul id="little_list"></ul>'),
 
-    menu_item : '<li><% if (classes) { %><span class="<%= classes %>"></span><% } %><a href="<%= link_url %>"><%= title %></a></li>',
 
     events: {
        'click': 'animate'
@@ -90,14 +112,12 @@ UW.QuickLinksView = Backbone.View.extend({
         _.each( this.collection.models, this.append_menu_item )
     },
 
-    append_menu_item : function( model )
-    {
-        item = model.toJSON();
-        if (item.has_icon) {
-            this.$big_list.append( _.template( this.menu_item, item ) );
+    append_menu_item: function (model) {
+        if (model.get('has_icon')) {
+            this.$big_list.append(model.view.$menu_item);
         }
         else {
-            this.$little_list.append(_.template(this.menu_item, item));
+            this.$little_list.append(model.view.$menu_item);
         }
     },
 
