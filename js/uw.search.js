@@ -174,7 +174,9 @@ UW.Search.DirectoryModel = Backbone.Model.extend({
     search : ''
   },
 
-  url : '/cms/2014/wp-admin/admin-ajax.php',
+  initialize : function (options) {
+    this.url = options.url;
+  },
 
   search : function ( value ) {
     this.settings.search = value

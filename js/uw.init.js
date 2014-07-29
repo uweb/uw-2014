@@ -17,7 +17,8 @@ UW.baseUrl = Backbone.history.location.origin +
              Backbone.history.location.pathname
 
 UW.sources = {
-  quicklinks: UW.baseUrl + 'wp-admin/admin-ajax.php?action=quicklinks'
+  quicklinks : UW.baseUrl + 'wp-admin/admin-ajax.php?action=quicklinks',
+  search     : UW.baseUrl + 'wp-admin/admin-ajax.php'
 }
 
 // List the responsive and adaptive breakpoints for targeted browsers and devices
@@ -36,7 +37,7 @@ UW.initialize = function( $ )
   // UW Utilities
   UW.dropdowns  = _.map( $( UW.elements.dropdowns ),     function( element ) { return new UW.Dropdowns({ el : element }) } )
   UW.quicklinks = _.map( $( UW.elements.quicklinks ),    function( element ) { return new UW.QuickLinks( { el : element, url : UW.sources.quicklinks }) } )
-  UW.search     = _.map( $( UW.elements.search ),    function( element ) { return new UW.Search( { el : element, model : new UW.Search.DirectoryModel() }) } )
+  UW.search     = _.map( $( UW.elements.search ),    function( element ) { return new UW.Search( { el : element, model : new UW.Search.DirectoryModel( {url: UW.sources.search}) }) } )
 
   // UW Modules
   UW.slideshows = _.map( $( UW.elements.slideshow ), function( element ) { return new UW.Slideshow( { el : element }) } )
