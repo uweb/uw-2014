@@ -7,7 +7,10 @@ UW.QuickLink = Backbone.Model.extend({
     },
     
     initialize: function () {
-        this.create_view();
+        //hacktacular.  Need to stop the collection making a model with url = collection.url somehow
+        if (this.get('link_url') !== undefined){
+            this.create_view();
+        }
     },
 
     create_view: function () {
@@ -38,8 +41,10 @@ UW.QuickLinks = Backbone.Collection.extend({
         this.el = args.el;
         this.url = args.url;
         _.bindAll(this, 'parse', 'make_view');
+        this.create_models();
+        this.make_view();
         //refusal to execute the ajax request isn't handled here.  Looks like it should be, but it isn't
-        this.fetch({success: this.make_view});
+        this.fetch({success: this.view.build});
     },
 
     //pull this out of the collection?
@@ -52,25 +57,33 @@ UW.QuickLinks = Backbone.Collection.extend({
         {title: 'UW Today', url: 'http://uw.edu/news', classes: ['icon-uwtoday']},
        ],
 
+    create_models: function () {
+        for (var i = 0; i < this.default_links.length; i++){
+            this.add(this.normalize_data(this.default_links[i]));
+        }
+    },
+    
+    normalize_data: function (holder) {
+        holder.link_url = holder.url;
+        delete holder.url;
+        if (holder.classes !== 'undefined'){
+            holder.classes = holder.classes.join(' ');
+            if (holder.classes !== '') {
+                holder.has_icon = true;
+            }   
+        }
+        return holder;
+    },
+
     parse: function (response) {
-        if (Object.keys(response).length === 0){
-            response = this.default_links;
-        }
-        var model_data = [];
-        var holder;
-        for (var key in response) {
-            holder = response[key];
-            holder.link_url = holder.url;
-            delete holder.url;
-            if (holder.classes !== 'undefined'){
-                holder.classes = holder.classes.join(' ');
-                if (holder.classes !== '') {
-                    holder.has_icon = true;
-                }
+        if (Object.keys(response).length !== 0){
+            this.view.reset();
+            var model_data = [];
+            for (var key in response) {
+                model_data.push(this.normalize_data(response[key]));
             }
-            model_data.push(holder); 
+            return model_data;
         }
-        return model_data;
     },
 
     make_view: function () {
@@ -93,8 +106,12 @@ UW.QuickLinksView = Backbone.View.extend({
     },
 
     initialize: function () {
-        _.bindAll( this, 'append_menu_item' )
+        _.bindAll( this, 'append_menu_item', 'build' );
         this.make_drawer();
+        this.build();
+    },
+
+    build: function () {
         this.add_links();
         this.add_lists();
     },
@@ -130,6 +147,20 @@ UW.QuickLinksView = Backbone.View.extend({
             this.$drawer.append(this.$little_list);
         }
         this.$container.prepend(this.$drawer);
+    },
+
+    reset: function () {
+        this.clear_lists();
+        this.clear_drawer();
+    },
+
+    clear_lists: function () {
+        this.$little_list.html('');
+        this.$big_list.html('');
+    },
+
+    clear_drawer: function () {
+        this.$drawer.html('');
     },
 
     animate: function () {
