@@ -8,14 +8,14 @@
 class Dropdowns
 {
 
-    const NAME         = 'White Bar';
-    const LOCATION     = 'white-bar';
-    const DISPLAY_NAME = 'Dropdowns';
 
     public static $menu_items;
 
     function __construct()
     {
+        $this->NAME         = 'White Bar';
+        $this->LOCATION     = 'white-bar';
+        $this->DISPLAY_NAME = 'Dropdowns';
         $this->instantiate_menu_list();
         $this->add_hooks();
     }
@@ -49,12 +49,12 @@ class Dropdowns
 
     function register_white_bar_menu()
     {
-	    register_nav_menu( self::LOCATION, __( self::NAME ) );
+	    register_nav_menu( $this->LOCATION, __( $this->NAME ) );
     }
 
     function install_default_white_bar_menu()
     {
-        $this->MENU_ID = wp_create_nav_menu( self::DISPLAY_NAME );
+        $this->MENU_ID = wp_create_nav_menu( $this->DISPLAY_NAME );
 
         // wp_create_nav_menu returns a WP_Error if the menu already exists;
         if ( is_wp_error( $this->MENU_ID ) ) return;
