@@ -21,7 +21,7 @@ if ( ! function_exists( 'uw_dropdowns') )
           <h3 class="assistive-text">Main menu</h3>';
 
           wp_nav_menu( array(
-            'theme_location'  => $UW->Dropdowns->LOCATION,
+            'theme_location'  => UW_Dropdowns::LOCATION,
             'container_class' => 'dawgdrops-inner container',
             'menu_class'      => 'dawgdrops-nav',
             'fallback_cb'     => '',
