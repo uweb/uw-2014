@@ -49,7 +49,7 @@ UW.YouTube.Collection = Backbone.Collection.extend({
 UW.YouTube.CollectionView = Backbone.View.extend({
     
     template : "<div class='nc-video-player'><div class='tube-wrapper'></div></div>",
-    playlist_section : "<div class='vidSmall'><div class='scrollbar'><div class='track'><div class='thumb'><div class='end'></div></div></div></div><div class='viewport'><div class='vidContent overview'></div></div></div>",
+    playlist_section : "<div class='vidSmall'><div class='scrollbar'><div class='track'><div class='thumb'><div class='end'></div></div></div></div><div class='viewport'><div class='vidContent overview'><ul></ul></div></div></div>",
 
     events: {
         'click a': 'preview_clicked'
@@ -109,6 +109,9 @@ UW.YouTube.CollectionView = Backbone.View.extend({
 
     onDataReady: function () {
         this.data_ready = true;
+        if (this.collection.type == 'playlist'){
+            this.$vidContent.width(this.collection.models.length * 135 + 'px');
+        }
         this.check_all_ready();
     },
 
@@ -198,7 +201,7 @@ UW.YouTube.PlaylistItemView = Backbone.View.extend({
     template: "<li><a id='<%= resourceId.videoId %>' class='video'><img src='<%= thumbnails.default.url %>'/><div class='text'><p class='title'><%= title %></p></div></a></li>",
 
     initialize: function () {
-        this.$el = this.model.collection.view.$vidSmall;
+        this.$el = this.model.collection.view.$vidContent.find('ul');
         this.render();
     },
 
