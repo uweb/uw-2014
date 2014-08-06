@@ -46,8 +46,12 @@ UW.YouTube.CollectionView = Backbone.View.extend({
     template : "<div class='nc-video-player'><div class='tube-wrapper'></div></div>",
     playlist_section : "<div class='vidSmall'><div class='scrollbar'><div class='track'><div class='thumb'><div class='end'></div></div></div></div><div class='viewport'><div class='vidContent overview'></div></div></div>",
 
+    events: {
+        'click a': 'preview_clicked'
+    },
+
     initialize: function () {
-        _(this).bindAll('onReady', 'onDataReady', 'onStateChange');
+        _(this).bindAll('onReady', 'onDataReady', 'onStateChange', 'preview_clicked');
         this.player_ready = false;
         this.data_ready = false;
         this.wrap();
@@ -59,7 +63,8 @@ UW.YouTube.CollectionView = Backbone.View.extend({
 
     wrap: function () {
         this.collection.$el.wrap($(this.template));
-        this.$wrapper = this.collection.$el.parents('.nc-video-player');  //unattached jquery object won't wrap right if we add possible playlist section first
+        this.$el = this.collection.$el.parents('.nc-video-player');  //unattached jquery object won't wrap right if we add possible playlist section first
+        this.el = this.$el[0];
     },
 
     add_iFrame_api: function () {
@@ -87,9 +92,9 @@ UW.YouTube.CollectionView = Backbone.View.extend({
     },
 
     add_playlist_section : function () {
-        this.$wrapper.append(this.playlist_section);
-        this.$vidSmall = this.$wrapper.find('.vidSmall');
-        this.$vidContent = this.$wrapper.find('.vidContent');
+        this.$el.append(this.playlist_section);
+        this.$vidSmall = this.$el.find('.vidSmall');
+        this.$vidContent = this.$el.find('.vidContent');
     },
 
     onReady: function () {
@@ -104,7 +109,9 @@ UW.YouTube.CollectionView = Backbone.View.extend({
 
     //this function checks the state of data/player to prevent a race case. Both the data and the player must be ready to go.  Then we play the correct video
     check_all_ready: function() {
-        this.play(this.collection.models[0].get('resourceId').videoId);
+        if (this.data_ready && this.player_ready){
+            this.play(this.collection.models[0].get('resourceId').videoId);
+        } 
     },
 
     //when the player changes state, this is run.  Currently stuff only happens if this is a playlist
@@ -137,7 +144,7 @@ UW.YouTube.CollectionView = Backbone.View.extend({
         if (this.collection.type == 'playlist') {
             var $small = $('#' + id);
             var leftpos = $small.position().left, $viewport = this.$vidSmall.find('.viewport');
-            this.$wrapper.find('a.vid-active').removeClass('vid-active');
+            this.$el.find('a.vid-active').removeClass('vid-active');
             if (this.$vidContent.width() - leftpos < $viewport.width()){
                 leftpos = this.$vidContent.width() - $viewport.width();
             }
@@ -145,6 +152,10 @@ UW.YouTube.CollectionView = Backbone.View.extend({
             //currently not used because tinyscrollbar isn't added: this.$vidSmall.tinyscrollbar_update(leftpos);
             $small.addClass('vid-active');
         }
+    },
+
+    preview_clicked: function (event) {
+        this.play(event.currentTarget.id, true);
     }
 });
 
@@ -182,12 +193,14 @@ UW.YouTube.PlaylistItemView = Backbone.View.extend({
     template: "<li><a id='<%= resourceId.videoId %>' class='video'><img src='<%= thumbnails.default.url %>'/><div class='text'><p class='title'><%= title %></p></div></a></li>",
 
     initialize: function () {
+        this.$el = this.model.collection.view.$vidSmall;
         this.render();
     },
+
 
     render: function () {
         var item = this.model.toJSON();
         var small_vid = _.template(this.template, item);
-        this.model.collection.view.$vidSmall.append(small_vid);
-    }
+        this.$el.append(small_vid);
+    },
 });
