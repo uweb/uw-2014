@@ -52,11 +52,12 @@ UW.YouTube.CollectionView = Backbone.View.extend({
     playlist_section : "<div class='vidSmall'><div class='scrollbar'><div class='track'><div class='thumb'><div class='end'></div></div></div></div><div class='viewport'><div class='vidContent overview'><ul></ul></div></div></div>",
 
     events: {
-        'click a': 'preview_clicked'
+        'click a': 'preview_clicked',
+        'resize': 'player_resized'
     },
 
     initialize: function () {
-        _(this).bindAll('onReady', 'onDataReady', 'onStateChange', 'preview_clicked');
+        _(this).bindAll('onReady', 'onDataReady', 'onStateChange', 'preview_clicked', 'player_resized');
         this.player_ready = false;
         this.data_ready = false;
         this.wrap();
@@ -110,7 +111,9 @@ UW.YouTube.CollectionView = Backbone.View.extend({
     onDataReady: function () {
         this.data_ready = true;
         if (this.collection.type == 'playlist'){
+            this.$vidSmall.find('.scrollbar').show();
             this.$vidContent.width(this.collection.models.length * 135 + 'px');
+            this.$vidSmall.tinyscrollbar({axis: 'x'});
         }
         this.check_all_ready();
     },
@@ -157,13 +160,17 @@ UW.YouTube.CollectionView = Backbone.View.extend({
                 leftpos = this.$vidContent.width() - $viewport.width();
             }
             this.$vidContent.animate({left: -leftpos}, 500);
-            //currently not used because tinyscrollbar isn't added: this.$vidSmall.tinyscrollbar_update(leftpos);
+            this.$vidSmall.tinyscrollbar_update(leftpos);
             $small.addClass('vid-active');
         }
     },
 
     preview_clicked: function (event) {
         this.play(event.currentTarget.id, true);
+    },
+
+    player_resized: function () {
+        this.$vidSmall.tinyscrollbar_update();
     }
 });
 
