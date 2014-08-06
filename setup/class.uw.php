@@ -26,9 +26,8 @@ class UW
     private function includes()
     {
         require_once('class.install.php');
-        require_once('class.enqueue_object.php');
-        require_once('class.install_scripts.php');
-        require_once('class.install_styles.php');
+        require_once('class.uw-scripts.php');
+        require_once('class.uw-styles.php');
         require_once('class.uw-dropdowns.php');
         require_once('class.menu_item.php');
         require_once('class.images.php');
@@ -44,8 +43,8 @@ class UW
     private function initialize()
     {
         $this->Install    = new UW_Install_Theme;
-        $this->Scripts    = new UW_Install_Scripts;
-        $this->Styles     = new UW_Install_Styles;
+        $this->Scripts    = new UW_Scripts;
+        $this->Styles     = new UW_Styles;
         $this->Images     = new UW_Images;
         $this->SquishBugs = new UW_SquishBugs;
         $this->Filters    = new UW_Filters;
