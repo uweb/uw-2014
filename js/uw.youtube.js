@@ -16,8 +16,13 @@ UW.YouTube.Collection = Backbone.Collection.extend({
     setup_for_type : function (youtube_id) {
         this.type = this.$el.data('uw-youtube-type');
         if (this.type == 'playlist'){
+            this.max_results = 20;
+            var max_results_temp = parseInt(this.$el.data('max-results'), 10);
+            if (max_results_temp > 0) {
+                this.max_results = max_results_temp;
+            }
             this.model = UW.YouTube.PlaylistItem;
-            this.url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=' + this.youtube_id + '&key=AIzaSyApmhFr5oa8bmKPcpN7bm-h0mekjkUVypU';
+            this.url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=' + this.youtube_id + '&key=AIzaSyApmhFr5oa8bmKPcpN7bm-h0mekjkUVypU&maxResults=' + this.max_results;
         }
         else if (this.type == 'single') {
             this.model = UW.YouTube.Video;
