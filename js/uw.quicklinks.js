@@ -163,7 +163,8 @@ UW.QuickLinksView = Backbone.View.extend({
         this.$drawer.html('');
     },
 
-    animate: function () {
+    animate: function (event) {
+        event.preventDefault();
         this.$container.toggleClass('open');
         this.$drawer.toggleClass('open');
     }
