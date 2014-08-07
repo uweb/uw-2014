@@ -50,7 +50,6 @@
               font-family: @font-family-headline;
               font-size: @font-size-h6;
               margin-left: 15px;
-              font-size: 23px;
               &:hover {
                 color: @brightgold;
               }
@@ -99,15 +98,28 @@
         }
 
       h3{
-        font-size: 23px;
-        color: @brightgold;
+        font-size: @font-size-h6;
+        color: white;
         margin-left: 40px;
       }
-      ul#little_links{
+      ul#little_list{
         padding-left: 60px;
         li {
+          list-style: none;
+          position: relative;
+          &:before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            display: block;
+            background-color: red;
+            position: absolute;
+            left: -15px;
+            .border-radius(5px 5px);
+          }
           a{
             font-family: @font-family-headline;
+            font-size: @font-size-h6;
           }
         }
       }

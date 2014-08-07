@@ -15,18 +15,10 @@ class UW_Install_Styles
   {
     $this->STYLES = array( 
 
-      'google-font-open-sans' => array(
-          'id'      => 'google-font-open-sans',
-          'url'     => 'https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700,800',
+      'google-font-roboto' => array(
+          'id'      => 'google-font-roboto',
+          'url'     => 'http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400italic,700italic,400,700|Open+Sans:300italic,400italic,400,300',
           'deps'    => array(),
-          'version' => '3.6',
-          'admin'   => true
-      ),
-
-      'google-font-droid-serif' => array(
-          'id'    => 'google-font-droid-serif',
-          'url'   => 'https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic',
-          'deps'  => array(),
           'version' => '3.6',
           'admin'   => true
       ),

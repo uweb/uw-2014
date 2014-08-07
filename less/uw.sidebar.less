@@ -1,36 +1,32 @@
 // UW Hero
 
 .uw-sidebar {
-	margin-top: -80px;
-	padding: 10px;
-	// padding-left: 47px;
-	background-color:white;
+
 
 	ul,li {
 		display: block;
-		float: left;
-		width: 100%;
 		list-style:none;
 		padding:0;
 		margin:0;
 	}
 
-	a {
-		float:left;
-		margin: 15px;
-	}
-
 	ul.first-level  {
-
-		padding: 10px;
-
+		margin-left: 20px;
+		padding: 20px;
+		margin-top: -80px;
+		// padding-left: 47px;
+		background-color:white;
 		li.pagenav {
-
-				a.homelink
-				{
-					display:none;
-					color:@purple;
-					font-size:25px;
+				a {
+					font-family: @font-family-headline;
+					display: block;
+					padding: 10px 0 10px 20px;
+					&.homelink
+					{
+						display:none;
+						color:@purple;
+						font-size:25px;
+					}
 				}
 
 				ul {
@@ -38,10 +34,9 @@
 					font-size:20px;
 
 					li.current_page_item, li.current_page_parent {
-						background-color: gray;
+						background-color: @purple;
 						a {
 							color:white;
-							border-bottom:none;
 						}
 					}
 
@@ -51,7 +46,6 @@
 						{
 							color: @purple;
 							border-bottom: thin solid #eee;
-							width: 90%;
 						}
 
 						&.current_page_item ul.children, &.current_page_ancestor ul.children
@@ -64,11 +58,10 @@
 							{
 								padding: 5px;
 								background-color:#eee;
-
+								border-bottom: 1px solid #fff;	
 								a
 								{
 									color:gray;
-									margin: 0 0 0 10px;
 								}
 
 							}
@@ -79,6 +72,7 @@
 								a
 								{
 									color:gray;
+									border-bottom: none;	
 								}
 							}
 
@@ -88,7 +82,7 @@
 
 					}
 
-					li:last-child, li:first-child
+					li:last-child
 					{
 						a
 						{

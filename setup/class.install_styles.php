@@ -22,15 +22,8 @@ class UW_Install_Styles
         $this->STYLES = array( 
 
             new EnqueueObject( array(
-                'id'      => 'google-font-open-sans',
-                'url'     => 'https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700,800',
-                'version' => '3.6',
-                'admin'   => true
-            )),
-
-            new EnqueueObject( array(
-                'id'    => 'google-font-droid-serif',
-                'url'   => 'https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic',
+                'id'      => 'google-font-roboto',
+                'url'     => 'http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400italic,700italic,400,700|Open+Sans:300italic,400italic,400,300',
                 'version' => '3.6',
                 'admin'   => true
             )),

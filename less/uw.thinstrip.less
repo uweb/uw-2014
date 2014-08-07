@@ -1,9 +1,13 @@
 // UW Thinstrip
 
 .uw-thinstrip {
-	height: 40px;
+	height: 90px;
 	width: 100%;
-	background: grey;
+	background: @purple;
+	padding-top: 22px;
+	position: relative;
+	z-index: 2;
+	.box-shadow(0 2px 5px rgba(0,0,0,.3));
 
 	// Container
 
@@ -16,13 +20,12 @@
 	.uw-patch {
 		display: block;
 		text-indent: -9999px;
-		width: 123px;
-		height: 117px;
-		background: url(assets/svg/w.svg) no-repeat center center @purple;
-		background-size: 71px 48px;
+		width: 163px;
+		height: 110px;
+		background: url(assets/svg/uw-sprite.svg) no-repeat 0 0 transparent;
 		position: absolute;
-		top: 0;
-		left: -100px;
+		top: -22px;
+		left: 40px;
 		z-index: 1;
 	}
 
@@ -32,11 +35,10 @@
 	.uw-wordmark {
 		display: block;
 		text-indent: -9999px;
-		width: 249px;
+		width: 330px;
 		height: 24px;
-		background: url(assets/svg/wordmark.svg) no-repeat center center transparent;
-		background-size: 238px;
-		margin: 9px 0 0 32px;
+		background: url(assets/svg/uw-sprite.svg) no-repeat 0 -431px transparent;
+		margin: 10px 0 0 185px;
 		float: left;
 	}
 
@@ -47,6 +49,7 @@
 		position: relative;
 		z-index: 1;
 		font-weight: 700;
+
 		li {
 			list-style: none;
 			&:first-child a:after {
@@ -63,10 +66,11 @@
 			a {
 				font-family: @font-family-headline;
 				color: #fff;
-				font-size: 15px;
+				font-size: 18px;
+				font-weight: 500;
 				position: relative;
 				float: right;
-				padding: 9px 25px 6px 0;
+				padding: 8px 25px 10px 0;
 				&:after {
 					position: absolute;
 					right: 6px;
@@ -79,35 +83,21 @@
 			&.uw-search {
 				a {
 					text-indent: -99999px;
-					background: url(assets/svg/search.svg) no-repeat center center transparent;
+					background: url(assets/svg/uw-sprite.svg) no-repeat -520px -50px transparent;
 					position: relative;
-					.background-size(22px);
 					padding-right: 78px;
 				}
 
 			}
 			&.uw-quicklinks {
 				a {
-					font-family: @font-family-headline !important;
 					padding-left: 38px;
-					margin-left: -30px;
+					margin-left: -15px;
 					margin-right: 0;
 					padding-right: 44px;
-					background-color: #4d4d4d;
 					position: relative;
-					.background-size(22px);
-					&:before {
-						position: absolute;
-						content: "";
-						width: 60px;
-						height: 40px;
-						background-color: #9E9E9E;
-						.skew(-27deg,0);
-						display: block;
-						top: 0;
-						left: -37px;
-						border-right: 6px solid rgba(116, 116, 116, 0.5);
-					}
+					z-index: 1;
+					background: url(assets/svg/uw-sprite.svg) no-repeat -451px -235px;
 					&:after {
 						position: absolute;
 						content: "";
@@ -115,8 +105,8 @@
 						height: 25px;
 						width: 27px;
 						display: block;
-						top: 8px;
-						right: 14px;
+						top: 12px;
+						right: 17px;
 					}
 				}
 			}
@@ -126,7 +116,7 @@
 
 #uw-container {
 	&.open .uw-quicklinks a {
-		color: @brightgold;
+		color: black;
 		&:after {
 			background-position: -283px -24px;
 		}
