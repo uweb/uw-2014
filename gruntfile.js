@@ -9,6 +9,7 @@ module.exports = function(grunt) {
       dist: {
         libraries: [
           "js/libraries/jquery.easing.js",
+          "js/libraries/jquery.tinyscrollbar.js",
           "js/libraries/video.dev.js",
           "js/libraries/restive.js"
         ],

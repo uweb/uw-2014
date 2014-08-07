@@ -5,7 +5,7 @@
  * This installs the default dropdowns for the UW Theme
  */
 
-class Dropdowns
+class UW_Dropdowns
 {
 
     const NAME         = 'White Bar';

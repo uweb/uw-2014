@@ -6,14 +6,14 @@
  *    - bloginfo('stylesheet_directory')  gives you the url to the child theme
  */
 
-class UW_Install_Styles
+class UW_Styles
 {
 
   public $STYLES;
 
-  function UW_Install_Styles() 
+  function __construct()
   {
-    $this->STYLES = array( 
+    $this->STYLES = array(
 
       'google-font-roboto' => array(
           'id'      => 'google-font-roboto',
@@ -23,14 +23,14 @@ class UW_Install_Styles
           'admin'   => true
       ),
 
-      'uw-master' => array ( 
+      'uw-master' => array (
         'id'      => 'uw-master',
         'url'     => get_bloginfo( 'template_url' ) . '/style' . $this->dev_stylesheet() . '.css',
         'deps'    => array(),
         'version' => '3.6'
       ),
 
-      'uw-style' => array ( 
+      'uw-style' => array (
           'id'      => 'uw-style',
           'url'     => get_bloginfo('stylesheet_url'),
           'deps'    => array(),
@@ -46,13 +46,13 @@ class UW_Install_Styles
 
   }
 
-  function uw_register_default_styles() 
+  function uw_register_default_styles()
   {
-      foreach ( $this->STYLES as $style ) 
+      foreach ( $this->STYLES as $style )
       {
         $style = (object) $style;
 
-        wp_register_style( 
+        wp_register_style(
           $style->id,
           $style->url,
           $style->deps,
@@ -63,14 +63,14 @@ class UW_Install_Styles
 
   }
 
-  function uw_enqueue_default_styles() 
+  function uw_enqueue_default_styles()
   {
       wp_enqueue_style( 'uw-master' );
-      foreach ( $this->STYLES as $style ) 
+      foreach ( $this->STYLES as $style )
       {
         $style = (object) $style;
 
-        if ( array_key_exists( 'child', $style ) 
+        if ( array_key_exists( 'child', $style )
               && $style->child && ! $this->is_child_theme() )
           continue;
 
@@ -85,15 +85,15 @@ class UW_Install_Styles
     if ( ! is_admin() )
       return;
 
-    foreach ( $this->STYLES as $style ) 
+    foreach ( $this->STYLES as $style )
     {
 
       $style = (object) $style;
 
-      if ( array_key_exists( 'admin', $style) 
+      if ( array_key_exists( 'admin', $style)
             && $style->admin )
       {
-        wp_register_style( 
+        wp_register_style(
           $style->id,
           $style->url,
           $style->deps,
@@ -107,7 +107,7 @@ class UW_Install_Styles
 
   }
 
-  function is_child_theme() 
+  function is_child_theme()
   {
     return get_bloginfo( 'template_directory' ) != get_bloginfo( 'stylesheet_directory' );
   }
@@ -118,4 +118,3 @@ class UW_Install_Styles
   }
 
 }
-new UW_Install_Styles;

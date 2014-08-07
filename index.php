@@ -40,6 +40,8 @@
               Radio is on
             </label>
  -->
+            <div id="singlevid" class="uw-youtube" data-uw-youtube="RtWbpyjJqrU" data-uw-youtube-type="single"></div>
+            <div id="kapow" class="uw-youtube" data-uw-youtube="PL6EC7B047181AD013" data-uw-youtube-type="playlist" data-max-results='50'></div>
             <div class="uw-player">
               <video class="video-js"
                 controls preload="auto" width="100%" height="300px"

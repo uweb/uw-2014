@@ -1,9 +1,37 @@
 // This section builds and populates the quicklinks section (off-canvas right)
 
 UW.QuickLink = Backbone.Model.extend({
-    has_icon: false,
-    classes: [],
+    defaults: {
+        has_icon: false,
+        classes: ''
+    },
+    
+    initialize: function () {
+        //hacktacular.  Need to stop the collection making a model with url = collection.url somehow
+        if (this.get('link_url') !== undefined){
+            this.create_view();
+        }
+    },
+
+    create_view: function () {
+        this.view = new UW.QuickLinkView({model: this});
+    }
 });
+
+UW.QuickLinkView = Backbone.View.extend({
+    menu_template : '<li><% if (classes) { %><span class="<%= classes %>"></span><% } %><a href="<%= link_url %>"><%= title %></a></li>',
+
+    initialize: function () {
+        this.create_menu_item();
+    },
+
+    create_menu_item : function ()
+    {
+        item = this.model.toJSON();
+        this.$menu_item = $(_.template( this.menu_template, item ));
+    }
+});
+
 
 UW.QuickLinks = Backbone.Collection.extend({
 
@@ -12,10 +40,14 @@ UW.QuickLinks = Backbone.Collection.extend({
     initialize: function (args) {
         this.el = args.el;
         this.url = args.url;
-        _.bindAll(this, 'use_ajax', 'use_defaults', 'make_view');
-        this.fetch({success: this.use_ajax, error: this.use_defaults});
+        _.bindAll(this, 'parse', 'make_view');
+        this.create_models();
+        this.make_view();
+        //refusal to execute the ajax request isn't handled here.  Looks like it should be, but it isn't
+        this.fetch({success: this.view.build});
     },
 
+    //pull this out of the collection?
     default_links: [
         {title: 'Maps', url: 'http://uw.edu/maps', classes: ['icon-maps']},
         {title: 'Directories', url: 'http://uw.edu/directory', classes: ['icon-directories']},
@@ -25,33 +57,32 @@ UW.QuickLinks = Backbone.Collection.extend({
         {title: 'UW Today', url: 'http://uw.edu/news', classes: ['icon-uwtoday']},
        ],
 
-    use_ajax: function (holder, response) {
-        this.models = [];
-        if (Object.keys(response).length === 0){
-            this.use_defaults();
-        }
-        else {
-            for (var key in response) {
-                this.add_model(response[key]); 
-            }
-            this.make_view();
-        }
-    },
-
-    use_defaults: function () {
-        this.models = [];
+    create_models: function () {
         for (var i = 0; i < this.default_links.length; i++){
-            this.add_model(this.default_links[i]);
+            this.add(this.normalize_data(this.default_links[i]));
         }
-        this.make_view();
+    },
+    
+    normalize_data: function (holder) {
+        holder.link_url = holder.url;
+        delete holder.url;
+        if (holder.classes !== 'undefined'){
+            holder.classes = holder.classes.join(' ');
+            if (holder.classes !== '') {
+                holder.has_icon = true;
+            }   
+        }
+        return holder;
     },
 
-    add_model: function (link) {
-        if (link.classes !== 'undefined' && link.classes.length > 0 && link.classes[0] !== '') {
-            this.models.push(new this.model({text: link.title, link_url: link.url, classes: link.classes, has_icon: true }));
-        }
-        else {
-            this.models.push(new this.model({text: link.title, link_url: link.url,}));
+    parse: function (response) {
+        if (Object.keys(response).length !== 0){
+            this.view.reset();
+            var model_data = [];
+            for (var key in response) {
+                model_data.push(this.normalize_data(response[key]));
+            }
+            return model_data;
         }
     },
 
@@ -69,15 +100,18 @@ UW.QuickLinksView = Backbone.View.extend({
     $big_list: $('<ul id="big_links"></ul>'),
     $little_list: $('<ul id="little_list"></ul>'),
 
-    menu_item : '<li><% if (classes) { %><span class="<%= classes %>"></span><% } %><a href="<%= url %>"><%= text %></a></li>',
 
     events: {
        'click': 'animate'
     },
 
     initialize: function () {
-        _.bindAll( this, 'append_menu_item' )
+        _.bindAll( this, 'append_menu_item', 'build' );
         this.make_drawer();
+        this.build();
+    },
+
+    build: function () {
         this.add_links();
         this.add_lists();
     },
@@ -95,19 +129,12 @@ UW.QuickLinksView = Backbone.View.extend({
         _.each( this.collection.models, this.append_menu_item )
     },
 
-    append_menu_item : function( model )
-    {
-        item = {
-            classes: false,
-            url: model.get('link_url'),
-            text: model.get('text')
-        };
+    append_menu_item: function (model) {
         if (model.get('has_icon')) {
-            item.classes = model.get('classes').join(' ');
-            this.$big_list.append( _.template( this.menu_item, item ) );
+            this.$big_list.append(model.view.$menu_item);
         }
         else {
-            this.$little_list.append(_.template(this.menu_item, item));
+            this.$little_list.append(model.view.$menu_item);
         }
     },
 
@@ -120,6 +147,20 @@ UW.QuickLinksView = Backbone.View.extend({
             this.$drawer.append(this.$little_list);
         }
         this.$container.prepend(this.$drawer);
+    },
+
+    reset: function () {
+        this.clear_lists();
+        this.clear_drawer();
+    },
+
+    clear_lists: function () {
+        this.$little_list.html('');
+        this.$big_list.html('');
+    },
+
+    clear_drawer: function () {
+        this.$drawer.html('');
     },
 
     animate: function () {

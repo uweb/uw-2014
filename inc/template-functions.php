@@ -21,7 +21,7 @@ if ( ! function_exists( 'uw_dropdowns') )
           <h3 class="assistive-text">Main menu</h3>';
 
           wp_nav_menu( array(
-            'theme_location'  => $UW->Dropdowns->LOCATION,
+            'theme_location'  => UW_Dropdowns::LOCATION,
             'container_class' => 'dawgdrops-inner container',
             'menu_class'      => 'dawgdrops-nav',
             'fallback_cb'     => '',
@@ -49,14 +49,12 @@ if ( ! function_exists('uw_sidebar') ) :
     $children = get_children(array(
       'post_parent' => $post->ID
     ) );
-
-    if ( empty( $children ) )
-      $parent = get_post( $post->post_parent );
+    $parent = get_post( $post->post_parent );
 
     echo '<ul class="first-level">';
     wp_list_pages(array(
       'title_li' => '<a href="'.get_bloginfo('url').'" title="Home" class="homelink">Home</a>',
-      'child_of' => $parent ? $parent->post_parent : $post->post_parent,
+      'child_of' => $parent->post_parent ? $parent->post_parent : $post->post_parent,
       // 'child_of' => $post->post_parent,
       'depth' => 2,
     ));
