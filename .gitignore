@@ -3,3 +3,4 @@ node_modules
 *.swo
 js/site.*
 style.*
+assets/fonts/heron.*
