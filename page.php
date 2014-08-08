@@ -1,4 +1,10 @@
-<?php get_header(); ?>
+<?php
+/*
+Template Name: Medium Hero
+ */
+
+get_header();
+?>
 
         <div class="uw-hero-image">
 
