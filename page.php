@@ -35,10 +35,10 @@
 
                     <?php endwhile; // end of the loop. ?>
 
-                </div><!-- uw-body -->
+                </div><!-- uw-content -->
 				<div class="col-md-4 uw-sidebar" role="complementary">
                     <?php uw_sidebar(); ?>
-                </div><!-- secondary -->
+                </div><!-- uw-sideabr -->
 			</div><!-- row -->
  		</div><!-- uw-body -->
 
