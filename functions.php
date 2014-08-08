@@ -60,6 +60,7 @@ $UW = new UW();
 require( get_template_directory() . '/inc/template-functions.php' );
 
 
+// temporary for widgets
 foreach (glob( get_template_directory() . "/widgets/*.php") as $filename)
 {
     include $filename;

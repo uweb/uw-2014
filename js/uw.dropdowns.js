@@ -30,7 +30,8 @@ UW.Dropdowns = Backbone.View.extend({
 
   events : {
     'keydown .dawgdrops-menu a' : 'moveFocusInSubMenu',
-    'keydown .dawgdrops-item > a' : 'toggleSubMenu'
+    'keydown .dawgdrops-item > a' : 'toggleSubMenu',
+    'mouseenter .dawgdrops-item' : 'positionSubmenu'
   },
 
 
@@ -39,18 +40,18 @@ UW.Dropdowns = Backbone.View.extend({
     _.bindAll( this, 'toggleSubMenu' )
     this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
     this.$topLevelNav = this.$el.find( this.elements.toplevel )
-    this.render()
   },
 
   render : function()
   {
-    _.map( this.$topLevelNav, this.positionSubmenu )
+    // _.map( this.$topLevelNav, this.positionSubmenu )
   },
 
   positionSubmenu : function( el )
   {
-    var $el = $(el)
-    $el.find('ul').css({ left : $el.position().left })
+    var $el = $(el.currentTarget)
+      , position = $el.position()
+    $el.find('ul').css( { top : position.top + 80, left: position.left } )
   },
 
   toggleSubMenu : function( e )
