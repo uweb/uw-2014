@@ -14,18 +14,15 @@ get_header();
                     <h2 class='uw-site-title'><?php bloginfo(); ?></h2>
 					
                     <?php
-                    while ( have_posts() ) : the_post();
+                    while ( have_posts() ) :
+                    the_post();
                     
                     uw_breadcrumbs();
                     ?>
 
 			        <main id="post-<?php the_id(); ?>" <?php post_class(); ?>>
 				        <header class="entry-header">
-                            <?php
-                            if (!empty(get_the_title())):
-                            ?>
 					        <h1 class="entry-title"><?php the_title(); ?></h1>
-					        <?php endif; ?>
 				        </header><!-- .entry-header -->
 				        <div class="entry-content">
                             <?php the_content(); ?>

@@ -3,6 +3,11 @@
 Template Name: Big Hero
  */
 
+if(!is_front_page()){
+    load_template(get_template_directory() . '/page.php');
+    return;
+}
+
 get_header();
 ?>
 
@@ -24,11 +29,7 @@ get_header();
 
 			        <main id="post-<?php the_id(); ?>" <?php post_class(); ?>>
 				        <header class="entry-header">
-                            <?php
-                            if (!empty(get_the_title())):
-                            ?>
 					        <h1 class="entry-title"><?php the_title(); ?></h1>
-					        <?php endif; ?>
 				        </header><!-- .entry-header -->
 				        <div class="entry-content">
                             <?php the_content(); ?>
