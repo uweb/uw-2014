@@ -19,11 +19,7 @@
 
 					<article id="post-<?php the_id(); ?>" <?php post_class(); ?>>
 				        <header class="entry-header">
-                            <?php
-                            if (!empty(get_the_title())):
-                            ?>
 					        <h1 class="entry-title"><?php the_title(); ?></h1>
-                            <?php endif; ?>
                             <p class="date"><?php the_date('F j, Y'); ?></p>
                             <p class="author-info">By <?php the_author(); ?></p>
 				        </header><!-- .entry-header -->
