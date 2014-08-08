@@ -14,6 +14,7 @@
                     the_post();
                     $post_id = get_the_id();
                     $title = get_the_title();
+                    $content = get_the_content();
                     
                     uw_breadcrumbs();
                     ?>
