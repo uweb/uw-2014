@@ -58,3 +58,9 @@ $UW = new UW();
 //require( get_template_directory() . '/inc/prep-uw-rss2.php' );
 
 require( get_template_directory() . '/inc/template-functions.php' );
+
+
+foreach (glob( get_template_directory() . "/widgets/*.php") as $filename)
+{
+    include $filename;
+}

@@ -15,15 +15,15 @@ class UW_Filters
   }
 
   /**
-   * Filter that returns the same content but with words from the 
+   * Filter that returns the same content but with words from the
    *  Italicized words setting in italics.
    */
   function italicize( $content )
   {
-  
+
     $words = explode(' ', get_option('italicized_words') );
 
-    if ( 1 == sizeof( $words ) )  
+    if ( 1 == sizeof( $words ) )
     {
       echo $content;
       return;
@@ -33,7 +33,7 @@ class UW_Filters
 
     $regex = '/\b(' . implode("|", $words) . ')\b/i';
 
-    $new_content = preg_replace($regex, "<em>$1</em>", $content); 
+    $new_content = preg_replace($regex, "<em>$1</em>", $content);
 
     if ( in_array('&', $words) )
       $new_content = str_replace( array( ' &#038; ', ' & ', ' &amp; ' ) , ' <em>&</em> ', $new_content);
@@ -46,11 +46,11 @@ class UW_Filters
   /**
    * Returns the abbreviated title if it exists, otherwise the site title
    */
-  function abbreviate( $title ) 
+  function abbreviate( $title )
   {
      $abbr = get_option('abbreviation');
 
-     if (! $abbr ) 
+     if (! $abbr )
        return $title;
 
      return $abbr;

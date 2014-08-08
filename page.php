@@ -4,24 +4,20 @@
 
         </div>
 		<div role="main" class="container uw-body">
-			
-						
+
+
 			<div class="row">
 				<div class="col-md-8 uw-content">
                     <h2 class='uw-site-title'><?php bloginfo(); ?></h2>
-					
+
                     <?php while ( have_posts() ) : the_post();
-                    
+
                     uw_breadcrumbs();
                     ?>
 
 			        <main id="post-<?php the_id(); ?>" <?php post_class(); ?>>
 				        <header class="entry-header">
-                            <?php
-                            if (!empty(get_the_title())):
-                            ?>
 					        <h1 class="entry-title"><?php the_title(); ?></h1>
-					        <?php endif; ?>
 				        </header><!-- .entry-header -->
 				        <div class="entry-content">
                             <?php the_content(); ?>
@@ -38,6 +34,8 @@
                 </div><!-- uw-content -->
 				<div class="col-md-4 uw-sidebar" role="complementary">
                     <?php uw_sidebar(); ?>
+                    <?php dynamic_sidebar( UW_Sidebar::ID ); ?>
+
                 </div><!-- uw-sideabr -->
 			</div><!-- row -->
  		</div><!-- uw-body -->
