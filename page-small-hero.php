@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Big Hero
+Template Name: Small Hero
  */
 
 get_header();
