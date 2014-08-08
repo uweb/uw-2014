@@ -1,10 +1,6 @@
 <?php get_header(); ?>
 
-
-
-<div class="uw-hero-image">
-
-</div>
+<div class="uw-hero-image"> </div>
 
 
 <div class="container uw-body">
@@ -59,7 +55,7 @@
 
   <div class="col-md-4 uw-sidebar">
     <?php uw_sidebar(); ?>
-      <!-- <img src="http://127.0.0.1/cms/wp-content/themes/uw-2014/assets/temp/rightnav.png"> -->
+    <?php dynamic_sidebar( UW_Sidebar::ID ); ?>
   </div>
 
 </div>

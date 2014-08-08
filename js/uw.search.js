@@ -5,15 +5,17 @@
 
 UW.Search = Backbone.View.extend({
 
+  // This property caches the current value in the search field so the same search doesn't execute multiple times.
   value : '',
-  body : 'body',
 
+  // These are the three search options: the UW, the current site and the directory
   searchFeatures : {
     uw        : 'uw',
     site      : 'site',
     directory : 'directory'
   },
 
+  // This is the HTML for the search bar that is preprended to the body tag.
   searchbar : '<div class="uw-search-bar-container">'+
                '<div class="container">'+
                   '<div class="center-block uw-search-wrapper">'+
@@ -37,16 +39,15 @@ UW.Search = Backbone.View.extend({
                       '<input type="radio" name="search" value="directory" data-toggle="radio" checked>'+
                       'People Directory'+
                     '</label>'+
-
-
                 '</div>'+
 
                 '<div class="uw-results"></div>'+
 
-                  '</div>'+
                 '</div>'+
-              '</div>',
+              '</div>'+
+            '</div>',
 
+  // The HTML template for a single search result. Only the information that is available will be shown.
   result :  '<div class="result">' +
               '<h4 class="commonname"><%= commonname %></h4>'+
               '<a href="#" title="<%= commonname %>" class="more">More</a>'+
@@ -58,11 +59,16 @@ UW.Search = Backbone.View.extend({
               '</div>'+
             '</div>',
 
+  // Default values. The `limit` refers to the minimum number characters needed before an ajax search is performed.
   defaults :
   {
     limit : 2
   },
 
+  // List of events
+  // A keydown on the input field will trigger an ajax search if more than two characters are present.
+  // Clicking on a result's more icon or name unveil more information
+  // Toggling the radio buttons changes the function of the search bar from searhing the UW, searching the current site and searching the directory.
   events :
   {
     'keydown input'             : 'searchDirectory',
@@ -72,6 +78,7 @@ UW.Search = Backbone.View.extend({
     'submit form'              : 'submitSearch'
   },
 
+  // Initialize the view and bind events to to the DirectoryModel `results` attribute.
   initialize :function ( options )
   {
     _.bindAll( this, 'toggleSearchBar', 'searchDirectory', 'parse' )
@@ -89,9 +96,11 @@ UW.Search = Backbone.View.extend({
     this.model.on( 'change:results', this.parse, this )
   },
 
+  // Render the search bar above the `body` element and set the view element to the search bar HTML
+  // since most events take place within that view.
   render : function()
   {
-    $( this.body ).prepend( this.$searchbar )
+    UW.$body.prepend( this.$searchbar )
 
     this.$toggle = this.$el;
     this.$toggle.bind( 'click', this.toggleSearchBar )
@@ -99,6 +108,7 @@ UW.Search = Backbone.View.extend({
     this.setElement( this.$searchbar )
   },
 
+  // This shows and hides the search
   toggleSearchBar: function()
   {
     this.empty()
@@ -107,17 +117,24 @@ UW.Search = Backbone.View.extend({
     return false;
   },
 
+  // Set a property to the current radio button indicating which function the search bar is providing.
   toggleSearchFeature : function( e )
   {
     this.empty()
     this.searchFeature = e.currentTarget.value
   },
 
+  // If the search bar is not searching the directiory behave like a normal search function and don't cancel
+  // the submit event.
   submitSearch : function()
   {
     return this.searchFeature !== this.searchFeatures.directory
   },
 
+
+  // Check if a new search is in the searchbar, enough characters are in the searchbar and that there it
+  // a term to search for. If all three of these checks pass, cache the search term and perform the search.
+  // Note: this functino is debounced by 200ms to limit the number of searches triggered within that time period to one.
   searchDirectory : _.debounce( function( e ) {
 
     if ( this.value === e.target.value ) return
@@ -130,11 +147,14 @@ UW.Search = Backbone.View.extend({
 
   }, 200 ),
 
+  // Empty the search results.
   empty : function()
   {
     this.$results.empty()
   },
 
+  // Parse the search results. The LDAP response from the server is first parsed by custom PHP and then
+  // the new JSON feed is rendered here in the view.
   parse : function ( response )
   {
     var data = response.attributes.results
@@ -154,6 +174,7 @@ UW.Search = Backbone.View.extend({
 
   },
 
+  // Reveal or hide the directory more information.
   showPersonInformation : function( e )
   {
     this.$( e.currentTarget )

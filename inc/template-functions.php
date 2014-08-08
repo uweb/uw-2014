@@ -50,7 +50,7 @@ if ( ! function_exists('uw_sidebar') ) :
     $children = get_children(array(
       'post_parent' => $post->ID
     ) );
-  
+
   if ( empty( $children ) )
     $parent = get_post( $post->post_parent );
 

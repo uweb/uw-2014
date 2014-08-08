@@ -10,8 +10,8 @@ get_header();
 
         </div>
 		<div role="main" class="container uw-body">
-			
-						
+
+
 			<div class="row">
 				<div class="col-md-8 uw-content">
                     <h2 class='uw-site-title'><?php bloginfo(); ?></h2>
@@ -42,6 +42,8 @@ get_header();
                 </div><!-- uw-content -->
 				<div class="col-md-4 uw-sidebar" role="complementary">
                     <?php uw_sidebar(); ?>
+                    <?php dynamic_sidebar( UW_Sidebar::ID ); ?>
+
                 </div><!-- uw-sideabr -->
 			</div><!-- row -->
  		</div><!-- uw-body -->
