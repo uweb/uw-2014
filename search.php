@@ -12,22 +12,20 @@
                 <?php
                 if (have_posts() ):
                 while ( have_posts() ) :
-                    the_post();
-                $post_id = get_the_id();
-                $title = get_the_title();
-                $permalink = get_the_permalink();
-                $excerpt = get_the_excerpt();
+                the_post();
                 ?>
 
-                <article id="post-<?= $post_id ?>" <?php post_class(); ?>>
+                <article id="post-<?php the_id(); ?>" <?php post_class(); ?>>
                     <header class="entry-header">
-                        <h2 class="entry-title"><a href="<?= $permalink ?>" title="<?php the_title_attribute(); ?>"><?= $title ?></a></h2>
+                        <h2 class="entry-title">
+                            <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title() ?></a>
+                        </h2>
                     </header><!-- .entry-header -->
             
                     <div class="entry-content">
-                        <?= $excerpt ?>
+                        <?php the_excerpt(); ?>
                     </div><!-- .entry-content -->
-                </article><!-- #post-<?= $post_id ?> -->
+                </article><!-- #post-<?php the_id(); ?> -->
 
                 <?php
                 endwhile;
