@@ -9,37 +9,30 @@
 			<div class="row show-grid">
 				<div class="col-md-8 uw-content">
 								
-                <?php while ( have_posts() ) :
-                    the_post();
-                    $post_id = get_the_ID();
-                    $title = get_the_title();
-                    $author = get_the_author();
-                    $permalink = get_the_permalink();
-                    $time = get_the_time('F j, Y');
-                    $excerpt = get_the_excerpt();
-                    $thumbnail = get_the_post_thumbnail($post_id, array(200,200), array('class' => 'alignleft'));
-                ?>
+                <?php while ( have_posts() ) : the_post();?>
 
 				
-			        <article id="post-<?= $post_id ?>" <?php post_class(); ?>>
+			        <article id="post-<?php the_id() ?>" <?php post_class(); ?>>
 				        <header class="entry-header">
-                        <?php if (!empty($title)): ?>
+                        <?php if (!empty(get_the_title())): ?>
                             <h2 class="entry-title">
-                                <a href="<?= $permalink ?>"><?= $title ?></a>
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             </h2>
                         <?php endif; ?>
                             <span class="post-info">
-                                <p><?= $time ?></p>
-                                <p class="author-info">By <?= $author ?></p>
+                                <p><?php the_time('F j, Y'); ?></p>
+                                <p class="author-info">By <?php the_author(); ?></p>
                             </span>
 				        </header><!-- .entry-header -->
 			
                         <div class="entry-content">
-                            <?= $thumbnail ?>
-                            <?= $excerpt ?>
+                            <?php
+                            the_post_thumbnail(array(200,200), array('class' => 'alignleft'));
+                            the_excerpt();
+                            ?>
 				        </div><!-- .entry-content -->
 				        <hr>
-			        </article><!-- #post-<?= $post_id ?> -->
+                    </article><!-- #post-<?php the_id(); ?> -->
 
 			    <?php endwhile; // end of the loop. ?>
 
