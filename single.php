@@ -8,39 +8,36 @@
 						
 			<div class="row">
 				<div class="col-md-8 uw-content">
-                    <h2 class='uw-site-title'><?= get_bloginfo()?></h2>
+                    <h2 class='uw-site-title'><?php bloginfo()?></h2>
 					
                     <?php
                     while ( have_posts() ) :
                     the_post();
-                    $post_id = get_the_id();
-                    $title = get_the_title();
-                    $date = get_the_date();
-                    $author = get_the_author();
-                    $content = get_the_content();
+
+                    uw_breadcrumbs();
                     ?>
 
-                    <?php uw_breadcrumbs(); ?>
-
-					<article id="post-<?= $post_id ?>" <?php post_class(); ?>>
+					<article id="post-<?php the_id(); ?>" <?php post_class(); ?>>
 				        <header class="entry-header">
                             <?php
-                            if (!empty($title)):
+                            if (!empty(get_the_title())):
                             ?>
-					        <h1 class="entry-title"><?= $title ?></h1>
+					        <h1 class="entry-title"><?php the_title(); ?></h1>
                             <?php endif; ?>
-                            <p class="date"><?= $date ?></p>
-                            <p class="author-info">By <?= $author ?></p>
+                            <p class="date"><?php the_date('F j, Y'); ?></p>
+                            <p class="author-info">By <?php the_author(); ?></p>
 				        </header><!-- .entry-header -->
                         <div class="entry-content">
-                            <?php the_post_thumbnail(); ?>
-                            <?= $content ?>
+                            <?php 
+                            the_post_thumbnail(); //alignleft class?  How should this look?
+                            the_content();
+                            ?>
                         </div><!-- .entry-content -->
                         <footer class="entry-meta">
                             <?php the_tags('This article was posted under: ', ', ', '<br />'); ?> 
                             <?php edit_post_link( __( 'Edit', 'uw' ), '<span class="edit-link">', '</span>' ); ?>
                         </footer><!-- .entry-meta -->
-                    </article><!-- #post-<?= $post_id ?> -->
+                    </article><!-- #post-<?php the_id(); ?> -->
 
 					<?php comments_template( '', true ); ?>
 
