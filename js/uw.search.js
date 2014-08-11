@@ -75,7 +75,7 @@ UW.Search = Backbone.View.extend({
     'click .result .more'       : 'showPersonInformation',
     'click .result .commonname' : 'showPersonInformation',
     'click input:radio'         : 'toggleSearchFeature',
-    'submit form'              : 'submitSearch'
+    'submit form'               : 'submitSearch'
   },
 
   // Initialize the view and bind events to to the DirectoryModel `results` attribute.

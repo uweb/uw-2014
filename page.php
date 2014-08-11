@@ -15,17 +15,18 @@ get_header();
 			<div class="row">
 				<div class="col-md-8 uw-content">
                     <h2 class='uw-site-title'><?php bloginfo(); ?></h2>
-					
+
                     <?php
                     while ( have_posts() ) :
                     the_post();
-                    
+
                     uw_breadcrumbs();
                     ?>
 
 			        <main id="post-<?php the_id(); ?>" <?php post_class(); ?>>
 				        <header class="entry-header">
 					        <h1 class="entry-title"><?php the_title(); ?></h1>
+                    <?php  uw_mobile_menu(); ?>
 				        </header><!-- .entry-header -->
 				        <div class="entry-content">
                             <?php the_content(); ?>

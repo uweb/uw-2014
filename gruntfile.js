@@ -24,6 +24,7 @@ module.exports = function(grunt) {
           "js/uw.checkbox.js",
           "js/uw.radio.js",
           "js/uw.dropdowns.js",
+          "js/uw.mobile-menu.js",
           "js/uw.accordion.js",
           "js/uw.select.js",
           "js/uw.image.js",
