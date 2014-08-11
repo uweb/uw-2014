@@ -100,7 +100,17 @@
       h3{
         font-size: @font-size-h6;
         color: white;
-        margin-left: 40px;
+        margin: 40px 0 30px 40px;
+        position: relative;
+        &:after {
+          content: "";
+          display: block;
+          width: 30px;
+          height: 1px;
+          background-color: white;
+          position: absolute;
+          bottom: -19px;
+        }
       }
       ul#little_list{
         padding-left: 60px;
