@@ -1,16 +1,17 @@
 // List out the classes that each component searches for
 UW.elements = {
 
-  accordion : '.uw-accordion',
-  dropdowns : '#dawgdrops',
-  radio     : ':radio',
-  search    : '.uw-search',
-  select    : '.uw-select',
+  accordion  : '.uw-accordion',
+  dropdowns  : '#dawgdrops',
+  mobilemenu : '.uw-mobile-menu-toggle',
+  radio      : ':radio',
+  search     : '.uw-search',
+  select     : '.uw-select',
   quicklinks : '.uw-quicklinks',
-  slideshow : '.uw-slideshow',
-  social    : '.uw-social',
-  vimeo     : '.uw-vimeo',
-  youtube   : '.uw-youtube'
+  slideshow  : '.uw-slideshow',
+  social     : '.uw-social',
+  vimeo      : '.uw-vimeo',
+  youtube    : '.uw-youtube'
 
 }
 
@@ -37,6 +38,7 @@ UW.initialize = function( $ )
 
   // UW Utilities
   UW.dropdowns  = _.map( $( UW.elements.dropdowns ),     function( element ) { return new UW.Dropdowns({ el : element }) } )
+  UW.mobilemenu = _.map( $( UW.elements.mobilemenu ),     function( element ) { return new UW.MobileMenu({ el : element }) } )
   UW.quicklinks = _.map( $( UW.elements.quicklinks ),    function( element ) { return new UW.QuickLinks( { el : element, url : UW.sources.quicklinks }) } )
   UW.search     = _.map( $( UW.elements.search ),    function( element ) { return new UW.Search( { el : element, model : new UW.Search.DirectoryModel( {url: UW.sources.search}) }) } )
 

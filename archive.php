@@ -14,11 +14,9 @@
 				
 			        <article id="post-<?php the_id() ?>" <?php post_class(); ?>>
 				        <header class="entry-header">
-                        <?php if (!empty(get_the_title())): ?>
                             <h2 class="entry-title">
                                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             </h2>
-                        <?php endif; ?>
                             <span class="post-info">
                                 <p><?php the_time('F j, Y'); ?></p>
                                 <p class="author-info">By <?php the_author(); ?></p>

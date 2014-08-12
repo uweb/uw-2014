@@ -55,6 +55,11 @@
 			&:first-child a:after {
 				display: none;
 			}
+			&:nth-child(3),
+			&:nth-child(4),
+			&:nth-child(5) {
+				display: none;
+			}
 			&:nth-child(3) {
 				a {
 					padding-right: 10px;
@@ -97,6 +102,7 @@
 					padding-right: 44px;
 					position: relative;
 					z-index: 1;
+					color: #000;
 					background: url(assets/svg/uw-sprite.svg) no-repeat -451px -235px;
 					&:after {
 						position: absolute;
@@ -122,3 +128,18 @@
 		}
 	}
 }
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	ul.uw-thin-links {
+
+			li {
+				&:nth-child(3),
+				&:nth-child(4),
+				&:nth-child(5) {
+					display: block !important;
+				}
+			}
+		}
+}
+

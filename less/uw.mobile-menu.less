@@ -1,0 +1,148 @@
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+  ul.uw-mobile-menu {
+    display: block;
+  }
+
+}
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+}
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+  
+}
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+  ul.uw-mobile-menu {
+    display:none;
+  }
+
+}
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
+
+
+ul.uw-mobile-menu
+{
+
+  .uw-mobile-menu-toggle
+  {
+    display:block;
+    position: relative;
+    float:right;
+    margin-top: -40px;
+    font-size: @font-size-base / 1.2;
+    line-height: @line-height-base / 1.2;
+    text-align: center;
+    width: 50px;
+    height: 30px;
+    text-transform: uppercase;
+    color:@purple;
+    background: url('assets/svg/caret.svg') no-repeat center bottom;
+    background-size: 30%;
+    &:before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 10px;
+      height: 40px;
+      background: url('assets/svg/slash.svg') no-repeat;
+      background-size: 17px
+    }
+  }
+
+  li.pagenav {
+    display:none; // uw.mobile-menu.js toggles view
+
+    a {
+      font-family: @font-family-headline;
+      display: block;
+      padding: 10px 0 10px 20px;
+      background-image: none; // Override the uw-body anchors
+      &.homelink
+      {
+        display:none;
+        color:@purple;
+        font-size:25px;
+      }
+    }
+
+    ul {
+
+      font-size:20px;
+
+      li.current_page_item, li.current_page_parent {
+        background-color: @purple;
+        a {
+          color:white;
+        }
+      }
+
+      li
+      {
+        a
+        {
+          color: @purple;
+          border-bottom: thin solid #eee;
+        }
+
+        &.current_page_item ul.children, &.current_page_ancestor ul.children
+        {
+          display:block;
+          font-size: 17px;
+          background-color:white;
+
+          li
+          {
+            padding: 5px;
+            background-color:#eee;
+            border-bottom: 1px solid #fff;
+            a
+            {
+              color:gray;
+            }
+
+          }
+
+          li.current_page_item
+          {
+            background-color:white;
+            a
+            {
+              color:gray;
+              border-bottom: none;
+            }
+          }
+
+
+        }
+
+
+      }
+
+      li:last-child
+      {
+        a
+        {
+          // color:@purple;
+          border-bottom: none;
+        }
+      }
+
+    }
+
+  }
+
+  ul.children {
+    display:none;
+  }
+
+}
