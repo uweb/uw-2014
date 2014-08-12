@@ -6,4 +6,4 @@ Template Name: No Hero
 get_header();
 ?>
 
-		<?php include(get_stylesheet_directory() . '/page-common.php'); ?>
+<?php include(get_stylesheet_directory() . '/templates/template-common.php'); ?>
