@@ -10,7 +10,6 @@
 // Actual content area
 
 .uw-body {
-	padding-left: 40px;
 	padding-top: 10px;
 	h1 {
 		color: @purple;
@@ -41,7 +40,14 @@
 			background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0, 0, 0, 0.2) 50%);
 			background-repeat: repeat-x;
 			background-size: 2px 2px;
-			background-position: 0 15px;
+			background-position: 0 21px;
 		}
+	}
+}
+
+
+@media only screen and (max-width : 768px) {
+	.uw-body h1 {
+		margin: 10px 80px 20px 0;
 	}
 }

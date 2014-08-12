@@ -13,7 +13,7 @@
 }
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
-
+  
 }
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
@@ -35,8 +35,9 @@ ul.uw-mobile-menu
   .uw-mobile-menu-toggle
   {
     display:block;
+    position: relative;
     float:right;
-    margin-top: -40px;
+    margin-top: 20px;
     font-size: @font-size-base / 1.2;
     line-height: @line-height-base / 1.2;
     text-align: center;
@@ -47,7 +48,14 @@ ul.uw-mobile-menu
     background: url('assets/svg/caret.svg') no-repeat center bottom;
     background-size: 30%;
     &:before {
+      content: "";
+      position: absolute;
+      right: 60px;
+      top: 0;
+      width: 20px;
+      height: 40px;
       background: url('assets/svg/slash.svg') no-repeat;
+      background-size: 17px;
     }
   }
 

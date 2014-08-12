@@ -12,7 +12,7 @@
 		list-style: none;
 		display: inline-block;
 		&:first-child a {
-			background: url(assets/svg/uw-sprite.svg) no-repeat -249px 0;
+			background: url(assets/svg/uw-sprite.svg) no-repeat -249px 3px;
 			text-indent: -99999px;
 			width: 30px;
 			padding: 5px 0 5px 0;
@@ -32,7 +32,7 @@
 	}
 	a {
 		font-family: @font-family-headline;
-		color: #6F6F6F;
+		color: #535353;
 		font-weight: 500;
 		font-size: 16px;
 		padding: 5px 25px 5px 0;
@@ -52,5 +52,13 @@
 			.background-size(7px 5px);
 			.rotate(-90deg);
 		}
+	}
+}
+
+@media only screen and (max-width : 767px) {
+	.uw-breadcrumbs {
+		float: none;
+		padding: 0;
+		margin: 0;
 	}
 }

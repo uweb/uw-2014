@@ -25,7 +25,7 @@
 		background: url(assets/svg/uw-sprite.svg) no-repeat 0 0 transparent;
 		position: absolute;
 		top: -22px;
-		left: 40px;
+		left: 0;
 		z-index: 1;
 	}
 
@@ -34,12 +34,13 @@
 
 	.uw-wordmark {
 		display: block;
+		position: absolute;
+		top: 10px;
+		left: 160px;
 		text-indent: -9999px;
 		width: 330px;
 		height: 24px;
-		background: url(assets/svg/uw-sprite.svg) no-repeat 0 -431px transparent;
-		margin: 10px 0 0 185px;
-		float: left;
+		background: url(assets/svg/uw-sprite.svg) no-repeat 0 -431px transparent;		
 	}
 
 	// Audience
@@ -97,6 +98,7 @@
 					padding-right: 44px;
 					position: relative;
 					z-index: 1;
+					color: #000;
 					background: url(assets/svg/uw-sprite.svg) no-repeat -451px -235px;
 					&:after {
 						position: absolute;
@@ -122,3 +124,75 @@
 		}
 	}
 }
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 767px) {
+
+	.uw-thinstrip {
+		padding: 0;
+		height: 50px;
+		.container {
+			position: static;
+		}
+		.uw-patch {
+			width: 90px;
+			height: 50px;
+			top: 0;
+			left: 15px;
+			background-size: 470px;
+		}
+		.uw-wordmark {
+			width: 282px;
+			height: 34px;
+			background: url(assets/svg/uw-sprite.svg) no-repeat 0 -245px transparent;
+			margin: 0;
+			float: none;
+			position: absolute;
+			left: 98px;
+			top: 4px;
+			background-size: 517px;
+		}
+		ul.uw-thin-links {
+			height: 50px;
+			li {
+				&:nth-child(3),
+				&:nth-child(4),
+				&:nth-child(5) {
+					display: none !important;
+				}
+				&.uw-quicklinks a {
+					text-indent: -99999px;
+					overflow: hidden;
+					padding: 20px 0 0 40px;
+					top: 42px;
+					right: 0;
+					position: absolute;
+					&:after {
+						top: 12px;
+						right: 17px;
+					}
+				}
+				&.uw-search a {
+					background: url(assets/svg/uw-sprite.svg) no-repeat -451px -302px;
+					text-indent: -99999px;
+					overflow: hidden;
+					padding: 20px 0 0 80px;
+					top: 42px;
+					right: 50px;
+					position: absolute;
+					&:after {
+						background: url(assets/svg/uw-sprite.svg) no-repeat -330px 2px transparent;
+						position: absolute;
+						content: "";
+						height: 26px;
+						background-size: 537px;
+						width: 27px;
+						display: block;
+						right: 20px;
+					}
+				}
+			}
+		}
+	}
+}
+
