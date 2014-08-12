@@ -3,11 +3,6 @@
 Template Name: Big Hero
  */
 
-if(!is_front_page()){
-    load_template(get_template_directory() . '/page.php');
-    return;
-}
-
 get_header();
 ?>
 
