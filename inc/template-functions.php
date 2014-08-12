@@ -39,9 +39,9 @@ if ( ! function_exists( 'uw_dropdowns') )
 
 }
 
-if ( ! function_exists('uw_sidebar') ) :
+if ( ! function_exists('uw_sidebar_menu') ) :
 
-  function uw_sidebar()
+  function uw_sidebar_menu()
   {
     echo sprintf( '<ul class="uw-sidebar-menu first-level"> %s </ul>', uw_list_pages() ) ;
   }
@@ -65,14 +65,16 @@ if ( ! function_exists( 'uw_list_pages') ) :
     global $post;
 
     $children = get_children(array(
-      'post_parent' => $post->ID
+      'post_parent' => $post->ID,
+      // todo: reconsider if this post_type parameter is a bad limitation
+      'post_type'   => 'page'
     ) );
 
     $parent = get_post( $post->post_parent );
 
     return wp_list_pages(array(
       'title_li' => '<a href="'.get_bloginfo('url').'" title="Home" class="homelink">Home</a>',
-      'child_of' => $parent->post_parent ? $parent->post_parent : $post->post_parent,
+      'child_of' => $children ? $post->post_parent : $parent->post_parent,
       'depth' => 2,
       'echo' => 0,
     ));
