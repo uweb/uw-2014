@@ -1,96 +1,117 @@
 // UW Hero
 
-.uw-sidebar {
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+}
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+}
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
 
 
-	ul,li {
-		display: block;
-		list-style:none;
-		padding:0;
-		margin:0;
-	}
 
-	ul.first-level  {
-		margin-left: 20px;
-		padding: 20px;
-		margin-top: -80px;
-		// padding-left: 47px;
-		background-color:white;
-		li.pagenav {
-				a {
-					font-family: @font-family-headline;
-					display: block;
-					padding: 10px 0 10px 20px;
-					&.homelink
-					{
-						display:none;
-						color:@purple;
-						font-size:25px;
+// todo: move this to a reset file
+ul, li {
+	display: block;
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+
+ul.uw-sidebar-menu {
+	margin-left: 20px;
+	padding: 20px;
+	margin-top: -80px;
+	// padding-left: 47px;
+	background-color:white;
+	li.pagenav {
+			a {
+				font-family: @font-family-headline;
+				display: block;
+				padding: 10px 0 10px 20px;
+				&.homelink
+				{
+					display:none;
+					color:@purple;
+					font-size:25px;
+				}
+			}
+
+			ul {
+
+				font-size:20px;
+
+				li.current_page_item, li.current_page_parent {
+					background-color: @purple;
+					a {
+						color:white;
 					}
 				}
 
-				ul {
-
-					font-size:20px;
-
-					li.current_page_item, li.current_page_parent {
-						background-color: @purple;
-						a {
-							color:white;
-						}
+				li
+				{
+					a
+					{
+						color: @purple;
+						border-bottom: thin solid #eee;
 					}
 
-					li
+					&.current_page_item ul.children, &.current_page_ancestor ul.children
 					{
-						a
+						display:block;
+						font-size: 17px;
+						background-color:white;
+
+						li
 						{
-							color: @purple;
-							border-bottom: thin solid #eee;
+							padding: 5px;
+							background-color:#eee;
+							border-bottom: 1px solid #fff;
+							a
+							{
+								color:gray;
+							}
+
 						}
 
-						&.current_page_item ul.children, &.current_page_ancestor ul.children
+						li.current_page_item
 						{
-							display:block;
-							font-size: 17px;
 							background-color:white;
-
-							li
+							a
 							{
-								padding: 5px;
-								background-color:#eee;
-								border-bottom: 1px solid #fff;	
-								a
-								{
-									color:gray;
-								}
-
+								color:gray;
+								border-bottom: none;
 							}
-
-							li.current_page_item
-							{
-								background-color:white;
-								a
-								{
-									color:gray;
-									border-bottom: none;	
-								}
-							}
-
-
 						}
 
 
 					}
 
-					li:last-child
+
+				}
+
+				li:last-child
+				{
+					a
 					{
-						a
-						{
-							// color:@purple;
-							border-bottom: none;
-						}
+						// color:@purple;
+						border-bottom: none;
 					}
-
 				}
 
 			}
@@ -101,4 +122,4 @@
 			display:none;
 		}
 
-}
+	}

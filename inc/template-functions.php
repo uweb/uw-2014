@@ -43,29 +43,42 @@ if ( ! function_exists('uw_sidebar') ) :
 
   function uw_sidebar()
   {
+    echo sprintf( '<ul class="uw-sidebar-menu first-level"> %s </ul>', uw_list_pages() ) ;
+  }
+
+endif;
+
+if ( ! function_exists( 'uw_mobile_menu' ) ) :
+
+  function uw_mobile_menu()
+  {
+    echo sprintf( '<ul class="uw-mobile-menu first-level"><span class="uw-mobile-menu-toggle">Menu</span> %s </ul>', uw_list_pages() ) ;
+  }
+
+endif;
+
+
+if ( ! function_exists( 'uw_list_pages') ) :
+
+  function uw_list_pages()
+  {
     global $post;
-
-
 
     $children = get_children(array(
       'post_parent' => $post->ID
     ) );
 
-  if ( empty( $children ) )
     $parent = get_post( $post->post_parent );
 
-    echo '<ul class="uw-sidebar-menu first-level">';
-    wp_list_pages(array(
+    return wp_list_pages(array(
       'title_li' => '<a href="'.get_bloginfo('url').'" title="Home" class="homelink">Home</a>',
-      'child_of' => $parent ? $parent->post_parent : $post->post_parent,
-
+      'child_of' => $parent->post_parent ? $parent->post_parent : $post->post_parent,
       'depth' => 2,
+      'echo' => 0,
     ));
-    echo '</ul>';
   }
 
 endif;
-
 
 if( ! function_exists('get_uw_breadcrumbs') ) :
 
