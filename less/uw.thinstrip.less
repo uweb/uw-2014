@@ -55,11 +55,6 @@
 			&:first-child a:after {
 				display: none;
 			}
-			&:nth-child(3),
-			&:nth-child(4),
-			&:nth-child(5) {
-				display: none;
-			}
 			&:nth-child(3) {
 				a {
 					padding-right: 10px;
@@ -130,16 +125,73 @@
 }
 
 /* Small Devices, Tablets */
-@media only screen and (min-width : 768px) {
-	ul.uw-thin-links {
+@media only screen and (max-width : 767px) {
 
+	.uw-thinstrip {
+		padding: 0;
+		height: 50px;
+		.container {
+			position: static;
+		}
+		.uw-patch {
+			width: 90px;
+			height: 40px;
+			top: 0;
+			left: 15px;
+			background-size: 470px;
+		}
+		.uw-wordmark {
+			width: 282px;
+			height: 44px;
+			background: url(assets/svg/uw-sprite.svg) no-repeat 0 -305px transparent;
+			margin: 0;
+			float: none;
+			position: absolute;
+			left: 108px;
+			top: 4px;
+			background-size: 637px;
+		}
+		ul.uw-thin-links {
+			height: 50px;
 			li {
 				&:nth-child(3),
 				&:nth-child(4),
 				&:nth-child(5) {
-					display: block !important;
+					display: none !important;
+				}
+				&.uw-quicklinks a {
+					text-indent: -99999px;
+					overflow: hidden;
+					padding: 20px 0 0 40px;
+					top: 42px;
+					right: 0;
+					position: absolute;
+					&:after {
+						top: 12px;
+						right: 17px;
+					}
+				}
+				&.uw-search a {
+					background: url(assets/svg/uw-sprite.svg) no-repeat -451px -302px;
+					text-indent: -99999px;
+					overflow: hidden;
+					padding: 20px 0 0 80px;
+					top: 42px;
+					right: 50px;
+					position: absolute;
+					&:after {
+						background: url(assets/svg/uw-sprite.svg) no-repeat -330px 2px transparent;
+						position: absolute;
+						content: "";
+						height: 26px;
+						background-size: 537px;
+						width: 27px;
+						display: block;
+						right: 20px;
+					}
 				}
 			}
 		}
+	}
 }
 
