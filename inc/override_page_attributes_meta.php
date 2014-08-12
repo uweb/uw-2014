@@ -1,7 +1,12 @@
 <?php
+
+/**
+ * Deletes the normal page attributes meta box on pages and adds
+ * one that we can manipulate the options on and HTML of
+ */
 function add_uw_page_attributes() 
 {
-    global $post;
+    $post = get_post();
     $post_type = get_post_type($post);
     if ( post_type_supports($post_type, 'page-attributes') )
     {
@@ -12,6 +17,11 @@ function add_uw_page_attributes()
 
 add_action('add_meta_boxes', 'add_uw_page_attributes', 15, 2);
 
+/**
+ * adds a uw_specific page attributes meta box that we control
+ *
+ * TODO: Clean up that ugly Wordpress HTML
+ */
 function uw_page_attributes_meta_box($post)
 {
 	$post_type_object = get_post_type_object($post->post_type);
@@ -51,10 +61,9 @@ function uw_page_attributes_meta_box($post)
 		?>
 <p><strong><?php _e('Template') ?></strong></p>
 <label class="screen-reader-text" for="page_template"><?php _e('Page Template') ?></label><select name="page_template" id="page_template">
-<option value='default'><?php _e('Default Template'); ?></option>
 <?php
-$front = uw_is_front_page($post);
-uw_page_template_dropdown($front, $template);
+//default template select removed because we name the default page.php
+uw_page_template_dropdown($template);
 ?>
 </select>
 <?php
@@ -68,12 +77,12 @@ uw_page_template_dropdown($front, $template);
 /**
  * Print out <option> HTML elements for the page templates drop-down.
  *
- * @since 1.5.0
- *
- * @param string $default Optional. The template file name. Default empty.
+ * @param string $default Optional. The template file name. Current default Medium Hero.
  */
-function uw_page_template_dropdown( $front, $default = '' ) {
-    $templates = get_page_templates( get_post() );
+function uw_page_template_dropdown( $default = 'Medium Hero' ) {
+    $post = get_post();
+    $front = uw_is_front_page($post);
+    $templates = get_page_templates( $post );
     if (!$front)
     {
         // CHANGE THE FOLLOWING TO CHANGE THE NAME OF THE BIG HERO TEMPLATE
@@ -86,6 +95,9 @@ function uw_page_template_dropdown( $front, $default = '' ) {
 	}
 }
 
+/**
+ * Determine if this is the front page while in the admin back-end
+ */
 function uw_is_front_page($post)
 {
     if ($post->ID == get_option('page_on_front'))
