@@ -16,6 +16,7 @@ class UW
     public static $Mimes;
     public static $Users;
     public static $Dropdowns;
+    public static $TileBox;
 
     function __construct()
     {
@@ -38,6 +39,7 @@ class UW
         require_once('class.dropdowns_walker.php');  // no initialization needed because it extends a WP class
         require_once( 'class.uw-directory.php' );
         require_once( 'class.uw-quicklinks.php' );
+        require_once( 'class.tile-box-shortcode.php' );
     }
 
     private function initialize()
@@ -53,5 +55,6 @@ class UW
         $this->Dropdowns  = new UW_Dropdowns;
         $this->Directory  = new UW_Directory;
         $this->Quicklinks = new UW_QuickLinks;
+        $this->TileBox    = new TileBox;
     }
 }
