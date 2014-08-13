@@ -29,12 +29,26 @@
 }
 
 .dawgdrops-nav {
-	padding: 0 0 0 25px;
+	
 }
 
 .dawgdrops-item {
-	&.dawgdrops-item a {
-		font-family: @font-super-headline;
+	&.dawgdrops-item {
+		a {
+		font-family: @font-family-headline;
+		font-weight: @headings-font-weight;
+		font-size: 20px;
+		}
+		li a {
+			font-family: @font-family-headline;
+			text-transform: none;
+			font-weight: 700;
+			padding-bottom: 15px;
+			margin-top: 15px;
+			&:hover {
+				color: @purple;
+			}
+		}
 	}
 	a {
 
@@ -91,20 +105,9 @@
 	background: #fff;
 	overflow: hidden;
 	z-index:1;
-	// -webkit-transition: opacity;
-	// -moz-transition: opacity;
-	// -o-transition: opacity;
-	// transition: opacity;
-	// -webkit-transition-duration: .3s;
-	// -moz-transition-duration: .3s;
-	// -o-transition-duration: .3s;
-	// transition-duration: .3s;
-	// background-color: #fff;
-	// background: rgba(255,255,255,.98);
-	// opacity: 0;
-	// -webkit-box-shadow: 1px 1px 5px gray;
-	// -moz-box-shadow: 1px 1px 5px gray;
-	// box-shadow: 1px 1px 5px gray;
+    -webkit-box-shadow: 1px 1px 8px rgba(0,0,0,.5);
+    -moz-box-shadow: 1px 1px 8px rgba(0,0,0,.5);
+    box-shadow: 1px 1px 8px rgba(0,0,0,.5);
 
 	li {
 		float:left;
@@ -127,7 +130,10 @@
 			margin-top: 5px;
 		}
 		&:last-child {
-			margin-bottom: 30px;
+			margin-bottom: 10px;
+			a {
+				border: none;
+			}
 		}
 	}
 
@@ -139,3 +145,27 @@
  		display: none;
 	}
 }
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	.dawgdrops-inner {
+		padding: 20px 0;
+	}	
+	.dawgdrops-item {
+		&:hover .dawgdrops-menu {
+			display: none;
+		}
+		a {
+			padding: 4px 10px 5px 15px;
+			&.dropdown-toggle {			
+				padding-right: 10px;
+			}
+			&:before { 
+				display: none;
+			}
+			&:after {
+				top: 13px;
+			}
+		}
+	}
+}
+
