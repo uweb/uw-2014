@@ -15,7 +15,6 @@ require( get_template_directory() . '/setup/class.uw.php' );
 $UW = new UW();
 
 require( get_template_directory() . '/inc/override_page_attributes_meta.php');
-require( get_template_directory() . '/inc/shortcodes/box-shortcode.php');
 
 // Custom shivs to help Wordpress and some plugins with our server architecture
 //require( get_template_directory() . '/shivs/remove-http-cms.php' );

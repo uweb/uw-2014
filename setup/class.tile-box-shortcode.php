@@ -7,7 +7,7 @@
  */
 
 
-Class UWTileBox
+Class TileBox
 {
     const MaxTiles = 4;
     private $NumbersArray = ['zero', 'one', 'two', 'three']; //arrays can't be constants in PHP.  Privates at least can't be changed
@@ -53,4 +53,4 @@ Class UWTileBox
     }
 }
 
-new UWTileBox();
+new TileBox();
