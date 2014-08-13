@@ -42,9 +42,10 @@
 		li a {
 			font-family: @font-family-headline;
 			text-transform: none;
-			font-weight: 700;
+			font-weight: 600;
 			padding-bottom: 15px;
 			margin-top: 15px;
+			font-size: 18px;
 			&:hover {
 				color: @purple;
 			}
@@ -62,6 +63,9 @@
 		//Caret
 		&.dropdown-toggle {
 			padding-right: 30px;
+			&:hover:before {
+				background: url(assets/svg/uw-sprite.svg) no-repeat -353px -54px;
+			}
 			&:before {
 				content: "";
 				position: absolute;
@@ -69,8 +73,8 @@
 				width: 10px;
 				right: 8px;
 				top: 37px;
-				background: url('assets/svg/caret.svg') no-repeat;
-				.background-size(10px);
+				background: url(assets/svg/uw-sprite.svg) no-repeat -353px 0px;
+				.transition(all .2s ease-in-out);
 			}
 		}
 		// Forward slash menu-separator
@@ -84,7 +88,7 @@
 			background: url('assets/svg/slash.svg') no-repeat;
 		}
 		&:focus {
-			outline: thin solid red;
+			outline: 5px solid #00ADFF;
 		}
 	}
 	&:hover .dawgdrops-menu {
@@ -117,9 +121,9 @@
 			color: gray;
 			font-size: 17px;
 			border-bottom: thin solid #eee;
-			margin: 20px 50px 0px 30px;
+			margin: 10px 30px 0px 20px;
 			text-align: left;
-			padding: 0px;
+			padding: 0 10px;
 			&:after {
 					background:none;
 			}
