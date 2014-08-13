@@ -119,3 +119,19 @@ if( ! function_exists('uw_breadcrumbs') ) :
   }
 
 endif;
+
+
+if ( ! function_exists( 'uw_thumbnail_url' ) ) :
+  function uw_thumbnail_url( $size = 'original' )
+  {
+    echo uw_get_thumbnail_url( $size );
+  }
+endif;
+
+if ( ! function_exists( 'uw_get_thumbnail_url' ) ) :
+  function uw_get_thumbnail_url( $size = 'original' )
+  {
+    $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id(), 'original', true);
+    return $thumbnail[0];
+  }
+endif;
