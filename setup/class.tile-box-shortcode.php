@@ -20,9 +20,13 @@ Class TileBox
 
 
     function box_handler($atts, $content){
+        if (empty($content)){
+            echo 'No content inside the box element.  Make sure your close your box element.   Required stucture: [box][tile]content[/tile][/box]';
+            return;
+        }
         $pattern = sprintf('/%s(.+?)%s/ims', preg_quote('[tile]', '/'), preg_quote('[/tile]', '/'));
         if (preg_match_all($pattern, $content, $matches)){
-            $tiles = $matches[0];  //first item is list of shortcodes, second item is list of content in the shortcodes
+            $tiles = $matches[0];  //first item is list of shortcodes, second item is list of content in the shortcodes.  Maybe ditch second shortcode in favor of custom function?
             $length = count($tiles);
             if ($length > self::MaxTiles){
                 echo 'too many [tile]s';
@@ -40,11 +44,14 @@ Class TileBox
             }
         }
         else {
-            echo 'need more than 1 [tile]';
+            echo 'No tile elements present.  Make sure you have at least one tile and that you close your tile elements.  Required stucture: [box][tile]content[/tile][/box]';
         }
     }
 
     function tile_handler($atts, $content) {
+        if (empty($content)){
+            echo 'No content for this tile.  Make sure you wrap your content like this: [tile]Content here[/tile]';
+        }
         ?>
         <div class='tile'>
             <?= $content ?>
