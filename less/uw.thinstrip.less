@@ -155,11 +155,6 @@
 		ul.uw-thin-links {
 			height: 50px;
 			li {
-				&:nth-child(3),
-				&:nth-child(4),
-				&:nth-child(5) {
-					display: none !important;
-				}
 				&.uw-quicklinks a {
 					text-indent: -99999px;
 					overflow: hidden;
@@ -177,7 +172,7 @@
 					text-indent: -99999px;
 					overflow: hidden;
 					padding: 20px 0 0 80px;
-					top: 42px;
+					top: 41px;
 					right: 50px;
 					position: absolute;
 					&:after {
@@ -196,3 +191,16 @@
 	}
 }
 
+@media only screen and (max-width : 992px) {
+	.uw-thinstrip {
+		ul.uw-thin-links {
+			li {
+				&:nth-child(3),
+				&:nth-child(4),
+				&:nth-child(5) {
+					display: none !important;
+				}
+			}
+		}
+	}
+}

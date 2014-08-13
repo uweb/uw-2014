@@ -21,7 +21,7 @@
 		top: -135px;
 		left: 11px;
 		color: #fff;
-		font-family: @font-super-headline;
+		font-family: @font-family-headline;
 		font-size: 45px;
 		// background-color: @purple;
 		// padding: 25px 35px 19px;
@@ -45,9 +45,30 @@
 	}
 }
 
-
+/* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
-	.uw-body h1 {
-		margin: 10px 80px 20px 0;
+	.uw-body {
+		padding: 20px;
+		.uw-site-title {
+			color: #000;
+			font-size: 25px;
+			font-weight: 600;
+			margin: -20px -20px 20px -20px;
+			padding: 20px 0 20px 20px;
+			position: static;
+			background-color: #ddd;
+		}
+		h1 {
+			margin: 10px 80px 20px 0;
+		}
 	}
+
+}
+
+.home .uw-sidebar-menu {
+	display: none;
+}
+
+.widget {
+	padding: 40px 0 0 40px;
 }

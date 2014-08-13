@@ -1,43 +1,28 @@
+
+.uw-mobile-menu {
+  display: none;
+}
+
+
 /*==========  Mobile First Method  ==========*/
 
 /* Custom, iPhone Retina */
-@media only screen and (min-width : 320px) {
-  ul.uw-mobile-menu {
-    display: block;
-  }
+@media only screen and (max-width : 768px) {
 
+//Hides desktop version
+.uw-sidebar-menu {
+  display: none;
 }
-/* Extra Small Devices, Phones */
-@media only screen and (min-width : 480px) {
 
-}
-/* Small Devices, Tablets */
-@media only screen and (min-width : 768px) {
+ul.uw-mobile-menu {
+  margin-top: 70px;
   
-}
-/* Medium Devices, Desktops */
-@media only screen and (min-width : 992px) {
-
-  ul.uw-mobile-menu {
-    display:none;
-  }
-
-}
-/* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px) {
-
-}
-
-
-ul.uw-mobile-menu
-{
-
   .uw-mobile-menu-toggle
   {
     display:block;
     position: relative;
     float:right;
-    margin-top: 20px;
+    margin-top: -60px;
     font-size: @font-size-base / 1.2;
     line-height: @line-height-base / 1.2;
     text-align: center;
@@ -146,3 +131,5 @@ ul.uw-mobile-menu
   }
 
 }
+}
+
