@@ -48,9 +48,9 @@ Class TileBox
     }
 
     function tile_handler($content) {
-        $content = str_replace('&nbsp;', ' ', $content);                              //turn nbsp; into ' ' so the next line works 
-        $content = preg_replace('~<p>\s*<\/p>~i', '', $content);                      //remove all empty paragraph tags TinyMCE added
-        if (empty(trim($content))){
+        $content = trim($content);
+        //removed attempts to parse HTML with regex to remove empty p tags.  Use CSS instead?  .box p:empty { display:none;}?  Still doesn't handle &nbsp;
+        if (empty($content)){
             $content = 'No content for this tile.  Make sure you wrap your content like this: [tile]Content here[/tile]';
         }
         ?>
