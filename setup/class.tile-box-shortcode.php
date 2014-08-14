@@ -10,12 +10,11 @@
 Class TileBox
 {
     const MaxTiles = 4;
-    private $NumbersArray = ['zero', 'one', 'two', 'three']; //arrays can't be constants in PHP.  Privates at least can't be changed
+    private $NumbersArray = array('zero', 'one', 'two', 'three'); //arrays can't be constants in PHP.  Privates at least can't be changed
 
     function __construct()
     {
         add_shortcode('box', array($this, 'box_handler'));
-        add_shortcode('tile', array($this, 'tile_handler'));
     }
 
 
@@ -24,19 +23,19 @@ Class TileBox
             echo 'No content inside the box element.  Make sure your close your box element.   Required stucture: [box][tile]content[/tile][/box]';
             return;
         }
-        $pattern = sprintf('/%s(.+?)%s/ims', preg_quote('[tile]', '/'), preg_quote('[/tile]', '/'));
+        $pattern = sprintf('/%s(.*?)%s/ims', preg_quote('[tile]', '/'), preg_quote('[/tile]', '/'));
         if (preg_match_all($pattern, $content, $matches)){
-            $tiles = $matches[0];  //first item is list of shortcodes, second item is list of content in the shortcodes.  Maybe ditch second shortcode in favor of custom function?
+            $tiles = $matches[1];  //first item is list of shortcodes, second item is list of content in the shortcodes.  Maybe ditch second shortcode in favor of custom function?
             $length = count($tiles);
             if ($length > self::MaxTiles){
-                echo 'too many [tile]s';
+                echo 'Too many [tile]s.  Only up to 4 are supported)';
             }
             else {
                 ?>
                 <div class='box <?= $this->NumbersArray[$length] ?>'>
                 <?php
                 for ($i = 0; $i < $length; $i++){
-                    do_shortcode($tiles[$i]);
+                    $this->tile_handler($tiles[$i]);
                 }
                 ?>
                 </div>
@@ -48,9 +47,11 @@ Class TileBox
         }
     }
 
-    function tile_handler($atts, $content) {
+    function tile_handler($content) {
+        $content = trim($content);
+        //removed attempts to parse HTML with regex to remove empty p tags.  Use CSS instead?  .box p:empty { display:none;}?  Still doesn't handle &nbsp;
         if (empty($content)){
-            echo 'No content for this tile.  Make sure you wrap your content like this: [tile]Content here[/tile]';
+            $content = 'No content for this tile.  Make sure you wrap your content like this: [tile]Content here[/tile]';
         }
         ?>
         <div class='tile'>
