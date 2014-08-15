@@ -15856,7 +15856,7 @@ UW.Dropdowns = Backbone.View.extend({
   {
     var $el = $(el.currentTarget)
       , position = $el.position()
-    $el.find('ul').css( { top : position.top + 74, left: position.left } )
+    $el.find('ul').css( { top : position.top + 58, left: position.left } )
   },
 
   toggleSubMenu : function( e )
