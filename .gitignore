@@ -1,6 +1,4 @@
 node_modules
 *.swp
 *.swo
-js/site.*
-style.*
 assets/fonts/heron.*

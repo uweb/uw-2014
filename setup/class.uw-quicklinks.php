@@ -9,6 +9,7 @@ class UW_QuickLinks
 
   const NAME         = 'Quick Links';
   const LOCATION     = 'quick-links';
+  const PREFIX       = 'QL';
 
   function __construct()
   {
@@ -39,10 +40,10 @@ class UW_QuickLinks
       {
         // Only keep the necessary keys of the $item
         $item = array_intersect_key( (array) $item , array_fill_keys( array('ID', 'title', 'url', 'classes', 'menu_item_parent'), null ) );
-        if ( ! $menu[ $item['menu_item_parent'] ] )
-          $menu[ $item['ID'] ] = $item;
+        if ( ! $menu[ self::PREFIX . $item['menu_item_parent'] ] )
+          $menu[ self::PREFIX . $item['ID'] ] = $item;
         else
-          $menu[ $item['menu_item_parent'] ]['children'][] = $item;
+          $menu[ self::PREFIX . $item['menu_item_parent'] ]['children'][] = $item;
       }
       return $menu;
   }
