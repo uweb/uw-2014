@@ -10,10 +10,11 @@
 
       <h2 class="uw-site-title"><?php bloginfo(); ?></h2>
 
-      <?php uw_breadcrumbs() ?>
-      <?php uw_mobile_menu() ?>
+      <?php uw_breadcrumbs() ?>  
 
       <div class="uw-body-copy">
+
+        
 
         <?php
           // Start the Loop.

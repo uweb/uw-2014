@@ -1,0 +1,49 @@
+.uw-button {
+  padding: 13px 24px;
+  text-transform: uppercase;
+  background-color: @ulralightgold;
+  font-family: @font-family-headline;
+  font-weight: @headings-font-weight;
+  color: @darkgray;
+  display: inline-block;
+  position: relative;
+  background-image: none !important;
+  &:hover {
+    color: @darkgold;
+    background-color: #f5f5f5;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    right: -6px;
+    background-color: rgba(0,0,0,.3);
+  }
+  &:before {
+    content: "";
+    width: 55px;
+    right: -55px;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    background: url(assets/svg/uw-sprite.svg) no-repeat -36px -475px  @purple;
+  }
+  &.button-play:before {
+    background-position: -36px -539px;
+  }
+  &.button-external:before {
+      background-position: -146px -475px;
+  }
+  &.button-plus:before {
+      background-position: -95px -539px;
+  }
+  &.button-gold:before {
+    background-color: @darkgold;
+  }
+  &.button-gold:after {
+    background-color: rgba(0,0,0,.1);
+  }
+
+}

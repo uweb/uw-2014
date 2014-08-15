@@ -26,6 +26,7 @@
 
 .dawgdrops-inner {
 	position: relative;
+	padding: 20px 0 5px 0;
 }
 
 .dawgdrops-nav {
@@ -38,6 +39,7 @@
 		font-family: @font-family-headline;
 		font-weight: @headings-font-weight;
 		font-size: 20px;
+		padding: 4px 10px 20px 15px;
 		}
 		li a {
 			font-family: @font-family-headline;
@@ -72,9 +74,8 @@
 				height: 10px;
 				width: 10px;
 				right: 8px;
-				top: 37px;
+				top: 17px;
 				background: url(assets/svg/uw-sprite.svg) no-repeat -353px 0px;
-				.transition(all .2s ease-in-out);
 			}
 		}
 		// Forward slash menu-separator
@@ -84,16 +85,17 @@
 			right: -14px;
 			height: 24px;
 			width: 12px;
-			top: 32px;
+			top: 14px;
 			background: url('assets/svg/slash.svg') no-repeat;
 		}
 		&:focus {
-			outline: 5px solid #00ADFF;
+			
 		}
 	}
 	&:hover .dawgdrops-menu {
 		display: block;
 	}
+	&:last-child a:after { display: none; }
 }
 
 .dawgdrops-menu {
@@ -142,6 +144,8 @@
 	}
 
 }
+
+
 /* Small Devices, Tablets */
 
 @media only screen and (max-width : 767px) {
