@@ -22,9 +22,16 @@ UW.Search = Backbone.View.extend({
                     '<form class="uw-search" action="<%= Backbone.history.location.pathname %>">'+
                       '<input id="uw-search-bar" type="search" name="s" value="" autocomplete="off" />'+
                     '</form>'+
+
+                    '<select id="mobile-search-select" class="visible-xs">' +
+                      '<option value="uw">All the UW</option>' +
+                      '<option value="site">Current Site</option>' +
+                      '<option value="directory" selected>People Directory</option>' +
+                    '</select>' +
+
                     '<a href="#" value="" class="search" />'+
 
-                    '<div class="labels">'+
+                    '<div class="labels hidden-xs">'+
                       '<label class="radio">'+
                         '<input type="radio" name="search" value="uw" data-toggle="radio">'+
                         'All the UW'+
@@ -75,6 +82,7 @@ UW.Search = Backbone.View.extend({
     'click .result .more'       : 'showPersonInformation',
     'click .result .commonname' : 'showPersonInformation',
     'click input:radio'         : 'toggleSearchFeature',
+    'change select'             : 'toggleSearchFeature',
     'submit form'               : 'submitSearch'
   },
 
@@ -120,8 +128,14 @@ UW.Search = Backbone.View.extend({
   // Set a property to the current radio button indicating which function the search bar is providing.
   toggleSearchFeature : function( e )
   {
+    console.log( e.currentTarget.value )
     this.empty()
     this.searchFeature = e.currentTarget.value
+    // this.mirrorSelectAndRadioElements()
+  },
+
+  mirrorSelectAndRadioElements : function()
+  {
   },
 
   // If the search bar is not searching the directiory behave like a normal search function and don't cancel
