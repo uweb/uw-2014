@@ -10,11 +10,9 @@
 
       <h2 class="uw-site-title"><?php bloginfo(); ?></h2>
 
-      <?php uw_breadcrumbs() ?>  
+      <?php get_template_part( 'breadcrumbs' ); ?>
 
       <div class="uw-body-copy">
-
-        
 
         <?php
           // Start the Loop.
@@ -34,7 +32,6 @@
 
           endwhile;
         ?>
-
 
       </div>
 
