@@ -60,5 +60,3 @@ Class TileBox
         <?php
     }
 }
-
-new TileBox();
