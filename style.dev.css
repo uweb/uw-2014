@@ -8360,15 +8360,13 @@ ul.uw-select li.inactive a {
 .uw-body .uw-site-title span {
   font-weight: 700;
 }
+.uw-body .uw-body-copy h1 a {
+  border-bottom: none;
+  color: #4b2e83;
+}
 .uw-body .uw-body-copy a {
   text-decoration: none;
-  background-image: -moz-linear-gradient();
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.2) 50%);
-  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.2) 50%);
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.2) 50%);
-  background-repeat: repeat-x;
-  background-size: 2px 2px;
-  background-position: 0 21px;
+  border-bottom: 1px solid #D3D3D3;
 }
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
@@ -8926,7 +8924,7 @@ ul.uw-sidebar-menu ul.children {
   width: 45px;
   right: -45px;
   background-size: 740px;
-  background-position: -33px -411px;
+  background-position: -32px -410px;
 }
 .uw-btn.btn-sm.btn-play:before {
   background-position: -31px -466px;
