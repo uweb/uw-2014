@@ -1,9 +1,8 @@
 <?php
 
 /*
- *  Button shortcode allows for styled buttons to be added to content
- *  [button button-type='type' url='link url' small='true']Button Text[/button]
- *  optional small attribute makes the button small.  Assume large if not present
+ *  YouTube shortcode allows for youtube video and/or playlist to be added to content
+ *  [youtube type='type' id='video or playlist id']
  */
 
 class UW_YouTube
@@ -39,7 +38,7 @@ class UW_YouTube
             return 'required attribute "id" missing';
         }
 
-        $el_id = 'uw-youtube-' . rand(0,100);
+        $el_id = 'uw-youtube-' . rand(0,100); //needs unique id.  Could set this in shortcode instead of generating
 
         return sprintf('<div id="%s" class="uw-youtube" data-uw-youtube-type="%s" data-uw-youtube="%s"></div>', $el_id, $type, $id);
     }
