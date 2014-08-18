@@ -1,4 +1,4 @@
-.uw-button {
+.uw-btn {
   padding: 13px 24px;
   text-transform: uppercase;
   background-color: @ulralightgold;
@@ -8,9 +8,37 @@
   display: inline-block;
   position: relative;
   background-image: none !important;
+  &.btn-sm {
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 700;
+    &:before {
+      width: 45px;
+      right: -45px;
+      background-size: 740px;
+      background-position: -33px -411px;
+    }
+     &.btn-play:before {
+      background-position: -31px -466px;
+    }
+    &.btn-external:before {
+      background-position: -126px -410px;
+    }
+    &.btn-plus:before {
+      background-position: -83px -465px;
+    }
+  }
   &:hover {
     color: @darkgold;
     background-color: #f5f5f5;
+    &:before {
+      background-color: lighten(@purple, 10%);
+    }
+  }
+  &.btn-gold {
+    &:hover:before {
+      background-color: lighten(@darkgold, 10%);
+    }
   }
   &:after {
     content: "";
@@ -30,19 +58,19 @@
     position: absolute;
     background: url(assets/svg/uw-sprite.svg) no-repeat -36px -475px  @purple;
   }
-  &.button-play:before {
+  &.btn-play:before {
     background-position: -36px -539px;
   }
-  &.button-external:before {
+  &.btn-external:before {
       background-position: -146px -475px;
   }
-  &.button-plus:before {
+  &.btn-plus:before {
       background-position: -95px -539px;
   }
-  &.button-gold:before {
+  &.btn-gold:before {
     background-color: @darkgold;
   }
-  &.button-gold:after {
+  &.btn-gold:after {
     background-color: rgba(0,0,0,.1);
   }
 

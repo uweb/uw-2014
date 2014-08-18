@@ -15,32 +15,34 @@
 }
 
 ul.uw-mobile-menu {
-  margin-top: 30px;
+  margin-top: 10px;
   display: block;
   .uw-mobile-menu-toggle
   {
     display:block;
     position: relative;
     float:right;
-    margin-top: -60px;
+    margin-top: -50px;
+    margin-right: -10px;
     font-size: @font-size-base / 1.2;
     line-height: @line-height-base / 1.2;
+    font-family: @font-family-headline;
+    font-weight: @headings-font-weight;
     text-align: center;
     width: 50px;
     height: 30px;
     text-transform: uppercase;
     color:@purple;
-    background: url('assets/svg/caret.svg') no-repeat center bottom;
-    background-size: 30%;
+    background: url(assets/svg/uw-sprite.svg) no-repeat -475px 20px transparent;
+    background-size: 1200px;
     &:before {
       content: "";
       position: absolute;
-      right: 60px;
-      top: 0;
+      right: 55px;
+      top: -4px;
       width: 20px;
       height: 40px;
-      background: url('assets/svg/slash.svg') no-repeat;
-      background-size: 17px;
+      background: url(assets/svg/uw-sprite.svg) no-repeat -600px 0 transparent;
     }
   }
 
