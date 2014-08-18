@@ -8108,6 +8108,9 @@ ul.uw-select li.inactive a {
   list-style: none;
   display: inline-block;
 }
+#dawgdrops li li {
+  width: 100%;
+}
 #dawgdrops ul {
   margin: 0;
 }
@@ -8126,7 +8129,9 @@ ul.uw-select li.inactive a {
   text-transform: none;
   font-weight: 600;
   padding-bottom: 15px;
+  padding-left: 10px;
   margin-top: 15px;
+  margin-left: 25px;
   font-size: 18px;
 }
 .dawgdrops-item.dawgdrops-item li a:hover {
@@ -8176,6 +8181,7 @@ ul.uw-select li.inactive a {
   left: 0;
   position: absolute;
   display: none;
+  min-width: 200px;
   border: 0;
   border-top: 4px solid #4b2e83;
   padding: 0;
