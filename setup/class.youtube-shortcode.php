@@ -2,7 +2,8 @@
 
 /*
  *  YouTube shortcode allows for youtube video and/or playlist to be added to content
- *  [youtube type='type' id='video or playlist id' max-results=<integer that overrides max results>]
+ *  [youtube type='type' id='video or playlist id' max-results='integer that defines max results']
+ *  max_results is optional, and if not given allows the UW javascript object to define max_results
  */
 
 class UW_YouTube
