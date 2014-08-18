@@ -19,10 +19,12 @@ class UW_Shortcodes
     private function includes()
     {
         require_once('class.tile-box-shortcode.php');
+        require_once('class.button-shortcode.php');
     }
 
     private function initialize()
     {
         $this->tile_box = new TileBox();
+        $this->button   = new UW_Button();
     }
 }
