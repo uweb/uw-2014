@@ -45,6 +45,6 @@ class UW_Button
 
         $class_string = implode($classes, ' ');
 
-        printf('<a class="%s" href="%s">%s</a>', $class_string, $url, $content);
+        return sprintf('<a class="%s" href="%s">%s</a>', $class_string, $url, $content);
     }
 }
