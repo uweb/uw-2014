@@ -43,24 +43,26 @@ class UW
         require_once( 'class.uw-shortcodes.php' );
         require_once( 'class.uw-media-credit.php' );
         require_once( 'class.uw-tinymce.php' );
+        require_once( 'class.uw-documentation.php' );
     }
 
     private function initialize()
     {
-        $this->Install     = new UW_Install_Theme;
-        $this->Scripts     = new UW_Scripts;
-        $this->Styles      = new UW_Styles;
-        $this->Images      = new UW_Images;
-        $this->SquishBugs  = new UW_SquishBugs;
-        $this->Filters     = new UW_Filters;
-        $this->MapOEmbed   = new UW_Map_OEmbed;
-        $this->Mimes       = new UW_Mimes;
-        $this->Users       = new UW_Users;
-        $this->Dropdowns   = new UW_Dropdowns;
-        $this->Directory   = new UW_Directory;
-        $this->Quicklinks  = new UW_QuickLinks;
-        $this->Shortcodes  = new UW_Shortcodes;
-        $this->MediaCredit = new UW_Media_Credit;
-        $this->TinyMCE     = new UW_TinyMCE;
+        $this->Install       = new UW_Install_Theme;
+        $this->Scripts       = new UW_Scripts;
+        $this->Styles        = new UW_Styles;
+        $this->Images        = new UW_Images;
+        $this->SquishBugs    = new UW_SquishBugs;
+        $this->Filters       = new UW_Filters;
+        $this->MapOEmbed     = new UW_Map_OEmbed;
+        $this->Mimes         = new UW_Mimes;
+        $this->Users         = new UW_Users;
+        $this->Dropdowns     = new UW_Dropdowns;
+        $this->Directory     = new UW_Directory;
+        $this->Quicklinks    = new UW_QuickLinks;
+        $this->Shortcodes    = new UW_Shortcodes;
+        $this->MediaCredit   = new UW_Media_Credit;
+        $this->TinyMCE       = new UW_TinyMCE;
+        $this->Documentation = new UW_Documentation;
     }
 }
