@@ -48,9 +48,9 @@
 			font-family: @font-family-headline;
 			text-transform: none;
 			font-weight: 600;
-			padding-bottom: 15px;
+			padding-bottom: 10px;
 			padding-left: 10px;
-			margin-top: 15px;
+			margin-top: 10px;
 			margin-left: 25px;
 			font-size: 18px;
 			&:hover {
@@ -112,7 +112,7 @@
 	// visibility: hidden;
 	border: 0;
 	border-top: 4px solid @purple;
-	padding: 0;
+	padding: 10px 0;
 	margin: -1px 0 0;
 	background: #fff;
 	overflow: hidden;
@@ -182,4 +182,8 @@
 		}
 	}
 }
-
+@media only screen and (min-width : 993px) and (max-width : 1200px) {
+	.dawgdrops-item.dawgdrops-item a {
+		font-size: 18px;
+	}
+}

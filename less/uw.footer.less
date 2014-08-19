@@ -1,7 +1,7 @@
 .uw-footer {
 	background: url('assets/images/footer.jpg') center bottom;
 	.background-size(cover);
-	height:360px;
+	padding: 0 0 30px 0;
 	background-color:@purple;
 	border-top: 7px solid #d1d1d1;
 	text-align: center;
@@ -92,3 +92,21 @@
 
 
 }
+
+
+@media only screen and (min-width : 993px) {
+	.uw-footer:after {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		content: "";
+		width: 186px;
+		height: 126px;
+		background: url(assets/svg/uw-sprite.svg) no-repeat 0 0 transparent;
+		background-size: 1200px;
+		.footer-links {
+			padding: 0 210px;
+		}
+	}
+}
+
