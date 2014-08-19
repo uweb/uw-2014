@@ -34,6 +34,7 @@ class UW
         require_once('class.images.php');
         require_once('class.squish_bugs.php');
         require_once('class.filters.php');
+        require_once('class.map-oembed.php');
         require_once('class.mimes.php');
         require_once('class.users.php');
         require_once('class.dropdowns_walker.php');  // no initialization needed because it extends a WP class
@@ -50,6 +51,7 @@ class UW
         $this->Images     = new UW_Images;
         $this->SquishBugs = new UW_SquishBugs;
         $this->Filters    = new UW_Filters;
+        $this->MapOEmbed  = new UW_Map_OEmbed;
         $this->Mimes      = new UW_Mimes;
         $this->Users      = new UW_Users;
         $this->Dropdowns  = new UW_Dropdowns;
