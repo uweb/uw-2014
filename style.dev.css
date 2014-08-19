@@ -8086,7 +8086,8 @@ ul.uw-select li.inactive a {
 @media only screen and (max-width: 992px) {
   .uw-thinstrip ul.uw-thin-links li:nth-child(3),
   .uw-thinstrip ul.uw-thin-links li:nth-child(4),
-  .uw-thinstrip ul.uw-thin-links li:nth-child(5) {
+  .uw-thinstrip ul.uw-thin-links li:nth-child(5),
+  .uw-thinstrip ul.uw-thin-links li:nth-child(6) {
     display: none !important;
   }
 }
