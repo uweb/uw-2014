@@ -7,8 +7,8 @@
 
 class UW_Shortcodes
 {
-    public static $tile_box;
-    public static $button;
+    // public static $tile_box;
+    // public static $button;
 
     function __construct()
     {

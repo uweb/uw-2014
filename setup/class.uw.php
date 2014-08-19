@@ -7,16 +7,17 @@
 
 class UW
 {
-    public static $Install;
-    public static $Scripts;
-    public static $Styles;
-    public static $Images;
-    public static $SquishBugs;
-    public static $Filters;
-    public static $Mimes;
-    public static $Users;
-    public static $Dropdowns;
-    public static $Shortcodes;
+    // irrelevant extra static things.  PHP warnings thrown when trying to make these guys
+    // public static $Install;
+    // public static $Scripts;
+    // public static $Styles;
+    // public static $Images;
+    // public static $SquishBugs;
+    // public static $Filters;
+    // public static $Mimes;
+    // public static $Users;
+    // public static $Dropdowns;
+    // public static $Shortcodes;
 
     function __construct()
     {

@@ -12,7 +12,7 @@ class UW_Dropdowns
     const LOCATION     = 'white-bar';
     const DISPLAY_NAME = 'Dropdowns';
 
-    public static $menu_items;
+    // public static $menu_items;
 
     function __construct()
     {
