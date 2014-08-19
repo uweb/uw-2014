@@ -42,6 +42,7 @@ class UW
         require_once( 'class.uw-quicklinks.php' );
         require_once( 'class.uw-shortcodes.php' );
         require_once( 'class.uw-media-credit.php' );
+        require_once( 'class.uw-tinymce.php' );
     }
 
     private function initialize()
@@ -60,5 +61,6 @@ class UW
         $this->Quicklinks  = new UW_QuickLinks;
         $this->Shortcodes  = new UW_Shortcodes;
         $this->MediaCredit = new UW_Media_Credit;
+        $this->TinyMCE     = new UW_TinyMCE;
     }
 }
