@@ -7414,17 +7414,20 @@ div.uw-slideshow {
   width: 750px;
   height: 390px;
 }
-div.uw-slideshow > div {
+div.uw-slideshow > div.slide {
   position: absolute;
   right: 0;
   left: 0;
   top: 0;
   bottom: 0;
+  width: 100%;
+  height: 100%;
 }
-div.uw-slideshow > div img {
-  max-width: 750px;
+div.uw-slideshow > div.slide img {
+  width: 100%;
+  height: 100%;
 }
-div.uw-slideshow > div div {
+div.uw-slideshow > div.slide div {
   position: absolute;
   left: 0;
   bottom: 10%;
@@ -7433,16 +7436,16 @@ div.uw-slideshow > div div {
   padding: 20px 0 20px 40px;
   width: 77.5%;
 }
-div.uw-slideshow > div div h3 {
+div.uw-slideshow > div.slide div h3 {
   color: white;
   float: left;
   margin: 10px 0 8px 0;
 }
-div.uw-slideshow > div div h3 a {
+div.uw-slideshow > div.slide div h3 a {
   color: white;
   border: none;
 }
-div.uw-slideshow > div div p {
+div.uw-slideshow > div.slide div p {
   color: white;
   float: left;
   width: 80%;
@@ -8478,9 +8481,6 @@ ul.uw-select li.inactive a {
     font-size: 33px;
     font-weight: 600;
   }
-}
-.home .uw-sidebar-menu {
-  display: none;
 }
 .widget {
   padding: 40px 0 0 40px;
