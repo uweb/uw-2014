@@ -106,7 +106,7 @@ UW.QuickLinksView = Backbone.View.extend({
     },
 
     initialize: function () {
-        _.bindAll( this, 'append_menu_item', 'build' );
+        _.bindAll( this, 'append_menu_item', 'build', 'inner_container_click' );
         this.make_drawer();
         this.build();
     },
@@ -122,6 +122,13 @@ UW.QuickLinksView = Backbone.View.extend({
             var $adminbar = $('#wpadminbar');
             UW.$body.children().not('#wpadminbar').not('script').wrapAll('<div id="uw-container"><div id="uw-container-inner"></div></div>');
             this.$container = $(this.container);
+            $('#uw-container-inner').click( this.inner_container_click );
+        }
+    },
+
+    inner_container_click: function (event) {
+        if (this.$container.hasClass('open') && (event.target.parentElement != this.el)) {
+            this.animate(event);
         }
     },
 
