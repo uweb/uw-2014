@@ -15274,7 +15274,7 @@ UW.Slideshow = Backbone.View.extend({
   initialize : function( options )
   {
     this.options = _.extend( {}, this.settings, options )
-    _.bindAll( this, 'animateIn', 'animateOut', 'addControls' )
+    _.bindAll( this, 'animateIn', 'animateOut', 'addControls', 'zIndex' )
     this.controls = _.template( this.controls, { classname: this.options.controlclasses.base } )
     this.numberOfSlides = this.$el.find('.slide').length - 1
     this.organizeSlideshow()
@@ -15284,7 +15284,9 @@ UW.Slideshow = Backbone.View.extend({
   // Set the z-index of each slide appropriately.
   organizeSlideshow : function()
   {
-    this.$('.slide').each( this.zIndex )
+    // this.$( this.$('.slide').get().reverse() ).each( this.zIndex )
+    _.each( this.$('.slide').get(), this.zIndex )
+    // this.$( '.slide' ).each( this.zIndex )
   },
 
   // Add the previous and next controls to the slideshow.
@@ -15353,10 +15355,11 @@ UW.Slideshow = Backbone.View.extend({
   },
 
   // Set the z-index of the slide based on its index in the DOM.
-  zIndex : function()
+  zIndex : function( slide )
   {
-    var $this = $(this)
-    $this.css({ zIndex : -1 * $this.index() })
+    // console.log( slide )
+    var $this = $( slide )
+    $this.css({ zIndex : -1 * $this.index() + this.numberOfSlides })
   }
 
 })
