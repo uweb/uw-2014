@@ -6,18 +6,21 @@ div.uw-slideshow
   width: 750px;
   height: 390px;
 
-  > div {
+  > div.slide {
 
     position:absolute;
     right: 0;
     left: 0;
     top: 0;
     bottom: 0;
+    width:100%;
+    height:100%;
 
     img {
-        max-width: 750px;
+      width:100%;
+      height:100%;
     }
-    
+
     div {
         position         :absolute;
         left             :0;
@@ -80,7 +83,7 @@ div.uw-slideshow
       right: 125px;
       .box-shadow(-1px 0px 5px 0 rgba(0, 0, 0, .4));
       &:after {
-        
+
       }
       // background: white url('@{local-image-path}/slideshow-arrow-right.png') center no-repeat;
     }
