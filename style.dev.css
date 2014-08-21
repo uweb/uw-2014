@@ -7451,19 +7451,19 @@ div.uw-slideshow .uw-slideshow-controls {
   bottom: 60px;
 }
 div.uw-slideshow .uw-slideshow-controls.next {
-  z-index: 2;
+  z-index: 101;
   right: 85px;
   -webkit-box-shadow: 0px 0px 5px #c9c9c9;
   box-shadow: 0px 0px 5px #c9c9c9;
 }
 div.uw-slideshow .uw-slideshow-controls.previous {
-  z-index: 1;
+  z-index: 100;
   right: 125px;
   -webkit-box-shadow: 0px 0px 5px #c9c9c9;
   box-shadow: 0px 0px 5px #c9c9c9;
 }
 div.uw-slideshow.last-previous .next {
-  z-index: 1;
+  z-index: 100;
 }
 div.uw-slideshow.last-previous .previous {
   opacity: 0.7;
@@ -7472,7 +7472,7 @@ div.uw-slideshow.last-next .next {
   opacity: 0.7;
 }
 div.uw-slideshow.last-next .previous {
-  z-index: 3;
+  z-index: 100;
 }
 div.uw-vimeo div.preview {
   float: left;
