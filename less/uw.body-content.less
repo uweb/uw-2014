@@ -16,6 +16,9 @@
 		color: @purple;
 		display: block;
 	}
+	h2, h3, h4, h5 {
+		font-weight: 700;
+	}
 	.uw-site-title {
 		position: absolute;
 		top: -135px;
@@ -31,6 +34,39 @@
 		}
 	}
 }
+
+.info-box {
+	width: 250px;
+	float: left;
+	margin-right: 70px;
+	margin-left: -80px;
+	margin-bottom: 80px;
+	margin-top: 40px;
+	position: relative;
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: -10px;
+		height: 1px;
+		display: block;
+		width: 80px;
+		background-color: rgb(204, 204, 204);
+	}
+	&:after {
+		top: auto;
+		bottom: -40px;
+	}
+	p, li, a {
+		font-size: 16px;
+		line-height: 27px;
+	}
+	h3 {
+		font-size: 22px;
+	}
+}
+
 
 .uw-body-copy {
 	h1 a {
@@ -94,3 +130,17 @@
 .widget {
 	padding: 40px 0 0 40px;
 }
+
+
+// Big Screens
+
+@media only screen and (max-width : 1400px) {
+	.info-box {
+		width: 250px;
+		float: right;
+		margin-right: 70px;
+		margin-left: 100px;
+	}
+}
+
+

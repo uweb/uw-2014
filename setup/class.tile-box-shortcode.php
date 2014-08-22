@@ -10,7 +10,7 @@
 Class TileBox
 {
     const MaxTiles = 4;
-    private $NumbersArray = array('zero', 'one', 'two', 'three'); //arrays can't be constants in PHP.  Privates at least can't be changed
+    private $NumbersArray = array('zero', 'one', 'two', 'three', 'four'); //arrays can't be constants in PHP.  Privates at least can't be changed
 
     function __construct()
     {

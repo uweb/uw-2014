@@ -7565,6 +7565,57 @@ ul.uw-select li.inactive a {
 .uw-accordion div.active {
   height: auto;
 }
+/*
+ *  All styles for Boxes shortcode
+ */
+.box {
+  overflow: hidden;
+  padding: 2px;
+  margin: 20px 0 40px;
+}
+.box.two .tile {
+  width: 47%;
+  margin-right: 3%;
+}
+.box.three .tile {
+  width: 31%;
+  margin-right: 2%;
+  padding: 0 30px 20px;
+}
+.box.three .tile div {
+  margin: 0 -31px;
+}
+.box.four .tile {
+  width: 24%;
+  margin-right: 1%;
+}
+.box .tile {
+  float: left;
+  padding: 0 40px 20px;
+  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.box .tile div {
+  margin: 0 -41px;
+}
+.box .tile img {
+  width: 100%;
+  height: auto;
+}
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  .box {
+    overflow: visible;
+  }
+  .box.two .tile {
+    width: 100%;
+    margin: 0 0 30px 0;
+    padding: 0 20px 20px;
+  }
+  .box.two .tile div {
+    margin: 0 -21px;
+  }
+}
 .uw-player {
   margin-bottom: 80px  ;
 }
@@ -8443,6 +8494,12 @@ ul.uw-select li.inactive a {
   color: #4b2e83;
   display: block;
 }
+.uw-body h2,
+.uw-body h3,
+.uw-body h4,
+.uw-body h5 {
+  font-weight: 700;
+}
 .uw-body .uw-site-title {
   position: absolute;
   top: -135px;
@@ -8454,6 +8511,39 @@ ul.uw-select li.inactive a {
 }
 .uw-body .uw-site-title span {
   font-weight: 700;
+}
+.info-box {
+  width: 250px;
+  float: left;
+  margin-right: 70px;
+  margin-left: -80px;
+  margin-bottom: 80px;
+  margin-top: 40px;
+  position: relative;
+}
+.info-box:before,
+.info-box:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -10px;
+  height: 1px;
+  display: block;
+  width: 80px;
+  background-color: #cccccc;
+}
+.info-box:after {
+  top: auto;
+  bottom: -40px;
+}
+.info-box p,
+.info-box li,
+.info-box a {
+  font-size: 16px;
+  line-height: 27px;
+}
+.info-box h3 {
+  font-size: 22px;
 }
 .uw-body-copy h1 a {
   border-bottom: none;
@@ -8489,6 +8579,14 @@ ul.uw-select li.inactive a {
 }
 .widget {
   padding: 40px 0 0 40px;
+}
+@media only screen and (max-width: 1400px) {
+  .info-box {
+    width: 250px;
+    float: right;
+    margin-right: 70px;
+    margin-left: 100px;
+  }
 }
 .uw-search-bar-container {
   min-height: 130px;
