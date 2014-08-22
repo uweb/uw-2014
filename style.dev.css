@@ -7573,6 +7573,9 @@ ul.uw-select li.inactive a {
   padding: 2px;
   margin: 20px 0 40px;
 }
+.box p {
+  font-size: 16px;
+}
 .box.two .tile {
   width: 47%;
   margin-right: 3%;
