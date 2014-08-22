@@ -31,15 +31,11 @@ Class TileBox
                 echo 'Too many [tile]s.  Only up to 4 are supported)';
             }
             else {
-                ?>
-                <div class='box <?= $this->NumbersArray[$length] ?>'>
-                <?php
+                $return = "<div class='box-outer'><div class='box " . $this->NumbersArray[$length] . "'>";
                 for ($i = 0; $i < $length; $i++){
-                    $this->tile_handler($tiles[$i]);
+                    $return = $return . $this->tile_handler($tiles[$i]);
                 }
-                ?>
-                </div>
-                <?php
+                return $return . '</div></div>';
             }
         }
         else {
@@ -53,10 +49,6 @@ Class TileBox
         if (empty($content)){
             $content = 'No content for this tile.  Make sure you wrap your content like this: [tile]Content here[/tile]';
         }
-        ?>
-        <div class='tile'>
-            <?= $content ?>
-        </div>
-        <?php
+        return "<div class='tile'>" . $content . "</div>";
     }
 }
