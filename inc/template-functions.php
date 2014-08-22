@@ -91,19 +91,22 @@ if( ! function_exists('get_uw_breadcrumbs') ) :
 
     $ancestors = array_reverse( get_post_ancestors( $post->ID ) );
 
-    if ( !is_home() || ! is_front_page() )
+    if ( ! is_home() || ! is_front_page() )
       $ancestors[] = $post->ID;
 
     $html = '<li><a href="http://uw.edu" title="University of Washington">Home</a></li>';
-    $html .= '<li' . ($ancestors ? '' : ' class="current"') . '><a href="' . get_bloginfo('url') . '" title="' . get_bloginfo('title') . '">' . get_bloginfo('title') . '</a><li>';
+    $html .= '<li' . ( ! $ancestors || is_front_page() ? ' class="current"' : '') . '><a href="' . get_bloginfo('url') . '" title="' . get_bloginfo('title') . '">' . get_bloginfo('title') . '</a><li>';
 
-    foreach ( $ancestors as $index=>$ancestor )
+    if ( ! is_front_page() )
     {
-      $class      = $index+1 == count($ancestors) ? ' class="current" ' : '';
-      $page       = get_post( $ancestor );
-      $url        = get_permalink( $page->ID );
-      $title_attr = esc_attr( $page->post_title );
-      $html .= "<li $class><a href=\"$url\" title=\"{$title_attr}\">{$page->post_title}</a>";
+      foreach ( $ancestors as $index=>$ancestor )
+      {
+        $class      = $index+1 == count($ancestors) ? ' class="current" ' : '';
+        $page       = get_post( $ancestor );
+        $url        = get_permalink( $page->ID );
+        $title_attr = esc_attr( $page->post_title );
+        $html .= "<li $class><a href=\"$url\" title=\"{$title_attr}\">{$page->post_title}</a>";
+      }
     }
 
     return "<div class=\"uw-breadcrumbs\"><ul>$html</ul></div>";
