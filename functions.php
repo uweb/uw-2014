@@ -11,8 +11,10 @@ require( get_template_directory() . '/setup/settings.php' );
 //require( get_template_directory() . '/setup/mimes.php' );
 //require( get_template_directory() . '/setup/users.php' );
 
-require( get_template_directory() . '/setup/class.uw.php' );
-$UW = new UW();
+if (!isset($UW)){
+    require( get_template_directory() . '/setup/class.uw.php' );
+    $UW = new UW();
+}
 
 require( get_template_directory() . '/inc/override_page_attributes_meta.php');
 
