@@ -7568,37 +7568,43 @@ ul.uw-select li.inactive a {
 /*
  *  All styles for Boxes shortcode
  */
-.box {
+.box-outer {
+  margin: 0px -20px;
+}
+.box-outer .box {
   overflow: hidden;
-  padding: 2px;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  border-spacing: 20px;
   margin: 20px 0 40px;
 }
-.box.two .tile {
+.box-outer .box.two .tile {
   width: 47%;
   margin-right: 3%;
 }
-.box.three .tile {
+.box-outer .box.three .tile {
   width: 31%;
   margin-right: 2%;
   padding: 0 30px 20px;
 }
-.box.three .tile div {
+.box-outer .box.three .tile div {
   margin: 0 -31px;
 }
-.box.four .tile {
+.box-outer .box.four .tile {
   width: 24%;
   margin-right: 1%;
 }
-.box .tile {
-  float: left;
+.box-outer .box .tile {
+  display: table-cell;
   padding: 0 40px 20px;
   -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
-.box .tile div {
+.box-outer .box .tile div {
   margin: 0 -41px;
 }
-.box .tile img {
+.box-outer .box .tile img {
   width: 100%;
   height: auto;
 }
