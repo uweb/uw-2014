@@ -14,8 +14,8 @@ UW.Slideshow = Backbone.View.extend({
   // This is the template for the Previous and Next controls.
   // We're using an Undercore template to simplify the slideshow's markup.
   controls : '' +
-    '<a href="#" class="<%= classname %> next fui-arrow-right"></a>' +
-    '<a href="#" class="<%= classname %> previous fui-arrow-left"></a>'
+    '<a href="#" class="<%= classname %> next"></a>' +
+    '<a href="#" class="<%= classname %> previous"></a>'
   ,
 
   // This is a placeholder that is set to the final animation points for the slides

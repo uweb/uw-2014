@@ -23,22 +23,46 @@ class UW_Dropdowns
     private function instantiate_menu_list()
     {
 
-        $discover           = new MenuItem ('Discover', 'http://uw.edu/discover/', array(
-                                                                            new MenuItem('Vision and Values', 'http://uw.edu/discover/visionvalues'),
-                                                                            new MenuItem('Mission Statement', 'http://uw.edu/admin/rules/policies/BRG/RP5.html'),
+        $about              = new MenuItem ('About', 'http://uw.edu/', array(
+                                                                            new MenuItem('Campuses', 'http://uw.edu/'),
+                                                                            new MenuItem('Leadership', 'http://uw.edu/'),
+                                                                            new MenuItem('Visit', 'http://uw.edu/'),
                                                                         ));
 
-        $current_students   = new MenuItem('Current Students', 'http://uw.edu/students/');
+        $academics          = new MenuItem ('Academics', 'http://uw.edu/', array(
+                                                                            new MenuItem('Colleges & Schools', 'http://uw.edu/'),
+                                                                            new MenuItem('Programs', 'http://uw.edu/'),
+                                                                            new MenuItem('Libraries', 'http://uw.edu/'),
+                                                                            new MenuItem('Research', 'http://uw.edu/'),
+                                                                        ));
 
-        $future_students    = new MenuItem('Future Students', 'http://uw.edu/discover/admissions/');
+        $admissions         = new MenuItem ('Admissions', 'http://uw.edu/', array(
+                                                                            new MenuItem('Undergraduate', 'http://uw.edu/'),
+                                                                            new MenuItem('Graduate', 'http://uw.edu/'),
+                                                                            new MenuItem('Tuition & Fees', 'http://uw.edu/'),
+                                                                            new MenuItem('Continuing Education', 'http://uw.edu/'),
+                                                                        ));
 
-        $faculty_staff      = new MenuItem('Faculty & Staff', 'http://uw.edu/facultystaff/');
+        $campus_life        = new MenuItem ('Campus Life', 'http://uw.edu/', array(
+                                                                            new MenuItem('Diversity', 'http://uw.edu/'),
+                                                                            new MenuItem('Housing & Dining', 'http://uw.edu/'),
+                                                                            new MenuItem('Student Organizations', 'http://uw.edu/'),
+                                                                            new MenuItem('Recreational Sports', 'http://uw.edu/'),
+                                                                            new MenuItem('Safety', 'http://uw.edu/'),
+                                                                            new MenuItem('Student Life', 'http://uw.edu/'),
+                                                                            new MenuItem('Transportation & Parking', 'http://uw.edu/'),
+                                                                        ));
 
-        $alumni             = new MenuItem('Alumni', 'http://uw.edu/alumni/');
+        $news               = new MenuItem('News', 'http://uw.edu/nwneighbors/');
 
-        $nw_neighbors       = new MenuItem('NW Neighbors', 'http://uw.edu/nwneighbors/');
 
-        $this->menu_items = array($discover, $current_students, $future_students, $faculty_staff, $alumni, $nw_neighbors);
+        $support_the_uw     = new MenuItem ('Support the UW', 'http://uw.edu/', array(
+                                                                            new MenuItem('Donate', 'http://uw.edu/'),
+                                                                            new MenuItem('Volunteer', 'http://uw.edu/'),
+                                                                        ));
+
+
+        $this->menu_items = array($about, $academics, $admissions, $campus_life, $news, $support_the_uw);
     }
 
     function add_hooks()
