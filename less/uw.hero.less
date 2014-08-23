@@ -1,6 +1,7 @@
 // UW Hero
 
-.uw-hero-image {
+.uw-hero-image,
+.no-uw-hero-image  {
 	height: 170px;
 	background: url('assets/temp/ima.jpg') center bottom;
 	.background-size(cover);
@@ -23,6 +24,45 @@
 		background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, .8))) 0 0 no-repeat;
 	}
 }
+.no-uw-hero-image {
+	background: none;
+	background-color: #e8e3d3;
+	height: 130px;
+	&:after {
+		opacity: .2;
+	}
+	&:before {
+		display: none;
+	}
+}
+
+// No image
+
+.page-template-templatestemplate-no-hero-php {
+	.uw-body {
+		.uw-site-title {
+			color: @darkgray
+		}
+	}
+}
+
+// No site title
+
+.page-template-templatestemplate-no-title-php {
+	.uw-body {
+		.uw-site-title {
+			display: none;
+		}
+		&.container {
+			margin-top: 30px;
+		}
+	}
+	ul.uw-sidebar-menu {
+		margin-top: -20px;
+	}
+}
+
+
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
 	.uw-hero-image {

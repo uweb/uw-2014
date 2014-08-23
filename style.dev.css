@@ -8395,7 +8395,8 @@ ul.uw-select li.inactive a {
     font-size: 18px;
   }
 }
-.uw-hero-image {
+.uw-hero-image,
+.no-uw-hero-image {
   height: 170px;
   background: url('assets/temp/ima.jpg') center bottom;
   -webkit-background-size: cover;
@@ -8404,7 +8405,8 @@ ul.uw-select li.inactive a {
   background-size: cover;
   position: relative;
 }
-.uw-hero-image:after {
+.uw-hero-image:after,
+.no-uw-hero-image:after {
   position: absolute;
   bottom: 0;
   height: 80px;
@@ -8412,13 +8414,37 @@ ul.uw-select li.inactive a {
   content: "";
   background: url('assets/images/stripes-dark.png');
 }
-.uw-hero-image:before {
+.uw-hero-image:before,
+.no-uw-hero-image:before {
   position: absolute;
   bottom: 0;
   height: 80px;
   width: 100%;
   content: "";
   background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.8))) 0 0 no-repeat;
+}
+.no-uw-hero-image {
+  background: none;
+  background-color: #e8e3d3;
+  height: 130px;
+}
+.no-uw-hero-image:after {
+  opacity: .2;
+}
+.no-uw-hero-image:before {
+  display: none;
+}
+.page-template-templatestemplate-no-hero-php .uw-body .uw-site-title {
+  color: #5a5a5a;
+}
+.page-template-templatestemplate-no-title-php .uw-body .uw-site-title {
+  display: none;
+}
+.page-template-templatestemplate-no-title-php .uw-body.container {
+  margin-top: 30px;
+}
+.page-template-templatestemplate-no-title-php ul.uw-sidebar-menu {
+  margin-top: -20px;
 }
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
