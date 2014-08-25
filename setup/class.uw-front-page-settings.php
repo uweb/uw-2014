@@ -19,10 +19,10 @@
 
     function front_page_has_sidebar_callback()
     {
-        $has_sidebar = get_option('front_page_has_sidebar');
+        $has_sidebar = (boolean) get_option('front_page_has_sidebar');
         ?>
-        <input name='front_page_has_sidebar' type='radio' value=1>put image for sidebar template here
-        <input name='front_page_has_sidebar' type='radio' value=0>put image for sidebarless template here
+        <input name='front_page_has_sidebar' type='radio' value=1 <?php if ($has_sidebar){ ?>checked='checked' <?php }?>>put image for sidebar template here</br>
+        <input name='front_page_has_sidebar' type='radio' value=0 <?php if (!$has_sidebar){ ?>checked='checked' <?php } ?>>put image for sidebarless template here
         <?php
     }
  
