@@ -49,6 +49,6 @@ Class TileBox
         if (empty($content)){
             $content = 'No content for this tile.  Make sure you wrap your content like this: [tile]Content here[/tile]';
         }
-        return "<div class='tile'>" . $content . "</div>";
+        return "<div class='tile'>" . apply_filters('the_content', $content) . "</div>";
     }
 }
