@@ -15150,7 +15150,8 @@ UW.QuickLinksView = Backbone.View.extend({
 
 
     events: {
-       'click': 'animate'
+       'mouseover': 'animate',
+       'touchstart': 'animate'
     },
 
     initialize: function () {
@@ -15170,7 +15171,10 @@ UW.QuickLinksView = Backbone.View.extend({
             var $adminbar = $('#wpadminbar');
             UW.$body.children().not('#wpadminbar').not('script').wrapAll('<div id="uw-container"><div id="uw-container-inner"></div></div>');
             this.$container = $(this.container);
-            $('#uw-container-inner').click( this.inner_container_click );
+            $('#uw-container-inner').on( {
+                'mouseover': this.inner_container_click,
+                'touchstart': this.inner_container_click
+            });
         }
     },
 
