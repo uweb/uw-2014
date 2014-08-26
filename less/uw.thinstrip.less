@@ -91,6 +91,14 @@
 
 			}
 			&.uw-quicklinks {
+                div {
+                    position: absolute;
+                    top: -22px;
+                    right: 0px;
+                    width: 160px;
+                    height: 68px;
+                    margin: 0px;
+                }
 				a {
 					padding-left: 38px;
 					margin-left: -15px;
@@ -184,6 +192,9 @@
 						right: 9px;
 					}
 				}
+                &.uw-quicklinks div {
+                    width: 150px;
+                }
 				&.uw-search a {
 					background-position: -481px -317px;
 					background-size: 900px;
@@ -219,6 +230,9 @@
 				&:nth-child(6) {
 					display: none !important;
 				}
+                &.quicklinks div {
+                    display: none;
+                }
 			}
 		}
 	}
