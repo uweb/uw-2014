@@ -111,12 +111,17 @@
 					&:after {
 						position: absolute;
 						content: "";
-						background: url(assets/svg/uw-sprite.svg) no-repeat -363px -149px;
+						//background: url(assets/svg/uw-sprite.svg) no-repeat -363px -149px;
+						background: url(assets/svg/uw-sprite.svg) no-repeat 0px -489px;
 						height: 25px;
 						width: 27px;
 						display: block;
 						top: 10px;
 						right: 11px;
+                        -webkit-transition: all .3s ease-in-out;
+                           -moz-transition: all .3s ease-in-out;
+                             -o-transition: all .3s ease-in-out;
+                                transition: all .3s ease-in-out;
 					}
 				}
 			}
@@ -130,6 +135,13 @@
 		// background-position: -472px -317px;
 		&:after {
 			// background-position: -253px -44px;
+            top: 11px;
+            right: 10px;
+            -webkit-transform:rotate(180deg);
+               -moz-transform:rotate(180deg);
+                -ms-transform:rotate(180deg);
+                 -o-transform:rotate(180deg);
+                    transform:rotate(180deg);
 		}
 	}
 }
