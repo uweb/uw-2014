@@ -8097,7 +8097,7 @@ ul.uw-select li.inactive a {
 .uw-thinstrip ul.uw-thin-links li.uw-quicklinks a:after {
   position: absolute;
   content: "";
-  background: url(assets/svg/uw-sprite.svg) no-repeat 0px -489px;
+  background: url(assets/svg/uw-sprite.svg) no-repeat -50px -489px;
   height: 25px;
   width: 27px;
   display: block;
@@ -8112,8 +8112,6 @@ ul.uw-select li.inactive a {
   color: black;
 }
 #uw-container.open .uw-quicklinks a:after {
-  top: 11px;
-  right: 10px;
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
