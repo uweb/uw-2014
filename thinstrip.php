@@ -1,6 +1,6 @@
 <header class="uw-thinstrip">
 
-  <div class="uw-thin-strip-nav">
+  <nav class="uw-thin-strip-nav" role='navigation' aria-label='Navigate by audience'>
       <ul class="uw-thin-links">
       	<li class="uw-quicklinks"><div></div><a href="#">Quick Links</a></li>
      	<li class="uw-search"><a href="#">Search</a></li>
@@ -9,7 +9,7 @@
       <li><a href="#">Parents</a></li>
     	<li><a href="#">Students</a></li>
       </ul>
-  </div>
+  </nav>
 
   <div class="container">
     <a href="http://www.uw.edu" class="uw-patch">Home</a>
