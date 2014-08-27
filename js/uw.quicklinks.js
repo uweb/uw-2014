@@ -19,7 +19,7 @@ UW.QuickLink = Backbone.Model.extend({
 });
 
 UW.QuickLinkView = Backbone.View.extend({
-    menu_template : '<li><% if (classes) { %><span class="<%= classes %>"></span><% } %><a href="<%= link_url %>"><%= title %></a></li>',
+    menu_template : '<li><% if (classes) { %><span class="<%= classes %>"></span><% } %><a href="<%= link_url %>" tabindex=3><%= title %></a></li>',
 
     initialize: function () {
         this.create_menu_item();
@@ -103,11 +103,13 @@ UW.QuickLinksView = Backbone.View.extend({
 
     events: {
        'mouseover': 'animate',
-       'touchstart': 'animate'
+       'touchstart': 'animate',
+       'focusin': 'focused'
     },
 
     initialize: function () {
-        _.bindAll( this, 'append_menu_item', 'build', 'inner_container_click' );
+        _.bindAll( this, 'append_menu_item', 'build', 'close_quicklinks', 'focused', 'blurred' );
+        this.is_focused = false;
         this.make_drawer();
         this.build();
     },
@@ -124,13 +126,14 @@ UW.QuickLinksView = Backbone.View.extend({
             UW.$body.children().not('#wpadminbar').not('script').wrapAll('<div id="uw-container"><div id="uw-container-inner"></div></div>');
             this.$container = $(this.container);
             $('#uw-container-inner').on( {
-                'mouseover': this.inner_container_click,
-                'touchstart': this.inner_container_click
+                'mouseover': this.close_quicklinks,
+                'touchstart': this.close_quicklinks,
+                'focusin': this.blurred
             });
         }
     },
 
-    inner_container_click: function (event) {
+    close_quicklinks: function (event) {
         if (this.$container.hasClass('open') && (event.target.parentElement != this.el)) {
             this.animate(event);
         }
@@ -175,8 +178,26 @@ UW.QuickLinksView = Backbone.View.extend({
     },
 
     animate: function (event) {
-        event.preventDefault();
-        this.$container.toggleClass('open');
-        this.$drawer.toggleClass('open');
+        if(!this.is_focused){
+            event.preventDefault();
+            this.$container.toggleClass('open');
+            this.$drawer.toggleClass('open');
+        }
+    },
+
+    focused: function (event) {
+        this.animate(event);
+        var $next_focus = this.$drawer.find('li a').first();
+        _.delay(function () {
+            $next_focus.focus();
+            this.is_focused = true;
+        }, 300);
+    },
+
+    blurred: function (event) {
+        if (this.is_focused){
+            this.is_focused = false;
+            this.animate(event);
+        }
     }
 });
