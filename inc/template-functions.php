@@ -52,7 +52,7 @@ if ( ! function_exists( 'uw_mobile_menu' ) ) :
 
   function uw_mobile_menu()
   {
-    echo sprintf( '<ul class="uw-mobile-menu first-level"><span class="uw-mobile-menu-toggle">Menu</span> %s </ul>', uw_list_pages() ) ;
+    echo sprintf( '<nav role="navigation" aria-label="relative navigation"><ul class="uw-mobile-menu first-level"><span class="uw-mobile-menu-toggle">Menu</span> %s </ul></nav>', uw_list_pages() ) ;
   }
 
 endif;
@@ -109,7 +109,7 @@ if( ! function_exists('get_uw_breadcrumbs') ) :
       }
     }
 
-    return "<div class=\"uw-breadcrumbs\"><ul>$html</ul></div>";
+    return "<nav class='uw-breadcrumbs' role='navigation' aria-label='breadcrumbs relative navigation'><ul>$html</ul></nav>";
   }
 
 endif;
