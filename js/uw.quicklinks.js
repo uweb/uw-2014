@@ -96,7 +96,7 @@ UW.QuickLinksView = Backbone.View.extend({
 
     container: 'div#uw-container',
     $little_list_header: $('<h3>Helpful Links</h3>'),
-    $drawer: $("<nav id='quicklinks'></nav>"),
+    $drawer: $("<nav id='quicklinks' role='navigation' aria-label='quick links'></nav>"),
     $big_list: $('<ul id="big_links"></ul>'),
     $little_list: $('<ul id="little_list"></ul>'),
 
