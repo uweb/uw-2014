@@ -6,7 +6,7 @@
 
 <div class="container uw-body">
   <div class="row">
-	<div class="col-md-8 uw-content">
+	<div class="col-md-8 uw-content" role='main'>
       <h2 class='uw-site-title'><?php bloginfo(); ?></h2>
 					
       <?php uw_breadcrumbs() ?>

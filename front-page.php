@@ -10,9 +10,9 @@ $has_sidebar = get_option('front_page_has_sidebar');
   <div class="row">
 
     <?php if ($has_sidebar) { ?>
-    <div class="col-md-8 uw-content">
+    <div class="col-md-8 uw-content" role='main'>
     <?php } else { ?>
-    <div class="col-md-12 uw-content">
+    <div class="col-md-12 uw-content" role='main'>
     <?php } ?>
 
       <h2 class="uw-site-title"><?php bloginfo(); ?></h2>
