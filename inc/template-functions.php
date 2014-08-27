@@ -17,7 +17,7 @@ if ( ! function_exists( 'uw_dropdowns') )
     //   switch_to_blog(1);
     // }
     echo
-        '<div id="dawgdrops" aria-label="Main menu" role="navigation">
+        '<nav id="dawgdrops" aria-label="Main menu" role="navigation">
           <h3 class="assistive-text">Main menu</h3>';
 
           wp_nav_menu( array(
@@ -28,7 +28,7 @@ if ( ! function_exists( 'uw_dropdowns') )
             'walker'          => new UW_Dropdowns_Walker_Menu()
           ) );
 
-    echo '</div>';
+    echo '</nav>';
 
     // if ( ( !$nav ) && ( is_multisite() ) )
     // {
