@@ -43,7 +43,7 @@ if ( ! function_exists('uw_sidebar_menu') ) :
 
   function uw_sidebar_menu()
   {
-    echo sprintf( '<ul class="uw-sidebar-menu first-level"> %s </ul>', uw_list_pages() ) ;
+    echo sprintf( '<nav role="navigation" aria-label="relative navigation"><ul class="uw-sidebar-menu first-level"> %s </ul></nav>', uw_list_pages() ) ;
   }
 
 endif;
