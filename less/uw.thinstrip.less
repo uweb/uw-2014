@@ -64,7 +64,7 @@
 					}
 				}
 			}
-			a {
+			a, button {
 				font-family: @font-family-headline;
 				color: #fff;
 				font-size: 18px;
@@ -82,7 +82,7 @@
 				}
 			}
 			&.uw-search {
-				a {
+				button {
 					text-indent: -99999px;
 					background: url(assets/svg/uw-sprite.svg) no-repeat -520px -50px transparent;
 					position: relative;
@@ -99,7 +99,7 @@
                     height: 68px;
                     margin: 0px;
                 }
-				a {
+				button {
 					padding-left: 38px;
 					margin-left: -15px;
 					margin-right: 0;
@@ -125,6 +125,9 @@
 					}
 				}
 			}
+            button {
+                border: none;
+            }
 		}
 	}
 }
@@ -150,7 +153,7 @@
 @media only screen and (max-width : 767px) {
 
 	#uw-container {
-		&.open .uw-quicklinks a {
+		&.open .uw-quicklinks button {
 			color: black;
 			background-position: -492px -317px;
 			&:after {
@@ -188,7 +191,7 @@
 		ul.uw-thin-links {
 			height: 50px;
 			li {
-				&.uw-quicklinks a {
+				&.uw-quicklinks button {
 					background-position: -484px -247px;
 					background-size: 900px;
 					text-indent: -99999px;
@@ -207,7 +210,7 @@
                 &.uw-quicklinks div {
                     width: 150px;
                 }
-				&.uw-search a {
+				&.uw-search button {
 					background-position: -481px -317px;
 					background-size: 900px;
 					text-indent: -99999px;
@@ -267,7 +270,7 @@
 				content: "";
 				background-color: rgb(231, 231, 231);
 			}
-			li a {
+			li a,li button {
 				font-size: 16px;
 				padding: 10px 25px 10px 0;
 				color: @darkgray;
@@ -287,7 +290,7 @@
 			right: 130px;
 			top: -69px;
 			margin: 0;
-			a {
+			a, button {
 				padding-right: 60px;
 				background-size: 660px;
 				background-position: -398px -34px;
@@ -297,9 +300,11 @@
 }
 @media only screen and (min-width : 992px) and (max-width : 1200px) {
 	.uw-thinstrip {
-		ul.uw-thin-links li a {
-			font-size: 16px;
-			padding: 10px 25px 10px 0;
+		ul.uw-thin-links li{
+            a, button {
+			    font-size: 16px;
+			    padding: 10px 25px 10px 0;
+            }
 		}
 		.uw-wordmark {
 			background-size: 670px;
