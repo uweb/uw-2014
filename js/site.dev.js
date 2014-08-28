@@ -14838,7 +14838,7 @@ UW.Search = Backbone.View.extend({
   },
 
   // This is the HTML for the search bar that is preprended to the body tag.
-  searchbar : '<div class="uw-search-bar-container">'+
+  searchbar : '<div id="uwsearcharea" class="uw-search-bar-container">'+
                '<div class="container">'+
                   '<div class="center-block uw-search-wrapper">'+
                     '<form class="uw-search" action="<%= Backbone.history.location.pathname %>">'+
