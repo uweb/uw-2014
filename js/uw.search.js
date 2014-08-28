@@ -78,7 +78,7 @@ UW.Search = Backbone.View.extend({
   // Toggling the radio buttons changes the function of the search bar from searhing the UW, searching the current site and searching the directory.
   events :
   {
-    'keydown input'             : 'searchDirectory',
+    'keyup input'               : 'searchDirectory',
     'click .result .more'       : 'showPersonInformation',
     'click .result .commonname' : 'showPersonInformation',
     'click input:radio'         : 'toggleSearchFeature',
