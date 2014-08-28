@@ -15175,10 +15175,6 @@ UW.QuickLinksView = Backbone.View.extend({
             var $adminbar = $('#wpadminbar');
             UW.$body.children().not('#wpadminbar').not('script').wrapAll('<div id="uw-container"><div id="uw-container-inner"></div></div>');
             this.$container = $(this.container);
-            $('#uw-container-inner').on( {
-                'mouseover': this.close_quicklinks,
-                'touchstart': this.close_quicklinks
-            });
         }
     },
 
@@ -15217,12 +15213,20 @@ UW.QuickLinksView = Backbone.View.extend({
             this.$drawer.append(this.$little_list);
         }
         this.$links = this.$drawer.find('li a');
-        var self = this;
+        this.add_events();
+        this.$container.prepend(this.$drawer);
+    },
+
+    add_events: function () {
+        $('#uw-container-inner').on( {
+            'mouseover': this.close_quicklinks,
+            'touchstart': this.close_quicklinks
+        });
         this.$links.on( {'keyup': this.close_quicklinks});
+        var self = this;
         this.$links.last().blur(function () {
             self.$button.focus();
-        })
-        this.$container.prepend(this.$drawer);
+        });
     },
 
     reset: function () {
