@@ -19,7 +19,7 @@ UW.QuickLink = Backbone.Model.extend({
 });
 
 UW.QuickLinkView = Backbone.View.extend({
-    menu_template : '<li><% if (classes) { %><span class="<%= classes %>"></span><% } %><a href="<%= link_url %>" tabindex=3><%= title %></a></li>',
+    menu_template : '<li><% if (classes) { %><span class="<%= classes %>"></span><% } %><a href="<%= link_url %>" tabindex="-1"><%= title %></a></li>',
 
     initialize: function () {
         this.create_menu_item();
@@ -104,14 +104,16 @@ UW.QuickLinksView = Backbone.View.extend({
     events: {
        'mouseover': 'animate',
        'touchstart': 'animate',
-       'focusin': 'focused'
+       'keyup': 'keyup'
     },
 
     initialize: function () {
-        _.bindAll( this, 'append_menu_item', 'build', 'close_quicklinks', 'focused', 'blurred' );
+        _.bindAll( this, 'append_menu_item', 'build', 'close_quicklinks', 'focused', 'blurred', 'button_blur', 'keyup' );
         this.is_focused = false;
         this.make_drawer();
         this.build();
+        this.$button = this.$el.find('button');
+        this.$button.blur(this.button_blur);
     },
 
     build: function () {
@@ -127,8 +129,7 @@ UW.QuickLinksView = Backbone.View.extend({
             this.$container = $(this.container);
             $('#uw-container-inner').on( {
                 'mouseover': this.close_quicklinks,
-                'touchstart': this.close_quicklinks,
-                'focusin': this.blurred
+                'touchstart': this.close_quicklinks
             });
         }
     },
@@ -160,6 +161,11 @@ UW.QuickLinksView = Backbone.View.extend({
             this.$drawer.append(this.$little_list_header);
             this.$drawer.append(this.$little_list);
         }
+        this.$links = this.$drawer.find('li a');
+        var self = this;
+        this.$links.last().blur(function () {
+            self.$button.focus();
+        })
         this.$container.prepend(this.$drawer);
     },
 
@@ -185,19 +191,32 @@ UW.QuickLinksView = Backbone.View.extend({
         }
     },
 
-    focused: function (event) {
-        this.animate(event);
-        var $next_focus = this.$drawer.find('li a').first();
-        _.delay(function () {
-            $next_focus.focus();
-            this.is_focused = true;
-        }, 300);
+    keyup: function (event) {
+        if (event.keyCode == 13) {
+            if (this.is_focused) {
+                this.blurred();
+            }
+            else {
+                _.delay(this.focused, 300);
+            }
+            this.animate(event);
+        }
+    },
+
+    focused: function () {
+        this.is_focused = true;
+        this.$links.attr('tabindex', 0);
+        this.$links.first().focus();
     },
 
     blurred: function (event) {
-        if (this.is_focused){
-            this.is_focused = false;
-            this.animate(event);
+        this.is_focused = false;
+        this.$links.attr('tabindex', -1);
+    },
+
+    button_blur: function (event) {
+        if(this.is_focused){
+            this.$links.first().focus();
         }
     }
 });
