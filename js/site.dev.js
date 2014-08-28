@@ -15183,7 +15183,14 @@ UW.QuickLinksView = Backbone.View.extend({
     },
 
     close_quicklinks: function (event) {
-        if (this.$container.hasClass('open') && (event.target.parentElement != this.el)) {
+        if (event.type == 'keyup'){
+            if (event.keyCode == 27) {
+                this.$button.focus();
+                this.blurred();
+                this.animate(event);
+            }
+        }
+        else if (this.$container.hasClass('open') && (event.target.parentElement != this.el) && (!this.is_focused)) {
             this.animate(event);
         }
     },
@@ -15211,6 +15218,7 @@ UW.QuickLinksView = Backbone.View.extend({
         }
         this.$links = this.$drawer.find('li a');
         var self = this;
+        this.$links.on( {'keyup': this.close_quicklinks});
         this.$links.last().blur(function () {
             self.$button.focus();
         })
