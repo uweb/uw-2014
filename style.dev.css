@@ -8859,6 +8859,7 @@ li {
   list-style: none;
   padding: 0;
   margin: 0;
+  position: relative;
 }
 ul.uw-sidebar-menu {
   margin-left: 20px;
@@ -8879,6 +8880,15 @@ ul.uw-sidebar-menu li.pagenav a.homelink {
 ul.uw-sidebar-menu li.pagenav ul {
   font-size: 20px;
 }
+ul.uw-sidebar-menu li.pagenav ul li.page_item_has_children:before {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  right: 20px;
+  top: 24px;
+  background: url(/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg) no-repeat -353px 0px;
+}
 ul.uw-sidebar-menu li.pagenav ul li.current_page_item,
 ul.uw-sidebar-menu li.pagenav ul li.current_page_parent {
   background-color: #4b2e83;
@@ -8887,6 +8897,14 @@ ul.uw-sidebar-menu li.pagenav ul li.current_page_item a,
 ul.uw-sidebar-menu li.pagenav ul li.current_page_parent a {
   color: white;
   border-bottom: none;
+}
+ul.uw-sidebar-menu li.pagenav ul li.current_page_item li.page_item_has_children ul,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_parent li.page_item_has_children ul {
+  display: none;
+}
+ul.uw-sidebar-menu li.pagenav ul li.current_page_item li.page_item_has_children.current_page_item ul,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_parent li.page_item_has_children.current_page_item ul {
+  display: block;
 }
 ul.uw-sidebar-menu li.pagenav ul li a {
   color: #4b2e83;

@@ -1,23 +1,29 @@
 
 // todo: move this to a reset file
-ul, li {
+ul, li
+{
 	display: block;
 	list-style:none;
 	padding:0;
 	margin:0;
+	position:relative;
 }
 
-ul.uw-sidebar-menu {
+ul.uw-sidebar-menu
+{
 	margin-left: 20px;
 	padding: 20px;
 	margin-top: -80px;
-	// padding-left: 47px;
 	background-color:white;
-	li.pagenav {
-			a {
+
+	li.pagenav
+	{
+			a
+			{
 				font-family: @font-family-headline;
 				display: block;
 				padding: 10px 0 10px 20px;
+
 				&.homelink
 				{
 					display:none;
@@ -26,22 +32,43 @@ ul.uw-sidebar-menu {
 				}
 			}
 
-			ul {
+			ul
+			{
 
 				font-size:20px;
 
-				li.current_page_item, li.current_page_parent {
+				li.page_item_has_children:before {
+					content: "";
+					position: absolute;
+					height: 10px;
+					width: 10px;
+					right: 20px;
+					top: 24px;
+					background: url(/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg) no-repeat -353px 0px;
+				}
+
+
+				li.current_page_item, li.current_page_parent
+				{
 					background-color: @purple;
 					a {
 						color:white;
 						border-bottom: none;
 					}
+
+					li.page_item_has_children ul {
+						display:none;
+					}
+
+					li.page_item_has_children.current_page_item ul {
+						display:block;
+					}
+
 				}
 
 				li
 				{
-					a
-					{
+					a	{
 						color: @purple;
 						border-bottom: thin solid #eee;
 					}
@@ -71,7 +98,7 @@ ul.uw-sidebar-menu {
 								a
 								{
 									color:white;
-									border-bottom: none;	
+									border-bottom: none;
 								}
 								color:white;
 								border-bottom: none;
