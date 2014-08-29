@@ -8927,6 +8927,7 @@ ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li {
 ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li a,
 ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li a {
   color: #5a5a5a;
+  padding: 10px 0 10px 40px;
 }
 ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li.current_page_item,
 ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li.current_page_item {
