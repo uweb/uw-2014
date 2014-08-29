@@ -8090,7 +8090,7 @@ ul.uw-select li.inactive a {
   padding-left: 38px;
   margin-left: -15px;
   margin-right: 0;
-  padding-right: 65px;
+  padding-right: 60px;
   position: relative;
   z-index: 1;
   color: #000;
@@ -8117,7 +8117,7 @@ ul.uw-select li.inactive a {
   top: 1px;
   right: -7px;
   content: "";
-  width: 60px;
+  width: 51px;
   height: 45px;
   display: block;
   transform: skewX(-14deg);
