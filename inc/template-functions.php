@@ -72,45 +72,32 @@ if ( ! function_exists( 'uw_list_pages') ) :
 
     $parent = get_post( $post->post_parent );
 
-if ( $post->post_parent && $children ) {
-
-    $siblings = get_children( array (
-      'post_parent' => $parent->ID,
+    $children = get_children( array (
+      'post_parent' => $post->ID,
       'post_type' => 'page',
       'exclude' => $post->ID
     ));
 
+    if ( $post->post_parent && $children )
+    {
 
-    foreach( $siblings as $sib ) {
-      $ids[] = $sib->ID;
-      $titles[] = $sib->post_title;
+        $siblings = get_pages( array (
+          'parent' => $parent->post_parent,
+          'post_type' => 'page',
+          'exclude' => $parent->ID
+        ));
+
+        foreach( $siblings as $sib ) {
+          $ids[] = $sib->ID;
+        }
+
     }
-
-}
-
-if ( $post->post_parent && ! $children  )
-{
-    $grandparent = get_post( $parent->post_parent );
-
-    $siblings = get_children( array (
-      'post_parent' => $grandparent->ID,
-      'post_type' => 'page',
-      'exclude' => $parent->ID
-    ));
-
-
-    foreach( $siblings as $sib ) {
-      $ids[] = $sib->ID;
-      $titles[] = $sib->post_title;
-    }
-
-}
 
     return wp_list_pages(array(
       'title_li' => '<a href="'.get_bloginfo('url').'" title="Home" class="homelink">Home</a>',
-      'child_of' => $children ? $post->post_parent : $parent->post_parent,
+      'child_of' => $parent->post_parent,
       'exclude_tree' => $ids,
-      'depth' => 2,
+      'depth' => 3,
       'echo'  => 0
     ));
   }
