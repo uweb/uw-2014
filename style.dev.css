@@ -8933,10 +8933,14 @@ ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li.current_pag
 ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li.current_page_item {
   background-color: white;
 }
+ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li.current_page_item ul.children li,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li.current_page_item ul.children li {
+  border-bottom: 1px solid #B3B3B3;
+}
 ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li.current_page_item ul.children a,
 ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li.current_page_item ul.children a {
-  background-color: white;
-  color: black;
+  background-color: #929292;
+  color: white;
 }
 ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li.current_page_item a,
 ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li.current_page_item a {
