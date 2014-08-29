@@ -8932,9 +8932,14 @@ ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li.current_pag
 ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li.current_page_item {
   background-color: white;
 }
+ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li.current_page_item ul.children a,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li.current_page_item ul.children a {
+  background-color: white;
+  color: black;
+}
 ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li.current_page_item a,
 ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li.current_page_item a {
-  background-color: #525252;
+  background-color: #757575;
   color: white;
   border-bottom: none;
 }
