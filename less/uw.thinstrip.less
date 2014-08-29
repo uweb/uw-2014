@@ -103,16 +103,18 @@
 					padding-left: 38px;
 					margin-left: -15px;
 					margin-right: 0;
-					padding-right: 44px;
+					padding-right: 65px;
 					position: relative;
 					z-index: 1;
 					color: #000;
 					background: url(assets/svg/uw-sprite.svg) no-repeat -451px -235px;
+					overflow: hidden;
 					&:after {
 						position: absolute;
 						content: "";
 						//background: url(assets/svg/uw-sprite.svg) no-repeat -363px -149px;
-						background: url(assets/svg/uw-sprite.svg) no-repeat 0px -489px;
+						background: url(assets/svg/uw-sprite.svg) no-repeat -34px -388px;
+						background-size: 691px;
 						height: 25px;
 						width: 27px;
 						display: block;
@@ -122,6 +124,17 @@
                            -moz-transition: all .3s ease-in-out;
                              -o-transition: all .3s ease-in-out;
                                 transition: all .3s ease-in-out;
+					}
+					&:before {
+						position: absolute;
+						top: 1px;
+						right: -7px;
+						content: "";
+						width: 60px;
+						height: 45px;
+						display: block;
+						transform: skewX(-14deg);
+						background: linear-gradient(to right,#2e2e2e 0,#686868 4%,#686868 100%);
 					}
 				}
 			}
