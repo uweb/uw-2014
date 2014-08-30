@@ -42,6 +42,12 @@ ul.uw-sidebar-menu
 					a {
 						color:white;
 						border-bottom: none;
+						border-left: 10px solid #b7a57a;
+					}
+					&.current_page_ancestor {
+						a {
+							border-left: none;
+						}
 					}
 
 					li.page_item_has_children ul {
@@ -74,6 +80,7 @@ ul.uw-sidebar-menu
 							{
 								color:@darkgray;								
 								padding: 10px 0 10px 40px;
+								border-left: none;
 							}
 
 						}
@@ -88,11 +95,14 @@ ul.uw-sidebar-menu
 								a {
 									background-color: #929292;
 									color: white;
+									border-left: none;
 								}
 							}
 							a
 							{
 								background-color:#757575;
+								border-left: 10px solid #b7a57a;
+								padding-left: 30px;
 								a
 								{
 									color:white;

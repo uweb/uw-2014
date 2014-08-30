@@ -8900,6 +8900,11 @@ ul.uw-sidebar-menu li.pagenav ul li.current_page_item a,
 ul.uw-sidebar-menu li.pagenav ul li.current_page_parent a {
   color: white;
   border-bottom: none;
+  border-left: 10px solid #b7a57a;
+}
+ul.uw-sidebar-menu li.pagenav ul li.current_page_item.current_page_ancestor a,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_parent.current_page_ancestor a {
+  border-left: none;
 }
 ul.uw-sidebar-menu li.pagenav ul li.current_page_item li.page_item_has_children ul,
 ul.uw-sidebar-menu li.pagenav ul li.current_page_parent li.page_item_has_children ul {
@@ -8928,6 +8933,7 @@ ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li a,
 ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li a {
   color: #5a5a5a;
   padding: 10px 0 10px 40px;
+  border-left: none;
 }
 ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li.current_page_item,
 ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li.current_page_item {
@@ -8941,10 +8947,13 @@ ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li.current_pag
 ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li.current_page_item ul.children a {
   background-color: #929292;
   color: white;
+  border-left: none;
 }
 ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li.current_page_item a,
 ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li.current_page_item a {
   background-color: #757575;
+  border-left: 10px solid #b7a57a;
+  padding-left: 30px;
   color: white;
   border-bottom: none;
 }
