@@ -8958,7 +8958,11 @@ ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li.current
   background-color: white;
   color: #5a5a5a;
   border-left: none;
-  padding-left: 55px;
+  padding-left: 50px;
+}
+ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li.current_page_item ul.children a:before,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li.current_page_item ul.children a:before {
+  content: "- ";
 }
 ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li.current_page_item a,
 ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li.current_page_item a {
