@@ -8909,11 +8909,15 @@ ul.uw-sidebar-menu li.pagenav ul li.current_page_parent.current_page_ancestor {
 ul.uw-sidebar-menu li.pagenav ul li.current_page_item.current_page_ancestor > a:after,
 ul.uw-sidebar-menu li.pagenav ul li.current_page_parent.current_page_ancestor > a:after {
   content: "";
-  background: url(assets/svg/uw-sprite.svg) no-repeat -205px -493px;
+  background: url(assets/svg/uw-sprite.svg) no-repeat -186px -476px;
   display: inline-block;
-  height: 17px;
-  width: 14px;
+  height: 54px;
+  width: 54px;
   margin-left: 7px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #b7a57a;
 }
 ul.uw-sidebar-menu li.pagenav ul li.current_page_item.current_page_ancestor a,
 ul.uw-sidebar-menu li.pagenav ul li.current_page_parent.current_page_ancestor a {
@@ -8979,6 +8983,9 @@ ul.uw-sidebar-menu li.pagenav ul li:last-child a {
   border-bottom: none;
 }
 ul.uw-sidebar-menu ul.children {
+  display: none;
+}
+body.home .uw-sidebar-menu {
   display: none;
 }
 /* Medium Devices, Desktops */
