@@ -47,7 +47,9 @@ UW.initialize = function( $ )
   UW.radio      = _.map( $( UW.elements.radio ),     function( element ) { return new UW.Radio({ el : element }) } )
   UW.select     = _.map( $( UW.elements.select ),    function( element ) { return new UW.Select({ el : element }) } )
 
-  UW.$body.restive( UW.restive )
+  // todo: add to separate file
+  $('table').addClass('table')
+
 }
 
 jQuery(document).ready( UW.initialize )
