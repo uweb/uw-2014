@@ -23,13 +23,6 @@ UW.sources = {
   search     : UW.baseUrl + 'wp-admin/admin-ajax.php'
 }
 
-// List the responsive and adaptive breakpoints for targeted browsers and devices
-UW.restive = {
-  breakpoints   : [ '768', '992', '10000' ],
-  classes       : [ 'uw-small', 'uw-medium', 'uw-large' ],
-  turbo_classes : 'is_portrait=portrait,is_landscape=landscape'
-}
-
 // Initialize all components when the DOM is ready
 UW.initialize = function( $ )
 {
