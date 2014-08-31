@@ -64,34 +64,15 @@ if ( ! function_exists( 'uw_list_pages') ) :
   {
     global $post;
 
-    $children = get_children(array(
-      'post_parent' => $post->ID,
-      // todo: reconsider if this post_type parameter is a bad limitation
-      'post_type'   => 'page'
-    ) );
-
     $parent = get_post( $post->post_parent );
 
-    $children = get_children( array (
-      'post_parent' => $post->ID,
+    $siblings = get_pages( array (
+      'parent' => $parent->post_parent,
       'post_type' => 'page',
-      'exclude' => $post->ID
-    ));
+      'exclude' => $parent->ID
+    ) );
 
-    if ( $post->post_parent && $children )
-    {
-
-        $siblings = get_pages( array (
-          'parent' => $parent->post_parent,
-          'post_type' => 'page',
-          'exclude' => $parent->ID
-        ));
-
-        foreach( $siblings as $sib ) {
-          $ids[] = $sib->ID;
-        }
-
-    }
+    $ids = array_map( function($sibling) { return $sibling->ID; }, $siblings );
 
     return wp_list_pages(array(
       'title_li' => '<a href="'.get_bloginfo('url').'" title="Home" class="homelink">Home</a>',
