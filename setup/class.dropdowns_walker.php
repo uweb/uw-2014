@@ -75,7 +75,6 @@ class UW_Dropdowns_Walker_Menu extends Walker_Nav_Menu
 		$item_output = $args->before;
 		$item_output .= '<a'. $attributes .'>';
 		$item_output .= $args->link_before . apply_filters( 'the_title', $title, $item->ID ) . $args->link_after;
-		$item_output .= $caret;
 		$item_output .= '</a>';
 		$item_output .= $args->after;
 

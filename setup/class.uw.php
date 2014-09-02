@@ -36,11 +36,13 @@ class UW
         require_once('class.squish_bugs.php');
         require_once('class.filters.php');
         require_once('class.map-oembed.php');
+        require_once('class.googleapps.php');
         require_once('class.mimes.php');
         require_once('class.users.php');
         require_once('class.dropdowns_walker.php');  // no initialization needed because it extends a WP class
         require_once( 'class.uw-directory.php' );
         require_once( 'class.uw-quicklinks.php' );
+        require_once('class.uw-iframes.php');
         require_once( 'class.uw-shortcodes.php' );
         require_once( 'class.uw-media-credit.php' );
         require_once( 'class.uw-media-caption.php' );
@@ -70,5 +72,7 @@ class UW
         $this->TinyMCE           = new UW_TinyMCE;
         $this->Documentation     = new UW_Documentation;
         $this->FrontPageSettings = new UW_FrontPageSettings;
+        $this->IFrames           = new UW_Iframes;
+        $this->GoogleApps        = new UW_GoogleApps;
     }
 }
