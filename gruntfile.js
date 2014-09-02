@@ -11,7 +11,6 @@ module.exports = function(grunt) {
           "js/libraries/jquery.easing.js",
           "js/libraries/jquery.tinyscrollbar.js",
           "js/libraries/video.dev.js",
-          "js/libraries/restive.js"
         ],
         theme : [
           "js/uw.core.js",

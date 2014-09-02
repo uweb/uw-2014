@@ -23,13 +23,6 @@ UW.sources = {
   search     : UW.baseUrl + 'wp-admin/admin-ajax.php'
 }
 
-// List the responsive and adaptive breakpoints for targeted browsers and devices
-UW.restive = {
-  breakpoints   : [ '768', '992', '10000' ],
-  classes       : [ 'uw-small', 'uw-medium', 'uw-large' ],
-  turbo_classes : 'is_portrait=portrait,is_landscape=landscape'
-}
-
 // Initialize all components when the DOM is ready
 UW.initialize = function( $ )
 {
@@ -54,7 +47,9 @@ UW.initialize = function( $ )
   UW.radio      = _.map( $( UW.elements.radio ),     function( element ) { return new UW.Radio({ el : element }) } )
   UW.select     = _.map( $( UW.elements.select ),    function( element ) { return new UW.Select({ el : element }) } )
 
-  UW.$body.restive( UW.restive )
+  // todo: add to separate file
+  $('table').addClass('table')
+
 }
 
 jQuery(document).ready( UW.initialize )
