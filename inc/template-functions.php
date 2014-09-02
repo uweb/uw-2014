@@ -141,3 +141,11 @@ if ( ! function_exists( 'uw_get_thumbnail_url' ) ) :
     return $thumbnail[0];
   }
 endif;
+
+if ( ! function_exists( 'is_pdf' ) ):
+
+  function is_pdf() {
+    return get_post_mime_type() == 'application/pdf';
+  }
+
+endif;
