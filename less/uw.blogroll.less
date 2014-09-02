@@ -1,0 +1,33 @@
+/*
+ *  All styles for Blogroll shortcode
+ */
+
+.shortcode-blogroll {
+    
+    padding: 0;
+    list-style: none;
+    li {
+        margin: 40px 0 50px;
+        position: relative;
+        .date {
+            font-weight: 800;            
+            margin: 0 0 -15px;
+            font-family: @font-family-headline;
+        }
+        .author-info {
+            font-weight: 600;
+            margin: 0px 0 20px 0;
+            font-family: @font-family-headline;
+        }
+        &:after {
+            display: block;
+            content: "";
+            width: 150px;
+            height: 1px;
+            background-color: rgb(187, 187, 187);
+            bottom: -24px;
+            position: absolute;
+        }
+    }
+
+}
