@@ -50,6 +50,7 @@
 		position: relative;
 		z-index: 1;
 		font-weight: 700;
+		padding: 0;
 
 		li {
 			list-style: none;
@@ -258,12 +259,18 @@
 				&:nth-child(6) {
 					display: none !important;
 				}
-                &.quicklinks div {
-                    display: none;
-                }
+                &.uw-quicklinks {
+                	button:before {
+						background: none;
+					}
+                	div {
+                    	display: none;
+                	}
+				}
 			}
 		}
 	}
+
 }
 @media only screen and (min-width : 768px) and (max-width : 991px) {
 	.uw-thinstrip {
@@ -300,7 +307,7 @@
 		}
 		ul.uw-thin-links li.uw-search {
 			position: absolute;
-			right: 130px;
+			right: 145px;
 			top: -69px;
 			margin: 0;
 			a, button {

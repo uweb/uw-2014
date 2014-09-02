@@ -8571,7 +8571,7 @@ UW.initialize = function( $ )
   UW.select     = _.map( $( UW.elements.select ),    function( element ) { return new UW.Select({ el : element }) } )
 
   // todo: add to separate file
-  $('table').addClass('table')
+  $('table').addClass('table table-striped')
 
 }
 
