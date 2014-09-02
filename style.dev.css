@@ -7511,17 +7511,18 @@ div.uw-slideshow.last-next .previous {
 }
 @media only screen and (max-width: 767px) {
   div.uw-slideshow .uw-slideshow-controls {
-    height: 55px;
-    bottom: 10px;
+    height: 45px;
+    bottom: 0;
   }
   div.uw-slideshow .uw-slideshow-controls.next:after,
   div.uw-slideshow .uw-slideshow-controls.previous:after {
-    top: 8px;
+    top: 3px;
   }
   div.uw-slideshow > div.slide div {
-    padding: 20px;
+    padding: 20px 20px 55px;
     opacity: 1;
     width: 100%;
+    bottom: 0;
   }
   div.uw-slideshow > div.slide div p {
     width: 100%;

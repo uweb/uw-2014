@@ -133,18 +133,19 @@ div.uw-slideshow
 @media only screen and (max-width : 767px) {
 
   div.uw-slideshow .uw-slideshow-controls {
-    height:55px;
-    bottom: 10px;
+    height:45px;
+    bottom: 0;
     &.next:after,
     &.previous:after {
-      top: 8px;
+      top: 3px;
     }
   }
   
   div.uw-slideshow > div.slide div {
-    padding: 20px;
+    padding: 20px 20px 55px;
     opacity: 1;
-    width: 100%; 
+    width: 100%;
+    bottom: 0; 
     p {
       width: 100%;
     }
