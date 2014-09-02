@@ -7414,6 +7414,7 @@ div.uw-slideshow {
   width: 750px;
   height: 390px;
   margin: 40px 0 20px 0;
+  z-index: 0;
 }
 div.uw-slideshow > div.slide {
   position: absolute;
@@ -8344,7 +8345,15 @@ ul.uw-select li.inactive a {
   padding-right: 30px;
 }
 .dawgdrops-item a.dropdown-toggle:hover:before {
-  background: url(assets/svg/uw-sprite.svg) no-repeat -353px -54px;
+  background: url(assets/svg/uw-sprite.svg) no-repeat -186px -476px;
+  -o-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  height: 25px;
+  width: 18px;
+  right: 4px;
+  top: 8px;
 }
 .dawgdrops-item a.dropdown-toggle:before {
   content: "";
