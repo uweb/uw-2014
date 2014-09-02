@@ -7519,8 +7519,12 @@ div.uw-slideshow.last-next .previous {
     top: 8px;
   }
   div.uw-slideshow > div.slide div {
-    padding: 20px 20px 20px 40px;
+    padding: 20px;
     opacity: 1;
+    width: 100%;
+  }
+  div.uw-slideshow > div.slide div p {
+    width: 100%;
   }
 }
 div.uw-vimeo div.preview {
