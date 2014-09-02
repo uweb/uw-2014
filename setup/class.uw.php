@@ -36,6 +36,7 @@ class UW
         require_once('class.squish_bugs.php');
         require_once('class.filters.php');
         require_once('class.map-oembed.php');
+        require_once('class.googleapps.php');
         require_once('class.mimes.php');
         require_once('class.users.php');
         require_once('class.dropdowns_walker.php');  // no initialization needed because it extends a WP class
@@ -70,5 +71,6 @@ class UW
         $this->TinyMCE           = new UW_TinyMCE;
         $this->Documentation     = new UW_Documentation;
         $this->FrontPageSettings = new UW_FrontPageSettings;
+        $this->GoogleApps        = new UW_GoogleApps;
     }
 }
