@@ -7415,7 +7415,7 @@ address {
 div.uw-slideshow {
   position: relative;
   overflow: hidden;
-  width: 750px;
+  width: 100%;
   height: 390px;
   margin: 40px 0 20px 0;
   z-index: 0;
@@ -7440,7 +7440,7 @@ div.uw-slideshow > div.slide div {
   background-color: #4b2e83;
   opacity: .9;
   padding: 20px 0 20px 40px;
-  width: 77.5%;
+  width: 100%;
 }
 div.uw-slideshow > div.slide div h3 {
   color: white;
@@ -7466,9 +7466,9 @@ div.uw-slideshow .uw-slideshow-controls {
   text-align: center;
   position: absolute;
   background-color: #eee;
-  height: 90px;
+  height: 55px;
   width: 45px;
-  bottom: 60px;
+  bottom: 10px;
 }
 div.uw-slideshow .uw-slideshow-controls.next:after,
 div.uw-slideshow .uw-slideshow-controls.previous:after {
@@ -7477,7 +7477,7 @@ div.uw-slideshow .uw-slideshow-controls.previous:after {
   width: 81px;
   height: 114px;
   position: absolute;
-  top: 25px;
+  top: 8px;
   left: 15px;
   background-size: 1700px;
 }
@@ -7508,6 +7508,20 @@ div.uw-slideshow.last-next .next {
 }
 div.uw-slideshow.last-next .previous {
   z-index: 100;
+}
+@media only screen and (max-width: 767px) {
+  div.uw-slideshow .uw-slideshow-controls {
+    height: 55px;
+    bottom: 10px;
+  }
+  div.uw-slideshow .uw-slideshow-controls.next:after,
+  div.uw-slideshow .uw-slideshow-controls.previous:after {
+    top: 8px;
+  }
+  div.uw-slideshow > div.slide div {
+    padding: 20px 20px 20px 40px;
+    opacity: 1;
+  }
 }
 div.uw-vimeo div.preview {
   float: left;
