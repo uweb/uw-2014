@@ -1,7 +1,7 @@
 <?php
 // Basic helper and template functions.  TODO: Maybe look at MVC-izing the template functions
 //require( get_template_directory() . '/inc/helper-functions.php' );
-//require( get_template_directory() . '/inc/template-functions.php' );
+require( get_template_directory() . '/inc/template-functions.php' );
 
 // Setup hooks for the theme
 require( get_template_directory() . '/setup/settings.php' );
@@ -16,10 +16,10 @@ if (!isset($UW)){
     $UW = new UW();
 }
 
-require( get_template_directory() . '/inc/override_page_attributes_meta.php');
+// require( get_template_directory() . '/inc/override_page_attributes_meta.php');
 
 // Custom shivs to help Wordpress and some plugins with our server architecture
-//require( get_template_directory() . '/shivs/remove-http-cms.php' );
+// require( get_template_directory() . '/shivs/remove-http-cms.php' );
 //require( get_template_directory() . '/shivs/plugin-hooks.php' );
 
 // Documentation widget for the admin dashboard
