@@ -32,10 +32,10 @@ class UW_Media_Caption
 
     if ( $match[0] ) $credit = get_post_meta($match[0], '_media_credit', true);
 
-    if ( $credit ) $credit = '<p class="wp-media-credit">'. $credit . '</p>';
+    if ( $credit ) $credit = '<span class="wp-media-credit">'. $credit . '</span>';
 
     return '<div ' . $id . 'class="wp-caption ' . esc_attr($align) . '" style="width: ' . (10 + (int) $width) . 'px">'
-    . do_shortcode( $content ) . $credit . '<p class="wp-caption-text">' . $caption . '</p></div>';
+    . do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . $credit . '</p></div>';
   }
 
 }

@@ -1,0 +1,49 @@
+// Search Widget
+
+#searchform {
+	position: relative;
+	clear: both;
+	outline: 2px solid #ADADAD;
+	font-family: @font-family-headline;
+	font-size: 20px;
+	label {
+		position: absolute;
+		top: 10px;
+		left: 18px;
+	color: #7A7A7A;
+	font-weight: 600;
+	}
+	.assistive-text {
+		  z-index: -1;
+	}
+	div {
+
+	}
+	// Field 
+	#s {
+		width: 100%;
+		padding: 10px 0 10px 15px;
+		border: none;
+		font-size: 20px;
+		outline: none;
+		background-color: #F1F1F1;
+	}
+	// Button
+	#searchsubmit {
+		float: left;
+		display: block;
+		height: 54px;
+		width: 55px;
+		text-indent: -99999px;
+		outline: 2px solid @purple;
+		background: url(assets/svg/search.svg) no-repeat center center @purple;
+		position: relative;
+		border: none;
+		.background-size(22px);
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+}
+
+
