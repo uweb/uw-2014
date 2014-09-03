@@ -46,6 +46,7 @@ class UW
         require_once( 'class.uw-shortcodes.php' );
         require_once( 'class.uw-media-credit.php' );
         require_once( 'class.uw-media-caption.php' );
+        require_once( 'class.uw-replace-media.php' );
         require_once( 'class.uw-tinymce.php' );
         require_once( 'class.uw-documentation.php' );
         require_once( 'class.uw-front-page-settings.php' );
@@ -69,6 +70,7 @@ class UW
         $this->Shortcodes        = new UW_Shortcodes;
         $this->MediaCredit       = new UW_Media_Credit;
         $this->MediaCaption      = new UW_Media_Caption;
+        $this->ReplaceMedia      = new UW_Replace_Media;
         $this->TinyMCE           = new UW_TinyMCE;
         $this->Documentation     = new UW_Documentation;
         $this->FrontPageSettings = new UW_FrontPageSettings;
