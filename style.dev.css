@@ -7514,6 +7514,12 @@ div.uw-slideshow.last-next .previous {
     height: 45px;
     bottom: 0;
   }
+  div.uw-slideshow .uw-slideshow-controls:next {
+    right: 0;
+  }
+  div.uw-slideshow .uw-slideshow-controls:previous {
+    right: 45px;
+  }
   div.uw-slideshow .uw-slideshow-controls.next:after,
   div.uw-slideshow .uw-slideshow-controls.previous:after {
     top: 3px;
@@ -8719,7 +8725,7 @@ ul.uw-select li.inactive a {
     font-size: 25px;
     font-weight: 600;
     margin: -20px -20px 20px -20px;
-    padding: 15px 0 15px 20px;
+    padding: 15px 15px 15px 20px;
     position: static;
     background-color: #ddd;
   }
