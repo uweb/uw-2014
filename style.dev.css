@@ -7514,10 +7514,10 @@ div.uw-slideshow.last-next .previous {
     height: 45px;
     bottom: 0;
   }
-  div.uw-slideshow .uw-slideshow-controls:next {
+  div.uw-slideshow .uw-slideshow-controls.next {
     right: 0;
   }
-  div.uw-slideshow .uw-slideshow-controls:previous {
+  div.uw-slideshow .uw-slideshow-controls.previous {
     right: 45px;
   }
   div.uw-slideshow .uw-slideshow-controls.next:after,
