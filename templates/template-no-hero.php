@@ -1,11 +1,11 @@
-<?php 
-/*
-Template Name: No image
+<?php
+/**
+ * Template Name: No image
  */
-
-get_header();
 ?>
 
-<div class="no-uw-hero-image"></div>
+<?php get_header(); ?>
 
-<?php include(get_stylesheet_directory() . '/templates/template-common.php'); ?>
+<?php get_template_part( 'page' ); ?>
+
+<?php get_footer(); ?>

@@ -1,9 +1,11 @@
-<?php 
-/*
-Template Name: No title/image
+<?php
+/**
+ * Template Name: No title/image
  */
-
-get_header();
 ?>
 
-<?php include(get_stylesheet_directory() . '/templates/template-common.php'); ?>
+<?php get_header(); ?>
+
+<?php get_template_part( 'page' ); ?>
+
+<?php get_footer(); ?>
