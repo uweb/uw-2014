@@ -3,7 +3,7 @@ div.uw-slideshow
 
   position :relative;
   overflow :hidden;
-  width: 750px;
+  width: 100%;
   height: 390px;
   margin: 40px 0 20px 0;
   z-index: 0;
@@ -125,6 +125,36 @@ div.uw-slideshow
       z-index:100;
     }
 
+  }
+
+}
+
+
+@media only screen and (max-width : 767px) {
+
+  div.uw-slideshow .uw-slideshow-controls {
+    height:45px;
+    bottom: 0;
+    &.next {
+      right: 0;
+    }
+    &.previous {
+      right: 45px;
+    }
+    &.next:after,
+    &.previous:after {
+      top: 3px;
+    }
+  }
+  
+  div.uw-slideshow > div.slide div {
+    padding: 20px 20px 55px;
+    opacity: 1;
+    width: 100%;
+    bottom: 0; 
+    p {
+      width: 100%;
+    }
   }
 
 }
