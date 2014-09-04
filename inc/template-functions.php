@@ -63,12 +63,12 @@ if ( ! function_exists( 'uw_list_pages') ) :
   function uw_list_pages( $class = 'uw-sidebar-menu' )
   {
     global $post;
+    
+    $parent = get_post( $post->post_parent );
 
-    if ( ! get_children( $post->ID ) ) return;
+    if ( ! get_children( $post->ID ) && $parent->ID == $post->ID ) return;
 
     $toggle = $class == 'uw-mobile-menu' ? '<span class="uw-mobile-menu-toggle">Menu</span>' : '';
-
-    $parent = get_post( $post->post_parent );
 
     $siblings = get_pages( array (
       'parent' => $parent->post_parent,
