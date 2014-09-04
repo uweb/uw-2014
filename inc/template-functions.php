@@ -74,7 +74,7 @@ if ( ! function_exists( 'uw_list_pages') ) :
       'exclude' => $parent->ID
     ) );
 
-    $ids = array_map( function($sibling) { return $sibling->ID; }, $siblings );
+    $ids = ! is_front_page() ? array_map( function($sibling) { return $sibling->ID; }, $siblings ) : array();
 
     $pages = wp_list_pages(array(
       'title_li' => '<a href="'.get_bloginfo('url').'" title="Home" class="homelink">Home</a>',
