@@ -15,6 +15,7 @@ ul.uw-sidebar-menu
 		list-style:none;
 		padding:0;
 		margin:0;
+		-webkit-font-smoothing: auto;
 	}
 
 	li.pagenav
@@ -48,17 +49,21 @@ ul.uw-sidebar-menu
 					}
 					&.current_page_ancestor {
 						position: relative; 
-						& > a:after {
+						& > a {
+							padding-right: 60px;
+							&:after {
 								content: "";
 								background: url(assets/svg/uw-sprite.svg) no-repeat -186px -476px;
 								display: inline-block;
 								height: 54px;
 								width: 54px;
 								margin-left: 7px;
+								margin-top: -27px;
 								position: absolute;
 								right: 0;
-								top: 0;
+								top: 50%;
 								background-color: #b7a57a;
+							}
 						}
 						a {
 							border-left: none;
@@ -96,7 +101,7 @@ ul.uw-sidebar-menu
 							a
 							{
 								color:@darkgray;								
-								padding: 10px 0 10px 40px;
+								padding: 10px 30px 10px 30px;
 								border-left: none;
 							}
 
@@ -109,11 +114,14 @@ ul.uw-sidebar-menu
 								li {
 									border-bottom: 1px solid #E0E0E0;
 								}
+								li:last-child {
+									border-bottom: none;
+								}
 								a {
 									background-color: white;
 									color: @darkgray;
 									border-left: none;
-									padding-left: 50px;
+									padding-left: 35px;
 									&:before {
 										content: "- ";
 									}
@@ -123,7 +131,7 @@ ul.uw-sidebar-menu
 							{
 								// background-color:#757575;
 								border-left: 10px solid #b7a57a;
-								padding-left: 30px;
+								padding-left: 20px;
 								a
 								{
 									color:white;
