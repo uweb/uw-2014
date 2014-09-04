@@ -64,6 +64,8 @@ if ( ! function_exists( 'uw_list_pages') ) :
   {
     global $post;
 
+    if ( ! get_children( $post->ID ) ) return;
+
     $toggle = $class == 'uw-mobile-menu' ? '<span class="uw-mobile-menu-toggle">Menu</span>' : '';
 
     $parent = get_post( $post->post_parent );
