@@ -9,45 +9,50 @@ class UW_RSS extends WP_Widget
   const ID          = 'uw-widget-rss';
   const NAME        = 'UW RSS';
   const DESCRIPTION = 'Similar to the Wordpress RSS widget but allows a blurb before the RSS feed is listed.';
+  const ITEMS       = 10;
 
-  private static $DEFAULTS  = array(
+  private static $WIDGET_DEFAULTS  = array(
     'url'          => true,
     'title'        => true,
-    'items'        => true,
+    'items'        => 10,
     'show_summary' => true,
     'show_author'  => true,
     'show_date'    => true,
     'show_image'   => true
   );
 
+  private static $SHORTCODE_DEFAULTS = array(
+    'url'     => null,
+    'number'  => 5,
+    'title'   => null,
+    'heading' => 'h3',
+    'span'    => 4
+  );
+
   function __construct()
   {
-		parent::WP_Widget( array(
-      $id => self::ID,
-      $name => self::NAME,
-      $options => array(
+    add_shortcode( 'rss', array( $this, 'uw_rss_shortcode') );
+
+		parent::WP_Widget(
+      $id      = self::ID,
+      $name    = self::NAME,
+      $options = array(
         'description' => self::DESCRIPTION,
         'classname'   => self::ID
       )
-    ) );
+    );
 	}
 
-  function form($instance)
+  function form( $instance )
   {
-    // $default_inputs = array( 'url' => true, 'title' => true, 'items' => true, 'show_summary' => true, 'show_author' => true, 'show_date' => true, 'show_image' => true );
-    $inputs = wp_parse_args( $inputs, self::$DEFAULTS );
+    $inputs = wp_parse_args( $instance , self::$WIDGET_DEFAULTS );
 
-    extract( $inputs, EXTR_SKIP);
+    extract( $inputs );
 
     $number = esc_attr( $number );
     $title  = esc_attr( $title );
     $url    = esc_url( $url );
-    $items  = (int) $items;
-    if ( $items < 1 || 20 < $items )
-      $items  = 10;
-    $show_summary   = (int) $show_summary;
-    $show_author    = (int) $show_author;
-    $show_date      = (int) $show_date;
+    $items  = ( $items < 1 || 20 < $items ) ? self::ITEMS : $items;
 
     if ( !empty($error) )
       echo '<p class="widget-error"><strong>' . sprintf( __('RSS Error: %s'), $error) . '</strong></p>';
@@ -72,7 +77,7 @@ class UW_RSS extends WP_Widget
     <select id="<?php echo $this->get_field_id( 'items' ) ?>" name="<?php echo $this->get_field_name( 'items' ) ?>">
       <?php
           for ( $i = 1; $i <= 20; ++$i )
-            echo "<option value='$i' " . selected( $instance['items'], $i ) . ">$i</option>";
+            echo "<option value='$i' " . selected( $items, $i, false ) . ">$i</option>";
       ?>
     </select>
     </p>
@@ -83,30 +88,29 @@ class UW_RSS extends WP_Widget
 
   function update( $new_instance, $old_instance )
   {
-		$instance = array();
-		$instance['url']   = esc_url_raw(strip_tags( $new_instance['url'] ));
-		$instance['title'] = strip_tags( $new_instance['title'] );
-		$instance['items'] = (int) ( $new_instance['items'] );
-		$instance['show_image'] = (int) ( $new_instance['show_image'] );
+		$instance['url']          = esc_url_raw( strip_tags( $new_instance['url'] ) );
+		$instance['title']        = strip_tags( $new_instance['title'] );
+		$instance['items']        = (int) ( $new_instance['items'] );
+		$instance['show_image']   = (int) ( $new_instance['show_image'] );
 		$instance['show_summary'] = (int) ( $new_instance['show_summary'] );
-		$instance['show_author'] = (int) ( $new_instance['show_author'] );
-		$instance['show_date'] = (int) ( $new_instance['show_date'] );
+		$instance['show_author']  = (int) ( $new_instance['show_author'] );
+		$instance['show_date']    = (int) ( $new_instance['show_date'] );
 
+    // todo: this still necessary?
 		if ( current_user_can('unfiltered_html') )
 			$instance['text'] =  $new_instance['text'];
 		else
-			$instance['text'] = stripslashes( wp_filter_post_kses( addslashes($new_instance['text']) ) ); // wp_filter_post_kses() expects slashed
+			$instance['text'] = stripslashes( wp_filter_post_kses( addslashes( $new_instance['text']) ) );
 
 		return $instance;
 	}
 
-  function widget($args, $instance)
+  function widget( $args, $instance )
   {
-    extract($args);
+    extract( $args );
+    extract( $instance );
 
-    $title = apply_filters( 'widget_title', $instance['title'] );
-    $text  = $instance['text'];
-    $URL = $instance['url'];
+    $title = apply_filters( 'widget_title', $title );
 
     $content = '<span></span>';
 
@@ -115,19 +119,22 @@ class UW_RSS extends WP_Widget
     $content .= "<div class=\"featured\">$text</div>";
 
 
-    if ( strlen($URL) > 0 ) {
+    if ( strlen( $url ) > 0 )
+    {
 
-      $rss = fetch_feed($URL);
+      $rss = fetch_feed( $url );
 
-      if (!is_wp_error( $rss ) ) {
-        $url = $rss->get_permalink();
-        $maxitems = $rss->get_item_quantity($instance['items']);
+      if ( ! is_wp_error( $rss ) )
+      {
+        $url       = $rss->get_permalink();
+        $maxitems  = $rss->get_item_quantity($instance['items']);
 
         $rss_items = $rss->get_items(0, $maxitems);
 
-        $content .= "<ul>";
+        $content  .= "<ul>";
 
-        foreach ($rss_items as $index=>$item) {
+        foreach ( $rss_items as $index=>$item )
+        {
           $title = $item->get_title();
           $link  = $item->get_link();
           $attr  = esc_attr(strip_tags($title));
@@ -137,46 +144,33 @@ class UW_RSS extends WP_Widget
 
         $content .= '</ul>';
         $content .= "<a class=\"rss-more\" href=\"$url\">More</a>";
+
       }
+
     }
 
     echo $before_widget . $content . $after_widget;
 	}
-}
-
-// register_widget('UW_RSS');
 
 
-/**
- * The RSS Shortcode
- */
-
-if ( ! function_exists('uw_feed_shortcode') ):
-  function uw_feed_shortcode( $atts )
+  function uw_rss_shortcode( $atts )
   {
-    extract( shortcode_atts( array(
-        'url'    => null,
-        'number' => 5,
-        'title'  => null,
-        'heading' => 'h3',
-        'span'   => 4
-      ), $atts ) );
+    extract( shortcode_atts( self::$SHORTCODE_DEFAULTS, $atts ) );
 
-    if ( $url == null || is_feed() )
-      return '';
+    if ( $url == null || is_feed() ) return '';
 
     $content = '';
 
-    $feed = fetch_feed($url);
+    $feed = fetch_feed( $url );
 
-    if (!is_wp_error( $feed ) )
+    if ( ! is_wp_error( $feed ) )
     {
       $url = $feed->get_permalink();
-      $feed_items = $feed->get_items(0, $number);
-      $feed_items = $feed->get_items(0, $number);
+      $feed_items = $feed->get_items( 0, $number );
+      $feed_items = $feed->get_items( 0, $number );
       $pullleft = $span === 4 ? 'pull-left' : '';
 
-      $title = ($title == null ) ? $feed->get_title() : $title;
+      $title = ( $title == null ) ? $feed->get_title() : $title;
 
       $content = "<div class=\"row $pullleft\">";
       $content .= "<div class=\"span$span\">";
@@ -187,7 +181,7 @@ if ( ! function_exists('uw_feed_shortcode') ):
       {
           $title = $item->get_title();
           $link  = $item->get_link();
-          $attr  = esc_attr(strip_tags($title));
+          $attr  = esc_attr( strip_tags( $title ) );
           $content .= "<li><a href=\"$link\" title=\"$attr\">$title</a></li>";
       }
 
@@ -198,5 +192,7 @@ if ( ! function_exists('uw_feed_shortcode') ):
     }
     return $content;
   }
-endif;
-add_shortcode( 'rss', 'uw_feed_shortcode' );
+
+}
+
+register_widget( 'UW_RSS' );
