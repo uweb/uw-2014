@@ -43,7 +43,7 @@ if ( ! function_exists('uw_sidebar_menu') ) :
 
   function uw_sidebar_menu()
   {
-    echo sprintf( '<nav role="navigation" aria-label="relative navigation"><ul class="uw-sidebar-menu first-level"> %s </ul></nav>', uw_list_pages() ) ;
+    echo sprintf( '<nav role="navigation" aria-label="relative navigation">%s</nav>', uw_list_pages() ) ;
   }
 
 endif;
@@ -52,7 +52,7 @@ if ( ! function_exists( 'uw_mobile_menu' ) ) :
 
   function uw_mobile_menu()
   {
-    echo sprintf( '<nav role="navigation" aria-label="relative navigation"><ul class="uw-mobile-menu first-level"><span class="uw-mobile-menu-toggle">Menu</span> %s </ul></nav>', uw_list_pages() ) ;
+    echo sprintf( '<nav role="navigation" aria-label="relative navigation">%s</nav>', uw_list_pages( 'uw-mobile-menu' ) ) ;
   }
 
 endif;
@@ -60,9 +60,11 @@ endif;
 
 if ( ! function_exists( 'uw_list_pages') ) :
 
-  function uw_list_pages()
+  function uw_list_pages( $class = 'uw-sidebar-menu' )
   {
     global $post;
+
+    $toggle = $class == 'uw-mobile-menu' ? '<span class="uw-mobile-menu-toggle">Menu</span>' : '';
 
     $parent = get_post( $post->post_parent );
 
@@ -74,13 +76,16 @@ if ( ! function_exists( 'uw_list_pages') ) :
 
     $ids = array_map( function($sibling) { return $sibling->ID; }, $siblings );
 
-    return wp_list_pages(array(
+    $pages = wp_list_pages(array(
       'title_li' => '<a href="'.get_bloginfo('url').'" title="Home" class="homelink">Home</a>',
       'child_of' => $parent->post_parent,
       'exclude_tree' => $ids,
       'depth' => 3,
       'echo'  => 0
     ));
+
+    return $pages ? sprintf( '<ul class="%s first-level">%s%s</ul>', $class, $toggle, $pages ) : '';
+
   }
 
 endif;
