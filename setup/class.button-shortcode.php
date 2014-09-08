@@ -21,6 +21,13 @@ class UW_Button
         $attributes = (object) $atts;
 
         $classes = array('uw-btn');
+
+        $btnColors = shortcode_atts( array(
+            'color' => 'none',
+        ), $atts );
+ 
+
+        $color = 'btn-' . $btnColors['color'];
             
         if(empty($content)){
             echo 'No text in this button';
@@ -45,6 +52,6 @@ class UW_Button
 
         $class_string = implode($classes, ' ');
 
-        return sprintf('<a class="%s" href="%s">%s</a>', $class_string, $url, $content);
+        return sprintf('<a class="%s %s" href="%s">%s</a>', $class_string, $color, $url, $content);
     }
 }

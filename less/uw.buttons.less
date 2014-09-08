@@ -9,6 +9,8 @@ a.uw-btn {
   position: relative;
   background-image: none !important;
   border-bottom: none;
+  margin-bottom: 25px;
+  margin-right: 55px;
   &.btn-sm {
     padding: 10px 16px;
     font-size: 14px;
@@ -42,6 +44,19 @@ a.uw-btn {
   &.btn-gold {
     &:hover:before {
       background-color: lighten(@darkgold, 10%);
+    }
+  }
+  &.btn-purple {
+    background-color: @purple;
+    color: white;
+    &:hover {
+      background-color: darken(@purple, 5%);
+    }
+    &:before {
+      background-color: darken(@purple, 5%);
+    }
+    &:hover:before {
+      background-color: darken(@purple, 20%);
     }
   }
   &:after {
