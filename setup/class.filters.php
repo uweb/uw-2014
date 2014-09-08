@@ -16,11 +16,14 @@ class UW_Filters
     // Global filters
     // allow shortcodes in text widgets
     add_filter( 'widget_text', 'do_shortcode' );
-    add_filter( 'body_class', array( $this, 'uw_custom_body_classes' ) );
+    // Add the site title to the body class
+    add_filter( 'body_class', array( $this, 'custom_body_classes' ) );
+    // Filters the category widget dropdown menu
+    add_filter( 'widget_categories_dropdown_args', array( $this, 'custom_widget_classes' ) );
 
   }
 
-  function uw_custom_body_classes( $classes )
+  function custom_body_classes( $classes )
   {
 
     if ( is_multisite() )
@@ -28,6 +31,12 @@ class UW_Filters
 
     return $classes;
 
+  }
+
+  function custom_widget_classes( $args )
+  {
+    $args['class' ] = 'uw-select';
+    return $args;
   }
 
   /**
