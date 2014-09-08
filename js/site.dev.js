@@ -9906,6 +9906,7 @@ UW.Select = Backbone.View.extend({
   open : function()
   {
     this.addOpenClass()
+    return false
   },
 
   // Close the UW select menu.
@@ -9917,6 +9918,7 @@ UW.Select = Backbone.View.extend({
     this.animate()
     this.toggleLIClasses()
     this.cloneSelectEvents()
+    return false
   },
 
   // Animate the select menu to the proper menu item.
