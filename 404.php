@@ -1,9 +1,20 @@
 <?php get_header(); ?>
 
+<style type="text/css">
+    .error404 .container {
+        
+    }
+    .error404 #searchform {
+        margin: 80px 0;
+    }
+</style>
+
         <div class="uw-hero-image">
 
         </div>
         <div role='main' class='container uw-body'>
+            <div class="row show-grid">
+                <div class="col-md-8 col-md-offset-2">
 
             <!-- TODO: finalize the 404 look for the new theme.  This is the old theme
             <div id="parallax" class="parallax-viewport">
@@ -25,14 +36,14 @@
             <div class='text-center'>
                 <?php get_search_form(); ?>
             </div>
-            <div class="row show-grid four-oh-four">
-                <div class="col-md-4 col-md-offset-3">
+            <div class="row show-grid">
+                <div class="col-md-6">
                    <h3>Not what you were expecting?</h3>
                    <p>Dubs tells us this page might not be what you had in mind when you set out on your journey through the UW Web.  Don&#146;t worry, you&#146;re not in the Dawg House! Here are some of Dubs&#146; favorite pages if you feel like exploring: </p>
 
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-5 col-md-offset-1">
                     <ul>
                         <li><a href="//www.washington.edu">UW home page</a></li>
                         <li><a href="//www.washington.edu/discover/">Discover the UW</a></li>
@@ -43,6 +54,8 @@
                     </ul>
                 </div>
             </div><!-- four-oh-four -->
+
+            </div></div>
 
 		</div><!-- uw-body -->
 

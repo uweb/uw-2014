@@ -1,7 +1,6 @@
 // Image Handling
 
 .alignleft,
-.alignright,
 .alignnone {
 	float: left;
 	margin: 20px 50px 50px -130px;
@@ -9,7 +8,8 @@
 		width:305px !important;
 		height: auto;
 	}
-	&.size-Full {
+	&.size-Full,
+	&.size-full {
 		margin-left: 0;
 		width: 100% !important;
 		height: auto;
@@ -21,6 +21,11 @@
 
 	}
 }
+.alignright {
+	float: right;
+	margin: 20px 20px 20px 60px;
+}
+
 
 .wp-caption-text {
 	font-size: 15px;
@@ -38,10 +43,9 @@
 
 
 
-@media only screen and (max-width : 1300px) {
+@media only screen and (max-width : 1400px) {
 
 	.alignleft,
-	.alignright,
 	.alignnone {
 		float: left;
 		margin: 20px 50px 50px 0px;

@@ -8813,7 +8813,7 @@ UW.QuickLink = Backbone.Model.extend({
         has_icon: false,
         classes: ''
     },
-    
+
     initialize: function () {
         //hacktacular.  Need to stop the collection making a model with url = collection.url somehow
         if (this.get('link_url') !== undefined){
@@ -8835,7 +8835,7 @@ UW.QuickLinkView = Backbone.View.extend({
 
     create_menu_item : function ()
     {
-        item = this.model.toJSON();
+        var item = this.model.toJSON();
         this.$menu_item = $(_.template( this.menu_template, item ));
     }
 });
@@ -8870,7 +8870,7 @@ UW.QuickLinks = Backbone.Collection.extend({
             this.add(this.normalize_data(this.default_links[i]));
         }
     },
-    
+
     normalize_data: function (holder) {
         holder.link_url = holder.url;
         delete holder.url;
@@ -8878,7 +8878,7 @@ UW.QuickLinks = Backbone.Collection.extend({
             holder.classes = holder.classes.join(' ');
             if (holder.classes !== '') {
                 holder.has_icon = true;
-            }   
+            }
         }
         return holder;
     },

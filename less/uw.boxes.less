@@ -11,7 +11,7 @@
         table-layout: fixed;
         width: 100%;
         border-spacing: 20px;
-        margin: 20px 0 40px;
+        margin: 0 0 40px;
         &.two {
             .tile {
                 width: 47%;
@@ -60,19 +60,23 @@
 
 
 /* Small Devices, Tablets */
-@media only screen and (max-width : 768px) {
-    .box {
-        overflow: visible;
-        &.two {
-            .tile {
-                div {
-                    margin: 0 -21px;
+@media only screen and (max-width : 767px) {
+    .box-outer {
+        .box {
+            overflow: visible;
+            &.two,
+            &.one,
+            &.three {
+                .tile {
+                    div {
+                        margin: 0 -21px;
+                    }
+                    display: block;
+                    width: 100%;
+                    margin: 0 0 30px 0;
+                    padding: 0 20px 20px;
                 }
-                width: 100%;
-                margin: 0 0 30px 0;
-                padding: 0 20px 20px;
             }
         }
     }
-
 }
