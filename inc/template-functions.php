@@ -59,19 +59,20 @@ if ( ! function_exists( 'uw_list_pages') ) :
     $class  = $mobile ? 'uw-mobile-menu' : 'uw-sidebar-menu';
 
     $siblings = get_pages( array (
-      'parent' => $parent->post_parent,
+      'parent'    => $parent->post_parent,
       'post_type' => 'page',
-      'exclude' => $parent->ID
+      'exclude'   => $parent->ID
     ) );
 
     $ids = ! is_front_page() ? array_map( function($sibling) { return $sibling->ID; }, $siblings ) : array();
 
     $pages = wp_list_pages(array(
-      'title_li' => '<a href="'.get_bloginfo('url').'" title="Home" class="homelink">Home</a>',
-      'child_of' => $parent->post_parent,
+      'title_li'     => '<a href="'.get_bloginfo('url').'" title="Home" class="homelink">Home</a>',
+      'child_of'     => $parent->post_parent,
       'exclude_tree' => $ids,
-      'depth' => 3,
-      'echo'  => 0
+      'sort_order'   => 'menu_order',
+      'depth'        => 3,
+      'echo'         => 0
     ));
 
     return $pages ? sprintf( '<ul class="%s first-level">%s%s</ul>', $class, $toggle, $pages ) : '';
