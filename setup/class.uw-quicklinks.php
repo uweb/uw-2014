@@ -45,6 +45,7 @@ class UW_QuickLinks
 
   function parse_menu()
   {
+    if ( $this->items )
       foreach( $this->items as $item )
       {
         // Only keep the necessary keys of the $item
@@ -54,7 +55,8 @@ class UW_QuickLinks
         else
           $menu[ self::PREFIX . $item['menu_item_parent'] ]['children'][] = $item;
       }
-      return $menu;
+
+    return $menu ? $menu : array();
   }
 
 }
