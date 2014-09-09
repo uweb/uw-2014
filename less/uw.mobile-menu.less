@@ -1,9 +1,8 @@
-
-.uw-mobile-menu {
+ul.uw-mobile-menu {
   display: none;
   list-style:none;
   padding:0;
-  margin:0;
+  margin:0 0 25px;
   ul
   {
     display: block;
@@ -19,132 +18,54 @@
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 768px) {
 
-//Hides desktop version
-.uw-sidebar-menu {
-  display: none;
-}
-
-ul.uw-mobile-menu {
-  margin-top: 10px;
-  display: block;
-  .uw-mobile-menu-toggle
-  {
-    display:block;
-    position: relative;
-    float:right;
-    margin-top: -50px;
-    margin-right: -10px;
-    font-size: @font-size-base / 1.2;
-    line-height: @line-height-base / 1.2;
-    font-family: @font-family-headline;
-    font-weight: @headings-font-weight;
-    text-align: center;
-    width: 50px;
-    height: 30px;
-    text-transform: uppercase;
-    color:@purple;
-    background: url(assets/svg/uw-sprite.svg) no-repeat -475px 20px transparent;
-    background-size: 1200px;
-    &:before {
-      content: "";
-      position: absolute;
-      right: 55px;
-      top: -4px;
-      width: 20px;
-      height: 40px;
-      background: url(assets/svg/uw-sprite.svg) no-repeat -600px 0 transparent;
-    }
+  //Hides desktop version
+  ul.uw-sidebar-menu {
+    display: none;
   }
 
-  li.pagenav {
-    display:none; // uw.mobile-menu.js toggles view
-
-    a {
+  ul.uw-mobile-menu  {
+    .pagenav {
+      display: none;
+    }
+    display: block;
+    .uw-mobile-menu-toggle
+    {
+      display:block;
+      position: relative;
+      float:right;
+      margin-top: -55px;
+      margin-right: -10px;
+      font-size: @font-size-base / 1.2;
+      line-height: @line-height-base / 1.2;
       font-family: @font-family-headline;
-      display: block;
-      padding: 10px 0 10px 20px;
-      background-image: none; // Override the uw-body anchors
-      &.homelink
-      {
-        display:none;
-        color:@purple;
-        font-size:25px;
+      font-weight: @headings-font-weight;
+      text-align: center;
+      width: 50px;
+      height: 30px;
+      text-transform: uppercase;
+      color:@purple;
+      background: url(assets/svg/uw-sprite.svg) no-repeat -475px 20px transparent;
+      background-size: 1200px;
+      &:before {
+        content: "";
+        position: absolute;
+        right: 55px;
+        top: -4px;
+        width: 20px;
+        height: 40px;
+        background: url(assets/svg/uw-sprite.svg) no-repeat -600px 0 transparent;
       }
-    }
-
-    ul {
-
-      font-size:20px;
-
-      li.current_page_item, li.current_page_parent {
-        background-color: @purple;
-        a {
-          color:white;
-        }
-      }
-
-      li
-      {
-        a
-        {
-          color: @purple;
-          border-bottom: thin solid #eee;
-        }
-
-        &.current_page_item ul.children, &.current_page_ancestor ul.children
-        {
-          display:block;
-          font-size: 17px;
-          background-color:white;
-
-          li
-          {
-            padding: 5px;
-            background-color:#eee;
-            border-bottom: 1px solid #fff;
-            li {
-              display: none;
-            }
-            a
-            {
-              color:black;
-            }
-
-          }
-
-          li.current_page_item
-          {
-            background-color:white;
-            a
-            {
-              color:gray;
-              border-bottom: none;
-            }
-          }
-
-
-        }
-
-
-      }
-
-      li:last-child
-      {
-        a
-        {
-          // color:@purple;
-          border-bottom: none;
-        }
-      }
-
-    }
-
+    } 
   }
+  ul.uw-mobile-menu li.pagenav ul li.current_page_parent.current_page_ancestor > a:after {
+    display: none;
+  }  
+//  ul.uw-mobile-menu li.pagenav ul li.current_page_ancestor ul.children li a {
+//    padding: 10px 30px 10px 40px;
+//  }
+//  ul.uw-mobile-menu li.pagenav ul li.current_page_ancestor ul.children li.current_page_item a {
+//    padding-left: 30px;
+//  }
 
-  ul.children {
-    display:none;
-  }
-
-}
 }
 
