@@ -1,7 +1,11 @@
 <?php
 
+// Wordpress oEmbed max-width
+if ( ! isset( $content_width ) )
+  $content_width = 750;
+
 /**
- * Custom UW Oembeds
+ * Custom UW Oembed
  */
 class UW_Oembeds
 {
