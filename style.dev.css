@@ -9200,6 +9200,10 @@ ul.uw-mobile-menu ul {
   ul.uw-sidebar-menu {
     display: none;
   }
+  .uw-mobile-menu li {
+    background-color: #eee;
+    border-bottom: 1px solid #fff;
+  }
   ul.uw-mobile-menu {
     display: block;
   }
@@ -9210,7 +9214,7 @@ ul.uw-mobile-menu ul {
     display: block;
     position: relative;
     float: right;
-    margin-top: -50px;
+    margin-top: -55px;
     margin-right: -10px;
     font-size: 14.16666667px;
     line-height: 1.43518333;
