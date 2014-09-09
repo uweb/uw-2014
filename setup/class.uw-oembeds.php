@@ -5,7 +5,7 @@ if ( ! isset( $content_width ) )
   $content_width = 750;
 
 /**
- * Custom UW oEmbeds
+ * Custom UW Oembed
  */
 class UW_OEmbeds
 {
