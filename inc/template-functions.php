@@ -6,16 +6,9 @@
 
 if ( ! function_exists( 'uw_dropdowns') )
 {
-
   function uw_dropdowns()
   {
 
-    // $nav = has_nav_menu(UW_Dropdowns::LOCATION);
-
-    // if ( ( !$nav ) && ( is_multisite() ) )
-    // {
-    //   switch_to_blog(1);
-    // }
     echo
         '<nav id="dawgdrops" aria-label="Main menu" role="navigation">
           <h3 class="assistive-text">Main menu</h3>';
@@ -29,12 +22,6 @@ if ( ! function_exists( 'uw_dropdowns') )
           ) );
 
     echo '</nav>';
-
-    // if ( ( !$nav ) && ( is_multisite() ) )
-    // {
-    //   restore_current_blog();
-    // }
-
   }
 
 }
@@ -52,7 +39,7 @@ if ( ! function_exists( 'uw_mobile_menu' ) ) :
 
   function uw_mobile_menu()
   {
-    echo sprintf( '<nav role="navigation" aria-label="relative navigation">%s</nav>', uw_list_pages( 'uw-mobile-menu' ) ) ;
+    echo sprintf( '<nav role="navigation" aria-label="relative navigation">%s</nav>', uw_list_pages( $mobile = true ) ) ;
   }
 
 endif;
@@ -60,15 +47,16 @@ endif;
 
 if ( ! function_exists( 'uw_list_pages') ) :
 
-  function uw_list_pages( $class = 'uw-sidebar-menu' )
+  function uw_list_pages( $mobile = false )
   {
     global $post;
-    
+
     $parent = get_post( $post->post_parent );
 
-    if ( ! get_children( $post->ID ) && $parent->ID == $post->ID ) return;
+    if ( ! $mobile && ! get_children( $post->ID ) && $parent->ID == $post->ID ) return;
 
-    $toggle = $class == 'uw-mobile-menu' ? '<span class="uw-mobile-menu-toggle">Menu</span>' : '';
+    $toggle = $mobile ? '<span class="uw-mobile-menu-toggle">Menu</span>' : '';
+    $class  = $mobile ? 'uw-mobile-menu' : 'uw-sidebar-menu';
 
     $siblings = get_pages( array (
       'parent' => $parent->post_parent,
