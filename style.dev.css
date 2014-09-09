@@ -9229,9 +9229,13 @@ body.home .uw-sidebar-menu {
     background-color: #eee;
     border-bottom: 1px solid #fff;
   }
+  ul.uw-mobile-menu li.pagenav ul li.current_page_item ul.children li li,
+  ul.uw-mobile-menu li.pagenav ul li.current_page_ancestor ul.children li li {
+    display: none;
+  }
   ul.uw-mobile-menu li.pagenav ul li.current_page_item ul.children li a,
   ul.uw-mobile-menu li.pagenav ul li.current_page_ancestor ul.children li a {
-    color: gray;
+    color: black;
   }
   ul.uw-mobile-menu li.pagenav ul li.current_page_item ul.children li.current_page_item,
   ul.uw-mobile-menu li.pagenav ul li.current_page_ancestor ul.children li.current_page_item {
