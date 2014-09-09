@@ -7,7 +7,7 @@ if ( ! isset( $content_width ) )
 /**
  * Custom UW Oembed
  */
-class UW_Oembeds
+class UW_OEmbeds
 {
 
   function __construct()
