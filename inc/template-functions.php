@@ -87,7 +87,7 @@ if ( ! function_exists( 'uw_list_mobile_pages' ) ) :
     if ( ! is_front_page() ) return uw_list_pages( $mobile = true );
 
     $locations = get_nav_menu_locations();
-    
+
     $menu      = wp_get_nav_menu_object( $locations[ UW_Dropdowns::LOCATION ] );
 
     if ( ! $menu ) return;
@@ -104,7 +104,8 @@ if ( ! function_exists( 'uw_list_mobile_pages' ) ) :
 
     $pages = wp_list_pages(array(
       'title_li'     => '<a href="'.get_bloginfo('url').'" title="Home" class="homelink">Home</a>',
-      'include'       => implode( ',', $ids ),
+      'include'      => implode( ',', $ids ),
+      'sort_order'   => 'menu_order',
       'depth'        => 1,
       'echo'         => 0
     ));
