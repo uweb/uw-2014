@@ -1,9 +1,14 @@
-ul.uw-select
-{
-
+ul.uw-select {  
+  position: absolute;
+  list-style: none;
   z-index: 1;
-
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
   &.open {
+     background-color: #F7F7F7;
+     outline: 1px solid #F7F7F7;
+     overflow: visible;
      li {
        opacity: 1;
 
@@ -18,21 +23,29 @@ ul.uw-select
     cursor: pointer;
     color: #565656;
     font-weight: 700;
-    text-transform: uppercase;
     transition: padding-left .5s;
     opacity: 0;
     transition: opacity .5s;
-    padding-left: 15px;
-    padding-bottom: 0;
-    margin: 0 1px 0 5px;
-    height: 40px;
     line-height: 40px;
-    background-color: #fff;
+    height: 50px;
     position: relative;
+    white-space: nowrap;
+    a {
+      padding: 7px 0 7px 16px;
+      color: @darkgray;
+      display: block;
+      &:hover {   
+        background-color: #6D6D6D;
+        color: #FFFFFF;
+      }
+    }
+    &.active {
+      &:hover {   
+        background-color: transparent;
+      }
+    }
 
     &.active {
-      width: 225px;
-      padding-left: 35px;
       opacity: 1;
       background: 0 0;
       display:block;
@@ -42,6 +55,30 @@ ul.uw-select
       display:none;
     }
 
-
   }
+
+}
+.uw-select-mask {
+  position: relative;
+  .uw-select-arrow {
+    outline: 1px solid #ADADAD;
+    width: 100%;
+    height: 54px;
+    display: block;
+    position: relative;
+    &:after {
+      display: block;
+      content: "";
+      height: 53px;
+      width: 55px;
+      background: url(assets/svg/uw-sprite.svg) no-repeat -37px -475px #8F8F8F;
+      position: relative;
+      border: none;
+      position: absolute;
+      right: -2px;
+      top: 0;
+      .rotate(90deg);
+    }
+  }
+
 }

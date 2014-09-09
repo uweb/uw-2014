@@ -7538,7 +7538,17 @@ div.uw-vimeo div.preview {
   float: left;
 }
 ul.uw-select {
+  position: absolute;
+  list-style: none;
   z-index: 1;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+}
+ul.uw-select.open {
+  background-color: #F7F7F7;
+  outline: 1px solid #F7F7F7;
+  overflow: visible;
 }
 ul.uw-select.open li {
   opacity: 1;
@@ -7550,27 +7560,59 @@ ul.uw-select li {
   cursor: pointer;
   color: #565656;
   font-weight: 700;
-  text-transform: uppercase;
   transition: padding-left 0.5s;
   opacity: 0;
   transition: opacity .5s;
-  padding-left: 15px;
-  padding-bottom: 0;
-  margin: 0 1px 0 5px;
-  height: 40px;
   line-height: 40px;
-  background-color: #fff;
+  height: 50px;
   position: relative;
+  white-space: nowrap;
+}
+ul.uw-select li a {
+  padding: 7px 0 7px 16px;
+  color: #5a5a5a;
+  display: block;
+}
+ul.uw-select li a:hover {
+  background-color: #6D6D6D;
+  color: #FFFFFF;
+}
+ul.uw-select li.active:hover {
+  background-color: transparent;
 }
 ul.uw-select li.active {
-  width: 225px;
-  padding-left: 35px;
   opacity: 1;
   background: 0 0;
   display: block;
 }
 ul.uw-select li.inactive a {
   display: none;
+}
+.uw-select-mask {
+  position: relative;
+}
+.uw-select-mask .uw-select-arrow {
+  outline: 1px solid #ADADAD;
+  width: 100%;
+  height: 54px;
+  display: block;
+  position: relative;
+}
+.uw-select-mask .uw-select-arrow:after {
+  display: block;
+  content: "";
+  height: 53px;
+  width: 55px;
+  background: url(assets/svg/uw-sprite.svg) no-repeat -37px -475px #8f8f8f;
+  position: relative;
+  border: none;
+  position: absolute;
+  right: -2px;
+  top: 0;
+  -o-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 /*
  *  All styles for UW accordion
@@ -9642,11 +9684,10 @@ a.uw-btn.btn-gold:after {
 #searchform {
   position: relative;
   clear: both;
-  outline: 2px solid #ADADAD;
+  outline: 1px solid #ADADAD;
   font-family: "Encode Sans Compressed", sans-serif;
   font-size: 20px;
   color: #7A7A7A;
-  font-weight: 600;
 }
 #searchform label {
   position: absolute;
@@ -9662,8 +9703,9 @@ a.uw-btn.btn-gold:after {
   padding: 10px 0 10px 15px;
   border: none;
   font-size: 20px;
+  font-weight: 500;
   outline: none;
-  background-color: #F1F1F1;
+  background-color: #F5F5F5;
 }
 #searchform #searchsubmit {
   float: left;
@@ -9671,7 +9713,7 @@ a.uw-btn.btn-gold:after {
   height: 54px;
   width: 55px;
   text-indent: -99999px;
-  outline: 2px solid #4b2e83;
+  outline: 1px solid #4b2e83;
   background: url(assets/svg/search.svg) no-repeat center center #4b2e83;
   position: relative;
   border: none;
