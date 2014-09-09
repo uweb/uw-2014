@@ -87,7 +87,11 @@ if ( ! function_exists( 'uw_list_mobile_pages' ) ) :
     if ( ! is_front_page() ) return uw_list_pages( $mobile = true );
 
     $locations = get_nav_menu_locations();
+    
     $menu      = wp_get_nav_menu_object( $locations[ UW_Dropdowns::LOCATION ] );
+
+    if ( ! $menu ) return;
+
     $items     = wp_get_nav_menu_items( $menu->term_id );
 
     $toggle    = '<span class="uw-mobile-menu-toggle">Menu</span>';
