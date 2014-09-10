@@ -9,46 +9,36 @@
 
 Class TileBox
 {
-    const MaxTiles = 4;
+    const MAXTILES = 4;
+    private $count = 0;
     private $NumbersArray = array('zero', 'one', 'two', 'three', 'four'); //arrays can't be constants in PHP.  Privates at least can't be changed
 
     function __construct()
     {
-        add_shortcode('box', array($this, 'box_handler'));
+        add_shortcode( 'box', array( $this, 'box_handler' ) );
+        add_shortcode( 'tile', array( $this, 'tile_handler' ) );
     }
 
+    function box_handler( $atts, $content ){
+        $this->count = 0;
 
-    function box_handler($atts, $content){
-        if (empty($content)){
-            echo 'No content inside the box element.  Make sure your close your box element.   Required stucture: [box][tile]content[/tile][/box]';
-            return;
-        }
-        $pattern = sprintf('/%s(.*?)%s/ims', preg_quote('[tile]', '/'), preg_quote('[/tile]', '/'));
-        if (preg_match_all($pattern, $content, $matches)){
-            $tiles = $matches[1];  //first item is list of shortcodes, second item is list of content in the shortcodes.  Maybe ditch second shortcode in favor of custom function?
-            $length = count($tiles);
-            if ($length > self::MaxTiles){
-                echo 'Too many [tile]s.  Only up to 4 are supported)';
-            }
-            else {
-                $return = "<div class='box-outer'><div class='box " . $this->NumbersArray[$length] . "'>";
-                for ($i = 0; $i < $length; $i++){
-                    $return = $return . $this->tile_handler($tiles[$i]);
-                }
-                return $return . '</div></div>';
-            }
-        }
-        else {
-            echo 'No tile elements present.  Make sure you have at least one tile and that you close your tile elements.  Required stucture: [box][tile]content[/tile][/box]';
-        }
+        if ( empty( $content ) )
+            return 'No content inside the box element. Make sure your close your box element. Required stucture: [box][tile]content[/tile][/box]';
+
+        $output = do_shortcode( $content );
+        return sprintf( '<div class="box-outer"><div class="box %s">%s</div></div>', $this->NumbersArray[$this->count], $output);
     }
 
-    function tile_handler($content) {
-        $content = trim($content);
-        //removed attempts to parse HTML with regex to remove empty p tags.  Use CSS instead?  .box p:empty { display:none;}?  Still doesn't handle &nbsp;
-        if (empty($content)){
+    function tile_handler( $atts, $content ) {
+        $this->count++;
+
+        if ( empty( $content ) )
             $content = 'No content for this tile.  Make sure you wrap your content like this: [tile]Content here[/tile]';
-        }
-        return "<div class='tile'>" . apply_filters('the_content', $content) . "</div>";
+
+        if ( $this->count > self::MAXTILES)
+            $content = 'Too many [tile]s.  Only up to 4 are supported)';
+
+        return sprintf( '<div class="tile">%s</div>', apply_filters( 'the_content', $content ) );
     }
+
 }
