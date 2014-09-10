@@ -135,5 +135,3 @@ class UW_Replace_Media
   }
 
 }
-
-new UW_Replace_Media;
