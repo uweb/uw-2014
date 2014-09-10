@@ -49,6 +49,7 @@ class UW
         require_once( 'class.uw-replace-media.php' );
         require_once( 'class.uw-tinymce.php' );
         require_once( 'class.uw-documentation.php' );
+        require_once( 'class.uw-enclosure.php' );
         require_once( 'class.uw-front-page-settings.php' );
     }
 
@@ -76,5 +77,6 @@ class UW
         $this->FrontPageSettings = new UW_FrontPageSettings;
         $this->IFrames           = new UW_Iframes;
         $this->GoogleApps        = new UW_GoogleApps;
+        $this->Enclosure         = new UW_Enclosure;
     }
 }
