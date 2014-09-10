@@ -99,6 +99,7 @@ if ( ! function_exists( 'uw_list_mobile_pages' ) ) :
 
     foreach( $items as $item )
     {
+      if ( $item->menu_item_parent != 0 ) continue;
       $ids[] = $item->object_id;
     }
 
