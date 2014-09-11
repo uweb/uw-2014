@@ -990,7 +990,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: inherit;
+  font-family: "Encode Sans Compressed", sans-serif;
   font-weight: 800;
   line-height: 1.4;
   color: inherit;
@@ -6996,7 +6996,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: inherit;
+  font-family: "Encode Sans Compressed", sans-serif;
   font-weight: 800;
   line-height: 1.4;
   color: inherit;
