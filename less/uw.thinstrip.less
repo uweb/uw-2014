@@ -85,9 +85,30 @@
 			&.uw-search {
 				button {
 					text-indent: -99999px;
-					background: url(assets/svg/uw-sprite.svg) no-repeat -520px -50px transparent;
 					position: relative;
 					padding-right: 78px;
+					border: 2px solid white;
+					background-color: transparent;
+					.border-radius(100%);
+					width: 45px;
+					display: block;
+					padding: 0;
+					height: 45px;
+					margin: 0 15px;
+					overflow: hidden;
+					&:hover {
+						background-color: @lightgold;
+						border: none;
+						svg {
+							top: -18px;
+							left: 12px;
+						}
+					}
+					svg {
+						position: absolute;
+						top: 12px;
+						left: 11px;
+					}
 				}
 
 			}
