@@ -120,7 +120,7 @@ UW.Search = Backbone.View.extend({
   // This shows and hides the search
   toggleSearchBar: function()
   {
-    this.empty()
+    this.hideDirectory()
     this.$searchbar.toggleClass('open')
       .find('#uw-search-bar').focus()
     return false;
