@@ -8,7 +8,7 @@
 
 <div class="uw-hero-image"></div>
 
-<div class="container uw-body no-sidebar">
+<div class="container uw-body">
 
   <div class="row">
 

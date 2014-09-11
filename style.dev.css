@@ -8735,7 +8735,8 @@ ul {
   padding-top: 10px;
   -webkit-font-smoothing: antialiased;
 }
-.uw-body h1 {
+.uw-body h1,
+.uw-body h2 {
   color: #4b2e83;
   display: block;
 }
