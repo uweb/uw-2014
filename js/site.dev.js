@@ -8606,16 +8606,16 @@ UW.Search = Backbone.View.extend({
                     '</form>'+
 
                     '<select id="mobile-search-select" class="visible-xs">' +
-                      '<option value="uw">All the UW</option>' +
+                      '<option value="uw" selected>All the UW</option>' +
                       '<option value="site">Current Site</option>' +
-                      '<option value="directory" selected>People Directory</option>' +
+                      '<option value="directory">People Directory</option>' +
                     '</select>' +
 
                     '<a href="#" value="" class="search" />'+
 
                     '<div class="labels hidden-xs">'+
                       '<label class="radio">'+
-                        '<input type="radio" name="search" value="uw" data-toggle="radio">'+
+                        '<input type="radio" name="search" value="uw" data-toggle="radio" checked>'+
                         'All the UW'+
                       '</label>'+
 
@@ -8625,12 +8625,12 @@ UW.Search = Backbone.View.extend({
                     '</label>'+
 
                     '<label class="radio">'+
-                      '<input type="radio" name="search" value="directory" data-toggle="radio" checked>'+
+                      '<input type="radio" name="search" value="directory" data-toggle="radio">'+
                       'People Directory'+
                     '</label>'+
                 '</div>'+
 
-                '<div class="uw-results"></div>'+
+                '<div class="uw-results" style="display:none;"></div>'+
 
                 '</div>'+
               '</div>'+
@@ -8665,6 +8665,7 @@ UW.Search = Backbone.View.extend({
     'click .result .commonname' : 'showPersonInformation',
     'click input:radio'         : 'toggleSearchFeature',
     'change select'             : 'toggleSearchFeature',
+    'click .search'             : 'submitForm',
     'submit form'               : 'submitSearch'
   },
 
@@ -8710,21 +8711,40 @@ UW.Search = Backbone.View.extend({
   // Set a property to the current radio button indicating which function the search bar is providing.
   toggleSearchFeature : function( e )
   {
-    console.log( e.currentTarget.value )
-    this.empty()
+    this.hideDirectory()
     this.searchFeature = e.currentTarget.value
+    if ( this.searchFeature === this.searchFeatures.directory )
+      this.showDirectory()
     // this.mirrorSelectAndRadioElements()
   },
 
-  mirrorSelectAndRadioElements : function()
-  {
-  },
+  // mirrorSelectAndRadioElements : function()
+  // {
+  // },
 
   // If the search bar is not searching the directiory behave like a normal search function and don't cancel
   // the submit event.
-  submitSearch : function()
+  submitSearch : function( e )
   {
-    return this.searchFeature !== this.searchFeatures.directory
+    switch ( this.searchFeature )
+    {
+      case this.searchFeatures.uw :
+        this.$searchbar.find('input').attr('name', 'q')
+        this.$searchbar.find('form').attr('action', 'http://uw.edu/search/')
+        return true;
+
+      case this.searchFeatures.site :
+        return true;
+
+      default:
+        return false;
+    }
+  },
+
+  submitForm : function()
+  {
+    this.$searchbar.find('form').submit()
+    return false;
   },
 
 
@@ -8742,6 +8762,16 @@ UW.Search = Backbone.View.extend({
     this.model.search( this.value )
 
   }, 200 ),
+
+  hideDirectory : function()
+  {
+    this.$results.hide()
+  },
+
+  showDirectory : function()
+  {
+    this.$results.show()
+  },
 
   // Empty the search results.
   empty : function()
