@@ -6,6 +6,8 @@
 class UW_Filters
 {
 
+  private $REPLACE_TEMPLATE_CLASS = array( 'templatestemplate-', '-php' );
+
   function __construct()
   {
 
@@ -14,16 +16,19 @@ class UW_Filters
     add_filter( 'abbreviation', array( $this, 'abbreviate') );
 
     // Global filters
-    // allow shortcodes in text widgets
+    // Allow shortcodes in text widgets
     add_filter( 'widget_text', 'do_shortcode' );
     // Add the site title to the body class
-    add_filter( 'body_class', array( $this, 'custom_body_classes' ) );
+    add_filter( 'body_class', array( $this, 'add_site_title_body_class' ) );
+    // Add a better named template class to the
+    add_filter( 'body_class', array( $this, 'better_template_name_body_class' ) );
+
     // Filters the category widget dropdown menu
     add_filter( 'widget_categories_dropdown_args', array( $this, 'custom_widget_classes' ) );
 
   }
 
-  function custom_body_classes( $classes )
+  function add_site_title_body_class( $classes )
   {
 
     if ( is_multisite() )
@@ -31,6 +36,18 @@ class UW_Filters
 
     return $classes;
 
+  }
+
+  function better_template_name_body_class( $classes )
+  {
+    if ( is_page_template() )
+    {
+      foreach( $classes as $index=>$class )
+      {
+        $classes[ $index ] = str_replace( $this->REPLACE_TEMPLATE_CLASS, '', $class );
+      }
+    }
+    return $classes;
   }
 
   function custom_widget_classes( $args )
