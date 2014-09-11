@@ -19,13 +19,15 @@
 		list-style: none;
 		display: inline-block;
 		li {
-			width: 100%;
+			width: 80%;
+			margin: 0 10%;
 		}
 	}
 	ul {
+		padding-left: 0;
+		padding-right: 0;
 		margin: 0;
 		list-style:none;
-  		padding:0;
 	}
 }
 
@@ -44,19 +46,27 @@
 		font-family: @font-family-headline;
 		font-weight: @headings-font-weight;
 		font-size: 20px;
-		padding: 4px 10px 20px 15px;
+		padding: 4px 10px 20px 15px;		
+			&:focus {
+				color: @lightgold;
+			}
 		}
 		li a {
 			font-family: @font-family-headline;
 			text-transform: none;
 			font-weight: 600;
-			padding-bottom: 10px;
+			padding-bottom: 4px;
 			padding-left: 10px;
+			padding-top: 4px;
+			margin-left: 0;
+			margin-right: 0;
 			margin-top: 6px;
-			margin-left: 20px;
+			margin-bottom: 6px;
 			font-size: 18px;
-			&:hover {
+			&:hover,
+			&:focus {
 				color: @purple;
+				background-color: #E7E7E7;
 			}
 		}
 	}
@@ -72,7 +82,8 @@
 		//Caret
 		&.dropdown-toggle {
 			padding-right: 30px;
-			&:hover:before {
+			&:hover:before,
+			&:focus:before {
 				background: url(assets/svg/uw-sprite.svg) no-repeat -203px -490px;
 				.rotate(90deg);
 				height: 25px;
@@ -115,7 +126,7 @@
 	left: 0;
 	position: absolute;
 	display:none;
-	min-width: 200px;
+	min-width: 250px;
 	// visibility: hidden;
 	border: 0;
 	border-top: 4px solid @purple;
@@ -130,12 +141,11 @@
 
 	li {
 		float:left;
-		clear:left;
-
+		clear:left;	
+		border-bottom: thin solid #eee;
 		a {
 			color: gray;
 			font-size: 17px;
-			border-bottom: thin solid #eee;
 			margin: 10px 30px 0px 20px;
 			text-align: left;
 			padding: 0 10px;
@@ -150,9 +160,7 @@
 		}
 		&:last-child {
 			margin-bottom: 10px;
-			a {
-				border: none;
-			}
+			border: none;
 		}
 	}
 
