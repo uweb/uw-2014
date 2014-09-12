@@ -3,7 +3,7 @@
   <nav class="uw-thin-strip-nav" role='navigation' aria-label='Navigate by audience'>
       <ul class="uw-thin-links">
       	<li class="uw-quicklinks"><div></div><button aria-has-popup='true' aria-owns='quicklinks' aria-controls='quicklinks'>Quick Links</button></li>
-     	<li class="uw-search"><button aria-ha-popup='true' aria-owns='uwsearcharea' aria-opens='uwsearcharea'>Search
+     	<li class="uw-search"><button aria-has-popup='true' aria-owns='uwsearcharea' aria-opens='uwsearcharea'>Search
 
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
            width="18.776px" height="51.062px" viewBox="0 0 18.776 51.062" enable-background="new 0 0 18.776 51.062" xml:space="preserve">
