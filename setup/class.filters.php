@@ -30,9 +30,11 @@ class UW_Filters
 
   function add_site_title_body_class( $classes )
   {
+    $site = array_filter( explode( '/', get_blog_details( get_current_blog_id() )->path ) );
+    array_shift( $site );
 
     if ( is_multisite() )
-        $classes[] = 'site-'. sanitize_html_class( str_replace( 'cms', '', get_blog_details( get_current_blog_id() )->path ) );
+        $classes[] = 'site-'. sanitize_html_class( implode( '-', $site ) );
 
     return $classes;
 
