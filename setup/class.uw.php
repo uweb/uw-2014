@@ -7,17 +7,6 @@
 
 class UW
 {
-    // irrelevant extra static things.  PHP warnings thrown when trying to make these guys
-    // public static $Install;
-    // public static $Scripts;
-    // public static $Styles;
-    // public static $Images;
-    // public static $SquishBugs;
-    // public static $Filters;
-    // public static $Mimes;
-    // public static $Users;
-    // public static $Dropdowns;
-    // public static $Shortcodes;
 
     function __construct()
     {
@@ -50,7 +39,6 @@ class UW
         require_once( 'class.uw-tinymce.php' );
         require_once( 'class.uw-documentation.php' );
         require_once( 'class.uw-enclosure.php' );
-        require_once( 'class.uw-front-page-settings.php' );
     }
 
     private function initialize()
@@ -74,7 +62,6 @@ class UW
         $this->ReplaceMedia      = new UW_Replace_Media;
         $this->TinyMCE           = new UW_TinyMCE;
         $this->Documentation     = new UW_Documentation;
-        $this->FrontPageSettings = new UW_FrontPageSettings;
         $this->IFrames           = new UW_Iframes;
         $this->GoogleApps        = new UW_GoogleApps;
         $this->Enclosure         = new UW_Enclosure;
