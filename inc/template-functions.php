@@ -134,14 +134,20 @@ if( ! function_exists('get_uw_breadcrumbs') ) :
 
     if ( ! is_front_page() )
     {
-      foreach ( $ancestors as $index=>$ancestor )
+      foreach ( array_filter( $ancestors ) as $index=>$ancestor )
       {
         $class      = $index+1 == count($ancestors) ? ' class="current" ' : '';
         $page       = get_post( $ancestor );
         $url        = get_permalink( $page->ID );
         $title_attr = esc_attr( $page->post_title );
-        $html .= "<li $class><a href=\"$url\" title=\"{$title_attr}\">{$page->post_title}</a>";
+        $html .= "<li $class><a href=\"$url\" title=\"{$title_attr}\">{$page->post_title}</a></li>";
       }
+    }
+
+    if( is_category() )
+    {
+      $category = get_category( get_query_var( 'cat' ) );
+      $html .=  '<li class="current"><a href="'  . get_category_link( $category->term_id ) .'" title="'. get_cat_name( $category->term_id ).'">'. get_cat_name($category->term_id ) . '</a>';
     }
 
     return "<nav class='uw-breadcrumbs' role='navigation' aria-label='breadcrumbs relative navigation'><ul>$html</ul></nav>";
