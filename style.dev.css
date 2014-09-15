@@ -8617,7 +8617,8 @@ ul.uw-select li.inactive a {
   height: 80px;
   width: 100%;
   content: "";
-  background: url('assets/images/stripes-dark.png');
+  background: url('assets/images/stripes-dark-tile.png');
+  opacity: .3;
 }
 .uw-hero-image:before,
 .no-uw-hero-image:before {
@@ -9835,4 +9836,170 @@ a.uw-btn.btn-gold:after {
   margin: 40px 0 0 65px !important;
   float: left;
   width: 620px;
+}
+.site-brand.home .uw-hero-image {
+  height: 595px;
+  padding: 80px 0 0 0;
+}
+.site-brand.home .uw-hero-image h1 {
+  font-family: "Encode Sans Compressed", sans-serif;
+  font-weight: 900;
+  line-height: 1;
+  font-size: 95px;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 2px 2px 2px #000;
+}
+.site-brand.home .uw-hero-image h1 a {
+  color: white;
+}
+.site-brand.home .uw-hero-image p {
+  color: white;
+  -webkit-font-smoothing: auto;
+}
+.site-brand.home .uw-site-title {
+  display: none;
+}
+.site-brand.home .uw-content {
+  margin-top: -50px;
+  background-color: #e8e3d3;
+}
+.site-brand.home #uw-container div#uw-container-inner {
+  background-color: #e8e3d3;
+}
+.site-brand .uw-body-copy h2 {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 0;
+  background-color: #4b2e83;
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  margin-left: -60px;
+}
+.site-brand .elment {
+  float: left;
+  width: 23.5%;
+  margin: 37px 0.75% -15px 0.75%;
+  text-align: center;
+  padding: 0 40px;
+  height: 260px;
+  background-color: white;
+}
+.site-brand .elment a {
+  font-family: "Encode Sans Compressed", sans-serif;
+  color: #4b2e83;
+  display: block;
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 1;
+  margin: 20px 0 10px;
+  padding: 100px 0 0 0;
+  background: url('assets/svg/brand-site/pic.svg') center 29px no-repeat;
+}
+.site-brand .elment a:hover {
+  color: #c9c9c9;
+}
+.site-brand .elment.element-fonts a {
+  background: url('assets/svg/brand-site/fonts.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-editorial a {
+  background: url('assets/svg/brand-site/pencil.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-web a {
+  background: url('assets/svg/brand-site/template.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-video a {
+  background: url('assets/svg/brand-site/video.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-uncategorized a {
+  background: url('assets/svg/brand-site/print.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-colors a {
+  background: url('assets/svg/brand-site/colors.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-social-media a {
+  background: url('assets/svg/brand-site/social-media.svg') center 29px no-repeat;
+}
+.site-brand .elment p {
+  line-height: 1.5;
+}
+.site-brand .search-box {
+  padding: 120px 0;
+  background-color: white;
+  position: relative;
+}
+.site-brand .search-box:before {
+  content: "";
+  background: url('assets/images/stripes-dark-tile.png');
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: .4;
+}
+.site-brand .search-box #searchform #s {
+  padding: 30px 0 30px 35px;
+}
+.site-brand .search-box #searchform #searchsubmit {
+  height: 94px;
+  width: 95px;
+  -webkit-background-size: 30px;
+  -moz-background-size: 30px;
+  -o-background-size: 30px;
+  background-size: 30px;
+}
+/* Small Devices, Tablets */
+@media only screen and (max-width: 767px) {
+  .site-brand .elment {
+    width: 100%;
+    padding: 40px;
+    float: none;
+  }
+  .site-brand .uw-hero-image {
+    display: block;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .site-brand .uw-body.container {
+    background-color: transparent;
+  }
+  .site-brand .elment {
+    width: 46%;
+    margin: 37px 2% -15px 2%;
+  }
+  .site-brand.home .uw-content {
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .site-brand .uw-body-copy h2:after,
+  .site-brand .uw-body-copy h2:before {
+    position: absolute;
+    top: 20px;
+    height: 1px;
+    width: 478px;
+    content: "";
+    background-color: white;
+  }
+  .site-brand .uw-body-copy h2:after {
+    right: 140px;
+  }
+  .site-brand .uw-body-copy h2:before {
+    left: 140px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .site-brand.home .uw-hero-image p {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1201px) {
+  .site-brand.home .uw-hero-image p {
+    width: 70%;
+  }
 }
