@@ -3,6 +3,8 @@
 //       Name: UW Related Posts
 //       Description: A widget that shows related posts
 
+if ( ! class_exists( 'UW_Widget_Related_Posts') ) :
+
 class UW_Widget_Related_Posts extends WP_Widget
 {
 
@@ -170,3 +172,5 @@ class UW_Related_Posts
 
 // Instantiate the plugin
 new UW_Related_Posts;
+
+endif;
