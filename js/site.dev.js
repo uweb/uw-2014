@@ -8611,7 +8611,7 @@ UW.Search = Backbone.View.extend({
                       '<option value="directory">People Directory</option>' +
                     '</select>' +
 
-                    '<button class="search" />'+
+                    '<button class="search" tabindex="-1"/>'+
 
                     '<div class="labels hidden-xs">'+
                       '<label class="radio">'+
