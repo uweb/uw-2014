@@ -164,7 +164,6 @@ if( ! function_exists('get_uw_breadcrumbs') ) :
 
     }
 
-
     return "<nav class='uw-breadcrumbs' role='navigation' aria-label='breadcrumbs relative navigation'><ul>$html</ul></nav>";
   }
 
