@@ -8800,7 +8800,7 @@ UW.Search = Backbone.View.extend({
       if ( person.commonname )
       {
         var template = _.template( result, person )
-        $results.append( template )
+        $results.prepend( template )
       }
     })
 
