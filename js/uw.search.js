@@ -48,7 +48,9 @@ UW.Search = Backbone.View.extend({
                     '</label>'+
                 '</div>'+
 
-                '<div class="uw-results" style="display:none;"></div>'+
+                '<div class="uw-results" style="display:none;">' +
+                   '<p class="more-results">Need more results? Try the <a href="http://www.washington.edu/home/peopledir/" title="Full directory">full directory</a></p>' +
+                '</div>' +
 
                 '</div>'+
               '</div>'+
@@ -99,6 +101,7 @@ UW.Search = Backbone.View.extend({
     this.render()
 
     this.$results  = this.$( '.uw-results' )
+    this.$more    = this.$( '.more-results' )
 
     this.searchFeature = this.$el.find(':radio:checked').val()
 
@@ -190,12 +193,14 @@ UW.Search = Backbone.View.extend({
   showDirectory : function()
   {
     this.$results.show()
+    this.$more.show()
   },
 
   // Empty the search results.
   empty : function()
   {
     this.$results.empty()
+      .append( this.$more.hide() )
   },
 
   // Parse the search results. The LDAP response from the server is first parsed by custom PHP and then
