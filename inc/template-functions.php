@@ -123,32 +123,47 @@ if( ! function_exists('get_uw_breadcrumbs') ) :
   {
 
     global $post;
-
     $ancestors = array_reverse( get_post_ancestors( $post->ID ) );
-
-    if ( ! is_home() || ! is_front_page() )
-      $ancestors[] = $post->ID;
-
     $html = '<li><a href="http://uw.edu" title="University of Washington">Home</a></li>';
-    $html .= '<li' . ( ! $ancestors || is_front_page() ? ' class="current"' : '') . '><a href="' . get_bloginfo('url') . '" title="' . get_bloginfo('title') . '">' . get_bloginfo('title') . '</a><li>';
+    $html .= '<li' . (is_front_page() ? ' class="current"' : '') . '><a href="' . get_bloginfo('url') . '" title="' . get_bloginfo('title') . '">' . get_bloginfo('title') . '</a><li>';
 
-    if ( ! is_front_page() )
+    // If the current view is a post type other than page or attachment then the breadcrumbs will be taxonomies.
+    if( is_category() || is_single() )
     {
-      foreach ( array_filter( $ancestors ) as $index=>$ancestor )
+      if ( is_category() )
       {
-        $class      = $index+1 == count($ancestors) ? ' class="current" ' : '';
-        $page       = get_post( $ancestor );
-        $url        = get_permalink( $page->ID );
-        $title_attr = esc_attr( $page->post_title );
-        $html .= "<li $class><a href=\"$url\" title=\"{$title_attr}\">{$page->post_title}</a></li>";
+        $category = get_category( get_query_var( 'cat' ) );
+        $html .=  '<li class="current"><a href="'  . get_category_link( $category->term_id ) .'" title="'. get_cat_name( $category->term_id ).'">'. get_cat_name($category->term_id ) . '</a>';
+      }
+      if ( is_single() )
+      {
+        $category = array_shift( get_the_category( $post->ID  ) ) ;
+        $html .=  '<li><a href="'  . get_category_link( $category->term_id ) .'" title="'. get_cat_name( $category->term_id ).'">'. get_cat_name($category->term_id ) . '</a>';
+        $html .=  '<li class="current"><a href="'  . get_the_title( $post->ID ) .'" title="'. esc_attr( get_the_title( $post->ID  ) ) .'">'. get_the_title( $post->ID ) . '</a>';
       }
     }
 
-    if( is_category() )
+    // If the current view is a page then the breadcrumbs will be parent pages.
+    else if ( is_page() )
     {
-      $category = get_category( get_query_var( 'cat' ) );
-      $html .=  '<li class="current"><a href="'  . get_category_link( $category->term_id ) .'" title="'. get_cat_name( $category->term_id ).'">'. get_cat_name($category->term_id ) . '</a>';
+
+      if ( ! is_home() || ! is_front_page() )
+        $ancestors[] = $post->ID;
+
+      if ( ! is_front_page() )
+      {
+        foreach ( array_filter( $ancestors ) as $index=>$ancestor )
+        {
+          $class      = $index+1 == count($ancestors) ? ' class="current" ' : '';
+          $page       = get_post( $ancestor );
+          $url        = get_permalink( $page->ID );
+          $title_attr = esc_attr( $page->post_title );
+          $html .= "<li $class><a href=\"$url\" title=\"{$title_attr}\">{$page->post_title}</a></li>";
+        }
+      }
+
     }
+
 
     return "<nav class='uw-breadcrumbs' role='navigation' aria-label='breadcrumbs relative navigation'><ul>$html</ul></nav>";
   }
