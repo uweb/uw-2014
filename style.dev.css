@@ -8889,7 +8889,8 @@ ul {
 .uw-search-bar-container div.labels .radio {
   margin-bottom: -5px;
 }
-.uw-search-bar-container a.search {
+.uw-search-bar-container button.search {
+  border: none;
   float: left;
   display: block;
   height: 54px;
@@ -8901,7 +8902,7 @@ ul {
   -moz-background-size: 22px;
   -o-background-size: 22px;
   background-size: 22px;
-  padding-right: 60px;
+  padding: 0px 60px 0px 0px;
 }
 .uw-search-bar-container .uw-results .result {
   z-index: 1;

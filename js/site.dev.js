@@ -8602,7 +8602,7 @@ UW.Search = Backbone.View.extend({
                '<div class="container">'+
                   '<div class="center-block uw-search-wrapper">'+
                     '<form class="uw-search" action="<%= Backbone.history.location.pathname %>">'+
-                      '<input id="uw-search-bar" type="search" name="s" value="" autocomplete="off" />'+
+                      '<input id="uw-search-bar" type="search" name="s" value="" autocomplete="off" tabindex="-1"/>'+
                     '</form>'+
 
                     '<select id="mobile-search-select" class="visible-xs">' +
@@ -8611,24 +8611,24 @@ UW.Search = Backbone.View.extend({
                       '<option value="directory">People Directory</option>' +
                     '</select>' +
 
-                    '<a href="#" value="" class="search" />'+
+                    '<button class="search" />'+
 
                     '<div class="labels hidden-xs">'+
                       '<label class="radio">'+
-                        '<input type="radio" name="search" value="uw" data-toggle="radio" checked>'+
+                        '<input type="radio" name="search" value="uw" data-toggle="radio" checked tabindex="-1">'+
                         'All the UW'+
                       '</label>'+
 
-                    '<label class="radio">'+
-                      '<input type="radio" name="search" value="site" data-toggle="radio">'+
-                      'Current Site'+
-                    '</label>'+
+                      '<label class="radio">'+
+                        '<input type="radio" name="search" value="site" data-toggle="radio" tabindex="-1">'+
+                        'Current Site'+
+                      '</label>'+
 
-                    '<label class="radio">'+
-                      '<input type="radio" name="search" value="directory" data-toggle="radio">'+
-                      'People Directory'+
-                    '</label>'+
-                '</div>'+
+                      '<label class="radio">'+
+                        '<input type="radio" name="search" value="directory" data-toggle="radio" tabindex="-1">'+
+                        'People Directory'+
+                      '</label>'+
+                    '</div>'+
 
                 '<div class="uw-results" style="display:none;">' +
                    '<p class="more-results">Need more results? Try the <a href="http://www.washington.edu/home/peopledir/" title="Full directory">full directory</a></p>' +
