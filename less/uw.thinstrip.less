@@ -76,10 +76,15 @@
 				&:after {
 					position: absolute;
 					right: 6px;
-					height: 24px;
+					height:32px;
 					width: 12px;
-					top: 10px;
-					content: url('assets/svg/slash.svg');
+					top: 7px;
+					content: "";
+					background: url(assets/svg/uw-sprite.svg) no-repeat -696px 0;
+				}
+				&:hover,
+				&:focus {
+					color: @lightgold;
 				}
 			}
 			&.uw-search {
@@ -97,12 +102,12 @@
 					margin: 0 15px;
 					overflow: hidden;
 					&:hover {
-						background-color: @lightgold;
-						border: none;
-						svg {
-							top: -18px;
-							left: 12px;
-						}
+						border: 2px solid @lightgold;
+						background-color: darken(@purple, 5%);
+						.transition(all .1s linear)
+					}
+					&:after {
+						display: none;
 					}
 					svg {
 						position: absolute;
@@ -164,6 +169,15 @@
                 border: none;
             }
 		}
+	}
+}
+
+// Active state of search button 
+
+.searching .uw-thinstrip ul.uw-thin-links li.uw-search button:hover {
+	svg {
+		top: -20px;
+		left: 10px;
 	}
 }
 
@@ -255,6 +269,7 @@
 					overflow: hidden;
 					&:hover {
 						background-color: transparent;
+						border: none;
 						svg {
 							left: 30px;
 						}

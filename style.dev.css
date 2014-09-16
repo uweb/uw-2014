@@ -8176,10 +8176,17 @@ ul.uw-select li.inactive a {
 .uw-thinstrip ul.uw-thin-links li button:after {
   position: absolute;
   right: 6px;
-  height: 24px;
+  height: 32px;
   width: 12px;
-  top: 10px;
-  content: url('assets/svg/slash.svg');
+  top: 7px;
+  content: "";
+  background: url(assets/svg/uw-sprite.svg) no-repeat -696px 0;
+}
+.uw-thinstrip ul.uw-thin-links li a:hover,
+.uw-thinstrip ul.uw-thin-links li button:hover,
+.uw-thinstrip ul.uw-thin-links li a:focus,
+.uw-thinstrip ul.uw-thin-links li button:focus {
+  color: #b7a57a;
 }
 .uw-thinstrip ul.uw-thin-links li.uw-search button {
   text-indent: -99999px;
@@ -8201,12 +8208,14 @@ ul.uw-select li.inactive a {
   overflow: hidden;
 }
 .uw-thinstrip ul.uw-thin-links li.uw-search button:hover {
-  background-color: #b7a57a;
-  border: none;
+  border: 2px solid #b7a57a;
+  background-color: #402770;
+  -o-transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
 }
-.uw-thinstrip ul.uw-thin-links li.uw-search button:hover svg {
-  top: -18px;
-  left: 12px;
+.uw-thinstrip ul.uw-thin-links li.uw-search button:after {
+  display: none;
 }
 .uw-thinstrip ul.uw-thin-links li.uw-search button svg {
   position: absolute;
@@ -8260,6 +8269,10 @@ ul.uw-select li.inactive a {
 }
 .uw-thinstrip ul.uw-thin-links li button {
   border: none;
+}
+.searching .uw-thinstrip ul.uw-thin-links li.uw-search button:hover svg {
+  top: -20px;
+  left: 10px;
 }
 #uw-container.open .uw-quicklinks a {
   color: black;
@@ -8341,6 +8354,7 @@ ul.uw-select li.inactive a {
   }
   .uw-thinstrip ul.uw-thin-links li.uw-search button:hover {
     background-color: transparent;
+    border: none;
   }
   .uw-thinstrip ul.uw-thin-links li.uw-search button:hover svg {
     left: 30px;
@@ -8885,6 +8899,7 @@ hr {
 }
 .uw-search-bar-container form input {
   width: 100%;
+  height: 54px;
   padding: 10px 0 10px 15px;
   border: none;
   font-size: 20px;
@@ -8900,6 +8915,9 @@ hr {
 }
 .uw-search-bar-container div.labels .radio {
   margin-bottom: -5px;
+  font-family: "Encode Sans Compressed", sans-serif;
+  font-size: 16px;
+  font-weight: 600px;
 }
 .uw-search-bar-container a.search {
   float: left;
@@ -9977,6 +9995,7 @@ a.uw-btn.btn-gold:after {
 }
 .site-brand .search-box #searchform #s {
   padding: 30px 0 30px 35px;
+  height: 94px;
 }
 .site-brand .search-box #searchform #searchsubmit {
   height: 94px;
