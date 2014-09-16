@@ -81,9 +81,10 @@ UW.Search = Backbone.View.extend({
   events :
   {
     'keyup'                     : 'keyUpDispatch',
+    'blur #uw-search-bar'       : 'searchBarBlur',
     'click .result .more'       : 'showPersonInformation',
     'click .result .commonname' : 'showPersonInformation',
-    'click input:radio'         : 'toggleSearchFeature',
+    'mouseup input:radio'       : 'toggleSearchFeature',
     'change select'             : 'toggleSearchFeature',
     'click .search'             : 'submitForm',
     'submit form'               : 'submitSearch'
@@ -92,7 +93,7 @@ UW.Search = Backbone.View.extend({
   // Initialize the view and bind events to to the DirectoryModel `results` attribute.
   initialize :function ( options )
   {
-    _.bindAll( this, 'toggleSearchBar', 'keyUpDispatch', 'searchDirectory', 'parse' )
+    _.bindAll( this, 'toggleSearchBar', 'keyUpDispatch', 'searchBarBlur', 'searchDirectory', 'parse' )
 
     this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
 
@@ -134,7 +135,7 @@ UW.Search = Backbone.View.extend({
   {
     var index = -1;
     if (this.$searchbar.hasClass('open')){
-        index = 1;
+        index = 0;
     }
     this.$searchbar.find('input').attr('tabindex', index);
     //this.$searchbar.find('button').attr('tabindex', index);
@@ -148,9 +149,20 @@ UW.Search = Backbone.View.extend({
             this.$toggle.find('button').focus();
         }
     }
-    else if ($(event.target).is('#uw-search-bar')){
-        this.searchDirectory(event);
+    else{
+        var $target = $(event.target);
+        if ($target.is(':radio') && event.keyCode == 13){
+            $target.trigger('mouseup');
+        }
+        else if ($target.is('#uw-search-bar')){
+            this.searchDirectory(event);
+        }
     }
+  },
+
+  searchBarBlur: function()
+  {
+    this.$el.find('input:radio').first().focus( function () {console.log($(':focus'))} );
   },
 
   // Set a property to the current radio button indicating which function the search bar is providing.
