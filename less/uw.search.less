@@ -39,6 +39,7 @@
     input
     {
       width: 100%;
+      height: 54px;
       padding: 10px 0 10px 15px;
       border: none;
       font-size: 20px;
@@ -57,7 +58,9 @@
     margin-top: -30px;
     color: #707070;
     .radio {
-      margin-bottom: -5px;      
+      margin-bottom: -5px;   
+      text-transform: uppercase;
+      font-size: 13px;   
     }
   }
 
@@ -163,6 +166,13 @@
       }
     }
 
+    .more-results {
+      clear: both;
+      padding: 10px 0 0 10px;
+      font-size: 15px;
+      color: #525252;
+    }
+
   }
 
   &.open
@@ -237,235 +247,3 @@
 
 
 }
-
-
-
-
-
- // .uw-search-bar-container
- // {
- //   min-height: 130px;
- //   margin-top: -130px;
- //   background-color: #4d4d4d;
- //   transition: margin-top .3s cubic-bezier(0.165, 0.84, 0.44, 1);
- // 
- //   .radio.checked,
- //   .radio.checked .second-icon
- //   {
- //     color: @brightgold;
- //   }
- // 
- //   .uw-search-wrapper
- //   {
- //     position:relative;
- //     width:890px;
- //     margin-top: 30px;
- //     -webkit-transform: matrix(1,0,0,1,0,-20);
- //        -moz-transform: matrix(1,0,0,1,0,-20);
- //         -ms-transform: matrix(1,0,0,1,0,-20);
- //          -o-transform: matrix(1,0,0,1,0,-20);
- //             transform: matrix(1,0,0,1,0,-20);
- //     // transition: top 2s cubic-bezier(0.165, 0.84, 0.44, 1);
- //     // transition: all 1s;
- //     transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
- //   }
- // 
- //   form
- //   {
- // 
- //     float:left;
- //     width:620px;
- // 
- //     input
- //     {
- //       width: 100%;
- //       padding: 2px 0 1px 15px;
- //       border: none;
- //       font-size: 30px;
- //       outline: none;
- //     }
- // 
- //   }
- // 
- //   div.labels
- //   {
- // 
- //     float: left;
- //     display: block;
- //     margin-left: 40px;
- //     margin-top: -30px;
- //     color:white;
- //     .radio {
- //       margin-bottom: -5px;
- //     }
- //   }
- // 
- //   a.search
- //   {
- //     float:left;
- //     display:block;
- //     height: 54px;
- //     text-indent: -99999px;
- //     background: url(assets/svg/search.svg) no-repeat center center gray;
- //     position: relative;
- //     -webkit-background-size: 22px;
- //     -moz-background-size: 22px;
- //     -o-background-size: 22px;
- //     background-size: 22px;
- //     padding-right: 60px;
- //   }
- // 
- //   .uw-results
- //   {
- // 
- //     .result {
- //       z-index: 1;
- //       width: 690px;
- //       border-bottom: 1px solid #666;
- //       display: block;
- //       float: left;
- //       margin-top: -10px;
- //       margin-bottom: 10px;
- //       position: relative;
- //       .information {
- //         margin: -10px 0 20px 0;
- //         padding: 0 15px;
- //       }
- //       .title {
- //         margin-bottom: -3px;
- //       }
- //       .mail,
- //       .fax,
- //       .telephonenumber {
- //         padding-left: 30px;
- //         a:hover {
- //           color: @brightgold;
- //         }
- //       }
- //       .mail {
- //         background: url('assets/images/search-mail.png') no-repeat 0 8px;
- //       }
- //       .fax {
- //         background: url('assets/images/search-fax.png') no-repeat 0 8px;
- //       }
- //       .telephonenumber {
- //         background: url('assets/images/search-phone.png') no-repeat 0 6px;
- //       }
- //       &.open {
- //         h4 {
- //           color: @brightgold;
- //         }
- //         a.more {
- //           background-position: -283px -50px;
- //         }
- //       }
- //       &:last-child  {
- //         border: none;
- //         margin-bottom: 20px;
- //       }
- //     }
- // 
- //     h4 {
- //       width: 100%;
- //       font-size: 18px;
- //       color: #fff;
- //       padding: 15px 0 15px 14px;
- //       margin: 0;
- //       text-transform: uppercase;
- //       cursor: pointer;
- //     }
- // 
- //     a.more {
- //       text-indent: -99999px;
- //       background: url(assets/svg/uw-sprite.svg) no-repeat -283px -78px;
- //       height: 25px;
- //       right: 25px;
- //       top: 14px;
- //       position: absolute;
- //       width: 30px;
- //     }
- // 
- //     .information {
- //       float:left;
- //       width:100%;
- //       color: white;
- //       p {
- //         color: #fff;
- //       }
- //       span {
- //         float:left;
- //         width:100%;
- //       }
- //       a {
- //         color: white;
- //       }
- //     }
- // 
- //   }
- // 
- //   &.open
- //   {
- //     margin-top:0px;
- //     padding: 40px 0 50px;
- // 
- //     .uw-search-wrapper
- //     {
- //         -webkit-transform: matrix(1,0,0,1,0,0);
- //            -moz-transform: matrix(1,0,0,1,0,0);
- //             -ms-transform: matrix(1,0,0,1,0,0);
- //              -o-transform: matrix(1,0,0,1,0,0);
- //                 transform: matrix(1,0,0,1,0,0);
- //     }
- //   }
- // }
- // 
- // 
- // 
- // // Mobile 
- // @media only screen and (max-width : 767px) {
- // 
- //   .uw-search-bar-container {
- //    // margin-top: -176px;
- //     &.open {
- //       padding: 0 0 10px;
- //     }
- //     .uw-search-wrapper {
- //       width: 100%;
- //       position: relative;
- //       margin-top: 15px;
- //       .search {
- //         position: absolute;
- //         right: 0;
- //         top: 0;
- //       }
- //       div.labels {
- //         margin-top: 20px;
- //         margin-left: 10px;
- //         margin-bottom: 20px;
- //       }
- //   
- //     }
- //     select {
- //       width: 100%;
- //       margin: 0 0 15px;
- //     }
- //     form {
- //       width: 100%;
- //       margin-bottom: 15px;
- //       input {
- //         border-radius: 0;
- //       }
- //     }
- //     .uw-results {
- //       h4 {
- //         padding: 15px 60px 15px 14px;
- //       }
- //       .result {
- //         width: 100%;
- //       }
- //     }
- //   }
- // 
- // 
- // }
- // 

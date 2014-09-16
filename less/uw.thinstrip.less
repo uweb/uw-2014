@@ -246,23 +246,31 @@
                     width: 150px;
                 }
 				&.uw-search button {
-					background-position: -481px -317px;
-					background-size: 900px;
-					text-indent: -99999px;
-					overflow: hidden;
-					padding: 20px 0 0 60px;
 					top: 0;
-					right: 33px;
-					position: absolute;
-					&:after {
-						background: url(assets/svg/uw-sprite.svg) no-repeat -295px 4px transparent;
+					right: 36px;
+					height: 47px;
+					width: 65px;
+					margin-right: 0;
+					border: none;
+					overflow: hidden;
+					&:hover {
+						background-color: transparent;
+						svg {
+							left: 30px;
+						}
+					}
+					svg {
+						top: 14px;
+						left: 29px;
+					}
+					&:before {
 						position: absolute;
+						top: 1px;
+						right: 6px;
 						content: "";
-						height: 26px;
-						background-size: 481px;
-						width: 27px;
+						width: 51px;
+						height: 45px;
 						display: block;
-						right: 14px;
 					}
 				}
 			}
@@ -331,11 +339,6 @@
 			right: 145px;
 			top: -69px;
 			margin: 0;
-			a, button {
-				padding-right: 60px;
-				background-size: 660px;
-				background-position: -398px -34px;
-			}
 		}
 	}
 }
