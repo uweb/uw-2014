@@ -145,6 +145,7 @@ UW.Search = Backbone.View.extend({
     if (event.keyCode == 27){
         if (this.$searchbar.hasClass('open')){
             this.toggleSearchBar();
+            this.$toggle.find('button').focus();
         }
     }
     else if ($(event.target).is('#uw-search-bar')){
