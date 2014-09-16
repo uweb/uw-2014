@@ -80,7 +80,7 @@ UW.Search = Backbone.View.extend({
   // Toggling the radio buttons changes the function of the search bar from searhing the UW, searching the current site and searching the directory.
   events :
   {
-    'keyup input'               : 'searchDirectory',
+    'keyup'                     : 'keyUpDispatch',
     'click .result .more'       : 'showPersonInformation',
     'click .result .commonname' : 'showPersonInformation',
     'click input:radio'         : 'toggleSearchFeature',
@@ -92,7 +92,7 @@ UW.Search = Backbone.View.extend({
   // Initialize the view and bind events to to the DirectoryModel `results` attribute.
   initialize :function ( options )
   {
-    _.bindAll( this, 'toggleSearchBar', 'searchDirectory', 'parse' )
+    _.bindAll( this, 'toggleSearchBar', 'keyUpDispatch', 'searchDirectory', 'parse' )
 
     this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
 
@@ -138,6 +138,18 @@ UW.Search = Backbone.View.extend({
     }
     this.$searchbar.find('input').attr('tabindex', index);
     //this.$searchbar.find('button').attr('tabindex', index);
+  },
+
+  keyUpDispatch: function(event)
+  {
+    if (event.keyCode == 27){
+        if (this.$searchbar.hasClass('open')){
+            this.toggleSearchBar();
+        }
+    }
+    else if ($(event.target).is('#uw-search-bar')){
+        this.searchDirectory(event);
+    }
   },
 
   // Set a property to the current radio button indicating which function the search bar is providing.
