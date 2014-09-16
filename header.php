@@ -11,6 +11,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!--[if lt IE 9]>
+            <script src="<?php bloginfo("template_directory"); ?>/js/libraries/html5shiv.js" type="text/javascript"></script>
+        <![endif]-->
 
         <?php wp_head(); ?>
 
