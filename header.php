@@ -11,12 +11,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <?php wp_head(); ?>
+
         <!--[if lt IE 9]>
             <script src="<?php bloginfo("template_directory"); ?>/js/libraries/ie/html5shiv.js" type="text/javascript"></script>
             <script src="<?php bloginfo("template_directory"); ?>/js/libraries/ie/respond.js" type="text/javascript"></script>
         <![endif]-->
-
-        <?php wp_head(); ?>
 
     </head>
     <body <?php body_class(); ?> >
