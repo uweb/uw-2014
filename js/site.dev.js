@@ -8708,7 +8708,18 @@ UW.Search = Backbone.View.extend({
     this.hideDirectory()
     this.$searchbar.toggleClass('open')
       .find('#uw-search-bar').focus()
+    this.changeTabFlow();
     return false;
+  },
+
+  changeTabFlow: function()
+  {
+    var index = -1;
+    if (this.$searchbar.hasClass('open')){
+        index = 1;
+    }
+    this.$searchbar.find('input').attr('tabindex', index);
+    //this.$searchbar.find('button').attr('tabindex', index);
   },
 
   // Set a property to the current radio button indicating which function the search bar is providing.
@@ -8716,6 +8727,7 @@ UW.Search = Backbone.View.extend({
   {
     this.hideDirectory()
     this.searchFeature = e.currentTarget.value
+    this.$searchbar.find('#uw-search-bar').focus();
 
     if ( this.searchFeature === this.searchFeatures.directory )
       this.showDirectory()
