@@ -9683,6 +9683,13 @@ a.uw-btn.btn-gold:after {
     padding: 0 210px;
   }
 }
+.checkbox input,
+.radio input {
+  display: block;
+  position: absolute;
+  left: -99999px;
+  top: -99999px;
+}
 /*==========  Non-Mobile First Method  ==========*/
 /* Large Devices, Wide Screens */
 /* Medium Devices, Desktops */

@@ -8666,7 +8666,7 @@ UW.Search = Backbone.View.extend({
     'blur #uw-search-bar'       : 'searchBarBlur',
     'click .result .more'       : 'showPersonInformation',
     'click .result .commonname' : 'showPersonInformation',
-    'mouseup input:radio'       : 'toggleSearchFeature',
+    'mouseup label.radio'       : 'toggleSearchFeature',
     'change select'             : 'toggleSearchFeature',
     'click .search'             : 'submitForm',
     'submit form'               : 'submitSearch'
@@ -8711,19 +8711,7 @@ UW.Search = Backbone.View.extend({
     if (this.$searchbar.hasClass('open')) {
         this.$searchbar.find('#uw-search-bar').focus();
     }
-    this.changeTabFlow();
     return false;
-  },
-
-  //consider moving the index logic into toggleSearchBar to limit redundancy
-  changeTabFlow: function()
-  {
-    var index = -1;
-    if (this.$searchbar.hasClass('open')){
-        index = 0;
-    }
-    this.$searchbar.find('input').attr('tabindex', index);
-    //this.$searchbar.find('button').attr('tabindex', index);
   },
 
   keyUpDispatch: function(event)
@@ -8737,7 +8725,7 @@ UW.Search = Backbone.View.extend({
     else{
         var $target = $(event.target);
         if ($target.is(':radio') && event.keyCode == 13){
-            $target.trigger('mouseup');
+            $target.parent('label').trigger('mouseup');
         }
         else if ($target.is('#uw-search-bar')){
             this.searchDirectory(event);
@@ -8754,7 +8742,8 @@ UW.Search = Backbone.View.extend({
   toggleSearchFeature : function( e )
   {
     this.hideDirectory()
-    this.searchFeature = e.currentTarget.value
+    var value = e.currentTarget.childNodes[1].value;
+    this.searchFeature = value
     this.$searchbar.find('#uw-search-bar').focus();
 
     if ( this.searchFeature === this.searchFeatures.directory )
