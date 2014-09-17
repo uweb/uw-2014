@@ -12,9 +12,9 @@ UW.QuickLinks = Backbone.View.extend({
     template : '<li><% if (classes) { %><span class="<%= classes %>"></span><% } %><a href="<%= url %>" tabindex="-1"><%= title %></a></li>',
 
     events: {
-       'click' : 'animate',
+       'click'       : 'animate',
        'touchstart'  : 'animate',
-       'keyup'        : 'keyup',
+       'keyup'       : 'keyup'
     },
 
     initialize: function ( options ) {
@@ -113,11 +113,11 @@ UW.QuickLinks = Backbone.View.extend({
         if (event.keyCode == 13) {
             if (this.is_focused) {
                 this.blurred();
+                this.animate(event);
             }
             else {
-                _.delay(this.focused, 300);
+                _.delay(this.focused, 500);
             }
-            this.animate(event);
         }
     },
 
