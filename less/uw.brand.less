@@ -32,21 +32,26 @@
         #uw-container div#uw-container-inner {
             background-color: @ulralightgold;
         }
+        .uw-body-copy {
+            h2  {
+                color: #fff;
+                text-transform: uppercase;
+                font-weight: 900;
+                font-size: 20px;
+                padding: 10px 20px;
+                margin: 0;
+                background-color: @purple;
+                display: inline-block;            
+                position: absolute;
+                left: 50%;
+                margin-left: -60px;
+                z-index: 1;
+            }
+        }
     }
     .uw-body-copy {
         h2  {
-            color: #fff;
-            text-transform: uppercase;
-            font-weight: 900;
-            font-size: 20px;
-            padding: 10px 20px;
-            margin: 0;
-            background-color: @purple;
-            display: inline-block;            
-            position: absolute;
-            left: 50%;
-            margin-left: -60px;
-            z-index: 1;
+
         }
     }
     .uw-body {
@@ -152,6 +157,11 @@
             width: 100%;
             padding: 40px;
             float: none;
+            height: auto;
+            a {
+                margin: 0;
+                padding: 100px 0 35px;
+            }
         }
         .uw-hero-image {
             display: block;
@@ -169,6 +179,22 @@
             h2 {
                 position: static;
                 margin-left: 0;
+            }
+        }
+        .search-box {
+            padding: 20px 0;
+            #searchform {
+                #s {
+                    padding: 15px 0 15px 15px;
+                    height: 35px;
+                    height: 51px;
+                }
+                #searchsubmit {
+                    height: 51px;
+                    width: 51px;
+                    .background-size(20px);
+                    .border-radius(0px);
+                }
             }
         }
     }
