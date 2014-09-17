@@ -150,6 +150,11 @@ UW.Search = Backbone.View.extend({
             else if (event.keyCode == 9) {
                 event.preventDefault();
                 this.$toggle.find('button').focus();
+                $checked = this.$searchbar.find('input[value=' + this.searchFeature + ']');
+                if (!$checked.parent('label').hasClass('checked')){
+                    this.$searchbar.find('label').removeClass('checked');
+                    $checked.parent('label').addClass('checked');
+                }
             }
         }
         else if ($target.is('#uw-search-bar')){
