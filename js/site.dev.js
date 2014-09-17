@@ -8742,8 +8742,17 @@ UW.Search = Backbone.View.extend({
         else if ($target.is('#uw-search-bar')){
             if (event.keyCode == 9) {
                 event.preventDefault();
-                this.$searchbar.find('input[type="radio"]:checked').focus();
+                if (this.$more.is(':visible')){
+                    this.$more.find('a').focus();
+                }
+                else {
+                    this.$searchbar.find('input[type="radio"]:checked').focus();
+                }
             }
+        }
+        else if ($target.is(this.$more.find('a')) && event.keyCode == 9){
+            event.preventDefault();
+            this.$searchbar.find('input[type="radio"]:checked').focus();
         }
     }
   },
