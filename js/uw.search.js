@@ -94,7 +94,7 @@ UW.Search = Backbone.View.extend({
   // Initialize the view and bind events to to the DirectoryModel `results` attribute.
   initialize :function ( options )
   {
-    _.bindAll( this, 'toggleSearchBar', 'keyDownDispatch', 'searchDirectory', 'parse' )
+    _.bindAll( this, 'toggleSearchBar', 'toggleBlur', 'keyDownDispatch', 'searchDirectory', 'parse' );
 
     this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
 
@@ -116,8 +116,11 @@ UW.Search = Backbone.View.extend({
   {
     UW.$body.prepend( this.$searchbar )
 
-    this.$toggle = this.$el;
-    this.$toggle.bind( 'click', this.toggleSearchBar )
+    this.$toggle = this.$el.find('button');
+    this.$toggle.bind( {
+        'click': this.toggleSearchBar,
+        'blur': this.toggleBlur
+        } );
 
     this.setElement( this.$searchbar )
   },
@@ -127,10 +130,15 @@ UW.Search = Backbone.View.extend({
   {
     this.hideDirectory()
     this.$searchbar.toggleClass('open')
+    this.toggleBlur();
+    return false;
+  },
+
+  toggleBlur: function()
+  {
     if (this.$searchbar.hasClass('open')) {
         this.$searchbar.find('#uw-search-bar').focus();
     }
-    return false;
   },
 
   keyDownDispatch: function(event)
@@ -138,7 +146,7 @@ UW.Search = Backbone.View.extend({
     if (event.keyCode == 27){
         if (this.$searchbar.hasClass('open')){
             this.toggleSearchBar();
-            this.$toggle.find('button').focus();
+            this.$toggle.focus();
         }
     }
     else{
@@ -149,7 +157,7 @@ UW.Search = Backbone.View.extend({
             }
             else if (event.keyCode == 9) {
                 event.preventDefault();
-                this.$toggle.find('button').focus();
+                this.$toggle.focus();
                 $checked = this.$searchbar.find('input[value=' + this.searchFeature + ']');
                 if (!$checked.parent('label').hasClass('checked')){
                     this.$searchbar.find('label').removeClass('checked');
@@ -160,8 +168,17 @@ UW.Search = Backbone.View.extend({
         else if ($target.is('#uw-search-bar')){
             if (event.keyCode == 9) {
                 event.preventDefault();
-                this.$searchbar.find('input[type="radio"]:checked').focus();
+                if (this.$more.is(':visible')){
+                    this.$more.find('a').focus();
+                }
+                else {
+                    this.$searchbar.find('input[value=' + this.searchFeature + ']').focus();
+                }
             }
+        }
+        else if ($target.is(this.$more.find('a')) && event.keyCode == 9){
+            event.preventDefault();
+            this.$searchbar.find('input[value=' + this.searchFeature + ']').focus();
         }
     }
   },
