@@ -8210,7 +8210,8 @@ ul.uw-select li.inactive a {
   margin: 0 15px;
   overflow: hidden;
 }
-.uw-thinstrip ul.uw-thin-links li.uw-search button:hover {
+.uw-thinstrip ul.uw-thin-links li.uw-search button:hover,
+.uw-thinstrip ul.uw-thin-links li.uw-search button:focus {
   border: 2px solid #b7a57a;
   background-color: #402770;
   -o-transition: all 0.1s linear;
