@@ -19,12 +19,15 @@ Class TileBox
         remove_filter( 'the_content', 'wpautop' );
         add_filter( 'the_content', 'wpautop' , self::PRIORITY );
 
+        remove_filter( 'the_excerpt', 'wpautop' );
+        add_filter( 'the_excerpt', 'wpautop' , self::PRIORITY );
+
         add_shortcode( 'box', array( $this, 'box_handler' ) );
         add_shortcode( 'tile', array( $this, 'tile_handler' ) );
     }
 
     function box_handler( $atts, $content ){
-      // var_dump($content);
+
         $this->count = 0;
 
         if ( empty( $content ) )
