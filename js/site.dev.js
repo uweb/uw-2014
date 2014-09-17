@@ -8908,7 +8908,7 @@ UW.QuickLinks = Backbone.View.extend({
     template : '<li><% if (classes) { %><span class="<%= classes %>"></span><% } %><a href="<%= url %>" tabindex="-1"><%= title %></a></li>',
 
     events: {
-       'mouseover' : 'animate',
+       'click' : 'animate',
        'touchstart'  : 'animate',
        'keyup'        : 'keyup',
     },
