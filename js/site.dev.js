@@ -8602,7 +8602,7 @@ UW.Search = Backbone.View.extend({
                '<div class="container">'+
                   '<div class="center-block uw-search-wrapper">'+
                     '<form class="uw-search" action="<%= Backbone.history.location.pathname %>">'+
-                      '<input id="uw-search-bar" type="search" name="s" value="" autocomplete="off" />'+
+                      '<input id="uw-search-bar" type="search" name="s" value="" autocomplete="off" tabindex="-1"/>'+
                     '</form>'+
 
                     '<select id="mobile-search-select" class="visible-xs">' +
@@ -8611,24 +8611,24 @@ UW.Search = Backbone.View.extend({
                       '<option value="directory">People Directory</option>' +
                     '</select>' +
 
-                    '<a href="#" value="" class="search" />'+
+                    '<button class="search" tabindex="-1"/>'+
 
                     '<div class="labels hidden-xs">'+
                       '<label class="radio">'+
-                        '<input type="radio" name="search" value="uw" data-toggle="radio" checked>'+
+                        '<input type="radio" name="search" value="uw" data-toggle="radio" checked tabindex="-1">'+
                         'All the UW'+
                       '</label>'+
 
-                    '<label class="radio">'+
-                      '<input type="radio" name="search" value="site" data-toggle="radio">'+
-                      'Current Site'+
-                    '</label>'+
+                      '<label class="radio">'+
+                        '<input type="radio" name="search" value="site" data-toggle="radio" tabindex="-1">'+
+                        'Current Site'+
+                      '</label>'+
 
-                    '<label class="radio">'+
-                      '<input type="radio" name="search" value="directory" data-toggle="radio">'+
-                      'People Directory'+
-                    '</label>'+
-                '</div>'+
+                      '<label class="radio">'+
+                        '<input type="radio" name="search" value="directory" data-toggle="radio" tabindex="-1">'+
+                        'People Directory'+
+                      '</label>'+
+                    '</div>'+
 
                 '<div class="uw-results" style="display:none;">' +
                    '<p class="more-results">Need more results? Try the <a href="http://www.washington.edu/home/peopledir/" title="Full directory">full directory</a></p>' +
@@ -8662,11 +8662,13 @@ UW.Search = Backbone.View.extend({
   // Toggling the radio buttons changes the function of the search bar from searhing the UW, searching the current site and searching the directory.
   events :
   {
-    'keyup input'               : 'searchDirectory',
+    'keydown'                   : 'keyDownDispatch',
     'click .result .more'       : 'showPersonInformation',
     'click .result .commonname' : 'showPersonInformation',
-    'click input:radio'         : 'toggleSearchFeature',
+    'click label.radio'         : 'toggleSearchFeature',
+    'click input:radio'         : 'stopProp',
     'change select'             : 'toggleSearchFeature',
+    'keyup #uw-search-bar'      : 'searchDirectory',
     'click .search'             : 'submitForm',
     'submit form'               : 'submitSearch'
   },
@@ -8674,7 +8676,7 @@ UW.Search = Backbone.View.extend({
   // Initialize the view and bind events to to the DirectoryModel `results` attribute.
   initialize :function ( options )
   {
-    _.bindAll( this, 'toggleSearchBar', 'searchDirectory', 'parse' )
+    _.bindAll( this, 'toggleSearchBar', 'keyDownDispatch', 'searchDirectory', 'parse' )
 
     this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
 
@@ -8707,16 +8709,52 @@ UW.Search = Backbone.View.extend({
   {
     this.hideDirectory()
     this.$searchbar.toggleClass('open')
-      .find('#uw-search-bar').focus()
+    if (this.$searchbar.hasClass('open')) {
+        this.$searchbar.find('#uw-search-bar').focus();
+    }
     return false;
+  },
+
+  keyDownDispatch: function(event)
+  {
+    if (event.keyCode == 27){
+        if (this.$searchbar.hasClass('open')){
+            this.toggleSearchBar();
+            this.$toggle.find('button').focus();
+        }
+    }
+    else{
+        var $target = $(event.target);
+        if ($target.is(':radio')) {
+            if (event.keyCode == 13){
+                $target.parent('label').trigger('click');
+            }
+            else if (event.keyCode == 9) {
+                event.preventDefault();
+                this.$toggle.find('button').focus();
+            }
+        }
+        else if ($target.is('#uw-search-bar')){
+            if (event.keyCode == 9) {
+                event.preventDefault();
+                this.$searchbar.find('input[type="radio"]:checked').focus();
+            }
+        }
+    }
+  },
+
+  stopProp: function(event)
+  {
+    event.stopPropagation();
   },
 
   // Set a property to the current radio button indicating which function the search bar is providing.
   toggleSearchFeature : function( e )
   {
     this.hideDirectory()
-    this.searchFeature = e.currentTarget.value
-
+    var value = e.currentTarget.childNodes[1].value;
+    this.searchFeature = value
+    _.defer(function($searchbar) { $searchbar.find('#uw-search-bar').focus() }, this.$searchbar);
     if ( this.searchFeature === this.searchFeatures.directory )
       this.showDirectory()
     // this.mirrorSelectAndRadioElements()

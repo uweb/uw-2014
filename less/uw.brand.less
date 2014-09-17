@@ -17,6 +17,7 @@
                 }
                 p {
                     color: white;
+                    line-height: 1.55;
                     -webkit-font-smoothing: auto;
                 }
             }
@@ -41,10 +42,11 @@
             padding: 10px 20px;
             margin: 0;
             background-color: @purple;
-            display: inline-block;
+            display: inline-block;            
             position: absolute;
             left: 50%;
             margin-left: -60px;
+            z-index: 1;
         }
     }
     .uw-body {
@@ -58,9 +60,12 @@
         width: 23.5%;
         margin: 37px .75% -15px .75%;
         text-align: center;
-        padding: 0 40px;
         height: 260px;
         background-color: white;
+        &:hover {
+            .scale(1.05);
+            .transition(all 0.1s ease);
+        }
 
         a {
             font-family: @font-family-headline;
@@ -70,10 +75,10 @@
             font-size: 28px;
             line-height: 1;
             margin: 20px 0 10px;
-            padding: 100px 0 0 0;
+            padding: 100px 40px 35px;
             background: url('assets/svg/brand-site/pic.svg') center 29px no-repeat;
             &:hover {
-                color: @gray;
+                color: @lightgold;
             }
         }
         &.element-fonts a {
@@ -99,6 +104,8 @@
         }
         p {
             line-height: 1.5;
+            margin-top: 12px;
+            font-family: @font-family-base;
         }
     }
 
@@ -107,6 +114,7 @@
         padding: 120px 0;
         background-color: white;
         position: relative;
+        border-top: 5px solid @lightgold;
         &:before {
             content: "";
             background: url('assets/images/stripes-dark-tile.png');
@@ -120,6 +128,7 @@
         #searchform {
             #s {
                 padding: 30px 0 30px 35px;
+                height: 94px;
             }
             #searchsubmit {
                 height: 94px;
@@ -130,7 +139,6 @@
 
     }
 
-
 }
 
 
@@ -139,7 +147,7 @@
 /* Small Devices, Tablets */
 
 @media only screen and (max-width : 767px) {
-    .site-brand {
+    .site-brand.home  {
         .elment {
             width: 100%;
             padding: 40px;
@@ -147,11 +155,26 @@
         }
         .uw-hero-image {
             display: block;
+            height: auto;
+            padding: 90px 20px 50px;
+            h1 {
+                font-size: 55px;
+            }
+        }
+        .uw-body.container {
+            background-color: #e8e3d3;
+        }
+        .uw-body-copy {
+            text-align: center;
+            h2 {
+                position: static;
+                margin-left: 0;
+            }
         }
     }
 }
 @media only screen and (min-width : 768px) and (max-width : 991px) { 
-    .site-brand {
+    .site-brand.home  {
         .uw-body.container {
             background-color: transparent;
         }
@@ -159,22 +182,21 @@
             width: 46%;
             margin: 37px 2% -15px 2%;
         }
-        &.home .uw-content {
+        .uw-content {
             margin: 0;        
         }
     }
 }
 @media only screen and (min-width : 992px) {
-    .site-brand {
+    .site-brand.home  {
         .uw-body-copy {
             h2  {
-
                 &:after,
                 &:before {
                     position: absolute;
                     top: 20px;
                     height: 1px; 
-                    width: 478px;
+                    width: 380px;
                     content: "";
                     background-color: white;
                 }
@@ -205,6 +227,14 @@
             .uw-hero-image {
                 p { 
                     width: 70%;
+                }
+            }
+            .uw-body-copy {
+                h2 {
+                    &:after,
+                    &:before {
+                        width: 478px;
+                    }
                 }
             }
         }

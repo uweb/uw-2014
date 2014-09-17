@@ -15,16 +15,14 @@
         <?php wp_head(); ?>
 
         <!--[if lt IE 9]>
-            <script src="<?php bloginfo("template_directory"); ?>/js/libraries/ie/html5shiv.js" type="text/javascript"></script>
-            <script src="<?php bloginfo("template_directory"); ?>/js/libraries/ie/respond.js" type="text/javascript"></script>
+            <script src="<?php bloginfo("template_directory"); ?>/assets/ie/js/html5shiv.js" type="text/javascript"></script>
+            <script src="<?php bloginfo("template_directory"); ?>/assets/ie/js/respond.js" type="text/javascript"></script>
+            <link rel='stylesheet' href='<?php bloginfo("template_directory"); ?>/assets/ie/css/ie.css' type='text/css' media='all' />
         <![endif]-->
 
     </head>
     <body <?php body_class(); ?> >
 
-    <!--[if lt IE 7]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
 
 
     <?php get_template_part('thinstrip'); ?>

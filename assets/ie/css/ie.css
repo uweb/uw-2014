@@ -1,0 +1,28 @@
+.uw-thinstrip .uw-patch {
+	background-image: url(../img/wordmark.png);
+	background-repeat: no-repeat;
+}
+.uw-thinstrip .uw-wordmark {
+	background-image: url(../img/wordmark.png);
+	background-repeat: no-repeat;
+	background-position: -160px -32px;
+}
+.uw-thinstrip ul.uw-thin-links li.uw-search button {
+	background-image: url(../img/mag.png);
+	background-repeat: no-repeat;
+	border: none;
+}
+.uw-thinstrip ul.uw-thin-links li.uw-quicklinks button {
+	background-image: url(../img/quick.png);
+	background-position: right 0;
+	background-repeat: no-repeat;
+}
+.uw-thinstrip ul.uw-thin-links li.uw-quicklinks button:before {
+	display: none;
+}
+.uw-thinstrip ul.uw-thin-links li a {
+	background: url(../img/slash.png) right 11px no-repeat;
+}
+.uw-search-bar-container a.search {
+	background-image: url(../img/search.png);
+}
