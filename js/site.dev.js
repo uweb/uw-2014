@@ -8746,13 +8746,13 @@ UW.Search = Backbone.View.extend({
                     this.$more.find('a').focus();
                 }
                 else {
-                    this.$searchbar.find('input[type="radio"]:checked').focus();
+                    this.$searchbar.find('input[value=' + this.searchFeature + ']').focus();
                 }
             }
         }
         else if ($target.is(this.$more.find('a')) && event.keyCode == 9){
             event.preventDefault();
-            this.$searchbar.find('input[type="radio"]:checked').focus();
+            this.$searchbar.find('input[value=' + this.searchFeature + ']').focus();
         }
     }
   },
