@@ -10,24 +10,27 @@ class UW_Filters
 
   function __construct()
   {
-
     // Custom UW Filters
     add_filter( 'italics', array( $this, 'italicize') );
     add_filter( 'abbreviation', array( $this, 'abbreviate') );
 
     // Global filters
-    // Allow shortcodes in text widgets
+    // Allow shortcodes in text widgets and excerpts
     add_filter( 'widget_text', 'do_shortcode' );
-    if ( is_multisite() ) 
-    {
-      // Add the site title to the body class
-      add_filter( 'body_class', array( $this, 'add_site_title_body_class' ) );
-    }
+    add_filter( 'the_excerpt', 'do_shortcode' );
+
     // Add a better named template class to the
     add_filter( 'body_class', array( $this, 'better_template_name_body_class' ) );
 
     // Filters the category widget dropdown menu
     add_filter( 'widget_categories_dropdown_args', array( $this, 'custom_widget_classes' ) );
+
+    // Multisite filters
+    if ( is_multisite() )
+    {
+      // Add the site title to the body class
+      add_filter( 'body_class', array( $this, 'add_site_title_body_class' ) );
+    }
 
   }
 
