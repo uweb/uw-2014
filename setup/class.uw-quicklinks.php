@@ -9,7 +9,6 @@ class UW_QuickLinks
 
   const NAME         = 'Quick Links';
   const LOCATION     = 'quick-links';
-  const PREFIX       = 'QL';
   const ALLOWED_BLOG = 1;
 
   function __construct()
@@ -37,6 +36,11 @@ class UW_QuickLinks
     {
       $this->items = wp_get_nav_menu_items( $locations[ self::LOCATION ] );
     }
+      else if ( $location = wp_get_nav_menu_object( self::LOCATION ) )
+    {
+      $this->items = wp_get_nav_menu_items( $location->term_id );
+    }
+
 
     if ( $this->MULTISITE ) restore_current_blog();
 
