@@ -8662,12 +8662,13 @@ UW.Search = Backbone.View.extend({
   // Toggling the radio buttons changes the function of the search bar from searhing the UW, searching the current site and searching the directory.
   events :
   {
-    'keyup'                     : 'keyUpDispatch',
-    'blur #uw-search-bar'       : 'searchBarBlur',
+    'keydown'                   : 'keyDownDispatch',
     'click .result .more'       : 'showPersonInformation',
     'click .result .commonname' : 'showPersonInformation',
-    'mouseup label.radio'       : 'toggleSearchFeature',
+    'click label.radio'         : 'toggleSearchFeature',
+    'click input:radio'         : 'stopProp',
     'change select'             : 'toggleSearchFeature',
+    'keyup #uw-search-bar'      : 'searchDirectory',
     'click .search'             : 'submitForm',
     'submit form'               : 'submitSearch'
   },
@@ -8675,7 +8676,7 @@ UW.Search = Backbone.View.extend({
   // Initialize the view and bind events to to the DirectoryModel `results` attribute.
   initialize :function ( options )
   {
-    _.bindAll( this, 'toggleSearchBar', 'keyUpDispatch', 'searchBarBlur', 'searchDirectory', 'parse' )
+    _.bindAll( this, 'toggleSearchBar', 'keyDownDispatch', 'searchDirectory', 'parse' )
 
     this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
 
@@ -8714,7 +8715,7 @@ UW.Search = Backbone.View.extend({
     return false;
   },
 
-  keyUpDispatch: function(event)
+  keyDownDispatch: function(event)
   {
     if (event.keyCode == 27){
         if (this.$searchbar.hasClass('open')){
@@ -8724,18 +8725,27 @@ UW.Search = Backbone.View.extend({
     }
     else{
         var $target = $(event.target);
-        if ($target.is(':radio') && event.keyCode == 13){
-            $target.parent('label').trigger('mouseup');
+        if ($target.is(':radio')) {
+            if (event.keyCode == 13){
+                $target.parent('label').trigger('click');
+            }
+            else if (event.keyCode == 9) {
+                event.preventDefault();
+                this.$toggle.find('button').focus();
+            }
         }
         else if ($target.is('#uw-search-bar')){
-            this.searchDirectory(event);
+            if (event.keyCode == 9) {
+                event.preventDefault();
+                this.$searchbar.find('input[type="radio"]:checked').focus();
+            }
         }
     }
   },
 
-  searchBarBlur: function()
+  stopProp: function(event)
   {
-    this.$el.find('input:radio').first().focus();
+    event.stopPropagation();
   },
 
   // Set a property to the current radio button indicating which function the search bar is providing.
@@ -8744,8 +8754,7 @@ UW.Search = Backbone.View.extend({
     this.hideDirectory()
     var value = e.currentTarget.childNodes[1].value;
     this.searchFeature = value
-    this.$searchbar.find('#uw-search-bar').focus();
-
+    _.defer(function($searchbar) { $searchbar.find('#uw-search-bar').focus() }, this.$searchbar);
     if ( this.searchFeature === this.searchFeatures.directory )
       this.showDirectory()
     // this.mirrorSelectAndRadioElements()
