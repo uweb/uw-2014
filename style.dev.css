@@ -8109,6 +8109,9 @@ ul.uw-select li.inactive a {
   bottom: -24px;
   position: absolute;
 }
+.shortcode-blogroll h2 {
+  margin: 20px 0 0px;
+}
 .uw-thinstrip {
   height: 90px;
   width: 100%;
@@ -8167,7 +8170,7 @@ ul.uw-select li.inactive a {
   font-family: "Encode Sans Compressed", sans-serif;
   color: #fff;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
   position: relative;
   float: right;
   padding: 8px 25px 10px 0;
@@ -8251,10 +8254,6 @@ ul.uw-select li.inactive a {
   display: block;
   top: 10px;
   right: 11px;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
 }
 .uw-thinstrip ul.uw-thin-links li.uw-quicklinks button:before {
   position: absolute;
@@ -9703,6 +9702,12 @@ a.uw-btn.btn-gold:after {
   font-size: .8em;
   margin-top: 15px;
 }
+@media only screen and (max-width: 767px) {
+  .uw-footer .footer-wordmark {
+    background-position: 25px -338px;
+    background-size: 690px;
+  }
+}
 @media only screen and (min-width: 993px) {
   .uw-footer:after {
     position: absolute;
@@ -9903,7 +9908,7 @@ a.uw-btn.btn-gold:after {
 .site-brand.home #uw-container div#uw-container-inner {
   background-color: #e8e3d3;
 }
-.site-brand .uw-body-copy h2 {
+.site-brand.home .uw-body-copy h2 {
   color: #fff;
   text-transform: uppercase;
   font-weight: 900;
@@ -10011,6 +10016,11 @@ a.uw-btn.btn-gold:after {
     width: 100%;
     padding: 40px;
     float: none;
+    height: auto;
+  }
+  .site-brand.home .elment a {
+    margin: 0;
+    padding: 100px 0 35px;
   }
   .site-brand.home .uw-hero-image {
     display: block;
@@ -10029,6 +10039,28 @@ a.uw-btn.btn-gold:after {
   .site-brand.home .uw-body-copy h2 {
     position: static;
     margin-left: 0;
+  }
+  .site-brand.home .search-box {
+    padding: 20px 0;
+  }
+  .site-brand.home .search-box #searchform #s {
+    padding: 15px 0 15px 15px;
+    height: 35px;
+    height: 51px;
+  }
+  .site-brand.home .search-box #searchform #searchsubmit {
+    height: 51px;
+    width: 51px;
+    -webkit-background-size: 20px;
+    -moz-background-size: 20px;
+    -o-background-size: 20px;
+    background-size: 20px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
