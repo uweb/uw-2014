@@ -18,8 +18,11 @@ class UW_Filters
     // Global filters
     // Allow shortcodes in text widgets
     add_filter( 'widget_text', 'do_shortcode' );
-    // Add the site title to the body class
-    add_filter( 'body_class', array( $this, 'add_site_title_body_class' ) );
+    if ( is_multisite() ) 
+    {
+      // Add the site title to the body class
+      add_filter( 'body_class', array( $this, 'add_site_title_body_class' ) );
+    }
     // Add a better named template class to the
     add_filter( 'body_class', array( $this, 'better_template_name_body_class' ) );
 
