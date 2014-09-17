@@ -78,8 +78,7 @@ UW.QuickLinks = Backbone.View.extend({
 
     add_events: function () {
         $('#uw-container-inner').on( {
-            'mouseover': this.close_quicklinks,
-            'touchstart': this.close_quicklinks
+            'click': this.close_quicklinks,
         });
         this.$links.on( {'keyup': this.close_quicklinks});
         var self = this;

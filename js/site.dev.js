@@ -8982,8 +8982,7 @@ UW.QuickLinks = Backbone.View.extend({
 
     add_events: function () {
         $('#uw-container-inner').on( {
-            'mouseover': this.close_quicklinks,
-            'touchstart': this.close_quicklinks
+            'click': this.close_quicklinks,
         });
         this.$links.on( {'keyup': this.close_quicklinks});
         var self = this;
@@ -9067,7 +9066,8 @@ UW.QuickLinks.Collection = Backbone.Collection.extend({
     //     {title: 'UW Today', url: 'http://uw.edu/news', classes: ['icon-uwtoday']},
     //    ],
 
-});;// ### UW Slideshow
+});
+;// ### UW Slideshow
 
 // This function creates a UW Slideshow.
 // For usage please refer to the [UW Web Components Slideshow](http://uw.edu/brand/web/#slideshow)
