@@ -20,7 +20,6 @@ class UW
         require_once('class.uw-scripts.php');
         require_once('class.uw-styles.php');
         require_once('class.uw-dropdowns.php');
-        require_once('class.menu_item.php');
         require_once('class.images.php');
         require_once('class.squish_bugs.php');
         require_once('class.filters.php');

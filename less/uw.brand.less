@@ -1,0 +1,242 @@
+.site-brand {
+        &.home {
+            .uw-hero-image {
+                height: 595px;
+                padding: 80px 0 0 0;
+                h1 {
+                font-family: @font-family-headline;
+                font-weight: 900;
+                line-height: 1;
+                font-size: 95px;
+                text-transform: uppercase;
+                color: white;
+                text-shadow: 2px 2px 2px #000;
+                  a {
+                      color: white;
+                  }
+                }
+                p {
+                    color: white;
+                    line-height: 1.55;
+                    -webkit-font-smoothing: auto;
+                }
+            }
+
+        .uw-site-title {
+            display: none;
+        }
+        .uw-content {
+            margin-top: -50px;
+            background-color: @ulralightgold;
+        }
+        #uw-container div#uw-container-inner {
+            background-color: @ulralightgold;
+        }
+    }
+    .uw-body-copy {
+        h2  {
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 900;
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 0;
+            background-color: @purple;
+            display: inline-block;            
+            position: absolute;
+            left: 50%;
+            margin-left: -60px;
+            z-index: 1;
+        }
+    }
+    .uw-body {
+
+    }
+
+    // Boxes
+
+    .elment {
+        float: left;
+        width: 23.5%;
+        margin: 37px .75% -15px .75%;
+        text-align: center;
+        height: 260px;
+        background-color: white;
+        &:hover {
+            .scale(1.05);
+            .transition(all 0.1s ease);
+        }
+
+        a {
+            font-family: @font-family-headline;
+            color: @purple;
+            display: block;
+            font-weight: 900;
+            font-size: 28px;
+            line-height: 1;
+            margin: 20px 0 10px;
+            padding: 100px 40px 35px;
+            background: url('assets/svg/brand-site/pic.svg') center 29px no-repeat;
+            &:hover {
+                color: @lightgold;
+            }
+        }
+        &.element-fonts a {
+            background: url('assets/svg/brand-site/fonts.svg') center 29px no-repeat;
+        }
+        &.element-editorial a {
+            background: url('assets/svg/brand-site/pencil.svg') center 29px no-repeat;
+        }
+        &.element-web a {
+            background: url('assets/svg/brand-site/template.svg') center 29px no-repeat;
+        }
+        &.element-video a {
+            background: url('assets/svg/brand-site/video.svg') center 29px no-repeat;
+        }
+        &.element-uncategorized a {
+            background: url('assets/svg/brand-site/print.svg') center 29px no-repeat;
+        }
+        &.element-colors a {
+            background: url('assets/svg/brand-site/colors.svg') center 29px no-repeat;
+        }
+        &.element-social-media a {
+            background: url('assets/svg/brand-site/social-media.svg') center 29px no-repeat;
+        }
+        p {
+            line-height: 1.5;
+            margin-top: 12px;
+            font-family: @font-family-base;
+        }
+    }
+
+
+    .search-box {
+        padding: 120px 0;
+        background-color: white;
+        position: relative;
+        border-top: 5px solid @lightgold;
+        &:before {
+            content: "";
+            background: url('assets/images/stripes-dark-tile.png');
+            position: absolute; 
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity: .4;
+        }
+        #searchform {
+            #s {
+                padding: 30px 0 30px 35px;
+                height: 94px;
+            }
+            #searchsubmit {
+                height: 94px;
+                width: 95px;
+                .background-size(30px);
+            }
+        } 
+
+    }
+
+}
+
+
+
+
+/* Small Devices, Tablets */
+
+@media only screen and (max-width : 767px) {
+    .site-brand.home  {
+        .elment {
+            width: 100%;
+            padding: 40px;
+            float: none;
+        }
+        .uw-hero-image {
+            display: block;
+            height: auto;
+            padding: 90px 20px 50px;
+            h1 {
+                font-size: 55px;
+            }
+        }
+        .uw-body.container {
+            background-color: #e8e3d3;
+        }
+        .uw-body-copy {
+            text-align: center;
+            h2 {
+                position: static;
+                margin-left: 0;
+            }
+        }
+    }
+}
+@media only screen and (min-width : 768px) and (max-width : 991px) { 
+    .site-brand.home  {
+        .uw-body.container {
+            background-color: transparent;
+        }
+        .elment {
+            width: 46%;
+            margin: 37px 2% -15px 2%;
+        }
+        .uw-content {
+            margin: 0;        
+        }
+    }
+}
+@media only screen and (min-width : 992px) {
+    .site-brand.home  {
+        .uw-body-copy {
+            h2  {
+                &:after,
+                &:before {
+                    position: absolute;
+                    top: 20px;
+                    height: 1px; 
+                    width: 380px;
+                    content: "";
+                    background-color: white;
+                }
+                &:after {
+                   right: 140px;
+                }
+                &:before {
+                   left: 140px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width : 992px) and (max-width : 1200px) {
+    .site-brand {
+        &.home {
+            .uw-hero-image {
+                p { 
+                    width: 50%;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width : 1201px) {
+    .site-brand {
+        &.home {
+            .uw-hero-image {
+                p { 
+                    width: 70%;
+                }
+            }
+            .uw-body-copy {
+                h2 {
+                    &:after,
+                    &:before {
+                        width: 478px;
+                    }
+                }
+            }
+        }
+    }
+}

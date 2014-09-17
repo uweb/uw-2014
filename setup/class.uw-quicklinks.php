@@ -40,20 +40,21 @@ class UW_QuickLinks
 
     if ( $this->MULTISITE ) restore_current_blog();
 
-    wp_send_json( $this->parse_menu( $info ) );
+    wp_send_json( $this->parse_menu( $info ) ) ;
   }
 
   function parse_menu()
   {
     if ( $this->items )
-      foreach( $this->items as $item )
+      foreach( $this->items as $index=>$item )
       {
         // Only keep the necessary keys of the $item
         $item = array_intersect_key( (array) $item , array_fill_keys( array('ID', 'title', 'url', 'classes', 'menu_item_parent'), null ) );
-        if ( ! $menu[ self::PREFIX . $item['menu_item_parent'] ] )
-          $menu[ self::PREFIX . $item['ID'] ] = $item;
-        else
-          $menu[ self::PREFIX . $item['menu_item_parent'] ]['children'][] = $item;
+
+        if ( ! $item['classes'][0] ) $item['classes'] = false;
+
+        $menu[] = $item;
+
       }
 
     return $menu ? $menu : array();
