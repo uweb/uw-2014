@@ -9350,9 +9350,7 @@ ul.uw-mobile-menu ul {
   font-size: 14px;
 }
 @media only screen and (max-width: 1400px) {
-  .alignleft,
-  .alignnone {
-    float: left;
+  .alignleft {
     margin: 20px 50px 50px 0px;
   }
   .alignleft {
