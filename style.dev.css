@@ -9889,6 +9889,9 @@ a.uw-btn.btn-gold:after {
   font-family: "Encode Sans Compressed", sans-serif;
   font-size: 20px;
 }
+.widget_categories a:hover {
+  background-color: #ddd;
+}
 .site-admissions .tile {
   background-color: #F3F2EC;
   text-align: center;
