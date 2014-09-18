@@ -8643,6 +8643,7 @@ ul.uw-select li.inactive a {
   height: 80px;
   width: 100%;
   content: "";
+  opacity: .4;
   background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.8))) 0 0 no-repeat;
 }
 .no-uw-hero-image {
@@ -9610,6 +9611,7 @@ a.uw-btn.btn-gold:after {
   background-color: #4b2e83;
   border-top: 7px solid #d1d1d1;
   text-align: center;
+  position: relative;
 }
 .uw-footer .footer-wordmark {
   display: inline-block;
@@ -9869,6 +9871,28 @@ a.uw-btn.btn-gold:after {
 .pic-text-widget img {
   width: 100%;
   height: auto;
+}
+.widget_categories h2 {
+  color: #fff;
+  padding: 10px 20px;
+  background-color: #4b2e83;
+  margin: 0;
+}
+.widget_categories ul {
+  padding: 0;
+  list-style: none;
+}
+.widget_categories a {
+  color: #484848;
+  background-color: #F1F1F1;
+  display: block;
+  border-bottom: 1px solid #fff;
+  padding: 10px 20px;
+  font-family: "Encode Sans Compressed", sans-serif;
+  font-size: 20px;
+}
+.widget_categories a:hover {
+  background-color: #ddd;
 }
 .site-admissions .tile {
   background-color: #F3F2EC;
