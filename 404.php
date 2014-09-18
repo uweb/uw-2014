@@ -9,7 +9,8 @@
     }
 </style>
 
-        <div class="uw-hero-image"<?php if (!empty(get_header_image())){ ?> style="background-image:url('<?= get_header_image() ?>');"<?php } ?>></div>
+        <?php $header_image = get_header_image();?>
+        <div class="uw-hero-image"<?php if (!empty($header_image)){ ?> style="background-image:url('<?= $header_image ?>');"<?php } ?>></div>
 
         </div>
         <div role='main' class='container uw-body'>
