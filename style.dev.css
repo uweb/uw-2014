@@ -8643,6 +8643,7 @@ ul.uw-select li.inactive a {
   height: 80px;
   width: 100%;
   content: "";
+  opacity: .4;
   background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.8))) 0 0 no-repeat;
 }
 .no-uw-hero-image {
@@ -9610,6 +9611,7 @@ a.uw-btn.btn-gold:after {
   background-color: #4b2e83;
   border-top: 7px solid #d1d1d1;
   text-align: center;
+  position: relative;
 }
 .uw-footer .footer-wordmark {
   display: inline-block;
