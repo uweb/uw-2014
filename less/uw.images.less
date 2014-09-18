@@ -2,10 +2,10 @@
 
 .alignleft,
 .alignnone {
-	float: left;
-	margin: 20px 50px 50px -130px;
+	margin: 20px 50px 50px 0;
 	&.size-large {
-		width:305px !important;
+
+		// width:305px !important;
 		height: auto;
 	}
 	&.size-Full,
@@ -20,6 +20,9 @@
 	&.size-small {
 
 	}
+}
+.alignleft {
+	float: left;
 }
 .alignright {
 	float: right;
@@ -45,9 +48,7 @@
 
 @media only screen and (max-width : 1400px) {
 
-	.alignleft,
-	.alignnone {
-		float: left;
+	.alignleft {
 		margin: 20px 50px 50px 0px;
 		&.size-large {
 	

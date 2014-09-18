@@ -9319,12 +9319,10 @@ ul.uw-mobile-menu ul {
 }
 .alignleft,
 .alignnone {
-  float: left;
-  margin: 20px 50px 50px -130px;
+  margin: 20px 50px 50px 0;
 }
 .alignleft.size-large,
 .alignnone.size-large {
-  width: 305px !important;
   height: auto;
 }
 .alignleft.size-Full,
@@ -9334,6 +9332,9 @@ ul.uw-mobile-menu ul {
   margin-left: 0;
   width: 100% !important;
   height: auto;
+}
+.alignleft {
+  float: left;
 }
 .alignright {
   float: right;
@@ -9351,9 +9352,7 @@ ul.uw-mobile-menu ul {
   font-size: 14px;
 }
 @media only screen and (max-width: 1400px) {
-  .alignleft,
-  .alignnone {
-    float: left;
+  .alignleft {
     margin: 20px 50px 50px 0px;
   }
   .alignleft {
