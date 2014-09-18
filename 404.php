@@ -9,7 +9,7 @@
     }
 </style>
 
-        <div class="uw-hero-image">
+        <div class="uw-hero-image"<?php if (!empty(get_header_image())){ ?> style="background-image:url('<?= get_header_image() ?>');"<?php } ?>></div>
 
         </div>
         <div role='main' class='container uw-body'>
