@@ -9319,7 +9319,6 @@ ul.uw-mobile-menu ul {
 }
 .alignleft,
 .alignnone {
-  float: left;
   margin: 20px 50px 50px 0;
 }
 .alignleft.size-large,
@@ -9333,6 +9332,9 @@ ul.uw-mobile-menu ul {
   margin-left: 0;
   width: 100% !important;
   height: auto;
+}
+.alignleft {
+  float: left;
 }
 .alignright {
   float: right;
