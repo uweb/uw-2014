@@ -8747,7 +8747,7 @@ hr {
 }
 .intro {
   font-family: "Encode Sans Compressed", sans-serif;
-  font-size: 21px;
+  font-size: 25px;
   font-weight: 400;
   line-height: 1.5;
 }
@@ -9317,20 +9317,10 @@ ul.uw-mobile-menu ul {
     display: none;
   }
 }
-.alignleft,
-.alignnone {
+.alignleft {
   margin: 20px 50px 50px 0;
 }
-.alignleft.size-large,
-.alignnone.size-large {
-  height: auto;
-}
-.alignleft.size-Full,
-.alignnone.size-Full,
-.alignleft.size-full,
-.alignnone.size-full {
-  margin-left: 0;
-  width: 100% !important;
+.alignleft.size-large {
   height: auto;
 }
 .alignleft {
@@ -9614,7 +9604,7 @@ a.uw-btn.btn-gold:after {
 }
 .uw-footer .footer-wordmark {
   display: inline-block;
-  padding: 1px 119px;
+  width: 335px;
   background: url(assets/svg/uw-sprite.svg) no-repeat 0 -434px transparent;
   text-indent: -9999px;
   overflow: hidden;
