@@ -115,7 +115,6 @@ class UW_Filters
    */
   function excerpt_more_override()
   {
-    global $post;
-    return '<a class="uw-btn btn-go btn-sm" href="#">Read more</a>';
+    return '<a class="uw-btn btn-go btn-sm" href="' . get_permalink() . '">Read more</a>';
   }
 }
