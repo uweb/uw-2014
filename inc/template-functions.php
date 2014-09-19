@@ -205,3 +205,18 @@ if ( ! function_exists( 'is_pdf' ) ):
   }
 
 endif;
+
+if ( ! function_exists( 'uw_get_sticky_posts' ))  :
+   function uw_get_sticky_posts( $args = null )
+  {
+    $stickyposts = get_option( 'sticky_posts' );
+
+    $defaults = array( 'post__in' => $stickyposts );
+
+    $options = wp_parse_args( $args, $defaults );
+
+    return get_posts(  $options );
+  }
+endif;
+
+
