@@ -21,15 +21,15 @@
         </svg>
 
       </button></li>
-        <li><a href="#">Alumni</a></li>
-        <li><a href="#">Faculty & Staff</a></li>
-        <li><a href="#">Parents</a></li>
-    	<li><a href="#">Students</a></li>
+        <li><a href="http://uw.edu/alumni" title="Alumni">Alumni</a></li>
+        <li><a href="http://uw.edu/facultystaff" title="Faculty & Staff">Faculty & Staff</a></li>
+        <li><a href="http://uw.edu/parents" title="Parents">Parents</a></li>
+   	   <li><a href="https://uw.edu/students" title="Students">Students</a></li>
       </ul>
   </nav>
 
   <div class="container">
-    <a href="http://uw.edu" class="uw-patch">Home</a>
-    <a href="http://uw.edu" class="uw-wordmark">Home</a>
+    <a href="http://uw.edu" title="University of Washington Home" class="uw-patch">Home</a>
+    <a href="http://uw.edu" title="University of Washington Home"class="uw-wordmark">Home</a>
   </div>
 </header>

@@ -127,6 +127,10 @@ if( ! function_exists('get_uw_breadcrumbs') ) :
     $html = '<li><a href="http://uw.edu" title="University of Washington">Home</a></li>';
     $html .= '<li' . (is_front_page() ? ' class="current"' : '') . '><a href="' . get_bloginfo('url') . '" title="' . get_bloginfo('title') . '">' . get_bloginfo('title') . '</a><li>';
 
+    if ( is_search() )
+    {
+        $html .=  '<li class="current"><a href="'. get_search_link( get_search_query() ) .'" title="'. esc_attr( get_search_query() ) .'">Search results for ' . get_search_query() . '</a>';
+    } else
     // If the current view is a post type other than page or attachment then the breadcrumbs will be taxonomies.
     if( is_category() || is_single() )
     {
@@ -201,3 +205,18 @@ if ( ! function_exists( 'is_pdf' ) ):
   }
 
 endif;
+
+if ( ! function_exists( 'uw_get_sticky_posts' ))  :
+   function uw_get_sticky_posts( $args = null )
+  {
+    $stickyposts = get_option( 'sticky_posts' );
+
+    $defaults = array( 'post__in' => $stickyposts );
+
+    $options = wp_parse_args( $args, $defaults );
+
+    return get_posts(  $options );
+  }
+endif;
+
+
