@@ -29,7 +29,7 @@
   </nav>
 
   <div class="container">
-    <a href="http://uw.edu" class="uw-patch">Home</a>
-    <a href="http://uw.edu" class="uw-wordmark">Home</a>
+    <a href="http://uw.edu" title="University of Washington Home" class="uw-patch">Home</a>
+    <a href="http://uw.edu" title="University of Washington Home"class="uw-wordmark">Home</a>
   </div>
 </header>
