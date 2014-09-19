@@ -129,6 +129,11 @@ UW.Dropdowns = Backbone.View.extend({
         window.location.href = $(e.currentTarget).attr('href')
         return false;
 
+      case this.keys.esc:
+        this.currentSubMenu.attr('aria-expanded', 'false' )
+          .hide().parent().children('a').first().focus();
+        return false;
+
       default:
         var chr = String.fromCharCode(e.which)
         , exists = false;
