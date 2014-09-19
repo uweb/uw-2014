@@ -25,6 +25,9 @@ class UW_Filters
     // Filters the category widget dropdown menu
     add_filter( 'widget_categories_dropdown_args', array( $this, 'custom_widget_classes' ) );
 
+    // Modify the more text link
+    add_filter('excerpt_more', array($this, 'excerpt_more_override'));
+
     // Multisite filters
     if ( is_multisite() )
     {
@@ -107,4 +110,12 @@ class UW_Filters
   }
 
 
+  /*
+   * Adds a more link button to the end of the excerpt
+   */
+  function excerpt_more_override()
+  {
+    global $post;
+    return '<a class="uw-btn btn-go btn-sm" href="#">Read more</a>';
+  }
 }
