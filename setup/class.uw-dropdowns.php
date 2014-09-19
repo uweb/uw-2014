@@ -96,18 +96,18 @@ class UW_Dropdowns
         $this->add_menu_item( 'Student Life', 'http://studentlife.washington.edu/' );
         $this->add_menu_item( 'Housing and Dining', 'http://www.hfs.washington.edu/', $parent = 'Student Life' );
         $this->add_menu_item( 'Student Organizations', 'http://depts.washington.edu/sao/', $parent = 'Student Life' );
-        $this->add_menu_item( 'Recreational Sports', 'http://www.uw.edu/ima', $parent = 'Student Life' );
-        $this->add_menu_item( 'Safety', 'http://www.uw.edu/safety', $parent = 'Student Life' );
+        $this->add_menu_item( 'Recreational Sports', 'http://uw.edu/ima', $parent = 'Student Life' );
+        $this->add_menu_item( 'Safety', 'http://uw.edu/safety', $parent = 'Student Life' );
         $this->add_menu_item( 'Transportation', 'http://www.washington.edu/facilities/transportation/', $parent = 'Student Life' );
 
         // The default News dropdown.
         $this->add_menu_item( 'News', 'http://uw.edu/news/' );
-        $this->add_menu_item( 'Campus Events', 'http://www.uw.edu/calendar', $parent = 'News' );
+        $this->add_menu_item( 'Campus Events', 'http://uw.edu/calendar', $parent = 'News' );
         $this->add_menu_item( 'Arts UW', 'http://artsuw.org', $parent = 'News' );
         $this->add_menu_item( 'Husky Sports', 'http://gohuskies.com', $parent = 'News' );
 
         // The default Support the UW dropdown.
-        $this->add_menu_item( 'Support the UW', 'http://www.uw.edu/giving' );
+        $this->add_menu_item( 'Support the UW', 'http:/uw.edu/giving' );
         $this->add_menu_item( 'Donate', 'https://www.washington.edu/giving/make-a-gift/', $parent = 'Support the UW' );
         $this->add_menu_item( 'Volunteer', 'http://www.washington.edu/alumni/act/volunteer.html', $parent = 'Support the UW' );
 
