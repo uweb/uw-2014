@@ -8526,6 +8526,7 @@ UW.elements = {
 
   accordion  : '.uw-accordion',
   dropdowns  : '#dawgdrops',
+  images : 'a > img',
   mobilemenu : '.uw-mobile-menu-toggle',
   radio      : ':radio',
   search     : '.uw-search',
@@ -8557,6 +8558,7 @@ UW.initialize = function( $ )
   UW.mobilemenu = _.map( $( UW.elements.mobilemenu ),     function( element ) { return new UW.MobileMenu({ el : element }) } )
   UW.quicklinks = _.map( $( UW.elements.quicklinks ),    function( element ) { return new UW.QuickLinks( { el : element, url : UW.sources.quicklinks }) } )
   UW.search     = _.map( $( UW.elements.search ),    function( element ) { return new UW.Search( { el : element, model : new UW.Search.DirectoryModel( {url: UW.sources.search}) }) } )
+  UW.images   = _.map( $( UW.elements.images ),    function( element ) { return new UW.Image({ el : element }) } )
 
   // UW Modules
   UW.slideshows = _.map( $( UW.elements.slideshow ), function( element ) { return new UW.Slideshow( { el : element }) } )

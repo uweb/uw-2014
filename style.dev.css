@@ -9339,6 +9339,29 @@ ul.uw-mobile-menu ul {
     float: left;
   }
 }
+.uw-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+}
+.uw-overlay div.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.uw-overlay:before {
+  content: " ";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  opacity: 0.8;
+}
 .checkbox,
 .radio {
   margin-bottom: 12px;
