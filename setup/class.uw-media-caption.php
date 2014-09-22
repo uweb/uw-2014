@@ -1,7 +1,8 @@
 <?php
-/**
- * Adds a media caption to images in the media library
- */
+
+//
+// Adds a media caption to images in the media library
+//
 
 class UW_Media_Caption
 {
@@ -11,9 +12,9 @@ class UW_Media_Caption
     add_filter( 'img_caption_shortcode', array( $this, 'add_media_credit_to_caption_shortcode_filter'), 10, 3 );
   }
 
-  /**
-   * Override the caption html - original in wp-includes/media.php
-   */
+  //
+  // Override the caption html - original in wp-includes/media.php
+  //
   function add_media_credit_to_caption_shortcode_filter($val, $attr, $content = null)
   {
     extract(shortcode_atts(array(
@@ -22,7 +23,7 @@ class UW_Media_Caption
       'width'	=> '',
       'caption' => ''
     ), $attr));
-    
+
     if ( 1 > (int) $width || empty($caption) )
       return $content;
 
@@ -36,6 +37,7 @@ class UW_Media_Caption
 
     return '<div ' . $id . 'class="wp-caption ' . esc_attr($align) . '" style="width: ' . (10 + (int) $width) . 'px">'
     . do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . $credit . '</p></div>';
+
   }
 
 }

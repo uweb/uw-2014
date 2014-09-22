@@ -11,6 +11,7 @@ module.exports = function(grunt) {
           "js/libraries/jquery.easing.js",
           "js/libraries/jquery.tinyscrollbar.js",
           "js/libraries/video.dev.js",
+          "js/libraries/imagesloaded.pkgd.js",
         ],
         theme : [
           "js/uw.core.js",
@@ -26,7 +27,7 @@ module.exports = function(grunt) {
           "js/uw.mobile-menu.js",
           "js/uw.accordion.js",
           "js/uw.select.js",
-          "js/uw.image.js",
+          "js/uw.images.js",
           "js/uw.player.js",
           "js/uw.social.js",
         ],
