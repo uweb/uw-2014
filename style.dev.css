@@ -8270,7 +8270,7 @@ ul.uw-select li.inactive a {
 .uw-thinstrip ul.uw-thin-links li button {
   border: none;
 }
-.searching .uw-thinstrip ul.uw-thin-links li.uw-search button:hover svg {
+.search-open .uw-thinstrip ul.uw-thin-links li.uw-search button svg {
   top: -20px;
   left: 10px;
 }
@@ -8803,24 +8803,15 @@ hr {
   text-decoration: none;
 }
 .info-box {
-  width: 250px;
+  width: 220px;
   float: left;
   margin-right: 70px;
-  margin-left: -80px;
-  margin-bottom: 80px;
-  margin-top: 40px;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-left: -60px;
+  padding-top: 60px;
   position: relative;
-}
-.info-box:before,
-.info-box:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: -10px;
-  height: 1px;
-  display: block;
-  width: 80px;
-  background-color: #cccccc;
+  background: url(assets/svg/uw-sprite.svg) no-repeat -468px -368px transparent;
 }
 .info-box:after {
   top: auto;
@@ -8860,10 +8851,7 @@ hr {
 }
 @media only screen and (max-width: 1400px) {
   .info-box {
-    width: 250px;
-    float: right;
-    margin-right: 0;
-    margin-left: 100px;
+    margin-left: 0;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -9232,6 +9220,7 @@ ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li.current
 ul.uw-mobile-menu li.pagenav ul li.current_page_ancestor ul.children li.current_page_item a {
   border-left: 10px solid #b7a57a;
   padding-left: 20px;
+  background-color: #ddd;
   border-bottom: none;
 }
 ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li.current_page_item a a,
@@ -10044,7 +10033,8 @@ a.uw-btn.btn-gold:after {
   padding: 11px 0 11px 30px;
   color: #484848;
   border-bottom: 1px solid #ddd;
-  font-weight: bold;
+  font-family: "Encode Sans Compressed", sans-serif;
+  font-weight: 600;
 }
 .site-brand #brand-results a:hover {
   background-color: #fafafa;
