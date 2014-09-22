@@ -8640,6 +8640,7 @@ ul.uw-select li.inactive a {
 .no-uw-hero-image:before {
   position: absolute;
   bottom: 0;
+  left: 0;
   height: 80px;
   width: 100%;
   content: "";
@@ -10069,7 +10070,7 @@ a.uw-btn.btn-gold:after {
     padding: 90px 20px 50px;
   }
   .site-brand.home .uw-hero-image h1 {
-    font-size: 55px;
+    font-size: 45px;
   }
   .site-brand.home .uw-body.container {
     background-color: #e8e3d3;
