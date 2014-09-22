@@ -43,7 +43,6 @@ UW.Image = Backbone.View.extend({
 
   remove : function()
   {
-    console.log('here')
     UW.$body.find( '.uw-overlay' ).remove()
     return false;
   },
