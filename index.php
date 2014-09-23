@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 
-<?php $header_image = get_header_image();?>
-<div class="uw-hero-image"<?php if (!empty($header_image)){ ?> style="background-image:url('<?= $header_image ?>');"<?php } ?>></div>
+<?php get_template_part( 'header', 'image' ); ?>
 
 <div class="container uw-body">
 

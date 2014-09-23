@@ -9417,6 +9417,7 @@ UW.VERSION = '0.1'
 ;// List out the classes that each component searches for
 UW.elements = {
 
+  alert : '.uw-thinstrip',
   accordion  : '.uw-accordion',
   dropdowns  : '#dawgdrops',
   images : 'a > img',
@@ -9465,6 +9466,8 @@ UW.initialize = function( $ )
   UW.radio      = _.map( $( UW.elements.radio ),     function( element ) { return new UW.Radio({ el : element }) } )
   UW.select     = _.map( $( UW.elements.select ),    function( element ) { return new UW.Select({ el : element }) } )
 
+  UW.alert = new UW.Alert({ after: UW.elements.alert, model: new UW.Alert.Model() });
+
   // todo: add to separate file
   $('table').addClass('table table-striped')
 
@@ -9475,7 +9478,75 @@ jQuery(document).ready( UW.initialize )
 
 // Basic UW Components
 // --------------
-;// ### UW Search
+;UW.Alert = Backbone.View.extend({
+
+  alert : '#uwalert-alert-message',
+
+  events : {
+    'click .close' : 'hide'
+  },
+
+  template : '<div id="uwalert-alert-message" class="<% _.each( categories, function( category ) { %> <%= category.slug %> <% }) %>"><div class="container"><span class="close">Close</span><h1><%= title %></h1><p><%= excerpt %><a class="more" href="http://emergency.uw.edu" title="<%= title %>">More info</a></p></div></div>',
+
+  initialize  : function( options )
+  {
+    _.bindAll( this, 'render', 'hide' )
+    this.options = _.extend( {}, options )
+    this.model.on( 'sync', this.render )
+  },
+
+  render : function()
+  {
+    if ( this.model.get('title'))
+     {
+      $(this.options.after).after( _.template( this.template, this.model.toJSON() ) )
+      this.setElement( $( this.alert ) )
+    }
+  },
+
+  hide : function()
+  {
+    this.$el.remove()
+  }
+
+
+
+})
+
+UW.Alert.Model = Backbone.Model.extend({
+
+  alerts :  [
+    'red-alert-urgent',
+    'orange-alert',
+    'steel-alert-fyis',
+  ],
+
+  data  : {
+    c : '?',
+    test : true,
+    number:1,
+    type:'post',
+    status:'publish',
+    dataType: 'json'
+  },
+
+  url : 'http://public-api.wordpress.com/rest/v1/sites/uwemergency.wordpress.com/posts/',
+
+  initialize : function()
+  {
+    this.fetch( { data : this.data })
+  },
+
+  parse: function(data)
+  {
+    var post = _.first( data.posts )
+    _.extend( post.categories, {alert: { slug : window.location.hash.replace('#','') } } )
+    if ( _.intersection( _.pluck(  post.categories, 'slug' ), this.alerts ).length || post.categories.alert.slug.indexOf( 'uwalert' ) !== -1 )
+      return post
+  }
+
+
+});;// ### UW Search
 
 // This function creates a UW Search
 // For usage please refer to the [UW Web Components Search](http://uw.edu/brand/web/#search)
