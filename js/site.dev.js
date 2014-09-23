@@ -9509,8 +9509,6 @@ jQuery(document).ready( UW.initialize )
     this.$el.remove()
   }
 
-
-
 })
 
 UW.Alert.Model = Backbone.Model.extend({
@@ -9530,7 +9528,7 @@ UW.Alert.Model = Backbone.Model.extend({
     dataType: 'json'
   },
 
-  url : 'http://public-api.wordpress.com/rest/v1/sites/uwemergency.wordpress.com/posts/',
+  url : Backbone.history.location.protocol + '//public-api.wordpress.com/rest/v1/sites/uwemergency.wordpress.com/posts/',
 
   initialize : function()
   {
@@ -9544,7 +9542,6 @@ UW.Alert.Model = Backbone.Model.extend({
     if ( _.intersection( _.pluck(  post.categories, 'slug' ), this.alerts ).length || post.categories.alert.slug.indexOf( 'uwalert' ) !== -1 )
       return post
   }
-
 
 });;// ### UW Search
 
