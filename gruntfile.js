@@ -16,6 +16,7 @@ module.exports = function(grunt) {
         theme : [
           "js/uw.core.js",
           "js/uw.init.js",
+          "js/uw.alert.js",
           "js/uw.search.js",
           "js/uw.quicklinks.js",
           "js/uw.slideshow.js",
