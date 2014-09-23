@@ -9735,6 +9735,15 @@ a.uw-btn.btn-gold:after {
   left: -99999px;
   top: -99999px;
 }
+a.screen-reader-shortcut {
+  position: absolute;
+  left: -99999px;
+  top: -99999px;
+}
+a.screen-reader-shortcut:focus {
+  top: 0px;
+  left: 0px;
+}
 /*==========  Non-Mobile First Method  ==========*/
 /* Large Devices, Wide Screens */
 /* Medium Devices, Desktops */

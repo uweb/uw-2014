@@ -6,3 +6,13 @@
         top: -99999px;
     }
 }
+a.screen-reader-shortcut {
+        position: absolute;
+        left: -99999px;
+        top: -99999px;
+        &:focus {
+            z-index: 2;
+            top: 0px;
+            left: 0px;
+        }
+}
