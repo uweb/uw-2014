@@ -2,7 +2,7 @@
         &.home {
             .uw-hero-image {
                 height: 595px;
-                padding: 80px 0 0 0;
+                padding: 30px 0 0 0;
                 h1 {
                 font-family: @font-family-headline;
                 font-weight: 900;
@@ -50,13 +50,22 @@
             }
         }
     }
-    .uw-body-copy {
-        h2  {
+    
 
+    // Dub slant
+
+    .udub-slant {
+        overflow: hidden;
+        display: block;
+        margin: 30px 0 25px 0;
+        span {
+          .skew(-25deg,0);
+          display:block;
+          height: 15px;
+          width: 290px;
+          background-color:white;
+          margin: 0 0 0 -5px;
         }
-    }
-    .uw-body {
-
     }
 
     // Boxes
@@ -162,6 +171,22 @@
         }
     }
 
+    .more{
+        text-align: center; 
+        a.uw-btn.btn-sm {
+            background-color: white;
+            margin: 40px 0 0 -50px;            
+            &:before {
+                .rotate(90deg);
+                width: 41px;
+                height: 45px;
+                top: -2px;
+                right: -44px;
+                background-position: -35px -408px;
+            }
+        }
+    }
+
 }
 
 
@@ -213,6 +238,13 @@
                     .background-size(20px);
                     .border-radius(0px);
                 }
+            }
+        }
+        .udub-slant {
+            margin: 10px 0 15px 0;
+            span {
+                height: 8px;
+                margin: 0 0 0 -145px;
             }
         }
     }

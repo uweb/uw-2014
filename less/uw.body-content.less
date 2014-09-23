@@ -80,25 +80,30 @@ hr {
 
 
 .info-box {
-	width: 220px;
-	float: left;
-	margin-right: 70px;
-	margin-bottom: 50px;
-	margin-top: 20px;
-	margin-left: -60px;
-	padding-top: 60px;
-	position: relative;
-	background: url(assets/svg/uw-sprite.svg) no-repeat -468px -368px transparent;
+width: 310px;
+float: left;
+margin-right: 50px;
+margin-bottom: 50px;
+margin-top: 20px;
+margin-left: -150px;
+padding: 40px 50px 30px 50px;
+.box-shadow(0px 1px 2px rgba(0, 0, 0, 0.2));
+position: relative;
+background: url(assets/svg/uw-sprite.svg) no-repeat -417px -390px transparent;
+	img {
+		max-width: 100%;
+		height: auto;
+	}
 	&:after {
 		top: auto;
 		bottom: -40px;
 	}
 	p, li, a {
 		font-size: 16px;
-		line-height: 27px;
+		line-height: 1.6;
 	}
-	h3 {
-		font-size: 22px;
+	h1, h2, h3, h4, h5 {
+		margin-top: 0;
 	}
 }
 
@@ -138,7 +143,7 @@ hr {
 
 @media only screen and (max-width : 1400px) {
 	.info-box {
-		margin-left: 0;
+		margin-left: -50px;
 	}
 }
 
