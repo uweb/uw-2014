@@ -9906,7 +9906,10 @@ UW.QuickLinks = Backbone.View.extend({
     },
 
     make_drawer: function () {
-        UW.$body.children().not('#wpadminbar').not('script').wrapAll('<div id="uw-container"><div id="uw-container-inner"></div></div>');
+        UW.$body.children().not('#wpadminbar').not('script')
+            .wrapAll('<div id="uw-container">')
+            .not('a.screen-reader-shortcut')
+            .wrapAll('<div id="uw-container-inner">');
         this.$container = $(this.container);
     },
 

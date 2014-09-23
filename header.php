@@ -23,7 +23,7 @@
     </head>
     <body <?php body_class(); ?> >
 
-
+    <a href='#main_content' class='screen-reader-shortcut' tabindex=1>Skip to main content</a>
 
     <?php get_template_part('thinstrip'); ?>
 
