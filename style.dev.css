@@ -992,7 +992,7 @@ h6,
 .h6 {
   font-family: "Encode Sans Compressed", sans-serif;
   font-weight: 800;
-  line-height: 1.4;
+  line-height: 1.3;
   color: inherit;
 }
 h1 small,
@@ -6998,7 +6998,7 @@ h6,
 .h6 {
   font-family: "Encode Sans Compressed", sans-serif;
   font-weight: 800;
-  line-height: 1.4;
+  line-height: 1.3;
   color: inherit;
 }
 h1 small,
@@ -8247,15 +8247,7 @@ ul.uw-select li.inactive a {
   overflow: hidden;
 }
 .uw-thinstrip ul.uw-thin-links li.uw-quicklinks button:after {
-  position: absolute;
-  content: "";
-  background: url(assets/svg/uw-sprite.svg) no-repeat -34px -388px;
-  background-size: 691px;
-  height: 25px;
-  width: 27px;
-  display: block;
-  top: 10px;
-  right: 11px;
+  display: none;
 }
 .uw-thinstrip ul.uw-thin-links li.uw-quicklinks button:before {
   position: absolute;
@@ -8268,12 +8260,20 @@ ul.uw-select li.inactive a {
   transform: skewX(-14deg);
   background: linear-gradient(to right, #2e2e2e 0, #686868 4%, #686868 100%);
 }
+.uw-thinstrip ul.uw-thin-links li.uw-quicklinks button svg {
+  position: absolute;
+  right: 12px;
+  top: 16px;
+}
 .uw-thinstrip ul.uw-thin-links li button {
   border: none;
 }
 .search-open .uw-thinstrip ul.uw-thin-links li.uw-search button svg {
   top: -20px;
   left: 10px;
+}
+.open .uw-thinstrip ul.uw-thin-links li.uw-quicklinks button svg {
+  top: -37px;
 }
 #uw-container.open .uw-quicklinks a {
   color: black;
@@ -9946,7 +9946,7 @@ a.screen-reader-shortcut:focus {
 }
 .site-brand.home .uw-hero-image {
   height: 595px;
-  padding: 30px 0 0 0;
+  padding: 60px 0 0 0;
 }
 .site-brand.home .uw-hero-image h1 {
   font-family: "Encode Sans Compressed", sans-serif;
@@ -9987,7 +9987,7 @@ a.screen-reader-shortcut:focus {
   display: inline-block;
   position: absolute;
   left: 50%;
-  margin-left: -60px;
+  margin-left: -73px;
   z-index: 1;
 }
 .site-brand .udub-slant {
@@ -10013,7 +10013,7 @@ a.screen-reader-shortcut:focus {
   width: 23.5%;
   margin: 37px 0.75% -15px 0.75%;
   text-align: center;
-  height: 260px;
+  height: 280px;
   background-color: white;
 }
 .site-brand .elment:hover {
@@ -10118,7 +10118,7 @@ a.screen-reader-shortcut:focus {
 }
 .site-brand .more a.uw-btn.btn-sm {
   background-color: white;
-  margin: 40px 0 0 -50px;
+  margin: 50px 0 0 -50px;
 }
 .site-brand .more a.uw-btn.btn-sm:before {
   -o-transform: rotate(90deg);
@@ -10209,15 +10209,15 @@ a.screen-reader-shortcut:focus {
     position: absolute;
     top: 20px;
     height: 1px;
-    width: 380px;
+    width: 375px;
     content: "";
     background-color: white;
   }
   .site-brand.home .uw-body-copy h2:after {
-    right: 140px;
+    right: 160px;
   }
   .site-brand.home .uw-body-copy h2:before {
-    left: 140px;
+    left: 160px;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
@@ -10231,7 +10231,7 @@ a.screen-reader-shortcut:focus {
   }
   .site-brand.home .uw-body-copy h2:after,
   .site-brand.home .uw-body-copy h2:before {
-    width: 478px;
+    width: 468px;
   }
 }
 #uwalert-alert-message h1 {
