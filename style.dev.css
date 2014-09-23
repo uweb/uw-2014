@@ -10171,3 +10171,24 @@ a.uw-btn.btn-gold:after {
     width: 478px;
   }
 }
+#uwalert-alert-message h1 {
+  color: white;
+}
+#uwalert-alert-message p {
+  color: white;
+}
+#uwalert-alert-message a.more {
+  color: #FDE048;
+}
+#uwalert-alert-message.uwalert-red,
+#uwalert-alert-message.red-alert-urgent {
+  background-color: #C61029;
+}
+#uwalert-alert-message.uwalert-orange,
+#uwalert-alert-message.orange-alert {
+  background-color: #ec7330;
+}
+#uwalert-alert-message.uwalert-steel,
+#uwalert-alert-message.steel-alert-fyis {
+  background-color: #597286;
+}
