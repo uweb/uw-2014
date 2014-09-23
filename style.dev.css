@@ -9741,8 +9741,15 @@ a.screen-reader-shortcut {
   top: -99999px;
 }
 a.screen-reader-shortcut:focus {
-  top: 0px;
-  left: 0px;
+  z-index: 2;
+  font-size: 14px;
+  font-weight: 700;
+  top: 6px;
+  left: 6px;
+  padding: 15px 23px 14px;
+  background-color: #f1f1f1;
+  color: #4b2e83;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 }
 /*==========  Non-Mobile First Method  ==========*/
 /* Large Devices, Wide Screens */
