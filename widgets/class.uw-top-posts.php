@@ -9,7 +9,7 @@ class UW_Widget_Top_Posts extends WP_Widget
   // Define constants for the widget id, title, description, number of items to fetch, maximum number of items to show.
   const ID    = 'uw-widget-top-posts';
   const TITLE = 'UW Top Posts';
-  const DESC  = 'A widget that shows top posts and most recent posts on your blog';
+  const DESC  = 'A widget that shows top posts on your blog';
   const ITEMS = 5;
   const FETCH = 20;
   const DAYS  = 14;
@@ -31,6 +31,7 @@ class UW_Widget_Top_Posts extends WP_Widget
   function widget( $args, $instance )
   {
     extract( $args );
+    extract( $instance );
 
     // The function `stats_get_csv` is provided by the Jetpack plugin.
     // This widget is not enabled if this function does not exist.
@@ -38,21 +39,20 @@ class UW_Widget_Top_Posts extends WP_Widget
     // The `stats_get_csv` functions also fetches pages, so we have to accommodate for them and remove them from the results
 
     $popular = $this->filterResults( stats_get_csv( 'postviews', array( 'days' => self::DAYS, 'limit' => self::FETCH ) ) );
-    $recent  =  wp_get_recent_posts( array( 'numberposts' => $instance['items'], 'post_status' => 'publish' ) , OBJECT );
+
+    // For development purposes, if there aren't any top posts then default to the latest posts.
+    if ( ! $popular || sizeof( $popular ) < $items  )
+      $popular =  wp_get_recent_posts( array( 'numberposts' => $items, 'post_status' => 'publish' ) , OBJECT );
+
+    $title = apply_filters( 'widget_title', $title );
 
     ?>
 
     <?php echo $before_widget; ?>
 
-    <ul id="news-tab-nav" data-tabs="toggle" tab-index="0">
+    <h1><?php echo $title; ?></h1>
 
-      <li class="selected"><a class="recent-popular-widget" href="#tab-popular" title="Most popular">Most Popular</a></li>
-
-      <li><a class="recent-popular-widget" href="#tab-recent" title="Most recent">Recent</a></li>
-
-    </ul>
-
-    <ul id="tab-popular" class="popular-posts" tab-index="0">
+    <ul  class="popular-posts">
 
     <?php foreach ( $popular as $index => $post ) : if ( $index >= $instance['items'] ) break; ?>
 
@@ -77,31 +77,6 @@ class UW_Widget_Top_Posts extends WP_Widget
 
     </ul>
 
-    <ul id="tab-recent" class="recent-posts" tab-index="0" style="display: none;">
-
-    <?php foreach ( $recent as $post ) : ?>
-
-          <li>
-            <a class="widget-thumbnail" href="<?php echo get_the_permalink( $post->ID ) ?>" title="<?php echo esc_attr( get_the_title( $post->ID ) ) ?>">
-
-            <?php if ( has_post_thumbnail( $post->ID ) ) : ?>
-
-              <?php echo get_the_post_thumbnail( $post->ID , 'thumbnail' ); ?>
-
-            <?php endif; ?>
-
-            <a class="widget-link" href="<?php echo get_the_permalink( $post->ID ) ?>" title="<?php echo esc_attr( get_the_title( $post->ID ) ) ?>">
-              <?php echo get_the_title( $post->ID ) ?>
-            </a>
-
-            <p><small><?php echo $this->humanTime( $post->ID ) ?> ago</small></p>
-
-          </li>
-
-    <?php endforeach; ?>
-
-    </ul>
-
     <?php echo $after_widget; ?>
 
   <?php
@@ -111,15 +86,24 @@ class UW_Widget_Top_Posts extends WP_Widget
   // There is only one settings `items` which indicates how many items to display in the widget.
   function update( $new_instance, $old_instance )
   {
-		$instance['items'] = (int) $new_instance['items'];
+    $instance['title']   = $new_instance['title'];
+    $instance['items'] = (int) $new_instance['items'];
     return $instance;
-	}
+  }
 
   // The form for submitting changes to the widget.
   // Only one field exists `items` to indicate how many items will be displayed by the widget.
   function form( $instance )
   {
     extract( $instance ); ?>
+
+    <p>
+
+      <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title' ); ?></label>
+
+      <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ) ?>" />
+
+    </p>
 
     <p>
 
@@ -139,7 +123,7 @@ class UW_Widget_Top_Posts extends WP_Widget
 
   <?php
 
-	}
+  }
 
   // This function filters the 20 results fetched by `stats_get_csv` and removes pages from the results
   function filterResults( $results )
@@ -157,6 +141,10 @@ class UW_Widget_Top_Posts extends WP_Widget
   // Example: `543092 becomes 543K`.
   function convertViews( $views )
   {
+
+    if ( ! $views )
+      $views = rand( 0, 5000 );
+
     $numberOfViews =  $views >= 1000 ? floor( $views / 1000 ) . 'K' : $views ;
     return $numberOfViews . ' ' . _n( 'view', 'views', $views );
   }
