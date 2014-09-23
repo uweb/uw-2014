@@ -19,7 +19,7 @@ Template Name: Big Hero
 
       <?php get_template_part( 'breadcrumbs' ); ?>
 
-      <div class="uw-body-copy">
+      <div id='main_content' class="uw-body-copy">
 
         <?php
           // Start the Loop.
