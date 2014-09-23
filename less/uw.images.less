@@ -1,7 +1,6 @@
 // Image Handling
 
-.alignleft,
-.alignnone {
+.alignleft {
 	margin: 20px 50px 50px 0;
 	&.size-large {
 
@@ -10,9 +9,7 @@
 	}
 	&.size-Full,
 	&.size-full {
-		margin-left: 0;
-		width: 100% !important;
-		height: auto;
+
 	}
 	&.size-medium {
 
@@ -42,7 +39,7 @@
 	}
 }
 
-// 
+//
 
 
 
@@ -51,13 +48,13 @@
 	.alignleft {
 		margin: 20px 50px 50px 0px;
 		&.size-large {
-	
+
 		}
 		&.size-medium {
-	
+
 		}
 		&.size-small {
-	
+
 		}
 	}
 	.alignleft {
@@ -71,3 +68,33 @@
 	}
 
 }
+
+
+// Overlay
+
+.uw-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 999;
+
+	div.wrapper {
+	position:absolute;
+	top: 50%;
+	left : 50%;
+	}
+
+	&:before {
+		content:" ";
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: white;
+		opacity: 0.8;
+	}
+}
+

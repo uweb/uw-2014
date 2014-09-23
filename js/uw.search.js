@@ -130,6 +130,7 @@ UW.Search = Backbone.View.extend({
   {
     this.hideDirectory()
     this.$searchbar.toggleClass('open')
+    UW.$body.toggleClass( 'search-open' )
     this.toggleBlur();
     return false;
   },

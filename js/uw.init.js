@@ -1,8 +1,10 @@
 // List out the classes that each component searches for
 UW.elements = {
 
+  alert : '.uw-thinstrip',
   accordion  : '.uw-accordion',
   dropdowns  : '#dawgdrops',
+  images : 'a > img',
   mobilemenu : '.uw-mobile-menu-toggle',
   radio      : ':radio',
   search     : '.uw-search',
@@ -34,6 +36,7 @@ UW.initialize = function( $ )
   UW.mobilemenu = _.map( $( UW.elements.mobilemenu ),     function( element ) { return new UW.MobileMenu({ el : element }) } )
   UW.quicklinks = _.map( $( UW.elements.quicklinks ),    function( element ) { return new UW.QuickLinks( { el : element, url : UW.sources.quicklinks }) } )
   UW.search     = _.map( $( UW.elements.search ),    function( element ) { return new UW.Search( { el : element, model : new UW.Search.DirectoryModel( {url: UW.sources.search}) }) } )
+  UW.images   = _.map( $( UW.elements.images ),    function( element ) { return new UW.Image({ el : element }) } )
 
   // UW Modules
   UW.slideshows = _.map( $( UW.elements.slideshow ), function( element ) { return new UW.Slideshow( { el : element }) } )
@@ -46,6 +49,8 @@ UW.initialize = function( $ )
   UW.accordion  = _.map( $( UW.elements.accordion ), function( element ) { return new UW.Accordion( { el : element }) } )
   UW.radio      = _.map( $( UW.elements.radio ),     function( element ) { return new UW.Radio({ el : element }) } )
   UW.select     = _.map( $( UW.elements.select ),    function( element ) { return new UW.Select({ el : element }) } )
+
+  UW.alert = new UW.Alert({ after: UW.elements.alert, model: new UW.Alert.Model() });
 
   // todo: add to separate file
   $('table').addClass('table table-striped')
