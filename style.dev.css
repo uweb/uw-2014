@@ -7289,7 +7289,8 @@ address {
   font-size: 19px;
   margin-left: 15px;
 }
-#uw-container #quicklinks ul#big_links li a:hover {
+#uw-container #quicklinks ul#big_links li a:hover,
+#uw-container #quicklinks ul#big_links li a:focus {
   color: #ffd800;
 }
 #uw-container #quicklinks ul#big_links li span {
