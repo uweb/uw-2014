@@ -3,11 +3,11 @@
 //       Name: UW Top Posts
 //       Description: A widget that shows top posts and most recent posts on your blog
 
-class UW_Widget_Top_Posts extends WP_Widget
+class UW_Top_Posts extends WP_Widget
 {
 
   // Define constants for the widget id, title, description, number of items to fetch, maximum number of items to show.
-  const ID    = 'uw-widget-top-posts';
+  const ID    = 'uw-top-posts';
   const TITLE = 'UW Top Posts';
   const DESC  = 'A widget that shows top posts on your blog';
   const ITEMS = 5;
@@ -38,7 +38,8 @@ class UW_Widget_Top_Posts extends WP_Widget
     // - Note the `stats_get_csv` function caches its results for `300` seconds based on its input parameters
     // The `stats_get_csv` functions also fetches pages, so we have to accommodate for them and remove them from the results
 
-    $popular = $this->filterResults( stats_get_csv( 'postviews', array( 'days' => self::DAYS, 'limit' => self::FETCH ) ) );
+    if ( $this->jetpackInstalled() )
+      $popular = $this->filterResults( stats_get_csv( 'postviews', array( 'days' => self::DAYS, 'limit' => self::FETCH ) ) );
 
     // For development purposes, if there aren't any top posts then default to the latest posts.
     if ( ! $popular || sizeof( $popular ) < $items  )
@@ -161,25 +162,6 @@ class UW_Widget_Top_Posts extends WP_Widget
     return human_time_diff( get_the_time( 'U' , $post_id ), current_time('timestamp'));
   }
 
-}
-
-// A class that will instantiate the widget only if Jetpack is installed and the function `stats_get_csv` exists.
-class UW_Top_Posts
-{
-
-  // Try to register the widget.
-  function __construct()
-  {
-    add_action( 'widgets_init', array( $this, 'register' ) );
-  }
-
-  // Only register the widget if Jetpack is installed.
-  function register()
-  {
-    if ( $this->jetpackInstalled() )
-      register_widget( 'UW_Widget_Top_Posts' );
-  }
-
   // Check to see if Jetpack is installed by seeing if the `stats_get_csv` function exists.
   // The `stats_get_csv` function is provided by the Jetpack Stats plugin.
   function jetpackInstalled()
@@ -190,4 +172,4 @@ class UW_Top_Posts
 }
 
 // Instantiate the plugin
-new UW_Top_Posts;
+register_widget( 'UW_Top_Posts' );
