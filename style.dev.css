@@ -9558,11 +9558,13 @@ a.uw-btn.btn-sm.btn-external:before {
 a.uw-btn.btn-sm.btn-plus:before {
   background-position: -83px -465px;
 }
-a.uw-btn:hover {
+a.uw-btn:hover,
+a.uw-btn:focus {
   color: #85754d;
   background-color: #f5f5f5;
 }
-a.uw-btn:hover:before {
+a.uw-btn:hover:before,
+a.uw-btn:focus:before {
   background-color: #613ba9;
 }
 a.uw-btn.btn-gold:hover:before {
@@ -9572,7 +9574,8 @@ a.uw-btn.btn-purple {
   background-color: #4b2e83;
   color: white;
 }
-a.uw-btn.btn-purple:hover {
+a.uw-btn.btn-purple:hover,
+a.uw-btn.btn-purple:focus {
   background-color: #402770;
 }
 a.uw-btn.btn-purple:before {
