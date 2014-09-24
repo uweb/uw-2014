@@ -9719,6 +9719,12 @@ a.uw-btn.btn-gold:after {
   right: -14px;
   top: -2px;
 }
+.uw-footer ul.footer-links li a:focus {
+  color: #85754d;
+}
+.uw-footer ul.footer-links li a:focus:after {
+  color: #fff;
+}
 .uw-footer p {
   color: #fff;
   font-size: .8em;
