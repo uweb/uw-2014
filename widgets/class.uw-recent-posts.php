@@ -42,7 +42,20 @@ class UW_Recent_Posts extends WP_Widget
 
     <?php echo $before_widget; ?>
 
-    <h1><?php  echo $title; ?></h1>
+    <h2><?php  echo $title; ?>
+
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+         width="25.526px" height="24.609px" viewBox="0 0 25.526 24.609" enable-background="new 0 0 25.526 24.609" xml:space="preserve">
+      <g>
+        <g>
+          <path fill="#20A2ED" d="M12.763,0c-6.617,0-12,5.383-12,12c0,6.617,5.383,12,12,12s12-5.383,12-12C24.763,5.383,19.38,0,12.763,0z
+             M12.763,21.818c-5.414,0-9.818-4.405-9.818-9.818s4.404-9.818,9.818-9.818S22.582,6.586,22.582,12S18.177,21.818,12.763,21.818z
+             M13.854,7.638h-2.182v6.545h2.182v-0.001h3.272V12h-3.272V7.638z"/>
+        </g>
+      </g>
+      </svg>
+
+    </h2>
 
     <ul class="recent-posts">
 
@@ -59,9 +72,8 @@ class UW_Recent_Posts extends WP_Widget
 
             <a class="widget-link" href="<?php echo get_the_permalink( $post->ID ) ?>" title="<?php echo esc_attr( get_the_title( $post->ID ) ) ?>">
               <?php echo get_the_title( $post->ID ) ?>
+              <p><small><?php echo $this->humanTime( $post->ID ) ?> ago</small></p>
             </a>
-
-            <p><small><?php echo $this->humanTime( $post->ID ) ?> ago</small></p>
 
           </li>
 
