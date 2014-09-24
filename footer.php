@@ -20,7 +20,7 @@
 
         <nav role="navigation" aria-label="footer links">
             <ul class="footer-links">
-                <li><a href="">Accessibility</a></li>
+                <li><a href="uw.edu/accessibility">Accessibility</a></li>
                 <li><a href="http://www.washington.edu/home/siteinfo/form">Contact Us</a></li>
                 <li><a href="http://www.washington.edu/jobs">Jobs</a></li>
                 <li><a href="http://www.washington.edu/safety">Campus Safety</a></li>
