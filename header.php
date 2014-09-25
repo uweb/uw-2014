@@ -2,6 +2,7 @@
 <!--[if lt IE 9]> <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js">
+<!-- test accessibility -->
 <!--<![endif]-->
     <head>
         <meta charset="utf-8">
