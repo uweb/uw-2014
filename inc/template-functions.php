@@ -10,17 +10,18 @@ if ( ! function_exists( 'uw_dropdowns') )
   {
 
     echo
-        '<nav id="dawgdrops" aria-label="Main menu" role="navigation">';
+        '<nav id="dawgdrops" aria-label="Main menu" role="navigation"><div class="dawgdrops-inner container" role="application">';
 
           wp_nav_menu( array(
             'theme_location'  => UW_Dropdowns::LOCATION,
-            'container_class' => 'dawgdrops-inner container',
+            'container'       => false,
+            //'container_class' => 'dawgdrops-inner container',
             'menu_class'      => 'dawgdrops-nav',
             'fallback_cb'     => '',
             'walker'          => new UW_Dropdowns_Walker_Menu()
           ) );
 
-    echo '</nav>';
+    echo '</div></nav>';
   }
 
 }
