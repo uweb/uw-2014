@@ -13,6 +13,7 @@ class UW_Dropdowns_Walker_Menu extends Walker_Nav_Menu
   function __construct()
   {
     //add_filter('wp_nav_menu', array($this, 'add_role_menubar'));
+    //add_filter('wp_nav_menu', array($this, 'add_aria_expanded'));
 	}
 
 //  function add_role_menubar($html)
@@ -49,7 +50,7 @@ class UW_Dropdowns_Walker_Menu extends Walker_Nav_Menu
     $this->CURRENT = $item->post_name;
     $title = ! empty( $item->title ) ? $item->title : $item->post_title;
 
-    $controls = $depth == 0 && $item->has_children ? 'aria-controls="menu-'.$item->post_name.'"' : '';
+    $controls = $depth == 0 && $item->has_children ? 'aria-controls="menu-'.$item->post_name.'" aria-expanded="false"' : '';
 
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
