@@ -15,9 +15,9 @@ class UW_Styles
   {
     $this->STYLES = array(
 
-      'google-font-roboto' => array(
-          'id'      => 'google-font-roboto',
-          'url'     => 'https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400italic,700italic,400,700|Open+Sans:300italic,400italic,400,300',
+      'google-font-open' => array(
+          'id'      => 'google-font-open',
+          'url'     => 'https://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,700,300',
           'deps'    => array(),
           'version' => '3.6',
           'admin'   => true
