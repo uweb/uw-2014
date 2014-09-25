@@ -12,13 +12,13 @@ class UW_Dropdowns_Walker_Menu extends Walker_Nav_Menu
 
   function __construct()
   {
-    add_filter('wp_nav_menu', array($this, 'add_role_menubar'));
+    //add_filter('wp_nav_menu', array($this, 'add_role_menubar'));
 	}
 
-  function add_role_menubar($html)
-  {
-    return str_replace('class="dawgdrops-nav"', 'class="dawgdrops-nav" role="menubar"', $html);
-  }
+//  function add_role_menubar($html)
+//  {
+//    return str_replace('class="dawgdrops-nav"', 'class="dawgdrops-nav" role="menubar"', $html);
+//  }
 
   function start_lvl( &$output, $depth, $args )
   {
@@ -57,7 +57,8 @@ class UW_Dropdowns_Walker_Menu extends Walker_Nav_Menu
 		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
 
     $li_classnames = ! empty($classes) ? 'class="'. $class_names .'"' : '';
-    $li_attributes = $depth == 0 ? ' role="presentation" ' : '';
+    //$li_attributes = $depth == 0 ? ' role="presentation" ' : '';
+    $li_attributes = $depth == 0 ? ' ' : '';
 
 		$output .= $indent . '<li' . $li_attributes . $li_classnames .'>';
 
