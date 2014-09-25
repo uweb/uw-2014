@@ -10,8 +10,7 @@ if ( ! function_exists( 'uw_dropdowns') )
   {
 
     echo
-        '<nav id="dawgdrops" aria-label="Main menu" role="navigation">
-          <h3 class="assistive-text">Main menu</h3>';
+        '<nav id="dawgdrops" aria-label="Main menu" role="navigation">';
 
           wp_nav_menu( array(
             'theme_location'  => UW_Dropdowns::LOCATION,
