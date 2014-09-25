@@ -10212,7 +10212,16 @@ a.screen-reader-shortcut:focus {
 .site-brand .widget_categories a:hover {
   background-color: #ddd;
 }
-.site-brand .element-colors:hover:after {
+.site-brand .element-downloads-templates:hover:after,
+.site-brand .element-advertising-templates:hover:after,
+.site-brand .element-business-stationery:hover:after,
+.site-brand .element-email:hover:after,
+.site-brand .element-event-templates:hover:after,
+.site-brand .element-fact-sheets:hover:after,
+.site-brand .element-print:hover:after,
+.site-brand .element-social-media:hover:after,
+.site-brand .element-video:hover:after,
+.site-brand .element-web:hover:after {
   content: "Coming soon";
   position: absolute;
   top: 0;
