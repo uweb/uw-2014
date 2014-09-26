@@ -10115,6 +10115,39 @@ a.screen-reader-shortcut:focus {
 .site-brand .elment.element-social-media a {
   background: url('assets/svg/brand-site/social-media.svg') center 29px no-repeat;
 }
+.site-brand .elment.element-brand-vision a {
+  background: url('assets/svg/brand-site/brand.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-logos a {
+  background: url('assets/svg/brand-site/logos.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-messaging-framework a {
+  background: url('assets/svg/brand-site/messaging.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-downloads-templates a {
+  background: url('assets/svg/brand-site/downloads.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-graphic-elements a {
+  background: url('assets/svg/brand-site/graphic.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-advertising-templates a {
+  background: url('assets/svg/brand-site/advertising.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-business-stationery a {
+  background: url('assets/svg/brand-site/business.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-email a {
+  background: url('assets/svg/brand-site/email.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-event-templates a {
+  background: url('assets/svg/brand-site/event.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-fact-sheets a {
+  background: url('assets/svg/brand-site/fact.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-help a {
+  background: url('assets/svg/brand-site/help.svg') center 29px no-repeat;
+}
 .site-brand .elment p {
   line-height: 1.5;
   margin-top: 12px;
