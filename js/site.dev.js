@@ -9903,11 +9903,12 @@ UW.QuickLinks = Backbone.View.extend({
     },
 
     make_drawer: function () {
+        var $shortcuts = UW.$body.find('a.screen-reader-shortcut').detach();
         UW.$body.children().not('#wpadminbar').not('script')
             .wrapAll('<div id="uw-container">')
-            .not('a.screen-reader-shortcut')
             .wrapAll('<div id="uw-container-inner">');
         this.$container = $(this.container);
+        this.$container.prepend($shortcuts);
     },
 
     close_quicklinks: function (event) {
