@@ -17,7 +17,7 @@ class UW_Styles
 
       'google-font-roboto' => array(
           'id'      => 'google-font-roboto',
-          'url'     => 'https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400italic,700italic,400,700|Open+Sans:300italic,400italic,400,300',
+          'url'     => 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic',
           'deps'    => array(),
           'version' => '3.6',
           'admin'   => true
