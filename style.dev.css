@@ -9351,6 +9351,9 @@ ul.uw-mobile-menu ul {
   background-color: white;
   opacity: 0.8;
 }
+.gallery {
+  clear: both;
+}
 .gallery-item {
   margin-bottom: 20px;
 }
