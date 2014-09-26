@@ -12,18 +12,19 @@ class UW_Dropdowns_Walker_Menu extends Walker_Nav_Menu
 
   function __construct()
   {
-    add_filter('wp_nav_menu', array($this, 'add_role_menubar'));
+    //add_filter('wp_nav_menu', array($this, 'add_role_menubar'));
+    //add_filter('wp_nav_menu', array($this, 'add_aria_expanded'));
 	}
 
-  function add_role_menubar($html)
-  {
-    return str_replace('class="dawgdrops-nav"', 'class="dawgdrops-nav" role="menubar"', $html);
-  }
+//  function add_role_menubar($html)
+//  {
+//    return str_replace('class="dawgdrops-nav"', 'class="dawgdrops-nav" role="menubar"', $html);
+//  }
 
   function start_lvl( &$output, $depth, $args )
   {
     if ( $depth > 0 ) return;
-		$output .= "<ul role=\"menu\" id=\"menu-{$this->CURRENT}\" aria-expanded=\"false\" class=\"dawgdrops-menu\">\n";
+		$output .= "<ul role=\"group\" id=\"menu-{$this->CURRENT}\" aria-labelledby='{$this->CURRENT}' aria-expanded=\"false\" class=\"dawgdrops-menu\">\n";
 	}
 
   function end_lvl( &$output, $depth = 0, $args = array() )
@@ -49,7 +50,7 @@ class UW_Dropdowns_Walker_Menu extends Walker_Nav_Menu
     $this->CURRENT = $item->post_name;
     $title = ! empty( $item->title ) ? $item->title : $item->post_title;
 
-    $controls = $depth == 0 && $item->has_children ? 'aria-controls="menu-'.$item->post_name.'"' : '';
+    $controls = $depth == 0 && $item->has_children ? 'aria-controls="menu-'.$item->post_name.'" aria-expanded="false" aria-has-popup="true"' : '';
 
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
@@ -57,7 +58,8 @@ class UW_Dropdowns_Walker_Menu extends Walker_Nav_Menu
 		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
 
     $li_classnames = ! empty($classes) ? 'class="'. $class_names .'"' : '';
-    $li_attributes = $depth == 0 ? ' role="presentation" ' : '';
+    //$li_attributes = $depth == 0 ? ' role="presentation" ' : '';
+    $li_attributes = $depth == 0 ? ' ' : '';
 
 		$output .= $indent . '<li' . $li_attributes . $li_classnames .'>';
 
@@ -70,7 +72,9 @@ class UW_Dropdowns_Walker_Menu extends Walker_Nav_Menu
 
 		$attributes .= $depth == 1                ? ' tabindex="-1" '                                : '';
 		$attributes .= ' title="'. $title .'" ';
-    $attributes .= $controls;
+        $attributes .= $controls;
+
+        $attributes .= ' id="' . $this->CURRENT . '"';
 
 		$item_output = $args->before;
 		$item_output .= '<a'. $attributes .'>';

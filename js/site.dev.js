@@ -9903,11 +9903,12 @@ UW.QuickLinks = Backbone.View.extend({
     },
 
     make_drawer: function () {
+        var $shortcuts = UW.$body.find('a.screen-reader-shortcut').detach();
         UW.$body.children().not('#wpadminbar').not('script')
             .wrapAll('<div id="uw-container">')
-            .not('a.screen-reader-shortcut')
             .wrapAll('<div id="uw-container-inner">');
         this.$container = $(this.container);
+        this.$container.prepend($shortcuts);
     },
 
     close_quicklinks: function (event) {
@@ -10687,6 +10688,7 @@ UW.Dropdowns = Backbone.View.extend({
       case this.keys.enter :
       case this.keys.down  :
 
+        $(e.currentTarget).attr('aria-expanded', 'true');
         this.currentSubMenu = $(e.currentTarget).siblings('ul')
         this.currentSubMenuAnchors = this.currentSubMenu.find('a')
 
@@ -10740,13 +10742,15 @@ UW.Dropdowns = Backbone.View.extend({
         return false
 
       case this.keys.left:
+        this.currentSubMenu.hide().parent().prev().children('a').first().focus()
         this.currentSubMenu.attr( 'aria-expanded', 'false' )
-          .hide().parent().prev().children('a').first().focus()
+          .parent().children('a').first().attr('aria-expanded', 'false')
         return false;
 
       case this.keys.right:
+        this.currentSubMenu.hide().parent().next().children('a').first().focus()
         this.currentSubMenu.attr( 'aria-expanded', 'false' )
-          .hide().parent().next().children('a').first().focus()
+          .parent().children('a').first().attr('aria-expanded', 'false')
         return false;
 
       case this.keys.spacebar:
@@ -10756,7 +10760,7 @@ UW.Dropdowns = Backbone.View.extend({
 
       case this.keys.esc:
         this.currentSubMenu.attr('aria-expanded', 'false' )
-          .hide().parent().children('a').first().focus();
+          .hide().parent().children('a').first().attr('aria-expanded', 'false').focus();
         return false;
 
       default:

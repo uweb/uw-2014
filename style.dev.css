@@ -8070,6 +8070,15 @@ table th[class*="col-"] {
   margin: 40px 0 50px;
   position: relative;
 }
+.shortcode-blogroll li .wp-post-image {
+  margin: 10px 30px 0 0;
+  height: auto;
+}
+.shortcode-blogroll li span {
+  display: block;
+  overflow: hidden;
+  margin-left: 50px;
+}
 .shortcode-blogroll li .date {
   font-weight: 800;
   margin: 0 0 -15px;
@@ -9351,6 +9360,9 @@ ul.uw-mobile-menu ul {
   background-color: white;
   opacity: 0.8;
 }
+.gallery {
+  clear: both;
+}
 .gallery-item {
   margin-bottom: 20px;
 }
@@ -9749,15 +9761,14 @@ a.uw-btn.btn-gold:after {
 }
 a.screen-reader-shortcut {
   position: absolute;
-  left: -99999px;
-  top: -99999px;
+  left: 6px;
+  top: -99px;
 }
 a.screen-reader-shortcut:focus {
-  z-index: 2;
+  z-index: 5;
   font-size: 14px;
   font-weight: 700;
   top: 6px;
-  left: 6px;
   padding: 15px 23px 14px;
   background-color: #f1f1f1;
   color: #4b2e83;
@@ -10114,6 +10125,39 @@ a.screen-reader-shortcut:focus {
 }
 .site-brand .elment.element-social-media a {
   background: url('assets/svg/brand-site/social-media.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-brand-vision a {
+  background: url('assets/svg/brand-site/brand.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-logos a {
+  background: url('assets/svg/brand-site/logos.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-messaging-framework a {
+  background: url('assets/svg/brand-site/messaging.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-downloads-templates a {
+  background: url('assets/svg/brand-site/downloads.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-graphic-elements a {
+  background: url('assets/svg/brand-site/graphic.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-advertising-templates a {
+  background: url('assets/svg/brand-site/advertising.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-business-stationery a {
+  background: url('assets/svg/brand-site/business.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-email a {
+  background: url('assets/svg/brand-site/email.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-event-templates a {
+  background: url('assets/svg/brand-site/event.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-fact-sheets a {
+  background: url('assets/svg/brand-site/fact.svg') center 29px no-repeat;
+}
+.site-brand .elment.element-help a {
+  background: url('assets/svg/brand-site/help.svg') center 29px no-repeat;
 }
 .site-brand .elment p {
   line-height: 1.5;
