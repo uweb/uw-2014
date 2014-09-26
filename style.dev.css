@@ -9749,15 +9749,14 @@ a.uw-btn.btn-gold:after {
 }
 a.screen-reader-shortcut {
   position: absolute;
-  left: -99999px;
-  top: -99999px;
+  left: 6px;
+  top: -99px;
 }
 a.screen-reader-shortcut:focus {
   z-index: 5;
   font-size: 14px;
   font-weight: 700;
   top: 6px;
-  left: 6px;
   padding: 15px 23px 14px;
   background-color: #f1f1f1;
   color: #4b2e83;
