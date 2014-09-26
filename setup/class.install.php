@@ -9,7 +9,7 @@
 
 class UW_Install_Theme
 {
-
+  const WIDTH = 750;
   public $DEFAULT_HEADERS = array(
       'blossoms' => array(
         'url'           => '%s/assets/headers/ima.jpg',
@@ -20,6 +20,7 @@ class UW_Install_Theme
 
   function __construct()
   {
+    add_filter( 'embed_defaults', array( $this, 'uw_setup_embed_defaults' ), 1  );
     add_action( 'after_setup_theme', array( $this, 'uw_setup' ) );
   }
 
@@ -44,6 +45,14 @@ class UW_Install_Theme
 
     register_default_headers( $this->DEFAULT_HEADERS );
 
+  }
+
+  function uw_setup_embed_defaults( $dimensions )
+  {
+    $dimensions['width']  = self::WIDTH;
+    //based on the original wp_embed_defaults function
+    $dimensions['height'] = min( ceil( self::WIDTH * 1.5 ), 1000 );
+    return $dimensions;
   }
 
 }
