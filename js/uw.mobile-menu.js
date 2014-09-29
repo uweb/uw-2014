@@ -11,7 +11,7 @@ UW.MobileMenu = Backbone.View.extend({
   initialize : function( options )
   {
     this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
-    this.$mobilemenu = $('.uw-mobile-menu > li')
+    this.$mobilemenu = this.$el.siblings().first()
   },
 
   toggle: function()
