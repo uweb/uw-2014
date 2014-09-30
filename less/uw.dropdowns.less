@@ -36,8 +36,14 @@
 	padding: 20px 0 5px 0;
 }
 
+// Menu blocks
+.menu-block {
+  float: left;
+  width:230px;
+}
+
 .dawgdrops-nav {
-	
+
 }
 
 .dawgdrops-item {
@@ -46,7 +52,7 @@
 		font-family: @font-family-headline;
 		font-weight: @headings-font-weight;
 		font-size: 20px;
-		padding: 4px 10px 20px 15px;		
+		padding: 4px 10px 20px 15px;
 			&:focus {
 				color: @lightgold;
 			}
@@ -112,7 +118,7 @@
 			background: url('assets/svg/slash.svg') no-repeat;
 		}
 		&:focus {
-			
+
 		}
 	}
 	&:hover .dawgdrops-menu {
@@ -141,7 +147,7 @@
 
 	li {
 		float:left;
-		clear:left;	
+		clear:left;
 		border-bottom: thin solid #eee;
 		a {
 			color: gray;
@@ -178,17 +184,17 @@
 @media only screen and (max-width : 992px) {
 	.dawgdrops-inner {
 		padding: 20px 0;
-	}	
+	}
 	.dawgdrops-item.dawgdrops-item {
 		&:hover .dawgdrops-menu {
 			display: none;
 		}
 		a {
 			padding: 4px 10px 10px 15px;
-			&.dropdown-toggle {			
+			&.dropdown-toggle {
 				padding-right: 10px;
 			}
-			&:before { 
+			&:before {
 				display: none;
 			}
 			&:after {

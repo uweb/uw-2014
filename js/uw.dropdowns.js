@@ -7,6 +7,9 @@
 
 UW.Dropdowns = Backbone.View.extend({
 
+  chunkSize : 8,
+  menuBlock : '<div class="menu-block"></div>',
+
   index : {
     topmenu : 0,
     submenu : 0
@@ -37,14 +40,31 @@ UW.Dropdowns = Backbone.View.extend({
 
   initialize : function(options)
   {
-    _.bindAll( this, 'toggleSubMenu' )
+    _.bindAll( this, 'render', 'chunk', 'wrap', 'wrapChildren', 'toggleSubMenu' )
     this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
     this.$topLevelNav = this.$el.find( this.elements.toplevel )
+    this.render()
   },
 
   render : function()
   {
-    // _.map( this.$topLevelNav, this.positionSubmenu )
+    _.each( this.$topLevelNav, this.wrapChildren )
+  },
+
+  chunk : function( element, index )
+  {
+    return Math.floor( index / this.chunkSize );
+  },
+
+  wrapChildren : function( element )
+  {
+    if ( $(element).find('li').length > this.chunkSize )
+        _.each( _.groupBy( $( element ).find('li'), this.chunk ), this.wrap )
+  },
+
+  wrap : function( elements )
+  {
+      $( elements ).wrapAll( this.menuBlock )
   },
 
   positionSubmenu : function( el )

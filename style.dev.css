@@ -8467,6 +8467,10 @@ table th[class*="col-"] {
   position: relative;
   padding: 20px 0 5px 0;
 }
+.menu-block {
+  float: left;
+  width: 230px;
+}
 .dawgdrops-item.dawgdrops-item a {
   font-family: "Encode Sans Compressed", sans-serif;
   font-weight: 800;
