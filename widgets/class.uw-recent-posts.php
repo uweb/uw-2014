@@ -25,8 +25,6 @@ class UW_Recent_Posts extends WP_Widget
         'classname'   => self::ID
       )
     );
-
-
   }
 
   // Outputs the widget HTML
