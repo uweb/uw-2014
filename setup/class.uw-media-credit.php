@@ -8,9 +8,9 @@ class UW_Media_Credit
 
   function UW_Media_Credit()
   {
-    
+
 	add_filter( 'mce_external_plugins', array( $this, 'add_media_credit_shortcode_to_tinymce' ) );
-    
+
     add_filter( 'image_send_to_editor', array( $this, 'mediacredit_tinymce_html'), 10, 7 );
     add_shortcode( 'mediacredit', array( $this, 'mediacredit_html' ) );
 
@@ -18,9 +18,9 @@ class UW_Media_Credit
     add_filter( "attachment_fields_to_save", array( $this, "custom_image_attachment_fields_to_save" ), null, 2);
   }
 
-  function add_media_credit_shortcode_to_tinymce( $plugins ) 
+  function add_media_credit_shortcode_to_tinymce( $plugins )
   {
-     $plugin_array[ 'mediacredit' ] = get_template_directory_uri() . '/js/admin/media-credit.js';
+     $plugin_array[ 'mediacredit' ] = get_template_directory_uri() . '/assets/admin/js/media-credit.js';
      return $plugin_array;
   }
 
@@ -28,7 +28,7 @@ class UW_Media_Credit
    * Override the editor html to include media credit even if the photo caption is empty
    */
 
-  function mediacredit_tinymce_html( $html, $id, $caption, $title, $align, $url, $size ) 
+  function mediacredit_tinymce_html( $html, $id, $caption, $title, $align, $url, $size )
   {
     if ( $caption )
       return $html;
@@ -36,7 +36,7 @@ class UW_Media_Credit
     $credit = get_post_meta( $id, '_media_credit', true);
     $img    = wp_get_attachment_image_src( $id, $size );
 
-    return $credit ? 
+    return $credit ?
       "<dl class='mediacredit align$align' data-credit='$credit' data-align='align$align' data-size='$size' style='width:{$img[1]}px'>
         <dt class='mediacredit-dt'>$html</dt>
         <dd class='wp-caption-dd'>$credit</dd>
@@ -46,7 +46,7 @@ class UW_Media_Credit
   /**
    *
    */
-  function mediacredit_html( $attrs, $content ) 
+  function mediacredit_html( $attrs, $content )
   {
     extract(shortcode_atts(array(
       'id'	=> '',
@@ -67,15 +67,15 @@ class UW_Media_Credit
   /**
    * Adding the custom fields to the $form_fields array
    */
-  function image_attachment_fields_to_edit($form_fields, $post) 
+  function image_attachment_fields_to_edit($form_fields, $post)
   {
     if ( ! in_array( $_REQUEST['context'],
-      array( 'custom-header-blogroll-banner', 'custom-header' ) ) && 
+      array( 'custom-header-blogroll-banner', 'custom-header' ) ) &&
         wp_attachment_is_image( $post->ID ) )
     {
       $form_fields["media_credit"] = array(
         "label" => __("Image Credit"),
-        "input" => "text", 
+        "input" => "text",
         "value" => get_post_meta($post->ID, "_media_credit", true)
       );
 
@@ -91,7 +91,7 @@ class UW_Media_Credit
    * Save the media credit
    */
   function custom_image_attachment_fields_to_save($post, $attachment) {
-    if( isset( $attachment['media_credit'] ) ) 
+    if( isset( $attachment['media_credit'] ) )
     {
       update_post_meta($post['ID'], '_media_credit', $attachment['media_credit']);
     }
