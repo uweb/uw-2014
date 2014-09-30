@@ -1,0 +1,110 @@
+.site-giving-new {
+    .giving-background {        
+        background: url(images/bg.jpg) no-repeat center center; 
+        width: 100%;
+        height: 1000px;
+        .background-size(cover);
+        position: absolute;
+    }
+    .uw-body.container {
+        background-color: transparent;
+        height: 1000px;
+    }
+    .giving-homepage {
+        position: absolute;
+        left: -80px;
+        top: 100px;
+    }
+    .donate-widget {
+        background-color: rgba(255,255,255,.9);
+        width: 400px;
+        padding: 10px 30px 20px;
+        .btn {
+            border-radius: 0;
+            background-color: @purple;
+            color: white;
+        }
+    }
+    .giving-headline {
+        h2, h3 {
+            position: static;
+            text-shadow: 2px 2px 4px rgba(0,0,0,.3);
+            margin: 0;
+            color: white;
+        }
+        h2 {
+        }
+        h3 {
+            font-size: 80px;
+            text-transform: uppercase;
+            font-weight: 900;
+            &:after {
+
+            }
+        }
+    }
+    form#make-a-gift-widget {
+        h2 {
+            font-weight: 900;
+            margin: 20px 0;
+            text-transform: uppercase;
+        }
+        div.amount {
+            position: relative;
+            span {
+                font-weight: 900;
+                font-family: @font-family-headline;
+                position: absolute;
+                top: 12px;
+                left: 12px
+            }
+            input {
+                width: 100%;
+                padding: 10px 10px 10px 25px;
+                font-weight: 900;
+                font-family: @font-family-headline;
+            }
+        }
+        button {
+            padding: 10px 5px;
+            width: 47.5%;
+            font-weight: 900;
+            font-family: @font-family-headline;
+            text-transform: uppercase;
+            &.monthly {
+                margin-right: 3%;
+            }
+        }
+        .uw-select-mask .uw-select-arrow {
+            margin: 30px 0;
+            background-color: white;
+            &:after {
+                background-color: @purple;
+            }
+        }   
+    }
+
+    div.other-funds {
+        border-top: 1px solid #fff;
+        margin: 20px 0 0 0;
+        padding-top: 15px;
+        text-align: center;
+        a {
+            font-size: 18px;
+            color: #484848;
+            position: relative;
+            padding-right: 10px;
+            &:after {
+                background: url(/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg) no-repeat -206px -492px;
+                content: "";
+                position: absolute;
+                right: -19px;
+                bottom: 0;
+                width: 14px;
+                height: 21px;
+                .rotate(90deg);
+            }
+        }
+    } 
+}
+
