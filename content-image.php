@@ -1,4 +1,3 @@
-
 <div class="uw-image-content">
 
   <?php echo wp_get_attachment_image($post->ID, 'full', false, $attr=array('class' =>'attachment-full center-block')); ?>

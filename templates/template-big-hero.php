@@ -1,7 +1,7 @@
 <?php
-/*
-Template Name: Big Hero
- */
+/**
+  * Template Name: Big Hero
+  */
 ?>
 
 <?php get_header(); ?>

@@ -10633,6 +10633,11 @@ UW.Radio = Backbone.View.extend({
 
 UW.Dropdowns = Backbone.View.extend({
 
+  chunkSize : 8,
+  menuWidth : 1170,
+  menuBlock : '<div class="menu-block"></div>',
+  menuBlockWidth : 250,
+
   index : {
     topmenu : 0,
     submenu : 0
@@ -10663,21 +10668,43 @@ UW.Dropdowns = Backbone.View.extend({
 
   initialize : function(options)
   {
-    _.bindAll( this, 'toggleSubMenu' )
+    _.bindAll( this, 'render', 'chunk', 'wrap', 'wrapChildren', 'positionSubmenu', 'toggleSubMenu' )
     this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
     this.$topLevelNav = this.$el.find( this.elements.toplevel )
+    this.render()
   },
 
   render : function()
   {
-    // _.map( this.$topLevelNav, this.positionSubmenu )
+    _.each( this.$topLevelNav, this.wrapChildren )
   },
 
+  chunk : function( element, index )
+  {
+    return Math.floor( index / this.chunkSize );
+  },
+
+  wrapChildren : function( element )
+  {
+    if ( $(element).find('li').length > this.chunkSize )
+        _.each( _.groupBy( $( element ).find('li'), this.chunk ), this.wrap )
+  },
+
+  wrap : function( elements )
+  {
+      $( elements ).wrapAll( this.menuBlock )
+  },
+
+  // todo: tidy up the math / variables
   positionSubmenu : function( el )
   {
     var $el = $(el.currentTarget)
       , position = $el.position()
-    $el.find('ul').css( { top : position.top + 58, left: position.left } )
+      , menublock = $el.find('.menu-block')
+      , shift = ( this.menuBlockWidth * ( menublock.length ) ) + position.left
+      , left = shift > this.menuWidth ? position.left - ( shift - this.menuWidth ) : position.left
+
+    $el.find('ul').css( { top : position.top + 58, left: left })
   },
 
   toggleSubMenu : function( e )
@@ -10792,7 +10819,7 @@ UW.MobileMenu = Backbone.View.extend({
   initialize : function( options )
   {
     this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
-    this.$mobilemenu = $('.uw-mobile-menu > li')
+    this.$mobilemenu = this.$el.siblings().first()
   },
 
   toggle: function()

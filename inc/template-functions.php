@@ -44,6 +44,14 @@ if ( ! function_exists( 'uw_mobile_menu' ) ) :
 
 endif;
 
+if ( ! function_exists( 'uw_mobile_front_page_menu' ) ) :
+
+  function uw_mobile_front_page_menu()
+  {
+    echo sprintf( '<nav role="navigation" aria-label="relative navigation">%s</nav>', uw_list_front_page_menu_items() ) ;
+  }
+
+endif;
 
 if ( ! function_exists( 'uw_list_pages') ) :
 
@@ -117,7 +125,28 @@ if ( ! function_exists( 'uw_list_mobile_pages' ) ) :
 
 endif;
 
-if( ! function_exists('get_uw_breadcrumbs') ) :
+if ( ! function_exists( 'uw_list_front_page_menu_items' ) ) :
+
+function uw_list_front_page_menu_items()
+{
+      $toggle = '<span class="uw-mobile-menu-toggle">Menu</span>';
+      $items = wp_nav_menu( array(
+              'title_li'     => '<a href="'.get_bloginfo('url').'" title="Home" class="homelink">Home</a>',
+              'theme_location'  => UW_Dropdowns::LOCATION,
+              'depth' => 1,
+              'container_class' => '',
+              'menu_class'      => '',
+              'fallback_cb'     => '',
+              'echo' => false,
+              // 'walker'          => new UW_Dropdowns_Walker_Menu()
+      ) );
+
+      return $items ? sprintf( '<ul class="uw-mobile-menu first-level">%s%s</ul>', $toggle, $items ) : '';
+
+
+}
+
+if ( ! function_exists('get_uw_breadcrumbs') ) :
 
   function get_uw_breadcrumbs()
   {
@@ -173,7 +202,7 @@ if( ! function_exists('get_uw_breadcrumbs') ) :
 
 endif;
 
-if( ! function_exists('uw_breadcrumbs') ) :
+if ( ! function_exists('uw_breadcrumbs') ) :
 
   function uw_breadcrumbs()
   {
@@ -182,6 +211,7 @@ if( ! function_exists('uw_breadcrumbs') ) :
 
 endif;
 
+endif;
 
 if ( ! function_exists( 'uw_thumbnail_url' ) ) :
   function uw_thumbnail_url( $size = 'original' )
