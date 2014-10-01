@@ -22,7 +22,7 @@ class UW_Widget_Single_Image extends WP_Widget
 
   function scripts()
   {
-    wp_enqueue_script( 'single-image',  get_bloginfo('template_directory') . '/js/admin/widgets/uw.single-image-widget.js' );
+    wp_enqueue_script( 'single-image',  get_bloginfo('template_directory') . '/assets/admin/js/widgets/uw.single-image-widget.js' );
     wp_enqueue_script( 'jquery-ui-autocomplete' );
     wp_enqueue_media();
   }

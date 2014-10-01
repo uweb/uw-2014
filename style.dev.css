@@ -9973,6 +9973,7 @@ a.screen-reader-shortcut:focus {
   width: 55px;
   text-indent: -99999px;
   outline: 1px solid #4b2e83;
+  overflow: hidden;
   background: url(assets/svg/search.svg) no-repeat center center #4b2e83;
   position: relative;
   border: none;
