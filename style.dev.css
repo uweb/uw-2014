@@ -8780,6 +8780,23 @@ hr {
   font-weight: 400;
   line-height: 1.5;
 }
+a.more {
+  position: relative;
+  display: inline-block;
+}
+a.more:after {
+  background: url(/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg) no-repeat -206px -492px;
+  content: "";
+  position: absolute;
+  right: -19px;
+  bottom: 3px;
+  width: 14px;
+  height: 21px;
+  -o-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
 .uw-body {
   position: relative;
 }
@@ -10136,6 +10153,10 @@ a.screen-reader-shortcut:focus {
   margin: 40px 0 0 65px !important;
   float: left;
   width: 620px;
+}
+.site-admissions hr {
+  border-top: 1px solid #D6D6D6;
+  margin: 20px 0;
 }
 .site-brand.home .uw-hero-image {
   height: 595px;
