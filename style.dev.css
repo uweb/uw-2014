@@ -7451,6 +7451,7 @@ ul.uw-select li.inactive a {
   width: 100%;
   height: auto;
   margin: 0 0 30px;
+  display: block;
 }
 /* Small Devices, Tablets */
 @media only screen and (max-width: 767px) {
@@ -8098,7 +8099,6 @@ table th[class*="col-"] {
 .shortcode-blogroll li span {
   display: block;
   overflow: hidden;
-  margin-left: 50px;
 }
 .shortcode-blogroll li .date {
   font-weight: 800;
