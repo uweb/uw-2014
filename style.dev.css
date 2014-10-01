@@ -9671,6 +9671,7 @@ a.uw-btn {
   border-bottom: none;
   margin-bottom: 25px;
   margin-right: 55px;
+  z-index: 1;
 }
 a.uw-btn.btn-sm {
   padding: 10px 16px;
