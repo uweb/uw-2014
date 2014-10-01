@@ -16,28 +16,30 @@ class UW
 
     private function includes()
     {
-        require_once('class.install.php');
-        require_once('class.uw-scripts.php');
-        require_once('class.uw-styles.php');
-        require_once('class.uw-dropdowns.php');
-        require_once('class.images.php');
-        require_once('class.squish_bugs.php');
-        require_once('class.filters.php');
-        require_once('class.uw-oembeds.php');
-        require_once('class.googleapps.php');
-        require_once('class.mimes.php');
-        require_once('class.users.php');
-        require_once('class.dropdowns_walker.php');  // no initialization needed because it extends a WP class
-        require_once( 'class.uw-directory.php' );
-        require_once( 'class.uw-quicklinks.php' );
-        require_once('class.uw-iframes.php');
-        require_once( 'class.uw-shortcodes.php' );
-        require_once( 'class.uw-media-credit.php' );
-        require_once( 'class.uw-media-caption.php' );
-        require_once( 'class.uw-replace-media.php' );
-        require_once( 'class.uw-tinymce.php' );
-        require_once( 'class.uw-documentation.php' );
-        require_once( 'class.uw-enclosure.php' );
+        $parent = get_template_directory() . '/setup/';
+        $child  = get_stylesheet_directory() . '/setup/';
+        require_once($parent . 'class.install.php');
+        require_once($parent . 'class.uw-scripts.php');
+        require_once($parent . 'class.uw-styles.php');
+        require_once($parent . 'class.uw-dropdowns.php');
+        require_once($parent . 'class.images.php');
+        require_once($parent . 'class.squish_bugs.php');
+        require_once($parent . 'class.filters.php');
+        require_once($parent . 'class.uw-oembeds.php');
+        require_once($parent . 'class.googleapps.php');
+        require_once($parent . 'class.mimes.php');
+        require_once($parent . 'class.users.php');
+        require_once($parent . 'class.dropdowns_walker.php');  // no initialization needed because it extends a WP class
+        require_once($parent . 'class.uw-directory.php' );
+        require_once($parent . 'class.uw-quicklinks.php' );
+        require_once($parent . 'class.uw-iframes.php');
+        require_once($parent . 'class.uw-shortcodes.php' );
+        require_once($parent . 'class.uw-media-credit.php' );
+        require_once($parent . 'class.uw-media-caption.php' );
+        require_once($parent . 'class.uw-replace-media.php' );
+        require_once($parent . 'class.uw-tinymce.php' );
+        require_once($parent . 'class.uw-documentation.php' );
+        require_once($parent . 'class.uw-enclosure.php' );
     }
 
     private function initialize()

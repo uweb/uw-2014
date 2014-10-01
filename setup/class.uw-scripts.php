@@ -34,19 +34,11 @@ class UW_Scripts
 
       'admin' => array (
         'id'      => 'wp.admin',
-        'url'     => get_bloginfo('template_directory') . '/js/admin/admin.js',
+        'url'     => get_bloginfo('template_directory') . '/assets/admin/js/admin.js',
         'deps'    => array( 'jquery' ),
         'version' => '1.0',
         'admin'   => true
       ),
-      //
-      // 'jquery.searchposts' => array (
-      //   'id'      => 'jquery.searchposts',
-      //   'url'     => get_bloginfo('template_directory') . '/js/admin/jquery.wp.searchposts.js',
-      //   'deps'    => array( 'jquery', 'jquery-ui-autocomplete' ),
-      //   'version' => '1.0',
-      //   'admin'   => true
-      // )
 
     ), $this->get_child_theme_scripts() );
 

@@ -9974,6 +9974,7 @@ a.screen-reader-shortcut:focus {
   width: 55px;
   text-indent: -99999px;
   outline: 1px solid #4b2e83;
+  overflow: hidden;
   background: url(assets/svg/search.svg) no-repeat center center #4b2e83;
   position: relative;
   border: none;
@@ -10646,6 +10647,12 @@ a.screen-reader-shortcut:focus {
 }
 .site-giving-new form#make-a-gift-widget .uw-select-mask .uw-select-arrow:after {
   background-color: #4b2e83;
+}
+.site-giving-new form#make-a-gift-widget ul.uw-select {
+  overflow-x: hidden;
+}
+.site-giving-new form#make-a-gift-widget ul.uw-select li a {
+  padding-right: 54px;
 }
 .site-giving-new div.other-funds {
   border-top: 1px solid #fff;
