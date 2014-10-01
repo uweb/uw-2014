@@ -10646,6 +10646,12 @@ a.screen-reader-shortcut:focus {
 .site-giving-new form#make-a-gift-widget .uw-select-mask .uw-select-arrow:after {
   background-color: #4b2e83;
 }
+.site-giving-new form#make-a-gift-widget ul.uw-select {
+  overflow-x: hidden;
+}
+.site-giving-new form#make-a-gift-widget ul.uw-select li a {
+  padding-right: 54px;
+}
 .site-giving-new div.other-funds {
   border-top: 1px solid #fff;
   margin: 20px 0 0 0;
