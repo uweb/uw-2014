@@ -8258,20 +8258,9 @@ table th[class*="col-"] {
 .uw-thinstrip ul.uw-thin-links li.uw-quicklinks button:after {
   display: none;
 }
-.uw-thinstrip ul.uw-thin-links li.uw-quicklinks button:before {
-  position: absolute;
-  top: 1px;
-  right: -7px;
-  content: "";
-  width: 51px;
-  height: 45px;
-  display: block;
-  transform: skewX(-14deg);
-  background: linear-gradient(to right, #2e2e2e 0, #686868 4%, #686868 100%);
-}
 .uw-thinstrip ul.uw-thin-links li.uw-quicklinks button svg {
   position: absolute;
-  right: 12px;
+  right: 11px;
   top: 16px;
 }
 .uw-thinstrip ul.uw-thin-links li button {
