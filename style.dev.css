@@ -10140,7 +10140,8 @@ a.screen-reader-shortcut:focus {
   background-color: #F3F2EC;
   text-align: center;
 }
-.site-admissions .tile p {
+.site-admissions .tile p,
+.site-admissions .tile a.more {
   text-align: left;
 }
 .site-admissions .one img {
