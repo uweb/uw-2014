@@ -10137,7 +10137,6 @@ a.screen-reader-shortcut:focus {
   height: auto;
 }
 .site-admissions .tile {
-  background-color: #F3F2EC;
   text-align: center;
 }
 .site-admissions .tile p,
@@ -10158,6 +10157,12 @@ a.screen-reader-shortcut:focus {
 .site-admissions hr {
   border-top: 1px solid #D6D6D6;
   margin: 20px 0;
+}
+.site-admissions .box-outer .box.three .tile div,
+.site-admissions .box-outer .box.two .tile div {
+  background-color: #F3F2EC;
+  margin-bottom: 40px;
+  padding-bottom: 10px;
 }
 .site-brand.home .uw-hero-image {
   height: 595px;
