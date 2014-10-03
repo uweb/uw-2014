@@ -137,9 +137,19 @@ class UW_RSS extends WP_Widget
         {
           $title = $item->get_title();
           $link  = $item->get_link();
+
+          $enclosure = $item->get_enclosure();
+          $src = $enclosure->link;
+
           $attr  = esc_attr(strip_tags($title));
 
-          $content .= "<li><a href='$link' title='$attr'>$title</a></li>";
+          if ( $enclosure )
+          {
+            $image = "<a class='widget-thumbnail' href='$link' title='$attr'><img src='$src' title='$attr' /></a>";
+          }
+
+          $title = "<a class='widget-link' href='$link' title='$attr'>$attr</a>";
+          $content .= "<li>$image$title</li>";
         }
 
         $content .= '</ul>';
