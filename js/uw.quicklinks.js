@@ -51,7 +51,7 @@ UW.QuickLinks = Backbone.View.extend({
                 this.animate(event);
             }
         }
-        else if (this.$container.hasClass('open') && (event.target.parentElement != this.el) && (!this.is_focused)) {
+        else if (this.$container.hasClass('open') && (event.target.parentElement != this.el)) {
             this.animate(event);
         }
     },
