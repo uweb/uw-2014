@@ -45,7 +45,7 @@
   </nav>
 
   <div class="container">
-    <a href="http://uw.edu" title="University of Washington Home" class="uw-patch" tabindex='-1'>Home</a>
+    <a href="http://uw.edu" title="University of Washington Home" class="uw-patch" tabindex='-1' aria-hidden='true'>Home</a>
     <a href="http://uw.edu" title="University of Washington Home"class="uw-wordmark">Home</a>
   </div>
 </header>
