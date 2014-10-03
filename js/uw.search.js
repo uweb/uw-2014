@@ -153,7 +153,7 @@ UW.Search = Backbone.View.extend({
     else{
         var $target = $(event.target);
         if ($target.is(':radio')) {
-            if (event.keyCode == 13){
+            if ((event.keyCode == 13) || (event.keyCode == 32)){
                 $target.parent('label').trigger('click');
             }
             else if (event.keyCode == 9) {
