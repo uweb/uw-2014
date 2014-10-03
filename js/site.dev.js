@@ -9950,7 +9950,7 @@ UW.QuickLinks = Backbone.View.extend({
 
     add_events: function () {
         $('#uw-container-inner').on( {
-            'click': this.close_quicklinks,
+            'click': this.close_quicklinks
         });
         this.$links.on( {'keyup': this.close_quicklinks});
         var self = this;
@@ -10000,6 +10000,7 @@ UW.QuickLinks = Backbone.View.extend({
     },
 
     focused: function () {
+        this.$button.attr('aria-expanded', true);
         this.$drawer.attr('aria-hidden', 'false')
         this.is_focused = true;
         this.$links.attr('tabindex', 0);
@@ -10007,6 +10008,7 @@ UW.QuickLinks = Backbone.View.extend({
     },
 
     blurred: function (event) {
+        this.$button.attr('aria-expanded', false);
         this.$drawer.attr('aria-hidden', 'true');
         this.is_focused = false;
         this.$links.attr('tabindex', -1);
