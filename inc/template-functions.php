@@ -60,7 +60,7 @@ if ( ! function_exists('uw_sidebar_menu') ) :
 
   function uw_sidebar_menu()
   {
-    echo sprintf( '<nav role="navigation" aria-label="relative navigation">%s</nav>', uw_list_pages() ) ;
+    echo sprintf( '<nav role="navigation" aria-label="relative">%s</nav>', uw_list_pages() ) ;
   }
 
 endif;
@@ -69,7 +69,7 @@ if ( ! function_exists( 'uw_mobile_menu' ) ) :
 
   function uw_mobile_menu()
   {
-    echo sprintf( '<nav role="navigation" aria-label="relative navigation">%s</nav>', uw_list_mobile_pages() ) ;
+    echo sprintf( '<nav role="navigation" aria-label="relative">%s</nav>', uw_list_mobile_pages() ) ;
   }
 
 endif;
@@ -78,7 +78,7 @@ if ( ! function_exists( 'uw_mobile_front_page_menu' ) ) :
 
   function uw_mobile_front_page_menu()
   {
-    echo sprintf( '<nav role="navigation" aria-label="relative navigation">%s</nav>', uw_list_front_page_menu_items() ) ;
+    echo sprintf( '<nav role="navigation" aria-label="relative">%s</nav>', uw_list_front_page_menu_items() ) ;
   }
 
 endif;
@@ -227,7 +227,7 @@ if ( ! function_exists('get_uw_breadcrumbs') ) :
 
     }
 
-    return "<nav class='uw-breadcrumbs' role='navigation' aria-label='breadcrumbs relative navigation'><ul>$html</ul></nav>";
+    return "<nav class='uw-breadcrumbs' role='navigation' aria-label='breadcrumbs'><ul>$html</ul></nav>";
   }
 
 endif;

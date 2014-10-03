@@ -1,6 +1,6 @@
 <header class="uw-thinstrip">
 
-  <nav class="uw-thin-strip-nav" role='navigation' aria-label='Navigate by audience'>
+  <nav class="uw-thin-strip-nav" role='navigation' aria-label='audience based'>
       <ul class="uw-thin-links">
       	<li class="uw-quicklinks"><div></div><button aria-has-popup='true' aria-owns='quicklinks' aria-controls='quicklinks' aria-expanded='false'>Quick Links
 
