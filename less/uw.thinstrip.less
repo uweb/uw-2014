@@ -40,7 +40,7 @@
 		text-indent: -9999px;
 		width: 330px;
 		height: 24px;
-		background: url(assets/svg/uw-sprite.svg) no-repeat 0 -431px transparent;		
+		background: url(assets/svg/uw-sprite.svg) no-repeat 0 -431px transparent;
 	}
 
 	// Audience
@@ -53,6 +53,7 @@
 		padding: 0;
 
 		li {
+			float: right;
 			list-style: none;
 			&:first-child a:after {
 				display: none;
@@ -155,7 +156,7 @@
 						right: 11px;
 						top: 16px;
 					}
-					
+
 				}
 			}
             button {
@@ -165,7 +166,7 @@
 	}
 }
 
-// Active state of search button 
+// Active state of search button
 
 .search-open .uw-thinstrip ul.uw-thin-links li.uw-search button {
 	svg {
@@ -210,7 +211,7 @@
 			}
 		}
 	}
-	
+
 
 	.uw-thinstrip {
 		padding: 0;
@@ -239,6 +240,7 @@
 		ul.uw-thin-links {
 			height: 50px;
 			li {
+				float: none;
 				&.uw-quicklinks button {
 					background-position: -484px -247px;
 					background-size: 900px;
@@ -257,9 +259,9 @@
 				}
                 &.uw-quicklinks {
                 	div {
-                	    width: 150px;                    
+                	    width: 150px;
                 	}
-				}	
+				}
 				&.uw-search button {
 					top: 0;
 					right: 36px;
@@ -327,6 +329,9 @@
 			top: -60px;
 		}
 		ul.uw-thin-links {
+			li {
+				float: none;
+			}
 			&:before {
 				position: absolute;
 				top: 0;

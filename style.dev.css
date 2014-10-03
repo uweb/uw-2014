@@ -8164,6 +8164,7 @@ table th[class*="col-"] {
   padding: 0;
 }
 .uw-thinstrip ul.uw-thin-links li {
+  float: right;
   list-style: none;
 }
 .uw-thinstrip ul.uw-thin-links li:first-child a:after {
@@ -8323,6 +8324,9 @@ table th[class*="col-"] {
   .uw-thinstrip ul.uw-thin-links {
     height: 50px;
   }
+  .uw-thinstrip ul.uw-thin-links li {
+    float: none;
+  }
   .uw-thinstrip ul.uw-thin-links li.uw-quicklinks button {
     background-position: -484px -247px;
     background-size: 900px;
@@ -8395,6 +8399,9 @@ table th[class*="col-"] {
   }
   .uw-thinstrip .uw-wordmark {
     top: -60px;
+  }
+  .uw-thinstrip ul.uw-thin-links li {
+    float: none;
   }
   .uw-thinstrip ul.uw-thin-links:before {
     position: absolute;
