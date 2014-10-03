@@ -17,10 +17,26 @@ hr {
 	line-height: 1.5;
 }
 
+a.more {
+  position: relative;
+  display: inline-block;
+  &:after {
+    background: url(/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg) no-repeat -206px -492px;
+    content: "";
+    position: absolute;
+    right: -19px;
+    bottom: 3px;
+    width: 14px;
+    height: 21px;
+    .rotate(90deg);
+  }
+}
+
+
 // Wrapper
 
 .uw-body {
-		position:relative;
+	position:relative;
 	&.container {
 		background-color: white;
 		margin-bottom: 80px;

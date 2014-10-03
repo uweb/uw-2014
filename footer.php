@@ -1,20 +1,20 @@
 <?php wp_footer(); ?>
 
-	<div class="uw-footer">
+    <div class="uw-footer">
 
 		<a href="" class="footer-wordmark">University of Washington</a>
 
 		<h4>Connect with us:</h4>
         <nav role="navigation" aria-label="social networking">
             <ul class="footer-social">
-                <li><a class="facebook" href="">Facebook</a></li>
-                <li><a class="twitter" href="">Twitter</a></li>
-                <li><a class="instagram" href="">Pinterest</a></li>
-                <li><a class="youtube" href="">YouTube</a></li>
-                <li><a class="linkedin" href="">LinkedIn</a></li>
-                <li><a class="pinterest" href="">Vine</a></li>
-                <li><a class="vine" href="">Google+</a></li>
-                <li><a class="google" href="">Instagram</a></li>
+                <li><a class="facebook" href="http://www.facebook.com/UofWA">Facebook</a></li>
+                <li><a class="twitter" href="http://twitter.com/UW">Twitter</a></li>
+                <li><a class="instagram" href="http://instagram.com/uofwa">Instagram</a></li>
+                <li><a class="youtube" href="http://www.youtube.com/user/uwhuskies">YouTube</a></li>
+                <li><a class="linkedin" href="http://www.linkedin.com/company/university-of-washington">LinkedIn</a></li>
+                <li><a class="pinterest" href="http://www.pinterest.com/uofwa/">Pinterest</a></li>
+                <li><a class="vine" href="https://vine.co/uofwa">Vine</a></li>
+                <li><a class="google" href="https://plus.google.com/+universityofwashington/posts">Google+</a></li>
             </ul>
         </nav>
 
@@ -34,7 +34,7 @@
         <p role="contentinfo">&copy;	 2014 University of Washington  |  Seattle, WA</p>
 
 
-	</div>
+    </div>
 
 </body>
 </html>

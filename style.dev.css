@@ -7451,6 +7451,7 @@ ul.uw-select li.inactive a {
   width: 100%;
   height: auto;
   margin: 0 0 30px;
+  display: block;
 }
 /* Small Devices, Tablets */
 @media only screen and (max-width: 767px) {
@@ -8098,7 +8099,6 @@ table th[class*="col-"] {
 .shortcode-blogroll li span {
   display: block;
   overflow: hidden;
-  margin-left: 50px;
 }
 .shortcode-blogroll li .date {
   font-weight: 800;
@@ -8258,20 +8258,9 @@ table th[class*="col-"] {
 .uw-thinstrip ul.uw-thin-links li.uw-quicklinks button:after {
   display: none;
 }
-.uw-thinstrip ul.uw-thin-links li.uw-quicklinks button:before {
-  position: absolute;
-  top: 1px;
-  right: -7px;
-  content: "";
-  width: 51px;
-  height: 45px;
-  display: block;
-  transform: skewX(-14deg);
-  background: linear-gradient(to right, #2e2e2e 0, #686868 4%, #686868 100%);
-}
 .uw-thinstrip ul.uw-thin-links li.uw-quicklinks button svg {
   position: absolute;
-  right: 12px;
+  right: 11px;
   top: 16px;
 }
 .uw-thinstrip ul.uw-thin-links li button {
@@ -8790,6 +8779,23 @@ hr {
   font-size: 25px;
   font-weight: 400;
   line-height: 1.5;
+}
+a.more {
+  position: relative;
+  display: inline-block;
+}
+a.more:after {
+  background: url(/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg) no-repeat -206px -492px;
+  content: "";
+  position: absolute;
+  right: -19px;
+  bottom: 3px;
+  width: 14px;
+  height: 21px;
+  -o-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 .uw-body {
   position: relative;
@@ -9671,6 +9677,7 @@ a.uw-btn {
   border-bottom: none;
   margin-bottom: 25px;
   margin-right: 55px;
+  z-index: 1;
 }
 a.uw-btn.btn-sm {
   padding: 10px 16px;
@@ -10130,10 +10137,10 @@ a.screen-reader-shortcut:focus {
   height: auto;
 }
 .site-admissions .tile {
-  background-color: #F3F2EC;
   text-align: center;
 }
-.site-admissions .tile p {
+.site-admissions .tile p,
+.site-admissions .tile a.more {
   text-align: left;
 }
 .site-admissions .one img {
@@ -10146,6 +10153,16 @@ a.screen-reader-shortcut:focus {
   margin: 40px 0 0 65px !important;
   float: left;
   width: 620px;
+}
+.site-admissions hr {
+  border-top: 1px solid #D6D6D6;
+  margin: 20px 0;
+}
+.site-admissions .box-outer .box.three .tile div,
+.site-admissions .box-outer .box.two .tile div {
+  background-color: #F3F2EC;
+  margin-bottom: 40px;
+  padding-bottom: 10px;
 }
 .site-brand.home .uw-hero-image {
   height: 595px;

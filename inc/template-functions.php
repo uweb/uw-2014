@@ -4,6 +4,36 @@
 // UW Dropdown Menus
 //
 
+if ( ! function_exists('uw_content_class') ) :
+  function uw_content_class( $class = '' )
+  {
+    echo 'class="' . join( ' ', get_uw_content_class( $class ) ) . '"';
+  }
+endif;
+
+if ( ! function_exists('get_uw_content_class') ) :
+  function get_uw_content_class( $class = '' )
+  {
+    $classes = array( 'uw-content' );
+    if ( uw_has_sidebar() )
+      $classes[] = 'col-md-8';
+    else
+      $classes[] = 'col-md-12';
+
+    $classes = array_map( 'esc_attr', $classes );
+
+    return apply_filters( 'uw_content_class', $classes, $class );
+  }
+endif;
+
+if ( ! function_exists( 'uw_has_sidebar' ) ) :
+  function uw_has_sidebar()
+  {
+    global $post;
+    return get_post_format( $post->ID ) != 'gallery' || is_archive() || is_search();
+  }
+endif;
+
 if ( ! function_exists( 'uw_dropdowns') )
 {
   function uw_dropdowns()
