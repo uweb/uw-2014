@@ -10000,11 +10000,13 @@ UW.QuickLinks = Backbone.View.extend({
     },
 
     focused: function () {
-        this.$button.attr('aria-expanded', true);
-        this.$drawer.attr('aria-hidden', 'false')
-        this.is_focused = true;
-        this.$links.attr('tabindex', 0);
-        this.$links.first().focus();
+        if (this.$drawer.hasClass('open')){
+            this.$button.attr('aria-expanded', true);
+            this.$drawer.attr('aria-hidden', 'false')
+            this.is_focused = true;
+            this.$links.attr('tabindex', 0);
+            this.$links.first().focus();
+        }
     },
 
     blurred: function (event) {
