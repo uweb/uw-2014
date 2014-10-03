@@ -5,7 +5,7 @@ UW.QuickLinks = Backbone.View.extend({
     // todo: the default list and these elements could be put into the php templates
     container: 'div#uw-container',
     $little_list_header: $('<h3>Helpful Links</h3>'),
-    $drawer: $("<nav id='quicklinks' role='navigation' aria-label='quick links'></nav>"),
+    $drawer: $("<nav id='quicklinks' role='navigation' aria-label='quick links' aria-hidden='true'></nav>"),
     $big_list: $('<ul id="big_links"></ul>'),
     $little_list: $('<ul id="little_list"></ul>'),
 
@@ -126,12 +126,14 @@ UW.QuickLinks = Backbone.View.extend({
     },
 
     focused: function () {
+        this.$drawer.attr('aria-hidden', 'false')
         this.is_focused = true;
         this.$links.attr('tabindex', 0);
         this.$links.first().focus();
     },
 
     blurred: function (event) {
+        this.$drawer.attr('aria-hidden', 'true');
         this.is_focused = false;
         this.$links.attr('tabindex', -1);
     },
