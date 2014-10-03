@@ -7020,47 +7020,47 @@ address {
 #uw-container #quicklinks ul {
   padding: 0;
 }
-#uw-container #quicklinks ul#big_links {
+#uw-container #quicklinks ul#big-links {
   list-style: none;
   margin-top: 10px;
 }
-#uw-container #quicklinks ul#big_links li {
+#uw-container #quicklinks ul#big-links li {
   display: block;
   width: 100%;
   padding: 14px 0 0 0;
 }
-#uw-container #quicklinks ul#big_links li a {
+#uw-container #quicklinks ul#big-links li a {
   font-family: "Encode Sans Compressed", sans-serif;
   font-size: 19px;
   margin-left: 15px;
 }
-#uw-container #quicklinks ul#big_links li a:hover,
-#uw-container #quicklinks ul#big_links li a:focus {
+#uw-container #quicklinks ul#big-links li a:hover,
+#uw-container #quicklinks ul#big-links li a:focus {
   color: #ffd800;
 }
-#uw-container #quicklinks ul#big_links li span {
+#uw-container #quicklinks ul#big-links li span {
   display: block;
   float: left;
   width: 30px;
   height: 30px;
   background: url(assets/svg/uw-sprite.svg) no-repeat 0 0;
 }
-#uw-container #quicklinks ul#big_links li span.icon-maps {
+#uw-container #quicklinks ul#big-links li span.icon-maps {
   background-position: 6px -303px;
 }
-#uw-container #quicklinks ul#big_links li span.icon-directories {
+#uw-container #quicklinks ul#big-links li span.icon-directories {
   background-position: -84px -303px;
 }
-#uw-container #quicklinks ul#big_links li span.icon-calendar {
+#uw-container #quicklinks ul#big-links li span.icon-calendar {
   background-position: -39px -303px;
 }
-#uw-container #quicklinks ul#big_links li span.icon-libraries {
+#uw-container #quicklinks ul#big-links li span.icon-libraries {
   background-position: -129px -303px;
 }
-#uw-container #quicklinks ul#big_links li span.icon-myuw {
+#uw-container #quicklinks ul#big-links li span.icon-myuw {
   background-position: -174px -303px;
 }
-#uw-container #quicklinks ul#big_links li span.icon-uwtoday {
+#uw-container #quicklinks ul#big-links li span.icon-uwtoday {
   background-position: -219px -303px;
 }
 #uw-container #quicklinks h3 {
@@ -7078,14 +7078,14 @@ address {
   position: absolute;
   bottom: -19px;
 }
-#uw-container #quicklinks ul#little_list {
+#uw-container #quicklinks ul#little-links {
   margin-left: 10px;
 }
-#uw-container #quicklinks ul#little_list li {
+#uw-container #quicklinks ul#little-links li {
   list-style: none;
   position: relative;
 }
-#uw-container #quicklinks ul#little_list li:before {
+#uw-container #quicklinks ul#little-links li:before {
   content: "";
   width: 6px;
   height: 6px;
@@ -7099,33 +7099,37 @@ address {
   border-bottom-left-radius: 100%;
   border-top-left-radius: 100%;
 }
-#uw-container #quicklinks ul#little_list li:nth-child(1):before {
+#uw-container #quicklinks ul#little-links li:nth-child(1):before {
   background-color: #8a00ff;
 }
-#uw-container #quicklinks ul#little_list li:nth-child(2):before {
+#uw-container #quicklinks ul#little-links li:nth-child(2):before {
   background-color: #8a00ff;
 }
-#uw-container #quicklinks ul#little_list li:nth-child(3):before {
+#uw-container #quicklinks ul#little-links li:nth-child(3):before {
   background-color: #e49243;
 }
-#uw-container #quicklinks ul#little_list li:nth-child(4):before {
+#uw-container #quicklinks ul#little-links li:nth-child(4):before {
   background-color: #e49243;
 }
-#uw-container #quicklinks ul#little_list li:nth-child(5):before {
+#uw-container #quicklinks ul#little-links li:nth-child(5):before {
   background-color: #9bc343;
 }
-#uw-container #quicklinks ul#little_list li:nth-child(6):before {
+#uw-container #quicklinks ul#little-links li:nth-child(6):before {
   background-color: #439cdb;
 }
-#uw-container #quicklinks ul#little_list li:nth-child(7):before {
+#uw-container #quicklinks ul#little-links li:nth-child(7):before {
   background-color: #439cdb;
 }
-#uw-container #quicklinks ul#little_list li:nth-child(8):before {
+#uw-container #quicklinks ul#little-links li:nth-child(8):before {
   background-color: #439cdb;
 }
-#uw-container #quicklinks ul#little_list li a {
+#uw-container #quicklinks ul#little-links li a {
   font-family: "Encode Sans Compressed", sans-serif;
   font-size: 19px;
+}
+#uw-container #quicklinks ul#little-links li a:hover,
+#uw-container #quicklinks ul#little-links li a:focus {
+  color: #ffd800;
 }
 #uw-container #quicklinks a {
   color: white;

@@ -8,25 +8,25 @@ UW.QuickLinks = Backbone.View.extend({
     container: '#uw-container',
 
     template : '<nav id="quicklinks" role="navigation" aria-label="quick links" aria-hidden="true">' +
-                        '<ul id="big_links">' +
+                        '<ul id="big-links">' +
                             '<% _.each( links, function( link ) { %> ' +
-                            '<li>' +
                                 '<% if (link.classes) { %>' +
-                                    '<span class="<%= link.classes %>"></span>' +
-                                    '<a href="<%= link.url %>" tabindex="-1"><%= link.title %></a>' +
+                                    '<li>' +
+                                        '<span class="<%= link.classes %>"></span>' +
+                                        '<a href="<%= link.url %>" tabindex="-1"><%= link.title %></a>' +
+                                    '</li>' +
                                 '<% } %>' +
-                            '</li>' +
                             '<% }) %>' +
                         '</ul>' +
                         '<h3>Helpful Links</h3>' +
-                        '<ul id="little_list">' +
+                        '<ul id="little-links">' +
                             '<% _.each( links, function( link ) { %> '+
-                                '<li>' +
-                                    '<% if ( ! link.classes) { %>' +
+                                '<% if ( ! link.classes) { %>' +
+                                    '<li>' +
                                         '<span class="<%= link.classes %>"></span>' +
                                         '<a href="<%= link.url %>" tabindex="-1"><%= link.title %></a>' +
-                                    '<% } %>' +
-                                '</li>' +
+                                    '</li>' +
+                                '<% } %>' +
                             '<% }) %>' +
                         '</ul>' +
                     '</nav>',
