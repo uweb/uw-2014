@@ -106,10 +106,16 @@ UW.QuickLinks = Backbone.View.extend({
     },
 
     animate: function (event) {
-        if(!this.is_focused){
-            event.preventDefault();
-            this.$container.toggleClass('open');
-            this.$drawer.toggleClass('open');
+        event.preventDefault();
+        if (this.$drawer.hasClass('open')) {
+            this.$container.removeClass('open');
+            this.$drawer.removeClass('open');
+            this.blurred();
+        }
+        else {
+            this.$container.addClass('open');
+            this.$drawer.addClass('open');
+            _.delay(this.focused, 500);
         }
     },
 
