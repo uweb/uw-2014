@@ -10002,13 +10002,15 @@ a.screen-reader-shortcut:focus {
 .widget_recent_entries ul,
 .recent-posts-widget ul,
 .uw-recent ul,
-.uw-top-posts ul {
+.uw-top-posts ul,
+.uw-widget-rss-widget ul {
   padding: 0;
 }
 .widget_recent_entries li,
 .recent-posts-widget li,
 .uw-recent li,
-.uw-top-posts li {
+.uw-top-posts li,
+.uw-widget-rss-widget li {
   clear: both;
   padding-top: 5px;
   list-style: none;
@@ -10017,19 +10019,22 @@ a.screen-reader-shortcut:focus {
 .widget_recent_entries li:last-child p:after,
 .recent-posts-widget li:last-child p:after,
 .uw-recent li:last-child p:after,
-.uw-top-posts li:last-child p:after {
+.uw-top-posts li:last-child p:after,
+.uw-widget-rss-widget li:last-child p:after {
   display: none;
 }
 .widget_recent_entries a,
 .recent-posts-widget a,
 .uw-recent a,
-.uw-top-posts a {
+.uw-top-posts a,
+.uw-widget-rss-widget a {
   overflow: hidden;
 }
 .widget_recent_entries p,
 .recent-posts-widget p,
 .uw-recent p,
-.uw-top-posts p {
+.uw-top-posts p,
+.uw-widget-rss-widget p {
   margin: 0;
   position: relative;
   padding-bottom: 20px;
@@ -10037,7 +10042,8 @@ a.screen-reader-shortcut:focus {
 .widget_recent_entries p:after,
 .recent-posts-widget p:after,
 .uw-recent p:after,
-.uw-top-posts p:after {
+.uw-top-posts p:after,
+.uw-widget-rss-widget p:after {
   position: absolute;
   bottom: 10px;
   left: 0;
@@ -10049,9 +10055,8 @@ a.screen-reader-shortcut:focus {
 .widget_recent_entries img,
 .recent-posts-widget img,
 .uw-recent img,
-.uw-top-posts img {
-  width: 100%
-		height: auto;
+.uw-top-posts img,
+.uw-widget-rss-widget img {
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   border-radius: 100%;
@@ -10068,7 +10073,8 @@ a.screen-reader-shortcut:focus {
 .widget_recent_entries a.widget-link,
 .recent-posts-widget a.widget-link,
 .uw-recent a.widget-link,
-.uw-top-posts a.widget-link {
+.uw-top-posts a.widget-link,
+.uw-widget-rss-widget a.widget-link {
   font-family: "Encode Sans Compressed", sans-serif;
   color: #4b2e83;
   font-size: 18px;
@@ -10080,13 +10086,15 @@ a.screen-reader-shortcut:focus {
 .widget_recent_entries .more,
 .recent-posts-widget .more,
 .uw-recent .more,
-.uw-top-posts .more {
+.uw-top-posts .more,
+.uw-widget-rss-widget .more {
   margin: 10px 0 0 0;
 }
 .widget_recent_entries small,
 .recent-posts-widget small,
 .uw-recent small,
-.uw-top-posts small {
+.uw-top-posts small,
+.uw-widget-rss-widget small {
   font-family: "Encode Sans Compressed", sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -10094,14 +10102,16 @@ a.screen-reader-shortcut:focus {
 .widget_recent_entries span,
 .recent-posts-widget span,
 .uw-recent span,
-.uw-top-posts span {
+.uw-top-posts span,
+.uw-widget-rss-widget span {
   display: block;
   overflow: hidden;
 }
 .widget_recent_entries svg,
 .recent-posts-widget svg,
 .uw-recent svg,
-.uw-top-posts svg {
+.uw-top-posts svg,
+.uw-widget-rss-widget svg {
   margin-left: 10px;
 }
 .widget_yarpp_widget ul,
@@ -10585,7 +10595,7 @@ a.screen-reader-shortcut:focus {
     width: 468px;
   }
 }
-.site-giving-new .giving-background {
+.site-giving-new.home .giving-background {
   background: url(images/bg.jpg) no-repeat center center;
   width: 100%;
   height: 1000px;
