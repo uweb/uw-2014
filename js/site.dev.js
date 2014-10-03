@@ -9982,7 +9982,7 @@ UW.QuickLinks = Backbone.View.extend({
     },
 
     keyup: function (event) {
-        if (event.keyCode == 13) {
+        if ((event.keyCode == 13) || (event.keyCode == 32)) {
             if (this.is_focused) {
                 this.blurred();
                 this.animate(event);
