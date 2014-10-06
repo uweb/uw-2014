@@ -30,6 +30,7 @@ UW.initialize = function( $ )
 {
   // Cache common elements that each javascript module calls
   UW.$body       = $('body');
+  UW.$window   = $( window );
 
   // UW Utilities
   UW.dropdowns  = _.map( $( UW.elements.dropdowns ),     function( element ) { return new UW.Dropdowns({ el : element }) } )

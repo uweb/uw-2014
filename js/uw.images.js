@@ -1,6 +1,16 @@
 UW.Image = Backbone.View.extend({
 
-  template : '<div class="uw-overlay"><div></div><div class="wrapper" style="width:<%= width %>px; margin-top:-<%= height/2 %>px; margin-left:-<%= width/2 %>px;"><span class="close"> Close</span><img src="<%= src %>" alt="<%=alt %>" /><p><%= caption %></p><p><%= credit %></p></div></div>',
+  RATIO : 0.8,
+
+  template : '<div class="uw-overlay">' +
+                    '<div></div>' +
+                    '<div class="wrapper" style="width:<%= width %>px; margin-top:-<%= height/2 %>px; margin-left:-<%= width/2 %>px;">' +
+                     '<span class="close"> Close</span>' +
+                     '<img src="<%= src %>" alt="<%=alt %>" style="width:100%;" />' +
+                     '<p><%= caption %></p>' +
+                     '<p><%= credit %></p>' +
+                   '</div>' +
+                 '</div>',
 
   events : {
     'click' : 'fetchImage'
@@ -30,6 +40,14 @@ UW.Image = Backbone.View.extend({
     this.image = _.first( images.images )
     this.attrs.height = this.image.img.height
     this.attrs.width  = this.image.img.width
+
+    if ( this.image.img.height > UW.$window.height() ||
+          this.image.img.width > UW.$window.width() )
+    {
+      this.attrs.height = this.RATIO * UW.$window.height()
+      this.attrs.width  = this.RATIO * UW.$window.width()
+    }
+
     this.render()
 
     return false;
