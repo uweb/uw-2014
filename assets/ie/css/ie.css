@@ -22,7 +22,7 @@
 	display: none;
 }
 
-.uw-thinstrip ul.uw-thin-links li a:after, 
+.uw-thinstrip ul.uw-thin-links li a:after,
 .uw-thinstrip ul.uw-thin-links li button:after {
 	background-image: url(../img/uw-sprite.png);
 }
@@ -30,6 +30,6 @@
 .uw-search-bar-container a.search {
 	background-image: url(../img/search.png);
 }
-#uw-container #quicklinks ul#big_links li span {
+#uw-container #quicklinks ul#big-links li span {
 	background-image: url(../img/uw-sprite.png);
 }

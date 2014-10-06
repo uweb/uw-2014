@@ -9876,30 +9876,51 @@ UW.QuickLinks = Backbone.View.extend({
     $drawer: $("<nav id='quicklinks' role='navigation' aria-label='quick links' aria-hidden='true'><button class='close_quicklinks' style='position:absolute;left:-10000px;' tabindex='-1'>close_quicklinks</button></nav>"),
     $big_list: $('<ul id="big_links"></ul>'),
     $little_list: $('<ul id="little_list"></ul>'),
+    DELAY : 500,
 
-    template : '<li><% if (classes) { %><span class="<%= classes %>"></span><% } %><a href="<%= url %>" tabindex="-1"><%= title %></a></li>',
+
+    template : '<nav id="quicklinks" role="navigation" aria-label="quick links" aria-hidden="true">' +
+                        '<ul id="big-links">' +
+                            '<% _.each( links, function( link ) { %> ' +
+                                '<% if (link.classes) { %>' +
+                                    '<li>' +
+                                        '<span class="<%= link.classes %>"></span>' +
+                                        '<a href="<%= link.url %>" tabindex="-1"><%= link.title %></a>' +
+                                    '</li>' +
+                                '<% } %>' +
+                            '<% }) %>' +
+                        '</ul>' +
+                        '<h3>Helpful Links</h3>' +
+                        '<ul id="little-links">' +
+                            '<% _.each( links, function( link ) { %> '+
+                                '<% if ( ! link.classes) { %>' +
+                                    '<li>' +
+                                        '<span class="<%= link.classes %>"></span>' +
+                                        '<a href="<%= link.url %>" tabindex="-1"><%= link.title %></a>' +
+                                    '</li>' +
+                                '<% } %>' +
+                            '<% }) %>' +
+                        '</ul>' +
+                    '</nav>',
 
     events: {
-       'click'       : 'animate',
-       'touchstart'  : 'animate',
-       'keyup'       : 'keyup'
+       'click'           : 'animate',
+       'touchstart'   : 'animate',
+       'keyup'         : 'animate',
+       'blur button' : 'loop'
     },
 
     initialize: function ( options ) {
-        _.bindAll( this, 'render', 'append_menu_item', 'close_quicklinks', 'focused', 'blurred', 'button_blur', 'keyup' );
+        _.bindAll( this, 'render', 'accessible', 'loop'  );
         this.links = new UW.QuickLinks.Collection( options )
         this.links.on( 'sync', this.render )
-        this.$button = this.$el.find('button');
-        this.$button.blur(this.button_blur);
     },
 
     render : function(  )
     {
-        this.links.each( this.append_menu_item )
-        // todo: may put the drawer directly in the theme
+        this.quicklinks = $ ( _.template( this.template, { links : this.links.toJSON() }) )
         this.make_drawer()
-        this.add_lists()
-        // this.setElement( this.$drawer )
+        this.$container.prepend( this.quicklinks )
     },
 
     make_drawer: function () {
@@ -9962,68 +9983,35 @@ UW.QuickLinks = Backbone.View.extend({
         });
     },
 
-    reset: function () {
-        this.clear_lists();
-        this.clear_drawer();
+    animate: function ( e ) {
+        e.preventDefault();
+
+         if ( e.keyCode && e.keyCode != 13 ||
+                e.keyCode && e.keyCode != 32 )
+            return false;
+
+        this.$container.toggleClass('open')
+        this.quicklinks.toggleClass('open')
+
+        this.open = this.quicklinks.hasClass( 'open' )
+
+        _.delay( this.accessible, this.open ? this.DELAY : 0 )
     },
 
-    clear_lists: function () {
-        this.$little_list.html('');
-        this.$big_list.html('');
+    accessible : function (argument)
+    {
+        this.$el.find('button').attr( 'aria-expanded', this.open )
+        this.quicklinks.attr('aria-hidden',  ( ! this.open ).toString() )
+        if ( this.open )
+            this.quicklinks.find('a').attr( 'tabindex', 0 ).first().focus()
+        else
+            this.quicklinks.find('a').attr( 'tabindex', -1 )
     },
 
-    clear_drawer: function () {
-        this.$drawer.html('');
-    },
-
-    animate: function (event) {
-        event.preventDefault();
-        if (this.$drawer.hasClass('open')) {
-            this.$container.removeClass('open');
-            this.$drawer.removeClass('open');
-            this.blurred();
-        }
-        else {
-            this.$container.addClass('open');
-            this.$drawer.addClass('open');
-            _.delay(this.focused, 500);
-        }
-    },
-
-    keyup: function (event) {
-        if ((event.keyCode == 13) || (event.keyCode == 32)) {
-            if (this.is_focused) {
-                this.blurred();
-                this.animate(event);
-            }
-            else {
-                _.delay(this.focused, 500);
-            }
-        }
-    },
-
-    focused: function () {
-        if (this.$drawer.hasClass('open')){
-            this.$button.attr('aria-expanded', true);
-            this.$drawer.attr('aria-hidden', 'false')
-            this.is_focused = true;
-            this.$links.attr('tabindex', 0);
-            this.$links.first().focus();
-        }
-    },
-
-    blurred: function (event) {
-        this.$button.attr('aria-expanded', false);
-        this.$drawer.attr('aria-hidden', 'true');
-        this.is_focused = false;
-        this.$links.attr('tabindex', -1);
-    },
-
-    button_blur: function (event) {
-        if(this.is_focused){
-            this.$links.first().focus();
-        }
+    loop : function (event) {
+        if( this.open ) this.quicklinks.find('li a').first().focus();
     }
+
 });
 
 UW.QuickLinks.Model = Backbone.Model.extend({});
@@ -10032,22 +10020,11 @@ UW.QuickLinks.Collection = Backbone.Collection.extend({
 
     model: UW.QuickLinks.Model,
 
-    initialize: function ( options ) {
-        // _.bindAll(this, 'parse', 'make_view');
+    initialize: function ( options )
+    {
         this.url = options.url;
-        //refusal to execute the ajax request isn't handled here.  Looks like it should be, but it isn't
         this.fetch()
     },
-
-    //pull this out of the collection?
-    // default_links: [
-    //     {title: 'Maps', url: 'http://uw.edu/maps', classes: ['icon-maps']},
-    //     {title: 'Directories', url: 'http://uw.edu/directory', classes: ['icon-directories']},
-    //     {title: 'Calendar', url: 'http://uw.edu/calendar', classes: ['icon-calendar']},
-    //     {title: 'Libraries', url: 'http://uw.edu/libraries', classes: ['icon-libraries']},
-    //     {title: 'MyUW', url: 'http://myuw.washington.edu', classes: ['icon-myuw']},
-    //     {title: 'UW Today', url: 'http://uw.edu/news', classes: ['icon-uwtoday']},
-    //    ],
 
 });
 ;// ### UW Slideshow

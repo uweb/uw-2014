@@ -148,7 +148,9 @@ class UW_RSS extends WP_Widget
             $image = "<a class='widget-thumbnail' href='$link' title='$attr'><img src='$src' title='$attr' /></a>";
           }
 
-          $title = "<a class='widget-link' href='$link' title='$attr'>$attr</a>";
+          $date = $item->get_date();
+          $date = "<p>$date</p>";
+          $title = "<a class='widget-link' href='$link' title='$attr'>$attr $date </a>";
           $content .= "<li>$image$title</li>";
         }
 

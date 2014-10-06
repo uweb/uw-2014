@@ -7020,47 +7020,47 @@ address {
 #uw-container #quicklinks ul {
   padding: 0;
 }
-#uw-container #quicklinks ul#big_links {
+#uw-container #quicklinks ul#big-links {
   list-style: none;
   margin-top: 10px;
 }
-#uw-container #quicklinks ul#big_links li {
+#uw-container #quicklinks ul#big-links li {
   display: block;
   width: 100%;
   padding: 14px 0 0 0;
 }
-#uw-container #quicklinks ul#big_links li a {
+#uw-container #quicklinks ul#big-links li a {
   font-family: "Encode Sans Compressed", sans-serif;
   font-size: 19px;
   margin-left: 15px;
 }
-#uw-container #quicklinks ul#big_links li a:hover,
-#uw-container #quicklinks ul#big_links li a:focus {
+#uw-container #quicklinks ul#big-links li a:hover,
+#uw-container #quicklinks ul#big-links li a:focus {
   color: #ffd800;
 }
-#uw-container #quicklinks ul#big_links li span {
+#uw-container #quicklinks ul#big-links li span {
   display: block;
   float: left;
   width: 30px;
   height: 30px;
   background: url(assets/svg/uw-sprite.svg) no-repeat 0 0;
 }
-#uw-container #quicklinks ul#big_links li span.icon-maps {
+#uw-container #quicklinks ul#big-links li span.icon-maps {
   background-position: 6px -303px;
 }
-#uw-container #quicklinks ul#big_links li span.icon-directories {
+#uw-container #quicklinks ul#big-links li span.icon-directories {
   background-position: -84px -303px;
 }
-#uw-container #quicklinks ul#big_links li span.icon-calendar {
+#uw-container #quicklinks ul#big-links li span.icon-calendar {
   background-position: -39px -303px;
 }
-#uw-container #quicklinks ul#big_links li span.icon-libraries {
+#uw-container #quicklinks ul#big-links li span.icon-libraries {
   background-position: -129px -303px;
 }
-#uw-container #quicklinks ul#big_links li span.icon-myuw {
+#uw-container #quicklinks ul#big-links li span.icon-myuw {
   background-position: -174px -303px;
 }
-#uw-container #quicklinks ul#big_links li span.icon-uwtoday {
+#uw-container #quicklinks ul#big-links li span.icon-uwtoday {
   background-position: -219px -303px;
 }
 #uw-container #quicklinks h3 {
@@ -7078,14 +7078,14 @@ address {
   position: absolute;
   bottom: -19px;
 }
-#uw-container #quicklinks ul#little_list {
+#uw-container #quicklinks ul#little-links {
   margin-left: 10px;
 }
-#uw-container #quicklinks ul#little_list li {
+#uw-container #quicklinks ul#little-links li {
   list-style: none;
   position: relative;
 }
-#uw-container #quicklinks ul#little_list li:before {
+#uw-container #quicklinks ul#little-links li:before {
   content: "";
   width: 6px;
   height: 6px;
@@ -7099,33 +7099,37 @@ address {
   border-bottom-left-radius: 100%;
   border-top-left-radius: 100%;
 }
-#uw-container #quicklinks ul#little_list li:nth-child(1):before {
+#uw-container #quicklinks ul#little-links li:nth-child(1):before {
   background-color: #8a00ff;
 }
-#uw-container #quicklinks ul#little_list li:nth-child(2):before {
+#uw-container #quicklinks ul#little-links li:nth-child(2):before {
   background-color: #8a00ff;
 }
-#uw-container #quicklinks ul#little_list li:nth-child(3):before {
+#uw-container #quicklinks ul#little-links li:nth-child(3):before {
   background-color: #e49243;
 }
-#uw-container #quicklinks ul#little_list li:nth-child(4):before {
+#uw-container #quicklinks ul#little-links li:nth-child(4):before {
   background-color: #e49243;
 }
-#uw-container #quicklinks ul#little_list li:nth-child(5):before {
+#uw-container #quicklinks ul#little-links li:nth-child(5):before {
   background-color: #9bc343;
 }
-#uw-container #quicklinks ul#little_list li:nth-child(6):before {
+#uw-container #quicklinks ul#little-links li:nth-child(6):before {
   background-color: #439cdb;
 }
-#uw-container #quicklinks ul#little_list li:nth-child(7):before {
+#uw-container #quicklinks ul#little-links li:nth-child(7):before {
   background-color: #439cdb;
 }
-#uw-container #quicklinks ul#little_list li:nth-child(8):before {
+#uw-container #quicklinks ul#little-links li:nth-child(8):before {
   background-color: #439cdb;
 }
-#uw-container #quicklinks ul#little_list li a {
+#uw-container #quicklinks ul#little-links li a {
   font-family: "Encode Sans Compressed", sans-serif;
   font-size: 19px;
+}
+#uw-container #quicklinks ul#little-links li a:hover,
+#uw-container #quicklinks ul#little-links li a:focus {
+  color: #ffd800;
 }
 #uw-container #quicklinks a {
   color: white;
@@ -8164,6 +8168,7 @@ table th[class*="col-"] {
   padding: 0;
 }
 .uw-thinstrip ul.uw-thin-links li {
+  float: right;
   list-style: none;
 }
 .uw-thinstrip ul.uw-thin-links li:first-child a:after {
@@ -8323,6 +8328,9 @@ table th[class*="col-"] {
   .uw-thinstrip ul.uw-thin-links {
     height: 50px;
   }
+  .uw-thinstrip ul.uw-thin-links li {
+    float: none;
+  }
   .uw-thinstrip ul.uw-thin-links li.uw-quicklinks button {
     background-position: -484px -247px;
     background-size: 900px;
@@ -8395,6 +8403,9 @@ table th[class*="col-"] {
   }
   .uw-thinstrip .uw-wordmark {
     top: -60px;
+  }
+  .uw-thinstrip ul.uw-thin-links li {
+    float: none;
   }
   .uw-thinstrip ul.uw-thin-links:before {
     position: absolute;
@@ -9995,13 +10006,15 @@ a.screen-reader-shortcut:focus {
 .widget_recent_entries ul,
 .recent-posts-widget ul,
 .uw-recent ul,
-.uw-top-posts ul {
+.uw-top-posts ul,
+.uw-widget-rss-widget ul {
   padding: 0;
 }
 .widget_recent_entries li,
 .recent-posts-widget li,
 .uw-recent li,
-.uw-top-posts li {
+.uw-top-posts li,
+.uw-widget-rss-widget li {
   clear: both;
   padding-top: 5px;
   list-style: none;
@@ -10010,19 +10023,22 @@ a.screen-reader-shortcut:focus {
 .widget_recent_entries li:last-child p:after,
 .recent-posts-widget li:last-child p:after,
 .uw-recent li:last-child p:after,
-.uw-top-posts li:last-child p:after {
+.uw-top-posts li:last-child p:after,
+.uw-widget-rss-widget li:last-child p:after {
   display: none;
 }
 .widget_recent_entries a,
 .recent-posts-widget a,
 .uw-recent a,
-.uw-top-posts a {
+.uw-top-posts a,
+.uw-widget-rss-widget a {
   overflow: hidden;
 }
 .widget_recent_entries p,
 .recent-posts-widget p,
 .uw-recent p,
-.uw-top-posts p {
+.uw-top-posts p,
+.uw-widget-rss-widget p {
   margin: 0;
   position: relative;
   padding-bottom: 20px;
@@ -10030,7 +10046,8 @@ a.screen-reader-shortcut:focus {
 .widget_recent_entries p:after,
 .recent-posts-widget p:after,
 .uw-recent p:after,
-.uw-top-posts p:after {
+.uw-top-posts p:after,
+.uw-widget-rss-widget p:after {
   position: absolute;
   bottom: 10px;
   left: 0;
@@ -10042,9 +10059,8 @@ a.screen-reader-shortcut:focus {
 .widget_recent_entries img,
 .recent-posts-widget img,
 .uw-recent img,
-.uw-top-posts img {
-  width: 100%
-		height: auto;
+.uw-top-posts img,
+.uw-widget-rss-widget img {
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   border-radius: 100%;
@@ -10061,7 +10077,8 @@ a.screen-reader-shortcut:focus {
 .widget_recent_entries a.widget-link,
 .recent-posts-widget a.widget-link,
 .uw-recent a.widget-link,
-.uw-top-posts a.widget-link {
+.uw-top-posts a.widget-link,
+.uw-widget-rss-widget a.widget-link {
   font-family: "Encode Sans Compressed", sans-serif;
   color: #4b2e83;
   font-size: 18px;
@@ -10073,13 +10090,15 @@ a.screen-reader-shortcut:focus {
 .widget_recent_entries .more,
 .recent-posts-widget .more,
 .uw-recent .more,
-.uw-top-posts .more {
+.uw-top-posts .more,
+.uw-widget-rss-widget .more {
   margin: 10px 0 0 0;
 }
 .widget_recent_entries small,
 .recent-posts-widget small,
 .uw-recent small,
-.uw-top-posts small {
+.uw-top-posts small,
+.uw-widget-rss-widget small {
   font-family: "Encode Sans Compressed", sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -10087,14 +10106,16 @@ a.screen-reader-shortcut:focus {
 .widget_recent_entries span,
 .recent-posts-widget span,
 .uw-recent span,
-.uw-top-posts span {
+.uw-top-posts span,
+.uw-widget-rss-widget span {
   display: block;
   overflow: hidden;
 }
 .widget_recent_entries svg,
 .recent-posts-widget svg,
 .uw-recent svg,
-.uw-top-posts svg {
+.uw-top-posts svg,
+.uw-widget-rss-widget svg {
   margin-left: 10px;
 }
 .widget_yarpp_widget ul,
@@ -10578,7 +10599,7 @@ a.screen-reader-shortcut:focus {
     width: 468px;
   }
 }
-.site-giving-new .giving-background {
+.site-giving-new.home .giving-background {
   background: url(images/bg.jpg) no-repeat center center;
   width: 100%;
   height: 1000px;
