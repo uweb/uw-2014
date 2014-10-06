@@ -120,8 +120,14 @@ UW.QuickLinks = Backbone.View.extend({
     animate: function ( e ) {
         e.preventDefault();
 
-         if ( e.keyCode && (e.keyCode != 27 ))
+        if ( e.keyCode && (e.keyCode != 27 )){
             return false;
+        }
+        else if ( e.keyCode && e.keyCode == 27){
+            if (!this.open){
+                return false;
+            }
+        }
 
         this.$container.toggleClass('open')
         this.quicklinks.toggleClass('open')
