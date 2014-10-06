@@ -149,6 +149,7 @@ class UW_RSS extends WP_Widget
           }
 
           $date = $item->get_date();
+          $date = human_time_diff( strtotime( $date ) ) . ' ago';
           $date = "<p>$date</p>";
           $title = "<a class='widget-link' href='$link' title='$attr'>$attr $date </a>";
           $content .= "<li>$image$title</li>";
