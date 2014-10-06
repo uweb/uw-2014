@@ -9873,7 +9873,7 @@ UW.QuickLinks = Backbone.View.extend({
     // todo: the default list and these elements could be put into the php templates
     container: 'div#uw-container',
     $little_list_header: $('<h3>Helpful Links</h3>'),
-    $drawer: $("<nav id='quicklinks' role='navigation' aria-label='quick links' aria-hidden='true'></nav>"),
+    $drawer: $("<nav id='quicklinks' role='navigation' aria-label='quick links' aria-hidden='true'><button class='close_quicklinks' style='position:absolute;left:-10000px;' tabindex='-1'>close_quicklinks</button></nav>"),
     $big_list: $('<ul id="big_links"></ul>'),
     $little_list: $('<ul id="little_list"></ul>'),
 
@@ -9936,12 +9936,12 @@ UW.QuickLinks = Backbone.View.extend({
     },
 
     add_lists : function () {
-        if (this.$big_list.find('li').length > 0) {
-            this.$drawer.append(this.$big_list);
-        }
         if (this.$little_list.find('li').length > 0) {
-            this.$drawer.append(this.$little_list_header);
-            this.$drawer.append(this.$little_list);
+            this.$drawer.prepend(this.$little_list);
+            this.$drawer.prepend(this.$little_list_header);
+        }
+        if (this.$big_list.find('li').length > 0) {
+            this.$drawer.prepend(this.$big_list);
         }
         this.$links = this.$drawer.find('li a');
         this.add_events();
@@ -9950,6 +9950,9 @@ UW.QuickLinks = Backbone.View.extend({
 
     add_events: function () {
         $('#uw-container-inner').on( {
+            'click': this.close_quicklinks
+        });
+        this.$drawer.find('button.close_quicklinks').on({
             'click': this.close_quicklinks
         });
         this.$links.on( {'keyup': this.close_quicklinks});
