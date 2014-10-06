@@ -141,10 +141,14 @@ UW.QuickLinks = Backbone.View.extend({
     {
         this.$el.find('button').attr( 'aria-expanded', this.open )
         this.quicklinks.attr('aria-hidden',  ( ! this.open ).toString() )
-        if ( this.open )
+        if ( this.open ){
             this.quicklinks.find('a').attr( 'tabindex', 0 ).first().focus()
-        else
+            $('#uw-container-inner').attr('aria-hidden', true);
+        }
+        else{
             this.quicklinks.find('a').attr( 'tabindex', -1 )
+            $('#uw-container-inner').attr('aria-hidden', false);
+        }
     },
 
     loop : function (event) {
