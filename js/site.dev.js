@@ -10013,10 +10013,12 @@ UW.QuickLinks = Backbone.View.extend({
         if ( this.open ){
             this.quicklinks.find('a').attr( 'tabindex', 0 ).first().focus()
             $('#uw-container-inner').attr('aria-hidden', true);
+            $('.screen-reader-shortcut').attr('aria-hidden', true)
         }
         else{
             this.quicklinks.find('a').attr( 'tabindex', -1 )
             $('#uw-container-inner').attr('aria-hidden', false);
+            $('.screen-reader-shortcut').attr('aria-hidden', false);
         }
     },
 
