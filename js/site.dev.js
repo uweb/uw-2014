@@ -9912,7 +9912,7 @@ UW.QuickLinks = Backbone.View.extend({
 
     initialize: function ( options ) {
         this.$button = this.$el.find('button')
-        _.bindAll( this, 'render', 'accessible', 'loop', 'close_quicklinks', 'add_events'  );
+        _.bindAll( this, 'render', 'accessible', 'loop', 'close_quicklinks', 'add_events', 'check_focus'  );
         this.links = new UW.QuickLinks.Collection( options )
         this.links.on( 'sync', this.render )
     },
@@ -9981,9 +9981,18 @@ UW.QuickLinks = Backbone.View.extend({
         });
         this.$links.on( {'keyup': this.close_quicklinks});
         var self = this;
-        this.$links.last().blur(function () {
-            self.$button.focus();
+        this.$links.blur(function() {
+            _.defer(self.check_focus);
         });
+    },
+    
+    check_focus: function (event) {
+        if (($.inArray(document.activeElement, this.$links) != -1) || document.activeElement == this.$button[0]){
+            return;
+        }
+        else {
+            this.$button.focus();
+        }
     },
 
     animate: function ( e ) {
