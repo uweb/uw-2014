@@ -54,6 +54,7 @@ UW.QuickLinks = Backbone.View.extend({
         this.quicklinks = $ ( _.template( this.template, { links : this.links.toJSON() }) )
         this.make_drawer();
         this.$container.prepend( this.quicklinks )
+        this.$button.attr('aria-controls', 'quicklinks').attr('aria-owns', 'quicklinks');
         this.$drawer = this.$container.find('nav#quicklinks');
         this.add_events();
     },
