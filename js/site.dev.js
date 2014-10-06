@@ -9922,6 +9922,7 @@ UW.QuickLinks = Backbone.View.extend({
         this.quicklinks = $ ( _.template( this.template, { links : this.links.toJSON() }) )
         this.make_drawer();
         this.$container.prepend( this.quicklinks )
+        this.$button.attr('aria-controls', 'quicklinks').attr('aria-owns', 'quicklinks');
         this.$drawer = this.$container.find('nav#quicklinks');
         this.add_events();
     },
@@ -9988,8 +9989,14 @@ UW.QuickLinks = Backbone.View.extend({
     animate: function ( e ) {
         e.preventDefault();
 
-         if ( e.keyCode && (e.keyCode != 27 ))
+        if ( e.keyCode && (e.keyCode != 27 )){
             return false;
+        }
+        else if ( e.keyCode && e.keyCode == 27){
+            if (!this.open){
+                return false;
+            }
+        }
 
         this.$container.toggleClass('open')
         this.quicklinks.toggleClass('open')
@@ -10003,10 +10010,14 @@ UW.QuickLinks = Backbone.View.extend({
     {
         this.$el.find('button').attr( 'aria-expanded', this.open )
         this.quicklinks.attr('aria-hidden',  ( ! this.open ).toString() )
-        if ( this.open )
+        if ( this.open ){
             this.quicklinks.find('a').attr( 'tabindex', 0 ).first().focus()
-        else
+            $('#uw-container-inner').attr('aria-hidden', true);
+        }
+        else{
             this.quicklinks.find('a').attr( 'tabindex', -1 )
+            $('#uw-container-inner').attr('aria-hidden', false);
+        }
     },
 
     loop : function (event) {
