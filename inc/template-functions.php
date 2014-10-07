@@ -190,18 +190,35 @@ if ( ! function_exists('get_uw_breadcrumbs') ) :
     {
         $html .=  '<li class="current"><a href="'. get_search_link( get_search_query() ) .'" title="'. esc_attr( get_search_query() ) .'">Search results for ' . get_search_query() . '</a>';
     } else
+
     // If the current view is a post type other than page or attachment then the breadcrumbs will be taxonomies.
-    if( is_category() || is_single() )
+    if( is_category() || is_single() || is_post_type_archive() )
     {
+
+      if ( is_post_type_archive() )
+      {
+        $posttype = get_post_type_object( get_post_type() );
+        $html .=  '<li class="current"><a href="'  . get_post_type_archive_link( $posttype->query_var ) .'" title="'. $posttype->labels->menu_name .'">'. $posttype->labels->menu_name  . '</a>';
+      }
+
       if ( is_category() )
       {
         $category = get_category( get_query_var( 'cat' ) );
         $html .=  '<li class="current"><a href="'  . get_category_link( $category->term_id ) .'" title="'. get_cat_name( $category->term_id ).'">'. get_cat_name($category->term_id ) . '</a>';
       }
+
       if ( is_single() )
       {
-        $category = array_shift( get_the_category( $post->ID  ) ) ;
-        $html .=  '<li><a href="'  . get_category_link( $category->term_id ) .'" title="'. get_cat_name( $category->term_id ).'">'. get_cat_name($category->term_id ) . '</a>';
+        if ( has_category() )
+        {
+          $category = array_shift( get_the_category( $post->ID  ) ) ;
+          $html .=  '<li><a href="'  . get_category_link( $category->term_id ) .'" title="'. get_cat_name( $category->term_id ).'">'. get_cat_name($category->term_id ) . '</a>';
+        }
+        if ( uw_is_custom_post_type() )
+        {
+          $posttype = get_post_type_object( get_post_type() );
+          $html .=  '<li><a href="'  . get_post_type_archive_link( $posttype->query_var ) .'" title="'. $posttype->labels->menu_name .'">'. $posttype->labels->menu_name  . '</a>';
+        }
         $html .=  '<li class="current"><a href="'  . get_permalink( $post->ID ) .'" title="'. esc_attr( get_the_title( $post->ID  ) ) .'">'. get_the_title( $post->ID ) . '</a>';
       }
     }
@@ -277,6 +294,15 @@ if ( ! function_exists( 'uw_get_sticky_posts' ))  :
 
     return get_posts(  $options );
   }
+endif;
+
+if ( ! function_exists('uw_is_custom_post_type') ) :
+
+  function uw_is_custom_post_type()
+  {
+    return array_key_exists(  get_post_type(),  get_post_types( array( _builtin=>false) ) );
+  }
+
 endif;
 
 
