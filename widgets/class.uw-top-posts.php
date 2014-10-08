@@ -3,6 +3,8 @@
 //       Name: UW Top Posts
 //       Description: A widget that shows top posts and most recent posts on your blog
 
+if ( ! class_exists( 'UW_Top_Posts' ) ) :
+
 class UW_Top_Posts extends WP_Widget
 {
 
@@ -93,7 +95,7 @@ class UW_Top_Posts extends WP_Widget
               <p><small><?php echo $this->convertViews( $post->views ) ?></small></p>
             </a>
 
-            
+
 
           </li>
 
@@ -196,3 +198,5 @@ class UW_Top_Posts extends WP_Widget
 
 // Instantiate the plugin
 register_widget( 'UW_Top_Posts' );
+
+endif;
