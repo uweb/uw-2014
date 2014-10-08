@@ -6546,14 +6546,16 @@ a.screen-reader-shortcut:focus {
 .recent-posts-widget ul,
 .uw-recent ul,
 .uw-top-posts ul,
-.uw-widget-rss-widget ul {
+.uw-widget-related-posts ul,
+.uw-widget-rss ul {
   padding: 0;
 }
 .widget_recent_entries li,
 .recent-posts-widget li,
 .uw-recent li,
 .uw-top-posts li,
-.uw-widget-rss-widget li {
+.uw-widget-related-posts li,
+.uw-widget-rss li {
   clear: both;
   padding-top: 5px;
   list-style: none;
@@ -6563,14 +6565,16 @@ a.screen-reader-shortcut:focus {
 .recent-posts-widget li:last-child p:after,
 .uw-recent li:last-child p:after,
 .uw-top-posts li:last-child p:after,
-.uw-widget-rss-widget li:last-child p:after {
+.uw-widget-related-posts li:last-child p:after,
+.uw-widget-rss li:last-child p:after {
   display: none;
 }
 .widget_recent_entries p,
 .recent-posts-widget p,
 .uw-recent p,
 .uw-top-posts p,
-.uw-widget-rss-widget p {
+.uw-widget-related-posts p,
+.uw-widget-rss p {
   margin: 0;
   position: relative;
   padding-bottom: 20px;
@@ -6579,7 +6583,8 @@ a.screen-reader-shortcut:focus {
 .recent-posts-widget p:after,
 .uw-recent p:after,
 .uw-top-posts p:after,
-.uw-widget-rss-widget p:after {
+.uw-widget-related-posts p:after,
+.uw-widget-rss p:after {
   position: absolute;
   bottom: 10px;
   left: 0;
@@ -6592,7 +6597,8 @@ a.screen-reader-shortcut:focus {
 .recent-posts-widget img,
 .uw-recent img,
 .uw-top-posts img,
-.uw-widget-rss-widget img {
+.uw-widget-related-posts img,
+.uw-widget-rss img {
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   border-radius: 100%;
@@ -6610,7 +6616,8 @@ a.screen-reader-shortcut:focus {
 .recent-posts-widget a.widget-link,
 .uw-recent a.widget-link,
 .uw-top-posts a.widget-link,
-.uw-widget-rss-widget a.widget-link {
+.uw-widget-related-posts a.widget-link,
+.uw-widget-rss a.widget-link {
   font-family: "Encode Sans Compressed", sans-serif;
   color: #4b2e83;
   font-size: 18px;
@@ -6623,21 +6630,24 @@ a.screen-reader-shortcut:focus {
 .recent-posts-widget a.widget-link:hover,
 .uw-recent a.widget-link:hover,
 .uw-top-posts a.widget-link:hover,
-.uw-widget-rss-widget a.widget-link:hover {
+.uw-widget-related-posts a.widget-link:hover,
+.uw-widget-rss a.widget-link:hover {
   color: #909090;
 }
 .widget_recent_entries .more,
 .recent-posts-widget .more,
 .uw-recent .more,
 .uw-top-posts .more,
-.uw-widget-rss-widget .more {
+.uw-widget-related-posts .more,
+.uw-widget-rss .more {
   margin: 10px 0 0 0;
 }
 .widget_recent_entries small,
 .recent-posts-widget small,
 .uw-recent small,
 .uw-top-posts small,
-.uw-widget-rss-widget small {
+.uw-widget-related-posts small,
+.uw-widget-rss small {
   font-family: "Encode Sans Compressed", sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -6646,7 +6656,8 @@ a.screen-reader-shortcut:focus {
 .recent-posts-widget span,
 .uw-recent span,
 .uw-top-posts span,
-.uw-widget-rss-widget span {
+.uw-widget-related-posts span,
+.uw-widget-rss span {
   display: block;
   overflow: hidden;
 }
@@ -6654,7 +6665,8 @@ a.screen-reader-shortcut:focus {
 .recent-posts-widget svg,
 .uw-recent svg,
 .uw-top-posts svg,
-.uw-widget-rss-widget svg {
+.uw-widget-related-posts svg,
+.uw-widget-rss svg {
   margin-left: 10px;
 }
 .widget_yarpp_widget ul,
@@ -6672,12 +6684,6 @@ a.screen-reader-shortcut:focus {
   clear: both;
   padding-top: 5px;
   overflow: hidden;
-}
-.widget_yarpp_widget .widget-thumbnail img,
-.uw-widget-related-posts .widget-thumbnail img {
-  float: left;
-  margin: 5px 20px 15px 0px;
-  width: 50px;
 }
 .widget_yarpp_widget span,
 .uw-widget-related-posts span {
@@ -7330,6 +7336,7 @@ a.screen-reader-shortcut:focus {
   width: 210px;
   display: block;
   background: no-repeat center bottom;
+  background-size: 0px;
 }
 .site-boundless li.tenet span:after {
   position: absolute;
@@ -7341,36 +7348,35 @@ a.screen-reader-shortcut:focus {
   left: 50%;
   margin-left: -155px;
 }
-.site-boundless li.tenet.open:nth-child(1) span,
-.site-boundless li.tenet:hover:nth-child(1) span {
+.site-boundless li.tenet:nth-child(1) span {
   background-image: url(assets/images/boundless-theme/person-1.png);
 }
-.site-boundless li.tenet.open:nth-child(2) span,
-.site-boundless li.tenet:hover:nth-child(2) span {
+.site-boundless li.tenet:nth-child(2) span {
   background-image: url(assets/images/boundless-theme/person-6.png);
 }
-.site-boundless li.tenet.open:nth-child(3) span,
-.site-boundless li.tenet:hover:nth-child(3) span {
+.site-boundless li.tenet:nth-child(3) span {
   background-image: url(assets/images/boundless-theme/person-3.png);
 }
-.site-boundless li.tenet.open:nth-child(4) span,
-.site-boundless li.tenet:hover:nth-child(4) span {
+.site-boundless li.tenet:nth-child(4) span {
   background-image: url(assets/images/boundless-theme/person-4.png);
 }
-.site-boundless li.tenet.open:nth-child(5) span,
-.site-boundless li.tenet:hover:nth-child(5) span {
+.site-boundless li.tenet:nth-child(5) span {
   background-image: url(assets/images/boundless-theme/person-5.png);
 }
-.site-boundless li.tenet.open:nth-child(6) span,
-.site-boundless li.tenet:hover:nth-child(6) span {
+.site-boundless li.tenet:nth-child(6) span {
   background-image: url(assets/images/boundless-theme/person-2.png);
 }
-.site-boundless li.tenet.open:nth-child(7) span,
-.site-boundless li.tenet:hover:nth-child(7) span {
+.site-boundless li.tenet:nth-child(7) span {
   background-image: url(assets/images/boundless-theme/person-7.png);
 }
+.site-boundless li.tenet.open span,
+.site-boundless li.tenet:hover span,
+.site-boundless li.tenet:focus span {
+  background-size: auto;
+}
 .site-boundless li.tenet.open:hover,
-.site-boundless li.tenet:hover:hover {
+.site-boundless li.tenet:hover:hover,
+.site-boundless li.tenet:focus:hover {
   /* extra big pic styles here */
 }
 .site-boundless p {

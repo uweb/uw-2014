@@ -75,6 +75,7 @@
             width: 210px;
             display: block;
             background: no-repeat center bottom;
+            background-size: 0px;
             &:after {
                 position: absolute;
                 content: "";
@@ -87,15 +88,20 @@
             }
         }
 
+        &:nth-child(1) span { background-image: url(assets/images/boundless-theme/person-1.png); }
+        &:nth-child(2) span { background-image: url(assets/images/boundless-theme/person-6.png); }
+        &:nth-child(3) span { background-image: url(assets/images/boundless-theme/person-3.png); }
+        &:nth-child(4) span { background-image: url(assets/images/boundless-theme/person-4.png); }
+        &:nth-child(5) span { background-image: url(assets/images/boundless-theme/person-5.png); }
+        &:nth-child(6) span { background-image: url(assets/images/boundless-theme/person-2.png); }
+        &:nth-child(7) span { background-image: url(assets/images/boundless-theme/person-7.png); }
+        
         &.open, 
-        &:hover {   
-            &:nth-child(1) span { background-image: url(assets/images/boundless-theme/person-1.png); }
-            &:nth-child(2) span { background-image: url(assets/images/boundless-theme/person-6.png); }
-            &:nth-child(3) span { background-image: url(assets/images/boundless-theme/person-3.png); }
-            &:nth-child(4) span { background-image: url(assets/images/boundless-theme/person-4.png); }
-            &:nth-child(5) span { background-image: url(assets/images/boundless-theme/person-5.png); }
-            &:nth-child(6) span { background-image: url(assets/images/boundless-theme/person-2.png); }
-            &:nth-child(7) span { background-image: url(assets/images/boundless-theme/person-7.png); }
+        &:hover,
+        &:focus {   
+            span {
+                background-size: auto;
+            }
             &:hover {
                 /* extra big pic styles here */
             }
