@@ -2,7 +2,7 @@
 
   <nav class="uw-thin-strip-nav" role='navigation' aria-label='audience based'>
       <ul class="uw-thin-links">
-      	<li class="uw-quicklinks"><button aria-haspopup='true' aria-expanded='false'>Quick Links
+      	<li class="uw-quicklinks"><button aria-haspopup="true" aria-expanded="false">Quick Links
 
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
    width="15.63px" height="69.13px" viewBox="0 0 15.63 69.13" enable-background="new 0 0 15.63 69.13" xml:space="preserve">

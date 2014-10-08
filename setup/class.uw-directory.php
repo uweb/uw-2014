@@ -9,6 +9,7 @@ class UW_Directory
 
   const HOST        = 'directory.washington.edu';
   const SEARCH_BASE = 'o=University of Washington, c=US';
+  const LIMIT = 10;
 
   function __construct()
   {
@@ -22,7 +23,7 @@ class UW_Directory
     if ( $ds )
     {
         $r      = ldap_bind( $ds );
-        $result = @ldap_search( $ds, self::SEARCH_BASE, $this->search_filter(), $attributes=array(), $attrsonly=0, $sizelimit=10 );
+        $result = @ldap_search( $ds, self::SEARCH_BASE, $this->search_filter(), $attributes=array(), $attrsonly=0, $sizelimit=$this->get_limit() );
         $info   = ldap_get_entries($ds, $result);
         echo json_encode( $this->parse( $info ) );
     }
@@ -34,6 +35,12 @@ class UW_Directory
     $args = wp_parse_args($_GET);
     $search = $args['search'];
     return "(|(mail=*{$search}*)(sn=*{$search}*)(givenname=*{$search}*)(cn=*{$search}*)(telephonenumber=*{$search}*))";
+  }
+
+  function get_limit()
+  {
+    $args = wp_parse_args( $_GET );
+    return isset( $args['limit'] ) ? $args['limit'] : self::LIMIT;
   }
 
   function parse( $info )

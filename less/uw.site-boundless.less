@@ -74,7 +74,12 @@
             height: 126px;
             width: 210px;
             display: block;
-            background: url(assets/images/boundless-theme/person-1.png) no-repeat center bottom;
+            background: no-repeat center bottom;
+            background-size: 0px;
+            -webkit-transition:background-size .25s;
+               -moz-transition:background-size .25s;
+                 -o-transition:background-size .25s;
+                    transition:background-size .25s;
             &:after {
                 position: absolute;
                 content: "";
@@ -94,9 +99,13 @@
         &:nth-child(5) span { background-image: url(assets/images/boundless-theme/person-5.png); }
         &:nth-child(6) span { background-image: url(assets/images/boundless-theme/person-2.png); }
         &:nth-child(7) span { background-image: url(assets/images/boundless-theme/person-7.png); }
-
+        
         &.open, 
-        &:hover {   
+        &:hover,
+        &:focus {   
+            span {
+                background-size: 125px;
+            }
             &:hover {
                 /* extra big pic styles here */
             }
@@ -157,7 +166,7 @@
 
     .parallax {
         p {
-            padding: 5% 10%;
+            padding: 2% 10%;
             text-align: center;
             width: 100%;
             background-color: #fff;
