@@ -190,6 +190,11 @@ if ( ! function_exists('get_uw_breadcrumbs') ) :
     {
         $html .=  '<li class="current"><a href="'. get_search_link( get_search_query() ) .'" title="'. esc_attr( get_search_query() ) .'">Search results for ' . get_search_query() . '</a>';
     } else
+    if ( is_author() )
+    {
+        $author = get_queried_object();
+        $html .=  '<li class="current"><a href="' . get_author_posts_url( $author->ID ) . '" title="'. esc_attr( $author->display_name ) .'"> Author: '  . $author->display_name . '</a>';
+    }
 
     // If the current view is a post type other than page or attachment then the breadcrumbs will be taxonomies.
     if( is_category() || is_single() || is_post_type_archive() )
