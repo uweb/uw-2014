@@ -110,7 +110,7 @@ class UW_Widget_Twitter extends WP_Widget
             </a>
             <p>
               <a href="//twitter.com/<?php echo $tweet->author; ?>">
-                <?php echo $tweet->author; ?> <small>@<?php echo $tweet->author; ?></small>
+                <span>@<?php echo $tweet->author; ?></span>
               </a>
               <?php echo $tweet->text; ?>
               <?php echo $tweet->retweet; ?>

@@ -156,7 +156,7 @@ class UW_RSS extends WP_Widget
         }
 
         $content .= '</ul>';
-        $content .= "<a class=\"rss-more\" href=\"$url\">More</a>";
+        $content .= "<a class=\"more\" href=\"$url\">More</a>";
 
       }
 
