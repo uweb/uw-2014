@@ -7158,7 +7158,7 @@ a.screen-reader-shortcut:focus {
   background-size: cover;
   position: absolute;
 }
-.site-giving-new .uw-body.container {
+.site-giving-new.home .uw-body.container {
   background-color: transparent;
   height: 1000px;
 }
