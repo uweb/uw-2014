@@ -28,6 +28,8 @@
           endwhile;
         ?>
 
+        <?php posts_nav_link(' '); ?>
+
       </div>
 
     </div>
