@@ -7329,7 +7329,7 @@ a.screen-reader-shortcut:focus {
   height: 126px;
   width: 210px;
   display: block;
-  background: url(assets/images/boundless-theme/person-1.png) no-repeat center bottom;
+  background: no-repeat center bottom;
 }
 .site-boundless li.tenet span:after {
   position: absolute;
@@ -7341,25 +7341,32 @@ a.screen-reader-shortcut:focus {
   left: 50%;
   margin-left: -155px;
 }
-.site-boundless li.tenet:nth-child(1) span {
+.site-boundless li.tenet.open:nth-child(1) span,
+.site-boundless li.tenet:hover:nth-child(1) span {
   background-image: url(assets/images/boundless-theme/person-1.png);
 }
-.site-boundless li.tenet:nth-child(2) span {
+.site-boundless li.tenet.open:nth-child(2) span,
+.site-boundless li.tenet:hover:nth-child(2) span {
   background-image: url(assets/images/boundless-theme/person-6.png);
 }
-.site-boundless li.tenet:nth-child(3) span {
+.site-boundless li.tenet.open:nth-child(3) span,
+.site-boundless li.tenet:hover:nth-child(3) span {
   background-image: url(assets/images/boundless-theme/person-3.png);
 }
-.site-boundless li.tenet:nth-child(4) span {
+.site-boundless li.tenet.open:nth-child(4) span,
+.site-boundless li.tenet:hover:nth-child(4) span {
   background-image: url(assets/images/boundless-theme/person-4.png);
 }
-.site-boundless li.tenet:nth-child(5) span {
+.site-boundless li.tenet.open:nth-child(5) span,
+.site-boundless li.tenet:hover:nth-child(5) span {
   background-image: url(assets/images/boundless-theme/person-5.png);
 }
-.site-boundless li.tenet:nth-child(6) span {
+.site-boundless li.tenet.open:nth-child(6) span,
+.site-boundless li.tenet:hover:nth-child(6) span {
   background-image: url(assets/images/boundless-theme/person-2.png);
 }
-.site-boundless li.tenet:nth-child(7) span {
+.site-boundless li.tenet.open:nth-child(7) span,
+.site-boundless li.tenet:hover:nth-child(7) span {
   background-image: url(assets/images/boundless-theme/person-7.png);
 }
 .site-boundless li.tenet.open:hover,
