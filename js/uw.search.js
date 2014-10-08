@@ -59,7 +59,7 @@ UW.Search = Backbone.View.extend({
   // The HTML template for a single search result. Only the information that is available will be shown.
   result :  '<div class="result">' +
               '<h4 class="commonname"><%= commonname %></h4>'+
-              '<a href="#" title="<%= commonname %>" class="more">More</a>'+
+              '<a href="#" title="<%= commonname %>" class="directory-more">More</a>'+
               '<div class="information hidden">'+
                 '<p class="pull-left"><% if ( title ) { %><span class="title"><%= title %></span><% } %>'+
                 '<% if ( postaladdress ) { %><span class="postaladdress"><%= postaladdress %></span><% } %></p>'+
