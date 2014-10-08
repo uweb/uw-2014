@@ -76,6 +76,10 @@
             display: block;
             background: no-repeat center bottom;
             background-size: 0px;
+            -webkit-transition:background-size .25s;
+               -moz-transition:background-size .25s;
+                 -o-transition:background-size .25s;
+                    transition:background-size .25s;
             &:after {
                 position: absolute;
                 content: "";
@@ -100,7 +104,7 @@
         &:hover,
         &:focus {   
             span {
-                background-size: auto;
+                background-size: 125px;
             }
             &:hover {
                 /* extra big pic styles here */

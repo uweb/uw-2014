@@ -7337,6 +7337,10 @@ a.screen-reader-shortcut:focus {
   display: block;
   background: no-repeat center bottom;
   background-size: 0px;
+  -webkit-transition: background-size 0.25s;
+  -moz-transition: background-size 0.25s;
+  -o-transition: background-size 0.25s;
+  transition: background-size 0.25s;
 }
 .site-boundless li.tenet span:after {
   position: absolute;
@@ -7372,7 +7376,7 @@ a.screen-reader-shortcut:focus {
 .site-boundless li.tenet.open span,
 .site-boundless li.tenet:hover span,
 .site-boundless li.tenet:focus span {
-  background-size: auto;
+  background-size: 125px;
 }
 .site-boundless li.tenet.open:hover,
 .site-boundless li.tenet:hover:hover,
