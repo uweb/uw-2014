@@ -6311,6 +6311,9 @@ a.uw-btn.btn-gold:before {
 a.uw-btn.btn-gold:after {
   background-color: rgba(0, 0, 0, 0.1);
 }
+body.error404 .woof {
+  height: 400px;
+}
 .uw-footer {
   background: url('assets/images/footer.jpg') center bottom;
   -webkit-background-size: cover;
