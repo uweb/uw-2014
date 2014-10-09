@@ -5231,7 +5231,7 @@ table th[class*="col-"] {
   }
 }
 .uw-breadcrumbs {
-  margin: -30px 0 0 -30px;
+  margin: -22px 0 0 -30px;
   background-color: white;
   display: inline-block;
   padding: 20px 20px 0 30px;
@@ -5366,13 +5366,14 @@ a.more:after {
 }
 .uw-body .uw-site-title {
   position: absolute;
-  top: -135px;
+  top: -155px;
   left: 11px;
   color: #fff;
   font-family: "Encode Sans Compressed", sans-serif;
   font-size: 45px;
   font-weight: 900;
   -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 .uw-body .uw-site-title span {
   font-weight: 700;
@@ -7274,23 +7275,23 @@ a.screen-reader-shortcut:focus {
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-.site-boundless .tenet-nav {
+.home.site-boundless .tenet-nav {
   height: 70px;
   width: 100%;
   bottom: 0px;
   background-color: white;
 }
-.site-boundless .tenet-nav.fixed {
+.home.site-boundless .tenet-nav.fixed {
   position: fixed;
 }
-.site-boundless .tenet-nav ul {
+.home.site-boundless .tenet-nav ul {
   height: 100%;
   padding: 22px 0px 0px 0px;
   margin: 0px;
   list-style-type: none;
   text-align: center;
 }
-.site-boundless .tenet-nav ul li {
+.home.site-boundless .tenet-nav ul li {
   background-color: white;
   text-align: center;
   display: inline-block;
@@ -7301,14 +7302,14 @@ a.screen-reader-shortcut:focus {
   -o-transition: all 400ms linear;
   transition: all 400ms linear;
 }
-.site-boundless .tenet-nav ul li a {
+.home.site-boundless .tenet-nav ul li a {
   font-weight: 900;
   color: #4b2e83;
   text-transform: uppercase;
   position: relative;
   padding: 0 25px;
 }
-.site-boundless .tenet-nav ul li a:after {
+.home.site-boundless .tenet-nav ul li a:after {
   background: url(assets/svg/uw-sprite.svg) no-repeat -283px 1px;
   height: 25px;
   right: -7px;
@@ -7317,7 +7318,7 @@ a.screen-reader-shortcut:focus {
   width: 30px;
   content: "";
 }
-.site-boundless .tenet-nav ul li a:before {
+.home.site-boundless .tenet-nav ul li a:before {
   background: url(assets/svg/uw-sprite.svg) no-repeat -607px 1px;
   height: 130px;
   right: -40px;
@@ -7326,12 +7327,12 @@ a.screen-reader-shortcut:focus {
   width: 30px;
   content: "";
 }
-.site-boundless li.tenet a {
+.home.site-boundless li.tenet a {
   color: #4b2e83;
   font-size: 16px;
   font-family: "Encode Sans Compressed", sans-serif;
 }
-.site-boundless li.tenet span {
+.home.site-boundless li.tenet span {
   position: absolute;
   bottom: 32px;
   left: 10px;
@@ -7345,7 +7346,7 @@ a.screen-reader-shortcut:focus {
   -o-transition: background-size 0.25s;
   transition: background-size 0.25s;
 }
-.site-boundless li.tenet span:after {
+.home.site-boundless li.tenet span:after {
   position: absolute;
   content: "";
   height: 1px;
@@ -7355,38 +7356,38 @@ a.screen-reader-shortcut:focus {
   left: 50%;
   margin-left: -155px;
 }
-.site-boundless li.tenet:nth-child(1) span {
+.home.site-boundless li.tenet:nth-child(1) span {
   background-image: url(assets/images/boundless-theme/person-1.png);
 }
-.site-boundless li.tenet:nth-child(2) span {
+.home.site-boundless li.tenet:nth-child(2) span {
   background-image: url(assets/images/boundless-theme/person-6.png);
 }
-.site-boundless li.tenet:nth-child(3) span {
+.home.site-boundless li.tenet:nth-child(3) span {
   background-image: url(assets/images/boundless-theme/person-3.png);
 }
-.site-boundless li.tenet:nth-child(4) span {
+.home.site-boundless li.tenet:nth-child(4) span {
   background-image: url(assets/images/boundless-theme/person-4.png);
 }
-.site-boundless li.tenet:nth-child(5) span {
+.home.site-boundless li.tenet:nth-child(5) span {
   background-image: url(assets/images/boundless-theme/person-5.png);
 }
-.site-boundless li.tenet:nth-child(6) span {
+.home.site-boundless li.tenet:nth-child(6) span {
   background-image: url(assets/images/boundless-theme/person-2.png);
 }
-.site-boundless li.tenet:nth-child(7) span {
+.home.site-boundless li.tenet:nth-child(7) span {
   background-image: url(assets/images/boundless-theme/person-7.png);
 }
-.site-boundless li.tenet.open span,
-.site-boundless li.tenet:hover span,
-.site-boundless li.tenet:focus span {
+.home.site-boundless li.tenet.open span,
+.home.site-boundless li.tenet:hover span,
+.home.site-boundless li.tenet:focus span {
   background-size: 125px;
 }
-.site-boundless li.tenet.open:hover,
-.site-boundless li.tenet:hover:hover,
-.site-boundless li.tenet:focus:hover {
+.home.site-boundless li.tenet.open:hover,
+.home.site-boundless li.tenet:hover:hover,
+.home.site-boundless li.tenet:focus:hover {
   /* extra big pic styles here */
 }
-.site-boundless p {
+.home.site-boundless p {
   width: 67%;
   margin: auto;
   bottom: 0px;
@@ -7396,13 +7397,13 @@ a.screen-reader-shortcut:focus {
   font-weight: 400;
   color: white;
 }
-.site-boundless .delineator {
+.home.site-boundless .delineator {
   background: url('assets/images/stripes-dark-tile.png');
   height: 110px;
   width: 100%;
   margin-bottom: -60px;
 }
-.site-boundless span.slant {
+.home.site-boundless span.slant {
   display: block;
   height: 12px;
   width: 330px;
@@ -7415,26 +7416,26 @@ a.screen-reader-shortcut:focus {
   -ms-transform: skewX(-25deg) skewY(0);
   transform: skew(-25deg, 0);
 }
-.site-boundless div.centered {
+.home.site-boundless div.centered {
   position: absolute;
   top: 15%;
   width: 100%;
   text-align: center;
   color: #fff;
 }
-.site-boundless div.centered h1 {
+.home.site-boundless div.centered h1 {
   display: inline-block;
   text-transform: uppercase;
   font-weight: 900;
   font-size: 80px;
 }
-.site-boundless .parallax {
+.home.site-boundless .parallax {
   position: relative;
   background-attachment: fixed;
   background-size: cover;
   background-position: 0px, 173px;
 }
-.site-boundless .parallax p {
+.home.site-boundless .parallax p {
   padding: 2% 10%;
   text-align: center;
   width: 100%;
@@ -7443,7 +7444,7 @@ a.screen-reader-shortcut:focus {
   position: absolute;
   bottom: 0;
 }
-.site-boundless .parallax h2 {
+.home.site-boundless .parallax h2 {
   color: white;
   text-transform: uppercase;
   font-size: 100px;
