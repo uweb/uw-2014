@@ -166,6 +166,38 @@ ul.uw-mobile-menu
 		}
 
 }
+
+// Sidebar widget titles
+
+.uw-sidebar {
+	.widgettitle {
+		font-weight: 900;
+		font-size: 22px;
+		text-transform: uppercase;
+		position: relative;
+		padding-bottom: 20px;
+		&:after,
+		&:before {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			content: "";
+			height: 6px;
+		}
+		&:before {
+			width: 100px;
+			background-color: @lightgold;					
+		}
+		&:after {
+			width: 40px;
+			.skew(-25deg,0);
+			left: 80px;
+			background-color: white;
+		}
+	}
+}
+
+
 body.home .uw-sidebar-menu {
 	display: none;
 }

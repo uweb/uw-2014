@@ -70,7 +70,6 @@ a.more {
 		font-size: 45px;
 		font-weight: 900;
 		-webkit-font-smoothing: antialiased;
-		text-shadow: 1px 1px 2px rgba(0,0,0,.5);
 		span {
 			font-weight: 700;
 		}
@@ -103,10 +102,11 @@ margin-right: 50px;
 margin-bottom: 50px;
 margin-top: 20px;
 margin-left: -150px;
-padding: 40px 30px 30px;
+padding: 30px 30px 30px;
 .box-shadow(0px 1px 2px rgba(0, 0, 0, 0.2));
+border-top: 6px solid @lightgold;
 position: relative;
-background: url(assets/svg/uw-sprite.svg) no-repeat -437px -390px transparent;
+background: url('assets/images/stripes-dark-tile.png') repeat-x 0 -96px transparent;
 	img {
 		max-width: 100%;
 		height: auto;
@@ -151,13 +151,13 @@ background: url(assets/svg/uw-sprite.svg) no-repeat -437px -390px transparent;
 // }
 
 .widget {
-	padding: 40px 0 0 40px;
+	padding: 10px 0 0 40px;
 }
 
 
 // Big Screens
 
-@media only screen and (max-width : 1400px) {
+@media only screen and (max-width : 1600px) {
 	.info-box {
 		margin-left: -50px;
 	}
@@ -168,5 +168,14 @@ background: url(assets/svg/uw-sprite.svg) no-repeat -437px -390px transparent;
 	.widget {
 		padding: 0;
 	}	
+	.info-box {
+		margin-left: 0;
+		width: 100%;
+	}
+	.uw-body {
+		.uw-site-title {
+			text-shadow: 1px 1px 2px rgba(0,0,0,.5);
+		}
+	}
 
 }
