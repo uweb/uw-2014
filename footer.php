@@ -10,6 +10,7 @@
                 <li><a class="facebook" href="http://www.facebook.com/UofWA">Facebook</a></li>
                 <li><a class="twitter" href="http://twitter.com/UW">Twitter</a></li>
                 <li><a class="instagram" href="http://instagram.com/uofwa">Instagram</a></li>
+                <li><a class="tumblr" href="http://www.tumblr.com/tagged/university-of-washington">Tumblr</a></li>
                 <li><a class="youtube" href="http://www.youtube.com/user/uwhuskies">YouTube</a></li>
                 <li><a class="linkedin" href="http://www.linkedin.com/company/university-of-washington">LinkedIn</a></li>
                 <li><a class="pinterest" href="http://www.pinterest.com/uofwa/">Pinterest</a></li>

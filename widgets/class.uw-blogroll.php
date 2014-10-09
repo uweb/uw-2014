@@ -73,12 +73,12 @@ class UW_Blogroll extends WP_Widget
 			'image'        => 'hide',
 			'author'       => 'show',
       'titletag'     => 'h2',
+      'post_type'    =>  'post',
 			'number'       =>  5
 			), $atts );
 
     if ( !array_key_exists('numberposts', $params ) )
       $params['numberposts'] = $params['number'];
-
 
 		$posts = get_posts( $params );
 
@@ -110,7 +110,7 @@ class UW_Blogroll extends WP_Widget
 
       $date   = get_the_time( get_option( 'date_format' ), $post->ID );
 
-      $html  .= "<li $class>$image<span><p class=\"date\">{$date}</p><{$params->titletag}><a href=\"$link\">{$post->post_title}</a></{$params->titletag}>{$author}{$excerpt}</span></li>";
+      $html  .= "<li $class>$image<span><{$params->titletag}><a href=\"$link\">{$post->post_title}</a><p class=\"date\">{$date}</p></{$params->titletag}>{$author}{$excerpt}</span></li>";
     }
 
   	return "<ul class=\"shortcode-blogroll\">$html</ul>";

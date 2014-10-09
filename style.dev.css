@@ -4621,7 +4621,6 @@ table th[class*="col-"] {
 }
 .shortcode-blogroll li .date {
   font-weight: 800;
-  margin: 0 0 -15px;
   font-family: "Encode Sans Compressed", sans-serif;
 }
 .shortcode-blogroll li .author-info {
@@ -6374,6 +6373,9 @@ a.uw-btn.btn-gold:after {
 .uw-footer ul.footer-social li a.twitter {
   background-position: -46px -185px;
 }
+.uw-footer ul.footer-social li a.twitter {
+  background-position: -366px -185px;
+}
 .uw-footer ul.footer-social li a.youtube {
   background-position: -138px -185px;
 }
@@ -6391,6 +6393,33 @@ a.uw-btn.btn-gold:after {
 }
 .uw-footer ul.footer-social li a.instagram {
   background-position: -322px -185px;
+}
+.uw-footer ul.footer-social li a:hover.facebook {
+  background-position: 0px -225px;
+}
+.uw-footer ul.footer-social li a:hover.twitter {
+  background-position: -46px -225px;
+}
+.uw-footer ul.footer-social li a:hover.twitter {
+  background-position: -366px -225px;
+}
+.uw-footer ul.footer-social li a:hover.youtube {
+  background-position: -138px -225px;
+}
+.uw-footer ul.footer-social li a:hover.linkedin {
+  background-position: -184px -225px;
+}
+.uw-footer ul.footer-social li a:hover.pinterest {
+  background-position: -92px -225px;
+}
+.uw-footer ul.footer-social li a:hover.vine {
+  background-position: -230px -225px;
+}
+.uw-footer ul.footer-social li a:hover.google {
+  background-position: -275px -225px;
+}
+.uw-footer ul.footer-social li a:hover.instagram {
+  background-position: -322px -225px;
 }
 .uw-footer ul.footer-links {
   margin: 45px 0 0 0;
@@ -6548,7 +6577,7 @@ a.screen-reader-shortcut:focus {
 .uw-recent ul,
 .uw-top-posts ul,
 .uw-widget-related-posts ul,
-.uw-widget-rss ul {
+.uw-widget-rss-widget ul {
   padding: 0;
 }
 .widget_recent_entries li,
@@ -6556,7 +6585,7 @@ a.screen-reader-shortcut:focus {
 .uw-recent li,
 .uw-top-posts li,
 .uw-widget-related-posts li,
-.uw-widget-rss li {
+.uw-widget-rss-widget li {
   clear: both;
   padding-top: 5px;
   list-style: none;
@@ -6567,7 +6596,7 @@ a.screen-reader-shortcut:focus {
 .uw-recent li:last-child p:after,
 .uw-top-posts li:last-child p:after,
 .uw-widget-related-posts li:last-child p:after,
-.uw-widget-rss li:last-child p:after {
+.uw-widget-rss-widget li:last-child p:after {
   display: none;
 }
 .widget_recent_entries p,
@@ -6575,7 +6604,7 @@ a.screen-reader-shortcut:focus {
 .uw-recent p,
 .uw-top-posts p,
 .uw-widget-related-posts p,
-.uw-widget-rss p {
+.uw-widget-rss-widget p {
   margin: 0;
   position: relative;
   padding-bottom: 20px;
@@ -6585,7 +6614,7 @@ a.screen-reader-shortcut:focus {
 .uw-recent p:after,
 .uw-top-posts p:after,
 .uw-widget-related-posts p:after,
-.uw-widget-rss p:after {
+.uw-widget-rss-widget p:after {
   position: absolute;
   bottom: 10px;
   left: 0;
@@ -6599,7 +6628,7 @@ a.screen-reader-shortcut:focus {
 .uw-recent img,
 .uw-top-posts img,
 .uw-widget-related-posts img,
-.uw-widget-rss img {
+.uw-widget-rss-widget img {
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   border-radius: 100%;
@@ -6618,7 +6647,7 @@ a.screen-reader-shortcut:focus {
 .uw-recent a.widget-link,
 .uw-top-posts a.widget-link,
 .uw-widget-related-posts a.widget-link,
-.uw-widget-rss a.widget-link {
+.uw-widget-rss-widget a.widget-link {
   font-family: "Encode Sans Compressed", sans-serif;
   color: #4b2e83;
   font-size: 18px;
@@ -6632,7 +6661,7 @@ a.screen-reader-shortcut:focus {
 .uw-recent a.widget-link:hover,
 .uw-top-posts a.widget-link:hover,
 .uw-widget-related-posts a.widget-link:hover,
-.uw-widget-rss a.widget-link:hover {
+.uw-widget-rss-widget a.widget-link:hover {
   color: #909090;
 }
 .widget_recent_entries .more,
@@ -6640,7 +6669,7 @@ a.screen-reader-shortcut:focus {
 .uw-recent .more,
 .uw-top-posts .more,
 .uw-widget-related-posts .more,
-.uw-widget-rss .more {
+.uw-widget-rss-widget .more {
   margin: 10px 0 0 0;
 }
 .widget_recent_entries small,
@@ -6648,7 +6677,7 @@ a.screen-reader-shortcut:focus {
 .uw-recent small,
 .uw-top-posts small,
 .uw-widget-related-posts small,
-.uw-widget-rss small {
+.uw-widget-rss-widget small {
   font-family: "Encode Sans Compressed", sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -6658,7 +6687,7 @@ a.screen-reader-shortcut:focus {
 .uw-recent span,
 .uw-top-posts span,
 .uw-widget-related-posts span,
-.uw-widget-rss span {
+.uw-widget-rss-widget span {
   display: block;
   overflow: hidden;
 }
@@ -6667,7 +6696,7 @@ a.screen-reader-shortcut:focus {
 .uw-recent svg,
 .uw-top-posts svg,
 .uw-widget-related-posts svg,
-.uw-widget-rss svg {
+.uw-widget-rss-widget svg {
   margin-left: 10px;
 }
 .widget_yarpp_widget ul,
