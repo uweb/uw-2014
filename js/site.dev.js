@@ -10910,7 +10910,10 @@ UW.Select = Backbone.View.extend({
   // Animate the select menu to the proper menu item.
   animate : function()
   {
-    this.$el.animate( { marginTop : this.current * - this.$target.outerHeight()}, { queue: false, complete: this.removeOpenClass } )
+    this.scroll = this.$target.offset().top - this.$el.find('li').first().offset().top;
+    //var current_top = this.$el.position().top;
+    this.$el.animate( { scrollTop : this.scroll }, { queue: false, complete: this.removeOpenClass } )
+    //this.$el.animate( { top : current_top - (this.$target.offset().top - this.$el.find('li.active').offset().top) }, { queue: false, complete: this.removeOpenClass } )
   },
 
   // Whenever an item is clicked on the UW select menu make sure the standard
@@ -10949,7 +10952,8 @@ UW.Select = Backbone.View.extend({
 
   addOpenClass : function()
   {
-      this.$el.addClass('open')
+      this.$el.addClass('open');
+      this.$el.scrollTop(this.scroll);
   },
 
   removeOpenClass : function( forced )
