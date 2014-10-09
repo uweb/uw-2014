@@ -24,10 +24,14 @@ class UW_Directory
     {
         $r      = ldap_bind( $ds );
         $result = @ldap_search( $ds, self::SEARCH_BASE, $this->search_filter(), $attributes=array(), $attrsonly=0, $sizelimit=$this->get_limit() );
-        $info   = ldap_get_entries($ds, $result);
-        echo json_encode( $this->parse( $info ) );
+        if ( is_resource($result) )
+        {
+          $info   = ldap_get_entries($ds, $result);
+          if ( is_array( $info ) )
+            echo json_encode( $this->parse( $info ) );
+        }
     }
-    die();
+    wp_die();
   }
 
   function search_filter()
