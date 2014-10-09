@@ -31,6 +31,7 @@ class UW_RSS extends WP_Widget
 
   function __construct()
   {
+
     add_shortcode( 'rss', array( $this, 'uw_rss_shortcode') );
 
 		parent::WP_Widget(
@@ -118,20 +119,32 @@ class UW_RSS extends WP_Widget
 
     $content .= "<div class=\"featured\">$text</div>";
 
+    $content .= do_shortcode( "[rss url={$url}]");
 
-    if ( strlen( $url ) > 0 )
-    {
+    echo $before_widget . $content . $after_widget;
+  }
 
-      $rss = fetch_feed( $url );
+
+  function uw_rss_shortcode( $atts )
+  {
+    extract( shortcode_atts( self::$SHORTCODE_DEFAULTS, $atts ) );
+
+    if ( $url == null || is_feed() ) return '';
+
+    $title = apply_filters( 'widget_title', $title );
+
+    $content = '<span></span>';
+
+     $rss = fetch_feed( $url );
 
       if ( ! is_wp_error( $rss ) )
       {
         $url       = $rss->get_permalink();
         $maxitems  = $rss->get_item_quantity($instance['items']);
 
-        $rss_items = $rss->get_items(0, $maxitems);
+        $rss_items = $rss->get_items(0, 2);
 
-        $content  .= "<ul>";
+        $content  .= "<ul class=\"uw-widget-rss\">";
 
         foreach ( $rss_items as $index=>$item )
         {
@@ -143,67 +156,23 @@ class UW_RSS extends WP_Widget
 
           $attr  = esc_attr(strip_tags($title));
 
-          if ( $enclosure )
-          {
-            $image = "<a class='widget-thumbnail' href='$link' title='$attr'><img src='$src' title='$attr' /></a>";
-          }
+          $image = ( $enclosure->link ) ?
+             "<a class='widget-thumbnail' href='$link' title='$attr'><img src='$src' title='$attr' /></a>" : '';
 
           $date = $item->get_date();
           $date = human_time_diff( strtotime( $date ) ) . ' ago';
-          $date = "<p>$date</p>";
-          $title = "<a class='widget-link' href='$link' title='$attr'>$attr $date </a>";
+
+          $title = "<a class='widget-link' href='$link' title='$attr'>$attr<span>$date</span></a>";
+
           $content .= "<li>$image$title</li>";
+
         }
 
         $content .= '</ul>';
-        $content .= "<a class=\"more\" href=\"$url\">More</a>";
-
+        $content .= "<a class=\"widget-more more\" href=\"$url\">More</a>";
       }
 
-    }
-
-    echo $before_widget . $content . $after_widget;
-	}
-
-
-  function uw_rss_shortcode( $atts )
-  {
-    extract( shortcode_atts( self::$SHORTCODE_DEFAULTS, $atts ) );
-
-    if ( $url == null || is_feed() ) return '';
-
-    $content = '';
-
-    $feed = fetch_feed( $url );
-
-    if ( ! is_wp_error( $feed ) )
-    {
-      $url = $feed->get_permalink();
-      $feed_items = $feed->get_items( 0, $number );
-      $feed_items = $feed->get_items( 0, $number );
-      $pullleft = $span === 4 ? 'pull-left' : '';
-
-      $title = ( $title == null ) ? $feed->get_title() : $title;
-
-      $content = "<div class=\"row $pullleft\">";
-      $content .= "<div class=\"span$span\">";
-      $content .= "<div class=\"feed-in-body\"><a href=\"$url\" title=\"$title\"><$heading>$title</$heading></a></div>";
-      $content .= "<ul>";
-
-      foreach ($feed_items as $index=>$item)
-      {
-          $title = $item->get_title();
-          $link  = $item->get_link();
-          $attr  = esc_attr( strip_tags( $title ) );
-          $content .= "<li><a href=\"$link\" title=\"$attr\">$title</a></li>";
-      }
-
-      $span--;
-      $content .= "<a href=\"$url\" title=\"$title\" class=\"offset$span\">More</a>";
-      $content .= '</ul>';
-      $content .= "</div></div>";
-    }
-    return $content;
+      return $content;
   }
 
 }

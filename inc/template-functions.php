@@ -30,7 +30,10 @@ if ( ! function_exists( 'uw_has_sidebar' ) ) :
   function uw_has_sidebar()
   {
     global $post;
-    return get_post_format( $post->ID ) != 'gallery' || is_archive() || is_search();
+
+    if ( is_404() ) return false;
+
+    return get_post_format( $post->ID ) != 'gallery' || is_archive() || is_search() || is_404();
   }
 endif;
 
@@ -186,10 +189,16 @@ if ( ! function_exists('get_uw_breadcrumbs') ) :
     $html = '<li><a href="http://uw.edu" title="University of Washington">Home</a></li>';
     $html .= '<li' . (is_front_page() ? ' class="current"' : '') . '><a href="' . get_bloginfo('url') . '" title="' . get_bloginfo('title') . '">' . get_bloginfo('title') . '</a><li>';
 
+    if ( is_404() )
+    {
+        $html .=  '<li class="current"><a href="'. home_url('/') .'" title="Woof! '. get_bloginfo('url') .'">Woof!</a>';
+    } else
+
     if ( is_search() )
     {
         $html .=  '<li class="current"><a href="'. get_search_link( get_search_query() ) .'" title="'. esc_attr( get_search_query() ) .'">Search results for ' . get_search_query() . '</a>';
     } else
+
     if ( is_author() )
     {
         $author = get_queried_object();
