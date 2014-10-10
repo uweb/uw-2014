@@ -6030,6 +6030,9 @@ ul.uw-mobile-menu ul {
   float: right;
   margin: 20px 20px 20px 60px;
 }
+.textwidget .alignleft {
+  margin-bottom: 20px;
+}
 .wp-caption-text {
   font-size: 15px;
   line-height: 22.30769231px;
