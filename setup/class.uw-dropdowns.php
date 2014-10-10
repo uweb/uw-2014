@@ -107,7 +107,7 @@ class UW_Dropdowns
         $this->add_menu_item( 'Husky Sports', 'http://gohuskies.com', $parent = 'News' );
 
         // The default Support the UW dropdown.
-        $this->add_menu_item( 'Support the UW', 'http:/uw.edu/giving' );
+        $this->add_menu_item( 'Support the UW', 'http://uw.edu/giving' );
         $this->add_menu_item( 'Donate', 'https://www.washington.edu/giving/make-a-gift/', $parent = 'Support the UW' );
         $this->add_menu_item( 'Volunteer', 'http://www.washington.edu/alumni/act/volunteer.html', $parent = 'Support the UW' );
 
