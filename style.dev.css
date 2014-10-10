@@ -5924,6 +5924,7 @@ ul.uw-mobile-menu ul.children {
   display: none;
 }
 .uw-sidebar .widgettitle {
+  clear: left;
   font-weight: 900;
   font-size: 22px;
   text-transform: uppercase;
