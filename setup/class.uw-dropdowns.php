@@ -69,7 +69,7 @@ class UW_Dropdowns
      {
 
         // The default About dropdown.
-        $this->add_menu_item( 'About', 'http://uw.edu/discover/about/' );
+        $this->add_menu_item( 'About', 'http://uw.edu/about/' );
         $this->add_menu_item( 'Diversity', 'http://uw.edu/diversity/', $parent = 'About' );
         $this->add_menu_item( 'Leadership', 'http://uw.edu/leadership/', $parent = 'About' );
         $this->add_menu_item( 'Maps', 'http://uw.edu/maps/', $parent = 'About' );
