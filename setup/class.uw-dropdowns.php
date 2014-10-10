@@ -69,7 +69,7 @@ class UW_Dropdowns
      {
 
         // The default About dropdown.
-        $this->add_menu_item( 'About', 'http://uw.edu/discover/about/' );
+        $this->add_menu_item( 'About', 'http://uw.edu/about/' );
         $this->add_menu_item( 'Diversity', 'http://uw.edu/diversity/', $parent = 'About' );
         $this->add_menu_item( 'Leadership', 'http://uw.edu/leadership/', $parent = 'About' );
         $this->add_menu_item( 'Maps', 'http://uw.edu/maps/', $parent = 'About' );
@@ -107,7 +107,7 @@ class UW_Dropdowns
         $this->add_menu_item( 'Husky Sports', 'http://gohuskies.com', $parent = 'News' );
 
         // The default Support the UW dropdown.
-        $this->add_menu_item( 'Support the UW', 'http:/uw.edu/giving' );
+        $this->add_menu_item( 'Support the UW', 'http://uw.edu/giving' );
         $this->add_menu_item( 'Donate', 'https://www.washington.edu/giving/make-a-gift/', $parent = 'Support the UW' );
         $this->add_menu_item( 'Volunteer', 'http://www.washington.edu/alumni/act/volunteer.html', $parent = 'Support the UW' );
 
