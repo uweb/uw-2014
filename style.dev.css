@@ -7586,6 +7586,7 @@ a.screen-reader-shortcut:focus {
   background-color: #597286;
 }
 #uwalert-alert-message .close {
+  position: absolute;
   background: url(assets/svg/uw-sprite.svg) no-repeat -721px 6px transparent;
   text-indent: -9999px;
   overflow: hidden;
