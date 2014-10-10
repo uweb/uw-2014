@@ -1,5 +1,6 @@
 #uwalert-alert-message {
   padding: 0 20px 40px;
+  position: relative;
   h1 {
     color: white;
   }
@@ -27,6 +28,7 @@
     background-color: #597286;
   }
   .close {
+    position: absolute;
     background: url(assets/svg/uw-sprite.svg) no-repeat -721px 6px transparent;
     text-indent: -9999px;
     overflow: hidden;
@@ -35,6 +37,9 @@
     margin-top: 30px;
     opacity: 1;
     background-size: 1330px;
+    display: block;
+    right: 30px;
+    top: 0;
   }
 }
 

@@ -3855,6 +3855,9 @@ ul.uw-select li a:after {
 ul.uw-select li a:hover {
   background-color: #DFDFDF;
 }
+ul.uw-select li.active a:after {
+  display: none;
+}
 ul.uw-select li.active:hover {
   background-color: transparent;
 }
@@ -5236,6 +5239,7 @@ table th[class*="col-"] {
 }
 .uw-breadcrumbs ul {
   padding: 0;
+  margin: 0;
 }
 .uw-breadcrumbs li {
   list-style: none;
@@ -5456,6 +5460,8 @@ a.more:after {
     margin-left: 0;
     width: 100%;
   }
+}
+@media only screen and (min-width: 768px) {
   .uw-body .uw-site-title {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   }
@@ -6614,12 +6620,19 @@ a.screen-reader-shortcut:focus {
   right: 0;
   top: 0;
 }
+.uw-sidebar .widget_search .widgettitle {
+  padding-bottom: 10px;
+}
+.uw-sidebar .widget_search .widgettitle:before,
+.uw-sidebar .widget_search .widgettitle:after {
+  display: none;
+}
 .widget_recent_entries ul,
 .recent-posts-widget ul,
 .uw-recent ul,
 .uw-top-posts ul,
 .uw-widget-related-posts ul,
-.uw-widget-rss-widget ul {
+.uw-widget-rss ul {
   padding: 0;
 }
 .widget_recent_entries li,
@@ -6627,7 +6640,7 @@ a.screen-reader-shortcut:focus {
 .uw-recent li,
 .uw-top-posts li,
 .uw-widget-related-posts li,
-.uw-widget-rss-widget li {
+.uw-widget-rss li {
   clear: both;
   padding-top: 5px;
   list-style: none;
@@ -6638,7 +6651,7 @@ a.screen-reader-shortcut:focus {
 .uw-recent li:last-child p:after,
 .uw-top-posts li:last-child p:after,
 .uw-widget-related-posts li:last-child p:after,
-.uw-widget-rss-widget li:last-child p:after {
+.uw-widget-rss li:last-child p:after {
   display: none;
 }
 .widget_recent_entries p,
@@ -6646,7 +6659,7 @@ a.screen-reader-shortcut:focus {
 .uw-recent p,
 .uw-top-posts p,
 .uw-widget-related-posts p,
-.uw-widget-rss-widget p {
+.uw-widget-rss p {
   margin: 0;
   position: relative;
   padding-bottom: 20px;
@@ -6656,7 +6669,7 @@ a.screen-reader-shortcut:focus {
 .uw-recent p:after,
 .uw-top-posts p:after,
 .uw-widget-related-posts p:after,
-.uw-widget-rss-widget p:after {
+.uw-widget-rss p:after {
   position: absolute;
   bottom: 10px;
   left: 0;
@@ -6670,7 +6683,7 @@ a.screen-reader-shortcut:focus {
 .uw-recent img,
 .uw-top-posts img,
 .uw-widget-related-posts img,
-.uw-widget-rss-widget img {
+.uw-widget-rss img {
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   border-radius: 100%;
@@ -6689,7 +6702,7 @@ a.screen-reader-shortcut:focus {
 .uw-recent a.widget-link,
 .uw-top-posts a.widget-link,
 .uw-widget-related-posts a.widget-link,
-.uw-widget-rss-widget a.widget-link {
+.uw-widget-rss a.widget-link {
   font-family: "Encode Sans Compressed", sans-serif;
   color: #4b2e83;
   font-size: 18px;
@@ -6703,7 +6716,7 @@ a.screen-reader-shortcut:focus {
 .uw-recent a.widget-link:hover,
 .uw-top-posts a.widget-link:hover,
 .uw-widget-related-posts a.widget-link:hover,
-.uw-widget-rss-widget a.widget-link:hover {
+.uw-widget-rss a.widget-link:hover {
   color: #909090;
 }
 .widget_recent_entries .more,
@@ -6711,7 +6724,7 @@ a.screen-reader-shortcut:focus {
 .uw-recent .more,
 .uw-top-posts .more,
 .uw-widget-related-posts .more,
-.uw-widget-rss-widget .more {
+.uw-widget-rss .more {
   margin: 10px 0 0 0;
 }
 .widget_recent_entries small,
@@ -6719,7 +6732,7 @@ a.screen-reader-shortcut:focus {
 .uw-recent small,
 .uw-top-posts small,
 .uw-widget-related-posts small,
-.uw-widget-rss-widget small {
+.uw-widget-rss small {
   font-family: "Encode Sans Compressed", sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -6729,7 +6742,7 @@ a.screen-reader-shortcut:focus {
 .uw-recent span,
 .uw-top-posts span,
 .uw-widget-related-posts span,
-.uw-widget-rss-widget span {
+.uw-widget-rss span {
   display: block;
   overflow: hidden;
 }
@@ -6738,7 +6751,7 @@ a.screen-reader-shortcut:focus {
 .uw-recent svg,
 .uw-top-posts svg,
 .uw-widget-related-posts svg,
-.uw-widget-rss-widget svg {
+.uw-widget-rss svg {
   margin-left: 10px;
 }
 .widget_yarpp_widget ul,
@@ -6773,6 +6786,13 @@ a.screen-reader-shortcut:focus {
 .pic-text-widget img {
   width: 100%;
   height: auto;
+}
+.uw-sidebar .widget_categories .widgettitle {
+  padding-bottom: 10px;
+}
+.uw-sidebar .widget_categories .widgettitle:before,
+.uw-sidebar .widget_categories .widgettitle:after {
+  display: none;
 }
 .uw-twitter .tweet img {
   float: left;
@@ -7543,6 +7563,7 @@ a.screen-reader-shortcut:focus {
 }
 #uwalert-alert-message {
   padding: 0 20px 40px;
+  position: relative;
 }
 #uwalert-alert-message h1 {
   color: white;
@@ -7568,6 +7589,7 @@ a.screen-reader-shortcut:focus {
   background-color: #597286;
 }
 #uwalert-alert-message .close {
+  position: absolute;
   background: url(assets/svg/uw-sprite.svg) no-repeat -721px 6px transparent;
   text-indent: -9999px;
   overflow: hidden;
@@ -7576,6 +7598,9 @@ a.screen-reader-shortcut:focus {
   margin-top: 30px;
   opacity: 1;
   background-size: 1330px;
+  display: block;
+  right: 30px;
+  top: 0;
 }
 @media only screen and (min-width: 1201px) {
   #uwalert-alert-message {
