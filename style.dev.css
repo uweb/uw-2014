@@ -3855,6 +3855,9 @@ ul.uw-select li a:after {
 ul.uw-select li a:hover {
   background-color: #DFDFDF;
 }
+ul.uw-select li.active a:after {
+  display: none;
+}
 ul.uw-select li.active:hover {
   background-color: transparent;
 }
@@ -6614,6 +6617,13 @@ a.screen-reader-shortcut:focus {
   right: 0;
   top: 0;
 }
+.uw-sidebar .widget_search .widgettitle {
+  padding-bottom: 10px;
+}
+.uw-sidebar .widget_search .widgettitle:before,
+.uw-sidebar .widget_search .widgettitle:after {
+  display: none;
+}
 .widget_recent_entries ul,
 .recent-posts-widget ul,
 .uw-recent ul,
@@ -6773,6 +6783,13 @@ a.screen-reader-shortcut:focus {
 .pic-text-widget img {
   width: 100%;
   height: auto;
+}
+.uw-sidebar .widget_categories .widgettitle {
+  padding-bottom: 10px;
+}
+.uw-sidebar .widget_categories .widgettitle:before,
+.uw-sidebar .widget_categories .widgettitle:after {
+  display: none;
 }
 .uw-twitter .tweet img {
   float: left;
@@ -7543,6 +7560,7 @@ a.screen-reader-shortcut:focus {
 }
 #uwalert-alert-message {
   padding: 0 20px 40px;
+  position: relative;
 }
 #uwalert-alert-message h1 {
   color: white;
@@ -7576,6 +7594,9 @@ a.screen-reader-shortcut:focus {
   margin-top: 30px;
   opacity: 1;
   background-size: 1330px;
+  display: block;
+  right: 30px;
+  top: 0;
 }
 @media only screen and (min-width: 1201px) {
   #uwalert-alert-message {
