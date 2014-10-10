@@ -1,15 +1,61 @@
 <?php
 
-/**
- * Installs the custom image sizes
- */
+//
+// Installs the custom image sizes
+//
 
 class UW_Images
 {
 
-  // If 'show' is true it will appear in the image dropdown menu
+  // If `$show` is true it will appear in the image dropdown menu
   public $IMAGE_SIZES = array(
 
+    // Mug shot
+    'mug-shot' => array(
+      'name' 	=> 'Mug Shot',
+      'width'	=> 150,
+      'height'=> 250,
+      'crop'	=> true,
+      'show'	=> true
+    ),
+
+    // Sidebar width
+    'sidebar' => array(
+      'name'    => 'Sidebar',
+      'width'   => 375,
+      'height'  => 9999,
+      'crop'    => false,
+      'show'    => true
+    ),
+
+    // Same as the sidebar
+    'half' => array(
+      'name'    => 'Half width',
+      'width'   => 375,
+      'height'  => 9999,
+      'crop'    => false,
+      'show'    => true
+    ),
+
+    // Full content width
+    'full' => array(
+      'name'    => 'Content area',
+      'width'   => 750,
+      'height'  => 9999,
+      'crop'    => false,
+      'show'    => true
+    ),
+
+    // Full page width
+    'page' => array(
+      'name'    => 'Full page',
+      'width'   => 1140,
+      'height'  => 9999,
+      'crop'    => false,
+      'show'    => true
+    ),
+
+    // Used in widgets for featured images
     'thimble' => array(
       'name'    => 'Thimble',
       'width'   => 50,
@@ -18,62 +64,24 @@ class UW_Images
       'show'    => false
     ),
 
-    'mug-shot' => array(
-      'name' 	=> 'Mug Shot',
-      'width'	=> 100,
-      'height'=> 150,
-      'crop'	=> true,
-      'show'	=> true
-    ),
-
-    'sidebar' => array(
-      'name'    => 'Sidebar',
-      'width'   => 250,
-      'height'  => 9999,
-      'crop'    => false,
-      'show'    => true
-    ),
-
+    // Used in galleries
     'thumbnail-large' => array(
-      'name' 	=> 'Thumbnail large',
-      'width'	=> 300,
+      'name'  => 'Thumbnail large',
+      'width' => 300,
       'height'=> 300,
-      'crop'	=> true,
-      'show'	=> false
+      'crop'  => true,
+      'show'  => false
     ),
 
-    'single-image-widget' => array(
-      'name' 	=> 'Single Image Widget',
-      'width'	=> 620,
-      'height'=> 375,
-      'crop'	=> true,
-      'show'	=> false
-    ),
-
-    'half' => array(
-      'name'    => 'Half width',
-      'width'   => 300,
-      'height'  => 9999,
-      'crop'    => false,
-      'show'    => true
-    ),
-
-    'full' => array(
-      'name'    => 'Full width',
-      'width'   => 620,
-      'height'  => 9999,
-      'crop'    => false,
-      'show'    => true
-    ),
-
+    // RSS Feed
     'rss' => array(
-        'name' => 'Mailchimp RSS',
+        'name' => 'RSS',
         'width' => 108,
         'height' => 81,
         'crop' => true,
         'show' => false,
     )
-  
+
   );
 
   function __construct()
@@ -84,8 +92,8 @@ class UW_Images
 
   function add_uw_image_sizes()
   {
-    
-    foreach ( $this->IMAGE_SIZES as $name=>$image ) 
+
+    foreach ( $this->IMAGE_SIZES as $name=>$image )
     {
       add_image_size(
         $name,
@@ -99,16 +107,17 @@ class UW_Images
 
   function show_image_sizes( $defaultSizes )
   {
-    $imagesToShow = array_filter( $this->IMAGE_SIZES, function($image) { 
+    $imagesToShow = array_filter( $this->IMAGE_SIZES, function($image) {
       return $image['show'];
     });
 
-    foreach ($imagesToShow as $id=>$image) 
+    foreach ($imagesToShow as $id=>$image)
     {
       $imagesToShow[$id] = $image['name'];
     }
 
 
+// print_r( $imagesToShow );
     return (array_merge( $imagesToShow , $defaultSizes ));
 
   }
