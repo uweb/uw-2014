@@ -26,7 +26,8 @@ class UW_Filters
     add_filter( 'widget_categories_dropdown_args', array( $this, 'custom_widget_classes' ) );
 
     // Modify the more text link
-    add_filter('get_the_excerpt', array($this, 'excerpt_more_override'));
+    add_filter('excerpt_more', '__return_false' );
+    add_filter('the_excerpt', array($this, 'excerpt_more_override'));
 
     // Multisite filters
     if ( is_multisite() )
@@ -109,10 +110,7 @@ class UW_Filters
      return $abbr;
   }
 
-
-  /*
-   * Adds a more link button to the end of the excerpt
-   */
+   // Adds a more link button to the end of the excerpt
   function excerpt_more_override($excerpt)
   {
     return $excerpt . '<div><a class="uw-btn btn-go btn-sm" href="' . get_permalink() . '">Read more</a></div>';
