@@ -72,7 +72,8 @@ class UW_Blogroll extends WP_Widget
           'author'    => 'show',
           'titletag'  => 'h2',
           'post_type' =>  'post',
-          'number'    =>  5
+          'number'    =>  5,
+          'mini'    =>  false
       ), $atts );
 
     if ( !array_key_exists('numberposts', $params ) )
@@ -112,7 +113,8 @@ class UW_Blogroll extends WP_Widget
 
     }
 
-    echo "<ul class=\"shortcode-blogroll\">$html</ul>";
+    $miniclass = $params->mini ? 'mini' : '';
+    return "<ul class=\"shortcode-blogroll $miniclass\">$html</ul>";
 
   }
 
