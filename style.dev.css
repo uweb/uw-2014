@@ -3982,7 +3982,8 @@ ul.uw-select li.inactive a {
   }
   .box-outer .box.two .tile,
   .box-outer .box.one .tile,
-  .box-outer .box.three .tile {
+  .box-outer .box.three .tile,
+  .box-outer .box.four .tile {
     display: block;
     width: 100%;
     margin: 0 0 30px 0;
@@ -3990,7 +3991,8 @@ ul.uw-select li.inactive a {
   }
   .box-outer .box.two .tile div,
   .box-outer .box.one .tile div,
-  .box-outer .box.three .tile div {
+  .box-outer .box.three .tile div,
+  .box-outer .box.four .tile div {
     margin: 0 -21px;
   }
 }
@@ -6087,6 +6089,15 @@ ul.uw-mobile-menu ul {
   background-color: white;
   opacity: 0.9;
 }
+@media only screen and (max-width: 767px) {
+  .alignright,
+  .alignleft,
+  .alignnone {
+    float: none;
+    margin: 20px 20px 20px 0px;
+    width: 100% !important;
+  }
+}
 .gallery {
   clear: both;
 }
@@ -6750,6 +6761,9 @@ a.screen-reader-shortcut:focus {
 .uw-widget-related-posts svg,
 .uw-widget-rss svg {
   margin-left: 10px;
+}
+.uw-widget-rss {
+  padding: 0;
 }
 .widget_yarpp_widget ul,
 .uw-widget-related-posts ul {
@@ -7598,6 +7612,7 @@ a.screen-reader-shortcut:focus {
   display: block;
   right: 30px;
   top: 0;
+  cursor: pointer;
 }
 @media only screen and (min-width: 1201px) {
   #uwalert-alert-message {
