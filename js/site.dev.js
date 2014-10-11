@@ -10839,7 +10839,7 @@ UW.Accordion = Backbone.View.extend({
 // This function creates the UW select menu
 // For usage please refer to the [UW Web Components Select](http://uw.edu/brand/web/#select)
 // data-submit='true' will cause the form to submit immediately
-// data-type='links' will cause the value (a url) to be visisted immediately
+// data-type='links' will cause the chosen option's value (a url) to be visisted immediately
 /* TODO: add accessiblity attributes to the html markup
     step 1: don't hide the select, just put it off canvas.
     step 2: hide the ul from screen-readers and tab flow, leaving the select in the tab flow
@@ -10930,9 +10930,12 @@ UW.Select = Backbone.View.extend({
   {
     var value = this.$el.find('li').eq( this.current ).data('value');
     this.$select.val( value );
-    this.$select.find('option[value=' + value + ']').prop('selected', true);
+    this.$select.find('option[value="' + value + '"]').prop('selected', true);
     if (this.submit){
         this.$select.parent('form').submit();
+    }
+    if (this.trigger_link){
+        window.location = value;
     }
   },
 
@@ -10955,6 +10958,9 @@ UW.Select = Backbone.View.extend({
       , titles  = _.map( this.$el.find('option'), this.getText );
     if (this.$el.data('submit')) {
         this.submit = true;
+    }
+    if (this.$el.data('type') == 'links') {
+        this.trigger_link = true;
     }
     this.current = this.$el.find(':selected').index()
     this.LIs    = _.object( values, titles )
