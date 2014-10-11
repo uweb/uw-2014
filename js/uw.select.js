@@ -2,6 +2,8 @@
 
 // This function creates the UW select menu
 // For usage please refer to the [UW Web Components Select](http://uw.edu/brand/web/#select)
+// data-submit='true' will cause the form to submit immediately
+// data-type='links' will cause the value (a url) to be visisted immediately
 /* TODO: add accessiblity attributes to the html markup
     step 1: don't hide the select, just put it off canvas.
     step 2: hide the ul from screen-readers and tab flow, leaving the select in the tab flow
@@ -74,7 +76,6 @@ UW.Select = Backbone.View.extend({
     this.current = this.$target.index()
     this.animate()
     this.toggleLIClasses()
-    this.cloneSelectEvents()
     return false
   },
 
@@ -116,7 +117,7 @@ UW.Select = Backbone.View.extend({
   {
     var values  = _.map( this.$el.find('option'), this.getValue )
       , titles  = _.map( this.$el.find('option'), this.getText );
-    if (this.$el.data('submit') == 'yes') {
+    if (this.$el.data('submit')) {
         this.submit = true;
     }
     this.current = this.$el.find(':selected').index()
@@ -137,6 +138,7 @@ UW.Select = Backbone.View.extend({
 
   removeOpenClass : function( forced )
   {
+    this.cloneSelectEvents()
     if ( this.clicked || forced )
     {
     this.$el.removeClass('open')
