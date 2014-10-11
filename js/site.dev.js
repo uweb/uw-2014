@@ -10838,12 +10838,21 @@ UW.Accordion = Backbone.View.extend({
 
 // This function creates the UW select menu
 // For usage please refer to the [UW Web Components Select](http://uw.edu/brand/web/#select)
-/* TODO: add accessiblity attributes to the html markup */
+// data-submit='true' will cause the form to submit immediately
+// data-type='links' will cause the chosen option's value (a url) to be visisted immediately
+/* TODO: add accessiblity attributes to the html markup
+    step 1: don't hide the select, just put it off canvas.
+    step 2: hide the ul from screen-readers and tab flow, leaving the select in the tab flow
+    step 3: create a psuedo focus class that we can style like normal focus
+    step 4: tie events from the select (like focus change or select) back to the ul visually
+*/
 
 UW.Select = Backbone.View.extend({
 
   // The class to look for when rendering UW select menu.
   el : '.uw-select',
+
+  submit: false,
 
   // This property indicates the current index of the selected dropdown.
   current : 0,
@@ -10903,7 +10912,6 @@ UW.Select = Backbone.View.extend({
     this.current = this.$target.index()
     this.animate()
     this.toggleLIClasses()
-    this.cloneSelectEvents()
     return false
   },
 
@@ -10920,7 +10928,15 @@ UW.Select = Backbone.View.extend({
   // select menu is set to that value as well.
   cloneSelectEvents : function()
   {
-    this.$select.val( this.$el.find('li').eq( this.current ).data().value )
+    var value = this.$el.find('li').eq( this.current ).data('value');
+    this.$select.val( value );
+    this.$select.find('option[value="' + value + '"]').prop('selected', true);
+    if (this.submit){
+        this.$select.parent('form').submit();
+    }
+    if (this.trigger_link){
+        window.location = value;
+    }
   },
 
   // Render the UW select menu HTML and then set the view's element to the newly
@@ -10939,7 +10955,13 @@ UW.Select = Backbone.View.extend({
   parseSelect : function()
   {
     var values  = _.map( this.$el.find('option'), this.getValue )
-      , titles  = _.map( this.$el.find('option'), this.getText )
+      , titles  = _.map( this.$el.find('option'), this.getText );
+    if (this.$el.data('submit')) {
+        this.submit = true;
+    }
+    if (this.$el.data('type') == 'links') {
+        this.trigger_link = true;
+    }
     this.current = this.$el.find(':selected').index()
     this.LIs    = _.object( values, titles )
   },
@@ -10958,6 +10980,7 @@ UW.Select = Backbone.View.extend({
 
   removeOpenClass : function( forced )
   {
+    this.cloneSelectEvents()
     if ( this.clicked || forced )
     {
     this.$el.removeClass('open')

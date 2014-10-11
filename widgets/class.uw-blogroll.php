@@ -48,43 +48,41 @@ class UW_Blogroll extends WP_Widget
 
   function widget( $args, $instance )
   {
-    // todo: temporary html solution
     extract( $args );
     extract( $instance );
 
-		$title  = apply_filters( 'widget_title', $title );
+    $title  = apply_filters( 'widget_title', $title );
 
-		echo $args['before_widget'];
+    echo $args['before_widget'];
     echo '<h2>' . $title .'</h2>';
 
     echo do_shortcode( "[".self::ID." number={$number}/]");
 
-		echo $args['after_widget'];
-
+    echo $args['after_widget'];
   }
 
   function shortcode( $atts )
   {
 
     // todo: consider renaming these to match the get_post variables
-		$params = shortcode_atts( array(
-			'excerpt'      => 'true',
-			'trim'         => 'false',
-			'image'        => 'hide',
-			'author'       => 'show',
-      'titletag'     => 'h2',
-      'post_type'    =>  'post',
-			'number'       =>  5
-			), $atts );
+      $params = shortcode_atts( array(
+          'excerpt'   => 'true',
+          'trim'      => 'false',
+          'image'     => 'hide',
+          'author'    => 'show',
+          'titletag'  => 'h2',
+          'post_type' =>  'post',
+          'number'    =>  5
+      ), $atts );
 
     if ( !array_key_exists('numberposts', $params ) )
       $params['numberposts'] = $params['number'];
 
-		$posts = get_posts( $params );
+    $posts = get_posts( $params );
 
     $params = (object) $params;
 
-		foreach ( $posts as $post ) {
+    foreach ( $posts as $post ) {
 
       $link = get_permalink( $post->ID );
 
@@ -93,7 +91,7 @@ class UW_Blogroll extends WP_Widget
 
           $excerpt = has_excerpt( $post->ID ) ? $post->post_excerpt : apply_filters('widget_text', $post->post_content);
 
-          if ( $this->is_true( $params->trim ) )
+           if ( $this->is_true( $params->trim ) )
               $excerpt = wp_trim_words( $excerpt );
 
           //using apply_filters('the_content', $excerpt) causes an infinite loop
@@ -102,7 +100,7 @@ class UW_Blogroll extends WP_Widget
           if ( $this->is_true( $params->image ) )
           {
               $image = get_the_post_thumbnail( $post->ID , 'thumbnail', array( 'style'=>'float:left;padding-right:10px;' ) );
-              $class = 'class="pull-left"';
+              $class = ' class="pull-left"';
           }
       }
 
@@ -110,10 +108,11 @@ class UW_Blogroll extends WP_Widget
 
       $date   = get_the_time( get_option( 'date_format' ), $post->ID );
 
-      $html  .= "<li $class>$image<span><{$params->titletag}><a href=\"$link\">{$post->post_title}</a><p class=\"date\">{$date}</p></{$params->titletag}>{$author}{$excerpt}</span></li>";
+      $html  .= "<li$class><span><{$params->titletag}><a href=\"$link\">{$post->post_title}</a><p class=\"date\">{$date}</p></{$params->titletag}>{$author}{$excerpt}</span></li>";
+
     }
 
-  	return "<ul class=\"shortcode-blogroll\">$html</ul>";
+    echo "<ul class=\"shortcode-blogroll\">$html</ul>";
 
   }
 

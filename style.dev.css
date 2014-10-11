@@ -5324,6 +5324,7 @@ hr {
   font-size: 25px;
   font-weight: 400;
   line-height: 1.5;
+  margin-bottom: 20px;
 }
 a.more {
   position: relative;
@@ -5926,6 +5927,7 @@ ul.uw-mobile-menu ul.children {
   display: none;
 }
 .uw-sidebar .widgettitle {
+  clear: left;
   font-weight: 900;
   font-size: 22px;
   text-transform: uppercase;
@@ -6037,6 +6039,9 @@ ul.uw-mobile-menu ul {
 .alignright {
   float: right;
   margin: 20px 20px 20px 60px;
+}
+.textwidget .alignleft {
+  margin-bottom: 20px;
 }
 .wp-caption-text {
   font-size: 15px;
