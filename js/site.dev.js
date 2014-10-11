@@ -10838,12 +10838,19 @@ UW.Accordion = Backbone.View.extend({
 
 // This function creates the UW select menu
 // For usage please refer to the [UW Web Components Select](http://uw.edu/brand/web/#select)
-/* TODO: add accessiblity attributes to the html markup */
+/* TODO: add accessiblity attributes to the html markup
+    step 1: don't hide the select, just put it off canvas.
+    step 2: hide the ul from screen-readers and tab flow, leaving the select in the tab flow
+    step 3: create a psuedo focus class that we can style like normal focus
+    step 4: tie events from the select (like focus change or select) back to the ul visually
+*/
 
 UW.Select = Backbone.View.extend({
 
   // The class to look for when rendering UW select menu.
   el : '.uw-select',
+
+  submit: false,
 
   // This property indicates the current index of the selected dropdown.
   current : 0,
@@ -10923,6 +10930,9 @@ UW.Select = Backbone.View.extend({
     var value = this.$el.find('li').eq( this.current ).data('value');
     this.$select.val( value );
     this.$select.find('option[value=' + value + ']').prop('selected', true);
+    if (this.submit){
+        this.$select.parent('form').submit();
+    }
   },
 
   // Render the UW select menu HTML and then set the view's element to the newly
@@ -10941,7 +10951,10 @@ UW.Select = Backbone.View.extend({
   parseSelect : function()
   {
     var values  = _.map( this.$el.find('option'), this.getValue )
-      , titles  = _.map( this.$el.find('option'), this.getText )
+      , titles  = _.map( this.$el.find('option'), this.getText );
+    if (this.$el.data('submit') == 'yes') {
+        this.submit = true;
+    }
     this.current = this.$el.find(':selected').index()
     this.LIs    = _.object( values, titles )
   },
