@@ -96,9 +96,9 @@ class UW_Widget_Twitter extends WP_Widget
     <?php echo $before_widget; ?>
       <div class="widget uw-twitter">
 
-        <h2>
+        <h3 class="widget-title">
           <?php echo $before_title;  if ( ! empty( $title ) ) echo $title;  echo $after_title; ?>
-        </h2>
+        </h3>
 
         <div class="twitter-feed" data-name="<?php echo $name; ?>" data-count="<?php echo $count; ?>">
 
