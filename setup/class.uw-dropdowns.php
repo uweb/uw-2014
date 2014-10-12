@@ -78,10 +78,10 @@ class UW_Dropdowns
         $this->add_menu_item( 'Visit', 'http://uw.edu/visit/', $parent = 'About' );
 
         // The default Academics dropdown.
-        $this->add_menu_item( 'Academics', 'http://uw.edu/discover/academics/' );
+        $this->add_menu_item( 'Academics', 'http://uw.edu/about/academics/' );
         $this->add_menu_item( 'Academic Calendar', 'http://www.washington.edu/students/reg/calendar.html', $parent = 'Academics' );
-        $this->add_menu_item( 'Academic Departments', 'http://uw.edu/discover/academics/departments/', $parent = 'Academics' );
-        $this->add_menu_item( 'College & Schools', 'http://uw.edu/discover/academics/', $parent = 'Academics' );
+        $this->add_menu_item( 'Academic Departments', 'http://uw.edu/about/academics/departments/', $parent = 'Academics' );
+        $this->add_menu_item( 'College & Schools', 'http://uw.edu/about/academics/', $parent = 'Academics' );
         $this->add_menu_item( 'Libraries', 'http://lib.washington.edu', $parent = 'Academics' );
         $this->add_menu_item( 'Time Schedule', 'http://uw.edu/students/timeschd/', $parent = 'Academics');
 
