@@ -24,7 +24,13 @@
     </head>
     <body <?php body_class(); ?> >
 
+    <div id="uw-container">
+
+
     <a href='#main_content' class='screen-reader-shortcut' tabindex=1>Skip to main content</a>
+
+    <div id="uw-container-inner">
+
 
     <?php get_template_part('thinstrip'); ?>
 

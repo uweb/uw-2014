@@ -9433,8 +9433,8 @@ UW.elements = {
 
 }
 
-UW.baseUrl = Backbone.history.location.origin +
-             Backbone.history.location.pathname
+UW.baseUrl = Backbone.history.location.origin + '/' +
+             _.first( _.compact( Backbone.history.location.pathname.split('/') ) ) + '/'
 
 UW.sources = {
   quicklinks : UW.baseUrl + 'wp-admin/admin-ajax.php?action=quicklinks',
@@ -9922,7 +9922,8 @@ UW.QuickLinks = Backbone.View.extend({
     render : function(  )
     {
         this.quicklinks = $ ( _.template( this.template, { links : this.links.toJSON() }) )
-        this.makeDrawer()
+        // this.makeDrawer()
+        this.$container = $(this.container);
         this.$container.prepend( this.quicklinks )
         this.$el.attr( 'aria-controls', 'quicklinks' ).attr( 'aria-owns', 'quicklinks' )
         UW.$body.on( 'keyup', '#quicklinks a', this.animate )
@@ -10928,7 +10929,7 @@ UW.Select = Backbone.View.extend({
   // select menu is set to that value as well.
   cloneSelectEvents : function()
   {
-    var value = this.$el.find('li').eq( this.current ).data('value');
+    var value = this.$el.find('li').eq( this.current ).data().value;
     this.$select.val( value );
     this.$select.find('option[value="' + value + '"]').prop('selected', true);
     if (this.submit){
@@ -10937,6 +10938,10 @@ UW.Select = Backbone.View.extend({
     if (this.trigger_link){
         window.location = value;
     }
+
+    if ( this.$select.hasClass('uw-select-wp') )
+      window.location = UW.baseUrl + '?cat=' + value;
+
   },
 
   // Render the UW select menu HTML and then set the view's element to the newly

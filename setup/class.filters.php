@@ -64,7 +64,7 @@ class UW_Filters
 
   function custom_widget_classes( $args )
   {
-    $args['class' ] = 'uw-select';
+    $args['class' ] = 'uw-select uw-select-wp';
     return $args;
   }
 

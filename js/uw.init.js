@@ -17,8 +17,8 @@ UW.elements = {
 
 }
 
-UW.baseUrl = Backbone.history.location.origin +
-             Backbone.history.location.pathname
+UW.baseUrl = Backbone.history.location.origin + '/' +
+             _.first( _.compact( Backbone.history.location.pathname.split('/') ) ) + '/'
 
 UW.sources = {
   quicklinks : UW.baseUrl + 'wp-admin/admin-ajax.php?action=quicklinks',

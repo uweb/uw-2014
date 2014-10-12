@@ -92,7 +92,7 @@ UW.Select = Backbone.View.extend({
   // select menu is set to that value as well.
   cloneSelectEvents : function()
   {
-    var value = this.$el.find('li').eq( this.current ).data('value');
+    var value = this.$el.find('li').eq( this.current ).data().value;
     this.$select.val( value );
     this.$select.find('option[value="' + value + '"]').prop('selected', true);
     if (this.submit){
@@ -101,6 +101,10 @@ UW.Select = Backbone.View.extend({
     if (this.trigger_link){
         window.location = value;
     }
+
+    if ( this.$select.hasClass('uw-select-wp') )
+      window.location = UW.baseUrl + '?cat=' + value;
+
   },
 
   // Render the UW select menu HTML and then set the view's element to the newly
