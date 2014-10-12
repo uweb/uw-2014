@@ -4644,6 +4644,33 @@ table th[class*="col-"] {
 .shortcode-blogroll h2 {
   margin: 20px 0 0px;
 }
+.shortcode-blogroll br {
+  display: none;
+}
+.shortcode-blogroll.mini h2 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 10px 0 10px;
+}
+.shortcode-blogroll.mini li {
+  margin: 0;
+}
+.shortcode-blogroll.mini li:after {
+  display: block;
+  content: "";
+  width: 40px;
+  height: 1px;
+  background-color: #bbbbbb;
+  bottom: 0px;
+  position: absolute;
+}
+.shortcode-blogroll.mini .date {
+  font-size: 17px;
+  color: #818181;
+  margin-top: 3px;
+  font-weight: 500;
+}
 .uw-thinstrip {
   height: 90px;
   width: 100%;
@@ -6723,6 +6750,17 @@ a.screen-reader-shortcut:focus {
   line-height: 1.4;
   overflow: hidden;
   display: block;
+}
+.widget_recent_entries a.widget-link span,
+.recent-posts-widget a.widget-link span,
+.uw-recent a.widget-link span,
+.uw-top-posts a.widget-link span,
+.uw-widget-related-posts a.widget-link span,
+.uw-widget-rss a.widget-link span {
+  font-size: 17px;
+  color: #818181;
+  margin-top: 3px;
+  font-weight: 500;
 }
 .widget_recent_entries a.widget-link:hover,
 .recent-posts-widget a.widget-link:hover,

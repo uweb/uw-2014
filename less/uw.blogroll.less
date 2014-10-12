@@ -39,4 +39,42 @@
         margin: 20px 0 0px;
     }
 
+
+    // Hides annoying break
+
+    br {
+        display: none;
+    }
+
+
+    &.mini {
+        h2 {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.4;
+            margin: 10px 0 10px;
+        }        
+        li {
+            margin: 0;
+            &:after {
+                display: block;
+                content: "";
+                width: 40px;
+                height: 1px;
+                background-color: #bbbbbb;
+                bottom: 0px;
+                position: absolute;
+            }
+        }
+        a {
+            
+        }
+        .date {
+            font-size: 17px;
+            color: #818181;
+            margin-top: 3px;
+            font-weight: 500;
+        }
+    }
+
 }
