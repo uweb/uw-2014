@@ -37,7 +37,7 @@ class UW_Directory
   function search_filter()
   {
     $args = wp_parse_args($_GET);
-    $search = $args['search'];
+    $search = str_replace( ' ','*', $args['search'] );
     return "(|(mail=*{$search}*)(sn=*{$search}*)(givenname=*{$search}*)(cn=*{$search}*)(telephonenumber=*{$search}*)(mailstop={$search}))";
   }
 
