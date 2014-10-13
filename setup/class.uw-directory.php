@@ -38,7 +38,7 @@ class UW_Directory
   {
     $args = wp_parse_args($_GET);
     $search = $args['search'];
-    return "(|(mail=*{$search}*)(sn=*{$search}*)(givenname=*{$search}*)(cn=*{$search}*)(telephonenumber=*{$search}*))";
+    return "(|(mail=*{$search}*)(sn=*{$search}*)(givenname=*{$search}*)(cn=*{$search}*)(telephonenumber=*{$search}*)(mailstop={$search}))";
   }
 
   function get_limit()
