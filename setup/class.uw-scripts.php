@@ -30,7 +30,7 @@ class UW_Scripts
         'deps'      => array( 'backbone' ),
         'version'   => '1.0.3',
         'admin'     => false,
-        'variables' => array('site_url' => get_site_url())
+        'variables' => array('baseUrl' => get_site_url() )
       ),
 
       'admin' => array (
@@ -75,7 +75,7 @@ class UW_Scripts
       {
           $script = (object) $script;
           if (isset($script->variables)){
-              wp_localize_script($script->id, 'uw_wordpress_vars', $script->variables);
+              wp_localize_script($script->id, 'uw', $script->variables);
           }
       }
   }
