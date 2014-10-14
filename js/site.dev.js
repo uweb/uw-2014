@@ -9433,7 +9433,8 @@ UW.elements = {
 
 }
 
-UW.baseUrl = uw_wordpress_vars.site_url;
+UW.baseUrl = uw.baseUrl || Backbone.history.location.origin + '/' +
+                    _.first( _.compact( Backbone.history.location.pathname.split('/') ) ) + '/';
 
 UW.sources = {
   quicklinks : UW.baseUrl + 'wp-admin/admin-ajax.php?action=quicklinks',
