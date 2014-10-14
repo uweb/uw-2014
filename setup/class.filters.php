@@ -29,9 +29,6 @@ class UW_Filters
     add_filter('excerpt_more', '__return_false' );
     add_filter('the_excerpt', array($this, 'excerpt_more_override'));
 
-    //remove cms from live site urls
-    add_filter('site_url', array($this, 'uw_site_url'));
-
     // Multisite filters
     if ( is_multisite() )
     {
@@ -117,15 +114,5 @@ class UW_Filters
   function excerpt_more_override($excerpt)
   {
     return $excerpt . '<div><a class="uw-btn btn-go btn-sm" href="' . get_permalink() . '">Read more</a></div>';
-  }
-
-  function uw_site_url($url)
-  {
-    if (!is_user_logged_in())
-    {
-      $url = str_replace('washington.edu/cms/', 'washington.edu/', $url);
-    }
-
-    return $url;
   }
 }
