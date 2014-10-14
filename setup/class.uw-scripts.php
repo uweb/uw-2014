@@ -30,7 +30,7 @@ class UW_Scripts
         'deps'      => array( 'backbone' ),
         'version'   => '1.0.3',
         'admin'     => false,
-        'variables' => array('baseUrl' => get_site_url() . '/' )
+        'variables' => array('baseUrl' => get_site_url() )
       ),
 
       'admin' => array (
