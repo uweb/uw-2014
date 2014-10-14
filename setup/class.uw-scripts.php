@@ -30,7 +30,7 @@ class UW_Scripts
         'deps'      => array( 'backbone' ),
         'version'   => '1.0.3',
         'admin'     => false,
-        'variables' => array('site_url' => get_site_url() . '/')
+        'variables' => array('site_url' => $this->get_real_site_url())
       ),
 
       'admin' => array (
@@ -127,4 +127,12 @@ class UW_Scripts
     return is_user_logged_in() ? '.dev' : '';
   }
 
+  public function get_real_site_url()
+  {
+    $site = get_site_url() . '/';
+    if (!is_user_logged_in()){
+        $site = str_replace($site, 'washington.edu/cms/', 'washington.edu/');
+    }
+    return $site;
+  }
 }
