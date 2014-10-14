@@ -9433,8 +9433,7 @@ UW.elements = {
 
 }
 
-UW.baseUrl = Backbone.history.location.origin + '/' +
-             _.first( _.compact( Backbone.history.location.pathname.split('/') ) ) + '/'
+UW.baseUrl = uw_wordpress_vars.site_url;
 
 UW.sources = {
   quicklinks : UW.baseUrl + 'wp-admin/admin-ajax.php?action=quicklinks',
@@ -9922,7 +9921,7 @@ UW.QuickLinks = Backbone.View.extend({
     render : function(  )
     {
         this.quicklinks = $ ( _.template( this.template, { links : this.links.toJSON() }) )
-        // this.makeDrawer()
+        //this.makeDrawer()
         this.$container = $(this.container);
         this.$container.prepend( this.quicklinks )
         this.$el.attr( 'aria-controls', 'quicklinks' ).attr( 'aria-owns', 'quicklinks' )

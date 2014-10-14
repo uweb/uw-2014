@@ -25,11 +25,12 @@ class UW_Scripts
       ),
 
       'site'   => array (
-        'id'      => 'site',
-        'url'     => get_bloginfo('template_directory') . '/js/site' . $this->dev_script() . '.js',
-        'deps'    => array( 'backbone' ),
-        'version' => '1.0.3',
-        'admin'   => false
+        'id'        => 'site',
+        'url'       => get_bloginfo('template_directory') . '/js/site' . $this->dev_script() . '.js',
+        'deps'      => array( 'backbone' ),
+        'version'   => '1.0.3',
+        'admin'     => false,
+        'variables' => array('site_url' => get_site_url() . '/')
       ),
 
       'admin' => array (
@@ -43,6 +44,7 @@ class UW_Scripts
     ), $this->get_child_theme_scripts() );
 
     add_action( 'wp_enqueue_scripts', array( $this, 'uw_register_default_scripts' ) );
+    add_action( 'wp_enqueue_scripts', array( $this, 'uw_localize_default_scripts' ) );
     add_action( 'wp_enqueue_scripts', array( $this, 'uw_enqueue_default_scripts' ) );
     add_action( 'admin_enqueue_scripts', array( $this, 'uw_enqueue_admin_scripts' ) );
 
@@ -65,6 +67,17 @@ class UW_Scripts
 
       }
 
+  }
+
+  function uw_localize_default_scripts()
+  {
+      foreach ($this->SCRIPTS as $script )
+      {
+          $script = (object) $script;
+          if (isset($script->variables)){
+              wp_localize_script($script->id, 'uw_wordpress_vars', $script->variables);
+          }
+      }
   }
 
   function uw_enqueue_default_scripts()

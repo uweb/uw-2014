@@ -53,7 +53,7 @@ UW.QuickLinks = Backbone.View.extend({
     render : function(  )
     {
         this.quicklinks = $ ( _.template( this.template, { links : this.links.toJSON() }) )
-        // this.makeDrawer()
+        //this.makeDrawer()
         this.$container = $(this.container);
         this.$container.prepend( this.quicklinks )
         this.$el.attr( 'aria-controls', 'quicklinks' ).attr( 'aria-owns', 'quicklinks' )
