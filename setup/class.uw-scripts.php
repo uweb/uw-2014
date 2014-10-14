@@ -131,7 +131,7 @@ class UW_Scripts
   {
     $site = get_site_url() . '/';
     if (!is_user_logged_in()){
-        $site = str_replace($site, 'washington.edu/cms/', 'washington.edu/');
+        $site = str_replace('washington.edu/cms/', 'washington.edu/', $site);
     }
     return $site;
   }
