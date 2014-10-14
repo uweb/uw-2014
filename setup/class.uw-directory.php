@@ -62,6 +62,8 @@ class UW_Directory
         $people[$index]['mail'] = str_replace( 'u.washington.edu', 'uw.edu', $person['mail'][0] );
 
         $people[$index]['telephonenumber'] = $person['telephonenumber'][0];
+
+        $people[$index]['mailstop'] = $person['mailstop'][0];
     }
     return $people;
   }
