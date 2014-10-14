@@ -63,7 +63,12 @@ class UW_Directory
 
         $people[$index]['telephonenumber'] = $person['telephonenumber'][0];
 
+        $people[$index]['homephone'] = $person['homephone'][0];
+
         $people[$index]['mailstop'] = $person['mailstop'][0];
+
+        $people[$index]['dn'] = $person['dn'];
+
     }
     return $people;
   }
