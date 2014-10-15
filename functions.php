@@ -6,6 +6,7 @@ require( get_template_directory() . '/inc/template-functions.php' );
 if (!isset($UW)){
     require( get_template_directory() . '/setup/class.uw.php' );
     $UW = new UW();
+    do_action('extend_uw_object', $UW);
 }
 
 require( get_template_directory() . '/setup/class.uw-page-attributes-meta-box.php');
