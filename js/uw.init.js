@@ -18,8 +18,7 @@ UW.elements = {
 }
 
 if (typeof(uw) !== 'undefined') {
-    UW.baseUrl = uw.baseUrl || Backbone.history.location.origin + '/' +
-                _.first( _.compact( Backbone.history.location.pathname.split('/') ) ) + '/';
+    UW.baseUrl = uw.siteUrl;
 }
 else {
     UW.baseUrl = Backbone.history.location.origin + '/' +
