@@ -7615,6 +7615,23 @@ a.screen-reader-shortcut:focus {
   padding-top: 250px;
   margin: 0;
 }
+/* Small Devices, Tablets */
+@media only screen and (max-width: 767px) {
+  #uw-directory-area {
+    padding: 30px 15px;
+    border: none;
+  }
+  .site-directory #directory-search .searchsubmit {
+    height: 64px;
+    width: 45px;
+  }
+  .site-directory #directory-search input {
+    height: 64px;
+  }
+  .site-directory .uw-sidebar {
+    padding: 20px 20px;
+  }
+}
 #uwalert-alert-message {
   padding: 0 20px 40px;
   position: relative;
