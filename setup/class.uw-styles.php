@@ -33,7 +33,7 @@ class UW_Styles
       'uw-style' => array (
           'id'      => 'uw-style',
           'url'     => get_bloginfo('stylesheet_url'),
-          'deps'    => array(),
+          'deps'    => array('uw-master'),
           'version' => '3.6',
           'child'   => true
       ),
@@ -112,7 +112,7 @@ class UW_Styles
     return get_bloginfo( 'template_directory' ) != get_bloginfo( 'stylesheet_directory' );
   }
 
-  private function dev_stylesheet()
+  function dev_stylesheet()
   {
     return is_user_logged_in() ? '.dev' : '';
   }
