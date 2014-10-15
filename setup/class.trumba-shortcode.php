@@ -10,18 +10,27 @@ class UW_Trumba
 
     function __construct()
     {
+        $this->TrumbaAdded = false;
         add_shortcode('trumba', array($this, 'trumba_handler'));        
     }
 
     function trumba_handler($atts)
     {
         $attributes = (object) $atts;
-        
+        $rand = rand(0,100);
         if (isset($attributes->name)){
             $name = strtolower($attributes->name);
         }
         else {
             return 'missing required webName to identify the spud';
+        }
+
+        if ($this->TrumbaAdded){
+            $return = '';
+        }
+        else {
+            $return = '<script type="text/javascript" src="http://www.trumba.com/scripts/spuds.js"></script>';
+            $this->TrumbaAdded = true;
         }
 
         $type = 'upcoming';
@@ -32,14 +41,13 @@ class UW_Trumba
         if (isset($attributes->base)){
             $teaser = $attributes->base;
         }
-        wp_enqueue_script('trumba', 'http://www.trumba.com/scripts/spuds.js');
-        $return = '<script type="text/javascript>$(document).ready(function () {';
-        $return .= sprintf('$Trumba.addSpud({webName:"%s",spudType:"%s",BorderColor:"#FFFFFF"', $name, $type);
+        $trumba .= sprintf('$Trumba.addSpud({webName:"%s",spudType:"%s",BorderColor:"#FFFFFF"', $name, $type);
         if (isset($teaser)){
-            $return .= sprintf(',teaserBase:"%s"', $teaser);
+            $trumba .= sprintf(',teaserBase:"%s"', $teaser);
         }
-        $return .= '});});</script>';
+        $trumba .= '});';
 
+        $return .= sprintf('<script type="text/javascript" id="trumba%d">%s</script>', $rand, $trumba);
         return $return;
     }
 }
