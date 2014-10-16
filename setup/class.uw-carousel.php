@@ -115,7 +115,7 @@ class UW_Carousel {
       return $attr;
 
     $attachment_id   = intval( $attachment->ID );
-    $orig_file       = wp_get_attachment_image_src( $attachment_id, 'full' );
+    $orig_file       = wp_get_attachment_image_src( $attachment_id, 'original' );
     $orig_file       = isset( $orig_file[0] ) ? $orig_file[0] : wp_get_attachment_url( $attachment_id );
     $meta            = wp_get_attachment_metadata( $attachment_id );
     $size            = isset( $meta['width'] ) ? intval( $meta['width'] ) . ',' . intval( $meta['height'] ) : '';
