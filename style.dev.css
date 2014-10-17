@@ -4647,30 +4647,6 @@ table th[class*="col-"] {
 .shortcode-blogroll br {
   display: none;
 }
-.shortcode-blogroll.mini h2 {
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.4;
-  margin: 10px 0 10px;
-}
-.shortcode-blogroll.mini li {
-  margin: 0;
-}
-.shortcode-blogroll.mini li:after {
-  display: block;
-  content: "";
-  width: 40px;
-  height: 1px;
-  background-color: #bbbbbb;
-  bottom: 0px;
-  position: absolute;
-}
-.shortcode-blogroll.mini .date {
-  font-size: 17px;
-  color: #818181;
-  margin-top: 3px;
-  font-weight: 500;
-}
 .uw-thinstrip {
   height: 90px;
   width: 100%;
@@ -6670,6 +6646,7 @@ a.screen-reader-shortcut:focus {
 .uw-sidebar .widget_search .widgettitle:after {
   display: none;
 }
+.shortcode-blogroll-mini ul,
 .widget_recent_entries ul,
 .recent-posts-widget ul,
 .uw-recent ul,
@@ -6678,6 +6655,7 @@ a.screen-reader-shortcut:focus {
 .uw-widget-rss ul {
   padding: 0;
 }
+.shortcode-blogroll-mini li,
 .widget_recent_entries li,
 .recent-posts-widget li,
 .uw-recent li,
@@ -6689,6 +6667,7 @@ a.screen-reader-shortcut:focus {
   list-style: none;
   margin: 0;
 }
+.shortcode-blogroll-mini li:last-child p:after,
 .widget_recent_entries li:last-child p:after,
 .recent-posts-widget li:last-child p:after,
 .uw-recent li:last-child p:after,
@@ -6697,22 +6676,38 @@ a.screen-reader-shortcut:focus {
 .uw-widget-rss li:last-child p:after {
   display: none;
 }
+.shortcode-blogroll-mini p,
 .widget_recent_entries p,
 .recent-posts-widget p,
 .uw-recent p,
 .uw-top-posts p,
 .uw-widget-related-posts p,
-.uw-widget-rss p {
+.uw-widget-rss p,
+.shortcode-blogroll-mini span,
+.widget_recent_entries span,
+.recent-posts-widget span,
+.uw-recent span,
+.uw-top-posts span,
+.uw-widget-related-posts span,
+.uw-widget-rss span {
   margin: 0;
   position: relative;
   padding-bottom: 20px;
 }
+.shortcode-blogroll-mini p:after,
 .widget_recent_entries p:after,
 .recent-posts-widget p:after,
 .uw-recent p:after,
 .uw-top-posts p:after,
 .uw-widget-related-posts p:after,
-.uw-widget-rss p:after {
+.uw-widget-rss p:after,
+.shortcode-blogroll-mini span:after,
+.widget_recent_entries span:after,
+.recent-posts-widget span:after,
+.uw-recent span:after,
+.uw-top-posts span:after,
+.uw-widget-related-posts span:after,
+.uw-widget-rss span:after {
   position: absolute;
   bottom: 10px;
   left: 0;
@@ -6721,6 +6716,7 @@ a.screen-reader-shortcut:focus {
   width: 50px;
   background-color: #c9c9c9;
 }
+.shortcode-blogroll-mini img,
 .widget_recent_entries img,
 .recent-posts-widget img,
 .uw-recent img,
@@ -6740,6 +6736,7 @@ a.screen-reader-shortcut:focus {
   margin: 5px 9% 15px 0px;
   float: left;
 }
+.shortcode-blogroll-mini a.widget-link,
 .widget_recent_entries a.widget-link,
 .recent-posts-widget a.widget-link,
 .uw-recent a.widget-link,
@@ -6754,6 +6751,7 @@ a.screen-reader-shortcut:focus {
   overflow: hidden;
   display: block;
 }
+.shortcode-blogroll-mini a.widget-link span,
 .widget_recent_entries a.widget-link span,
 .recent-posts-widget a.widget-link span,
 .uw-recent a.widget-link span,
@@ -6765,6 +6763,7 @@ a.screen-reader-shortcut:focus {
   margin-top: 3px;
   font-weight: 500;
 }
+.shortcode-blogroll-mini a.widget-link:hover,
 .widget_recent_entries a.widget-link:hover,
 .recent-posts-widget a.widget-link:hover,
 .uw-recent a.widget-link:hover,
@@ -6773,6 +6772,7 @@ a.screen-reader-shortcut:focus {
 .uw-widget-rss a.widget-link:hover {
   color: #909090;
 }
+.shortcode-blogroll-mini .more,
 .widget_recent_entries .more,
 .recent-posts-widget .more,
 .uw-recent .more,
@@ -6781,6 +6781,7 @@ a.screen-reader-shortcut:focus {
 .uw-widget-rss .more {
   margin: 10px 0 0 0;
 }
+.shortcode-blogroll-mini small,
 .widget_recent_entries small,
 .recent-posts-widget small,
 .uw-recent small,
@@ -6791,6 +6792,7 @@ a.screen-reader-shortcut:focus {
   font-size: 18px;
   font-weight: 400;
 }
+.shortcode-blogroll-mini span,
 .widget_recent_entries span,
 .recent-posts-widget span,
 .uw-recent span,
@@ -6800,6 +6802,7 @@ a.screen-reader-shortcut:focus {
   display: block;
   overflow: hidden;
 }
+.shortcode-blogroll-mini svg,
 .widget_recent_entries svg,
 .recent-posts-widget svg,
 .uw-recent svg,
