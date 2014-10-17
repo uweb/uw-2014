@@ -5035,7 +5035,8 @@ table th[class*="col-"] {
   font-size: 20px;
   padding: 4px 10px 20px 15px;
 }
-.dawgdrops-item.dawgdrops-item a:focus {
+.dawgdrops-item.dawgdrops-item a:focus,
+.dawgdrops-item.dawgdrops-item a:hover {
   color: #b7a57a;
 }
 .dawgdrops-item.dawgdrops-item li a {
@@ -5598,6 +5599,9 @@ a.more:after {
 }
 .uw-search-bar-container .uw-results .result .telephonenumber {
   background: url('assets/images/search-phone.png') no-repeat 0 6px;
+}
+.uw-search-bar-container .uw-results .result .vcard {
+  background: url('assets/images/search-vcard.png') no-repeat 0 6px;
 }
 .uw-search-bar-container .uw-results .result.open h4 {
   color: #4b2e83;
@@ -6349,6 +6353,9 @@ a.uw-btn:focus:before {
 a.uw-btn.btn-gold:hover:before {
   background-color: #a49161;
 }
+a.uw-btn.btn-gold:after {
+  background-color: rgba(0, 0, 0, 0.3);
+}
 a.uw-btn.btn-purple {
   background-color: #4b2e83;
   color: white;
@@ -6368,8 +6375,8 @@ a.uw-btn:after {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 6px;
-  right: -6px;
+  width: 5px;
+  right: -5px;
   background-color: rgba(0, 0, 0, 0.3);
 }
 a.uw-btn:before {
@@ -6405,7 +6412,7 @@ body.error404 .woof {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding: 0 0 30px 0;
+  padding: 0 0 100px 0;
   background-color: #4b2e83;
   border-top: 7px solid #d1d1d1;
   text-align: center;
@@ -7436,184 +7443,6 @@ a.screen-reader-shortcut:focus {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
-}
-.home.site-boundless .tenet-nav {
-  height: 70px;
-  width: 100%;
-  bottom: 0px;
-  background-color: white;
-}
-.home.site-boundless .tenet-nav.fixed {
-  position: fixed;
-}
-.home.site-boundless .tenet-nav ul {
-  height: 100%;
-  padding: 22px 0px 0px 0px;
-  margin: 0px;
-  list-style-type: none;
-  text-align: center;
-}
-.home.site-boundless .tenet-nav ul li {
-  background-color: white;
-  text-align: center;
-  display: inline-block;
-  width: 210px;
-  position: relative;
-  -webkit-transition: all 400ms linear;
-  -moz-transition: all 400ms linear;
-  -o-transition: all 400ms linear;
-  transition: all 400ms linear;
-}
-.home.site-boundless .tenet-nav ul li a {
-  font-weight: 900;
-  color: #4b2e83;
-  text-transform: uppercase;
-  position: relative;
-  padding: 0 25px;
-}
-.home.site-boundless .tenet-nav ul li a:after {
-  background: url(assets/svg/uw-sprite.svg) no-repeat -283px 1px;
-  height: 25px;
-  right: -7px;
-  top: 0;
-  position: absolute;
-  width: 30px;
-  content: "";
-}
-.home.site-boundless .tenet-nav ul li a:before {
-  background: url(assets/svg/uw-sprite.svg) no-repeat -607px 1px;
-  height: 130px;
-  right: -40px;
-  top: -9px;
-  position: absolute;
-  width: 30px;
-  content: "";
-}
-.home.site-boundless li.tenet a {
-  color: #4b2e83;
-  font-size: 16px;
-  font-family: "Encode Sans Compressed", sans-serif;
-}
-.home.site-boundless li.tenet span {
-  position: absolute;
-  bottom: 32px;
-  left: 10px;
-  height: 126px;
-  width: 210px;
-  display: block;
-  background: no-repeat center bottom;
-  background-size: 0px;
-  -webkit-transition: background-size 0.25s;
-  -moz-transition: background-size 0.25s;
-  -o-transition: background-size 0.25s;
-  transition: background-size 0.25s;
-}
-.home.site-boundless li.tenet span:after {
-  position: absolute;
-  content: "";
-  height: 1px;
-  width: 150px;
-  background-color: #ddd;
-  bottom: 0;
-  left: 50%;
-  margin-left: -155px;
-}
-.home.site-boundless li.tenet:nth-child(1) span {
-  background-image: url(assets/images/boundless-theme/person-1.png);
-}
-.home.site-boundless li.tenet:nth-child(2) span {
-  background-image: url(assets/images/boundless-theme/person-6.png);
-}
-.home.site-boundless li.tenet:nth-child(3) span {
-  background-image: url(assets/images/boundless-theme/person-3.png);
-}
-.home.site-boundless li.tenet:nth-child(4) span {
-  background-image: url(assets/images/boundless-theme/person-4.png);
-}
-.home.site-boundless li.tenet:nth-child(5) span {
-  background-image: url(assets/images/boundless-theme/person-5.png);
-}
-.home.site-boundless li.tenet:nth-child(6) span {
-  background-image: url(assets/images/boundless-theme/person-2.png);
-}
-.home.site-boundless li.tenet:nth-child(7) span {
-  background-image: url(assets/images/boundless-theme/person-7.png);
-}
-.home.site-boundless li.tenet.open span,
-.home.site-boundless li.tenet:hover span,
-.home.site-boundless li.tenet:focus span {
-  background-size: 125px;
-}
-.home.site-boundless li.tenet.open:hover,
-.home.site-boundless li.tenet:hover:hover,
-.home.site-boundless li.tenet:focus:hover {
-  /* extra big pic styles here */
-}
-.home.site-boundless p {
-  width: 67%;
-  margin: auto;
-  bottom: 0px;
-  padding-bottom: 48px;
-  font-family: "Encode Sans Compressed", sans-serif;
-  font-size: 22px;
-  font-weight: 400;
-  color: white;
-}
-.home.site-boundless .delineator {
-  background: url('assets/images/stripes-dark-tile.png');
-  height: 110px;
-  width: 100%;
-  margin-bottom: -60px;
-}
-.home.site-boundless span.slant {
-  display: block;
-  height: 12px;
-  width: 330px;
-  background-color: #fff;
-  margin: 20px auto;
-  -webkit-transform: skewX(-25deg) skewY(0);
-  -o-transform: skewX(-25deg) skewY(0);
-  transform: skewX(-25deg) skewY(0);
-  -webkit-transform: skew(-25deg, 0);
-  -ms-transform: skewX(-25deg) skewY(0);
-  transform: skew(-25deg, 0);
-}
-.home.site-boundless div.centered {
-  position: absolute;
-  top: 15%;
-  width: 100%;
-  text-align: center;
-  color: #fff;
-}
-.home.site-boundless div.centered h1 {
-  display: inline-block;
-  text-transform: uppercase;
-  font-weight: 900;
-  font-size: 80px;
-}
-.home.site-boundless .parallax {
-  position: relative;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: 0px, 173px;
-}
-.home.site-boundless .parallax p {
-  padding: 2% 10%;
-  text-align: center;
-  width: 100%;
-  background-color: #fff;
-  color: #484848;
-  position: absolute;
-  bottom: 0;
-}
-.home.site-boundless .parallax h2 {
-  color: white;
-  text-transform: uppercase;
-  font-size: 100px;
-  font-weight: 900;
-  text-align: center;
-  padding-top: 250px;
-  margin: 0;
 }
 /* Small Devices, Tablets */
 @media only screen and (max-width: 767px) {
