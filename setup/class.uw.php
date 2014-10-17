@@ -40,6 +40,7 @@ class UW
         require_once($parent . 'class.uw-tinymce.php' );
         require_once($parent . 'class.uw-documentation.php' );
         require_once($parent . 'class.uw-enclosure.php' );
+        require_once($parent . 'class.uw-carousel.php' );
     }
 
     private function initialize()
@@ -66,5 +67,6 @@ class UW
         $this->IFrames           = new UW_Iframes;
         $this->GoogleApps        = new UW_GoogleApps;
         $this->Enclosure         = new UW_Enclosure;
+        $this->Carousel = new UW_Carousel;
     }
 }
