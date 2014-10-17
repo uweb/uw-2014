@@ -7358,9 +7358,13 @@ body.error404 .woof {
   height: 400px;
 }
 .uw-footer {
-  background: url('assets/images/footer.jpg') repeat-x center bottom;
-  padding: 0 0 120px 0;
-  background-color: #432577;
+  background: url('assets/images/footer.jpg') center bottom;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 0 0 100px 0;
+  background-color: #4b2e83;
   border-top: 7px solid #d1d1d1;
   text-align: center;
   position: relative;
