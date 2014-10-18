@@ -91,6 +91,7 @@ class UW_Dropdowns
         $this->add_menu_item( 'Apply', 'http://uw.edu/admissions/' );
         $this->add_menu_item( 'Admissions', 'http://uw.edu/admissions/', $parent = 'Apply' );
         $this->add_menu_item( 'Continuing Education', 'http://www.pce.uw.edu/', $parent = 'Apply' );
+        $this->add_menu_item( 'Financial Aid', 'http://www.washington.edu/students/osfa/', $parent = 'Apply' );
         $this->add_menu_item( 'Majors', 'http://www.washington.edu/uaa/advising/majors-and-minors/list-of-undergraduate-majors/', $parent = 'Apply' );
         $this->add_menu_item( 'Student Housing', 'http://uw.edu/about/housing', $parent = 'Apply' );
         $this->add_menu_item( 'Transfer Credit Policies', 'http://admit.washington.edu/Requirements/Transfer/Plan/CreditPolicies', $parent = 'Apply' );
