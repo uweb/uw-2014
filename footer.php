@@ -4,6 +4,8 @@
 
 		<a href="" class="footer-wordmark">University of Washington</a>
 
+        <h3 class="be-boundless">Be boundless</h3>
+
 		<h4>Connect with us:</h4>
         <nav role="navigation" aria-label="social networking">
             <ul class="footer-social">

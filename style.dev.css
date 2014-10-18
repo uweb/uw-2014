@@ -6108,6 +6108,7 @@ ul.uw-mobile-menu ul {
     float: none;
     margin: 20px 20px 20px 0px;
     width: 100% !important;
+    height: auto;
   }
 }
 .gallery {
@@ -7363,7 +7364,7 @@ body.error404 .woof {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding: 0 0 100px 0;
+  padding: 0 0 30px 0;
   background-color: #4b2e83;
   border-top: 7px solid #d1d1d1;
   text-align: center;
@@ -7376,6 +7377,14 @@ body.error404 .woof {
   text-indent: -9999px;
   overflow: hidden;
   margin-top: 50px;
+}
+.uw-footer .be-boundless {
+  font-size: 24px;
+  background: url(assets/images/boundless.png) no-repeat center top transparent;
+  display: block;
+  text-indent: -99999px;
+  margin: 10px 0 60px;
+  opacity: .6;
 }
 .uw-footer h4 {
   font-family: "Encode Sans Compressed", sans-serif;
