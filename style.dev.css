@@ -3969,6 +3969,14 @@ ul.uw-select li.inactive a {
 .box-outer .box .tile div {
   margin: 0 -51px;
 }
+.box-outer .box .tile .shortcode-blogroll-mini {
+  padding-left: 0px;
+}
+.box-outer .box .tile .shortcode-blogroll-mini img {
+  width: 70px;
+  height: 70px;
+  margin: 5px 9% 15px 0px;
+}
 .box-outer .box .tile img {
   width: 100%;
   height: auto;
