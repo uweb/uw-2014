@@ -5322,6 +5322,7 @@ ul {
 }
 hr {
   border-top: 1px solid #EBEBEB;
+  clear: both;
 }
 .intro {
   font-family: "Encode Sans Compressed", sans-serif;
