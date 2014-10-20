@@ -1,10 +1,11 @@
-<?php wp_footer(); ?>
-
     <div class="uw-footer">
 
-		<a href="" class="footer-wordmark">University of Washington</a>
+        <a href="" class="footer-wordmark">University of Washington</a>
 
-		<h4>Connect with us:</h4>
+        <a href="http://www.washington.edu/boundless/be-boundless/"><h3 class="be-boundless">Be boundless</h3></a>
+
+        <h4>Connect with us:</h4>
+
         <nav role="navigation" aria-label="social networking">
             <ul class="footer-social">
                 <li><a class="facebook" href="http://www.facebook.com/UofWA">Facebook</a></li>
@@ -39,6 +40,8 @@
 
     </div><!-- #uw-container-inner -->
     </div><!-- #uw-container -->
+
+<?php wp_footer(); ?>
 
 </body>
 </html>
