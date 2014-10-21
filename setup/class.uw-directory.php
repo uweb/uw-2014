@@ -36,9 +36,20 @@ class UW_Directory
 
   function search_filter()
   {
-    $args = wp_parse_args($_GET);
+    $args = wp_parse_args( $_GET );
+
+    $search = $args['search'];
+
+    if ( strpos( $search, ',' ) )
+    {
+      $search = array_map( 'trim', explode( ',', $search ) );
+      $last = $search[0];
+      $first =$search[1];
+      return "(&(cn=*$last*)(givenname=$first*))";
+    }
+
     $search = str_replace( ' ','*', $args['search'] );
-    return "(|(mail=*{$search}*)(sn=*{$search}*)(givenname=*{$search}*)(cn=*{$search}*)(telephonenumber=*{$search}*)(mailstop={$search}))";
+    return "(|(mail=*{$search}*)(sn=*{$search}*)(givenname=*{$search}*)(cn=*{$search}*)(telephonenumber=*{$search}*)(mailstop={$search})(title=*{$search}*))";
   }
 
   function get_limit()
@@ -46,6 +57,7 @@ class UW_Directory
     $args = wp_parse_args( $_GET );
     return isset( $args['limit'] ) ? $args['limit'] : self::LIMIT;
   }
+
 
   function parse( $info )
   {
