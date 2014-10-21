@@ -38,7 +38,7 @@ class UW_Directory
   {
     $args = wp_parse_args( $_GET );
 
-    $search = $args['search'];
+    $search = stripslashes( $args['search'] );
 
     if ( strpos( $search, ',' ) )
     {
@@ -48,7 +48,7 @@ class UW_Directory
       return "(&(cn=*$last*)(givenname=$first*))";
     }
 
-    $search = str_replace( ' ','*', $args['search'] );
+    $search = str_replace( ' ','*', $search );
     return "(|(mail=*{$search}*)(sn=*{$search}*)(givenname=*{$search}*)(cn=*{$search}*)(telephonenumber=*{$search}*)(mailstop={$search})(title=*{$search}*))";
   }
 
