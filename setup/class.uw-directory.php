@@ -81,7 +81,13 @@ class UW_Directory
 
         $people[$index]['dn'] = $person['dn'];
 
+        $sort[$index] = $people[$index]['commonname'];
+
     }
+
+    // Sorts the list alphabetically by commonname
+    asort( $sort ) ;
+    array_multisort( $sort, SORT_NUMERIC , $people );
     return $people;
   }
 
