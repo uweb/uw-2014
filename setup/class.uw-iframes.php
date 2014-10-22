@@ -48,6 +48,7 @@ class UW_Iframes
       'uwregents.wufoo.com',
       'www.uw.edu',
       'www.washington.edu',
+      'online.gifts.washington.edu',
       'www.google.com',
       'www.excition.com',
       'www.youtube.com'
