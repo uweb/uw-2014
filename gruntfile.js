@@ -33,11 +33,12 @@ module.exports = function(grunt) {
           "js/uw.player.js",
           "js/uw.social.js",
         ],
-        components : [
-          // todo: put just external components here for the uw.js we will give out
-        ],
         src: [ 'js/uw.intro.js', '<%= concat.dist.libraries %>', '<%= concat.dist.theme %>', 'js/uw.outro.js' ],
         dest: 'js/site.dev.js'
+      },
+      uw : {
+        src : [ 'js/uw.intro.js', '<%= concat.dist.theme %>', 'js/uw.outro.js' ],
+        dest : 'js/uw.js'
       }
     },
     uglify: {
@@ -104,6 +105,14 @@ module.exports = function(grunt) {
         files: ['less/*.less', 'less/flat/*.less', 'less/bootstrap/*.less', 'less/widgets/*.less'],
         tasks: ['css']
       }
+    },
+    docco: {
+      debug: {
+        src: ['*.php','*/*.php', 'js/uw.js'],
+        options: {
+          output: 'docs/'
+        }
+      }
     }
   });
 
@@ -113,10 +122,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
-
+  grunt.loadNpmTasks('grunt-docco');
 
   grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'notify', 'less']);
   grunt.registerTask('js', ['jshint', 'concat', 'uglify', 'notify' ]);
   grunt.registerTask( 'css', ['less', 'notify'] );
+  grunt.registerTask( 'docs', ['concat', 'docco'] );
 
 };

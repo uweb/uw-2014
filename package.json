@@ -8,6 +8,7 @@
     "grunt-contrib-concat": "*",
     "grunt-contrib-watch": "*",
     "grunt-contrib-less": "~0.11.3",
+    "grunt-docco": "*",
     "grunt-notify": "~0.3.0",
     "clean-css": "~2.2.7"
   }

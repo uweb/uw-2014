@@ -29,8 +29,10 @@ UW.VERSION = '0.1'
 ;// List out the classes that each component searches for
 UW.elements = {
 
+  alert : '.uw-thinstrip',
   accordion  : '.uw-accordion',
   dropdowns  : '#dawgdrops',
+  images : 'a > img',
   mobilemenu : '.uw-mobile-menu-toggle',
   radio      : ':radio',
   search     : '.uw-search',
@@ -43,8 +45,13 @@ UW.elements = {
 
 }
 
-UW.baseUrl = Backbone.history.location.origin +
-             Backbone.history.location.pathname
+if (typeof(uw) !== 'undefined') {
+    UW.baseUrl = uw.siteUrl;
+}
+else {
+    UW.baseUrl = Backbone.history.location.origin + '/' +
+                _.first( _.compact( Backbone.history.location.pathname.split('/') ) ) + '/';
+}
 
 UW.sources = {
   quicklinks : UW.baseUrl + 'wp-admin/admin-ajax.php?action=quicklinks',
@@ -56,12 +63,14 @@ UW.initialize = function( $ )
 {
   // Cache common elements that each javascript module calls
   UW.$body       = $('body');
+  UW.$window   = $( window );
 
   // UW Utilities
   UW.dropdowns  = _.map( $( UW.elements.dropdowns ),     function( element ) { return new UW.Dropdowns({ el : element }) } )
   UW.mobilemenu = _.map( $( UW.elements.mobilemenu ),     function( element ) { return new UW.MobileMenu({ el : element }) } )
   UW.quicklinks = _.map( $( UW.elements.quicklinks ),    function( element ) { return new UW.QuickLinks( { el : element, url : UW.sources.quicklinks }) } )
   UW.search     = _.map( $( UW.elements.search ),    function( element ) { return new UW.Search( { el : element, model : new UW.Search.DirectoryModel( {url: UW.sources.search}) }) } )
+  UW.images   = _.map( $( UW.elements.images ),    function( element ) { return new UW.Image({ el : element }) } )
 
   // UW Modules
   UW.slideshows = _.map( $( UW.elements.slideshow ), function( element ) { return new UW.Slideshow( { el : element }) } )
@@ -75,6 +84,8 @@ UW.initialize = function( $ )
   UW.radio      = _.map( $( UW.elements.radio ),     function( element ) { return new UW.Radio({ el : element }) } )
   UW.select     = _.map( $( UW.elements.select ),    function( element ) { return new UW.Select({ el : element }) } )
 
+  UW.alert = new UW.Alert({ after: UW.elements.alert, model: new UW.Alert.Model() });
+
   // todo: add to separate file
   $('table').addClass('table table-striped')
 
@@ -85,7 +96,72 @@ jQuery(document).ready( UW.initialize )
 
 // Basic UW Components
 // --------------
-;// ### UW Search
+;UW.Alert = Backbone.View.extend({
+
+  alert : '#uwalert-alert-message',
+
+  events : {
+    'click .close' : 'hide'
+  },
+
+  template : '<div id="uwalert-alert-message" class="<% _.each( categories, function( category ) { %> <%= category.slug %> <% }) %>"><div class="container"><span class="close">Close</span><h1><%= title %></h1><p><%= excerpt %><a class="more" href="http://emergency.uw.edu" title="<%= title %>">More info</a></p></div></div>',
+
+  initialize  : function( options )
+  {
+    _.bindAll( this, 'render', 'hide' )
+    this.options = _.extend( {}, options )
+    this.model.on( 'sync', this.render )
+  },
+
+  render : function()
+  {
+    if ( this.model.get('title'))
+     {
+      $(this.options.after).after( _.template( this.template, this.model.toJSON() ) )
+      this.setElement( $( this.alert ) )
+    }
+  },
+
+  hide : function()
+  {
+    this.$el.remove()
+  }
+
+})
+
+UW.Alert.Model = Backbone.Model.extend({
+
+  alerts :  [
+    'red-alert-urgent',
+    'orange-alert',
+    'steel-alert-fyis',
+  ],
+
+  data  : {
+    c : '?',
+    test : true,
+    number:1,
+    type:'post',
+    status:'publish',
+    dataType: 'json'
+  },
+
+  url : Backbone.history.location.protocol + '//public-api.wordpress.com/rest/v1/sites/uwemergency.wordpress.com/posts/',
+
+  initialize : function()
+  {
+    this.fetch( { data : this.data })
+  },
+
+  parse: function(data)
+  {
+    var post = _.first( data.posts )
+    _.extend( post.categories, {alert: { slug : window.location.hash.replace('#','') } } )
+    if ( _.intersection( _.pluck(  post.categories, 'slug' ), this.alerts ).length || post.categories.alert.slug.indexOf( 'uwalert' ) !== -1 )
+      return post
+  }
+
+});;// ### UW Search
 
 // This function creates a UW Search
 // For usage please refer to the [UW Web Components Search](http://uw.edu/brand/web/#search)
@@ -146,7 +222,7 @@ UW.Search = Backbone.View.extend({
   // The HTML template for a single search result. Only the information that is available will be shown.
   result :  '<div class="result">' +
               '<h4 class="commonname"><%= commonname %></h4>'+
-              '<a href="#" title="<%= commonname %>" class="more">More</a>'+
+              '<a href="#" title="<%= commonname %>" class="directory-more">More</a>'+
               '<div class="information hidden">'+
                 '<p class="pull-left"><% if ( title ) { %><span class="title"><%= title %></span><% } %>'+
                 '<% if ( postaladdress ) { %><span class="postaladdress"><%= postaladdress %></span><% } %></p>'+
@@ -217,6 +293,7 @@ UW.Search = Backbone.View.extend({
   {
     this.hideDirectory()
     this.$searchbar.toggleClass('open')
+    UW.$body.toggleClass( 'search-open' )
     this.toggleBlur();
     return false;
   },
@@ -239,7 +316,7 @@ UW.Search = Backbone.View.extend({
     else{
         var $target = $(event.target);
         if ($target.is(':radio')) {
-            if (event.keyCode == 13){
+            if ((event.keyCode == 13) || (event.keyCode == 32)){
                 $target.parent('label').trigger('click');
             }
             else if (event.keyCode == 9) {
@@ -411,141 +488,112 @@ UW.Search.DirectoryModel = Backbone.Model.extend({
 
 UW.QuickLinks = Backbone.View.extend({
 
-    // todo: the default list and these elements could be put into the php templates
-    container: 'div#uw-container',
-    $little_list_header: $('<h3>Helpful Links</h3>'),
-    $drawer: $("<nav id='quicklinks' role='navigation' aria-label='quick links'></nav>"),
-    $big_list: $('<ul id="big_links"></ul>'),
-    $little_list: $('<ul id="little_list"></ul>'),
+    DELAY : 500,
 
-    template : '<li><% if (classes) { %><span class="<%= classes %>"></span><% } %><a href="<%= url %>" tabindex="-1"><%= title %></a></li>',
+    // todo: the default list and these elements could be put into the php templates
+    container: '#uw-container',
+
+    template : '<nav id="quicklinks" role="navigation" aria-label="quick links" aria-hidden="true">' +
+                        '<ul id="big-links">' +
+                            '<% _.each( links, function( link ) { %> ' +
+                                '<% if (link.classes) { %>' +
+                                    '<li>' +
+                                        '<span class="<%= link.classes %>"></span>' +
+                                        '<a href="<%= link.url %>" tabindex="-1"><%= link.title %></a>' +
+                                    '</li>' +
+                                '<% } %>' +
+                            '<% }) %>' +
+                        '</ul>' +
+                        '<h3>Helpful Links</h3>' +
+                        '<ul id="little-links">' +
+                            '<% _.each( links, function( link ) { %> '+
+                                '<% if ( ! link.classes) { %>' +
+                                    '<li>' +
+                                        '<span class="<%= link.classes %>"></span>' +
+                                        '<a href="<%= link.url %>" tabindex="-1"><%= link.title %></a>' +
+                                    '</li>' +
+                                '<% } %>' +
+                            '<% }) %>' +
+                        '</ul>' +
+                    '</nav>',
 
     events: {
-       'click'       : 'animate',
-       'touchstart'  : 'animate',
-       'keyup'       : 'keyup'
+       'click'           : 'animate',
+       'touchstart'   : 'animate',
+       'keyup'         : 'animate',
+       'blur button' : 'loop',
+       // 'keydown button' : 'testShiftKey'
     },
 
+    // testShiftKey : function(e)
+    // {
+    //     console.log(e, e.shiftKey)
+    // },
+
     initialize: function ( options ) {
-        _.bindAll( this, 'render', 'append_menu_item', 'close_quicklinks', 'focused', 'blurred', 'button_blur', 'keyup' );
+        _.bindAll( this, 'render', 'animate', 'accessible', 'loop'  );
         this.links = new UW.QuickLinks.Collection( options )
         this.links.on( 'sync', this.render )
-        this.$button = this.$el.find('button');
-        this.$button.blur(this.button_blur);
     },
 
     render : function(  )
     {
-        this.links.each( this.append_menu_item )
-        // todo: may put the drawer directly in the theme
-        this.make_drawer()
-        this.add_lists()
-        // this.setElement( this.$drawer )
-    },
-
-    make_drawer: function () {
-        UW.$body.children().not('#wpadminbar').not('script').wrapAll('<div id="uw-container"><div id="uw-container-inner"></div></div>');
+        this.quicklinks = $ ( _.template( this.template, { links : this.links.toJSON() }) )
+        //this.makeDrawer()
         this.$container = $(this.container);
+        this.$container.prepend( this.quicklinks )
+        this.$el.attr( 'aria-controls', 'quicklinks' ).attr( 'aria-owns', 'quicklinks' )
+        UW.$body.on( 'keyup', '#quicklinks a', this.animate )
     },
 
-    close_quicklinks: function (event) {
-        if (event.type == 'keyup'){
-            if (event.keyCode == 27) {
-                this.$button.focus();
-                this.blurred();
-                this.animate(event);
-            }
+    makeDrawer: function () {
+        var $shortcuts = UW.$body.find('a.screen-reader-shortcut').detach();
+        UW.$body.children().not('#wpadminbar').not('script')
+            .wrapAll('<div id="uw-container">')
+            .wrapAll('<div id="uw-container-inner">');
+        this.$container = $(this.container);
+        this.$container.prepend($shortcuts);
+    },
+
+    animate: function ( e ) {
+        e.preventDefault();
+
+        if ( e.keyCode && e.keyCode != 27 )
+        {
+            if ( e.keyCode && e.keyCode != 13 ||
+                e.keyCode && e.keyCode != 32 )
+            return false;
         }
-        else if (this.$container.hasClass('open') && (event.target.parentElement != this.el) && (!this.is_focused)) {
-            this.animate(event);
-        }
+
+        this.$container.toggleClass('open')
+        this.quicklinks.toggleClass('open')
+
+        this.open = this.quicklinks.hasClass( 'open' )
+
+        _.delay( this.accessible, this.open ? this.DELAY : 0 )
     },
 
-    add_links: function () {
-        _.each( this.collection.models, this.append_menu_item )
-    },
-
-    append_menu_item: function ( link ) {
-        if ( link.get('classes') )
-            this.$big_list.append( _.template( this.template, link.toJSON() ) )
-         else
-            this.$little_list.append( _.template( this.template, link.toJSON() ) )
-    },
-
-    add_lists : function () {
-        if (this.$big_list.find('li').length > 0) {
-            this.$drawer.append(this.$big_list);
-        }
-        if (this.$little_list.find('li').length > 0) {
-            this.$drawer.append(this.$little_list_header);
-            this.$drawer.append(this.$little_list);
-        }
-        this.$links = this.$drawer.find('li a');
-        this.add_events();
-        this.$container.prepend(this.$drawer);
-    },
-
-    add_events: function () {
-        $('#uw-container-inner').on( {
-            'click': this.close_quicklinks,
-        });
-        this.$links.on( {'keyup': this.close_quicklinks});
-        var self = this;
-        this.$links.last().blur(function () {
-            self.$button.focus();
-        });
-    },
-
-    reset: function () {
-        this.clear_lists();
-        this.clear_drawer();
-    },
-
-    clear_lists: function () {
-        this.$little_list.html('');
-        this.$big_list.html('');
-    },
-
-    clear_drawer: function () {
-        this.$drawer.html('');
-    },
-
-    animate: function (event) {
-        if(!this.is_focused){
-            event.preventDefault();
-            this.$container.toggleClass('open');
-            this.$drawer.toggleClass('open');
+    // todo : cache the uw-container-inner and screen-reader
+    accessible : function (argument)
+    {
+        this.$el.find('button').attr( 'aria-expanded', this.open )
+        this.quicklinks.attr('aria-hidden',  ( ! this.open ).toString() )
+        if ( this.open ) {
+            this.quicklinks.find('a').attr( 'tabindex', 0 ).first().focus()
+           $('#uw-container-inner').attr('aria-hidden', true);
+           $('.screen-reader-shortcut').attr('aria-hidden', true)
+        } else {
+            this.quicklinks.find('a').attr( 'tabindex', -1 )
+            this.$el.find('button').focus()
+           $('#uw-container-inner').attr('aria-hidden', false);
+           $('.screen-reader-shortcut').attr('aria-hidden', false);
         }
     },
 
-    keyup: function (event) {
-        if (event.keyCode == 13) {
-            if (this.is_focused) {
-                this.blurred();
-                this.animate(event);
-            }
-            else {
-                _.delay(this.focused, 500);
-            }
-        }
-    },
-
-    focused: function () {
-        this.is_focused = true;
-        this.$links.attr('tabindex', 0);
-        this.$links.first().focus();
-    },
-
-    blurred: function (event) {
-        this.is_focused = false;
-        this.$links.attr('tabindex', -1);
-    },
-
-    button_blur: function (event) {
-        if(this.is_focused){
-            this.$links.first().focus();
-        }
+    loop : function (event) {
+        if( this.open ) this.quicklinks.find('li a').first().focus();
     }
+
 });
 
 UW.QuickLinks.Model = Backbone.Model.extend({});
@@ -554,22 +602,11 @@ UW.QuickLinks.Collection = Backbone.Collection.extend({
 
     model: UW.QuickLinks.Model,
 
-    initialize: function ( options ) {
-        // _.bindAll(this, 'parse', 'make_view');
+    initialize: function ( options )
+    {
         this.url = options.url;
-        //refusal to execute the ajax request isn't handled here.  Looks like it should be, but it isn't
         this.fetch()
     },
-
-    //pull this out of the collection?
-    // default_links: [
-    //     {title: 'Maps', url: 'http://uw.edu/maps', classes: ['icon-maps']},
-    //     {title: 'Directories', url: 'http://uw.edu/directory', classes: ['icon-directories']},
-    //     {title: 'Calendar', url: 'http://uw.edu/calendar', classes: ['icon-calendar']},
-    //     {title: 'Libraries', url: 'http://uw.edu/libraries', classes: ['icon-libraries']},
-    //     {title: 'MyUW', url: 'http://myuw.washington.edu', classes: ['icon-myuw']},
-    //     {title: 'UW Today', url: 'http://uw.edu/news', classes: ['icon-uwtoday']},
-    //    ],
 
 });
 ;// ### UW Slideshow
@@ -1170,6 +1207,11 @@ UW.Radio = Backbone.View.extend({
 
 UW.Dropdowns = Backbone.View.extend({
 
+  chunkSize : 8,
+  menuWidth : 1170,
+  menuBlock : '<div class="menu-block"></div>',
+  menuBlockWidth : 250,
+
   index : {
     topmenu : 0,
     submenu : 0
@@ -1200,21 +1242,43 @@ UW.Dropdowns = Backbone.View.extend({
 
   initialize : function(options)
   {
-    _.bindAll( this, 'toggleSubMenu' )
+    _.bindAll( this, 'render', 'chunk', 'wrap', 'wrapChildren', 'positionSubmenu', 'toggleSubMenu' )
     this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
     this.$topLevelNav = this.$el.find( this.elements.toplevel )
+    this.render()
   },
 
   render : function()
   {
-    // _.map( this.$topLevelNav, this.positionSubmenu )
+    _.each( this.$topLevelNav, this.wrapChildren )
   },
 
+  chunk : function( element, index )
+  {
+    return Math.floor( index / this.chunkSize );
+  },
+
+  wrapChildren : function( element )
+  {
+    if ( $(element).find('li').length > this.chunkSize )
+        _.each( _.groupBy( $( element ).find('li'), this.chunk ), this.wrap )
+  },
+
+  wrap : function( elements )
+  {
+      $( elements ).wrapAll( this.menuBlock )
+  },
+
+  // todo: tidy up the math / variables
   positionSubmenu : function( el )
   {
     var $el = $(el.currentTarget)
       , position = $el.position()
-    $el.find('ul').css( { top : position.top + 58, left: position.left } )
+      , menublock = $el.find('.menu-block')
+      , shift = ( this.menuBlockWidth * ( menublock.length ) ) + position.left
+      , left = shift > this.menuWidth ? position.left - ( shift - this.menuWidth ) : position.left
+
+    $el.find('ul').css( { top : position.top + 58, left: left })
   },
 
   toggleSubMenu : function( e )
@@ -1225,6 +1289,7 @@ UW.Dropdowns = Backbone.View.extend({
       case this.keys.enter :
       case this.keys.down  :
 
+        $(e.currentTarget).attr('aria-expanded', 'true');
         this.currentSubMenu = $(e.currentTarget).siblings('ul')
         this.currentSubMenuAnchors = this.currentSubMenu.find('a')
 
@@ -1278,18 +1343,25 @@ UW.Dropdowns = Backbone.View.extend({
         return false
 
       case this.keys.left:
+        this.currentSubMenu.hide().parent().prev().children('a').first().focus()
         this.currentSubMenu.attr( 'aria-expanded', 'false' )
-          .hide().parent().prev().children('a').first().focus()
+          .parent().children('a').first().attr('aria-expanded', 'false')
         return false;
 
       case this.keys.right:
+        this.currentSubMenu.hide().parent().next().children('a').first().focus()
         this.currentSubMenu.attr( 'aria-expanded', 'false' )
-          .hide().parent().next().children('a').first().focus()
+          .parent().children('a').first().attr('aria-expanded', 'false')
         return false;
 
       case this.keys.spacebar:
       case this.keys.enter:
         window.location.href = $(e.currentTarget).attr('href')
+        return false;
+
+      case this.keys.esc:
+        this.currentSubMenu.attr('aria-expanded', 'false' )
+          .hide().parent().children('a').first().attr('aria-expanded', 'false').focus();
         return false;
 
       default:
@@ -1321,7 +1393,7 @@ UW.MobileMenu = Backbone.View.extend({
   initialize : function( options )
   {
     this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
-    this.$mobilemenu = $('.uw-mobile-menu > li')
+    this.$mobilemenu = this.$el.siblings().first()
   },
 
   toggle: function()
@@ -1384,12 +1456,21 @@ UW.Accordion = Backbone.View.extend({
 
 // This function creates the UW select menu
 // For usage please refer to the [UW Web Components Select](http://uw.edu/brand/web/#select)
-/* TODO: add accessiblity attributes to the html markup */
+// data-submit='true' will cause the form to submit immediately
+// data-type='links' will cause the chosen option's value (a url) to be visisted immediately
+/* TODO: add accessiblity attributes to the html markup
+    step 1: don't hide the select, just put it off canvas.
+    step 2: hide the ul from screen-readers and tab flow, leaving the select in the tab flow
+    step 3: create a psuedo focus class that we can style like normal focus
+    step 4: tie events from the select (like focus change or select) back to the ul visually
+*/
 
 UW.Select = Backbone.View.extend({
 
   // The class to look for when rendering UW select menu.
   el : '.uw-select',
+
+  submit: false,
 
   // This property indicates the current index of the selected dropdown.
   current : 0,
@@ -1449,21 +1530,35 @@ UW.Select = Backbone.View.extend({
     this.current = this.$target.index()
     this.animate()
     this.toggleLIClasses()
-    this.cloneSelectEvents()
     return false
   },
 
   // Animate the select menu to the proper menu item.
   animate : function()
   {
-    this.$el.animate( { marginTop : this.current * - this.$target.outerHeight()}, { queue: false, complete: this.removeOpenClass } )
+    this.scroll = this.$target.offset().top - this.$el.find('li').first().offset().top;
+    //var current_top = this.$el.position().top;
+    this.$el.animate( { scrollTop : this.scroll }, { queue: false, complete: this.removeOpenClass } )
+    //this.$el.animate( { top : current_top - (this.$target.offset().top - this.$el.find('li.active').offset().top) }, { queue: false, complete: this.removeOpenClass } )
   },
 
   // Whenever an item is clicked on the UW select menu make sure the standard
   // select menu is set to that value as well.
   cloneSelectEvents : function()
   {
-    this.$select.val( this.$el.find('li').eq( this.current ).data().value )
+    var value = this.$el.find('li').eq( this.current ).data().value;
+    this.$select.val( value );
+    this.$select.find('option[value="' + value + '"]').prop('selected', true);
+    if (this.submit){
+        this.$select.parent('form').submit();
+    }
+    if (this.trigger_link){
+        window.location = value;
+    }
+
+    if ( this.$select.hasClass('uw-select-wp') )
+      window.location = UW.baseUrl + '?cat=' + value;
+
   },
 
   // Render the UW select menu HTML and then set the view's element to the newly
@@ -1482,7 +1577,13 @@ UW.Select = Backbone.View.extend({
   parseSelect : function()
   {
     var values  = _.map( this.$el.find('option'), this.getValue )
-      , titles  = _.map( this.$el.find('option'), this.getText )
+      , titles  = _.map( this.$el.find('option'), this.getText );
+    if (this.$el.data('submit')) {
+        this.submit = true;
+    }
+    if (this.$el.data('type') == 'links') {
+        this.trigger_link = true;
+    }
     this.current = this.$el.find(':selected').index()
     this.LIs    = _.object( values, titles )
   },
@@ -1495,11 +1596,13 @@ UW.Select = Backbone.View.extend({
 
   addOpenClass : function()
   {
-      this.$el.addClass('open')
+      this.$el.addClass('open');
+      this.$el.scrollTop(this.scroll);
   },
 
   removeOpenClass : function( forced )
   {
+    this.cloneSelectEvents()
     if ( this.clicked || forced )
     {
     this.$el.removeClass('open')
@@ -1592,6 +1695,86 @@ UW.Select = Backbone.View.extend({
   isOpen : function()
   {
     return this.$el.hasClass('open')
+  }
+
+})
+;UW.Image = Backbone.View.extend({
+
+  RATIO : 0.8,
+
+  template : '<div class="uw-overlay">' +
+                    '<div></div>' +
+                    '<div class="wrapper" style="width:<%= width %>px; margin-top:-<%= height/2 %>px; margin-left:-<%= width/2 %>px;">' +
+                     '<span class="close"> Close</span>' +
+                     '<img src="<%= src %>" alt="<%=alt %>" style="width:100%;" />' +
+                     '<p><%= caption %></p>' +
+                     '<p><%= credit %></p>' +
+                   '</div>' +
+                 '</div>',
+
+  events : {
+    'click' : 'fetchImage'
+  },
+
+  initialize : function()
+  {
+    _.bindAll( this, 'fetchImage', 'overlay' , 'render' )
+  },
+
+  fetchImage : function( e )
+  {
+    this.attrs = this.getAttributes( e )
+    $('<img src="'+ this.attrs.src +'"/>').imagesLoaded( this.overlay )
+    return false;
+  },
+
+  overlay : function( images )
+  {
+
+    // todo make this quicker
+    if ( images.hasAnyBroken ) {
+      window.location = this.attrs.src;
+      return
+    }
+
+    this.image = _.first( images.images )
+    this.attrs.height = this.image.img.height
+    this.attrs.width  = this.image.img.width
+
+    if ( this.image.img.height > UW.$window.height() ||
+          this.image.img.width > UW.$window.width() )
+    {
+      this.attrs.height = this.RATIO * UW.$window.height()
+      this.attrs.width  = this.RATIO * UW.$window.width()
+    }
+
+    this.render()
+
+    return false;
+  },
+
+  render : function()
+  {
+    UW.$body.one( 'click', this.remove )
+    return  UW.$body.append( _.template( this.template, this.attrs ) )
+  },
+
+  remove : function()
+  {
+    UW.$body.find( '.uw-overlay' ).remove()
+    return false;
+  },
+
+  getAttributes: function( e )
+  {
+      var target = $(e.currentTarget)
+      return {
+        src : target.parent('a').attr('href'),
+        alt : target.attr('alt'),
+        caption : target.parent('a').siblings('.wp-caption-text').text(),
+        credit : target.parent('a').siblings('.wp-caption-text').find('.wp-media-credit').text()
+      }
+
   }
 
 })
