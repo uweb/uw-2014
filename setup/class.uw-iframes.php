@@ -51,6 +51,9 @@ class UW_Iframes
       'www.uw.edu',
       'www.washington.edu',
       'online.gifts.washington.edu',
+      'secure.gifts.washington.edu',
+      'helperapps.gifts.washington.edu',
+      'www.surveygizmo.com',
       'www.google.com',
       'www.excition.com',
       'www.youtube.com'
