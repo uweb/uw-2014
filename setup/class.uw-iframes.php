@@ -50,6 +50,7 @@ class UW_Iframes
       'uwregents.wufoo.com',
       'www.uw.edu',
       'www.washington.edu',
+      'depts.washington.edu',
       'online.gifts.washington.edu',
       'secure.gifts.washington.edu',
       'helperapps.gifts.washington.edu',
