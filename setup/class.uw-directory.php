@@ -36,20 +36,43 @@ class UW_Directory
 
   function search_filter()
   {
-    $args = wp_parse_args( $_GET );
+      $args = wp_parse_args( $_GET );
 
-    $search = stripslashes( $args['search'] );
+      $search = stripslashes( $args['search'] );
 
-    if ( strpos( $search, ',' ) )
-    {
-      $search = array_map( 'trim', explode( ',', $search ) );
-      $last = $search[0];
-      $first =$search[1];
-      return "(&(cn=*$last*)(givenname=$first*))";
-    }
+      if ( $_GET['method'] === 'name' )
+      {
+        return "(|(sn=*{$search}*)(givenname=*{$search}*)(cn=*{$search}*))";
+      } else
+      if ( $_GET['method'] === 'email' )
+      {
+        return "(|(mail=*{$search}*))";
+      } else
+      if ( $_GET['method'] === 'phone' )
+      {
+        return "(|(telephonenumber=*{$search}*))";
+      } else
+      if ( $_GET['method'] === 'box' )
+      {
+        return "(|(mailstop=*{$search}*))";
+      } else
+      if ( $_GET['method'] === 'dept' )
+      {
+        return "(|(title=*{$search}*))";
+      } else {
 
-    $search = str_replace( ' ','*', $search );
-    return "(|(mail=*{$search}*)(sn=*{$search}*)(givenname=*{$search}*)(cn=*{$search}*)(telephonenumber=*{$search}*)(mailstop={$search})(title=*{$search}*))";
+
+        if ( strpos( $search, ',' ) )
+        {
+          $search = array_map( 'trim', explode( ',', $search ) );
+          $last = $search[0];
+          $first =$search[1];
+          return "(&(cn=*$last*)(givenname=$first*))";
+        }
+
+        $search = str_replace( ' ','*', $search );
+        return "(|(mail=*{$search}*)(sn=*{$search}*)(givenname=*{$search}*)(cn=*{$search}*)(telephonenumber=*{$search}*)(mailstop={$search})(title=*{$search}*))";
+      }
   }
 
   function get_limit()
@@ -85,9 +108,12 @@ class UW_Directory
 
     }
 
-    // Sorts the list alphabetically by commonname
-    asort( $sort ) ;
-    array_multisort( $sort, SORT_NUMERIC , $people );
+    if ( $sort )
+    {
+      // Sorts the list alphabetically by commonname
+      asort( $sort ) ;
+      array_multisort( $sort, SORT_NUMERIC , $people );
+    }
     return $people;
   }
 
