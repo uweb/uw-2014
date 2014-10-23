@@ -19,19 +19,26 @@ a.uw-btn {
     border-radius:0;
     -webkit-border-radius:0;
     -moz-border-radius:0;
-    &:before {
+    &:before {      
       width: 45px;
+      right: -45px;
+    }
+    &:after {
+      width: 45px;
+      height: 45px;
+      top: 50%;
+      margin-top: -21px;
       right: -45px;
       background-size: 740px;
       background-position: -32px -410px;
     }
-    &.btn-play:before {
+    &.btn-play:after {
       background-position: -31px -466px;
     }
-    &.btn-external:before {
+    &.btn-external:after {
       background-position: -126px -410px;
     }
-    &.btn-plus:before {
+    &.btn-plus:after {
       background-position: -83px -465px;
     }
   }
@@ -45,9 +52,6 @@ a.uw-btn {
   &.btn-gold {
     &:hover:before {
       background-color: lighten(@darkgold, 10%);
-    }
-    &:after {
-      background-color: rgba(0,0,0,.3);
     }
   }
   &.btn-purple {
@@ -68,9 +72,12 @@ a.uw-btn {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 5px;
-    right: -5px;
-    background-color: rgba(0,0,0,.3);
+    width: 55px;
+    height: 55px;
+    right: -55px;
+    top: 50%;
+    margin-top: -28px;
+    background: url(assets/svg/uw-sprite.svg) no-repeat -36px -475px transparent;
   }
   &:before {
     content: "";
@@ -79,22 +86,23 @@ a.uw-btn {
     top: 0;
     bottom: 0;
     position: absolute;
-    background: url(assets/svg/uw-sprite.svg) no-repeat -36px -475px  @purple;
+    background-color: @purple;
+    border-left: 5px solid rgba(0,0,0,.3);
   }
-  &.btn-play:before {
+  &.btn-play:after {
     background-position: -36px -539px;
   }
-  &.btn-external:before {
+  &.btn-external:after {
       background-position: -146px -475px;
   }
-  &.btn-plus:before {
+  &.btn-plus:after {
       background-position: -95px -539px;
   }
   &.btn-gold:before {
     background-color: @darkgold;
   }
-  &.btn-gold:after {
-    background-color: rgba(0,0,0,.1);
+  &.btn-gold:before {
+    border-left: 5px solid rgba(0,0,0,.1);
   }
 
 }

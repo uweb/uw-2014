@@ -3965,6 +3965,7 @@ ul.uw-select li.inactive a {
   padding: 0 50px 20px;
   -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  vertical-align: top;
 }
 .box-outer .box .tile div {
   margin: 0 -51px;
@@ -3982,6 +3983,10 @@ ul.uw-select li.inactive a {
   height: auto;
   margin: 0 0 30px;
   display: block;
+}
+.box-outer .box .tile hr {
+  margin-top: 20px;
+  margin-bottom: 15px;
 }
 /* Small Devices, Tablets */
 @media only screen and (max-width: 767px) {
@@ -5035,6 +5040,7 @@ table th[class*="col-"] {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
+  line-height: 28px;
 }
 .dawgdrops-item.dawgdrops-item li a:hover,
 .dawgdrops-item.dawgdrops-item li a:focus {
@@ -5094,7 +5100,7 @@ table th[class*="col-"] {
   left: 0;
   position: absolute;
   display: none;
-  min-width: 250px;
+  min-width: 260px;
   border: 0;
   border-top: 4px solid #4b2e83;
   padding: 10px 0;
@@ -6069,6 +6075,9 @@ ul.uw-mobile-menu ul {
   font-weight: bold;
   font-style: italic;
   font-size: 14px;
+}
+.gallery-item .wp-caption-text {
+  display: none;
 }
 @media only screen and (max-width: 1400px) {
   .alignleft {
@@ -7290,16 +7299,23 @@ a.uw-btn.btn-sm {
 a.uw-btn.btn-sm:before {
   width: 45px;
   right: -45px;
+}
+a.uw-btn.btn-sm:after {
+  width: 45px;
+  height: 45px;
+  top: 50%;
+  margin-top: -21px;
+  right: -45px;
   background-size: 740px;
   background-position: -32px -410px;
 }
-a.uw-btn.btn-sm.btn-play:before {
+a.uw-btn.btn-sm.btn-play:after {
   background-position: -31px -466px;
 }
-a.uw-btn.btn-sm.btn-external:before {
+a.uw-btn.btn-sm.btn-external:after {
   background-position: -126px -410px;
 }
-a.uw-btn.btn-sm.btn-plus:before {
+a.uw-btn.btn-sm.btn-plus:after {
   background-position: -83px -465px;
 }
 a.uw-btn:hover,
@@ -7313,9 +7329,6 @@ a.uw-btn:focus:before {
 }
 a.uw-btn.btn-gold:hover:before {
   background-color: #a49161;
-}
-a.uw-btn.btn-gold:after {
-  background-color: rgba(0, 0, 0, 0.3);
 }
 a.uw-btn.btn-purple {
   background-color: #4b2e83;
@@ -7336,9 +7349,12 @@ a.uw-btn:after {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 5px;
-  right: -5px;
-  background-color: rgba(0, 0, 0, 0.3);
+  width: 55px;
+  height: 55px;
+  right: -55px;
+  top: 50%;
+  margin-top: -28px;
+  background: url(assets/svg/uw-sprite.svg) no-repeat -36px -475px transparent;
 }
 a.uw-btn:before {
   content: "";
@@ -7347,22 +7363,23 @@ a.uw-btn:before {
   top: 0;
   bottom: 0;
   position: absolute;
-  background: url(assets/svg/uw-sprite.svg) no-repeat -36px -475px #4b2e83;
+  background-color: #4b2e83;
+  border-left: 5px solid rgba(0, 0, 0, 0.3);
 }
-a.uw-btn.btn-play:before {
+a.uw-btn.btn-play:after {
   background-position: -36px -539px;
 }
-a.uw-btn.btn-external:before {
+a.uw-btn.btn-external:after {
   background-position: -146px -475px;
 }
-a.uw-btn.btn-plus:before {
+a.uw-btn.btn-plus:after {
   background-position: -95px -539px;
 }
 a.uw-btn.btn-gold:before {
   background-color: #85754d;
 }
-a.uw-btn.btn-gold:after {
-  background-color: rgba(0, 0, 0, 0.1);
+a.uw-btn.btn-gold:before {
+  border-left: 5px solid rgba(0, 0, 0, 0.1);
 }
 body.error404 .woof {
   height: 400px;
