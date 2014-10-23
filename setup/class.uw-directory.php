@@ -36,9 +36,20 @@ class UW_Directory
 
   function search_filter()
   {
-    $args = wp_parse_args($_GET);
-    $search = str_replace( ' ','*', $args['search'] );
-    return "(|(mail=*{$search}*)(sn=*{$search}*)(givenname=*{$search}*)(cn=*{$search}*)(telephonenumber=*{$search}*)(mailstop={$search}))";
+    $args = wp_parse_args( $_GET );
+
+    $search = stripslashes( $args['search'] );
+
+    if ( strpos( $search, ',' ) )
+    {
+      $search = array_map( 'trim', explode( ',', $search ) );
+      $last = $search[0];
+      $first =$search[1];
+      return "(&(cn=*$last*)(givenname=$first*))";
+    }
+
+    $search = str_replace( ' ','*', $search );
+    return "(|(mail=*{$search}*)(sn=*{$search}*)(givenname=*{$search}*)(cn=*{$search}*)(telephonenumber=*{$search}*)(mailstop={$search})(title=*{$search}*))";
   }
 
   function get_limit()
@@ -46,6 +57,7 @@ class UW_Directory
     $args = wp_parse_args( $_GET );
     return isset( $args['limit'] ) ? $args['limit'] : self::LIMIT;
   }
+
 
   function parse( $info )
   {
@@ -69,7 +81,13 @@ class UW_Directory
 
         $people[$index]['dn'] = $person['dn'];
 
+        $sort[$index] = $people[$index]['commonname'];
+
     }
+
+    // Sorts the list alphabetically by commonname
+    asort( $sort ) ;
+    array_multisort( $sort, SORT_NUMERIC , $people );
     return $people;
   }
 

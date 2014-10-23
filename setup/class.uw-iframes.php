@@ -30,7 +30,9 @@ class UW_Iframes
       if ( array_key_exists('host', $parsed) && !in_array($parsed['host'], $this->ALLOWED_IFRAMES ) )
         return '';
 
-      return "<iframe src=\"{$params['src']}\" width=\"{$params['width']}\" height=\"{$params['height']}\" frameborder=\"0\"></iframe>";
+      $query = http_build_query($_GET);
+
+      return "<iframe src=\"{$params['src']}?$query\" width=\"{$params['width']}\" height=\"{$params['height']}\" frameborder=\"0\"></iframe>";
 
   }
 
@@ -48,6 +50,11 @@ class UW_Iframes
       'uwregents.wufoo.com',
       'www.uw.edu',
       'www.washington.edu',
+      'depts.washington.edu',
+      'online.gifts.washington.edu',
+      'secure.gifts.washington.edu',
+      'helperapps.gifts.washington.edu',
+      'www.surveygizmo.com',
       'www.google.com',
       'www.excition.com',
       'www.youtube.com'
