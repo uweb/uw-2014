@@ -3709,7 +3709,7 @@ div.uw-slideshow > div.slide div {
 }
 div.uw-slideshow > div.slide div h3 {
   color: white;
-  float: left;
+  float: :none;
   margin: 10px 0 0 0;
 }
 div.uw-slideshow > div.slide div h3 a {
@@ -6116,7 +6116,7 @@ img {
   line-height: 22.30769231px;
   margin-top: 15px;
 }
-.wp-caption-text span {
+.wp-media-credit {
   margin-left: 5px;
   font-weight: bold;
   font-style: italic;
