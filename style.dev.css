@@ -3766,10 +3766,10 @@ div.uw-slideshow.last-previous .next {
   z-index: 100;
 }
 div.uw-slideshow.last-previous .previous {
-  opacity: 0.4;
+  opacity: 0.2;
 }
 div.uw-slideshow.last-next .next {
-  opacity: 0.4;
+  opacity: 0.2;
 }
 div.uw-slideshow.last-next .previous {
   z-index: 100;
@@ -3788,6 +3788,9 @@ div.uw-slideshow.last-next .previous {
   div.uw-slideshow .uw-slideshow-controls.next:after,
   div.uw-slideshow .uw-slideshow-controls.previous:after {
     top: 3px;
+  }
+  div.uw-slideshow > div.slide div h3 {
+    margin: 10px 0 0 0;
   }
   div.uw-slideshow > div.slide div {
     padding: 20px 20px 55px;
@@ -4625,27 +4628,27 @@ table th[class*="col-"] {
   padding: 0;
   list-style: none;
 }
-.shortcode-blogroll li {
+.shortcode-blogroll > li {
   margin: 40px 0 50px;
   position: relative;
 }
-.shortcode-blogroll li .wp-post-image {
+.shortcode-blogroll > li .wp-post-image {
   margin: 10px 30px 0 0;
   height: auto;
 }
-.shortcode-blogroll li span {
+.shortcode-blogroll > li span {
   display: block;
   overflow: hidden;
 }
-.shortcode-blogroll li .date {
+.shortcode-blogroll > li .date {
   font-weight: 800;
   margin: 10px 0 0;
   font-family: "Encode Sans Compressed", sans-serif;
 }
-.shortcode-blogroll li .author-info {
+.shortcode-blogroll > li .author-info {
   margin: 0px 0 20px 0;
 }
-.shortcode-blogroll li:after {
+.shortcode-blogroll > li:after {
   display: block;
   content: "";
   width: 150px;
