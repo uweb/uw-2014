@@ -49,7 +49,7 @@ UW.Search = Backbone.View.extend({
                     '</div>'+
 
                 '<div class="uw-results" style="display:none;">' +
-                   '<p class="more-results">Need more results? Try the <a href="http://www.washington.edu/home/peopledir/" title="Full directory">full directory</a></p>' +
+                   '<p class="more-results">Need more results? Try the <a href="http://www.washington.edu/directory/" title="Full directory">full directory</a></p>' +
                 '</div>' +
 
                 '</div>'+
