@@ -3701,16 +3701,16 @@ div.uw-slideshow > div.slide img {
 div.uw-slideshow > div.slide div {
   position: absolute;
   left: 0;
-  bottom: 10%;
+  bottom: 5%;
   background-color: #4b2e83;
   opacity: .9;
-  padding: 20px 0 20px 40px;
+  padding: 12px 0 10px 40px;
   width: 77.5%;
 }
 div.uw-slideshow > div.slide div h3 {
   color: white;
   float: left;
-  margin: 10px 0 8px 0;
+  margin: 10px 0 0 0;
 }
 div.uw-slideshow > div.slide div h3 a {
   color: white;
@@ -3722,7 +3722,7 @@ div.uw-slideshow > div.slide div p {
   width: 80%;
   font-size: 16px;
   line-height: 20px;
-  padding-top: 10px;
+  padding-top: 7px;
 }
 div.uw-slideshow .uw-slideshow-controls {
   color: #c9c9c9;
@@ -3733,7 +3733,7 @@ div.uw-slideshow .uw-slideshow-controls {
   background-color: #eee;
   height: 90px;
   width: 45px;
-  bottom: 60px;
+  bottom: 36px;
 }
 div.uw-slideshow .uw-slideshow-controls.next:after,
 div.uw-slideshow .uw-slideshow-controls.previous:after {
@@ -5401,6 +5401,48 @@ a.more:after {
 .uw-body .uw-site-title span {
   font-weight: 700;
 }
+span.next-page {
+  display: block;
+  margin-top: 50px;
+}
+span.next-page a {
+  padding: 10px 40px 10px 19px;
+  text-transform: uppercase;
+  background-color: #e8e3d3;
+  font-family: "Encode Sans Compressed", sans-serif;
+  font-weight: 800;
+  color: #5a5a5a;
+  display: inline-block;
+  position: relative;
+  background-image: none !important;
+  border-bottom: none;
+  margin-bottom: 25px;
+  margin-right: 55px;
+  z-index: 1;
+  line-height: 24px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+}
+span.next-page a:after {
+  background: url(/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg) no-repeat -206px -492px;
+  content: "";
+  position: absolute;
+  right: 17px;
+  top: 12px;
+  bottom: 3px;
+  width: 14px;
+  height: 21px;
+  -o-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+span.next-page a:hover {
+  background-color: #dfd8c2;
+}
 .uw-body-copy h1 a,
 .uw-body-copy h2 a,
 .uw-body-copy h3 a,
@@ -6049,6 +6091,10 @@ ul.uw-mobile-menu ul {
     display: none;
   }
 }
+img {
+  max-width: 100%;
+  height: auto;
+}
 .alignleft {
   margin: 20px 50px 50px 0;
 }
@@ -6060,7 +6106,7 @@ ul.uw-mobile-menu ul {
 }
 .alignright {
   float: right;
-  margin: 20px 20px 20px 60px;
+  margin: 20px 20px 50px 60px;
 }
 .textwidget .alignleft {
   margin-bottom: 20px;
@@ -7287,6 +7333,7 @@ a.uw-btn {
   margin-bottom: 25px;
   margin-right: 55px;
   z-index: 1;
+  line-height: 24px;
 }
 a.uw-btn.btn-sm {
   padding: 10px 16px;

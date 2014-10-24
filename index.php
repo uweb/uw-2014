@@ -33,7 +33,7 @@
   				endwhile;
   			?>
 
-            <?php posts_nav_link(' '); ?>
+            <span class="next-page"><?php next_posts_link( 'Next page', '' ); ?></span>
 
       </div>
 
@@ -41,7 +41,7 @@
 
     <?php get_sidebar() ?>
 
-  </div>
+  </div><span class="next-page">
 
 </div>
 
