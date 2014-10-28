@@ -3,7 +3,11 @@
   min-height: 130px;
   padding: 40px 0 50px;
   background-color: #FFF;
-  transform: matrix(1,0,0,1,0,-100);
+  -webkit-transform: matrix(1,0,0,1,0,-100);
+     -moz-transform: matrix(1,0,0,1,0,-100);
+      -ms-transform: matrix(1,0,0,1,0,-100);
+       -o-transform: matrix(1,0,0,1,0,-100);
+          transform: matrix(1,0,0,1,0,-100);
   transition: transform .3s cubic-bezier(0.165, 0.84, 0.44, 1);
 
   .radio.checked,
@@ -184,7 +188,11 @@
 
   &.open
   {
-    transform: matrix(1,0,0,1,0,0);
+    -webkit-transform: matrix(1,0,0,1,0,0);
+       -moz-transform: matrix(1,0,0,1,0,0);
+        -ms-transform: matrix(1,0,0,1,0,0);
+         -o-transform: matrix(1,0,0,1,0,0);
+            transform: matrix(1,0,0,1,0,0);
 
     .uw-search-wrapper
     {
@@ -199,12 +207,20 @@
 
 body {
     #uw-container {
-        transform: matrix(1,0,0,1,0,-192);
+        -webkit-transform: matrix(1,0,0,1,0,-192);
+           -moz-transform: matrix(1,0,0,1,0,-192);
+            -ms-transform: matrix(1,0,0,1,0,-192);
+             -o-transform: matrix(1,0,0,1,0,-192);
+                transform: matrix(1,0,0,1,0,-192);
         transition: transform .3s;
     }
     &.search-open {
         #uw-container {
-            transform: matrix(1,0,0,1,0,0);
+            -webkit-transform: matrix(1,0,0,1,0,0);
+               -moz-transform: matrix(1,0,0,1,0,0);
+                -ms-transform: matrix(1,0,0,1,0,0);
+                 -o-transform: matrix(1,0,0,1,0,0);
+                    transform: matrix(1,0,0,1,0,0);
         }
     }
 }
@@ -261,7 +277,11 @@ body {
   }
     body {
         #uw-container {
-            transform: matrix(1,0,0,1,0,-136);
+            -webkit-transform: matrix(1,0,0,1,0,-136);
+               -moz-transform: matrix(1,0,0,1,0,-136);
+                -ms-transform: matrix(1,0,0,1,0,-136);
+                 -o-transform: matrix(1,0,0,1,0,-136);
+                    transform: matrix(1,0,0,1,0,-136);
         }
     }
 }
