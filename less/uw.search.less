@@ -1,9 +1,14 @@
 .uw-search-bar-container
 {
   min-height: 130px;
-  margin-top: -130px;
+  padding: 40px 0 50px;
   background-color: #FFF;
-  transition: margin-top .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-transform: matrix(1,0,0,1,0,-100);
+     -moz-transform: matrix(1,0,0,1,0,-100);
+      -ms-transform: matrix(1,0,0,1,0,-100);
+       -o-transform: matrix(1,0,0,1,0,-100);
+          transform: matrix(1,0,0,1,0,-100);
+  transition: transform .3s cubic-bezier(0.165, 0.84, 0.44, 1);
 
   .radio.checked,
   .radio.checked .second-icon
@@ -184,8 +189,11 @@
 
   &.open
   {
-    margin-top:0px;
-    padding: 40px 0 50px;
+    -webkit-transform: matrix(1,0,0,1,0,0);
+       -moz-transform: matrix(1,0,0,1,0,0);
+        -ms-transform: matrix(1,0,0,1,0,0);
+         -o-transform: matrix(1,0,0,1,0,0);
+            transform: matrix(1,0,0,1,0,0);
 
     .uw-search-wrapper
     {
@@ -198,11 +206,30 @@
   }
 }
 
+body {
+    #uw-container {
+        -webkit-transform: matrix(1,0,0,1,0,-192);
+           -moz-transform: matrix(1,0,0,1,0,-192);
+            -ms-transform: matrix(1,0,0,1,0,-192);
+             -o-transform: matrix(1,0,0,1,0,-192);
+                transform: matrix(1,0,0,1,0,-192);
+        transition: transform .3s;
+    }
+    &.search-open {
+        #uw-container {
+            -webkit-transform: matrix(1,0,0,1,0,0);
+               -moz-transform: matrix(1,0,0,1,0,0);
+                -ms-transform: matrix(1,0,0,1,0,0);
+                 -o-transform: matrix(1,0,0,1,0,0);
+                    transform: matrix(1,0,0,1,0,0);
+        }
+    }
+}
+
 @media only screen and (min-width : 768px) and (max-width : 991px) { 
 
   .uw-search-bar-container form {
     width: 50%;
-    margin-bottom: 40px;
   }
 
 }
@@ -212,9 +239,7 @@
 
   .uw-search-bar-container {
    // margin-top: -176px;
-    &.open {
-      padding: 0 0 10px;
-    }
+    padding: 0 0 10px;
     .uw-search-wrapper {
       width: 100%;
       position: relative;
@@ -251,5 +276,13 @@
       }
     }
   }
-
+    body {
+        #uw-container {
+            -webkit-transform: matrix(1,0,0,1,0,-136);
+               -moz-transform: matrix(1,0,0,1,0,-136);
+                -ms-transform: matrix(1,0,0,1,0,-136);
+                 -o-transform: matrix(1,0,0,1,0,-136);
+                    transform: matrix(1,0,0,1,0,-136);
+        }
+    }
 }
