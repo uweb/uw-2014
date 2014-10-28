@@ -5535,9 +5535,10 @@ span.next-page a:hover {
 }
 .uw-search-bar-container {
   min-height: 130px;
-  margin-top: -130px;
+  padding: 40px 0 50px;
   background-color: #FFF;
-  transition: margin-top 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: matrix(1, 0, 0, 1, 0, -100);
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .uw-search-bar-container .radio.checked,
 .uw-search-bar-container .radio.checked .second-icon {
@@ -5689,14 +5690,20 @@ span.next-page a:hover {
   color: #525252;
 }
 .uw-search-bar-container.open {
-  margin-top: 0px;
-  padding: 40px 0 50px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
 }
 .uw-search-bar-container.open .uw-search-wrapper {
   -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
   -moz-transform: matrix(1, 0, 0, 1, 0, 0);
   -ms-transform: matrix(1, 0, 0, 1, 0, 0);
   -o-transform: matrix(1, 0, 0, 1, 0, 0);
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+body #uw-container {
+  transform: matrix(1, 0, 0, 1, 0, -192);
+  transition: transform .3s;
+}
+body.search-open #uw-container {
   transform: matrix(1, 0, 0, 1, 0, 0);
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -5706,7 +5713,7 @@ span.next-page a:hover {
   }
 }
 @media only screen and (max-width: 767px) {
-  .uw-search-bar-container.open {
+  .uw-search-bar-container {
     padding: 0 0 10px;
   }
   .uw-search-bar-container .uw-search-wrapper {
@@ -5740,6 +5747,9 @@ span.next-page a:hover {
   }
   .uw-search-bar-container .uw-results .result {
     width: 100%;
+  }
+  body #uw-container {
+    transform: matrix(1, 0, 0, 1, 0, -136);
   }
 }
 ul.uw-sidebar-menu,
