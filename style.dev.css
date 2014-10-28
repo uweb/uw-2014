@@ -5025,7 +5025,7 @@ table th[class*="col-"] {
   font-family: "Encode Sans Compressed", sans-serif;
   font-weight: 800;
   font-size: 19px;
-  padding: 5px 10px 20px 15px;
+  padding: 5px 10px 21px 15px;
 }
 .dawgdrops-item.dawgdrops-item a:focus,
 .dawgdrops-item.dawgdrops-item a:hover {
@@ -5255,8 +5255,8 @@ table th[class*="col-"] {
   }
 }
 .uw-breadcrumbs {
-  margin: -18px 0 0 -30px;
-  background-color: rgba(255, 255, 255, 0.7);
+  margin: -17px 0 0 -30px;
+  background-color: white;
   display: inline-block;
   padding: 20px 20px 0 30px;
 }
