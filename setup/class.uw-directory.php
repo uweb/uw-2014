@@ -28,7 +28,7 @@ class UW_Directory
         {
           $info   = ldap_get_entries($ds, $result);
           if ( is_array( $info ) )
-            echo json_encode( $this->parse( $info ) );
+            echo json_encode( $this->format( $info ) );
         }
     }
     wp_die();
@@ -38,45 +38,19 @@ class UW_Directory
   {
       $args = wp_parse_args( $_GET );
 
-      $search = stripslashes( trim( $args['search'] ) );
+      $this->SEARCH = stripslashes( trim( $args['search'] ) );
 
-      if ( $_GET['method'] === 'name' )
-      {
-        return "(|(sn=*{$search}*)(givenname=*{$search}*)(cn=*{$search}*))";
-      } else
-      if ( $_GET['method'] === 'email' )
-      {
-        return "(|(mail=*{$search}*))";
-      } else
-      if ( $_GET['method'] === 'phone' )
-      {
-        return "(|(telephonenumber=*{$search}*))";
-      } else
-      if ( $_GET['method'] === 'box' )
-      {
-        return "(|(mailstop=*{$search}*))";
-      } else
-      if ( $_GET['method'] === 'dept' )
-      {
-        return "(|(title=*{$search}*))";
-      } else {
+      $ou = ( $args['method'] == 'students' ) ? 'Students' :
+                ( ( $args['method'] == 'faculty' )   ? 'Faculty and Staff' : 'People' );
 
+      $this->parse();
 
-        if ( strpos( $search, ',' ) )
-        {
-          $search = array_map( 'trim', explode( ',', $search ) );
-          $last = $search[0];
-          $first =$search[1];
-          return "(&(cn=*$last*)(givenname=$first*))";
-        }
+      $this->NUMERIC = ( is_numeric( preg_replace("/[^A-Za-z0-9]/", '', $this->SEARCH ) ) ) ? preg_replace("/[^A-Za-z0-9 ]/", '', $this->SEARCH ) : false;
 
-        $ou = ( $_GET['method'] == 'students' ) ? 'Students' : // 'People';
-                  ( ( $_GET['method'] == 'faculty' )   ? 'Faculty and Staff' : 'People' );
+      // if the query is numeric then search telephone and box numbers as well
+      $teleboxnumber =  $this->NUMERIC ? "(telephonenumber=*{$this->SEARCH}*)(mailstop={$this->SEARCH})" : '';
 
-        $search = str_replace( ' ','*', $search );
-
-        return "(&(ou:dn:=$ou)(|(mail=*{$search}*)(sn=*{$search}*)(givenname=*{$search}*)(cn=*{$search}*)(telephonenumber=*{$search}*)(mailstop={$search})(title=*{$search}*)))";
-      }
+      return "(&(ou:dn:=$ou)(|(mail=$this->SEARCH*)(sn=$this->LAST_NAME*)(givenname=$this->FIRST_NAME*)(cn=$this->SEARCH)$teleboxnumber(title=*{$this->SEARCH}*)))";
   }
 
   function get_limit()
@@ -85,14 +59,42 @@ class UW_Directory
     return isset( $args['limit'] ) ? $args['limit'] : self::LIMIT;
   }
 
+  function parse()
+  {
+    if ( strpos( $this->SEARCH, ',' ) )
+        $this->SEARCH = implode( array_reverse( array_map( 'trim', explode( ',', $this->SEARCH ) ) ), ' ' );
 
-  function parse( $info )
+    $search = $this->SEARCH;
+
+    // special case for people search last name first
+
+    $search = explode( ' ', $search );
+    foreach ( $search as $name )
+    {
+      if ( strlen( $name) > 1 )
+        $names[] = $name;
+    }
+
+    if ( isset($names[0]) )
+      $this->FIRST_NAME = $names[0];
+
+    $this->LAST_NAME = array_pop( $names );
+
+    return;
+  }
+
+
+  function format( $info )
   {
     array_shift( $info );
     foreach ( $info as $index => $person )
     {
 
         $people[$index]['commonname'] = $person['cn'][0];
+
+        $people[$index]['givenname'] = $person['givenname'][0];
+
+        $people[$index]['sn'] = $person['sn'][0];
 
         $people[$index]['title'] = $person['title'][0];
 
@@ -112,12 +114,33 @@ class UW_Directory
 
     }
 
+
     if ( $sort )
     {
       // Sorts the list alphabetically by commonname
       asort( $sort ) ;
       array_multisort( $sort, SORT_NUMERIC , $people );
     }
+
+    // Checks for an exact matches and returns them separately
+    // This could be replaced by a second LDAP query looking for an exact match as well.
+    // Eg: Exact matches
+    //  return "(&(cn=*$this->LAST_NAME*)(givenname=$this->FIRST_NAME*))";
+    // Eg: custom query for people searching Last, First name format.
+    //   return "(&(cn=*$this->LAST_NAME*)(givenname=$this->FIRST_NAME*))";
+
+    foreach ($people as $index => $person )
+    {
+      if ( strpos( strtolower( $person['givenname'] ), strtolower( $this->FIRST_NAME ) ) !== false &&
+           strpos( strtolower( $person['sn'] ), strtolower( $this->LAST_NAME ) ) !== false )
+      {
+        unset( $people[$index] );
+        $people['best'][] = $person;
+      }
+    }
+
+    if (isset( $people['best'])) return $people['best'];
+
     return $people;
   }
 
