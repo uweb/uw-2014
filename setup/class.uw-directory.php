@@ -38,7 +38,7 @@ class UW_Directory
   {
       $args = wp_parse_args( $_GET );
 
-      $search = stripslashes( $args['search'] );
+      $search = stripslashes( trim( $args['search'] ) );
 
       if ( $_GET['method'] === 'name' )
       {
