@@ -49,7 +49,7 @@ UW.Search = Backbone.View.extend({
                     '</div>'+
 
                 '<div class="uw-results" style="display:none;">' +
-                   '<p class="more-results">Need more results? Try the <a href="http://www.washington.edu/directory/" title="Full directory">full directory</a></p>' +
+                   '<p class="more-results" style="display:none;">Need more results? Try the <a href="http://www.washington.edu/directory/" title="Full directory">full directory</a></p>' +
                 '</div>' +
 
                 '</div>'+
@@ -254,14 +254,15 @@ UW.Search = Backbone.View.extend({
   showDirectory : function()
   {
     this.$results.show()
-    this.$more.show()
   },
 
   // Empty the search results.
   empty : function()
   {
     this.$results.empty()
-      .append( this.$more.hide() )
+      .append( this.$more )
+
+    if ( ! $('#uw-search-bar').val() ) this.$more.hide()
   },
 
   // Parse the search results. The LDAP response from the server is first parsed by custom PHP and then
@@ -282,6 +283,21 @@ UW.Search = Backbone.View.extend({
         $results.prepend( template )
       }
     })
+
+    if ( data.best )
+    {
+
+    _.each(data.best, function( person, index ) {
+      if ( person.commonname )
+      {
+        var template = _.template( result, person )
+        $results.prepend( template )
+      }
+    })
+
+    }
+
+    this.$more.show()
 
   },
 
