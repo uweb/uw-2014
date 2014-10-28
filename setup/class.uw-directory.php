@@ -38,7 +38,7 @@ class UW_Directory
   {
       $args = wp_parse_args( $_GET );
 
-      $search = stripslashes( $args['search'] );
+      $search = stripslashes( trim( $args['search'] ) );
 
       if ( $_GET['method'] === 'name' )
       {
@@ -70,8 +70,12 @@ class UW_Directory
           return "(&(cn=*$last*)(givenname=$first*))";
         }
 
+        $ou = ( $_GET['method'] == 'students' ) ? 'Students' : // 'People';
+                  ( ( $_GET['method'] == 'faculty' )   ? 'Faculty and Staff' : 'People' );
+
         $search = str_replace( ' ','*', $search );
-        return "(|(mail=*{$search}*)(sn=*{$search}*)(givenname=*{$search}*)(cn=*{$search}*)(telephonenumber=*{$search}*)(mailstop={$search})(title=*{$search}*))";
+
+        return "(&(ou:dn:=$ou)(|(mail=*{$search}*)(sn=*{$search}*)(givenname=*{$search}*)(cn=*{$search}*)(telephonenumber=*{$search}*)(mailstop={$search})(title=*{$search}*)))";
       }
   }
 

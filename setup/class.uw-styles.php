@@ -17,7 +17,7 @@ class UW_Styles
 
       'google-font-open' => array(
           'id'      => 'google-font-open',
-          'url'     => 'http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700',
+          'url'     => 'https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700',
           'deps'    => array(),
           'version' => '3.6',
           'admin'   => true
