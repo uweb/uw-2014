@@ -1,7 +1,5 @@
 .uw-search-bar-container
 {
-  min-height: 130px;
-  padding: 40px 0 50px;
   background-color: #FFF;
   -webkit-transform: matrix(1,0,0,1,0,-100);
      -moz-transform: matrix(1,0,0,1,0,-100);
@@ -19,6 +17,11 @@
     color: #C7C7C7;
   }
 
+  .container.no-height {
+    position:absolute;
+    width: 100%;
+    padding: 40px 0 50px;
+  }
   .uw-search-wrapper
   {
     position:relative;
@@ -31,7 +34,7 @@
             transform: matrix(1,0,0,1,0,-20);
     // transition: top 2s cubic-bezier(0.165, 0.84, 0.44, 1);
     // transition: all 1s;
-    transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
 
   form
@@ -90,7 +93,10 @@
 
   .uw-results
   {
-
+    position:relative;
+    top:192px;
+    width: 890px;
+    margin: auto;
     .result {
       z-index: 1;
       width: 690px;
@@ -208,20 +214,20 @@
 
 body {
     #uw-container {
-        -webkit-transform: matrix(1,0,0,1,0,-192);
-           -moz-transform: matrix(1,0,0,1,0,-192);
-            -ms-transform: matrix(1,0,0,1,0,-192);
-             -o-transform: matrix(1,0,0,1,0,-192);
-                transform: matrix(1,0,0,1,0,-192);
+        -webkit-transform: matrix(1,0,0,1,0,0);
+           -moz-transform: matrix(1,0,0,1,0,0);
+            -ms-transform: matrix(1,0,0,1,0,0);
+             -o-transform: matrix(1,0,0,1,0,0);
+                transform: matrix(1,0,0,1,0,0);
         transition: transform .3s;
     }
     &.search-open {
         #uw-container {
-            -webkit-transform: matrix(1,0,0,1,0,0);
-               -moz-transform: matrix(1,0,0,1,0,0);
-                -ms-transform: matrix(1,0,0,1,0,0);
-                 -o-transform: matrix(1,0,0,1,0,0);
-                    transform: matrix(1,0,0,1,0,0);
+            -webkit-transform: matrix(1,0,0,1,0,192);
+               -moz-transform: matrix(1,0,0,1,0,192);
+                -ms-transform: matrix(1,0,0,1,0,192);
+                 -o-transform: matrix(1,0,0,1,0,192);
+                    transform: matrix(1,0,0,1,0,192);
         }
     }
 }

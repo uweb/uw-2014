@@ -5548,8 +5548,6 @@ span.next-page a:hover {
   }
 }
 .uw-search-bar-container {
-  min-height: 130px;
-  padding: 40px 0 50px;
   background-color: #FFF;
   -webkit-transform: matrix(1, 0, 0, 1, 0, -100);
   -moz-transform: matrix(1, 0, 0, 1, 0, -100);
@@ -5565,6 +5563,11 @@ span.next-page a:hover {
 .uw-search-bar-container .radio .icons {
   color: #C7C7C7;
 }
+.uw-search-bar-container .container.no-height {
+  position: absolute;
+  width: 100%;
+  padding: 40px 0 50px;
+}
 .uw-search-bar-container .uw-search-wrapper {
   position: relative;
   width: 890px;
@@ -5574,7 +5577,7 @@ span.next-page a:hover {
   -ms-transform: matrix(1, 0, 0, 1, 0, -20);
   -o-transform: matrix(1, 0, 0, 1, 0, -20);
   transform: matrix(1, 0, 0, 1, 0, -20);
-  transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .uw-search-bar-container form {
   float: left;
@@ -5618,6 +5621,12 @@ span.next-page a:hover {
   -o-background-size: 22px;
   background-size: 22px;
   padding: 0px 60px 0px 0px;
+}
+.uw-search-bar-container .uw-results {
+  position: relative;
+  top: 192px;
+  width: 890px;
+  margin: auto;
 }
 .uw-search-bar-container .uw-results .result {
   z-index: 1;
@@ -5725,19 +5734,19 @@ span.next-page a:hover {
   transform: matrix(1, 0, 0, 1, 0, 0);
 }
 body #uw-container {
-  -webkit-transform: matrix(1, 0, 0, 1, 0, -192);
-  -moz-transform: matrix(1, 0, 0, 1, 0, -192);
-  -ms-transform: matrix(1, 0, 0, 1, 0, -192);
-  -o-transform: matrix(1, 0, 0, 1, 0, -192);
-  transform: matrix(1, 0, 0, 1, 0, -192);
-  transition: transform .3s;
-}
-body.search-open #uw-container {
   -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
   -moz-transform: matrix(1, 0, 0, 1, 0, 0);
   -ms-transform: matrix(1, 0, 0, 1, 0, 0);
   -o-transform: matrix(1, 0, 0, 1, 0, 0);
   transform: matrix(1, 0, 0, 1, 0, 0);
+  transition: transform .3s;
+}
+body.search-open #uw-container {
+  -webkit-transform: matrix(1, 0, 0, 1, 0, 192);
+  -moz-transform: matrix(1, 0, 0, 1, 0, 192);
+  -ms-transform: matrix(1, 0, 0, 1, 0, 192);
+  -o-transform: matrix(1, 0, 0, 1, 0, 192);
+  transform: matrix(1, 0, 0, 1, 0, 192);
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .uw-search-bar-container form {

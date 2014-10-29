@@ -17,7 +17,7 @@ UW.Search = Backbone.View.extend({
 
   // This is the HTML for the search bar that is preprended to the body tag.
   searchbar : '<div id="uwsearcharea" class="uw-search-bar-container">'+
-               '<div class="container">'+
+               '<div class="container no-height">'+
                   '<div class="center-block uw-search-wrapper">'+
                     '<form class="uw-search" action="<%= UW.baseUrl %>">'+
                       '<input id="uw-search-bar" type="search" name="s" value="" autocomplete="off" tabindex="-1"/>'+
@@ -48,12 +48,12 @@ UW.Search = Backbone.View.extend({
                       '</label>'+
                     '</div>'+
 
-                '<div class="uw-results" style="display:none;">' +
-                   '<p class="more-results" style="display:none;">Need more results? Try the <a href="http://www.washington.edu/directory/" title="Full directory">full directory</a></p>' +
-                '</div>' +
 
                 '</div>'+
               '</div>'+
+              '<div class="uw-results" style="display:none;">' +
+                 '<p class="more-results" style="display:none;">Need more results? Try the <a href="http://www.washington.edu/directory/" title="Full directory">full directory</a></p>' +
+              '</div>' +
             '</div>',
 
   // The HTML template for a single search result. Only the information that is available will be shown.
