@@ -246,7 +246,10 @@ body {
 
   .uw-search-bar-container {
    // margin-top: -176px;
-    padding: 0 0 10px;
+    padding: 0px;
+    .container.no-height{
+        padding:0px 10px;
+    }
     .uw-search-wrapper {
       width: 100%;
       position: relative;
@@ -283,13 +286,13 @@ body {
       }
     }
   }
-    body {
+    body.search-open {
         #uw-container {
-            -webkit-transform: matrix(1,0,0,1,0,-136);
-               -moz-transform: matrix(1,0,0,1,0,-136);
-                -ms-transform: matrix(1,0,0,1,0,-136);
-                 -o-transform: matrix(1,0,0,1,0,-136);
-                    transform: matrix(1,0,0,1,0,-136);
+            -webkit-transform: matrix(1,0,0,1,0,136);
+               -moz-transform: matrix(1,0,0,1,0,136);
+                -ms-transform: matrix(1,0,0,1,0,136);
+                 -o-transform: matrix(1,0,0,1,0,136);
+                    transform: matrix(1,0,0,1,0,136);
         }
     }
 }

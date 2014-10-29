@@ -5755,7 +5755,10 @@ body.search-open #uw-container {
 }
 @media only screen and (max-width: 767px) {
   .uw-search-bar-container {
-    padding: 0 0 10px;
+    padding: 0px;
+  }
+  .uw-search-bar-container .container.no-height {
+    padding: 0px 10px;
   }
   .uw-search-bar-container .uw-search-wrapper {
     width: 100%;
@@ -5789,12 +5792,12 @@ body.search-open #uw-container {
   .uw-search-bar-container .uw-results .result {
     width: 100%;
   }
-  body #uw-container {
-    -webkit-transform: matrix(1, 0, 0, 1, 0, -136);
-    -moz-transform: matrix(1, 0, 0, 1, 0, -136);
-    -ms-transform: matrix(1, 0, 0, 1, 0, -136);
-    -o-transform: matrix(1, 0, 0, 1, 0, -136);
-    transform: matrix(1, 0, 0, 1, 0, -136);
+  body.search-open #uw-container {
+    -webkit-transform: matrix(1, 0, 0, 1, 0, 136);
+    -moz-transform: matrix(1, 0, 0, 1, 0, 136);
+    -ms-transform: matrix(1, 0, 0, 1, 0, 136);
+    -o-transform: matrix(1, 0, 0, 1, 0, 136);
+    transform: matrix(1, 0, 0, 1, 0, 136);
   }
 }
 ul.uw-sidebar-menu,
