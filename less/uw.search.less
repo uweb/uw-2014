@@ -1,12 +1,47 @@
-.uw-search-bar-container
-{
-  background-color: #FFF;
+#uwsearcharea {
   -webkit-transform: matrix(1,0,0,1,0,-100);
      -moz-transform: matrix(1,0,0,1,0,-100);
       -ms-transform: matrix(1,0,0,1,0,-100);
        -o-transform: matrix(1,0,0,1,0,-100);
           transform: matrix(1,0,0,1,0,-100);
   transition: transform .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  .uw-search-area {
+    -webkit-transform: matrix(1,0,0,1,0,-20);
+       -moz-transform: matrix(1,0,0,1,0,-20);
+        -ms-transform: matrix(1,0,0,1,0,-20);
+         -o-transform: matrix(1,0,0,1,0,-20);
+            transform: matrix(1,0,0,1,0,-20);
+    // transition: top 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    // transition: all 1s;
+    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  &.open
+  {
+    -webkit-transform: matrix(1,0,0,1,0,0);
+       -moz-transform: matrix(1,0,0,1,0,0);
+        -ms-transform: matrix(1,0,0,1,0,0);
+         -o-transform: matrix(1,0,0,1,0,0);
+            transform: matrix(1,0,0,1,0,0);
+
+    .uw-search-wrapper
+    {
+        -webkit-transform: matrix(1,0,0,1,0,0);
+           -moz-transform: matrix(1,0,0,1,0,0);
+            -ms-transform: matrix(1,0,0,1,0,0);
+             -o-transform: matrix(1,0,0,1,0,0);
+                transform: matrix(1,0,0,1,0,0);
+    }
+  }
+  .uw-results
+  {
+    position:relative;
+    top:192px;
+  }
+}
+
+.uw-search-bar-container
+{
+  background-color: #FFF;
 
   .radio.checked,
   .radio.checked .second-icon
@@ -27,14 +62,6 @@
     position:relative;
     width:890px;
     margin-top: 30px;
-    -webkit-transform: matrix(1,0,0,1,0,-20);
-       -moz-transform: matrix(1,0,0,1,0,-20);
-        -ms-transform: matrix(1,0,0,1,0,-20);
-         -o-transform: matrix(1,0,0,1,0,-20);
-            transform: matrix(1,0,0,1,0,-20);
-    // transition: top 2s cubic-bezier(0.165, 0.84, 0.44, 1);
-    // transition: all 1s;
-    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
 
   form
@@ -93,8 +120,6 @@
 
   .uw-results
   {
-    position:relative;
-    top:192px;
     width: 890px;
     margin: auto;
     .result {
@@ -193,23 +218,6 @@
 
   }
 
-  &.open
-  {
-    -webkit-transform: matrix(1,0,0,1,0,0);
-       -moz-transform: matrix(1,0,0,1,0,0);
-        -ms-transform: matrix(1,0,0,1,0,0);
-         -o-transform: matrix(1,0,0,1,0,0);
-            transform: matrix(1,0,0,1,0,0);
-
-    .uw-search-wrapper
-    {
-        -webkit-transform: matrix(1,0,0,1,0,0);
-           -moz-transform: matrix(1,0,0,1,0,0);
-            -ms-transform: matrix(1,0,0,1,0,0);
-             -o-transform: matrix(1,0,0,1,0,0);
-                transform: matrix(1,0,0,1,0,0);
-    }
-  }
 }
 
 body {
@@ -243,6 +251,12 @@ body {
 
 // Mobile 
 @media only screen and (max-width : 767px) {
+
+  #uwsearcharea {
+    .uw-results{
+        top: 126px;
+    }
+  }
 
   .uw-search-bar-container {
    // margin-top: -176px;
