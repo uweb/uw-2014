@@ -41,7 +41,7 @@
   {
 
     float:left;
-    width:620px;
+    width:calc(~"100% - 240px");
     outline: 2px solid #ADADAD;
 
     input
@@ -233,11 +233,12 @@ body {
 }
 
 @media only screen and (min-width : 768px) and (max-width : 991px) { 
-
-  .uw-search-bar-container form {
-    width: 50%;
-  }
-
+    
+    #uwsearcharea {
+        .center-block {
+            width: 750px;
+        }
+    }
 }
 
 // Mobile 

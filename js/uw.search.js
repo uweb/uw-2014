@@ -51,7 +51,7 @@ UW.Search = Backbone.View.extend({
 
                 '</div>'+
               '</div>'+
-              '<div class="uw-results" style="display:none;">' +
+              '<div class="uw-results center-block" style="display:none;">' +
                  '<p class="more-results" style="display:none;">Need more results? Try the <a href="http://www.washington.edu/directory/" title="Full directory">full directory</a></p>' +
               '</div>' +
             '</div>',
