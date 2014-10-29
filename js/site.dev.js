@@ -11368,6 +11368,7 @@ UW.Search = Backbone.View.extend({
 UW.Search.DirectoryModel = Backbone.Model.extend({
 
   settings : {
+    limit    : '-1',
     action : 'directory',
     search : ''
   },
