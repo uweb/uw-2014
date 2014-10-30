@@ -11067,7 +11067,7 @@ UW.Search = Backbone.View.extend({
 
   // This is the HTML for the search bar that is preprended to the body tag.
   searchbar : '<div id="uwsearcharea" class="uw-search-bar-container">'+
-               '<div class="container">'+
+               '<div class="container no-height">'+
                   '<div class="center-block uw-search-wrapper">'+
                     '<form class="uw-search" action="<%= UW.baseUrl %>">'+
                       '<input id="uw-search-bar" type="search" name="s" value="" autocomplete="off" tabindex="-1"/>'+
@@ -11098,12 +11098,12 @@ UW.Search = Backbone.View.extend({
                       '</label>'+
                     '</div>'+
 
-                '<div class="uw-results" style="display:none;">' +
-                   '<p class="more-results" style="display:none;">Need more results? Try the <a href="http://www.washington.edu/directory/" title="Full directory">full directory</a></p>' +
-                '</div>' +
 
                 '</div>'+
               '</div>'+
+              '<div class="uw-results center-block" style="display:none;">' +
+                 '<p class="more-results" style="display:none;">Need more results? Try the <a href="http://www.washington.edu/directory/" title="Full directory">full directory</a></p>' +
+              '</div>' +
             '</div>',
 
   // The HTML template for a single search result. Only the information that is available will be shown.
@@ -11368,6 +11368,7 @@ UW.Search = Backbone.View.extend({
 UW.Search.DirectoryModel = Backbone.Model.extend({
 
   settings : {
+    limit    : '-1',
     action : 'directory',
     search : ''
   },
@@ -12641,15 +12642,24 @@ UW.Select = Backbone.View.extend({
     }
 
     this.image = _.first( images.images )
+    var aspect_ratio = this.image.img.width / this.image.img.height;
     this.attrs.height = this.image.img.height
     this.attrs.width  = this.image.img.width
 
-    if ( this.image.img.height > UW.$window.height() ||
-          this.image.img.width > UW.$window.width() )
-    {
-      this.attrs.height = this.RATIO * UW.$window.height()
-      this.attrs.width  = this.RATIO * UW.$window.width()
+    if ( this.attrs.height > (this.RATIO * UW.$window.height())){
+        this.attrs.height = this.RATIO * UW.$window.height();
+        this.attrs.width = aspect_ratio * this.attrs.height;
     }
+    if ( this.attrs.width > (this.RATIO * UW.$window.width())){
+        this.attrs.width = this.RATIO * UW.$window.width();
+        this.atts.height = this.attrs.width / aspect_ratio;
+    }
+    //||
+    //      this.image.img.width > UW.$window.width() )
+    //{
+    //  this.attrs.height = this.RATIO * UW.$window.height()
+    //  this.attrs.width  = this.RATIO * UW.$window.width()
+    //}
 
     this.render()
 

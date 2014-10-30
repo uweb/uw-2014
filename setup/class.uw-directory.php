@@ -129,6 +129,10 @@ class UW_Directory
     // Eg: custom query for people searching Last, First name format.
     //   return "(&(cn=*$this->LAST_NAME*)(givenname=$this->FIRST_NAME*))";
 
+    if ( isset( $this->FIRST_NAME ) && isset( $this->LAST_NAME ) && $this->FIRST_NAME != $this->LAST_NAME )
+      $people['best'] = array();
+
+// var_dump( $this->FIRST_NAME, $this->LAST_NAME );
     foreach ($people as $index => $person )
     {
       if ( strpos( strtolower( $person['givenname'] ), strtolower( $this->FIRST_NAME ) ) !== false &&
@@ -138,6 +142,7 @@ class UW_Directory
         $people['best'][] = $person;
       }
     }
+// var_dump( $people['best'] );
 
     if (isset( $people['best'])) return $people['best'];
 
