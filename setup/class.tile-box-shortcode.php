@@ -28,13 +28,21 @@ Class TileBox
 
     function box_handler( $atts, $content ){
 
+
+        $boxCenter = shortcode_atts( array(
+            'alignment' => 'none',
+        ), $atts );
+ 
+
+        $center = 'box-' . $boxCenter['alignment'];        
+
         $this->count = 0;
 
         if ( empty( $content ) )
             return 'No content inside the box element. Make sure your close your box element. Required stucture: [box][tile]content[/tile][/box]';
 
         $output = do_shortcode( $content );
-        return sprintf( '<div class="box-outer"><div class="box %s">%s</div></div>', $this->NumbersArray[$this->count], $output);
+        return sprintf( '<div class="box-outer"><div class="box %s %s">%s</div></div>', $this->NumbersArray[$this->count], $center, $output);
     }
 
     function tile_handler( $atts, $content ) {

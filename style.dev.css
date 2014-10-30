@@ -3933,7 +3933,7 @@ ul.uw-select li.inactive a {
  *  All styles for Boxes shortcode
  */
 .box-outer {
-  margin: 0px -20px;
+  margin: -10px -20px 0px -20px;
 }
 .box-outer .box {
   overflow: hidden;
@@ -3942,6 +3942,9 @@ ul.uw-select li.inactive a {
   width: 100%;
   border-spacing: 20px;
   margin: 0 0 40px;
+}
+.box-outer .box.box-centered {
+  text-align: center;
 }
 .box-outer .box.two .tile {
   width: 47%;
@@ -6051,9 +6054,9 @@ ul.uw-mobile-menu ul.children {
 .uw-sidebar .widgettitle:before {
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 5px;
   content: "";
-  height: 6px;
+  height: 4px;
 }
 .uw-sidebar .widgettitle:before {
   width: 100px;
@@ -7908,6 +7911,9 @@ a.screen-reader-shortcut:focus {
 .uw-widget-related-posts svg,
 .uw-widget-rss svg {
   margin-left: 10px;
+}
+.shortcode-blogroll-mini ul {
+  padding-left: 0;
 }
 .uw-widget-rss {
   padding: 0;
