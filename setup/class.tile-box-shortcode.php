@@ -3,7 +3,8 @@
 /* box shortcode:
  * meant for front page (maybe disable on not front page?)
  * boxes contain tiles.  Boxes support only tiles inside and only between 1 and 4 tiles.
- * structure: [box][tile][/tile][tile][/tile][/box]
+ * 
+ * structure: [box alignment="centered"][tile][/tile][tile][/tile][/box]
  */
 
 
