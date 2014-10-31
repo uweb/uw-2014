@@ -11435,7 +11435,7 @@ UW.QuickLinks = Backbone.View.extend({
     // },
 
     initialize: function ( options ) {
-        _.bindAll( this, 'render', 'animate', 'accessible', 'loop'  );
+        _.bindAll( this, 'render', 'animate', 'accessible', 'loop', 'transitionEnd' );
         this.links = new UW.QuickLinks.Collection( options )
         this.links.on( 'sync', this.render )
     },
@@ -11443,11 +11443,17 @@ UW.QuickLinks = Backbone.View.extend({
     render : function(  )
     {
         this.quicklinks = $ ( _.template( this.template, { links : this.links.toJSON() }) )
-        //this.makeDrawer()
         this.$container = $(this.container);
         this.$container.prepend( this.quicklinks )
         this.$el.attr( 'aria-controls', 'quicklinks' ).attr( 'aria-owns', 'quicklinks' )
         UW.$body.on( 'keyup', '#quicklinks a', this.animate )
+        this.quicklinks.on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', this.transitionEnd);
+    },
+
+    transitionEnd: function (event) {
+        if (this.open && event.target == this.quicklinks[0]) {
+            this.accessible();
+        }
     },
 
     makeDrawer: function () {
@@ -11474,7 +11480,9 @@ UW.QuickLinks = Backbone.View.extend({
 
         this.open = this.quicklinks.hasClass( 'open' )
 
-        _.delay( this.accessible, this.open ? this.DELAY : 0 )
+        if (!this.open) {
+            this.accessible();
+        }
     },
 
     // todo : cache the uw-container-inner and screen-reader
