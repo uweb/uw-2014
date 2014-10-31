@@ -5365,6 +5365,9 @@ hr {
   line-height: 1.5;
   margin-bottom: 20px;
 }
+.uw-body-copy .weight-900 {
+  font-weight: 900;
+}
 a.more {
   position: relative;
   display: inline-block;
