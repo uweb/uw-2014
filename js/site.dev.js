@@ -12660,7 +12660,7 @@ UW.Select = Backbone.View.extend({
     }
     if ( this.attrs.width > (this.RATIO * UW.$window.width())){
         this.attrs.width = this.RATIO * UW.$window.width();
-        this.atts.height = this.attrs.width / aspect_ratio;
+        this.attrs.height = this.attrs.width / aspect_ratio;
     }
     //||
     //      this.image.img.width > UW.$window.width() )
