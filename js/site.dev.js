@@ -11143,7 +11143,7 @@ UW.Search = Backbone.View.extend({
   events :
   {
     'keydown'                   : 'keyDownDispatch',
-    'click .result .more'       : 'showPersonInformation',
+    'click .result .directory-more'       : 'showPersonInformation',
     'click .result .commonname' : 'showPersonInformation',
     'click label.radio'         : 'toggleSearchFeature',
     'click input:radio'         : 'stopProp',
