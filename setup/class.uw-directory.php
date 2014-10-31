@@ -47,10 +47,16 @@ class UW_Directory
 
       $this->NUMERIC = ( is_numeric( preg_replace("/[^A-Za-z0-9]/", '', $this->SEARCH ) ) ) ? preg_replace("/[^A-Za-z0-9 ]/", '', $this->SEARCH ) : false;
 
-      // if the query is numeric then search telephone and box numbers as well
-      $teleboxnumber =  $this->NUMERIC ? "(telephonenumber=*{$this->SEARCH}*)(mailstop={$this->SEARCH})" : '';
+      // if the query is numeric then search telephone and box numbers
+      if ( $this->NUMERIC )
+        return "(&(ou:dn:=$ou)(|(telephonenumber=*{$this->SEARCH}*)(mailstop={$this->SEARCH})))";
 
-      return "(&(ou:dn:=$ou)(|(mail=$this->SEARCH*)(sn=$this->LAST_NAME*)(givenname=$this->FIRST_NAME*)(cn=$this->SEARCH)$teleboxnumber(title=*{$this->SEARCH}*)))";
+      // if it's a name preform a efficeint search for names and broad search of titles
+      if ( $this->FIRST_NAME != $this->LAST_NAME )
+        return "(|(&(ou:dn:=$ou)(sn=$this->LAST_NAME*)(givenname=$this->FIRST_NAME*))(title=*$this->SEARCH*)$teleboxnumber)" ;
+
+      // Otherwise search everything
+      return "(&(ou:dn:=$ou)(|(mail=$this->SEARCH*)(sn=$this->LAST_NAME*)(givenname=$this->FIRST_NAME*)(cn=$this->SEARCH*)$teleboxnumber(title=*{$this->SEARCH}*)))";
   }
 
   function get_limit()
@@ -69,9 +75,9 @@ class UW_Directory
     // special case for people search last name first
 
     $search = explode( ' ', $search );
-    foreach ( $search as $name )
+    foreach ( $search as $index => $name )
     {
-      if ( strlen( $name) > 1 )
+      if ( strlen( $name ) > 1 || $index == 0 )
         $names[] = $name;
     }
 
@@ -123,27 +129,17 @@ class UW_Directory
     }
 
     // Checks for an exact matches and returns them separately
-    // This could be replaced by a second LDAP query looking for an exact match as well.
-    // Eg: Exact matches
-    //  return "(&(cn=*$this->LAST_NAME*)(givenname=$this->FIRST_NAME*))";
-    // Eg: custom query for people searching Last, First name format.
-    //   return "(&(cn=*$this->LAST_NAME*)(givenname=$this->FIRST_NAME*))";
-
-    if ( isset( $this->FIRST_NAME ) && isset( $this->LAST_NAME ) && $this->FIRST_NAME != $this->LAST_NAME )
-      $people['best'] = array();
-
-// var_dump( $this->FIRST_NAME, $this->LAST_NAME );
     foreach ($people as $index => $person )
     {
-      if ( strpos( strtolower( $person['givenname'] ), strtolower( $this->FIRST_NAME ) ) !== false &&
+      if ( strpos( strtolower( $person['givenname'] ), strtolower( $this->FIRST_NAME ) ) === 0 &&
            strpos( strtolower( $person['sn'] ), strtolower( $this->LAST_NAME ) ) !== false )
       {
         unset( $people[$index] );
         $people['best'][] = $person;
       }
     }
-// var_dump( $people['best'] );
 
+    // Return only the best matches if there are any
     if (isset( $people['best'])) return $people['best'];
 
     return $people;
