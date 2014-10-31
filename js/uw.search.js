@@ -48,7 +48,6 @@ UW.Search = Backbone.View.extend({
                       '</label>'+
                     '</div>'+
 
-
                 '</div>'+
               '</div>'+
               '<div class="uw-results center-block" style="display:none;">' +
@@ -63,8 +62,21 @@ UW.Search = Backbone.View.extend({
               '<div class="information hidden">'+
                 '<p class="pull-left"><% if ( title ) { %><span class="title"><%= title %></span><% } %>'+
                 '<% if ( postaladdress ) { %><span class="postaladdress"><%= postaladdress %></span><% } %></p>'+
-                '<% if ( mail ) { %><span class="mail"><a href="mailto:<%= mail %>" title="Email <%= commonname %>"><%= mail %></a></span><% } %>'+
-                '<% if ( telephonenumber ) { %><span class="telephonenumber"><a href="tel:<%= telephonenumber %>"><%= telephonenumber %></a></span><% } %>'+
+                '<% if ( mail ) { %><span class="mail">'+
+                    '<% _.each( mail, function( email, index ) { %>' +
+                      '<a href="mailto:<%= email %>" title="Email <%= commonname %>"><%= email %></a>'+
+                        '<% if ( index != mail.length ) { %>, <% } %>' +
+                      '<% }) %>'+
+                '</span> <% } %>' +
+
+                '<% if ( telephonenumber ) { %>' +
+                    '<span class="telephonenumber">'+
+                      '<% _.each( telephonenumber, function( telephone, index ) { %>' +
+                        '<a href="tel:<%= telephone %>"><%= telephone %></a>' +
+                        '<% if ( index != telephonenumber.length ) { %>, <% } %>' +
+                      '<% }) %>'+
+                    '</span>'+
+                  '<% } %>'+
               '</div>'+
             '</div>',
 
@@ -275,6 +287,7 @@ UW.Search = Backbone.View.extend({
 
 
     this.empty()
+    data.reverse()
 
     _.each(data, function( person, index ) {
       if ( person.commonname )
