@@ -11098,7 +11098,6 @@ UW.Search = Backbone.View.extend({
                       '</label>'+
                     '</div>'+
 
-
                 '</div>'+
               '</div>'+
               '<div class="uw-results center-block" style="display:none;">' +
@@ -11113,8 +11112,21 @@ UW.Search = Backbone.View.extend({
               '<div class="information hidden">'+
                 '<p class="pull-left"><% if ( title ) { %><span class="title"><%= title %></span><% } %>'+
                 '<% if ( postaladdress ) { %><span class="postaladdress"><%= postaladdress %></span><% } %></p>'+
-                '<% if ( mail ) { %><span class="mail"><a href="mailto:<%= mail %>" title="Email <%= commonname %>"><%= mail %></a></span><% } %>'+
-                '<% if ( telephonenumber ) { %><span class="telephonenumber"><a href="tel:<%= telephonenumber %>"><%= telephonenumber %></a></span><% } %>'+
+                '<% if ( mail ) { %><span class="mail">'+
+                    '<% _.each( mail, function( email, index ) { %>' +
+                      '<a href="mailto:<%= email %>" title="Email <%= commonname %>"><%= email %></a>'+
+                        '<% if ( index != mail.length ) { %>, <% } %>' +
+                      '<% }) %>'+
+                '</span> <% } %>' +
+
+                '<% if ( telephonenumber ) { %>' +
+                    '<span class="telephonenumber">'+
+                      '<% _.each( telephonenumber, function( telephone, index ) { %>' +
+                        '<a href="tel:<%= telephone %>"><%= telephone %></a>' +
+                        '<% if ( index != telephonenumber.length ) { %>, <% } %>' +
+                      '<% }) %>'+
+                    '</span>'+
+                  '<% } %>'+
               '</div>'+
             '</div>',
 
@@ -11131,7 +11143,7 @@ UW.Search = Backbone.View.extend({
   events :
   {
     'keydown'                   : 'keyDownDispatch',
-    'click .result .more'       : 'showPersonInformation',
+    'click .result .directory-more'       : 'showPersonInformation',
     'click .result .commonname' : 'showPersonInformation',
     'click label.radio'         : 'toggleSearchFeature',
     'click input:radio'         : 'stopProp',
@@ -11325,6 +11337,7 @@ UW.Search = Backbone.View.extend({
 
 
     this.empty()
+    data.reverse()
 
     _.each(data, function( person, index ) {
       if ( person.commonname )
@@ -12650,24 +12663,17 @@ UW.Select = Backbone.View.extend({
     }
 
     this.image = _.first( images.images )
-    var aspect_ratio = this.image.img.width / this.image.img.height;
     this.attrs.height = this.image.img.height
     this.attrs.width  = this.image.img.width
 
     if ( this.attrs.height > (this.RATIO * UW.$window.height())){
         this.attrs.height = this.RATIO * UW.$window.height();
-        this.attrs.width = aspect_ratio * this.attrs.height;
+        this.attrs.width = this.attrs.height * ( this.image.img.width / this.image.img.height );
     }
     if ( this.attrs.width > (this.RATIO * UW.$window.width())){
         this.attrs.width = this.RATIO * UW.$window.width();
-        this.attrs.height = this.attrs.width / aspect_ratio;
+        this.attrs.height = this.attrs.width / (this.image.img.width / this.image.img.height)
     }
-    //||
-    //      this.image.img.width > UW.$window.width() )
-    //{
-    //  this.attrs.height = this.RATIO * UW.$window.height()
-    //  this.attrs.width  = this.RATIO * UW.$window.width()
-    //}
 
     this.render()
 
