@@ -1,6 +1,11 @@
 <h1>
   <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title() ?></a>
 </h1>
+<div class="author-info">
+    <?php the_author(); ?>
+    <p class="author-desc"> <small><?php the_author_meta(); ?></small></p>
+</div>
+
 
 <?php
 
