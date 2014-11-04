@@ -57,7 +57,11 @@ class UW_Iframes
       'www.surveygizmo.com',
       'www.google.com',
       'www.excition.com',
-      'www.youtube.com'
+      'www.youtube.com',
+      'pgcalc.com',
+      'www.pgcalc.com',
+      'matchinggifts.com',
+      'www.matchinggifts.com'
     );
   }
 
