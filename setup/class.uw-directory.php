@@ -9,7 +9,7 @@ class UW_Directory
 
   const HOST        = 'directory.washington.edu';
   const SEARCH_BASE = 'o=University of Washington, c=US';
-  const LIMIT = -1;
+  const LIMIT = 10;
 
   function __construct()
   {
@@ -68,10 +68,11 @@ class UW_Directory
       return (array(
                             "Students"   => "(&(ou:dn:=Students)$search)",
                             "Faculty & Staff"   => "(&(ou:dn:=Faculty and Staff)$search)",
-                            "Email" => "(mail=$this->SEARCH*)",
-                            "Department" => "(title=*$this->SEARCH*)",
-                            "Box number"           => "(mailstop=*$this->SEARCH*)",
-                            "Telephone number"  => "(telephonenumber=*$this->SEARCH*)"));
+                            // "Email" => "(mail=$this->SEARCH*)",
+                            // "Department" => "(title=*$this->SEARCH*)",
+                            // "Box number"           => "(mailstop=*$this->SEARCH*)",
+                            // "Telephone number"  => "(telephonenumber=*$this->SEARCH*)"
+      ));
   }
 
   function get_limit()
