@@ -11335,11 +11335,9 @@ UW.Search = Backbone.View.extend({
       , result   = this.result
       , $results = this.$results
 
-
     this.empty()
-    data.reverse()
 
-    _.each(data, function( person, index ) {
+    _.each(data.Students, function( person, index ) {
       if ( person.commonname )
       {
         var template = _.template( result, person )
@@ -11347,18 +11345,13 @@ UW.Search = Backbone.View.extend({
       }
     })
 
-    if ( data.best )
-    {
-
-    _.each(data.best, function( person, index ) {
+    _.each(data['Faculty & Staff'], function( person, index ) {
       if ( person.commonname )
       {
         var template = _.template( result, person )
         $results.prepend( template )
       }
     })
-
-    }
 
     this.$more.show()
 
@@ -12663,17 +12656,24 @@ UW.Select = Backbone.View.extend({
     }
 
     this.image = _.first( images.images )
+    var aspect_ratio = this.image.img.width / this.image.img.height;
     this.attrs.height = this.image.img.height
     this.attrs.width  = this.image.img.width
 
     if ( this.attrs.height > (this.RATIO * UW.$window.height())){
         this.attrs.height = this.RATIO * UW.$window.height();
-        this.attrs.width = this.attrs.height * ( this.image.img.width / this.image.img.height );
+        this.attrs.width = aspect_ratio * this.attrs.height;
     }
     if ( this.attrs.width > (this.RATIO * UW.$window.width())){
         this.attrs.width = this.RATIO * UW.$window.width();
-        this.attrs.height = this.attrs.width / (this.image.img.width / this.image.img.height)
+        this.attrs.height = this.attrs.width / aspect_ratio;
     }
+    //||
+    //      this.image.img.width > UW.$window.width() )
+    //{
+    //  this.attrs.height = this.RATIO * UW.$window.height()
+    //  this.attrs.width  = this.RATIO * UW.$window.width()
+    //}
 
     this.render()
 
