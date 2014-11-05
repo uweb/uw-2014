@@ -4724,8 +4724,8 @@ table th[class*="col-"] {
 .uw-thinstrip ul.uw-thin-links li button {
   font-family: "Encode Sans Compressed", sans-serif;
   color: #fff;
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 17px;
+  font-weight: 600;
   position: relative;
   float: right;
   padding: 8px 25px 10px 0;
@@ -4796,7 +4796,7 @@ table th[class*="col-"] {
   padding-right: 60px;
   position: relative;
   z-index: 1;
-  color: #000;
+  color: #404040;
   background: url(assets/svg/uw-sprite.svg) no-repeat -451px -235px;
   overflow: hidden;
 }
@@ -5353,10 +5353,17 @@ table th[class*="col-"] {
 }
 ul {
   padding-left: 25px;
+  list-style-position: inside;
+}
+.uw-body-copy ul {
+  overflow: hidden;
 }
 hr {
   border-top: 1px solid #EBEBEB;
   clear: both;
+}
+iframe {
+  margin: 40px 0 20px;
 }
 .intro {
   font-family: "Encode Sans Compressed", sans-serif;

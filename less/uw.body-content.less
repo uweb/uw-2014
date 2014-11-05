@@ -2,13 +2,24 @@
 
 ul {
 	padding-left: 25px;
+	list-style-position: inside;
 }
 
+// Fixes floated images next to a bulleted list. The bullets weren't indenting properly
+.uw-body-copy {
+	ul {
+		overflow: hidden;
+	}
+}
 // Basic styles 
 
 hr {
 	border-top: 1px solid #EBEBEB;
 	clear: both;
+}
+
+iframe {
+	margin: 40px 0 20px;
 }
 
 .intro {
