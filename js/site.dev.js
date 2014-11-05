@@ -11098,7 +11098,6 @@ UW.Search = Backbone.View.extend({
                       '</label>'+
                     '</div>'+
 
-
                 '</div>'+
               '</div>'+
               '<div class="uw-results center-block" style="display:none;">' +
@@ -11113,8 +11112,21 @@ UW.Search = Backbone.View.extend({
               '<div class="information hidden">'+
                 '<p class="pull-left"><% if ( title ) { %><span class="title"><%= title %></span><% } %>'+
                 '<% if ( postaladdress ) { %><span class="postaladdress"><%= postaladdress %></span><% } %></p>'+
-                '<% if ( mail ) { %><span class="mail"><a href="mailto:<%= mail %>" title="Email <%= commonname %>"><%= mail %></a></span><% } %>'+
-                '<% if ( telephonenumber ) { %><span class="telephonenumber"><a href="tel:<%= telephonenumber %>"><%= telephonenumber %></a></span><% } %>'+
+                '<% if ( mail ) { %><span class="mail">'+
+                    '<% _.each( mail, function( email, index ) { %>' +
+                      '<a href="mailto:<%= email %>" title="Email <%= commonname %>"><%= email %></a>'+
+                        '<% if ( index != mail.length ) { %>, <% } %>' +
+                      '<% }) %>'+
+                '</span> <% } %>' +
+
+                '<% if ( telephonenumber ) { %>' +
+                    '<span class="telephonenumber">'+
+                      '<% _.each( telephonenumber, function( telephone, index ) { %>' +
+                        '<a href="tel:<%= telephone %>"><%= telephone %></a>' +
+                        '<% if ( index != telephonenumber.length ) { %>, <% } %>' +
+                      '<% }) %>'+
+                    '</span>'+
+                  '<% } %>'+
               '</div>'+
             '</div>',
 
@@ -11131,7 +11143,7 @@ UW.Search = Backbone.View.extend({
   events :
   {
     'keydown'                   : 'keyDownDispatch',
-    'click .result .more'       : 'showPersonInformation',
+    'click .result .directory-more'       : 'showPersonInformation',
     'click .result .commonname' : 'showPersonInformation',
     'click label.radio'         : 'toggleSearchFeature',
     'click input:radio'         : 'stopProp',
@@ -11323,10 +11335,9 @@ UW.Search = Backbone.View.extend({
       , result   = this.result
       , $results = this.$results
 
-
     this.empty()
 
-    _.each(data, function( person, index ) {
+    _.each(data.Students, function( person, index ) {
       if ( person.commonname )
       {
         var template = _.template( result, person )
@@ -11334,18 +11345,13 @@ UW.Search = Backbone.View.extend({
       }
     })
 
-    if ( data.best )
-    {
-
-    _.each(data.best, function( person, index ) {
+    _.each(data['Faculty & Staff'], function( person, index ) {
       if ( person.commonname )
       {
         var template = _.template( result, person )
         $results.prepend( template )
       }
     })
-
-    }
 
     this.$more.show()
 
@@ -11435,7 +11441,7 @@ UW.QuickLinks = Backbone.View.extend({
     // },
 
     initialize: function ( options ) {
-        _.bindAll( this, 'render', 'animate', 'accessible', 'loop'  );
+        _.bindAll( this, 'render', 'animate', 'accessible', 'loop', 'transitionEnd' );
         this.links = new UW.QuickLinks.Collection( options )
         this.links.on( 'sync', this.render )
     },
@@ -11443,11 +11449,17 @@ UW.QuickLinks = Backbone.View.extend({
     render : function(  )
     {
         this.quicklinks = $ ( _.template( this.template, { links : this.links.toJSON() }) )
-        //this.makeDrawer()
         this.$container = $(this.container);
         this.$container.prepend( this.quicklinks )
         this.$el.attr( 'aria-controls', 'quicklinks' ).attr( 'aria-owns', 'quicklinks' )
         UW.$body.on( 'keyup', '#quicklinks a', this.animate )
+        this.quicklinks.on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', this.transitionEnd);
+    },
+
+    transitionEnd: function (event) {
+        if (this.open && event.target == this.quicklinks[0]) {
+            this.accessible();
+        }
     },
 
     makeDrawer: function () {
@@ -11474,7 +11486,9 @@ UW.QuickLinks = Backbone.View.extend({
 
         this.open = this.quicklinks.hasClass( 'open' )
 
-        _.delay( this.accessible, this.open ? this.DELAY : 0 )
+        if (!this.open) {
+            this.accessible();
+        }
     },
 
     // todo : cache the uw-container-inner and screen-reader
@@ -12652,7 +12666,7 @@ UW.Select = Backbone.View.extend({
     }
     if ( this.attrs.width > (this.RATIO * UW.$window.width())){
         this.attrs.width = this.RATIO * UW.$window.width();
-        this.atts.height = this.attrs.width / aspect_ratio;
+        this.attrs.height = this.attrs.width / aspect_ratio;
     }
     //||
     //      this.image.img.width > UW.$window.width() )

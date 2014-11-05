@@ -4628,12 +4628,17 @@ table th[class*="col-"] {
  *  All styles for Blogroll shortcode
  */
 .shortcode-blogroll {
+  overflow-y: hidden;
+  margin-top: 40px;
   padding: 0;
   list-style: none;
 }
 .shortcode-blogroll > li {
   margin: 40px 0 50px;
   position: relative;
+}
+.shortcode-blogroll > li:first-child {
+  margin-top: 0px;
 }
 .shortcode-blogroll > li .wp-post-image {
   margin: 10px 30px 0 0;
@@ -4729,6 +4734,7 @@ table th[class*="col-"] {
   position: relative;
   float: right;
   padding: 8px 25px 10px 0;
+  letter-spacing: .01em;
 }
 .uw-thinstrip ul.uw-thin-links li a:after,
 .uw-thinstrip ul.uw-thin-links li button:after {

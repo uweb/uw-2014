@@ -4,9 +4,15 @@
 
 .shortcode-blogroll {
     
+    overflow-y: hidden;
+    margin-top: 40px;
+
     padding: 0;
     list-style: none;
     & > li {
+        &:first-child {
+            margin-top: 0px;
+        }
         margin: 40px 0 50px;
         position: relative;
         .wp-post-image {
