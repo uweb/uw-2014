@@ -42,11 +42,11 @@ UW.Search = Backbone.View.extend({
                         'Current Site'+
                       '</label>'+
 
-                      '<label class="radio">'+
-                        '<input type="radio" name="search" value="directory" data-toggle="radio" tabindex="-1">'+
-                        'People Directory'+
-                      '</label>'+
-                    '</div>'+
+                    //   '<label class="radio">'+
+                    //     '<input type="radio" name="search" value="directory" data-toggle="radio" tabindex="-1">'+
+                    //     'People Directory'+
+                    //   '</label>'+
+                    // '</div>'+
 
                 '</div>'+
               '</div>'+
@@ -98,7 +98,7 @@ UW.Search = Backbone.View.extend({
     'click label.radio'         : 'toggleSearchFeature',
     'click input:radio'         : 'stopProp',
     'change select'             : 'toggleSearchFeature',
-    'keyup #uw-search-bar'      : 'searchDirectory',
+    // 'keyup #uw-search-bar'      : 'searchDirectory',
     'click .search'             : 'submitForm',
     'submit form'               : 'submitSearch'
   },
