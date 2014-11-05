@@ -182,5 +182,3 @@ class UW_Directory
   }
 
 }
-
-new UW_Directory;

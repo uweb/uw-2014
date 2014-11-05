@@ -55,7 +55,7 @@ class UW
         $this->Mimes             = new UW_Mimes;
         $this->Users             = new UW_Users;
         $this->Dropdowns         = new UW_Dropdowns;
-        $this->Directory         = new UW_Directory;
+        // $this->Directory         = new UW_Directory;
         $this->Quicklinks        = new UW_QuickLinks;
         $this->Shortcodes        = new UW_Shortcodes;
         $this->Shortcodes        = new UW_Shortcodes;
