@@ -13,50 +13,66 @@ class UW_Directory
 
   function __construct()
   {
-    add_action( 'wp_ajax_directory', array( $this, 'search_uw_directory') );
-    add_action( 'wp_ajax_nopriv_directory', array( $this, 'search_uw_directory') );
+
+
+
+    add_action( 'wp_ajax_directory', array( $this, 'search_uw_directory_ajax') );
+    add_action( 'wp_ajax_nopriv_directory', array( $this, 'search_uw_directory_ajax') );
   }
 
-  function search_uw_directory()
+  function search_uw_directory( $search = false )
   {
+
+    if ( $search ) $this->SEARCH = $search;
+
     $ds = ldap_connect( self::HOST );
     if ( $ds )
     {
         $r      = ldap_bind( $ds );
-        $result = @ldap_search( $ds, self::SEARCH_BASE, $this->search_filter(), $attributes=array(), $attrsonly=0, $sizelimit=$this->get_limit() );
-        if ( is_resource($result) )
+        foreach ( $this->search_filters() as $filter => $ldap_filter )
         {
-          $info   = ldap_get_entries($ds, $result);
-          if ( is_array( $info ) )
-            echo json_encode( $this->format( $info ) );
+          $result = @ldap_search( $ds, self::SEARCH_BASE, $ldap_filter, $attributes=array(), $attrsonly=0, $sizelimit=$this->get_limit() );
+          if ( is_resource($result) )
+          {
+            $info   = ldap_get_entries( $ds, $result );
+            if ( is_array( $info ) && $info['count'] > 0 )
+              $results[ $filter ] = $this->format( $info );
+          }
         }
     }
-    wp_die();
+    return json_decode( json_encode($results));
   }
 
-  function search_filter()
+  function search_uw_directory_ajax()
   {
-      $args = wp_parse_args( $_GET );
+    $results = $this->search_uw_directory();
+    wp_send_json( $results );
+  }
 
-      $this->SEARCH = stripslashes( trim( $args['search'] ) );
+  function search_filters()
+  {
 
-      $ou = ( $args['method'] == 'students' ) ? 'Students' :
-                ( ( $args['method'] == 'faculty' )   ? 'Faculty and Staff' : 'People' );
+      if ( ! $this->SEARCH )
+      {
+        $args = wp_parse_args( $_GET );
+        $this->SEARCH = stripslashes( trim( $args['search'] ) );
+      }
 
       $this->parse();
 
-      $this->NUMERIC = ( is_numeric( preg_replace("/[^A-Za-z0-9]/", '', $this->SEARCH ) ) ) ? preg_replace("/[^A-Za-z0-9 ]/", '', $this->SEARCH ) : false;
+      if ( $this->LAST_NAME != $this->FIRST_NAME )
+        $search = "(|(&(sn=$this->LAST_NAME*)(givenname=$this->FIRST_NAME*))(sn=$this->SEARCH)(cn=$this->SEARCH))";
+      else
+        $search = "(|(cn=$this->SEARCH)(cn=$this->SEARCH*)(cn=*$this->SEARCH))";
 
-      // if the query is numeric then search telephone and box numbers
-      if ( $this->NUMERIC )
-        return "(&(ou:dn:=$ou)(|(telephonenumber=*{$this->SEARCH}*)(mailstop={$this->SEARCH})))";
-
-      // if it's a name preform a efficeint search for names and broad search of titles
-      if ( $this->FIRST_NAME != $this->LAST_NAME )
-        return "(|(&(ou:dn:=$ou)(sn=$this->LAST_NAME*)(givenname=$this->FIRST_NAME*))(title=*$this->SEARCH*)$teleboxnumber)" ;
-
-      // Otherwise search everything
-      return "(&(ou:dn:=$ou)(|(mail=$this->SEARCH*)(sn=$this->LAST_NAME*)(givenname=$this->FIRST_NAME*)(cn=$this->SEARCH*)$teleboxnumber(title=*{$this->SEARCH}*)))";
+      return (array(
+                            "Students"   => "(&(ou:dn:=Students)$search)",
+                            "Faculty & Staff"   => "(&(ou:dn:=Faculty and Staff)$search)",
+                            // "Email" => "(mail=$this->SEARCH*)",
+                            // "Department" => "(title=*$this->SEARCH*)",
+                            // "Box number"           => "(mailstop=*$this->SEARCH*)",
+                            // "Telephone number"  => "(telephonenumber=*$this->SEARCH*)"
+      ));
   }
 
   function get_limit()
@@ -120,19 +136,26 @@ class UW_Directory
 
     }
 
+    if ( ! $people ) return;
+
+    // This has been replaced by the custom LDAP searches which perform the same basic filtering
+
     // Checks for an exact matches and returns them separately
-    foreach ($people as $index => $person )
-    {
-      if ( strpos( strtolower( $person['givenname'] ), strtolower( $this->FIRST_NAME ) ) === 0 &&
-           strpos( strtolower( $person['sn'] ), strtolower( $this->LAST_NAME ) ) !== false )
-      {
-        unset( $people[$index] );
-        $people['best'][] = $person;
-      }
-    }
+    // foreach ($people as $index => $person )
+    // {
+    //   if ( $this->LAST_NAME !== $this->FIRST_NAME &&
+    //        strpos( strtolower( $person['givenname'] ), strtolower( $this->FIRST_NAME ) ) === 0 &&
+    //        strpos( strtolower( $person['sn'] ), strtolower( $this->LAST_NAME ) ) !== false ||
+    //         $this->LAST_NAME !== $this->FIRST_NAME &&
+    //         $person['commonname'] === $this->SEARCH )
+    //   {
+    //     unset( $people[$index] );
+    //     $people['best'][] = $person;
+    //   }
+    // }
 
     // Return only the best matches if there are any
-    if (isset( $people['best'])) return $people['best'];
+    // if (isset( $people['best'])) return $people['best'];
 
     if ( $sort )
     {

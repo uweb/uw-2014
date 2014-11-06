@@ -285,11 +285,9 @@ UW.Search = Backbone.View.extend({
       , result   = this.result
       , $results = this.$results
 
-
     this.empty()
-    data.reverse()
 
-    _.each(data, function( person, index ) {
+    _.each(data.Students, function( person, index ) {
       if ( person.commonname )
       {
         var template = _.template( result, person )
@@ -297,18 +295,13 @@ UW.Search = Backbone.View.extend({
       }
     })
 
-    if ( data.best )
-    {
-
-    _.each(data.best, function( person, index ) {
+    _.each(data['Faculty & Staff'], function( person, index ) {
       if ( person.commonname )
       {
         var template = _.template( result, person )
         $results.prepend( template )
       }
     })
-
-    }
 
     this.$more.show()
 
