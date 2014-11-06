@@ -41,7 +41,7 @@
 
     <?php get_sidebar() ?>
 
-  </div><span class="next-page">
+  </div>
 
 </div>
 
