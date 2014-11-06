@@ -12409,6 +12409,7 @@ UW.Select = Backbone.View.extend({
     'keydown li'        : 'openMenuOnKeydown',
     'click li.active'   : 'open',
     'click li.inactive' : 'close',
+    'click .uw-select-arrow'   : 'open'
   },
 
   // This is the template that replaces the standard select menu.
