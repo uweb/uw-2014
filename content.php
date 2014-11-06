@@ -23,5 +23,5 @@ this is for the author section on single posts. We need an option to show (or to
     the_excerpt();
   else
     the_content();
-    comments_template(true);
+    //comments_template(true);
  ?>
