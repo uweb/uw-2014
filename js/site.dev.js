@@ -12514,6 +12514,7 @@ UW.Select = Backbone.View.extend({
   addOpenClass : function()
   {
       this.$el.addClass('open');
+      this.$el.parent().addClass('open');
       this.$el.scrollTop(this.scroll);
   },
 
@@ -12523,6 +12524,7 @@ UW.Select = Backbone.View.extend({
     if ( this.clicked || forced )
     {
     this.$el.removeClass('open')
+    this.$el.parent().removeClass('open')
       this.clicked = false;
     }
   },
