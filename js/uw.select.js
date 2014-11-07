@@ -39,6 +39,7 @@ UW.Select = Backbone.View.extend({
     'click li.active'   : 'open',
     'click li.inactive' : 'close',
     'click .uw-select-arrow'   : 'open',
+    'click .uw-select-arrow.open'   : 'closeWithoutAnimating'
   },
 
   // This is the template that replaces the standard select menu.
@@ -78,6 +79,12 @@ UW.Select = Backbone.View.extend({
     this.animate()
     this.toggleLIClasses()
     return false
+  },
+
+  closeWithoutAnimating : function()
+  {
+    this.$el.removeClass('open')
+    this.$el.children().removeClass('open')
   },
 
   // Animate the select menu to the proper menu item.
@@ -144,7 +151,7 @@ UW.Select = Backbone.View.extend({
   addOpenClass : function()
   {
       this.$el.addClass('open');
-      this.$el.children('ul').addClass('open');
+      this.$el.children().addClass('open');
       this.$el.children('ul').scrollTop(this.scroll);
   },
 
@@ -154,7 +161,7 @@ UW.Select = Backbone.View.extend({
     if ( this.clicked || forced )
     {
     this.$el.removeClass('open')
-    this.$el.children('ul').removeClass('open')
+    this.$el.children().removeClass('open')
       this.clicked = false;
     }
   },
