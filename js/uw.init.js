@@ -60,6 +60,9 @@ UW.initialize = function( $ )
 
   // todo: add to separate file
   $('table').addClass('table table-striped')
+  $('pre').addClass('prettyprint')
+
+  if ( window.prettyPrint ) prettyPrint()
 
 }
 

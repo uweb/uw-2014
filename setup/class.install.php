@@ -42,11 +42,10 @@ class UW_Install_Theme
       'width'          => 1600,
       'height'         => 343,
       'header-text'    => false,
-      'uploads'        => false
+      'uploads'        => true
     ) );
 
     register_default_headers( $this->DEFAULT_HEADERS );
-
   }
 
   function uw_setup_embed_defaults( $dimensions )
