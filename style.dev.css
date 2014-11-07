@@ -3657,13 +3657,15 @@ address {
   transform: matrix(1, 0, 0, 1, 0, 0);
 }
 #uw-container div#uw-container-inner {
-  position: relative;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
   background-color: white;
   box-shadow: 10px 0px 11px -6px #1f1f1f;
   transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+#uw-container div#uw-container-inner div.uw-body-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: white;
 }
 #uw-container.open div#uw-container-inner {
   -webkit-transform: matrix(1, 0, 0, 1, -270, 0);
@@ -5759,11 +5761,6 @@ span.next-page a:hover {
   color: #525252;
 }
 body #uw-container {
-  -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
-  -moz-transform: matrix(1, 0, 0, 1, 0, 0);
-  -ms-transform: matrix(1, 0, 0, 1, 0, 0);
-  -o-transform: matrix(1, 0, 0, 1, 0, 0);
-  transform: matrix(1, 0, 0, 1, 0, 0);
   transition: transform .3s;
 }
 body.search-open #uw-container {
