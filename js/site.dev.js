@@ -12540,6 +12540,7 @@ UW.Select = Backbone.View.extend({
     this.$select = this.$el
     this.setElement( this.$el.next() )
     this.toggleLIClasses()
+    if ( this.$el.find('li').length < 5) this.$el.children('ul').height('auto')
   },
 
   // Parse the standard select element and gather each option tags' values and text
