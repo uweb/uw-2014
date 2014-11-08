@@ -39,3 +39,6 @@
 body.search-open #uw-container {
     margin-top: 192px;
 }
+body.search-open #uwsearcharea .no-height{
+    top: 0px;
+}
