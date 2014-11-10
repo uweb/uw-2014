@@ -11106,7 +11106,7 @@ UW.Search = Backbone.View.extend({
 
                     '<select id="mobile-search-select" class="visible-xs">' +
                       '<option value="uw" selected>All the UW</option>' +
-                      '<option value="site">Current Site</option>' +
+                      '<option value="site">Current site</option>' +
                     '</select>' +
 
                     '<button class="search" tabindex="-1"/>'+
