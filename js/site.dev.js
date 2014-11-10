@@ -11119,7 +11119,7 @@ UW.Search = Backbone.View.extend({
 
                       '<label class="radio">'+
                         '<input type="radio" name="search" value="site" data-toggle="radio" tabindex="-1">'+
-                        'Current Site'+
+                        'Current site'+
                       '</label>'+
 
                     //   '<label class="radio">'+
