@@ -8,7 +8,6 @@
 
 <?php get_template_part( 'header', 'image' ); ?>
 
-<div class='uw-body-wrap'>
 <div class="container uw-body">
 
   <div class="row">
@@ -46,7 +45,6 @@
 
   </div>
 
-</div>
 </div>
 
 <?php get_footer(); ?>
