@@ -12047,7 +12047,7 @@ UW.Vimeo.Video = Backbone.Model.extend({
 
   url : function()
   {
-      return 'http://vimeo.com/api/v2/video/' + this.video +'.json'
+      return 'https://vimeo.com/api/v2/video/' + this.video +'.json'
   },
 
   parse : function( data )
