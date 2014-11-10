@@ -32,7 +32,9 @@ class UW_Iframes
 
       $query = http_build_query($_GET);
 
-      return "<iframe src=\"{$params['src']}?$query\" width=\"{$params['width']}\" height=\"{$params['height']}\" frameborder=\"0\"></iframe>";
+      $query =  $query  ? "?$query" : '';
+
+      return "<iframe src=\"{$params['src']}$query\" width=\"{$params['width']}\" height=\"{$params['height']}\" frameborder=\"0\"></iframe>";
 
   }
 
