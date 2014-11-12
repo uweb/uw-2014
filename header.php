@@ -1,13 +1,9 @@
 <!DOCTYPE html>
-<!--[if lt IE 9]> <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html class="no-js">
-<!-- test accessibility stuff -->
-<!--<![endif]-->
     <head>
-        <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title> <?php wp_title(' | ',TRUE,'right'); bloginfo('name'); ?> </title>
+        <meta charset="utf-8">
         <meta name="description" content="<?php bloginfo('description', 'display'); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -22,7 +18,10 @@
         <![endif]-->
 
     </head>
+    <!--[if lt IE 9]> <body <?php body_class('lt-ie9'); ?>> <![endif]-->
+    <!--[if gt IE 8]><!-->
     <body <?php body_class(); ?> >
+    <!--<![endif]-->
 
     <div id="uw-container">
 
