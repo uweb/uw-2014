@@ -12,6 +12,8 @@ module.exports = function(grunt) {
           "js/libraries/jquery.tinyscrollbar.js",
           "js/libraries/video.dev.js",
           "js/libraries/imagesloaded.pkgd.js",
+          "js/libraries/jetpack.carousel.js",
+          "js/libraries/prettify.js",
         ],
         theme : [
           "js/uw.core.js",

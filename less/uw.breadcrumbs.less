@@ -1,7 +1,7 @@
 // UW Breadcrumbs
 
 .uw-breadcrumbs {
-	margin: -22px 0 0 -30px;
+	margin: -17px 0 0 -30px;
 	background-color: white;
 	display: inline-block;
 	padding: 20px 20px 0 30px;
@@ -77,5 +77,19 @@
 		float: none;
 		padding: 0;
 		margin: 0 0 0 -5px;
+		li {
+			float: left;
+			display: initial;
+			a {
+				padding: 0 25px 0 0;
+			}
+			&:after {
+				top: 8px;
+			}
+			&:first-child a {
+				background-position: -250px -3px;
+				padding: 0;
+			}
+		}
 	}
 }

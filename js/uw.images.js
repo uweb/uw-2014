@@ -38,15 +38,24 @@ UW.Image = Backbone.View.extend({
     }
 
     this.image = _.first( images.images )
+    var aspect_ratio = this.image.img.width / this.image.img.height;
     this.attrs.height = this.image.img.height
     this.attrs.width  = this.image.img.width
 
-    if ( this.image.img.height > UW.$window.height() ||
-          this.image.img.width > UW.$window.width() )
-    {
-      this.attrs.height = this.RATIO * UW.$window.height()
-      this.attrs.width  = this.RATIO * UW.$window.width()
+    if ( this.attrs.height > (this.RATIO * UW.$window.height())){
+        this.attrs.height = this.RATIO * UW.$window.height();
+        this.attrs.width = aspect_ratio * this.attrs.height;
     }
+    if ( this.attrs.width > (this.RATIO * UW.$window.width())){
+        this.attrs.width = this.RATIO * UW.$window.width();
+        this.attrs.height = this.attrs.width / aspect_ratio;
+    }
+    //||
+    //      this.image.img.width > UW.$window.width() )
+    //{
+    //  this.attrs.height = this.RATIO * UW.$window.height()
+    //  this.attrs.width  = this.RATIO * UW.$window.width()
+    //}
 
     this.render()
 

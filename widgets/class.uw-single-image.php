@@ -20,7 +20,7 @@ class UW_Widget_Single_Image extends WP_Widget
       add_action('admin_enqueue_scripts', array( __CLASS__, 'scripts') );
   }
 
-  public function scripts()
+  function scripts()
   {
     wp_enqueue_script( 'single-image',  get_bloginfo('template_directory') . '/assets/admin/js/widgets/uw.single-image-widget.js' );
     wp_enqueue_script( 'jquery-ui-autocomplete' );
