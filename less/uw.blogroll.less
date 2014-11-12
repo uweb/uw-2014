@@ -4,9 +4,15 @@
 
 .shortcode-blogroll {
     
+    overflow-y: hidden;
+    margin-top: 40px;
+
     padding: 0;
     list-style: none;
-    li {
+    & > li {
+        &:first-child {
+            margin-top: 0px;
+        }
         margin: 40px 0 50px;
         position: relative;
         .wp-post-image {
@@ -47,34 +53,34 @@
     }
 
 
-    &.mini {
-        h2 {
-            font-size: 18px;
-            font-weight: 600;
-            line-height: 1.4;
-            margin: 10px 0 10px;
-        }        
-        li {
-            margin: 0;
-            &:after {
-                display: block;
-                content: "";
-                width: 40px;
-                height: 1px;
-                background-color: #bbbbbb;
-                bottom: 0px;
-                position: absolute;
-            }
-        }
-        a {
-            
-        }
-        .date {
-            font-size: 17px;
-            color: #818181;
-            margin-top: 3px;
-            font-weight: 500;
-        }
-    }
+    //&.mini {
+    //    h2 {
+    //        font-size: 18px;
+    //        font-weight: 600;
+    //        line-height: 1.4;
+    //        margin: 10px 0 10px;
+    //    }        
+    //    li {
+    //        margin: 0;
+    //        &:after {
+    //            display: block;
+    //            content: "";
+    //            width: 40px;
+    //            height: 1px;
+    //            background-color: #bbbbbb;
+    //            bottom: 0px;
+    //            position: absolute;
+    //        }
+    //    }
+    //    a {
+    //        
+    //    }
+    //    .date {
+    //        font-size: 17px;
+    //        color: #818181;
+    //        margin-top: 3px;
+    //        font-weight: 500;
+    //    }
+    //}
 
 }

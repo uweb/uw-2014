@@ -23,7 +23,7 @@ UW.Vimeo = Backbone.View.extend({
   // The first one is the standard Vimeo iFrame which is used for both single and playlist driven embeds.
   // The second one is the playlist and only shows if a playlist is being called.
   templates : {
-    video    : '<iframe id="test" src="http://player.vimeo.com/video/<%= video %>/?<%= $.param( defaults ) %>"' +
+    video    : '<iframe id="test" src="https://player.vimeo.com/video/<%= video %>/?<%= $.param( defaults ) %>"' +
                ' width=<%= width %> height=<%= height %>'+
                ' frameborder=0 webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
 
@@ -104,7 +104,7 @@ UW.Vimeo = Backbone.View.extend({
   {
     var iframe = this.$el.find('iframe')
       , params = _.last( iframe.attr('src').split('?') )
-      , url = 'http://player.vimeo.com/video/' + $(e.currentTarget).data().id + '/?' +params
+      , url = 'https://player.vimeo.com/video/' + $(e.currentTarget).data().id + '/?' +params
 
     iframe.attr('src', url)
 
@@ -120,7 +120,7 @@ UW.Vimeo.Video = Backbone.Model.extend({
 
   url : function()
   {
-      return 'http://vimeo.com/api/v2/video/' + this.video +'.json'
+      return 'https://vimeo.com/api/v2/video/' + this.video +'.json'
   },
 
   parse : function( data )
@@ -143,7 +143,7 @@ UW.Vimeo.Playlist = Backbone.Collection.extend({
 
     url : function()
     {
-      return 'http://vimeo.com/api/v2/'+ this.username +'/videos.json'
+      return 'https://vimeo.com/api/v2/'+ this.username +'/videos.json'
     },
 
     initialize : function( options )

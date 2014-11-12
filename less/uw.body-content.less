@@ -2,12 +2,24 @@
 
 ul {
 	padding-left: 25px;
+	list-style-position: inside;
 }
 
+// Fixes floated images next to a bulleted list. The bullets weren't indenting properly
+.uw-body-copy {
+	ul {
+		overflow: hidden;
+	}
+}
 // Basic styles 
 
 hr {
 	border-top: 1px solid #EBEBEB;
+	clear: both;
+}
+
+iframe {
+	margin: 40px 0 20px;
 }
 
 .intro {
@@ -16,6 +28,11 @@ hr {
 	font-weight: 400;
 	line-height: 1.5;
 	margin-bottom: 20px;
+}
+
+// Makes heavy
+.uw-body-copy .weight-900 {
+	font-weight: 900;
 }
 
 a.more {
@@ -77,6 +94,49 @@ a.more {
 	}
 }
 
+// Next link in the blog
+
+span.next-page {
+	display: block;
+	margin-top: 50px;
+	a {
+	  padding: 10px 40px 10px 19px;
+	  text-transform: uppercase;
+	  background-color: @ultralightgold;
+	  font-family: @font-family-headline;
+	  font-weight: @headings-font-weight;
+	  color: @darkgray;
+	  display: inline-block;
+	  position: relative;
+	  background-image: none !important;
+	  border-bottom: none;
+	  margin-bottom: 25px;
+	  margin-right: 55px;
+	  z-index: 1;
+	  line-height: 24px;
+	  font-size: 14px;
+	  font-weight: 700;
+	  border-radius:0;
+	  -webkit-border-radius:0;
+	  -moz-border-radius:0;
+	  &:after {
+		background: url(/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg) no-repeat -206px -492px;
+		content: "";
+		position: absolute;
+		right: 17px;
+		top: 12px;
+		bottom: 3px;
+		width: 14px;
+		height: 21px;
+		.rotate(90deg);
+	  }
+	  &:hover {
+	  	 background-color: darken(@ultralightgold, 5%);
+	  }
+	}
+}
+
+
  // (doesn't include sidebar)
 
 .uw-body-copy {
@@ -132,13 +192,13 @@ background: url('assets/images/stripes-dark-tile.png') repeat-x 0 -96px transpar
 	.uw-body {
 		padding: 20px;
 		.uw-site-title {
-			color: #000;
+			color: @purple;
 			font-size: 25px;
-			font-weight: 600;
+			font-weight: 900;
 			margin: -20px -20px 20px -20px;
 			padding: 15px 15px 15px 20px;
 			position: static;
-			background-color: #ddd;
+			box-shadow: 0 1px 2px rgba(0,0,0,.2);
 		}
 		h1 {
 			margin: 10px 80px 20px 0;

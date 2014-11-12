@@ -15,6 +15,8 @@ UW.YouTube.Collection = Backbone.Collection.extend({
 
     setup_for_type : function (youtube_id) {
         this.type = this.$el.data('uw-youtube-type');
+        this.modest = this.$el.data('modest');
+        this.resolution = this.$el.data('resolution');
         if (this.type == 'playlist'){
             this.max_results = 20;
             var max_results_temp = parseInt(this.$el.data('max-results'), 10);
@@ -82,10 +84,21 @@ UW.YouTube.CollectionView = Backbone.View.extend({
     add_iFrame_function: function () {
         window.onYouTubeIframeAPIReady = function() {
             for (var i = 0, length = UW.youtube.length; i < length; i++){
-                var collection = UW.youtube[i];
+                var collection = UW.youtube[i], player_vars = {};
                 //attach the YT.player to the relevant view, each view gets one
+                if (collection.modest) {
+                    player_vars = {
+                        'rel'           : 0,
+                        'controls'      : 0,
+                        'modestbranding': 1,
+                    }
+                }
+               // if (collection.resolution !== 'undefined'){
+               //     player_vars.VQ = collection.resolution;
+               // }
                 collection.view.uwplayer = new YT.Player(collection.$el.attr('id'), {
                     videoId: '',
+                    playerVars: player_vars,
                     events: {
                         //these events will call functions in the relevant view
                         'onReady': collection.view.onReady,

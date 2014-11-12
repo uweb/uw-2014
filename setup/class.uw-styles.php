@@ -17,7 +17,7 @@ class UW_Styles
 
       'google-font-open' => array(
           'id'      => 'google-font-open',
-          'url'     => 'http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700',
+          'url'     => 'https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700',
           'deps'    => array(),
           'version' => '3.6',
           'admin'   => true
@@ -33,7 +33,7 @@ class UW_Styles
       'uw-style' => array (
           'id'      => 'uw-style',
           'url'     => get_bloginfo('stylesheet_url'),
-          'deps'    => array(),
+          'deps'    => array('uw-master'),
           'version' => '3.6',
           'child'   => true
       ),
@@ -112,7 +112,7 @@ class UW_Styles
     return get_bloginfo( 'template_directory' ) != get_bloginfo( 'stylesheet_directory' );
   }
 
-  private function dev_stylesheet()
+  function dev_stylesheet()
   {
     return is_user_logged_in() ? '.dev' : '';
   }

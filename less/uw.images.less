@@ -1,5 +1,10 @@
 // Image Handling
 
+img {
+	max-width: 100%;
+	height: auto;
+}
+
 .alignleft {
 	margin: 20px 50px 50px 0;
 	&.size-large {
@@ -23,8 +28,12 @@
 }
 .alignright {
 	float: right;
-	margin: 20px 20px 20px 60px;
+	margin: 20px 20px 50px 60px;
 }
+.alignnone {
+	margin: 20px 0 50px;
+}
+
 .textwidget {
     .alignleft {
         margin-bottom: 20px;
@@ -36,13 +45,21 @@
 	font-size: 15px;
 	line-height: @line-height-computed / 1.3;
 	margin-top: 15px;
-	span {
-		margin-left: 5px;
-		font-weight: bold;
-		font-style: italic;
-		font-size: 14px;
-	}
 }
+.wp-media-credit  {
+	margin-left: 5px;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 14px;
+}
+
+
+// Image gallery hide caption
+
+.gallery-item .wp-caption-text {
+	display: none;
+}
+
 
 //
 
@@ -121,6 +138,7 @@
 		float: none;
 		margin: 20px 20px 20px 0px;
 		width: 100% !important;
+		height: auto;
 	}
 
 }

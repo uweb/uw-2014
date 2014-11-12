@@ -1,8 +1,11 @@
 .uw-footer {
 	background: url('assets/images/footer.jpg') center bottom;
-	.background-size(cover);
-	padding: 0 0 30px 0;
-	background-color:@purple;
+      .background-size(cover);
+      padding: 0 0 30px 0;
+      background-color:@purple;
+	// background: url('assets/images/footer.jpg') repeat-x center bottom;
+	// padding: 0 0 120px 0;
+	// background-color: #432577;
 	border-top: 7px solid #d1d1d1;
 	text-align: center;
 	position: relative;
@@ -13,6 +16,14 @@
 		text-indent: -9999px;
 		overflow: hidden;
 		margin-top: 50px;
+	}
+	.be-boundless {
+		font-size: 24px;
+		background: url(assets/images/boundless.png) no-repeat center top transparent;
+		display: block;
+		text-indent: -99999px;
+		margin: 10px 0 60px;
+		opacity: .6;
 	}
 	h4 {
 		font-family: "Encode Sans Compressed", sans-serif;
@@ -131,18 +142,18 @@
 
 
 @media only screen and (min-width : 993px) {
-	.uw-footer:after {
-		position: absolute;
-		right: 0;
-		bottom: 50px;
-		content: "";
-		width: 186px;
-		height: 126px;
-		background: url(assets/svg/uw-sprite.svg) no-repeat 0 0 transparent;
-		background-size: 1200px;
-		.footer-links {
-			padding: 0 210px;
-		}
-	}
+//	.uw-footer:after {
+//		position: absolute;
+//		right: 0;
+//		bottom: 50px;
+//		content: "";
+//		width: 186px;
+//		height: 126px;
+//		background: url(assets/svg/uw-sprite.svg) no-repeat 0 0 transparent;
+//		background-size: 1200px;
+//		.footer-links {
+//			padding: 0 210px;
+//		}
+//	}
 }
 

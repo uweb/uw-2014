@@ -82,6 +82,8 @@ class UW_Blogroll extends WP_Widget
     $posts = get_posts( $params );
 
     $params = (object) $params;
+    $mini = $params->mini;
+    $html = '';
 
     foreach ( $posts as $post ) {
 
@@ -97,24 +99,31 @@ class UW_Blogroll extends WP_Widget
 
           //using apply_filters('the_content', $excerpt) causes an infinite loop
           $excerpt = wpautop( $excerpt );
+      }
 
-          if ( $this->is_true( $params->image ) )
-          {
-              $image = get_the_post_thumbnail( $post->ID , 'thumbnail', array( 'style'=>'float:left;padding-right:10px;' ) );
-              $class = ' class="pull-left"';
-          }
+      if ( $this->is_true( $params->image ) )
+      {
+          $image = get_the_post_thumbnail( $post->ID , 'thumbnail' );
+          $class = ' class="pull-left"';
       }
 
       $author = $this->is_true( $params->author ) ? '<p class="author-info">' . get_the_author_meta( 'display_name', $post->post_author ) . '</p>' : '';
+      $author_mini = $this->is_true( $params->author ) ? get_the_author_meta( 'display_name', $post->post_author ) : '';
 
       $date   = get_the_time( get_option( 'date_format' ), $post->ID );
 
-      $html  .= "<li$class><span><{$params->titletag}><a href=\"$link\">{$post->post_title}</a><p class=\"date\">{$date}</p></{$params->titletag}>{$author}{$excerpt}</span></li>";
+      if ($mini){
+        $html .= sprintf("<li><a class='widget-thumbnail' href='%s'>%s</a><a class='widget-link' href='%s'>%s<span><small>%s | %s</small></span></a></li>", $link, $image, $link, $post->post_title, $author_mini, $date);
+      }
+      else {
+        $html  .= "<li$class><span><{$params->titletag}><a href=\"$link\">{$post->post_title}</a><p class=\"date\">{$date}</p></{$params->titletag}>{$author}{$excerpt}</span></li>";
+      }
 
     }
 
-    $miniclass = $params->mini ? 'mini' : '';
-    return "<ul class=\"shortcode-blogroll $miniclass\">$html</ul>";
+    $miniclass = $mini ? '-mini' : '';
+    $html = "<ul class=\"shortcode-blogroll$miniclass\">$html</ul>";
+    return $html;
 
   }
 

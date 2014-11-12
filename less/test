@@ -1,0 +1,185 @@
+.dropdown-arrow-inverse {
+  border-bottom-color: #4b2e83 !important;
+  border-top-color: #4b2e83 !important;
+}
+.assistive-text {
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  z-index: -1;
+}
+#dawgdrops {
+  -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+  box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+  background-color: white;
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+#dawgdrops li {
+  list-style: none;
+  display: inline-block;
+}
+#dawgdrops li li {
+  width: 80%;
+  margin: 0 10%;
+}
+#dawgdrops ul {
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+  list-style: none;
+}
+.dawgdrops-inner {
+  position: relative;
+  padding: 20px 0 5px 0;
+}
+.menu-block {
+  float: left;
+  width: 230px;
+}
+.dawgdrops-item.dawgdrops-item a {
+  font-family: "Encode Sans Compressed", sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  padding: 4px 10px 20px 15px;
+}
+.dawgdrops-item.dawgdrops-item a:focus {
+  color: #b7a57a;
+}
+.dawgdrops-item.dawgdrops-item li a {
+  font-family: "Encode Sans Compressed", sans-serif;
+  text-transform: none;
+  font-weight: 600;
+  padding-bottom: 4px;
+  padding-left: 10px;
+  padding-top: 4px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+}
+.dawgdrops-item.dawgdrops-item li a:hover,
+.dawgdrops-item.dawgdrops-item li a:focus {
+  color: #4b2e83;
+  background-color: #E7E7E7;
+}
+.dawgdrops-item a {
+  color: #4b2e83;
+  -webkit-font-smoothing: antialiased;
+  font-size: 22px;
+  text-transform: uppercase;
+  padding: 24px 10px 19px 15px;
+  display: block;
+  position: relative;
+}
+.dawgdrops-item a.dropdown-toggle {
+  padding-right: 30px;
+}
+.dawgdrops-item a.dropdown-toggle:hover:before,
+.dawgdrops-item a.dropdown-toggle:focus:before {
+  background: url(assets/svg/uw-sprite.svg) no-repeat -203px -490px;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  height: 25px;
+  width: 18px;
+  right: 4px;
+  top: 8px;
+}
+.dawgdrops-item a.dropdown-toggle:before {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  right: 8px;
+  top: 17px;
+  background: url(assets/svg/uw-sprite.svg) no-repeat -353px 0px;
+}
+.dawgdrops-item a:after {
+  content: "";
+  position: absolute;
+  right: -14px;
+  height: 24px;
+  width: 12px;
+  top: 14px;
+  background: url('assets/svg/slash.svg') no-repeat;
+}
+.dawgdrops-item:hover .dawgdrops-menu {
+  display: block;
+}
+.dawgdrops-item:last-child a:after {
+  display: none;
+}
+.dawgdrops-menu {
+  top: 66px;
+  left: 0;
+  position: absolute;
+  display: none;
+  min-width: 250px;
+  border: 0;
+  border-top: 4px solid #4b2e83;
+  padding: 10px 0;
+  margin: -1px 0 0;
+  background: #fff;
+  overflow: hidden;
+  z-index: 1;
+  -webkit-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+}
+.dawgdrops-menu li {
+  float: left;
+  clear: left;
+  border-bottom: thin solid #eee;
+}
+.dawgdrops-menu li a {
+  color: gray;
+  font-size: 17px;
+  margin: 10px 30px 0px 20px;
+  text-align: left;
+  padding: 0 10px;
+}
+.dawgdrops-menu li a:after {
+  background: none;
+}
+.dawgdrops-menu li:first-child {
+  margin-top: 5px;
+}
+.dawgdrops-menu li:last-child {
+  margin-bottom: 10px;
+  border: none;
+}
+/* Small Devices, Tablets */
+@media only screen and (max-width: 767px) {
+  #dawgdrops {
+    display: none;
+  }
+}
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+  .dawgdrops-inner {
+    padding: 20px 0;
+  }
+  .dawgdrops-item.dawgdrops-item:hover .dawgdrops-menu {
+    display: none;
+  }
+  .dawgdrops-item.dawgdrops-item a {
+    padding: 4px 10px 10px 15px;
+  }
+  .dawgdrops-item.dawgdrops-item a.dropdown-toggle {
+    padding-right: 10px;
+  }
+  .dawgdrops-item.dawgdrops-item a:before {
+    display: none;
+  }
+  .dawgdrops-item.dawgdrops-item a:after {
+    top: 13px;
+  }
+}
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  .dawgdrops-item.dawgdrops-item a {
+    font-size: 18px;
+  }
+}

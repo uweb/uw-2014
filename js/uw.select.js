@@ -38,6 +38,8 @@ UW.Select = Backbone.View.extend({
     'keydown li'        : 'openMenuOnKeydown',
     'click li.active'   : 'open',
     'click li.inactive' : 'close',
+    'click .uw-select-arrow'   : 'open',
+    'click .uw-select-arrow.open'   : 'closeWithoutAnimating'
   },
 
   // This is the template that replaces the standard select menu.
@@ -79,12 +81,18 @@ UW.Select = Backbone.View.extend({
     return false
   },
 
+  closeWithoutAnimating : function()
+  {
+    this.$el.removeClass('open')
+    this.$el.children().removeClass('open')
+  },
+
   // Animate the select menu to the proper menu item.
   animate : function()
   {
     this.scroll = this.$target.offset().top - this.$el.find('li').first().offset().top;
     //var current_top = this.$el.position().top;
-    this.$el.animate( { scrollTop : this.scroll }, { queue: false, complete: this.removeOpenClass } )
+    this.$el.children('ul').animate( { scrollTop : this.scroll }, { queue: false, complete: this.removeOpenClass } )
     //this.$el.animate( { top : current_top - (this.$target.offset().top - this.$el.find('li.active').offset().top) }, { queue: false, complete: this.removeOpenClass } )
   },
 
@@ -115,8 +123,9 @@ UW.Select = Backbone.View.extend({
     this.html = _.template( this.template, { lis : this.LIs } )
     this.$el.hide().after( this.html )
     this.$select = this.$el
-    this.setElement( this.$el.next().children('ul') )
+    this.setElement( this.$el.next() )
     this.toggleLIClasses()
+    if ( this.$el.find('li').length < 5) this.$el.children('ul').height('auto')
   },
 
   // Parse the standard select element and gather each option tags' values and text
@@ -143,7 +152,8 @@ UW.Select = Backbone.View.extend({
   addOpenClass : function()
   {
       this.$el.addClass('open');
-      this.$el.scrollTop(this.scroll);
+      this.$el.children().addClass('open');
+      this.$el.children('ul').scrollTop(this.scroll);
   },
 
   removeOpenClass : function( forced )
@@ -152,6 +162,7 @@ UW.Select = Backbone.View.extend({
     if ( this.clicked || forced )
     {
     this.$el.removeClass('open')
+    this.$el.children().removeClass('open')
       this.clicked = false;
     }
   },

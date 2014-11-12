@@ -1,9 +1,47 @@
+#uwsearcharea {
+  -webkit-transform: matrix(1,0,0,1,0,-100);
+     -moz-transform: matrix(1,0,0,1,0,-100);
+      -ms-transform: matrix(1,0,0,1,0,-100);
+       -o-transform: matrix(1,0,0,1,0,-100);
+          transform: matrix(1,0,0,1,0,-100);
+  transition: transform .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  .uw-search-wrapper {
+    -webkit-transform: matrix(1,0,0,1,0,-20);
+       -moz-transform: matrix(1,0,0,1,0,-20);
+        -ms-transform: matrix(1,0,0,1,0,-20);
+         -o-transform: matrix(1,0,0,1,0,-20);
+            transform: matrix(1,0,0,1,0,-20);
+    // transition: top 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    // transition: all 1s;
+    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  &.open
+  {
+    -webkit-transform: matrix(1,0,0,1,0,0);
+       -moz-transform: matrix(1,0,0,1,0,0);
+        -ms-transform: matrix(1,0,0,1,0,0);
+         -o-transform: matrix(1,0,0,1,0,0);
+            transform: matrix(1,0,0,1,0,0);
+
+    .uw-search-wrapper
+    {
+        -webkit-transform: matrix(1,0,0,1,0,0);
+           -moz-transform: matrix(1,0,0,1,0,0);
+            -ms-transform: matrix(1,0,0,1,0,0);
+             -o-transform: matrix(1,0,0,1,0,0);
+                transform: matrix(1,0,0,1,0,0);
+    }
+  }
+  .uw-results
+  {
+    position:relative;
+    top:162px;
+  }
+}
+
 .uw-search-bar-container
 {
-  min-height: 130px;
-  margin-top: -130px;
   background-color: #FFF;
-  transition: margin-top .3s cubic-bezier(0.165, 0.84, 0.44, 1);
 
   .radio.checked,
   .radio.checked .second-icon
@@ -14,26 +52,23 @@
     color: #C7C7C7;
   }
 
+  .container.no-height {
+    position:absolute;
+    width: 100%;
+    padding: 40px 0 50px;
+  }
   .uw-search-wrapper
   {
     position:relative;
     width:890px;
     margin-top: 30px;
-    -webkit-transform: matrix(1,0,0,1,0,-20);
-       -moz-transform: matrix(1,0,0,1,0,-20);
-        -ms-transform: matrix(1,0,0,1,0,-20);
-         -o-transform: matrix(1,0,0,1,0,-20);
-            transform: matrix(1,0,0,1,0,-20);
-    // transition: top 2s cubic-bezier(0.165, 0.84, 0.44, 1);
-    // transition: all 1s;
-    transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
 
   form
   {
 
     float:left;
-    width:620px;
+    width:calc(~"100% - 240px");
     outline: 2px solid #ADADAD;
 
     input
@@ -55,7 +90,7 @@
     float: left;
     display: block;
     margin-left: 40px;
-    margin-top: -30px;
+    margin-top: -10px;
     color: #707070;
     .radio {
       margin-bottom: -5px;   
@@ -85,7 +120,8 @@
 
   .uw-results
   {
-
+    width: 890px;
+    margin: auto;
     .result {
       z-index: 1;
       width: 690px;
@@ -119,12 +155,16 @@
       .telephonenumber {
         background: url('assets/images/search-phone.png') no-repeat 0 6px;
       }
+      .vcard {
+        background: url('assets/images/search-vcard.png') no-repeat 0 6px;
+      }
       &.open {
         h4 {
           color: @purple;
         }
         a.directory-more {
           background-position: -310px -23px;
+          .transition(none);
         }
       }
       &:last-child  {
@@ -178,38 +218,46 @@
 
   }
 
-  &.open
-  {
-    margin-top:0px;
-    padding: 40px 0 50px;
+}
 
-    .uw-search-wrapper
-    {
-        -webkit-transform: matrix(1,0,0,1,0,0);
-           -moz-transform: matrix(1,0,0,1,0,0);
-            -ms-transform: matrix(1,0,0,1,0,0);
-             -o-transform: matrix(1,0,0,1,0,0);
-                transform: matrix(1,0,0,1,0,0);
+body {
+    #uw-container {
+        transition: transform .3s;
     }
-  }
+    &.search-open {
+        #uw-container {
+            -webkit-transform: matrix(1,0,0,1,0,192);
+               -moz-transform: matrix(1,0,0,1,0,192);
+                -ms-transform: matrix(1,0,0,1,0,192);
+                 -o-transform: matrix(1,0,0,1,0,192);
+                    transform: matrix(1,0,0,1,0,192);
+        }
+    }
 }
 
 @media only screen and (min-width : 768px) and (max-width : 991px) { 
-
-  .uw-search-bar-container form {
-    width: 50%;
-    margin-bottom: 40px;
-  }
-
+    
+    #uwsearcharea {
+        .center-block {
+            width: 750px;
+        }
+    }
 }
 
 // Mobile 
 @media only screen and (max-width : 767px) {
 
+  #uwsearcharea {
+    .uw-results{
+        top: 126px;
+    }
+  }
+
   .uw-search-bar-container {
    // margin-top: -176px;
-    &.open {
-      padding: 0 0 10px;
+    padding: 0px;
+    .container.no-height{
+        padding:0px 10px;
     }
     .uw-search-wrapper {
       width: 100%;
@@ -247,5 +295,13 @@
       }
     }
   }
-
+    body.search-open {
+        #uw-container {
+            -webkit-transform: matrix(1,0,0,1,0,136);
+               -moz-transform: matrix(1,0,0,1,0,136);
+                -ms-transform: matrix(1,0,0,1,0,136);
+                 -o-transform: matrix(1,0,0,1,0,136);
+                    transform: matrix(1,0,0,1,0,136);
+        }
+    }
 }

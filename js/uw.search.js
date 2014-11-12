@@ -17,16 +17,15 @@ UW.Search = Backbone.View.extend({
 
   // This is the HTML for the search bar that is preprended to the body tag.
   searchbar : '<div id="uwsearcharea" class="uw-search-bar-container">'+
-               '<div class="container">'+
+               '<div class="container no-height">'+
                   '<div class="center-block uw-search-wrapper">'+
-                    '<form class="uw-search" action="<%= Backbone.history.location.pathname %>">'+
+                    '<form class="uw-search" action="<%= UW.baseUrl %>">'+
                       '<input id="uw-search-bar" type="search" name="s" value="" autocomplete="off" tabindex="-1"/>'+
                     '</form>'+
 
                     '<select id="mobile-search-select" class="visible-xs">' +
                       '<option value="uw" selected>All the UW</option>' +
-                      '<option value="site">Current Site</option>' +
-                      '<option value="directory">People Directory</option>' +
+                      '<option value="site">Current site</option>' +
                     '</select>' +
 
                     '<button class="search" tabindex="-1"/>'+
@@ -39,21 +38,20 @@ UW.Search = Backbone.View.extend({
 
                       '<label class="radio">'+
                         '<input type="radio" name="search" value="site" data-toggle="radio" tabindex="-1">'+
-                        'Current Site'+
+                        'Current site'+
                       '</label>'+
 
-                      '<label class="radio">'+
-                        '<input type="radio" name="search" value="directory" data-toggle="radio" tabindex="-1">'+
-                        'People Directory'+
-                      '</label>'+
-                    '</div>'+
-
-                '<div class="uw-results" style="display:none;">' +
-                   '<p class="more-results">Need more results? Try the <a href="http://www.washington.edu/home/peopledir/" title="Full directory">full directory</a></p>' +
-                '</div>' +
+                    //   '<label class="radio">'+
+                    //     '<input type="radio" name="search" value="directory" data-toggle="radio" tabindex="-1">'+
+                    //     'People Directory'+
+                    //   '</label>'+
+                    // '</div>'+
 
                 '</div>'+
               '</div>'+
+              '<div class="uw-results center-block" style="display:none;">' +
+                 '<p class="more-results" style="display:none;">Need more results? Try the <a href="http://www.washington.edu/directory/" title="Full directory">full directory</a></p>' +
+              '</div>' +
             '</div>',
 
   // The HTML template for a single search result. Only the information that is available will be shown.
@@ -63,8 +61,21 @@ UW.Search = Backbone.View.extend({
               '<div class="information hidden">'+
                 '<p class="pull-left"><% if ( title ) { %><span class="title"><%= title %></span><% } %>'+
                 '<% if ( postaladdress ) { %><span class="postaladdress"><%= postaladdress %></span><% } %></p>'+
-                '<% if ( mail ) { %><span class="mail"><a href="mailto:<%= mail %>" title="Email <%= commonname %>"><%= mail %></a></span><% } %>'+
-                '<% if ( telephonenumber ) { %><span class="telephonenumber"><a href="tel:<%= telephonenumber %>"><%= telephonenumber %></a></span><% } %>'+
+                '<% if ( mail ) { %><span class="mail">'+
+                    '<% _.each( mail, function( email, index ) { %>' +
+                      '<a href="mailto:<%= email %>" title="Email <%= commonname %>"><%= email %></a>'+
+                        '<% if ( index != mail.length ) { %>, <% } %>' +
+                      '<% }) %>'+
+                '</span> <% } %>' +
+
+                '<% if ( telephonenumber ) { %>' +
+                    '<span class="telephonenumber">'+
+                      '<% _.each( telephonenumber, function( telephone, index ) { %>' +
+                        '<a href="tel:<%= telephone %>"><%= telephone %></a>' +
+                        '<% if ( index != telephonenumber.length ) { %>, <% } %>' +
+                      '<% }) %>'+
+                    '</span>'+
+                  '<% } %>'+
               '</div>'+
             '</div>',
 
@@ -81,12 +92,12 @@ UW.Search = Backbone.View.extend({
   events :
   {
     'keydown'                   : 'keyDownDispatch',
-    'click .result .more'       : 'showPersonInformation',
+    'click .result .directory-more'       : 'showPersonInformation',
     'click .result .commonname' : 'showPersonInformation',
     'click label.radio'         : 'toggleSearchFeature',
     'click input:radio'         : 'stopProp',
     'change select'             : 'toggleSearchFeature',
-    'keyup #uw-search-bar'      : 'searchDirectory',
+    // 'keyup #uw-search-bar'      : 'searchDirectory',
     'click .search'             : 'submitForm',
     'submit form'               : 'submitSearch'
   },
@@ -254,14 +265,15 @@ UW.Search = Backbone.View.extend({
   showDirectory : function()
   {
     this.$results.show()
-    this.$more.show()
   },
 
   // Empty the search results.
   empty : function()
   {
     this.$results.empty()
-      .append( this.$more.hide() )
+      .append( this.$more )
+
+    if ( ! $('#uw-search-bar').val() ) this.$more.hide()
   },
 
   // Parse the search results. The LDAP response from the server is first parsed by custom PHP and then
@@ -272,16 +284,25 @@ UW.Search = Backbone.View.extend({
       , result   = this.result
       , $results = this.$results
 
-
     this.empty()
 
-    _.each(data, function( person, index ) {
+    _.each(data.Students, function( person, index ) {
       if ( person.commonname )
       {
         var template = _.template( result, person )
         $results.prepend( template )
       }
     })
+
+    _.each(data['Faculty & Staff'], function( person, index ) {
+      if ( person.commonname )
+      {
+        var template = _.template( result, person )
+        $results.prepend( template )
+      }
+    })
+
+    this.$more.show()
 
   },
 
@@ -302,6 +323,7 @@ UW.Search = Backbone.View.extend({
 UW.Search.DirectoryModel = Backbone.Model.extend({
 
   settings : {
+    limit    : '-1',
     action : 'directory',
     search : ''
   },

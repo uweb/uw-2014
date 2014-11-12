@@ -29,6 +29,11 @@ class UW_Filters
     add_filter('excerpt_more', '__return_false' );
     add_filter('the_excerpt', array($this, 'excerpt_more_override'));
 
+    //remove auto-paragraphs from shortcodes and keep it for content
+    remove_filter( 'the_content', 'wpautop' );
+    add_filter( 'the_content', 'wpautop' , 99);
+    add_filter( 'the_content', 'shortcode_unautop',100 );
+
     // Multisite filters
     if ( is_multisite() )
     {
@@ -113,6 +118,6 @@ class UW_Filters
    // Adds a more link button to the end of the excerpt
   function excerpt_more_override($excerpt)
   {
-    return $excerpt . '<div><a class="uw-btn btn-go btn-sm" href="' . get_permalink() . '">Read more</a></div>';
+    return $excerpt . '<div><a class="more" href="' . get_permalink() . '">Read more</a></div>';
   }
 }

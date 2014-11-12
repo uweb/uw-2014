@@ -7,9 +7,6 @@
 
 class UW_Shortcodes
 {
-    // public static $tile_box;
-    // public static $button;
-
     function __construct()
     {
         $this->includes();
@@ -21,6 +18,7 @@ class UW_Shortcodes
         require_once('class.tile-box-shortcode.php');
         require_once('class.button-shortcode.php');
         require_once('class.youtube-shortcode.php');
+        require_once('class.trumba-shortcode.php');
     }
 
     private function initialize()
@@ -28,5 +26,6 @@ class UW_Shortcodes
         $this->tile_box = new TileBox();
         $this->button   = new UW_Button();
         $this->youtube  = new UW_YouTube();
+        $this->trumba   = new UW_Trumba();
     }
 }
