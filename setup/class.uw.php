@@ -57,7 +57,6 @@ class UW
         $this->Directory         = new UW_Directory;
         $this->Quicklinks        = new UW_QuickLinks;
         $this->Shortcodes        = new UW_Shortcodes;
-        $this->Shortcodes        = new UW_Shortcodes;
         $this->MediaCredit       = new UW_Media_Credit;
         $this->MediaCaption      = new UW_Media_Caption;
         $this->ReplaceMedia      = new UW_Replace_Media;
