@@ -3593,6 +3593,9 @@ address {
   background-color: #9bc343;
 }
 #uw-container #quicklinks ul#little-links li:nth-child(6):before {
+  background-color: #9bc343;
+}
+#uw-container #quicklinks ul#little-links li:nth-child(7):before {
   background: url(assets/svg/uw-sprite.svg) no-repeat 0px -159px;
   height: 20px;
   width: 20px;
@@ -3606,7 +3609,7 @@ address {
   background-clip: padding-box;
   background-size: 700px;
 }
-#uw-container #quicklinks ul#little-links li:nth-child(7):before {
+#uw-container #quicklinks ul#little-links li:nth-child(8):before {
   background: url(assets/svg/uw-sprite.svg) no-repeat -37px -157px;
   height: 20px;
   width: 20px;
@@ -3620,10 +3623,10 @@ address {
   background-clip: padding-box;
   background-size: 690px;
 }
-#uw-container #quicklinks ul#little-links li:nth-child(6) {
+#uw-container #quicklinks ul#little-links li:nth-child(7) {
   margin-top: 30px;
 }
-#uw-container #quicklinks ul#little-links li:nth-child(6):after {
+#uw-container #quicklinks ul#little-links li:nth-child(7):after {
   content: "";
   display: block;
   width: 30px;
@@ -3633,8 +3636,8 @@ address {
   top: -15px;
   left: -26px;
 }
-#uw-container #quicklinks ul#little-links li:nth-child(7),
-#uw-container #quicklinks ul#little-links li:nth-child(6) {
+#uw-container #quicklinks ul#little-links li:nth-child(8),
+#uw-container #quicklinks ul#little-links li:nth-child(7) {
   margin-left: 15px;
   padding-left: 3px;
 }
