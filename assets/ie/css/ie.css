@@ -33,12 +33,12 @@
 #uw-container #quicklinks ul#big-links li span {
 	background-image: url(../img/uw-sprite.png);
 }
-#uw-container.open div#uw-container-inner {
-    margin-right: 270px;
-}
 body.search-open #uw-container {
     margin-top: 192px;
 }
 body.search-open #uwsearcharea .no-height{
     top: 0px;
+}
+#uw-container.open div#uw-container-inner{
+    left: -270px;
 }
