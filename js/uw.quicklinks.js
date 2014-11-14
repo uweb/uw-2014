@@ -130,86 +130,58 @@ UW.QuickLinks.Collection = Backbone.Collection.extend({
     },
 
     defaults : [{
-       "ID": 296,
-       "menu_item_parent": "0",
        "title": "MyUW",
        "url": "http:\/\/myuw.washington.edu",
        "classes": ["icon-myuw"]
    }, {
-       "ID": 297,
-       "menu_item_parent": "0",
        "title": "Calendar",
        "url": "http:\/\/uw.edu\/calendar",
        "classes": ["icon-calendar"]
    }, {
-       "ID": 298,
-       "menu_item_parent": "0",
        "title": "Directories",
        "url": "http:\/\/uw.edu\/directory\/",
        "classes": ["icon-directories"]
    }, {
-       "ID": 299,
-       "menu_item_parent": "0",
        "title": "Libraries",
        "url": "http:\/\/www.lib.washington.edu\/",
        "classes": ["icon-libraries"]
    }, {
-       "ID": 300,
-       "menu_item_parent": "0",
        "title": "Maps",
        "url": "http:\/\/uw.edu\/maps",
        "classes": ["icon-maps"]
    }, {
-       "ID": 301,
-       "menu_item_parent": "0",
        "title": "UW Today",
        "url": "http:\/\/www.uw.edu\/news",
        "classes": ["icon-uwtoday"]
    }, {
-       "ID": 302,
-       "menu_item_parent": "0",
        "title": "Computing\/IT",
        "url": "http:\/\/www.washington.edu\/itconnect\/forstudents.html",
        "classes": false
    }, {
-       "ID": 303,
-       "menu_item_parent": "0",
        "title": "Employee Self Service",
        "url": "http:\/\/f2.washington.edu\/fm\/payroll\/payroll\/ESS",
        "classes": false
    }, {
-       "ID": 304,
-       "menu_item_parent": "0",
        "title": "Husky Card",
        "url": "http:\/\/www.hfs.washington.edu\/huskycard\/",
        "classes": false
    }, {
-       "ID": 313,
-       "menu_item_parent": "0",
        "title": "UW Medicine",
        "url": "http:\/\/www.uwmedicine.org",
        "classes": false
    }, {
-       "ID": 305,
-       "menu_item_parent": "0",
        "title": "UW Bothell",
        "url": "http:\/\/www.bothell.washington.edu\/",
        "classes": false
    }, {
-       "ID": 306,
-       "menu_item_parent": "0",
        "title": "UW Tacoma",
        "url": "http:\/\/www.tacoma.uw.edu\/",
        "classes": false
    }, {
-       "ID": 307,
-       "menu_item_parent": "0",
        "title": "UW Facebook",
        "url": "https:\/\/www.facebook.com\/UofWA",
        "classes": false
    }, {
-       "ID": 308,
-       "menu_item_parent": "0",
        "title": "UW Twitter",
        "url": "https:\/\/twitter.com\/UW",
        "classes": false
