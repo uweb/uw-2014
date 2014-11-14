@@ -301,19 +301,17 @@
 	.uw-thinstrip {
 		ul.uw-thin-links {
 			li {
-				&:nth-child(3),
-				&:nth-child(4),
-				&:nth-child(5),
-				&:nth-child(6) {
-					display: none !important;
-				}
-                &.uw-quicklinks {
-                	button:before {
-						background: none;
-					}
-                	div {
-                    	display: none;
-                	}
+			    display: none;
+			    &.uw-search, &.uw-quicklinks {
+			    	display: block;
+			    }
+	                &.uw-quicklinks {
+	                	button:before {
+							background: none;
+						}
+	                	div {
+	                    	display: none;
+	                	}
 				}
 			}
 		}

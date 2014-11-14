@@ -4927,11 +4927,12 @@ table th[class*="col-"] {
   }
 }
 @media only screen and (max-width: 767px) {
-  .uw-thinstrip ul.uw-thin-links li:nth-child(3),
-  .uw-thinstrip ul.uw-thin-links li:nth-child(4),
-  .uw-thinstrip ul.uw-thin-links li:nth-child(5),
-  .uw-thinstrip ul.uw-thin-links li:nth-child(6) {
-    display: none !important;
+  .uw-thinstrip ul.uw-thin-links li {
+    display: none;
+  }
+  .uw-thinstrip ul.uw-thin-links li.uw-search,
+  .uw-thinstrip ul.uw-thin-links li.uw-quicklinks {
+    display: block;
   }
   .uw-thinstrip ul.uw-thin-links li.uw-quicklinks button:before {
     background: none;
