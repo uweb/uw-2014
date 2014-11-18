@@ -11724,7 +11724,17 @@ UW.Slideshow = Backbone.View.extend({
   }
 
 })
-;UW.YouTube = {};
+;// ### UW Youtube
+
+// This provides the structure and functionality of the UW Youtube player
+// For usage please refer to the [UW Web Youtube Player](http://uw.edu/brand/web/#youtube)
+// It can support a single youtube video or playlist embed
+// options include max results for playlists, modest youtube branding and default resolution 
+
+//       Single: <div class="uw-youtube" data-uw-youtube='youtube_id_here' data-uw-youtube-type='single'></div>
+//       Playlist: <div class="uw-youtube" data-uw-youtube-'youtube_playlist_id_here' data-youtube-type='playlist'></div>
+
+UW.YouTube = {};
 
 //the UW.YouTube.Collection object contains data in models that refer to youtube videos
 //(alone or in a playlist) and has a view that renders the proper player with the data
