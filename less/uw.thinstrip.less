@@ -138,6 +138,10 @@
 					color: #404040;
 					background: url(assets/svg/uw-sprite.svg) no-repeat -451px -235px;
 					overflow: hidden;
+					&:hover svg,
+					&:focus svg {
+						right: 15px;
+					}
 					&:after {
 						display: none;
 					}
@@ -156,6 +160,7 @@
 						position: absolute;
 						right: 11px;
 						top: 16px;
+						.transition(right 0.1s ease);
 					}
 
 				}
@@ -176,6 +181,10 @@
 	}
 }
 .open .uw-thinstrip ul.uw-thin-links li.uw-quicklinks button {
+	&:hover svg,
+	&:focus svg {
+		right: 11px;
+	}
 	svg {
 		top: -37px;
 	}
