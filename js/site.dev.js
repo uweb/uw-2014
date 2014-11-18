@@ -11727,10 +11727,13 @@ UW.Slideshow = Backbone.View.extend({
   // Toggle a slideshow class that will indicate when there are no more slides in that direction.
   toggleClasses : function()
   {
+
+    this.$el.removeClass( this.options.controlclasses.lastNext + ' ' + this.options.controlclasses.lastPrev )
+
     if ( this.current === 0 || this.current === this.numberOfSlides )
       return this.$el.addClass( this.direction === 'out' ? this.options.controlclasses.lastNext : this.options.controlclasses.lastPrev )
 
-    return this.$el.removeClass( this.options.controlclasses.lastNext + ' ' + this.options.controlclasses.lastPrev )
+    return
   },
 
   // Check if the next slide exists. If it does animate. Otherwise, do not animate.
@@ -11747,7 +11750,6 @@ UW.Slideshow = Backbone.View.extend({
   // Set the z-index of the slide based on its index in the DOM.
   zIndex : function( slide )
   {
-    // console.log( slide )
     var $this = $( slide )
     $this.css({ zIndex : -1 * $this.index() + this.numberOfSlides })
   }
