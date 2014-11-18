@@ -50,15 +50,8 @@ UW.Image = Backbone.View.extend({
         this.attrs.width = this.RATIO * UW.$window.width();
         this.attrs.height = this.attrs.width / aspect_ratio;
     }
-    //||
-    //      this.image.img.width > UW.$window.width() )
-    //{
-    //  this.attrs.height = this.RATIO * UW.$window.height()
-    //  this.attrs.width  = this.RATIO * UW.$window.width()
-    //}
 
     this.render()
-
     return false;
   },
 

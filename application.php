@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 
 <?php get_template_part( 'header', 'image' ); ?>
-
 <div class="container uw-body">
 
   <div class="row">

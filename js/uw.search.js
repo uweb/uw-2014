@@ -25,8 +25,7 @@ UW.Search = Backbone.View.extend({
 
                     '<select id="mobile-search-select" class="visible-xs">' +
                       '<option value="uw" selected>All the UW</option>' +
-                      '<option value="site">Current Site</option>' +
-                      '<option value="directory">People Directory</option>' +
+                      '<option value="site">Current site</option>' +
                     '</select>' +
 
                     '<button class="search" tabindex="-1"/>'+
@@ -39,14 +38,14 @@ UW.Search = Backbone.View.extend({
 
                       '<label class="radio">'+
                         '<input type="radio" name="search" value="site" data-toggle="radio" tabindex="-1">'+
-                        'Current Site'+
+                        'Current site'+
                       '</label>'+
 
-                      '<label class="radio">'+
-                        '<input type="radio" name="search" value="directory" data-toggle="radio" tabindex="-1">'+
-                        'People Directory'+
-                      '</label>'+
-                    '</div>'+
+                    //   '<label class="radio">'+
+                    //     '<input type="radio" name="search" value="directory" data-toggle="radio" tabindex="-1">'+
+                    //     'People Directory'+
+                    //   '</label>'+
+                    // '</div>'+
 
                 '</div>'+
               '</div>'+
@@ -98,7 +97,7 @@ UW.Search = Backbone.View.extend({
     'click label.radio'         : 'toggleSearchFeature',
     'click input:radio'         : 'stopProp',
     'change select'             : 'toggleSearchFeature',
-    'keyup #uw-search-bar'      : 'searchDirectory',
+    // 'keyup #uw-search-bar'      : 'searchDirectory',
     'click .search'             : 'submitForm',
     'submit form'               : 'submitSearch'
   },

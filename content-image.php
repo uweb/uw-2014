@@ -4,7 +4,7 @@
 
   <h1 class="entry-title"><?php the_title(); ?></h1>
 
-  <?php the_excerpt(); ?>
+  <?php echo get_the_excerpt(); ?>
 
   <div>
     <a href="<?php echo wp_get_attachment_url(get_the_ID());?>" title="<?php the_title(); ?>" target="_blank" download="<?php the_title() ?>">Download</a>

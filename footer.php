@@ -1,6 +1,6 @@
     <div class="uw-footer">
 
-        <a href="" class="footer-wordmark">University of Washington</a>
+        <a href="http://www.washington.edu" class="footer-wordmark">University of Washington</a>
 
         <a href="http://www.washington.edu/boundless/be-boundless/"><h3 class="be-boundless">Be boundless</h3></a>
 
@@ -26,7 +26,7 @@
                 <li><a href="http://uw.edu/home/siteinfo/form">Contact Us</a></li>
                 <li><a href="http://www.washington.edu/jobs">Jobs</a></li>
                 <li><a href="http://www.washington.edu/safety">Campus Safety</a></li>
-                <li><a href="https://myuw.washington.edu/">My UW</a></li>
+                <li><a href="http://myuw.washington.edu/">My UW</a></li>
                 <li><a href="http://www.washington.edu/admin/rules/wac/rulesindex.html">Rules Docket</a></li>
                 <li><a href="http://www.washington.edu/online/privacy">Privacy</a></li>
                 <li><a href="http://www.washington.edu/online/terms">Terms</a></li>

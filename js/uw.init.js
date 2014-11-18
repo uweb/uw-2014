@@ -26,7 +26,7 @@ else {
 }
 
 UW.sources = {
-  quicklinks : UW.baseUrl + 'wp-admin/admin-ajax.php?action=quicklinks',
+  quicklinks :  'wp-admin/admin-ajax.php?action=quicklinks',
   search     : UW.baseUrl + 'wp-admin/admin-ajax.php'
 }
 
@@ -60,6 +60,9 @@ UW.initialize = function( $ )
 
   // todo: add to separate file
   $('table').addClass('table table-striped')
+  $('pre').addClass('prettyprint')
+
+  if ( window.prettyPrint ) prettyPrint()
 
 }
 

@@ -4,6 +4,8 @@ UW.QuickLinks = Backbone.View.extend({
 
     DELAY : 500,
 
+    settings : {},
+
     // todo: the default list and these elements could be put into the php templates
     container: '#uw-container',
 
@@ -35,24 +37,30 @@ UW.QuickLinks = Backbone.View.extend({
        'click'           : 'animate',
        'touchstart'   : 'animate',
        'keyup'         : 'animate',
-       'blur button' : 'loop',
-       // 'keydown button' : 'testShiftKey'
+       'blur button' : 'loop'
     },
 
-    // testShiftKey : function(e)
-    // {
-    //     console.log(e, e.shiftKey)
-    // },
-
     initialize: function ( options ) {
-        _.bindAll( this, 'render', 'animate', 'accessible', 'loop', 'transitionEnd' );
-        this.links = new UW.QuickLinks.Collection( options )
+        _.bindAll( this, 'render', 'renderDefault', 'animate', 'accessible', 'loop', 'transitionEnd' );
+
+        this.options = _.extend( {}, this.settings , options )
+
+        this.links = new UW.QuickLinks.Collection( this.options )
+
         this.links.on( 'sync', this.render )
+
+        this.links.on( 'error', this.renderDefault )
+    },
+
+    renderDefault : function ()
+    {
+        this.defaultLinks =  this.links.defaults
+        this.render()
     },
 
     render : function(  )
     {
-        this.quicklinks = $ ( _.template( this.template, { links : this.links.toJSON() }) )
+        this.quicklinks = $ ( _.template( this.template, { links : this.defaultLinks ? this.defaultLinks : this.links.toJSON() }) )
         this.$container = $(this.container);
         this.$container.prepend( this.quicklinks )
         this.$el.attr( 'aria-controls', 'quicklinks' ).attr( 'aria-owns', 'quicklinks' )
@@ -64,15 +72,6 @@ UW.QuickLinks = Backbone.View.extend({
         if (this.open && event.target == this.quicklinks[0]) {
             this.accessible();
         }
-    },
-
-    makeDrawer: function () {
-        var $shortcuts = UW.$body.find('a.screen-reader-shortcut').detach();
-        UW.$body.children().not('#wpadminbar').not('script')
-            .wrapAll('<div id="uw-container">')
-            .wrapAll('<div id="uw-container-inner">');
-        this.$container = $(this.container);
-        this.$container.prepend($shortcuts);
     },
 
     animate: function ( e ) {
@@ -129,5 +128,63 @@ UW.QuickLinks.Collection = Backbone.Collection.extend({
         this.url = options.url;
         this.fetch()
     },
+
+    defaults : [{
+       "title": "MyUW",
+       "url": "http:\/\/myuw.washington.edu",
+       "classes": ["icon-myuw"]
+   }, {
+       "title": "Calendar",
+       "url": "http:\/\/uw.edu\/calendar",
+       "classes": ["icon-calendar"]
+   }, {
+       "title": "Directories",
+       "url": "http:\/\/uw.edu\/directory\/",
+       "classes": ["icon-directories"]
+   }, {
+       "title": "Libraries",
+       "url": "http:\/\/www.lib.washington.edu\/",
+       "classes": ["icon-libraries"]
+   }, {
+       "title": "Maps",
+       "url": "http:\/\/uw.edu\/maps",
+       "classes": ["icon-maps"]
+   }, {
+       "title": "UW Today",
+       "url": "http:\/\/www.uw.edu\/news",
+       "classes": ["icon-uwtoday"]
+   }, {
+       "title": "Computing\/IT",
+       "url": "http:\/\/www.washington.edu\/itconnect\/forstudents.html",
+       "classes": false
+   }, {
+       "title": "Employee Self Service",
+       "url": "http:\/\/f2.washington.edu\/fm\/payroll\/payroll\/ESS",
+       "classes": false
+   }, {
+       "title": "Husky Card",
+       "url": "http:\/\/www.hfs.washington.edu\/huskycard\/",
+       "classes": false
+   }, {
+       "title": "UW Medicine",
+       "url": "http:\/\/www.uwmedicine.org",
+       "classes": false
+   }, {
+       "title": "UW Bothell",
+       "url": "http:\/\/www.bothell.washington.edu\/",
+       "classes": false
+   }, {
+       "title": "UW Tacoma",
+       "url": "http:\/\/www.tacoma.uw.edu\/",
+       "classes": false
+   }, {
+       "title": "UW Facebook",
+       "url": "https:\/\/www.facebook.com\/UofWA",
+       "classes": false
+   }, {
+       "title": "UW Twitter",
+       "url": "https:\/\/twitter.com\/UW",
+       "classes": false
+   }]
 
 });
