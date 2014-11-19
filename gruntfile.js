@@ -13,6 +13,8 @@ module.exports = function(grunt) {
           "js/libraries/video.dev.js",
           "js/libraries/imagesloaded.pkgd.js",
           "js/libraries/jetpack.carousel.js",
+          "js/libraries/prettify.js",
+
         ],
         theme : [
           "js/uw.core.js",
@@ -46,7 +48,8 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'js/site.js': ['<%= concat.dist.dest %>']
+          'js/site.js': ['<%= concat.dist.dest %>'],
+          'uw.js': ['<%= concat.dist.dest %>']
         }
       }
     },
@@ -80,7 +83,8 @@ module.exports = function(grunt) {
 		        cleancss: true
 			},
 			files: {
-				'style.css': 'less/style.less'
+				'style.css': 'less/style.less',
+                        'uw.css': 'less/style.less'
 			}
 		},
 		development: {
@@ -88,7 +92,7 @@ module.exports = function(grunt) {
 				'style.dev.css': 'less/style.less'
 			}
 		}
-	},
+    },
     watch: {
       config : {
         files : ['gruntfile.js'],

@@ -4,9 +4,10 @@
 // For usage please refer to the [UW Web Youtube Player](http://uw.edu/brand/web/#youtube)
 // It can support a single youtube video or playlist embed
 // options include max results for playlists, modest youtube branding and default resolution 
+// requires a unique id for each div.uw-youtube even if there is just one
 
-//       Single: <div class="uw-youtube" data-uw-youtube='youtube_id_here' data-uw-youtube-type='single'></div>
-//       Playlist: <div class="uw-youtube" data-uw-youtube-'youtube_playlist_id_here' data-youtube-type='playlist'></div>
+//       Single: <div id='some-unique-id' class="uw-youtube" data-uw-youtube='youtube_id_here' data-uw-youtube-type='single'></div>
+//       Playlist: <div id='some-unique-id' class="uw-youtube" data-uw-youtube='youtube_playlist_id_here' data-uw-youtube-type='playlist'></div>
 
 UW.YouTube = {};
 
