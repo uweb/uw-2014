@@ -11765,7 +11765,7 @@ UW.Slideshow = Backbone.View.extend({
 // requires a unique id for each div.uw-youtube even if there is just one
 
 //       Single: <div id='some-unique-id' class="uw-youtube" data-uw-youtube='youtube_id_here' data-uw-youtube-type='single'></div>
-//       Playlist: <div id='some-unique-id' class="uw-youtube" data-uw-youtube='youtube_playlist_id_here' data-youtube-type='playlist'></div>
+//       Playlist: <div id='some-unique-id' class="uw-youtube" data-uw-youtube='youtube_playlist_id_here' data-uw-youtube-type='playlist'></div>
 
 UW.YouTube = {};
 
