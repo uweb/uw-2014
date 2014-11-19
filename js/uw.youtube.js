@@ -85,13 +85,26 @@ UW.YouTube.CollectionView = Backbone.View.extend({
     // add the youtube iframe api if necessary
     // add the templates
     initialize: function () {
-        _(this).bindAll('onReady', 'onDataReady', 'onStateChange', 'preview_clicked');
+        _(this).bindAll('onReady', 'onDataReady', 'onStateChange', 'preview_clicked', 'resized');
         this.player_ready = false;
         this.data_ready = false;
         this.wrap();
         this.add_iFrame_api();
         if (this.collection.type == 'playlist'){
             this.add_playlist_section();
+            this.scrollbar_visible = false;
+            $(window).resize(this.resized);
+        }
+    },
+
+    // a resize handler for playlists. Handles the edge case of when a container
+    // is resized to be too small for the list and therefor requires a scrollbar
+    // when none is present or vice versa
+    resized: function() {
+        var viewport_new_width = this.$vidSmall.find('.viewport').width();
+        if (viewport_new_width != this.$viewport_width){
+            this.$viewport_width = viewport_new_width;
+            this.showTinyScrollbar();
         }
     },
 
@@ -147,6 +160,7 @@ UW.YouTube.CollectionView = Backbone.View.extend({
         this.$el.append(this.playlist_section);
         this.$vidSmall = this.$el.find('.vidSmall');
         this.$vidContent = this.$el.find('.vidContent');
+        this.scrollbar_visible = false;
     },
 
     // this is the callback for when the youtube iframe api is ready to go
@@ -162,11 +176,27 @@ UW.YouTube.CollectionView = Backbone.View.extend({
     onDataReady: function () {
         this.data_ready = true;
         if (this.collection.type == 'playlist'){
-            this.$vidSmall.find('.scrollbar').show();
-            this.$vidContent.width(this.collection.models.length * 135 + 'px');
-            this.$vidSmall.tinyscrollbar({axis: 'x'});
+            this.$vidContent_width = this.collection.models.length * 135
+            this.$vidContent.width(this.$vidContent_width + 'px');
+            this.$viewport_width = this.$vidSmall.find('.viewport').width();
+            this.showTinyScrollbar();
         }
         this.check_all_ready();
+    },
+
+    // this function shows the tiny scrollbar.
+    showTinyScrollbar: function () {
+        if (this.$vidContent_width > this.$viewport_width){
+            if (!this.scrollbar_visible) {
+                this.$vidSmall.find('.scrollbar').show();
+                this.$vidSmall.tinyscrollbar({axis: 'x'});
+                this.scrollbar_visible = true;
+            }
+        }
+        else if (this.scrollbar_visible){
+            this.$vidSmall.find('.scrollbar').removeAttr('style');
+            this.scrollbar_visible = false;
+        }
     },
 
     // this function checks the state of data/player to prevent a race case.
@@ -208,15 +238,17 @@ UW.YouTube.CollectionView = Backbone.View.extend({
         }
         //If this is a playlist we must also manipulate the placeholder drawer.  Move the selected video's placeholder to the front if we can, otherwise move the listas far as we can without creating whitespace.  Then visually distinguish the selected video's placeholder
         if (this.collection.type == 'playlist') {
-            var $small = $('#' + id);
-            var leftpos = $small.position().left, $viewport = this.$vidSmall.find('.viewport');
             this.$el.find('a.vid-active').removeClass('vid-active');
-            if (this.$vidContent.width() - leftpos < $viewport.width()){
-                leftpos = this.$vidContent.width() - $viewport.width();
-            }
-            this.$vidContent.animate({left: -leftpos}, 500);
-            this.$vidSmall.data('plugin_tinyscrollbar').update(leftpos);
+            var $small = $('#' + id);
             $small.addClass('vid-active');
+            if (this.scrollbar_visible){
+                var leftpos = $small.position().left;
+                if (this.$vidContent_width - leftpos < this.$viewport_width){
+                    leftpos = this.$vidContent_width - this.$viewport_width;
+                }
+                this.$vidContent.animate({left: -leftpos}, 500);
+                this.$vidSmall.data('plugin_tinyscrollbar').update(leftpos);
+            }
         }
     },
 
