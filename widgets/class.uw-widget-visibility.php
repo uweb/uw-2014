@@ -283,7 +283,7 @@ class UW_Widget_Conditions
   //  @return array The modified $widget_area array.
   //
 
-  function sidebars_widgets( $widget_areas )
+  public static function sidebars_widgets( $widget_areas )
   {
     $settings = array();
 
@@ -333,7 +333,7 @@ class UW_Widget_Conditions
   //  @return array Settings to display or bool false to hide.
   //
 
-  function filter_widget( $instance )
+  public static function filter_widget( $instance )
   {
     global $post, $wp_query;
 
