@@ -231,7 +231,10 @@ if ( ! function_exists('get_uw_breadcrumbs') ) :
         if ( uw_is_custom_post_type() )
         {
           $posttype = get_post_type_object( get_post_type() );
-          $html .=  '<li><a href="'  . get_post_type_archive_link( $posttype->query_var ) .'" title="'. $posttype->labels->menu_name .'">'. $posttype->labels->menu_name  . '</a>';
+          $archive_link = get_post_type_archive_link( $posttype->query_var );
+          if (!empty($archive_link)) {
+            $html .=  '<li><a href="'  . $archive_link .'" title="'. $posttype->labels->menu_name .'">'. $posttype->labels->menu_name  . '</a>';
+          }
         }
         $html .=  '<li class="current"><a href="'  . get_permalink( $post->ID ) .'" title="'. esc_attr( get_the_title( $post->ID  ) ) .'">'. get_the_title( $post->ID ) . '</a>';
       }
