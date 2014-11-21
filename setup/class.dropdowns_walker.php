@@ -21,7 +21,7 @@ class UW_Dropdowns_Walker_Menu extends Walker_Nav_Menu
 //    return str_replace('class="dawgdrops-nav"', 'class="dawgdrops-nav" role="menubar"', $html);
 //  }
 
-  function start_lvl( &$output, $depth, $args )
+  function start_lvl( &$output, $depth = 0, $args = array() )
   {
     if ( $depth > 0 ) return;
 		$output .= "<ul role=\"group\" id=\"menu-{$this->CURRENT}\" aria-labelledby='{$this->CURRENT}' aria-expanded=\"false\" class=\"dawgdrops-menu\">\n";
@@ -42,7 +42,7 @@ class UW_Dropdowns_Walker_Menu extends Walker_Nav_Menu
       return parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
   }
 
-  function start_el(&$output, $item, $depth, $args)
+  function start_el(&$output, $item, $depth = 0, $args = array() , $id=0)
   {
     if ( $depth > 1 )
       return;
