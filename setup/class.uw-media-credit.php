@@ -67,11 +67,11 @@ class UW_Media_Credit
   /**
    * Adding the custom fields to the $form_fields array
    */
+  
+
   function image_attachment_fields_to_edit($form_fields, $post)
   {
-    if ( ! in_array( $_REQUEST['context'],
-      array( 'custom-header-blogroll-banner', 'custom-header' ) ) &&
-        wp_attachment_is_image( $post->ID ) )
+    if ( ! in_array('custom-header', get_post_meta($post->ID, "_wp_attachment_context") ) && wp_attachment_is_image( $post->ID ) )
     {
       $form_fields["media_credit"] = array(
         "label" => __("Image Credit"),
