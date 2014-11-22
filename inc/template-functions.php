@@ -235,6 +235,9 @@ if ( ! function_exists('get_uw_breadcrumbs') ) :
           if (!empty($archive_link)) {
             $html .=  '<li><a href="'  . $archive_link .'" title="'. $posttype->labels->menu_name .'">'. $posttype->labels->menu_name  . '</a>';
           }
+          else if (!empty($posttype->rewrite['slug'])){
+            $html .=  '<li><a href="'  . site_url('/' . $posttype->rewrite['slug'] . '/') .'" title="'. $posttype->labels->menu_name .'">'. $posttype->labels->menu_name  . '</a>';
+          }
         }
         $html .=  '<li class="current"><a href="'  . get_permalink( $post->ID ) .'" title="'. esc_attr( get_the_title( $post->ID  ) ) .'">'. get_the_title( $post->ID ) . '</a>';
       }
