@@ -25,7 +25,7 @@ class UW_Widget_Conditions
     }
   }
 
-  function widget_admin_setup()
+  public static function widget_admin_setup()
   {
     wp_enqueue_style( 'widget-conditions', get_template_directory_uri() .  '/assets/admin/css/uw.widget-conditions.css' );
     wp_enqueue_script( 'widget-conditions', get_template_directory_uri() . '/assets/admin/js/uw.widget-conditions.js' , array( 'jquery', 'jquery-ui-core' ), 20140422, true );
@@ -283,7 +283,7 @@ class UW_Widget_Conditions
   //  @return array The modified $widget_area array.
   //
 
-  function sidebars_widgets( $widget_areas )
+  public static function sidebars_widgets( $widget_areas )
   {
     $settings = array();
 
@@ -333,7 +333,7 @@ class UW_Widget_Conditions
   //  @return array Settings to display or bool false to hide.
   //
 
-  function filter_widget( $instance )
+  public static function filter_widget( $instance )
   {
     global $post, $wp_query;
 
