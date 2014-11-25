@@ -5128,7 +5128,7 @@ table th[class*="col-"] {
 .uw-hero-image,
 .no-uw-hero-image {
   height: 170px;
-  background: url('assets/temp/ima.jpg') center bottom;
+  background: url('assets/temp/ima.jpg') center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
