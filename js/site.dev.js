@@ -11849,6 +11849,7 @@ UW.YouTube.CollectionView = Backbone.View.extend({
         this.wrap();
         this.add_iFrame_api();
         if (this.collection.type == 'playlist'){
+            this.$el.addClass('playlist');
             this.add_playlist_section();
             this.scrollbar_visible = false;
             $(window).resize(this.resized);

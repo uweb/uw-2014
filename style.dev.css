@@ -4379,15 +4379,17 @@ table th[class*="col-"] {
   height: 100%;
 }
 .nc-video-player {
-  box-shadow: 1px 1px 7px #E0E0E0;
   clear: both;
   width: 100%;
   background-color: #FFF;
   position: relative;
+}
+.nc-video-player.playlist {
+  box-shadow: 1px 1px 7px #E0E0E0;
   margin-bottom: 35px;
   margin-top: 30px;
 }
-.nc-video-player:after {
+.nc-video-player.playlist:after {
   content: " ";
   position: absolute;
   bottom: 23px;
