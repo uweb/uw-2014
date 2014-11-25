@@ -9,8 +9,9 @@ if (!function_exists('setup_uw_object')){
         $UW = new UW();
         do_action('extend_uw_object', $UW);
     }
-    setup_uw_object();
 }
+
+setup_uw_object();
 
 require( get_template_directory() . '/setup/class.uw-page-attributes-meta-box.php');
 
