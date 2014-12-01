@@ -50,6 +50,8 @@ UW.QuickLinks = Backbone.View.extend({
         this.links.on( 'sync', this.render )
 
         this.links.on( 'error', this.renderDefault )
+
+        this.links.fetch()
     },
 
     renderDefault : function ()
@@ -126,7 +128,6 @@ UW.QuickLinks.Collection = Backbone.Collection.extend({
     initialize: function ( options )
     {
         this.url = options.url;
-        this.fetch()
     },
 
     defaults : [{
