@@ -48,7 +48,7 @@ UW.Alert.Model = Backbone.Model.extend({
     dataType: 'json'
   },
 
-  url : Backbone.history.location.protocol + '//public-api.wordpress.com/rest/v1/sites/uwemergency.wordpress.com/posts/',
+  url :  'https://public-api.wordpress.com/rest/v1/sites/uwemergency.wordpress.com/posts/',
 
   initialize : function()
   {
