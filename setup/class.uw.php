@@ -30,6 +30,7 @@ class UW
         require_once($parent . 'class.mimes.php');
         require_once($parent . 'class.users.php');
         require_once($parent . 'class.dropdowns_walker.php');  // no initialization needed because it extends a WP class
+        require_once($parent . 'class.uw-basic-custom-post.php');  // no initialization needed unless a child theme makes one
         require_once($parent . 'class.uw-quicklinks.php' );
         require_once($parent . 'class.uw-iframes.php');
         require_once($parent . 'class.uw-shortcodes.php' );
