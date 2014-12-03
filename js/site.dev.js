@@ -11098,7 +11098,7 @@ UW.Search = Backbone.View.extend({
   },
 
   // This is the HTML for the search bar that is preprended to the body tag.
-  searchbar : '<div id="uwsearcharea" aria-hidden="true" class="uw-search-bar-container">'+
+  searchbar : 
                '<div class="container no-height">'+
                   '<div class="center-block uw-search-wrapper">'+
                     '<form class="uw-search" action="<%= UW.baseUrl %>">'+
@@ -11134,8 +11134,8 @@ UW.Search = Backbone.View.extend({
               '</div>'+
               '<div class="uw-results center-block" style="display:none;">' +
                  '<p class="more-results" style="display:none;">Need more results? Try the <a href="http://www.washington.edu/directory/" title="Full directory">full directory</a></p>' +
-              '</div>' +
-            '</div>',
+              '</div>',
+            
 
   // The HTML template for a single search result. Only the information that is available will be shown.
   result :  '<div class="result">' +
@@ -11208,8 +11208,8 @@ UW.Search = Backbone.View.extend({
   // since most events take place within that view.
   render : function()
   {
-    UW.$body.prepend( this.$searchbar )
-
+    UW.$body.find('#uwsearcharea').prepend( this.$searchbar );
+    this.$searchbar = UW.$body.find('#uwsearcharea');
     this.$toggle = this.$el;
     this.$toggle.bind( {
         'click': this.toggleSearchBar,
@@ -11235,12 +11235,12 @@ UW.Search = Backbone.View.extend({
         this.$searchbar.find('#uw-search-bar').focus();
         this.$toggle.attr('aria-label', 'close search area');
         this.$toggle.attr('aria-expanded', 'true');
-        this.$searchbar.attr('aria-hidden', 'false');
+        this.$searchbar.attr('aria-hidden', 'false').attr('role','search');
     }
     else {
         this.$toggle.attr('aria-label', 'open search area');
         this.$toggle.attr('aria-expanded', 'false');
-        this.$searchbar.attr('aria-hidden', 'true');
+        this.$searchbar.attr('aria-hidden', 'true').removeAttr('role');
     }
   },
 
