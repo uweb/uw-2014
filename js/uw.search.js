@@ -127,7 +127,7 @@ UW.Search = Backbone.View.extend({
   {
     UW.$body.prepend( this.$searchbar )
 
-    this.$toggle = this.$el.find('button');
+    this.$toggle = this.$el;
     this.$toggle.bind( {
         'click': this.toggleSearchBar,
         'blur': this.toggleBlur
