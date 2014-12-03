@@ -1,11 +1,10 @@
-// .checkbox, .radio{
-//     input {
-//         display: block;
-//         position: absolute;
-//         left: -99999px;
-//         top: -99999px;
-//     }
-// }
+ .checkbox, .radio{
+     input {
+         display: block;
+         position: relative;
+         opacity: 0;
+     }
+ }
 a.screen-reader-shortcut {
         position: absolute;
         left: 6px;
@@ -20,4 +19,10 @@ a.screen-reader-shortcut {
             color: @purple;
             box-shadow: 0 0 2px 2px rgba(0,0,0,.6);
         }
+}
+label.screen-reader {
+    position: absolute;
+    opacity: 0;
+    //opacity hack questionable support in IE8
+    //left: -99999px;
 }

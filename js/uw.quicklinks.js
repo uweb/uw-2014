@@ -37,7 +37,7 @@ UW.QuickLinks = Backbone.View.extend({
        'click'           : 'animate',
        'touchstart'   : 'animate',
        'keyup'         : 'animate',
-       'blur button' : 'loop'
+       'blur' : 'loop'
     },
 
     initialize: function ( options ) {
@@ -99,15 +99,17 @@ UW.QuickLinks = Backbone.View.extend({
     // todo : cache the uw-container-inner and screen-reader
     accessible : function (argument)
     {
-        this.$el.find('button').attr( 'aria-expanded', this.open )
+        this.$el.attr( 'aria-expanded', this.open )
         this.quicklinks.attr('aria-hidden',  ( ! this.open ).toString() )
         if ( this.open ) {
+            this.$el.attr('aria-label', 'Close quick links');
             this.quicklinks.find('a').attr( 'tabindex', 0 ).first().focus()
            $('#uw-container-inner').attr('aria-hidden', true);
            $('.screen-reader-shortcut').attr('aria-hidden', true)
         } else {
+            this.$el.attr('aria-label', 'Open quick links');
             this.quicklinks.find('a').attr( 'tabindex', -1 )
-            this.$el.find('button').focus()
+            this.$el.focus()
            $('#uw-container-inner').attr('aria-hidden', false);
            $('.screen-reader-shortcut').attr('aria-hidden', false);
         }

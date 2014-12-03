@@ -23,10 +23,9 @@
     <body <?php body_class(); ?> >
     <!--<![endif]-->
 
-    <div id="uw-container">
-
-
     <a href='#main_content' class='screen-reader-shortcut' tabindex=1>Skip to main content</a>
+
+    <div id="uw-container">
 
     <div id="uw-container-inner">
 
