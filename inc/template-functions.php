@@ -325,4 +325,15 @@ if ( ! function_exists('uw_is_custom_post_type') ) :
 
 endif;
 
+if ( !function_exists('uw_site_title')):
+ 
+    function uw_site_title()
+    {
+        $classes = 'uw-site-title';
+        if (get_option('overly_long_title')){
+            $classes .= ' long-title';
+        }
+        echo '<a href="' . home_url('/') . '" title="' . esc_attr( get_bloginfo() ) . '"><h2 class="' . $classes . '">' . get_bloginfo() . '</h2></a>';
+    }
 
+endif;
