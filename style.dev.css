@@ -4654,12 +4654,6 @@ table th[class*="col-"] {
 .uw-thinstrip ul.uw-thin-links li:first-child a:after {
   display: none;
 }
-.uw-thinstrip ul.uw-thin-links li:nth-child(3) a {
-  padding-right: 10px;
-}
-.uw-thinstrip ul.uw-thin-links li:nth-child(3) a:after {
-  display: none;
-}
 .uw-thinstrip ul.uw-thin-links li a,
 .uw-thinstrip ul.uw-thin-links li button {
   font-family: "Encode Sans Compressed", sans-serif;
