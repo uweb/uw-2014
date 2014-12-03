@@ -4687,7 +4687,14 @@ table th[class*="col-"] {
 .uw-thinstrip ul.uw-thin-links li button:focus {
   color: #b7a57a;
 }
-.uw-thinstrip ul.uw-thin-links li.uw-search button {
+.uw-thinstrip button {
+  border: none;
+  float: right;
+  font-family: "Encode Sans Compressed", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+}
+.uw-thinstrip button.uw-search {
   text-indent: -99999px;
   position: relative;
   padding-right: 78px;
@@ -4706,23 +4713,35 @@ table th[class*="col-"] {
   margin: 0 15px;
   overflow: hidden;
 }
-.uw-thinstrip ul.uw-thin-links li.uw-search button:hover,
-.uw-thinstrip ul.uw-thin-links li.uw-search button:focus {
+.uw-thinstrip button.uw-search:hover,
+.uw-thinstrip button.uw-search:focus {
   border: 2px solid #b7a57a;
   background-color: #402770;
   -o-transition: all 0.1s linear;
   -webkit-transition: all 0.1s linear;
   transition: all 0.1s linear;
 }
-.uw-thinstrip ul.uw-thin-links li.uw-search button:after {
+.uw-thinstrip button.uw-search:after {
   display: none;
 }
-.uw-thinstrip ul.uw-thin-links li.uw-search button svg {
+.uw-thinstrip button.uw-search svg {
   position: absolute;
   top: 12px;
   left: 11px;
 }
-.uw-thinstrip ul.uw-thin-links li.uw-quicklinks div {
+.uw-thinstrip button.uw-quicklinks {
+  height: 45px;
+  padding-left: 38px;
+  margin-left: -15px;
+  margin-right: 0;
+  padding-right: 54px;
+  position: relative;
+  z-index: 1;
+  color: #404040;
+  background: url(assets/svg/uw-sprite.svg) no-repeat -451px -235px;
+  overflow: hidden;
+}
+.uw-thinstrip button.uw-quicklinks div {
   position: absolute;
   top: -22px;
   right: 0px;
@@ -4730,25 +4749,14 @@ table th[class*="col-"] {
   height: 68px;
   margin: 0px;
 }
-.uw-thinstrip ul.uw-thin-links li.uw-quicklinks button {
-  padding-left: 38px;
-  margin-left: -15px;
-  margin-right: 0;
-  padding-right: 60px;
-  position: relative;
-  z-index: 1;
-  color: #404040;
-  background: url(assets/svg/uw-sprite.svg) no-repeat -451px -235px;
-  overflow: hidden;
-}
-.uw-thinstrip ul.uw-thin-links li.uw-quicklinks button:hover svg,
-.uw-thinstrip ul.uw-thin-links li.uw-quicklinks button:focus svg {
+.uw-thinstrip button.uw-quicklinks:hover svg,
+.uw-thinstrip button.uw-quicklinks:focus svg {
   right: 15px;
 }
-.uw-thinstrip ul.uw-thin-links li.uw-quicklinks button:after {
+.uw-thinstrip button.uw-quicklinks:after {
   display: none;
 }
-.uw-thinstrip ul.uw-thin-links li.uw-quicklinks button svg {
+.uw-thinstrip button.uw-quicklinks svg {
   position: absolute;
   right: 11px;
   top: 16px;
@@ -4756,10 +4764,7 @@ table th[class*="col-"] {
   -webkit-transition: right 0.1s ease;
   transition: right 0.1s ease;
 }
-.uw-thinstrip ul.uw-thin-links li button {
-  border: none;
-}
-.search-open .uw-thinstrip ul.uw-thin-links li.uw-search button svg {
+.search-open .uw-thinstrip button.uw-search svg {
   top: -20px;
   left: 10px;
 }
