@@ -4693,10 +4693,11 @@ table th[class*="col-"] {
   font-family: "Encode Sans Compressed", sans-serif;
   font-size: 17px;
   font-weight: 600;
+  position: relative;
+  z-index: 1;
 }
 .uw-thinstrip button.uw-search {
   text-indent: -99999px;
-  position: relative;
   padding-right: 78px;
   border: 2px solid white;
   background-color: transparent;
@@ -4735,8 +4736,6 @@ table th[class*="col-"] {
   margin-left: -15px;
   margin-right: 0;
   padding-right: 54px;
-  position: relative;
-  z-index: 1;
   color: #404040;
   background: url(assets/svg/uw-sprite.svg) no-repeat -451px -235px;
   overflow: hidden;
@@ -4748,10 +4747,6 @@ table th[class*="col-"] {
   width: 160px;
   height: 68px;
   margin: 0px;
-}
-.uw-thinstrip button.uw-quicklinks:hover svg,
-.uw-thinstrip button.uw-quicklinks:focus svg {
-  right: 15px;
 }
 .uw-thinstrip button.uw-quicklinks:after {
   display: none;
@@ -4822,13 +4817,7 @@ table th[class*="col-"] {
     top: 4px;
     background-size: 397px;
   }
-  .uw-thinstrip ul.uw-thin-links {
-    height: 50px;
-  }
-  .uw-thinstrip ul.uw-thin-links li {
-    float: none;
-  }
-  .uw-thinstrip ul.uw-thin-links li.uw-quicklinks button {
+  .uw-thinstrip button.uw-quicklinks {
     background-position: -484px -247px;
     background-size: 900px;
     text-indent: -99999px;
@@ -4838,43 +4827,32 @@ table th[class*="col-"] {
     right: 0;
     position: absolute;
   }
-  .uw-thinstrip ul.uw-thin-links li.uw-quicklinks button:after {
+  .uw-thinstrip button.uw-quicklinks:after {
     background-position: -253px 4px;
     background-size: 780px;
     top: 11px;
     right: 9px;
   }
-  .uw-thinstrip ul.uw-thin-links li.uw-quicklinks div {
-    width: 150px;
-  }
-  .uw-thinstrip ul.uw-thin-links li.uw-search button {
+  .uw-thinstrip button.uw-search {
     top: 0;
     right: 36px;
     height: 47px;
-    width: 65px;
-    margin-right: 0;
+    width: 47px;
+    margin-right: 10px;
     border: none;
     overflow: hidden;
   }
-  .uw-thinstrip ul.uw-thin-links li.uw-search button:hover {
+  .uw-thinstrip button.uw-search:hover {
     background-color: transparent;
     border: none;
   }
-  .uw-thinstrip ul.uw-thin-links li.uw-search button:hover svg {
-    left: 30px;
-  }
-  .uw-thinstrip ul.uw-thin-links li.uw-search button svg {
+  .uw-thinstrip button.uw-search svg {
     top: 14px;
-    left: 29px;
+    left: 14px;
   }
-  .uw-thinstrip ul.uw-thin-links li.uw-search button:before {
-    position: absolute;
-    top: 1px;
-    right: 6px;
-    content: "";
-    width: 51px;
-    height: 45px;
-    display: block;
+  .search-open .uw-thinstrip button.uw-search svg {
+    top: -17px;
+    left: 14px;
   }
 }
 @media only screen and (max-width: 767px) {
