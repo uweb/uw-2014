@@ -94,12 +94,13 @@
     button{
         border: none;
         float: right;
-        font-family: "Encode Sans Compressed", sans-serif;
+        font-family: @font-family-headline;
         font-size: 17px;
         font-weight: 600;
+	    position: relative;
+        z-index: 1;
         &.uw-search {
             text-indent: -99999px;
-            position: relative;
             padding-right: 78px;
             border: 2px solid white;
             background-color: transparent;
@@ -138,14 +139,12 @@
                 margin-left: -15px;
                 margin-right: 0;
                 padding-right: 54px;
-                position: relative;
-                z-index: 1;
                 color: #404040;
                 background: url(assets/svg/uw-sprite.svg) no-repeat -451px -235px;
                 overflow: hidden;
                 &:hover svg,
                 &:focus svg {
-                    right: 15px;
+                    //right: 15px; currently just looks like a bug
                 }
                 &:after {
                     display: none;
@@ -246,63 +245,52 @@
 			top: 4px;
 			background-size: 397px;
 		}
-		ul.uw-thin-links {
-			height: 50px;
-			li {
-				float: none;
-				&.uw-quicklinks button {
-					background-position: -484px -247px;
-					background-size: 900px;
-					text-indent: -99999px;
-					overflow: hidden;
-					padding: 20px 9px 0 0;
-					top: 0;
-					right: 0;
-					position: absolute;
-					&:after {
-						background-position: -253px 4px;
-						background-size: 780px;
-						top: 11px;
-						right: 9px;
-					}
-				}
-                &.uw-quicklinks {
-                	div {
-                	    width: 150px;
-                	}
-				}
-				&.uw-search button {
-					top: 0;
-					right: 36px;
-					height: 47px;
-					width: 65px;
-					margin-right: 0;
-					border: none;
-					overflow: hidden;
-					&:hover {
-						background-color: transparent;
-						border: none;
-						svg {
-							left: 30px;
-						}
-					}
-					svg {
-						top: 14px;
-						left: 29px;
-					}
-					&:before {
-						position: absolute;
-						top: 1px;
-						right: 6px;
-						content: "";
-						width: 51px;
-						height: 45px;
-						display: block;
-					}
-				}
-			}
-		}
+        button {
+            &.uw-quicklinks {
+                background-position: -484px -247px;
+                background-size: 900px;
+                text-indent: -99999px;
+                overflow: hidden;
+                padding: 20px 9px 0 0;
+                top: 0;
+                right: 0;
+                position: absolute;
+                &:after {
+                    background-position: -253px 4px;
+                    background-size: 780px;
+                    top: 11px;
+                    right: 9px;
+                }
+            }
+            &.uw-search{
+                top: 0;
+                right: 36px;
+                height: 47px;
+                width: 47px;
+                margin-right: 10px;
+                border: none;
+                overflow: hidden;
+                &:hover {
+                    background-color: transparent;
+                    border: none;
+                }
+                svg {
+                    top: 14px;
+                    left: 14px;
+                }
+            }
+        }
 	}
+    .search-open {
+        .uw-thinstrip {
+            button.uw-search {
+                svg {
+                    top: -17px;
+                    left: 14px;
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width : 767px) {
