@@ -24,7 +24,7 @@
     <!--<![endif]-->
 
     <a href='#main_content' class='screen-reader-shortcut' tabindex=1>Skip to main content</a>
-
+    <div id='uwsearcharea' aria-hidden="true" class="uw-search-bar-container"></div>
     <div id="uw-container">
 
     <div id="uw-container-inner">
