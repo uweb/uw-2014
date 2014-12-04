@@ -5121,6 +5121,7 @@ table th[class*="col-"] {
 @media only screen and (min-width: 993px) and (max-width: 1200px) {
   .dawgdrops-item.dawgdrops-item a {
     font-size: 18px;
+    padding-bottom: 23px;
   }
 }
 .uw-hero-image,
@@ -5325,14 +5326,13 @@ iframe {
 }
 a.more {
   position: relative;
-  display: inline-block;
 }
 a.more:after {
   background: url(/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg) no-repeat -206px -492px;
   content: "";
   position: absolute;
-  right: -19px;
-  bottom: 3px;
+  right: -24px;
+  bottom: 0px;
   width: 14px;
   height: 21px;
   -o-transform: rotate(90deg);
