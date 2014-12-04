@@ -8,7 +8,7 @@
 
     <div class="col-md-8 uw-content" role='main'>
 
-      <a href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr( get_bloginfo() ) ?>"><h2 class="uw-site-title"><?php bloginfo(); ?></h2></a>
+      <?php uw_site_title(); ?>
 
       <?php get_template_part( 'breadcrumbs' ); ?>
 

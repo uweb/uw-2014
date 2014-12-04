@@ -209,7 +209,7 @@ span.next-page {
 
 
 /* Small Devices, Tablets */
-@media only screen and (max-width : 768px) {
+@media only screen and (max-width : 767px) {
 	.uw-body {
 		padding: 20px;
 		.uw-site-title {
@@ -226,6 +226,16 @@ span.next-page {
 			font-size: 33px;
 		}
 	}
+}
+
+@media only screen and (min-width : 768px) {
+    .uw-body {
+        .uw-site-title {
+            &.long-title {
+                margin-top: 3px;
+            }
+        }
+    }
 }
 
 // .home .uw-sidebar-menu {

@@ -16,10 +16,11 @@ UW.Search = Backbone.View.extend({
   },
 
   // This is the HTML for the search bar that is preprended to the body tag.
-  searchbar : '<div id="uwsearcharea" class="uw-search-bar-container">'+
+  searchbar : 
                '<div class="container no-height">'+
                   '<div class="center-block uw-search-wrapper">'+
                     '<form class="uw-search" action="<%= UW.baseUrl %>">'+
+                      '<label class="screen-reader" for="uw-search-bar">Enter search text</label>' + 
                       '<input id="uw-search-bar" type="search" name="s" value="" autocomplete="off" tabindex="-1"/>'+
                     '</form>'+
 
@@ -28,7 +29,7 @@ UW.Search = Backbone.View.extend({
                       '<option value="site">Current site</option>' +
                     '</select>' +
 
-                    '<button class="search" tabindex="-1"/>'+
+                    '<input type="submit" value="search" class="search" tabindex="-1"/>'+
 
                     '<div class="labels hidden-xs">'+
                       '<label class="radio">'+
@@ -51,8 +52,8 @@ UW.Search = Backbone.View.extend({
               '</div>'+
               '<div class="uw-results center-block" style="display:none;">' +
                  '<p class="more-results" style="display:none;">Need more results? Try the <a href="http://www.washington.edu/directory/" title="Full directory">full directory</a></p>' +
-              '</div>' +
-            '</div>',
+              '</div>',
+            
 
   // The HTML template for a single search result. Only the information that is available will be shown.
   result :  '<div class="result">' +
@@ -125,9 +126,9 @@ UW.Search = Backbone.View.extend({
   // since most events take place within that view.
   render : function()
   {
-    UW.$body.prepend( this.$searchbar )
-
-    this.$toggle = this.$el.find('button');
+    UW.$body.find('#uwsearcharea').prepend( this.$searchbar );
+    this.$searchbar = UW.$body.find('#uwsearcharea');
+    this.$toggle = this.$el;
     this.$toggle.bind( {
         'click': this.toggleSearchBar,
         'blur': this.toggleBlur
@@ -142,7 +143,7 @@ UW.Search = Backbone.View.extend({
     this.hideDirectory()
     this.$searchbar.toggleClass('open')
     UW.$body.toggleClass( 'search-open' )
-    this.toggleBlur();
+    _.defer(this.toggleBlur);
     return false;
   },
 
@@ -150,6 +151,14 @@ UW.Search = Backbone.View.extend({
   {
     if (this.$searchbar.hasClass('open')) {
         this.$searchbar.find('#uw-search-bar').focus();
+        this.$toggle.attr('aria-label', 'close search area');
+        this.$toggle.attr('aria-expanded', 'true');
+        this.$searchbar.attr('aria-hidden', 'false').attr('role','search');
+    }
+    else {
+        this.$toggle.attr('aria-label', 'open search area');
+        this.$toggle.attr('aria-expanded', 'false');
+        this.$searchbar.attr('aria-hidden', 'true').removeAttr('role');
     }
   },
 
@@ -169,7 +178,8 @@ UW.Search = Backbone.View.extend({
             }
             else if (event.keyCode == 9) {
                 event.preventDefault();
-                this.$toggle.focus();
+                //this.$toggle.focus();
+                this.$searchbar.find('input[type=submit].search').focus();
                 $checked = this.$searchbar.find('input[value=' + this.searchFeature + ']');
                 if (!$checked.parent('label').hasClass('checked')){
                     this.$searchbar.find('label').removeClass('checked');
@@ -191,6 +201,12 @@ UW.Search = Backbone.View.extend({
         else if ($target.is(this.$more.find('a')) && event.keyCode == 9){
             event.preventDefault();
             this.$searchbar.find('input[value=' + this.searchFeature + ']').focus();
+        }
+        else if ($target.is('input[type=submit].search')){
+            if (event.keyCode == 9){
+                event.preventDefault();
+                this.$toggle.focus();
+            }
         }
     }
   },

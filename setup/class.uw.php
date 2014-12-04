@@ -30,6 +30,7 @@ class UW
         require_once($parent . 'class.mimes.php');
         require_once($parent . 'class.users.php');
         require_once($parent . 'class.dropdowns_walker.php');  // no initialization needed because it extends a WP class
+        require_once($parent . 'class.uw-basic-custom-post.php');  // no initialization needed unless a child theme makes one
         require_once($parent . 'class.uw-quicklinks.php' );
         require_once($parent . 'class.uw-iframes.php');
         require_once($parent . 'class.uw-shortcodes.php' );
@@ -40,6 +41,7 @@ class UW
         require_once($parent . 'class.uw-documentation.php' );
         require_once($parent . 'class.uw-enclosure.php' );
         require_once($parent . 'class.uw-carousel.php' );
+        require_once($parent . 'class.uw-settings.php' );
     }
 
     private function initialize()
@@ -64,6 +66,7 @@ class UW
         $this->IFrames           = new UW_Iframes;
         $this->GoogleApps        = new UW_GoogleApps;
         $this->Enclosure         = new UW_Enclosure;
-        $this->Carousel = new UW_Carousel;
+        $this->Carousel          = new UW_Carousel;
+        $this->Settings          = new UW_Settings;
     }
 }

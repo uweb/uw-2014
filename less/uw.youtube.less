@@ -19,21 +19,23 @@
 	 height: 100%;
 }
 .nc-video-player {
-    box-shadow: 1px 1px 7px #E0E0E0;
     clear: both;
     width: 100%;
     background-color: #FFF;
     position: relative;
-    margin-bottom: 35px;
-    margin-top: 30px;
-    &:after {
-    	content: " ";
-    	position: absolute;
-    	bottom: 23px;
-    	right: 2%;
-    	width: 5px;
-    	height: 105px;
-    	background: url("assets/images/youtube-player/video-overflow.png") 0 0 no-repeat;
+    &.playlist {
+        box-shadow: 1px 1px 7px #E0E0E0;
+        margin-bottom: 35px;
+        margin-top: 30px;
+        &:after {
+            content: " ";
+            position: absolute;
+            bottom: 23px;
+            right: 2%;
+            width: 5px;
+            height: 105px;
+            background: url("assets/images/youtube-player/video-overflow.png") 0 0 no-repeat;
+        }
     }
     iframe { 
     	max-width: none !important;
