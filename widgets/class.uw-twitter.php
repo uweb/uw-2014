@@ -153,10 +153,10 @@ class UW_Widget_Twitter extends WP_Widget
       foreach ($tweets as $index => $tweet)
       {
         $hasAuthor = ( count($tweet->entities->user_mentions) > 0 );
-        $retweet   = ( strpos( $tweet->text , 'RT' ) > 0 );
+        $retweet   = ( strpos( $tweet->text , 'RT' ) === 0 );
 
-        $latest[$index]['author'] = $hasAuthor ? $tweet->entities->user_mentions[0]->screen_name :
-                                                 $tweet->user->screen_name;
+        $latest[$index]['author'] = $retweet ? $tweet->entities->user_mentions[0]->screen_name :
+                                                  $tweet->user->screen_name;
 
         if ( $hasAuthor )
         {
