@@ -5957,6 +5957,16 @@ ul.uw-mobile-menu > div ul li.current_page_ancestor ul.children li a {
   padding: 10px 30px 10px 30px;
   border-left: none;
 }
+ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li a:hover,
+ul.uw-mobile-menu li.pagenav ul li.current_page_item ul.children li a:hover,
+ul.uw-sidebar-menu > div ul li.current_page_item ul.children li a:hover,
+ul.uw-mobile-menu > div ul li.current_page_item ul.children li a:hover,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li a:hover,
+ul.uw-mobile-menu li.pagenav ul li.current_page_ancestor ul.children li a:hover,
+ul.uw-sidebar-menu > div ul li.current_page_ancestor ul.children li a:hover,
+ul.uw-mobile-menu > div ul li.current_page_ancestor ul.children li a:hover {
+  background-color: #DDD;
+}
 ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li.current_page_item ul.children li,
 ul.uw-mobile-menu li.pagenav ul li.current_page_item ul.children li.current_page_item ul.children li,
 ul.uw-sidebar-menu > div ul li.current_page_item ul.children li.current_page_item ul.children li,
