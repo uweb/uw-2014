@@ -20,19 +20,45 @@ class UW_Custom_Post {
     //
     //    Allows for addition of an existing custom taxonomy to the custom post type
     
+    public $post_label = 'Post';
+    
     function __construct($args){
-        if(!empty($args['name'])){
-            $this->name = $args['name'];
-            $this->args = $args['args'];
-            if (isset($args['labels'])){
-                $this->args['labels'] = $args['labels'];
-            }
-            add_action('init', array($this, 'register_post'));
+        if (empty($args['name'])){
+            return;
         }
+        $this->name = $args['name'];
+        $this->args = $args['args'];
+        if (isset($args['labels'])){
+            $this->args['labels'] = $args['labels'];
+        }
+        if (isset($args['post_label'])){
+            $this->post_label = $args['post_label'];
+        }
+        else if (!isset($this->args['labels'])){
+            $this->args['labels'] = $this->label_gen();
+        }
+        add_action('init', array($this, 'register_post'));
         if (isset($args['taxonomy'])){
             $this->taxonomy = $args['taxonomy'];
             add_action('init', array($this, 'add_custom_taxonomy'));
         }
+    }
+
+    function label_gen(){
+        return array(
+            'name' => __( $this->post_label . 's' ),
+            'singular_name' => __( $this->post_label ),
+            'all_items' => __( $this->post_label . 's'),
+            'menu_name' => __( $this->post_label . 's'),
+            'add_new' => _x('Add New', $this->post_label ),
+            'add_new_item' => __('Add New ' . $this->post_label ),
+            'edit_item' => __('Edit ' . $this->post_label ),
+            'new_item' => __('New ' . $this->post_label ),
+            'view_item' => __('View ' . $this->post_label ),
+            'search_items' => __('Search ' . $this->post_label . 's' ),
+            'not_found' =>  __('No '. $this->post_label . 's found'),
+            'not_found_in_trash' => __('No '. $this->post_label . 's found in Trash'),
+        );
     }
 
     function register_post() {
