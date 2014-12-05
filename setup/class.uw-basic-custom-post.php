@@ -31,10 +31,10 @@ class UW_Custom_Post {
         if (isset($args['labels'])){
             $this->args['labels'] = $args['labels'];
         }
-        if (isset($args['post_label'])){
-            $this->post_label = $args['post_label'];
-        }
         else if (!isset($this->args['labels'])){
+            if (isset($args['post_label'])){
+                $this->post_label = $args['post_label'];
+            }
             $this->args['labels'] = $this->label_gen();
         }
         add_action('init', array($this, 'register_post'));
