@@ -5,30 +5,30 @@ class UW_Documentation
 
     function __construct()
     {
-        add_action('wp_dashboard_setup', array($this, 'uw_add_documentation_dashboard_widget')); 
+        add_action('wp_dashboard_setup', array($this, 'uw_add_documentation_dashboard_widget'));
     }
 
 
     function uw_add_documentation_dashboard_widget() {
 
         global $wp_meta_boxes;
-      
-        wp_add_dashboard_widget('uw-documentation', 'Documentation and FAQs', array($this, 'uw_documentation_html'));	
+
+        wp_add_dashboard_widget('uw-documentation', 'Documentation and FAQs', array($this, 'uw_documentation_html'));
 
         $wp_meta_boxes['dashboard']['side']['core']['uw-documentation'] =
         $wp_meta_boxes['dashboard']['normal']['core']['uw-documentation'];
         unset($wp_meta_boxes['dashboard']['normal']['core']['uw-documentation']);
-      
+
         remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
         remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
         remove_meta_box( 'dashboard_secondary', 'dashboard', 'side' );
         remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'side' );
         remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
-      
-    } 
+
+    }
 
 
-    function uw_documentation_html() 
+    function uw_documentation_html()
     {
       ?>
 
@@ -47,11 +47,11 @@ class UW_Documentation
         </p>
 
         <p>
-          <?php  echo do_shortcode('[rss url="http://www.washington.edu/marketing/topic/wp-documentation/feed/" number=3 title="Latest Tutorials" heading="h2"]'); ?>
+          <?php  echo do_shortcode('[rss url="http://www.washington.edu/marketing/topic/wp-documentation/feed/" number=3 title="Latest Tutorials" heading="h2" show_image="false" show_date="false" show_more="false"]'); ?>
         </p>
 
         <p>
-          <?php  echo do_shortcode('[rss url="http://www.washington.edu/marketing/topic/wordpress/feed" number=3 title="Web Team Updates" heading="h2"]'); ?>
+          <?php  echo do_shortcode('[rss url="http://www.washington.edu/marketing/topic/wordpress/feed" number=3 title="Web Team Updates" heading="h2" show_image="false" show_date="false"]'); ?>
         </p>
 
         <p>
@@ -60,7 +60,7 @@ class UW_Documentation
         </p>
 
         </div>
-      
+
     <?php
     }
 }

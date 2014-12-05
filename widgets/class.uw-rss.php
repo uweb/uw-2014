@@ -26,7 +26,10 @@ class UW_RSS extends WP_Widget
     'number'  => 5,
     'title'   => null,
     'heading' => 'h3',
-    'span'    => 4
+    'span'    => 4,
+    'show_image'   => true,
+    'show_date'    => true,
+    'show_more'    => true
   );
 
   function __construct()
@@ -156,11 +159,14 @@ class UW_RSS extends WP_Widget
 
           $attr  = esc_attr(strip_tags($title));
 
-          $image = ( $enclosure->link ) ?
+          $image = ( $enclosure->link && $show_image !== 'false' ) ?
              "<a class='widget-thumbnail' href='$link' title='$attr'><img src='$src' title='$attr' /></a>" : '';
 
-          $date = $item->get_date();
-          $date = human_time_diff( strtotime( $date ) ) . ' ago';
+          if ( $show_date !== 'false')
+          {
+            $date = $item->get_date();
+            $date = human_time_diff( strtotime( $date ) ) . ' ago';
+          }
 
           $title = "<a class='widget-link' href='$link' title='$attr'>$attr<span>$date</span></a>";
 
@@ -169,7 +175,9 @@ class UW_RSS extends WP_Widget
         }
 
         $content .= '</ul>';
-        $content .= "<a class=\"widget-more more\" href=\"$url\">More</a>";
+
+        if ( $show_more !== 'false' )
+          $content .= "<a class=\"widget-more more\" href=\"$url\">More</a>";
       }
 
       return $content;
