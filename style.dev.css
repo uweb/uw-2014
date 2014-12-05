@@ -2933,160 +2933,6 @@ td.visible-print {
   font-weight: 900;
   font-style: normal;
 }
-@font-face {
-  font-family: "Flat-UI-Icons";
-  src: url('assets/icons/flat-ui-icons-regular.eot');
-  src: url('assets/icons/flat-ui-icons-regular.eot?#iefix') format('embedded-opentype'), url('assets/icons/flat-ui-icons-regular.woff') format('woff'), url('assets/icons/flat-ui-icons-regular.ttf') format('truetype'), url('assets/icons/flat-ui-icons-regular.svg#flat-ui-icons-regular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-/* Use the following CSS code if you want to use data attributes for inserting your icons */
-[data-icon]:before {
-  font-family: 'Flat-UI-Icons';
-  content: attr(data-icon);
-  speak: none;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-/* Use the following CSS code if you want to have a class per icon */
-/*
-Instead of a list of all class selectors,
-you can use the generic selector below, but it's slower:
-[class*="fui-"] {
-*/
-.fui-arrow-right,
-.fui-arrow-left,
-.fui-cmd,
-.fui-check-inverted,
-.fui-heart,
-.fui-location,
-.fui-plus,
-.fui-check,
-.fui-cross,
-.fui-list,
-.fui-new,
-.fui-video,
-.fui-photo,
-.fui-volume,
-.fui-time,
-.fui-eye,
-.fui-chat,
-.fui-search,
-.fui-user,
-.fui-mail,
-.fui-lock,
-.fui-gear,
-.fui-radio-unchecked,
-.fui-radio-checked,
-.fui-checkbox-unchecked,
-.fui-checkbox-checked,
-.fui-calendar-solid,
-.fui-pause,
-.fui-play,
-.fui-check-inverted-2 {
-  display: inline-block;
-  font-family: 'Flat-UI-Icons';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.fui-arrow-right:before {
-  content: "\e02c";
-}
-.fui-arrow-left:before {
-  content: "\e02d";
-}
-.fui-cmd:before {
-  content: "\e02f";
-}
-.fui-check-inverted:before {
-  content: "\e006";
-}
-.fui-heart:before {
-  content: "\e007";
-}
-.fui-location:before {
-  content: "\e008";
-}
-.fui-plus:before {
-  content: "\e009";
-}
-.fui-check:before {
-  content: "\e00a";
-}
-.fui-cross:before {
-  content: "\e00b";
-}
-.fui-list:before {
-  content: "\e00c";
-}
-.fui-new:before {
-  content: "\e00d";
-}
-.fui-video:before {
-  content: "\e00e";
-}
-.fui-photo:before {
-  content: "\e00f";
-}
-.fui-volume:before {
-  content: "\e010";
-}
-.fui-time:before {
-  content: "\e011";
-}
-.fui-eye:before {
-  content: "\e012";
-}
-.fui-chat:before {
-  content: "\e013";
-}
-.fui-search:before {
-  content: "\e01c";
-}
-.fui-user:before {
-  content: "\e01d";
-}
-.fui-mail:before {
-  content: "\e01e";
-}
-.fui-lock:before {
-  content: "\e01f";
-}
-.fui-gear:before {
-  content: "\e024";
-}
-.fui-radio-unchecked:before {
-  content: "\e02b";
-}
-.fui-radio-checked:before {
-  content: "\e032";
-}
-.fui-checkbox-unchecked:before {
-  content: "\e033";
-}
-.fui-checkbox-checked:before {
-  content: "\e034";
-}
-.fui-calendar-solid:before {
-  content: "\e022";
-}
-.fui-pause:before {
-  content: "\e03b";
-}
-.fui-play:before {
-  content: "\e03c";
-}
-.fui-check-inverted-2:before {
-  content: "\e000";
-}
 .dropdown-arrow-inverse {
   border-bottom-color: #4b2e83 !important;
   border-top-color: #4b2e83 !important;
@@ -5100,6 +4946,7 @@ table th[class*="col-"] {
 @media only screen and (min-width: 993px) and (max-width: 1200px) {
   .dawgdrops-item.dawgdrops-item a {
     font-size: 18px;
+    padding-bottom: 23px;
   }
 }
 .uw-hero-image,
@@ -5304,14 +5151,13 @@ iframe {
 }
 a.more {
   position: relative;
-  display: inline-block;
 }
 a.more:after {
   background: url(/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg) no-repeat -206px -492px;
   content: "";
   position: absolute;
-  right: -19px;
-  bottom: 3px;
+  right: -24px;
+  bottom: 0px;
   width: 14px;
   height: 21px;
   -o-transform: rotate(90deg);
@@ -5347,11 +5193,12 @@ a.more:after {
 }
 .uw-body .uw-site-title {
   position: absolute;
-  top: -155px;
+  top: -150px;
   left: 11px;
   color: #fff;
   font-family: "Encode Sans Compressed", sans-serif;
   font-size: 45px;
+  font-size: 50px;
   font-weight: 900;
   -webkit-font-smoothing: antialiased;
 }
@@ -5525,6 +5372,28 @@ span.next-page a:hover {
   .uw-body-copy ul {
     overflow: hidden;
   }
+}
+.fui-radio-unchecked:before,
+.fui-radio-checked:before {
+  background: url(assets/svg/uw-sprite.svg) no-repeat 0 0 rgba(0, 0, 0, 0);
+  content: "";
+  width: 22px;
+  height: 22px;
+  top: 2px;
+  left: 0;
+  position: absolute;
+}
+.fui-radio-unchecked:before {
+  background-position: -380px -25px;
+}
+.fui-radio-checked:before {
+  background-position: -404px -25px;
+}
+.checked .fui-radio-unchecked:before {
+  background-position: -379px -25px;
+}
+.checked .fui-radio-checked:before {
+  background-position: -404px 0px;
 }
 #uwsearcharea {
   -webkit-transform: matrix(1, 0, 0, 1, 0, -100);
@@ -5957,6 +5826,16 @@ ul.uw-mobile-menu > div ul li.current_page_ancestor ul.children li a {
   padding: 10px 30px 10px 30px;
   border-left: none;
 }
+ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li a:hover,
+ul.uw-mobile-menu li.pagenav ul li.current_page_item ul.children li a:hover,
+ul.uw-sidebar-menu > div ul li.current_page_item ul.children li a:hover,
+ul.uw-mobile-menu > div ul li.current_page_item ul.children li a:hover,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li a:hover,
+ul.uw-mobile-menu li.pagenav ul li.current_page_ancestor ul.children li a:hover,
+ul.uw-sidebar-menu > div ul li.current_page_ancestor ul.children li a:hover,
+ul.uw-mobile-menu > div ul li.current_page_ancestor ul.children li a:hover {
+  background-color: #DDD;
+}
 ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li.current_page_item ul.children li,
 ul.uw-mobile-menu li.pagenav ul li.current_page_item ul.children li.current_page_item ul.children li,
 ul.uw-sidebar-menu > div ul li.current_page_item ul.children li.current_page_item ul.children li,
@@ -6176,6 +6055,12 @@ img {
 }
 .gallery-item .wp-caption-text {
   display: none;
+}
+.attachment .uw-image-content {
+  text-align: center;
+}
+.attachment .uw-image-content img {
+  padding: 90px 0 50px 0;
 }
 @media only screen and (max-width: 1400px) {
   .alignleft {
