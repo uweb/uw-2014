@@ -5131,7 +5131,6 @@ table th[class*="col-"] {
 }
 ul {
   padding-left: 25px;
-  list-style-position: inside;
 }
 hr {
   border-top: 1px solid #EBEBEB;
