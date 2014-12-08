@@ -7964,8 +7964,12 @@ pre.prettyprint ol.linenums li {
   #uwsearcharea,
   .uw-breadcrumbs,
   .uw-hero-image:after,
-  .uw-hero-image:before {
+  .uw-hero-image:before,
+  .uw-news-image {
     display: none;
+  }
+  .info-box {
+    margin-left: 0;
   }
   * {
     text-shadow: none !important;
