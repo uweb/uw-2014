@@ -11484,7 +11484,7 @@ UW.QuickLinks = Backbone.View.extend({
     },
 
     initialize: function ( options ) {
-        _.bindAll( this, 'render', 'renderDefault', 'animate', 'accessible', 'loop', 'transitionEnd' );
+        _.bindAll( this, 'inner_keydown', 'render', 'renderDefault', 'animate', 'accessible', 'loop', 'transitionEnd' );
 
         this.options = _.extend( {}, this.settings , options )
 
@@ -11509,6 +11509,7 @@ UW.QuickLinks = Backbone.View.extend({
         this.$container = $(this.container);
         this.$container.prepend( this.quicklinks )
         this.$el.attr( 'aria-controls', 'quicklinks' ).attr( 'aria-owns', 'quicklinks' )
+        UW.$body.on( 'keydown', '#quicklinks a:first', this.inner_keydown )
         UW.$body.on( 'keyup', '#quicklinks a', this.animate )
         this.quicklinks.on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', this.transitionEnd);
     },
@@ -11516,6 +11517,14 @@ UW.QuickLinks = Backbone.View.extend({
     transitionEnd: function (event) {
         if (this.open && event.target == this.quicklinks[0]) {
             this.accessible();
+        }
+    },
+
+    inner_keydown: function (e) {
+        //may need event.prevent_default() here if screenreaders aren't acting right
+        if ( e.keyCode == 9 && e.shiftKey) {
+            this.$el.focus();
+            return false;
         }
     },
 
@@ -11559,7 +11568,9 @@ UW.QuickLinks = Backbone.View.extend({
     },
 
     loop : function (event) {
-        if( this.open ) this.quicklinks.find('li a').first().focus();
+        if( this.open ) {
+            this.quicklinks.find('li a').first().focus();
+        }
     }
 
 });
