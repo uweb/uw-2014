@@ -4599,6 +4599,10 @@ table th[class*="col-"] {
   -webkit-transition: right 0.1s ease;
   transition: right 0.1s ease;
 }
+.uw-thinstrip button.uw-quicklinks:focus {
+  color: white;
+  text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+}
 .search-open .uw-thinstrip button.uw-search svg {
   top: -20px;
   left: 10px;
