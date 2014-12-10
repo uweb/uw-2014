@@ -72,8 +72,11 @@ UW.Dropdowns = Backbone.View.extend({
   // todo: tidy up the math / variables
   positionSubmenu : function( el )
   {
-    var $el = $(el.currentTarget)
-      , position = $el.position()
+    var $el = $(el.currentTarget);
+    if ($el.is('a')){
+        $el = $el.parent('li');
+    }
+    var position = $el.position()
       , menublock = $el.find('.menu-block')
       , shift = ( this.menuBlockWidth * ( menublock.length ) ) + position.left
       , left = shift > this.menuWidth ? position.left - ( shift - this.menuWidth ) : position.left
@@ -99,6 +102,11 @@ UW.Dropdowns = Backbone.View.extend({
           .find('a')
             .eq(0)
             .focus()
+
+        //can avoid doublechecking, but mouseenter doesn't, so be consistent
+        //if (this.currentSubMenu.attr('style') !== undefined) {
+        this.positionSubmenu(e);
+        //}
 
         return false
 
