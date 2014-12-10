@@ -156,7 +156,7 @@ class UW_Top_Posts extends WP_Widget
   {
     foreach ( $results as $post )
     {
-      if ( 'post' === get_post_type( $post['post_id'] ) )
+      if ( 'post' === get_post_type( $post['post_id'] ) && $post['post_id'] > 0 )
         $popular[] = $post;
     }
     return $this->convertToObject( $popular );

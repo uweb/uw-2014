@@ -4692,6 +4692,7 @@ table th[class*="col-"] {
     margin-right: 10px;
     border: none;
     overflow: hidden;
+    position: absolute;
   }
   .uw-thinstrip button.uw-search:hover {
     background-color: transparent;
@@ -4912,7 +4913,7 @@ table th[class*="col-"] {
   border-bottom: thin solid #eee;
 }
 .dawgdrops-menu li a {
-  color: gray;
+  color: #707070;
   font-size: 17px;
   margin: 10px 30px 0px 20px;
   text-align: left;
@@ -5142,7 +5143,6 @@ table th[class*="col-"] {
 }
 ul {
   padding-left: 25px;
-  list-style-position: inside;
 }
 hr {
   border-top: 1px solid #EBEBEB;
@@ -7981,8 +7981,12 @@ pre.prettyprint ol.linenums li {
   #uwsearcharea,
   .uw-breadcrumbs,
   .uw-hero-image:after,
-  .uw-hero-image:before {
+  .uw-hero-image:before,
+  .uw-news-image {
     display: none;
+  }
+  .info-box {
+    margin-left: 0;
   }
   * {
     text-shadow: none !important;
