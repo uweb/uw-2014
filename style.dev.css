@@ -4486,6 +4486,13 @@ table th[class*="col-"] {
   height: 24px;
   background: url(assets/svg/uw-sprite.svg) no-repeat 0 -431px transparent;
 }
+.uw-thinstrip span {
+  float: right;
+}
+.uw-thinstrip nav {
+  display: inline-block;
+  vertical-align: top;
+}
 .uw-thinstrip ul.uw-thin-links {
   margin: 0;
   position: relative;
@@ -4494,10 +4501,10 @@ table th[class*="col-"] {
   padding: 0;
 }
 .uw-thinstrip ul.uw-thin-links li {
-  float: right;
+  float: left;
   list-style: none;
 }
-.uw-thinstrip ul.uw-thin-links li:first-child a:after {
+.uw-thinstrip ul.uw-thin-links li:last-child a:after {
   display: none;
 }
 .uw-thinstrip ul.uw-thin-links li a,
@@ -4529,7 +4536,8 @@ table th[class*="col-"] {
 }
 .uw-thinstrip button {
   border: none;
-  float: right;
+  display: inline-block;
+  vertical-align: top;
   font-family: "Encode Sans Compressed", sans-serif;
   font-size: 17px;
   font-weight: 600;
@@ -4548,7 +4556,6 @@ table th[class*="col-"] {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   width: 45px;
-  display: block;
   padding: 0;
   height: 45px;
   margin: 0 15px;
@@ -4716,16 +4723,18 @@ table th[class*="col-"] {
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .uw-thinstrip {
-    margin-bottom: 50px;
-  }
-  .uw-thinstrip .uw-patch {
-    top: -90px;
+    height: 140px;
   }
   .uw-thinstrip .uw-wordmark {
-    top: -60px;
+    z-index: 2;
   }
-  .uw-thinstrip ul.uw-thin-links li {
-    float: none;
+  .uw-thinstrip span {
+    position: relative;
+  }
+  .uw-thinstrip span nav#search-quicklinks {
+    position: absolute;
+    top: 0px;
+    right: 0px;
   }
   .uw-thinstrip ul.uw-thin-links:before {
     position: absolute;
@@ -4812,7 +4821,7 @@ table th[class*="col-"] {
 }
 .dawgdrops-item.dawgdrops-item a:focus,
 .dawgdrops-item.dawgdrops-item a:hover {
-  color: #b7a57a;
+  color: #85754d;
 }
 .dawgdrops-item.dawgdrops-item li a {
   font-family: "Encode Sans Compressed", sans-serif;
@@ -4845,8 +4854,7 @@ table th[class*="col-"] {
 .dawgdrops-item a.dropdown-toggle {
   padding-right: 30px;
 }
-.dawgdrops-item a.dropdown-toggle:hover:before,
-.dawgdrops-item a.dropdown-toggle:focus:before {
+.dawgdrops-item a.dropdown-toggle:hover:before {
   background: url(assets/svg/uw-sprite.svg) no-repeat -203px -490px;
   -o-transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
