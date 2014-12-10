@@ -7565,6 +7565,11 @@ label.screen-reader {
   position: absolute;
   opacity: 0;
 }
+.offscreen {
+  position: absolute;
+  font-size: 1px;
+  left: -9999;
+}
 /*==========  Non-Mobile First Method  ==========*/
 /* Large Devices, Wide Screens */
 /* Medium Devices, Desktops */
