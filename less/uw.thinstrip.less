@@ -43,6 +43,15 @@
 		background: url(assets/svg/uw-sprite.svg) no-repeat 0 -431px transparent;
 	}
 
+    span {
+        float: right;
+    }
+
+    nav {
+        display: inline-block;
+        vertical-align: top;
+    }
+
 	// Audience
 
 	ul.uw-thin-links {
@@ -53,9 +62,9 @@
 		padding: 0;
 
 		li {
-			float: right;
+			float: left;
 			list-style: none;
-			&:first-child a:after {
+			&:last-child a:after {
 				display: none;
 			}
 			a, button {
@@ -85,7 +94,8 @@
     }
     button{
         border: none;
-        float: right;
+        display: inline-block;
+        vertical-align: top;
         font-family: @font-family-headline;
         font-size: 17px;
         font-weight: 600;
@@ -98,7 +108,6 @@
             background-color: transparent;
             .border-radius(100%);
             width: 45px;
-            display: block;
             padding: 0;
             height: 45px;
             margin: 0 15px;
@@ -312,16 +321,25 @@
 }
 @media only screen and (min-width : 768px) and (max-width : 991px) {
 	.uw-thinstrip {
-		margin-bottom: 50px;
+		height: 140px;
 		.uw-patch {
-			top: -90px;
+			//top: -90px;
 		}
 		.uw-wordmark {
-			top: -60px;
+			//top: -60px;
+            z-index: 2;
 		}
+        span {
+            position: relative;
+            nav#search-quicklinks {
+                position:absolute;
+                top:0px;
+                right:0px;
+            }
+        }
 		ul.uw-thin-links {
 			li {
-				float: none;
+				//float: none;
 			}
 			&:before {
 				position: absolute;
