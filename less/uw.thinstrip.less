@@ -143,9 +143,15 @@
                 color: #404040;
                 background: url(assets/svg/uw-sprite.svg) no-repeat -451px -235px;
                 overflow: hidden;
-                &:hover svg,
-                &:focus svg {
-                    //right: 15px; currently just looks like a bug
+                &:hover,
+                &:focus {                	
+                	color: #FFF;
+					text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.54);
+					outline: none;
+					.transition(all 0.2s ease);
+                    svg {
+                    	right: 15px;
+                    }
                 }
                 &:after {
                     display: none;
@@ -165,16 +171,12 @@
                     position: absolute;
                     right: 11px;
                     top: 16px;
-                    .transition(right 0.1s ease);
-                }
-                &:focus {
-                    color: white;
-                    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+                    .transition(right 0.2s ease);
                 }
 
             }
         }
-    }
+    }		
     // Active state of search button
 
     .search-open .uw-thinstrip button.uw-search {

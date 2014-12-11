@@ -4408,15 +4408,19 @@ table th[class*="col-"] {
 /*
  *  All styles for Blogroll shortcode
  */
+.uw-body-copy ul.shortcode-blogroll {
+  overflow: visible;
+}
 .shortcode-blogroll {
-  overflow-y: hidden;
   margin-top: 40px;
   padding: 0;
   list-style: none;
 }
 .shortcode-blogroll > li {
-  margin: 40px 0 50px;
+  margin: 20px 0 0;
   position: relative;
+  overflow: hidden;
+  padding-bottom: 20px;
 }
 .shortcode-blogroll > li:first-child {
   margin-top: 0px;
@@ -4440,11 +4444,14 @@ table th[class*="col-"] {
 .shortcode-blogroll > li:after {
   display: block;
   content: "";
-  width: 150px;
+  width: 80px;
   height: 1px;
-  background-color: #bbbbbb;
-  bottom: -24px;
+  background-color: #BBB;
+  bottom: 0;
   position: absolute;
+}
+.shortcode-blogroll > li:last-child:after {
+  display: none;
 }
 .shortcode-blogroll h2 {
   margin: 20px 0 0px;
@@ -4595,6 +4602,19 @@ table th[class*="col-"] {
   height: 68px;
   margin: 0px;
 }
+.uw-thinstrip button.uw-quicklinks:hover,
+.uw-thinstrip button.uw-quicklinks:focus {
+  color: #FFF;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.54);
+  outline: none;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.uw-thinstrip button.uw-quicklinks:hover svg,
+.uw-thinstrip button.uw-quicklinks:focus svg {
+  right: 15px;
+}
 .uw-thinstrip button.uw-quicklinks:after {
   display: none;
 }
@@ -4602,13 +4622,9 @@ table th[class*="col-"] {
   position: absolute;
   right: 11px;
   top: 16px;
-  -o-transition: right 0.1s ease;
-  -webkit-transition: right 0.1s ease;
-  transition: right 0.1s ease;
-}
-.uw-thinstrip button.uw-quicklinks:focus {
-  color: white;
-  text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+  -o-transition: right 0.2s ease;
+  -webkit-transition: right 0.2s ease;
+  transition: right 0.2s ease;
 }
 .search-open .uw-thinstrip button.uw-search svg {
   top: -20px;
