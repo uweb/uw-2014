@@ -4486,7 +4486,7 @@ table th[class*="col-"] {
   height: 24px;
   background: url(assets/svg/uw-sprite.svg) no-repeat 0 -431px transparent;
 }
-.uw-thinstrip span {
+.uw-thinstrip div.align-right {
   float: right;
 }
 .uw-thinstrip nav {
@@ -4729,10 +4729,10 @@ table th[class*="col-"] {
   .uw-thinstrip .uw-wordmark {
     z-index: 2;
   }
-  .uw-thinstrip span {
+  .uw-thinstrip div.align-right {
     position: relative;
   }
-  .uw-thinstrip span nav#search-quicklinks {
+  .uw-thinstrip div.align-right nav#search-quicklinks {
     position: absolute;
     top: 0px;
     right: 0px;
