@@ -4493,7 +4493,7 @@ table th[class*="col-"] {
   height: 24px;
   background: url(assets/svg/uw-sprite.svg) no-repeat 0 -431px transparent;
 }
-.uw-thinstrip span {
+.uw-thinstrip div.align-right {
   float: right;
 }
 .uw-thinstrip nav {
@@ -4745,10 +4745,10 @@ table th[class*="col-"] {
   .uw-thinstrip .uw-wordmark {
     z-index: 2;
   }
-  .uw-thinstrip span {
+  .uw-thinstrip div.align-right {
     position: relative;
   }
-  .uw-thinstrip span nav#search-quicklinks {
+  .uw-thinstrip div.align-right nav#search-quicklinks {
     position: absolute;
     top: 0px;
     right: 0px;
@@ -7487,31 +7487,40 @@ body.error404 .woof {
 .uw-footer ul.footer-social li a.instagram {
   background-position: -322px -185px;
 }
-.uw-footer ul.footer-social li a:hover.facebook {
+.uw-footer ul.footer-social li a:hover.facebook,
+.uw-footer ul.footer-social li a:focus.facebook {
   background-position: 0px -225px;
 }
-.uw-footer ul.footer-social li a:hover.twitter {
+.uw-footer ul.footer-social li a:hover.twitter,
+.uw-footer ul.footer-social li a:focus.twitter {
   background-position: -46px -225px;
 }
-.uw-footer ul.footer-social li a:hover.tumblr {
+.uw-footer ul.footer-social li a:hover.tumblr,
+.uw-footer ul.footer-social li a:focus.tumblr {
   background-position: -366px -225px;
 }
-.uw-footer ul.footer-social li a:hover.youtube {
+.uw-footer ul.footer-social li a:hover.youtube,
+.uw-footer ul.footer-social li a:focus.youtube {
   background-position: -138px -225px;
 }
-.uw-footer ul.footer-social li a:hover.linkedin {
+.uw-footer ul.footer-social li a:hover.linkedin,
+.uw-footer ul.footer-social li a:focus.linkedin {
   background-position: -184px -225px;
 }
-.uw-footer ul.footer-social li a:hover.pinterest {
+.uw-footer ul.footer-social li a:hover.pinterest,
+.uw-footer ul.footer-social li a:focus.pinterest {
   background-position: -92px -225px;
 }
-.uw-footer ul.footer-social li a:hover.vine {
+.uw-footer ul.footer-social li a:hover.vine,
+.uw-footer ul.footer-social li a:focus.vine {
   background-position: -230px -225px;
 }
-.uw-footer ul.footer-social li a:hover.google {
+.uw-footer ul.footer-social li a:hover.google,
+.uw-footer ul.footer-social li a:focus.google {
   background-position: -275px -225px;
 }
-.uw-footer ul.footer-social li a:hover.instagram {
+.uw-footer ul.footer-social li a:hover.instagram,
+.uw-footer ul.footer-social li a:focus.instagram {
   background-position: -322px -225px;
 }
 .uw-footer ul.footer-links {
