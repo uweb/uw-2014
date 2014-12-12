@@ -2893,15 +2893,15 @@ td.visible-print {
 }
 @font-face {
   font-family: 'Encode Sans Compressed';
-  src: url('assets/fonts/encodesanscompressed-400-regular-webfont.eot');
-  src: url('assets/fonts/encodesanscompressed-400-regular-webfont.eot?#iefix') format('embedded-opentype'), url('assets/fonts/encodesanscompressed-400-regular-webfont.woff') format('woff'), url('assets/fonts/encodesanscompressed-400-regular-webfont.ttf') format('truetype'), url('assets/fonts/encodesanscompressed-400-regular-webfont.svg#encodesanscompressed-400-regular-webfont') format('svg');
+  src: url('assets/fonts/encodesanscondensed-400-regular-webfont.eot');
+  src: url('assets/fonts/encodesanscondensed-400-regular-webfont.eot?#iefix') format('embedded-opentype'), url('assets/fonts/encodesanscondensed-400-regular-webfont.woff') format('woff'), url('assets/fonts/encodesanscondensed-400-regular-webfont.ttf') format('truetype'), url('assets/fonts/encodesanscondensed-400-regular-webfont.svg#encodesanscondensed-400-regular-webfont') format('svg');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'Encode Sans Compressed';
-  src: url('assets/fonts/encodesanscompressed-500-medium-webfont.eot');
-  src: url('assets/fonts/encodesanscompressed-500-medium-webfont.eot?#iefix') format('embedded-opentype'), url('assets/fonts/encodesanscompressed-500-medium-webfont.woff') format('woff'), url('assets/fonts/encodesanscompressed-500-medium-webfont.ttf') format('truetype'), url('assets/fonts/encodesanscompressed-500-medium-webfont.svg#encodesanscompressed-500-medium-webfont') format('svg');
+  src: url('assets/fonts/encodesanscondensed-500-medium-webfont.eot');
+  src: url('assets/fonts/encodesanscondensed-500-medium-webfont.eot?#iefix') format('embedded-opentype'), url('assets/fonts/encodesanscondensed-500-medium-webfont.woff') format('woff'), url('assets/fonts/encodesanscondensed-500-medium-webfont.ttf') format('truetype'), url('assets/fonts/encodesanscondensed-500-medium-webfont.svg#encodesanscondensed-500-medium-webfont') format('svg');
   font-weight: 500;
   font-style: normal;
 }
@@ -5169,7 +5169,7 @@ iframe {
 }
 .intro {
   font-family: "Encode Sans Compressed", sans-serif;
-  font-size: 25px;
+  font-size: 23px;
   font-weight: 400;
   line-height: 1.5;
   margin-bottom: 20px;
@@ -5225,8 +5225,8 @@ a.more:after {
   left: 11px;
   color: #fff;
   font-family: "Encode Sans Compressed", sans-serif;
-  font-size: 45px;
   font-size: 50px;
+  line-height: 55px;
   font-weight: 900;
   -webkit-font-smoothing: antialiased;
 }
