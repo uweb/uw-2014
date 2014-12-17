@@ -5,16 +5,20 @@
 
 @media print {
 
-
   .uw-thinstrip,
   #dawgdrops,
   #quicklinks,
   #uwsearcharea,
   .uw-breadcrumbs,
+  .uw-hero-image,
   .uw-hero-image:after,
   .uw-hero-image:before,
-  .uw-news-image {
-    display: none;
+  .uw-news-image,
+  .site-news.single .uw-site-title,
+  .screen-reader-shortcut,
+  #wpadminbar,
+  #respond {
+    display: none !important;
   }
   .info-box {
     margin-left: 0;
@@ -25,6 +29,8 @@
     color: #000 !important; // Black prints faster: h5bp.com/s
     background: transparent !important;
     box-shadow: none !important;
+    position: static !important;
+    overflow: visible !important;
   }
 
   a,

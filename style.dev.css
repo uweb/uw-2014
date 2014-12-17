@@ -8005,10 +8005,15 @@ pre.prettyprint ol.linenums li {
   #quicklinks,
   #uwsearcharea,
   .uw-breadcrumbs,
+  .uw-hero-image,
   .uw-hero-image:after,
   .uw-hero-image:before,
-  .uw-news-image {
-    display: none;
+  .uw-news-image,
+  .site-news.single .uw-site-title,
+  .screen-reader-shortcut,
+  #wpadminbar,
+  #respond {
+    display: none !important;
   }
   .info-box {
     margin-left: 0;
@@ -8018,6 +8023,8 @@ pre.prettyprint ol.linenums li {
     color: #000 !important;
     background: transparent !important;
     box-shadow: none !important;
+    position: static !important;
+    overflow: visible !important;
   }
   a,
   a:visited {
