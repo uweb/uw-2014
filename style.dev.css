@@ -5094,8 +5094,8 @@ table th[class*="col-"] {
 .uw-breadcrumbs li:first-child a:before {
   right: -18px;
 }
-.uw-breadcrumbs li.current a {
-  color: #b7a57a;
+.uw-breadcrumbs li.current span {
+  color: #85754d;
 }
 .uw-breadcrumbs li.current:after {
   display: none;
@@ -5131,7 +5131,8 @@ table th[class*="col-"] {
 .uw-breadcrumbs li:empty {
   display: none;
 }
-.uw-breadcrumbs a {
+.uw-breadcrumbs a,
+.uw-breadcrumbs span {
   font-family: "Encode Sans Compressed", sans-serif;
   color: #535353;
   font-weight: 500;

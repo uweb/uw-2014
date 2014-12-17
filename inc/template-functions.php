@@ -191,18 +191,20 @@ if ( ! function_exists('get_uw_breadcrumbs') ) :
 
     if ( is_404() )
     {
-        $html .=  '<li class="current"><a href="'. home_url('/') .'" title="Woof! '. get_bloginfo('url') .'">Woof!</a>';
+        $html .=  '<li class="current"><span>Woof!</span>';
     } else
 
     if ( is_search() )
     {
-        $html .=  '<li class="current"><a href="'. get_search_link( get_search_query() ) .'" title="'. esc_attr( get_search_query() ) .'">Search results for ' . get_search_query() . '</a>';
+        //$html .=  '<li class="current"><a href="'. get_search_link( get_search_query() ) .'" title="'. esc_attr( get_search_query() ) .'">Search results for ' . get_search_query() . '</a>';
+        $html .=  '<li class="current"><span>Search results for ' . get_search_query() . '</span>';
     } else
 
     if ( is_author() )
     {
         $author = get_queried_object();
-        $html .=  '<li class="current"><a href="' . get_author_posts_url( $author->ID ) . '" title="'. esc_attr( $author->display_name ) .'"> Author: '  . $author->display_name . '</a>';
+        //$html .=  '<li class="current"><a href="' . get_author_posts_url( $author->ID ) . '" title="'. esc_attr( $author->display_name ) .'"> Author: '  . $author->display_name . '</a>';
+        $html .=  '<li class="current"><span> Author: '  . $author->display_name . '</span>';
     }
 
     // If the current view is a post type other than page or attachment then the breadcrumbs will be taxonomies.
@@ -212,13 +214,15 @@ if ( ! function_exists('get_uw_breadcrumbs') ) :
       if ( is_post_type_archive() )
       {
         $posttype = get_post_type_object( get_post_type() );
-        $html .=  '<li class="current"><a href="'  . get_post_type_archive_link( $posttype->query_var ) .'" title="'. $posttype->labels->menu_name .'">'. $posttype->labels->menu_name  . '</a>';
+        //$html .=  '<li class="current"><a href="'  . get_post_type_archive_link( $posttype->query_var ) .'" title="'. $posttype->labels->menu_name .'">'. $posttype->labels->menu_name  . '</a>';
+        $html .=  '<li class="current"><span>'. $posttype->labels->menu_name  . '</span>';
       }
 
       if ( is_category() )
       {
         $category = get_category( get_query_var( 'cat' ) );
-        $html .=  '<li class="current"><a href="'  . get_category_link( $category->term_id ) .'" title="'. get_cat_name( $category->term_id ).'">'. get_cat_name($category->term_id ) . '</a>';
+        //$html .=  '<li class="current"><a href="'  . get_category_link( $category->term_id ) .'" title="'. get_cat_name( $category->term_id ).'">'. get_cat_name($category->term_id ) . '</a>';
+        $html .=  '<li class="current"><span>'. get_cat_name($category->term_id ) . '</span>';
       }
 
       if ( is_single() )
@@ -239,7 +243,7 @@ if ( ! function_exists('get_uw_breadcrumbs') ) :
             $html .=  '<li><a href="'  . site_url('/' . $posttype->rewrite['slug'] . '/') .'" title="'. $posttype->labels->menu_name .'">'. $posttype->labels->menu_name  . '</a>';
           }
         }
-        $html .=  '<li class="current"><a href="'  . get_permalink( $post->ID ) .'" title="'. esc_attr( get_the_title( $post->ID  ) ) .'">'. get_the_title( $post->ID ) . '</a>';
+        $html .=  '<li class="current"><span>'. get_the_title( $post->ID ) . '</span>';
       }
     }
 
@@ -258,7 +262,12 @@ if ( ! function_exists('get_uw_breadcrumbs') ) :
           $page       = get_post( $ancestor );
           $url        = get_permalink( $page->ID );
           $title_attr = esc_attr( $page->post_title );
-          $html .= "<li $class><a href=\"$url\" title=\"{$title_attr}\">{$page->post_title}</a></li>";
+          if ($class == 'class="current"'){
+            $html .= "<li $class><span>{$page->post_title}</span></li>";
+          }
+          else {
+            $html .= "<li $class><a href=\"$url\" title=\"{$title_attr}\">{$page->post_title}</a></li>";
+          }
         }
       }
 
