@@ -8018,6 +8018,12 @@ pre.prettyprint ol.linenums li {
   .info-box {
     margin-left: 0;
   }
+  .widget {
+    padding-left: 0;
+  }
+  ul.uw-sidebar-menu {
+    margin-top: 0;
+  }
   * {
     text-shadow: none !important;
     color: #000 !important;
