@@ -73,11 +73,13 @@
     .title { 
         margin: 3px 3px 0 0 ;
     }
-    a {
+    button {
+        border: none;
         display: block;
         margin: 0;
         overflow: hidden;
         position: relative; 
+        padding: 0;
         width: 120px;
         &.vid-active:after {
             content: "Now Playing";
@@ -94,10 +96,10 @@
         &.vid-active div {
             opacity: 1;	
         }
-        &:hover div {
+        &:hover div, &:focus div {
             opacity: 1;		        
         }
-        &:hover .playBtn {
+        &:hover .playBtn, &:focus .playBtn {
             display: none;
         }
         div {
@@ -120,6 +122,7 @@
     }
     img {
         margin: 0;
+        padding: 0;
     }
 	ul {
 		margin: 0px;

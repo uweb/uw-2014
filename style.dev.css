@@ -4287,14 +4287,16 @@ table th[class*="col-"] {
 .vidSmall .title {
   margin: 3px 3px 0 0 ;
 }
-.vidSmall a {
+.vidSmall button {
+  border: none;
   display: block;
   margin: 0;
   overflow: hidden;
   position: relative;
+  padding: 0;
   width: 120px;
 }
-.vidSmall a.vid-active:after {
+.vidSmall button.vid-active:after {
   content: "Now Playing";
   padding: 0px 7px;
   background-color: #FFF;
@@ -4306,16 +4308,18 @@ table th[class*="col-"] {
   font-size: 11px;
   font-weight: 700;
 }
-.vidSmall a.vid-active div {
+.vidSmall button.vid-active div {
   opacity: 1;
 }
-.vidSmall a:hover div {
+.vidSmall button:hover div,
+.vidSmall button:focus div {
   opacity: 1;
 }
-.vidSmall a:hover .playBtn {
+.vidSmall button:hover .playBtn,
+.vidSmall button:focus .playBtn {
   display: none;
 }
-.vidSmall a div {
+.vidSmall button div {
   position: absolute;
   top: 0;
   left: 0;
@@ -4334,6 +4338,7 @@ table th[class*="col-"] {
 }
 .vidSmall img {
   margin: 0;
+  padding: 0;
 }
 .vidSmall ul {
   margin: 0px;
