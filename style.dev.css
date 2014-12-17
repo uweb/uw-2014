@@ -4540,6 +4540,7 @@ table th[class*="col-"] {
 .uw-thinstrip ul.uw-thin-links li a:focus,
 .uw-thinstrip ul.uw-thin-links li button:focus {
   color: #b7a57a;
+  text-decoration: none;
 }
 .uw-thinstrip button {
   border: none;
@@ -7545,10 +7546,13 @@ body.error404 .woof {
   right: -14px;
   top: -2px;
 }
-.uw-footer ul.footer-links li a:focus {
-  color: #85754d;
+.uw-footer ul.footer-links li a:focus,
+.uw-footer ul.footer-links li a:hover {
+  color: #b7a57a;
+  text-decoration: none;
 }
-.uw-footer ul.footer-links li a:focus:after {
+.uw-footer ul.footer-links li a:focus:after,
+.uw-footer ul.footer-links li a:hover:after {
   color: #fff;
 }
 .uw-footer p {
