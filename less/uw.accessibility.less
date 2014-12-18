@@ -31,6 +31,11 @@ label.screen-reader {
     font-size: 1px;
     left: -9999px;
 }
+#dawgdrops {
+    .dropdown-toggle:focus{
+        text-decoration: underline;
+    }
+}
 .uw-body {
     a:focus, 
     a:hover {
@@ -40,5 +45,8 @@ label.screen-reader {
         &.uw-btn {
             border-bottom: none;
         }
+    }
+    a.uw-btn:focus {
+        text-decoration: underline;
     }
 }

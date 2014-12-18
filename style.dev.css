@@ -7605,6 +7605,9 @@ label.screen-reader {
   font-size: 1px;
   left: -9999px;
 }
+#dawgdrops .dropdown-toggle:focus {
+  text-decoration: underline;
+}
 .uw-body a:focus,
 .uw-body a:hover {
   color: #85754d;
@@ -7613,6 +7616,9 @@ label.screen-reader {
 .uw-body a:focus.uw-btn,
 .uw-body a:hover.uw-btn {
   border-bottom: none;
+}
+.uw-body a.uw-btn:focus {
+  text-decoration: underline;
 }
 /*==========  Non-Mobile First Method  ==========*/
 /* Large Devices, Wide Screens */
