@@ -5703,7 +5703,7 @@ ul.uw-sidebar-menu > div a,
 ul.uw-mobile-menu > div a {
   font-family: "Encode Sans Compressed", sans-serif;
   display: block;
-  padding: 10px 0 10px 20px;
+  padding: 10px 10px 10px 20px;
 }
 ul.uw-sidebar-menu li.pagenav a.homelink,
 ul.uw-mobile-menu li.pagenav a.homelink,
@@ -8012,8 +8012,18 @@ pre.prettyprint ol.linenums li {
   .site-news.single .uw-site-title,
   .screen-reader-shortcut,
   #wpadminbar,
-  #respond {
+  #respond,
+  .uw-footer h4,
+  .uw-footer .footer-social,
+  .uw-footer > a,
+  .uw-footer {
     display: none !important;
+  }
+  .uw-footer {
+    border-top: none;
+  }
+  .uw-footer ul.footer-links li a {
+    color: #fff !important;
   }
   .info-box {
     margin-left: 0;
