@@ -11859,14 +11859,14 @@ UW.YouTube.Collection = Backbone.Collection.extend({
 UW.YouTube.CollectionView = Backbone.View.extend({
     
     // template that all videos get
-    template : "<div class='nc-video-player'><div class='tube-wrapper'></div></div>",
+    template : "<div class='nc-video-player' role='region' aria-label='video' tabindex=-1><div class='tube-wrapper'></div></div>",
 
     // playist section html that only playlists get
     playlist_section : "<div class='vidSmall'><div class='scrollbar'><div class='track'><div class='thumb'><div class='end'></div></div></div></div><div class='viewport'><div class='vidContent overview'><ul></ul></div></div></div>",
 
     //event handlers for the templated html
     events: {
-        'click a': 'preview_clicked'
+        'click button': 'preview_clicked'
     },
 
     // set up the view for this collection
@@ -12021,6 +12021,7 @@ UW.YouTube.CollectionView = Backbone.View.extend({
         playnow = playnow || false;
         if (playnow) {
             this.uwplayer.loadVideoById(id);
+            this.$el.focus();
         }
         else {
             this.uwplayer.cueVideoById(id);
@@ -12030,6 +12031,7 @@ UW.YouTube.CollectionView = Backbone.View.extend({
             this.$el.find('a.vid-active').removeClass('vid-active');
             var $small = $('#' + id);
             $small.addClass('vid-active');
+            this.$el.attr('aria-label', 'video: ' + $small.data('title'));
             if (this.scrollbar_visible){
                 var leftpos = $small.position().left;
                 if (this.$vidContent_width - leftpos < this.$viewport_width){
@@ -12066,6 +12068,7 @@ UW.YouTube.VideoView = Backbone.View.extend({
     },
 
     render: function () {
+        this.model.collection.view.$el.attr('aria-label', 'video: ' + this.model.get('title'));
         //var item = this.model.toJSON();
         //var small_vid = _.template(this.template, item);
         //this.model.collection.view.$vidSmall.append(small_vid);
@@ -12088,7 +12091,7 @@ UW.YouTube.PlaylistItemView = Backbone.View.extend({
 
     // this is the template for a playlist item preview
     // goes inside the playlist section
-    template: "<li><a id='<%= resourceId.videoId %>' class='video'><img src='<%= thumbnails.default.url %>'/><div class='text'><p class='title'><%= title %></p></div></a></li>",
+    template: "<li><button id='<%= resourceId.videoId %>' data-title='<%= title %>' class='video'><img src='<%= thumbnails.default.url %>'/><div class='text'><p class='title'><%= title %></p></div></button></li>",
 
     // preps the $el and renders
     initialize: function () {

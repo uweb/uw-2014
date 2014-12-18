@@ -31,3 +31,14 @@ label.screen-reader {
     font-size: 1px;
     left: -9999px;
 }
+.uw-body {
+    a:focus, 
+    a:hover {
+        color: @darkgold;
+        border-bottom: 1px solid #BDBDBD;
+        // We don't want buttons underlined
+        &.uw-btn {
+            border-bottom: none;
+        }
+    }
+}
