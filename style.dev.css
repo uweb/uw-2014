@@ -7623,6 +7623,10 @@ label.screen-reader {
 .uw-body a.uw-btn:focus {
   text-decoration: underline;
 }
+.uw-body .uw-breadcrumbs a:focus {
+  border-bottom: none;
+  text-decoration: underline;
+}
 /*==========  Non-Mobile First Method  ==========*/
 /* Large Devices, Wide Screens */
 /* Medium Devices, Desktops */
