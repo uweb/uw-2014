@@ -3583,7 +3583,6 @@ div.uw-vimeo div.preview {
 ul.uw-select {
   position: absolute;
   list-style: none;
-  z-index: 2;
   padding: 0;
   width: 100%;
   overflow: hidden;
@@ -3659,6 +3658,8 @@ ul.uw-select li.inactive a {
   height: 54px;
   display: block;
   position: relative;
+}
+.uw-select-mask .uw-select-arrow:hover {
   z-index: 2;
 }
 .uw-select-mask .uw-select-arrow:before,
@@ -3686,7 +3687,15 @@ ul.uw-select li.inactive a {
   transform: rotate(90deg);
 }
 .uw-select-mask.open .uw-select-arrow {
+  position: absolute;
   outline: none;
+  z-index: 2;
+  width: 60px;
+  right: 0px;
+  top: 0px;
+}
+.uw-select-mask.open .uw-select-mask {
+  z-index: 2;
 }
 /*
  *  All styles for UW accordion
