@@ -3630,8 +3630,11 @@ ul.uw-select li a:after {
   width: 40px;
   background-color: #D1D1D1;
 }
-ul.uw-select li a:hover {
+ul.uw-select li a:hover,
+ul.uw-select li a:focus {
   background-color: #DFDFDF;
+  border-bottom: none;
+  color: #4b2e83;
 }
 ul.uw-select li.active a:after {
   display: none;
@@ -3656,6 +3659,7 @@ ul.uw-select li.inactive a {
   height: 54px;
   display: block;
   position: relative;
+  z-index: 2;
 }
 .uw-select-mask .uw-select-arrow:before,
 .uw-select-mask .uw-select-arrow:after {
@@ -3680,6 +3684,9 @@ ul.uw-select li.inactive a {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+}
+.uw-select-mask.open .uw-select-arrow {
+  outline: none;
 }
 /*
  *  All styles for UW accordion
