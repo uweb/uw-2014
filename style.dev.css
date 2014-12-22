@@ -7653,9 +7653,6 @@ label.screen-reader {
 .uw-body .widget a.widget-link:focus {
   text-decoration: underline;
 }
-.uw-body .widget a.widget-link:focus small {
-  text-decoration: none;
-}
 /*==========  Non-Mobile First Method  ==========*/
 /* Large Devices, Wide Screens */
 /* Medium Devices, Desktops */
