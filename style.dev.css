@@ -7627,13 +7627,13 @@ label.screen-reader {
   border-bottom: none;
   text-decoration: underline;
 }
-.uw-body .widget.uw-recent a:focus,
-.uw-body .widget.uw-top-posts a:focus,
-.uw-body .widget.uw-recent a:hover,
-.uw-body .widget.uw-top-posts a:hover {
+.uw-body .widget a.widget-link:focus,
+.uw-body .widget a.widget-link:hover {
   border-bottom: none;
   color: #85754d;
-  dext-decoration: underline;
+}
+.uw-body .widget a.widget-link:focus {
+  text-decoration: underline;
 }
 /*==========  Non-Mobile First Method  ==========*/
 /* Large Devices, Wide Screens */
