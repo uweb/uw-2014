@@ -3583,11 +3583,11 @@ div.uw-vimeo div.preview {
 ul.uw-select {
   position: absolute;
   list-style: none;
-  z-index: 2;
   padding: 0;
   width: 100%;
   overflow: hidden;
   padding: 0 0 0 0;
+  z-index: 1;
 }
 ul.uw-select.open {
   background-color: #F7F7F7;
@@ -3630,8 +3630,11 @@ ul.uw-select li a:after {
   width: 40px;
   background-color: #D1D1D1;
 }
-ul.uw-select li a:hover {
+ul.uw-select li a:hover,
+ul.uw-select li a:focus {
   background-color: #DFDFDF;
+  border-bottom: none;
+  color: #4b2e83;
 }
 ul.uw-select li.active a:after {
   display: none;
@@ -3648,6 +3651,7 @@ ul.uw-select li.inactive a {
   display: none;
 }
 .uw-select-mask {
+  height: 54px;
   position: relative;
 }
 .uw-select-mask .uw-select-arrow {
@@ -3656,6 +3660,9 @@ ul.uw-select li.inactive a {
   height: 54px;
   display: block;
   position: relative;
+}
+.uw-select-mask .uw-select-arrow:hover {
+  z-index: 2;
 }
 .uw-select-mask .uw-select-arrow:before,
 .uw-select-mask .uw-select-arrow:after {
@@ -3680,6 +3687,17 @@ ul.uw-select li.inactive a {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+}
+.uw-select-mask.open .uw-select-arrow {
+  position: absolute;
+  outline: none;
+  z-index: 2;
+  width: 60px;
+  right: 0px;
+  top: 0px;
+}
+.uw-select-mask.open .uw-select-mask {
+  z-index: 2;
 }
 /*
  *  All styles for UW accordion
@@ -7610,6 +7628,12 @@ label.screen-reader {
   font-size: 1px;
   left: -9999px;
 }
+#dawgdrops li.dawgdrops-item a:focus {
+  text-decoration: underline;
+}
+#dawgdrops li.dawgdrops-item ul.dawgdrops-menu a:focus {
+  text-decoration: none;
+}
 .uw-body a:focus,
 .uw-body a:hover {
   color: #85754d;
@@ -7618,6 +7642,21 @@ label.screen-reader {
 .uw-body a:focus.uw-btn,
 .uw-body a:hover.uw-btn {
   border-bottom: none;
+}
+.uw-body a.uw-btn:focus {
+  text-decoration: underline;
+}
+.uw-body .uw-breadcrumbs a:focus {
+  border-bottom: none;
+  text-decoration: underline;
+}
+.uw-body .widget a.widget-link:focus,
+.uw-body .widget a.widget-link:hover {
+  border-bottom: none;
+  color: #85754d;
+}
+.uw-body .widget a.widget-link:focus {
+  text-decoration: underline;
 }
 /*==========  Non-Mobile First Method  ==========*/
 /* Large Devices, Wide Screens */

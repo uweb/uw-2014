@@ -31,14 +31,51 @@ label.screen-reader {
     font-size: 1px;
     left: -9999px;
 }
+#dawgdrops {
+    li.dawgdrops-item{
+        a:focus{
+            text-decoration: underline;
+        }
+        ul.dawgdrops-menu {
+            a:focus {
+                text-decoration: none;
+            }
+        }
+    }
+}
 .uw-body {
     a:focus, 
     a:hover {
         color: @darkgold;
         border-bottom: 1px solid #BDBDBD;
-        // We don't want buttons underlined
+        // We don't want buttons underlined on hover
         &.uw-btn {
             border-bottom: none;
+        }
+    }
+    a.uw-btn:focus {
+        text-decoration: underline;
+    }
+    .uw-breadcrumbs {
+        a:focus {
+            border-bottom: none;
+            text-decoration: underline;
+        }
+    }
+    .widget {
+        a.widget-link{
+            &:focus,
+            &:hover{
+                border-bottom: none;
+                color: @darkgold;
+            }
+            &:focus {
+                text-decoration: underline;
+                // can't override according to spec. We'll have to redo the structure to get this done
+                //p {
+                //    text-decoration: none;
+                //}
+            }
         }
     }
 }
