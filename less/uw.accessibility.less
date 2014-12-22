@@ -32,8 +32,15 @@ label.screen-reader {
     left: -9999px;
 }
 #dawgdrops {
-    .dropdown-toggle:focus{
-        text-decoration: underline;
+    li.dawgdrops-item{
+        a:focus{
+            text-decoration: underline;
+        }
+        ul.dawgdrops-menu {
+            a:focus {
+                text-decoration: none;
+            }
+        }
     }
 }
 .uw-body {

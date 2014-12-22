@@ -7605,8 +7605,11 @@ label.screen-reader {
   font-size: 1px;
   left: -9999px;
 }
-#dawgdrops .dropdown-toggle:focus {
+#dawgdrops li.dawgdrops-item a:focus {
   text-decoration: underline;
+}
+#dawgdrops li.dawgdrops-item ul.dawgdrops-menu a:focus {
+  text-decoration: none;
 }
 .uw-body a:focus,
 .uw-body a:hover {
