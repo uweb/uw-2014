@@ -19,7 +19,7 @@ ul.uw-mobile-menu
 	li.pagenav,
 	>div
 	{
-			a
+			a, span
 			{
 				font-family: @font-family-headline;
 				display: block;
@@ -41,7 +41,8 @@ ul.uw-mobile-menu
 				li.current_page_item, li.current_page_parent
 				{
 					background-color: @purple;
-					a {
+                    a,
+					span {
 						color:white;
 						border-bottom: none;
 						border-left: 10px solid #b7a57a;
@@ -50,6 +51,10 @@ ul.uw-mobile-menu
 						position: relative;
 						& > a {
 							padding-right: 60px;
+                            &:hover,
+                            &:focus{
+                                color: @lightgold;
+                            }
 							&:after {
 								content: "";
 								background: url(assets/svg/uw-sprite.svg) no-repeat -186px -476px;
@@ -64,7 +69,8 @@ ul.uw-mobile-menu
 								background-color: #b7a57a;
 							}
 						}
-						a {
+						a,
+                        span {
 							border-left: none;
 							position: relative;
 
@@ -97,12 +103,14 @@ ul.uw-mobile-menu
 						{
 							background-color:#eee;
 							border-bottom: 1px solid #fff;
-							a
+							a,
+                            span
 							{
 								color:@darkgray;
 								padding: 10px 30px 10px 30px;
 								border-left: none;
-								&:hover {
+								&:hover,
+                                &:focus {
 									background-color: #DDD;
 								}
 							}
@@ -129,7 +137,7 @@ ul.uw-mobile-menu
 									}
 								}
 							}
-							a
+							span
 							{
 								// background-color:#757575;
 								border-left: 10px solid #b7a57a;
