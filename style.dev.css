@@ -5057,8 +5057,8 @@ table th[class*="col-"] {
   -ms-transform: skewX(-25deg) skewY(0);
   transform: skew(-25deg, 0);
   display: block;
-  height: 15px;
-  width: 290px;
+  height: 11px;
+  width: 210px;
   background-color: white;
   margin: 0 0 0 -5px;
 }
@@ -5148,6 +5148,10 @@ table th[class*="col-"] {
 }
 .uw-breadcrumbs li:empty {
   display: none;
+}
+.uw-breadcrumbs li a:hover {
+  border-bottom: none;
+  text-decoration: underline;
 }
 .uw-breadcrumbs a,
 .uw-breadcrumbs span {
@@ -5385,6 +5389,7 @@ span.next-page a:hover {
   .uw-body .uw-site-title {
     color: #4b2e83;
     font-size: 25px;
+    line-height: 1.2;
     font-weight: 900;
     margin: -20px -20px 20px -20px;
     padding: 15px 15px 15px 20px;
@@ -7934,6 +7939,7 @@ label.screen-reader {
 .uw-widget-related-posts a.widget-link:hover,
 .uw-widget-rss a.widget-link:hover {
   color: #909090;
+  border-bottom: none;
 }
 .shortcode-blogroll-mini .more,
 .widget_recent_entries .more,
