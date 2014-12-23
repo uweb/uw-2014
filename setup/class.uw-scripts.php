@@ -124,7 +124,12 @@ class UW_Scripts
 
   public function dev_script()
   {
-    return is_user_logged_in() ? '.dev' : '';
+    if (in_array( get_current_blog_id(), array( 83 ))){
+        return '.dev';
+    }
+    else {
+        return is_user_logged_in() ? '.dev' : '';
+    }
   }
 
   public function get_real_site_url()
