@@ -134,10 +134,7 @@ class UW_Scripts
     if (!is_user_logged_in()){
         $site = str_replace('washington.edu/cms/', 'washington.edu/', $site);
     }
-    if ( in_array( get_current_blog_id(), array( 83 ) ) )
-    {
-        $site = str_replace('http:', 'https:', $site);
-    }
+    $site = str_replace('http:', 'https:', $site);
     return $site;
   }
 }
