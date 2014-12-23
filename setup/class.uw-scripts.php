@@ -18,7 +18,8 @@ class UW_Scripts
 
       'jquery' => array (
         'id'      => 'jquery',
-        'url'     => 'https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
+        //'url'     => 'https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
+        'url'     => 'https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js',
         'deps'    => array(),
         'version' => '1.9.1',
         'admin'   => false
@@ -124,12 +125,7 @@ class UW_Scripts
 
   public function dev_script()
   {
-    if (in_array( get_current_blog_id(), array( 83 ))){
-        return '.dev';
-    }
-    else {
-        return is_user_logged_in() ? '.dev' : '';
-    }
+    return is_user_logged_in() ? '.dev' : '';
   }
 
   public function get_real_site_url()
