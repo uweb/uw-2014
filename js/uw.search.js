@@ -240,7 +240,7 @@ UW.Search = Backbone.View.extend({
     {
       case this.searchFeatures.uw :
         this.$searchbar.find('input').attr('name', 'q')
-        this.$searchbar.find('form').attr('action', 'http://uw.edu/search/')
+        this.$searchbar.find('form').attr('action', 'https://uw.edu/search/')
         return true;
 
       case this.searchFeatures.site :
