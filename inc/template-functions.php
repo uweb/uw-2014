@@ -90,6 +90,7 @@ if ( ! function_exists( 'uw_list_pages') ) :
 
   function uw_list_pages( $mobile = false )
   {
+    global $UW;
     global $post;
 
     $parent = get_post( $post->post_parent );
@@ -112,7 +113,8 @@ if ( ! function_exists( 'uw_list_pages') ) :
       'child_of'     => $parent->post_parent,
       'exclude_tree' => $ids,
       'depth'        => 3,
-      'echo'         => 0
+      'echo'         => 0,
+      'walker'       => $UW->SidebarMenuWalker
     ));
 
     return $pages ? sprintf( '<ul class="%s first-level">%s%s</ul>', $class, $toggle, $pages ) : '';
