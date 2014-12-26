@@ -5243,7 +5243,6 @@ a.more:after {
 .uw-body h4,
 .uw-body h5 {
   font-weight: 700;
-  clear: both;
 }
 .uw-body blockquote p {
   font-family: "Encode Sans Compressed", sans-serif;
@@ -5422,6 +5421,13 @@ span.next-page a:hover {
   .info-box {
     margin-left: 0;
     width: 100%;
+  }
+  .uw-body-copy h1,
+  .uw-body-copy h2,
+  .uw-body-copy h3,
+  .uw-body-copy h4,
+  .uw-body-copy p:first-of-type {
+    clear: right;
   }
 }
 @media only screen and (min-width: 768px) {
