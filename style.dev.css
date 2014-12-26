@@ -5175,7 +5175,8 @@ table th[class*="col-"] {
     float: left;
     display: initial;
   }
-  .uw-breadcrumbs li a {
+  .uw-breadcrumbs li a,
+  .uw-breadcrumbs li span {
     padding: 0 25px 0 0;
   }
   .uw-breadcrumbs li:after {
