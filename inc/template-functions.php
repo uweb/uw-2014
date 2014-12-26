@@ -151,7 +151,8 @@ if ( ! function_exists( 'uw_list_mobile_pages' ) ) :
       'include'      => implode( ',', $ids ),
       'sort_order'   => 'menu_order',
       'depth'        => 1,
-      'echo'         => 0
+      'echo'         => 0,
+      'walker'       => $UW->SidebarMenuWalker
     ));
 
     return $pages ? sprintf( '%s<ul class="uw-mobile-menu first-level">%s</ul>', $toggle, $pages ) : '';
