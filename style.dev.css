@@ -6091,13 +6091,16 @@ body.home .uw-sidebar-menu {
     padding-top: 40px;
   }
 }
-ul.uw-mobile-menu {
+nav#mobile-relative {
+  display: none;
+}
+nav#mobile-relative ul.uw-mobile-menu {
   display: none;
   list-style: none;
   padding: 0;
   margin: 0 0 25px;
 }
-ul.uw-mobile-menu ul {
+nav#mobile-relative ul.uw-mobile-menu ul {
   display: block;
   list-style: none;
   padding: 0;
@@ -6106,21 +6109,24 @@ ul.uw-mobile-menu ul {
 /*==========  Mobile First Method  ==========*/
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 768px) {
-  ul.uw-sidebar-menu {
+  nav#desktop-relative {
     display: none;
   }
   .uw-mobile-menu li {
     background-color: #eee;
     border-bottom: 1px solid #fff;
   }
-  ul.uw-mobile-menu {
+  nav#mobile-relative {
     display: block;
   }
-  ul.uw-mobile-menu .pagenav,
-  ul.uw-mobile-menu > div {
+  nav#mobile-relative ul.uw-mobile-menu {
+    display: block;
+  }
+  nav#mobile-relative ul.uw-mobile-menu .pagenav,
+  nav#mobile-relative ul.uw-mobile-menu > div {
     display: none;
   }
-  ul.uw-mobile-menu .uw-mobile-menu-toggle {
+  nav#mobile-relative ul.uw-mobile-menu .uw-mobile-menu-toggle {
     display: block;
     position: relative;
     float: right;
@@ -6138,7 +6144,7 @@ ul.uw-mobile-menu ul {
     background: url(assets/svg/uw-sprite.svg) no-repeat -475px 20px transparent;
     background-size: 1200px;
   }
-  ul.uw-mobile-menu .uw-mobile-menu-toggle:before {
+  nav#mobile-relative ul.uw-mobile-menu .uw-mobile-menu-toggle:before {
     content: "";
     position: absolute;
     right: 55px;
@@ -6147,7 +6153,7 @@ ul.uw-mobile-menu ul {
     height: 40px;
     background: url(assets/svg/uw-sprite.svg) no-repeat -600px 0 transparent;
   }
-  ul.uw-mobile-menu li.pagenav ul li.current_page_parent.current_page_ancestor > a:after {
+  nav#mobile-relative ul.uw-mobile-menu li.pagenav ul li.current_page_parent.current_page_ancestor > a:after {
     display: none;
   }
 }
