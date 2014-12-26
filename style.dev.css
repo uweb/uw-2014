@@ -6168,6 +6168,10 @@ nav#mobile-relative ul.uw-mobile-menu li {
   nav#mobile-relative ul.uw-mobile-menu li.pagenav ul li.current_page_parent.current_page_ancestor > a:after {
     display: none;
   }
+  nav#mobile-relative li a:hover,
+  nav#mobile-relative li a:focus {
+    border-bottom: none;
+  }
 }
 img {
   max-width: 100%;
