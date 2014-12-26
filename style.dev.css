@@ -6096,6 +6096,9 @@ nav#mobile-relative {
 }
 nav#mobile-relative ul.uw-mobile-menu {
   display: none;
+  width: 100%;
+  float: right;
+  clear: both;
   list-style: none;
   padding: 0;
   margin: 0 0 25px;
@@ -6105,6 +6108,9 @@ nav#mobile-relative ul.uw-mobile-menu ul {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+nav#mobile-relative ul.uw-mobile-menu li {
+  width: 100%;
 }
 /*==========  Mobile First Method  ==========*/
 /* Custom, iPhone Retina */

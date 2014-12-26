@@ -10,14 +10,21 @@ UW.MobileMenu = Backbone.View.extend({
 
   initialize : function( options )
   {
+    _.bindAll(this, 'toggle','reset_li');
     this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
-    this.$mobilemenu = this.$el.siblings().first()
+    this.$mobilemenu = this.$el.parent('nav');
+    this.$mobilemenu_ul = this.$mobilemenu.find('ul.uw-mobile-menu');
   },
 
   toggle: function()
   {
-    this.$mobilemenu.toggle()
-  }
+    this.$mobilemenu.find('li').width(this.$mobilemenu.width());
+    this.$mobilemenu_ul.toggle({'duration': 250, 'easing':'easeOutQuart', 'done': this.reset_li });
+  },
 
+  reset_li: function()
+  {
+    this.$mobilemenu.find('li').removeAttr('style');
+  }
 
 })
