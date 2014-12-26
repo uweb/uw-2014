@@ -6172,6 +6172,10 @@ nav#mobile-relative ul.uw-mobile-menu li {
   .home nav#mobile-relative li a:focus {
     border-bottom: 1px solid #eee;
   }
+  .home nav#mobile-relative li:last-child a:hover,
+  .home nav#mobile-relative li:last-child a:focus {
+    border-bottom: none;
+  }
 }
 img {
   max-width: 100%;
