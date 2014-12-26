@@ -19,7 +19,7 @@ UW.MobileMenu = Backbone.View.extend({
   toggle: function()
   {
     this.$mobilemenu.find('li').width(this.$mobilemenu.width());
-    this.$mobilemenu_ul.toggle({'duration': 250, 'easing':'easeOutQuart', 'done': this.reset_li });
+    this.$mobilemenu_ul.toggle({'duration': 400, 'easing':'easeInOutQuart', 'done': this.reset_li });
   },
 
   reset_li: function()
