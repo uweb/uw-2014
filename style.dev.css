@@ -5430,6 +5430,9 @@ span.next-page a:hover {
   .uw-body-copy p:first-of-type {
     clear: right;
   }
+  .uw-body-copy > div.row {
+    clear: both;
+  }
 }
 @media only screen and (min-width: 768px) {
   .uw-body .uw-site-title {
