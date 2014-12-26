@@ -5243,6 +5243,7 @@ a.more:after {
 .uw-body h4,
 .uw-body h5 {
   font-weight: 700;
+  clear: both;
 }
 .uw-body blockquote p {
   font-family: "Encode Sans Compressed", sans-serif;
