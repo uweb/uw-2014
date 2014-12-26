@@ -6119,14 +6119,7 @@ nav#mobile-relative ul.uw-mobile-menu ul {
   nav#mobile-relative {
     display: block;
   }
-  nav#mobile-relative ul.uw-mobile-menu {
-    display: block;
-  }
-  nav#mobile-relative ul.uw-mobile-menu .pagenav,
-  nav#mobile-relative ul.uw-mobile-menu > div {
-    display: none;
-  }
-  nav#mobile-relative ul.uw-mobile-menu .uw-mobile-menu-toggle {
+  nav#mobile-relative button.uw-mobile-menu-toggle {
     display: block;
     position: relative;
     float: right;
@@ -6138,13 +6131,15 @@ nav#mobile-relative ul.uw-mobile-menu ul {
     font-weight: 800;
     text-align: center;
     width: 50px;
-    height: 30px;
+    height: 40px;
     text-transform: uppercase;
     color: #4b2e83;
     background: url(assets/svg/uw-sprite.svg) no-repeat -475px 20px transparent;
     background-size: 1200px;
+    border: none;
+    padding: 0 0 20px 0;
   }
-  nav#mobile-relative ul.uw-mobile-menu .uw-mobile-menu-toggle:before {
+  nav#mobile-relative button.uw-mobile-menu-toggle:before {
     content: "";
     position: absolute;
     right: 55px;
