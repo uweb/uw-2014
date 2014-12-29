@@ -6114,7 +6114,7 @@ nav#mobile-relative ul.uw-mobile-menu {
   padding: 0;
   margin: 0 0 25px;
 }
-nav#mobile-relative ul.uw-mobile-menu ul {
+nav#mobile-relative ul.uw-mobile-menu > ul {
   display: block;
   list-style: none;
   padding: 0;
