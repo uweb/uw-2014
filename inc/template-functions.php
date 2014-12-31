@@ -63,7 +63,7 @@ if ( ! function_exists('uw_sidebar_menu') ) :
 
   function uw_sidebar_menu()
   {
-    echo sprintf( '<nav role="navigation" aria-label="relative">%s</nav>', uw_list_pages() ) ;
+    echo sprintf( '<nav id="desktop-relative" role="navigation" aria-label="relative">%s</nav>', uw_list_pages() ) ;
   }
 
 endif;
@@ -72,7 +72,7 @@ if ( ! function_exists( 'uw_mobile_menu' ) ) :
 
   function uw_mobile_menu()
   {
-    echo sprintf( '<nav role="navigation" aria-label="relative">%s</nav>', uw_list_mobile_pages() ) ;
+    echo sprintf( '<nav id="mobile-relative" role="navigation" aria-label="relative">%s</nav>', uw_list_mobile_pages() ) ;
   }
 
 endif;
@@ -81,7 +81,7 @@ if ( ! function_exists( 'uw_mobile_front_page_menu' ) ) :
 
   function uw_mobile_front_page_menu()
   {
-    echo sprintf( '<nav role="navigation" aria-label="relative">%s</nav>', uw_list_front_page_menu_items() ) ;
+    echo sprintf( '<nav id="mobile-relative" role="navigation" aria-label="relative">%s</nav>', uw_list_front_page_menu_items() ) ;
   }
 
 endif;
@@ -90,13 +90,14 @@ if ( ! function_exists( 'uw_list_pages') ) :
 
   function uw_list_pages( $mobile = false )
   {
+    global $UW;
     global $post;
 
     $parent = get_post( $post->post_parent );
 
     if ( ! $mobile && ! get_children( $post->ID ) && $parent->ID == $post->ID ) return;
 
-    $toggle = $mobile ? '<span class="uw-mobile-menu-toggle">Menu</span>' : '';
+    $toggle = $mobile ? '<button class="uw-mobile-menu-toggle">Menu</button>' : '';
     $class  = $mobile ? 'uw-mobile-menu' : 'uw-sidebar-menu';
 
     $siblings = get_pages( array (
@@ -112,10 +113,11 @@ if ( ! function_exists( 'uw_list_pages') ) :
       'child_of'     => $parent->post_parent,
       'exclude_tree' => $ids,
       'depth'        => 3,
-      'echo'         => 0
+      'echo'         => 0,
+      'walker'       => $UW->SidebarMenuWalker
     ));
 
-    return $pages ? sprintf( '<ul class="%s first-level">%s%s</ul>', $class, $toggle, $pages ) : '';
+    return $pages ? sprintf( '%s<ul class="%s first-level">%s</ul>', $toggle, $class, $pages ) : '';
 
   }
 
@@ -135,7 +137,7 @@ if ( ! function_exists( 'uw_list_mobile_pages' ) ) :
 
     $items     = wp_get_nav_menu_items( $menu->term_id );
 
-    $toggle    = '<span class="uw-mobile-menu-toggle">Menu</span>';
+    $toggle    = '<button class="uw-mobile-menu-toggle">Menu</button>';
 
 
     foreach( $items as $item )
@@ -149,10 +151,11 @@ if ( ! function_exists( 'uw_list_mobile_pages' ) ) :
       'include'      => implode( ',', $ids ),
       'sort_order'   => 'menu_order',
       'depth'        => 1,
-      'echo'         => 0
+      'echo'         => 0,
+      'walker'       => $UW->SidebarMenuWalker
     ));
 
-    return $pages ? sprintf( '<ul class="uw-mobile-menu first-level">%s%s</ul>', $toggle, $pages ) : '';
+    return $pages ? sprintf( '%s<ul class="uw-mobile-menu first-level">%s</ul>', $toggle, $pages ) : '';
 
   }
 
@@ -162,7 +165,7 @@ if ( ! function_exists( 'uw_list_front_page_menu_items' ) ) :
 
 function uw_list_front_page_menu_items()
 {
-      $toggle = '<span class="uw-mobile-menu-toggle">Menu</span>';
+      $toggle = '<button class="uw-mobile-menu-toggle">Menu</button>';
       $items = wp_nav_menu( array(
               'title_li'     => '<a href="'.get_bloginfo('url').'" title="Home" class="homelink">Home</a>',
               'theme_location'  => UW_Dropdowns::LOCATION,
@@ -174,7 +177,7 @@ function uw_list_front_page_menu_items()
               // 'walker'          => new UW_Dropdowns_Walker_Menu()
       ) );
 
-      return $items ? sprintf( '<ul class="uw-mobile-menu first-level">%s%s</ul>', $toggle, $items ) : '';
+      return $items ? sprintf( '%s<ul class="uw-mobile-menu first-level">%s</ul>', $toggle, $items ) : '';
 
 
 }

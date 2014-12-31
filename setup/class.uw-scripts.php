@@ -18,7 +18,8 @@ class UW_Scripts
 
       'jquery' => array (
         'id'      => 'jquery',
-        'url'     => 'https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
+        //'url'     => 'https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
+        'url'     => 'https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js',
         'deps'    => array(),
         'version' => '1.9.1',
         'admin'   => false
@@ -133,6 +134,7 @@ class UW_Scripts
     if (!is_user_logged_in()){
         $site = str_replace('washington.edu/cms/', 'washington.edu/', $site);
     }
+    $site = str_replace('http:', 'https:', $site);
     return $site;
   }
 }

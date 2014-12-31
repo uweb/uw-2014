@@ -5175,7 +5175,8 @@ table th[class*="col-"] {
     float: left;
     display: initial;
   }
-  .uw-breadcrumbs li a {
+  .uw-breadcrumbs li a,
+  .uw-breadcrumbs li span {
     padding: 0 25px 0 0;
   }
   .uw-breadcrumbs li:after {
@@ -5421,6 +5422,16 @@ span.next-page a:hover {
   .info-box {
     margin-left: 0;
     width: 100%;
+  }
+  .uw-body-copy h1,
+  .uw-body-copy h2,
+  .uw-body-copy h3,
+  .uw-body-copy h4,
+  .uw-body-copy p:first-of-type {
+    clear: right;
+  }
+  .uw-body-copy > div.row {
+    clear: both;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -5730,7 +5741,11 @@ ul.uw-mobile-menu li {
 ul.uw-sidebar-menu li.pagenav a,
 ul.uw-mobile-menu li.pagenav a,
 ul.uw-sidebar-menu > div a,
-ul.uw-mobile-menu > div a {
+ul.uw-mobile-menu > div a,
+ul.uw-sidebar-menu li.pagenav span,
+ul.uw-mobile-menu li.pagenav span,
+ul.uw-sidebar-menu > div span,
+ul.uw-mobile-menu > div span {
   font-family: "Encode Sans Compressed", sans-serif;
   display: block;
   padding: 10px 10px 10px 20px;
@@ -5738,7 +5753,11 @@ ul.uw-mobile-menu > div a {
 ul.uw-sidebar-menu li.pagenav a.homelink,
 ul.uw-mobile-menu li.pagenav a.homelink,
 ul.uw-sidebar-menu > div a.homelink,
-ul.uw-mobile-menu > div a.homelink {
+ul.uw-mobile-menu > div a.homelink,
+ul.uw-sidebar-menu li.pagenav span.homelink,
+ul.uw-mobile-menu li.pagenav span.homelink,
+ul.uw-sidebar-menu > div span.homelink,
+ul.uw-mobile-menu > div span.homelink {
   display: none;
   color: #4b2e83;
   font-size: 25px;
@@ -5766,7 +5785,15 @@ ul.uw-mobile-menu > div ul li.current_page_item a,
 ul.uw-sidebar-menu li.pagenav ul li.current_page_parent a,
 ul.uw-mobile-menu li.pagenav ul li.current_page_parent a,
 ul.uw-sidebar-menu > div ul li.current_page_parent a,
-ul.uw-mobile-menu > div ul li.current_page_parent a {
+ul.uw-mobile-menu > div ul li.current_page_parent a,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_item span,
+ul.uw-mobile-menu li.pagenav ul li.current_page_item span,
+ul.uw-sidebar-menu > div ul li.current_page_item span,
+ul.uw-mobile-menu > div ul li.current_page_item span,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_parent span,
+ul.uw-mobile-menu li.pagenav ul li.current_page_parent span,
+ul.uw-sidebar-menu > div ul li.current_page_parent span,
+ul.uw-mobile-menu > div ul li.current_page_parent span {
   color: white;
   border-bottom: none;
   border-left: 10px solid #b7a57a;
@@ -5790,6 +5817,24 @@ ul.uw-mobile-menu li.pagenav ul li.current_page_parent.current_page_ancestor > a
 ul.uw-sidebar-menu > div ul li.current_page_parent.current_page_ancestor > a,
 ul.uw-mobile-menu > div ul li.current_page_parent.current_page_ancestor > a {
   padding-right: 60px;
+}
+ul.uw-sidebar-menu li.pagenav ul li.current_page_item.current_page_ancestor > a:hover,
+ul.uw-mobile-menu li.pagenav ul li.current_page_item.current_page_ancestor > a:hover,
+ul.uw-sidebar-menu > div ul li.current_page_item.current_page_ancestor > a:hover,
+ul.uw-mobile-menu > div ul li.current_page_item.current_page_ancestor > a:hover,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_parent.current_page_ancestor > a:hover,
+ul.uw-mobile-menu li.pagenav ul li.current_page_parent.current_page_ancestor > a:hover,
+ul.uw-sidebar-menu > div ul li.current_page_parent.current_page_ancestor > a:hover,
+ul.uw-mobile-menu > div ul li.current_page_parent.current_page_ancestor > a:hover,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_item.current_page_ancestor > a:focus,
+ul.uw-mobile-menu li.pagenav ul li.current_page_item.current_page_ancestor > a:focus,
+ul.uw-sidebar-menu > div ul li.current_page_item.current_page_ancestor > a:focus,
+ul.uw-mobile-menu > div ul li.current_page_item.current_page_ancestor > a:focus,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_parent.current_page_ancestor > a:focus,
+ul.uw-mobile-menu li.pagenav ul li.current_page_parent.current_page_ancestor > a:focus,
+ul.uw-sidebar-menu > div ul li.current_page_parent.current_page_ancestor > a:focus,
+ul.uw-mobile-menu > div ul li.current_page_parent.current_page_ancestor > a:focus {
+  color: #b7a57a;
 }
 ul.uw-sidebar-menu li.pagenav ul li.current_page_item.current_page_ancestor > a:after,
 ul.uw-mobile-menu li.pagenav ul li.current_page_item.current_page_ancestor > a:after,
@@ -5818,7 +5863,15 @@ ul.uw-mobile-menu > div ul li.current_page_item.current_page_ancestor a,
 ul.uw-sidebar-menu li.pagenav ul li.current_page_parent.current_page_ancestor a,
 ul.uw-mobile-menu li.pagenav ul li.current_page_parent.current_page_ancestor a,
 ul.uw-sidebar-menu > div ul li.current_page_parent.current_page_ancestor a,
-ul.uw-mobile-menu > div ul li.current_page_parent.current_page_ancestor a {
+ul.uw-mobile-menu > div ul li.current_page_parent.current_page_ancestor a,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_item.current_page_ancestor span,
+ul.uw-mobile-menu li.pagenav ul li.current_page_item.current_page_ancestor span,
+ul.uw-sidebar-menu > div ul li.current_page_item.current_page_ancestor span,
+ul.uw-mobile-menu > div ul li.current_page_item.current_page_ancestor span,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_parent.current_page_ancestor span,
+ul.uw-mobile-menu li.pagenav ul li.current_page_parent.current_page_ancestor span,
+ul.uw-sidebar-menu > div ul li.current_page_parent.current_page_ancestor span,
+ul.uw-mobile-menu > div ul li.current_page_parent.current_page_ancestor span {
   border-left: none;
   position: relative;
 }
@@ -5879,7 +5932,15 @@ ul.uw-mobile-menu > div ul li.current_page_item ul.children li a,
 ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li a,
 ul.uw-mobile-menu li.pagenav ul li.current_page_ancestor ul.children li a,
 ul.uw-sidebar-menu > div ul li.current_page_ancestor ul.children li a,
-ul.uw-mobile-menu > div ul li.current_page_ancestor ul.children li a {
+ul.uw-mobile-menu > div ul li.current_page_ancestor ul.children li a,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li span,
+ul.uw-mobile-menu li.pagenav ul li.current_page_item ul.children li span,
+ul.uw-sidebar-menu > div ul li.current_page_item ul.children li span,
+ul.uw-mobile-menu > div ul li.current_page_item ul.children li span,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li span,
+ul.uw-mobile-menu li.pagenav ul li.current_page_ancestor ul.children li span,
+ul.uw-sidebar-menu > div ul li.current_page_ancestor ul.children li span,
+ul.uw-mobile-menu > div ul li.current_page_ancestor ul.children li span {
   color: #5a5a5a;
   padding: 10px 30px 10px 30px;
   border-left: none;
@@ -5891,7 +5952,31 @@ ul.uw-mobile-menu > div ul li.current_page_item ul.children li a:hover,
 ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li a:hover,
 ul.uw-mobile-menu li.pagenav ul li.current_page_ancestor ul.children li a:hover,
 ul.uw-sidebar-menu > div ul li.current_page_ancestor ul.children li a:hover,
-ul.uw-mobile-menu > div ul li.current_page_ancestor ul.children li a:hover {
+ul.uw-mobile-menu > div ul li.current_page_ancestor ul.children li a:hover,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li span:hover,
+ul.uw-mobile-menu li.pagenav ul li.current_page_item ul.children li span:hover,
+ul.uw-sidebar-menu > div ul li.current_page_item ul.children li span:hover,
+ul.uw-mobile-menu > div ul li.current_page_item ul.children li span:hover,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li span:hover,
+ul.uw-mobile-menu li.pagenav ul li.current_page_ancestor ul.children li span:hover,
+ul.uw-sidebar-menu > div ul li.current_page_ancestor ul.children li span:hover,
+ul.uw-mobile-menu > div ul li.current_page_ancestor ul.children li span:hover,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li a:focus,
+ul.uw-mobile-menu li.pagenav ul li.current_page_item ul.children li a:focus,
+ul.uw-sidebar-menu > div ul li.current_page_item ul.children li a:focus,
+ul.uw-mobile-menu > div ul li.current_page_item ul.children li a:focus,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li a:focus,
+ul.uw-mobile-menu li.pagenav ul li.current_page_ancestor ul.children li a:focus,
+ul.uw-sidebar-menu > div ul li.current_page_ancestor ul.children li a:focus,
+ul.uw-mobile-menu > div ul li.current_page_ancestor ul.children li a:focus,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li span:focus,
+ul.uw-mobile-menu li.pagenav ul li.current_page_item ul.children li span:focus,
+ul.uw-sidebar-menu > div ul li.current_page_item ul.children li span:focus,
+ul.uw-mobile-menu > div ul li.current_page_item ul.children li span:focus,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li span:focus,
+ul.uw-mobile-menu li.pagenav ul li.current_page_ancestor ul.children li span:focus,
+ul.uw-sidebar-menu > div ul li.current_page_ancestor ul.children li span:focus,
+ul.uw-mobile-menu > div ul li.current_page_ancestor ul.children li span:focus {
   background-color: #DDD;
 }
 ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li.current_page_item ul.children li,
@@ -5937,27 +6022,27 @@ ul.uw-sidebar-menu > div ul li.current_page_ancestor ul.children li.current_page
 ul.uw-mobile-menu > div ul li.current_page_ancestor ul.children li.current_page_item ul.children a:before {
   content: "- ";
 }
-ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li.current_page_item a,
-ul.uw-mobile-menu li.pagenav ul li.current_page_item ul.children li.current_page_item a,
-ul.uw-sidebar-menu > div ul li.current_page_item ul.children li.current_page_item a,
-ul.uw-mobile-menu > div ul li.current_page_item ul.children li.current_page_item a,
-ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li.current_page_item a,
-ul.uw-mobile-menu li.pagenav ul li.current_page_ancestor ul.children li.current_page_item a,
-ul.uw-sidebar-menu > div ul li.current_page_ancestor ul.children li.current_page_item a,
-ul.uw-mobile-menu > div ul li.current_page_ancestor ul.children li.current_page_item a {
+ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li.current_page_item span,
+ul.uw-mobile-menu li.pagenav ul li.current_page_item ul.children li.current_page_item span,
+ul.uw-sidebar-menu > div ul li.current_page_item ul.children li.current_page_item span,
+ul.uw-mobile-menu > div ul li.current_page_item ul.children li.current_page_item span,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li.current_page_item span,
+ul.uw-mobile-menu li.pagenav ul li.current_page_ancestor ul.children li.current_page_item span,
+ul.uw-sidebar-menu > div ul li.current_page_ancestor ul.children li.current_page_item span,
+ul.uw-mobile-menu > div ul li.current_page_ancestor ul.children li.current_page_item span {
   border-left: 10px solid #b7a57a;
   padding-left: 20px;
   background-color: #ddd;
   border-bottom: none;
 }
-ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li.current_page_item a a,
-ul.uw-mobile-menu li.pagenav ul li.current_page_item ul.children li.current_page_item a a,
-ul.uw-sidebar-menu > div ul li.current_page_item ul.children li.current_page_item a a,
-ul.uw-mobile-menu > div ul li.current_page_item ul.children li.current_page_item a a,
-ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li.current_page_item a a,
-ul.uw-mobile-menu li.pagenav ul li.current_page_ancestor ul.children li.current_page_item a a,
-ul.uw-sidebar-menu > div ul li.current_page_ancestor ul.children li.current_page_item a a,
-ul.uw-mobile-menu > div ul li.current_page_ancestor ul.children li.current_page_item a a {
+ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li.current_page_item span a,
+ul.uw-mobile-menu li.pagenav ul li.current_page_item ul.children li.current_page_item span a,
+ul.uw-sidebar-menu > div ul li.current_page_item ul.children li.current_page_item span a,
+ul.uw-mobile-menu > div ul li.current_page_item ul.children li.current_page_item span a,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_ancestor ul.children li.current_page_item span a,
+ul.uw-mobile-menu li.pagenav ul li.current_page_ancestor ul.children li.current_page_item span a,
+ul.uw-sidebar-menu > div ul li.current_page_ancestor ul.children li.current_page_item span a,
+ul.uw-mobile-menu > div ul li.current_page_ancestor ul.children li.current_page_item span a {
   color: white;
   border-bottom: none;
 }
@@ -6017,36 +6102,41 @@ body.home .uw-sidebar-menu {
     padding-top: 40px;
   }
 }
-ul.uw-mobile-menu {
+nav#mobile-relative {
   display: none;
+}
+nav#mobile-relative ul.uw-mobile-menu {
+  display: none;
+  width: 100%;
+  float: right;
+  clear: both;
   list-style: none;
   padding: 0;
   margin: 0 0 25px;
 }
-ul.uw-mobile-menu ul {
+nav#mobile-relative ul.uw-mobile-menu > ul {
   display: block;
   list-style: none;
   padding: 0;
   margin: 0;
 }
+nav#mobile-relative ul.uw-mobile-menu li {
+  width: 100%;
+}
 /*==========  Mobile First Method  ==========*/
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 768px) {
-  ul.uw-sidebar-menu {
+  nav#desktop-relative {
     display: none;
   }
   .uw-mobile-menu li {
     background-color: #eee;
     border-bottom: 1px solid #fff;
   }
-  ul.uw-mobile-menu {
+  nav#mobile-relative {
     display: block;
   }
-  ul.uw-mobile-menu .pagenav,
-  ul.uw-mobile-menu > div {
-    display: none;
-  }
-  ul.uw-mobile-menu .uw-mobile-menu-toggle {
+  nav#mobile-relative button.uw-mobile-menu-toggle {
     display: block;
     position: relative;
     float: right;
@@ -6058,13 +6148,15 @@ ul.uw-mobile-menu ul {
     font-weight: 800;
     text-align: center;
     width: 50px;
-    height: 30px;
+    height: 40px;
     text-transform: uppercase;
     color: #4b2e83;
     background: url(assets/svg/uw-sprite.svg) no-repeat -475px 20px transparent;
     background-size: 1200px;
+    border: none;
+    padding: 0 0 20px 0;
   }
-  ul.uw-mobile-menu .uw-mobile-menu-toggle:before {
+  nav#mobile-relative button.uw-mobile-menu-toggle:before {
     content: "";
     position: absolute;
     right: 55px;
@@ -6073,8 +6165,16 @@ ul.uw-mobile-menu ul {
     height: 40px;
     background: url(assets/svg/uw-sprite.svg) no-repeat -600px 0 transparent;
   }
-  ul.uw-mobile-menu li.pagenav ul li.current_page_parent.current_page_ancestor > a:after {
+  nav#mobile-relative ul.uw-mobile-menu li.pagenav ul li.current_page_parent.current_page_ancestor > a:after {
     display: none;
+  }
+  .home nav#mobile-relative li a:hover,
+  .home nav#mobile-relative li a:focus {
+    border-bottom: 1px solid #eee;
+  }
+  .home nav#mobile-relative li:last-child a:hover,
+  .home nav#mobile-relative li:last-child a:focus {
+    border-bottom: none;
   }
 }
 img {

@@ -31,6 +31,7 @@ class UW
         require_once($parent . 'class.users.php');
         require_once($parent . 'class.dropdowns_walker.php');  // no initialization needed because it extends a WP class
         require_once($parent . 'class.uw-basic-custom-post.php');  // no initialization needed unless a child theme makes one
+        require_once($parent . 'class.uw-sidebar-menu-walker.php');  // sidebar menu will initialize for us
         require_once($parent . 'class.uw-quicklinks.php' );
         require_once($parent . 'class.uw-iframes.php');
         require_once($parent . 'class.uw-shortcodes.php' );
@@ -55,6 +56,7 @@ class UW
         $this->OEmbeds           = new UW_OEmbeds;
         $this->Mimes             = new UW_Mimes;
         $this->Users             = new UW_Users;
+        $this->SidebarMenuWalker = new UW_Sidebar_Menu_Walker;
         $this->Dropdowns         = new UW_Dropdowns;
         $this->Quicklinks        = new UW_QuickLinks;
         $this->Shortcodes        = new UW_Shortcodes;

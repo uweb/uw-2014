@@ -1,15 +1,24 @@
-ul.uw-mobile-menu {
-  display: none;
-  list-style:none;
-  padding:0;
-  margin:0 0 25px;
-  ul
-  {
-    display: block;
-    list-style:none;
-    padding:0;
-    margin:0;
-  }
+nav#mobile-relative {
+    display: none;
+    ul.uw-mobile-menu {
+      display: none;
+      width: 100%;
+      float: right;
+      clear: both;
+      list-style:none;
+      padding:0;
+      margin:0 0 25px;
+      > ul
+      {
+        display: block;
+        list-style:none;
+        padding:0;
+        margin:0;
+      }
+      li {
+        width: 100%;
+      }
+    }
 }
 
 
@@ -19,22 +28,17 @@ ul.uw-mobile-menu {
 @media only screen and (max-width : 768px) {
 
   //Hides desktop version
-  ul.uw-sidebar-menu {
+  nav#desktop-relative {
     display: none;
   }
 
-  // Next for lines for the homepage only
   .uw-mobile-menu li {
     background-color: #eee;
     border-bottom: 1px solid #fff;
   }
-  ul.uw-mobile-menu  {
-    .pagenav,
-    >div {
-      display: none;
-    }
+  nav#mobile-relative {
     display: block;
-    .uw-mobile-menu-toggle
+    button.uw-mobile-menu-toggle
     {
       display:block;
       position: relative;
@@ -47,11 +51,13 @@ ul.uw-mobile-menu {
       font-weight: @headings-font-weight;
       text-align: center;
       width: 50px;
-      height: 30px;
+      height: 40px;
       text-transform: uppercase;
       color:@purple;
       background: url(assets/svg/uw-sprite.svg) no-repeat -475px 20px transparent;
       background-size: 1200px;
+      border: none;
+      padding: 0 0 20px 0;
       &:before {
         content: "";
         position: absolute;
@@ -62,9 +68,26 @@ ul.uw-mobile-menu {
         background: url(assets/svg/uw-sprite.svg) no-repeat -600px 0 transparent;
       }
     }
+    ul.uw-mobile-menu li.pagenav ul li.current_page_parent.current_page_ancestor > a:after {
+      display: none;
+    }
   }
-  ul.uw-mobile-menu li.pagenav ul li.current_page_parent.current_page_ancestor > a:after {
-    display: none;
+
+  // Next few lines for the homepage only
+ .home
+   nav#mobile-relative {
+    li{
+      a:hover,
+      a:focus {
+        border-bottom: 1px solid #eee;
+      }
+      &:last-child {
+        a:hover,
+        a:focus {
+          border-bottom: none;
+        }
+      }
+    }
   }
 
 }

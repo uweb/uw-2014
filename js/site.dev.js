@@ -11322,7 +11322,7 @@ UW.Search = Backbone.View.extend({
     {
       case this.searchFeatures.uw :
         this.$searchbar.find('input').attr('name', 'q')
-        this.$searchbar.find('form').attr('action', 'http://uw.edu/search/')
+        this.$searchbar.find('form').attr('action', 'https://uw.edu/search/')
         return true;
 
       case this.searchFeatures.site :
@@ -11603,6 +11603,10 @@ UW.QuickLinks.Collection = Backbone.Collection.extend({
        "url": "http:\/\/www.lib.washington.edu\/",
        "classes": ["icon-libraries"]
    }, {
+       "title": "UW Medicine",
+       "url": "http:\/\/www.uwmedicine.org",
+       "classes": ['icon-medicine']
+   }, {
        "title": "Maps",
        "url": "http:\/\/uw.edu\/maps",
        "classes": ["icon-maps"]
@@ -11621,10 +11625,6 @@ UW.QuickLinks.Collection = Backbone.Collection.extend({
    }, {
        "title": "Husky Card",
        "url": "http:\/\/www.hfs.washington.edu\/huskycard\/",
-       "classes": false
-   }, {
-       "title": "UW Medicine",
-       "url": "http:\/\/www.uwmedicine.org",
        "classes": false
    }, {
        "title": "UW Bothell",
@@ -12542,15 +12542,22 @@ UW.MobileMenu = Backbone.View.extend({
 
   initialize : function( options )
   {
+    _.bindAll(this, 'toggle','reset_li');
     this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
-    this.$mobilemenu = this.$el.siblings().first()
+    this.$mobilemenu = this.$el.parent('nav');
+    this.$mobilemenu_ul = this.$mobilemenu.find('ul.uw-mobile-menu');
   },
 
   toggle: function()
   {
-    this.$mobilemenu.toggle()
-  }
+    this.$mobilemenu.find('li').width(this.$mobilemenu.width());
+    this.$mobilemenu_ul.toggle({'duration': 400, 'easing':'easeInOutQuart', 'done': this.reset_li });
+  },
 
+  reset_li: function()
+  {
+    this.$mobilemenu.find('li').removeAttr('style');
+  }
 
 })
 ;// ### UW Accordion
