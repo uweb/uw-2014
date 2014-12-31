@@ -8106,6 +8106,22 @@ pre.prettyprint ol.linenums li {
     position: static !important;
     overflow: visible !important;
   }
+  .site-regents p,
+  .site-regents a,
+  .site-regents li {
+    font-size: 14px  !important;
+    line-height: 18px !important;
+  }
+  .site-regents h1 {
+    font-size: 18px  !important;
+  }
+  .site-regents h2 {
+    font-size: 16px  !important;
+  }
+  .site-regents h3,
+  .site-regents h4 {
+    font-size: 14px  !important;
+  }
   a,
   a:visited {
     text-decoration: underline;
