@@ -8208,7 +8208,8 @@ pre.prettyprint ol.linenums li {
   }
   .site-regents p,
   .site-regents a,
-  .site-regents li {
+  .site-regents li,
+  .site-regents td {
     font-size: 14px  !important;
     line-height: 18px !important;
   }
