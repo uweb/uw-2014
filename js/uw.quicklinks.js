@@ -160,6 +160,10 @@ UW.QuickLinks.Collection = Backbone.Collection.extend({
        "url": "http:\/\/www.lib.washington.edu\/",
        "classes": ["icon-libraries"]
    }, {
+       "title": "UW Medicine",
+       "url": "http:\/\/www.uwmedicine.org",
+       "classes": ['icon-medicine']
+   }, {
        "title": "Maps",
        "url": "http:\/\/uw.edu\/maps",
        "classes": ["icon-maps"]
@@ -178,10 +182,6 @@ UW.QuickLinks.Collection = Backbone.Collection.extend({
    }, {
        "title": "Husky Card",
        "url": "http:\/\/www.hfs.washington.edu\/huskycard\/",
-       "classes": false
-   }, {
-       "title": "UW Medicine",
-       "url": "http:\/\/www.uwmedicine.org",
        "classes": false
    }, {
        "title": "UW Bothell",
