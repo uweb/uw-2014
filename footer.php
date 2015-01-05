@@ -35,7 +35,6 @@
 
         <p role="contentinfo">&copy; <?php echo date("Y"); ?> University of Washington  |  Seattle, WA</p>
 
-
     </div>
 
     </div><!-- #uw-container-inner -->
