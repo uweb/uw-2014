@@ -34,12 +34,25 @@ class UW_Filters
     add_filter( 'the_content', 'wpautop' , 99);
     add_filter( 'the_content', 'shortcode_unautop',100 );
 
+    // Add PDF filter to media library
+    add_filter( 'post_mime_types', array( $this, 'modify_post_mime_types' ) );
+
     // Multisite filters
     if ( is_multisite() )
     {
       // Add the site title to the body class
       add_filter( 'body_class', array( $this, 'add_site_title_body_class' ) );
     }
+
+  }
+
+
+  function modify_post_mime_types( $post_mime_types ) {
+
+    // select the mime type, here: 'application/pdf'
+    $post_mime_types['application/pdf'] = array( __( 'PDF' ), __( 'Manage PDFs' ), _n_noop( 'PDF <span class="count">(%s)</span>', 'PDFs <span class="count">(%s)</span>' ) );
+
+    return $post_mime_types;
 
   }
 
