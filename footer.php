@@ -33,7 +33,7 @@
             </ul>
         </nav>
 
-        <p role="contentinfo">&copy;	 2014 University of Washington  |  Seattle, WA</p>
+        <p role="contentinfo">&copy;	 2015 University of Washington  |  Seattle, WA</p>
 
 
     </div>
