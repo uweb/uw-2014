@@ -28,8 +28,8 @@
                 <li><a href="http://www.washington.edu/safety">Campus Safety</a></li>
                 <li><a href="http://myuw.washington.edu/">My UW</a></li>
                 <li><a href="http://www.washington.edu/admin/rules/wac/rulesindex.html">Rules Docket</a></li>
-                <li><a href="http://www.washington.edu/online/privacy">Privacy</a></li>
-                <li><a href="http://www.washington.edu/online/terms">Terms</a></li>
+                <li><a href="http://www.washington.edu/online/privacy/">Privacy</a></li>
+                <li><a href="http://www.washington.edu/online/terms/">Terms</a></li>
             </ul>
         </nav>
 
