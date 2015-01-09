@@ -26,7 +26,7 @@ else {
 }
 
 UW.sources = {
-  quicklinks : 'wp-admin/admin-ajax.php?action=quicklinks',
+  quicklinks : UW.baseUrl + 'wp-admin/admin-ajax.php?action=quicklinks',
   search     : UW.baseUrl + 'wp-admin/admin-ajax.php'
 }
 
