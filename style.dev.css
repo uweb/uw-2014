@@ -5263,6 +5263,13 @@ a.more:after {
 .uw-body .uw-site-title span {
   font-weight: 700;
 }
+.uw-body p.date {
+  margin-top: 25px;
+  margin-bottom: -25px;
+}
+.uw-body p.date:first-of-type {
+  margin-top: 0px;
+}
 span.next-page {
   display: block;
   margin-top: 50px;
