@@ -1,5 +1,5 @@
 <?php
-if (is_single()){
+if (is_single() || is_home()){
     the_date('F j, Y', '<p class="date">', '</p>');
 }
 ?>
