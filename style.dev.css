@@ -8233,7 +8233,7 @@ pre.prettyprint ol.linenums li {
   .site-regents h4 {
     font-size: 17px  !important;
   }
-  .site-regents li:after {
+  .site-regents a:after {
     display: none !important;
   }
   a,
