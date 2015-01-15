@@ -8226,6 +8226,9 @@ pre.prettyprint ol.linenums li {
   .site-regents h4 {
     font-size: 17px  !important;
   }
+  .site-regents li:after {
+    display: none !important;
+  }
   a,
   a:visited {
     text-decoration: underline;
