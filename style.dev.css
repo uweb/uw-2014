@@ -4456,7 +4456,7 @@ table th[class*="col-"] {
   display: block;
   overflow: hidden;
 }
-.shortcode-blogroll > li .date {
+.shortcode-blogroll > li p.date {
   font-weight: 800;
   margin: 10px 0 0;
   font-family: "Encode Sans Compressed", sans-serif;
@@ -5262,6 +5262,13 @@ a.more:after {
 }
 .uw-body .uw-site-title span {
   font-weight: 700;
+}
+.uw-body p.date {
+  margin-top: 25px;
+  margin-bottom: -25px;
+}
+.uw-body p.date:first-of-type {
+  margin-top: 0px;
 }
 span.next-page {
   display: block;

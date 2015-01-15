@@ -152,12 +152,14 @@ UW.Dropdowns = Backbone.View.extend({
 
       case this.keys.left:
         this.currentSubMenu.hide().parent().prev().children('a').first().focus()
+        this.index.submenu = 0;
         this.currentSubMenu.attr( 'aria-expanded', 'false' )
           .parent().children('a').first().attr('aria-expanded', 'false')
         return false;
 
       case this.keys.right:
         this.currentSubMenu.hide().parent().next().children('a').first().focus()
+        this.index.submenu = 0;
         this.currentSubMenu.attr( 'aria-expanded', 'false' )
           .parent().children('a').first().attr('aria-expanded', 'false')
         return false;
