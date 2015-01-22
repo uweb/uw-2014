@@ -6175,6 +6175,21 @@ nav#mobile-relative ul.uw-mobile-menu li {
   nav#mobile-relative ul.uw-mobile-menu li.pagenav ul li.current_page_parent.current_page_ancestor > a:after {
     display: none;
   }
+  nav#mobile-relative.frontpage button.uw-mobile-menu-toggle {
+    position: absolute;
+    right: 0;
+    z-index: 10;
+    margin: 0;
+    top: 55px;
+  }
+  nav#mobile-relative.frontpage ul.uw-mobile-menu {
+    position: absolute;
+    right: 0px;
+    z-index: 1;
+  }
+  nav#mobile-relative.frontpage ul.uw-mobile-menu .menu-dropdowns-container {
+    margin-top: 0px;
+  }
   .home nav#mobile-relative li a:hover,
   .home nav#mobile-relative li a:focus {
     border-bottom: 1px solid #eee;

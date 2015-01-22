@@ -71,6 +71,23 @@ nav#mobile-relative {
     ul.uw-mobile-menu li.pagenav ul li.current_page_parent.current_page_ancestor > a:after {
       display: none;
     }
+    &.frontpage {
+        button.uw-mobile-menu-toggle {
+            position: absolute;
+            right: 0;
+            z-index: 10;
+            margin: 0;
+            top: 55px;
+        }
+        ul.uw-mobile-menu {
+            position: absolute;
+            right: 0px;
+            z-index: 1;
+            .menu-dropdowns-container {
+                margin-top: 0px;
+            }
+        }
+    }
   }
 
   // Next few lines for the homepage only

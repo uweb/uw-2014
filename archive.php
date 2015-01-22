@@ -2,6 +2,8 @@
 
 <?php get_template_part( 'header', 'image' ); ?>
 
+<?php get_template_part( 'menu', 'mobile' ); ?>
+
 <div class="container uw-body">
 
   <div class="row">

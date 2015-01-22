@@ -81,7 +81,7 @@ if ( ! function_exists( 'uw_mobile_front_page_menu' ) ) :
 
   function uw_mobile_front_page_menu()
   {
-    echo sprintf( '<nav id="mobile-relative" role="navigation" aria-label="relative">%s</nav>', uw_list_front_page_menu_items() ) ;
+    echo sprintf( '<nav id="mobile-relative" class="frontpage" role="navigation" aria-label="relative">%s</nav>', uw_list_front_page_menu_items() ) ;
   }
 
 endif;

@@ -2,6 +2,8 @@
 
 <?php get_template_part( 'header', 'image' ); ?>
 
+<?php if (is_front_page()) { get_template_part( 'menu', 'mobile' ); }?>
+
 <div class="container uw-body">
 
   <div class="row">
