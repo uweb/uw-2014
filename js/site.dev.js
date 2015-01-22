@@ -12290,7 +12290,7 @@ UW.Radio = Backbone.View.extend({
 
     this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
 
-    this.$el.before( this.template )
+    this.$el.after( this.template )
 
     this.$input = this.$el
 
