@@ -8171,6 +8171,28 @@ pre.prettyprint ol.linenums li {
   text-shadow: 0 1px 0 #fff;
 }
 @media print {
+  .container {
+    width: 8.5in !important;
+  }
+  .uw-thinstrip,
+  #dawgdrops,
+  #quicklinks,
+  #uwsearcharea,
+  .uw-breadcrumbs,
+  .uw-hero-image,
+  .uw-hero-image:after,
+  .uw-hero-image:before,
+  .uw-news-image,
+  .site-news.single .uw-site-title,
+  .screen-reader-shortcut,
+  #wpadminbar,
+  #respond,
+  .uw-footer h4,
+  .uw-footer .footer-social,
+  .uw-footer > a,
+  .uw-footer {
+    display: none !important;
+  }
   .uw-footer {
     border-top: none;
   }
