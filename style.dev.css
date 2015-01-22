@@ -8171,15 +8171,6 @@ pre.prettyprint ol.linenums li {
   text-shadow: 0 1px 0 #fff;
 }
 @media print {
-  .uw-thinstrip,
-  #menu-dropdowns,
-  #quicklinks,
-  .uw-search-wrapper {
-    display: none;
-  }
-  .uw-hero-image {
-    height: 0px;
-  }
   .uw-footer {
     border-top: none;
   }
