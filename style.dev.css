@@ -8171,8 +8171,8 @@ pre.prettyprint ol.linenums li {
   text-shadow: 0 1px 0 #fff;
 }
 @media print {
-  #uw-container {
-    width: 1000px !important;
+  .container {
+    width: 511pt !important;
   }
   .uw-thinstrip,
   #dawgdrops,
