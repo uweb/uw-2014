@@ -79,9 +79,15 @@ endif;
 
 if ( ! function_exists( 'uw_mobile_front_page_menu' ) ) :
 
-  function uw_mobile_front_page_menu()
+  function uw_mobile_front_page_menu($class='')
   {
-    echo sprintf( '<nav id="mobile-relative" class="frontpage" role="navigation" aria-label="relative">%s</nav>', uw_list_front_page_menu_items() ) ;
+    $spacer = '';
+    if (!empty($class)){
+        $class = ' ' . $class;
+        $spacer = '<div id="spacer"></div>';
+        
+    }
+    echo sprintf( '<nav id="mobile-relative" class="frontpage%s" role="navigation" aria-label="relative">%s%s</nav>', $class, $spacer, uw_list_front_page_menu_items() ) ;
   }
 
 endif;
