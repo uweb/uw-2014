@@ -7747,12 +7747,6 @@ body.error404 .woof {
     display: none;
   }
 }
-.checkbox input,
-.radio input {
-  display: block;
-  position: relative;
-  opacity: 0;
-}
 a.screen-reader-shortcut {
   position: absolute;
   left: 6px;
@@ -8213,6 +8207,9 @@ pre.prettyprint ol.linenums li {
   text-shadow: 0 1px 0 #fff;
 }
 @media print {
+  .container {
+    width: 8.5in !important;
+  }
   .uw-thinstrip,
   #dawgdrops,
   #quicklinks,
@@ -8274,6 +8271,9 @@ pre.prettyprint ol.linenums li {
   .site-regents h3,
   .site-regents h4 {
     font-size: 17px  !important;
+  }
+  .site-regents a:after {
+    display: none !important;
   }
   a,
   a:visited {
