@@ -6181,10 +6181,10 @@ nav#mobile-relative ul.uw-mobile-menu li {
   }
   nav#mobile-relative.frontpage button.uw-mobile-menu-toggle {
     position: absolute;
-    right: -10px;
+    right: -20px;
     z-index: 10;
     margin: 0;
-    top: -45px;
+    top: -50px;
   }
   nav#mobile-relative.frontpage ul.uw-mobile-menu {
     z-index: 1;
