@@ -11098,11 +11098,11 @@ UW.Search = Backbone.View.extend({
   },
 
   // This is the HTML for the search bar that is preprended to the body tag.
-  searchbar : 
+  searchbar :
                '<div class="container no-height">'+
                   '<div class="center-block uw-search-wrapper">'+
                     '<form class="uw-search" action="<%= UW.baseUrl %>">'+
-                      '<label class="screen-reader" for="uw-search-bar">Enter search text</label>' + 
+                      '<label class="screen-reader" for="uw-search-bar">Enter search text</label>' +
                       '<input id="uw-search-bar" type="search" name="s" value="" autocomplete="off" tabindex="-1"/>'+
                     '</form>'+
 
@@ -11135,7 +11135,7 @@ UW.Search = Backbone.View.extend({
               '<div class="uw-results center-block" style="display:none;">' +
                  '<p class="more-results" style="display:none;">Need more results? Try the <a href="http://www.washington.edu/directory/" title="Full directory">full directory</a></p>' +
               '</div>',
-            
+
 
   // The HTML template for a single search result. Only the information that is available will be shown.
   result :  '<div class="result">' +
@@ -11301,12 +11301,13 @@ UW.Search = Backbone.View.extend({
   // Set a property to the current radio button indicating which function the search bar is providing.
   toggleSearchFeature : function( e )
   {
-    this.hideDirectory()
-    var value = e.currentTarget.childNodes[1].value;
+    // this.hideDirectory()
+    // var value = e.currentTarget.childNodes[1].value;
+    var value = $(e.currentTarget).find('input').val()
     this.searchFeature = value
     _.defer(function($searchbar) { $searchbar.find('#uw-search-bar').focus() }, this.$searchbar);
-    if ( this.searchFeature === this.searchFeatures.directory )
-      this.showDirectory()
+    // if ( this.searchFeature === this.searchFeatures.directory )
+      // this.showDirectory()
     // this.mirrorSelectAndRadioElements()
   },
 
