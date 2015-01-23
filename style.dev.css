@@ -6200,8 +6200,14 @@ nav#mobile-relative ul.uw-mobile-menu li {
     right: 0px;
     top: 12px;
   }
-  nav#mobile-relative.frontpage.bighero ul.mobile-menu {
+  nav#mobile-relative.frontpage.bighero ul.uw-mobile-menu {
     margin: 0;
+  }
+  nav#mobile-relative.frontpage.bighero #spacer {
+    height: 58px;
+    margin-bottom: 2px;
+    width: 100%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   }
   nav#mobile-relative:after {
     visibility: hidden;
