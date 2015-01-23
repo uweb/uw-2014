@@ -7705,12 +7705,6 @@ body.error404 .woof {
     display: none;
   }
 }
-.checkbox input,
-.radio input {
-  display: block;
-  position: relative;
-  opacity: 0;
-}
 a.screen-reader-shortcut {
   position: absolute;
   left: 6px;
