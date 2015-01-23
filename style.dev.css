@@ -6175,20 +6175,30 @@ nav#mobile-relative ul.uw-mobile-menu li {
   nav#mobile-relative ul.uw-mobile-menu li.pagenav ul li.current_page_parent.current_page_ancestor > a:after {
     display: none;
   }
+  nav#mobile-relative.frontpage {
+    margin-top: -18px;
+    position: relative;
+  }
   nav#mobile-relative.frontpage button.uw-mobile-menu-toggle {
     position: absolute;
-    right: 0;
+    right: -10px;
     z-index: 10;
     margin: 0;
-    top: 55px;
+    top: -45px;
   }
   nav#mobile-relative.frontpage ul.uw-mobile-menu {
-    position: absolute;
-    right: 0px;
     z-index: 1;
   }
   nav#mobile-relative.frontpage ul.uw-mobile-menu .menu-dropdowns-container {
     margin-top: 0px;
+  }
+  nav#mobile-relative:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
   }
   .home nav#mobile-relative li a:hover,
   .home nav#mobile-relative li a:focus {

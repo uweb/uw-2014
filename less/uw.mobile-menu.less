@@ -72,22 +72,34 @@ nav#mobile-relative {
       display: none;
     }
     &.frontpage {
+        margin-top: -18px;
+        position: relative;
         button.uw-mobile-menu-toggle {
             position: absolute;
-            right: 0;
+            right: -10px;
             z-index: 10;
             margin: 0;
-            top: 55px;
+            top: -45px;
         }
         ul.uw-mobile-menu {
-            position: absolute;
-            right: 0px;
+            //position: absolute;
+            //right: 20px;
             z-index: 1;
+            //margin-top: 62px;
+            //width: calc(~"100% - 40px");
             .menu-dropdowns-container {
                 margin-top: 0px;
             }
         }
     }
+    &:after { //clearfix
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+   }
   }
 
   // Next few lines for the homepage only
