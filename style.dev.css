@@ -6192,6 +6192,17 @@ nav#mobile-relative ul.uw-mobile-menu li {
   nav#mobile-relative.frontpage ul.uw-mobile-menu .menu-dropdowns-container {
     margin-top: 0px;
   }
+  nav#mobile-relative.frontpage.bighero {
+    margin-top: 0px;
+    background-color: white;
+  }
+  nav#mobile-relative.frontpage.bighero button.uw-mobile-menu-toggle {
+    right: 0px;
+    top: 12px;
+  }
+  nav#mobile-relative.frontpage.bighero ul.mobile-menu {
+    margin: 0;
+  }
   nav#mobile-relative:after {
     visibility: hidden;
     display: block;
