@@ -5408,6 +5408,9 @@ span.next-page a:hover {
     margin: 10px 80px 20px 0;
     font-size: 33px;
   }
+  .uw-body p.date {
+    margin-bottom: -15px;
+  }
   .home .uw-body .uw-site-title {
     padding-right: 65px;
   }
