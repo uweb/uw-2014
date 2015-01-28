@@ -10,6 +10,8 @@
 
       <?php uw_site_title(); ?>
 
+      <?php if (is_front_page()) { get_template_part( 'menu', 'mobile' ); }?>
+
       <?php get_template_part( 'breadcrumbs' ); ?>
 
       <div id='main_content' class="uw-body-copy">
