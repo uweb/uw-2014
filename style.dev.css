@@ -5361,29 +5361,13 @@ span.next-page a:hover {
 .links {
   padding: 0;
   margin-top: 20px;
-}
-.links a {
-  position: relative;
-}
-.links a:after {
-  background: url(/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg) no-repeat -206px -492px;
-  content: "";
-  opacity: .4;
-  position: absolute;
-  right: -23px;
-  bottom: 1px;
-  width: 14px;
-  height: 21px;
-  -o-transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
+  overflow: visible;
 }
 .links li {
   padding: 0;
   list-style: none;
-  margin-bottom: 7px;
-  padding-bottom: 7px;
+  margin-bottom: 6px;
+  padding-bottom: 6px;
   border-bottom: 1px solid #EEE;
 }
 .links li:last-child {
@@ -7814,9 +7798,9 @@ label.screen-reader {
 }
 #searchform #s {
   width: 100%;
-  padding: 10px 0 10px 15px;
+  padding: 14px 0 13px 25px;
   border: none;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
   outline: none;
   background-color: #F5F5F5;
