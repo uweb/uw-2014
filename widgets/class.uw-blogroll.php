@@ -73,7 +73,10 @@ class UW_Blogroll extends WP_Widget
           'titletag'  => 'h2',
           'post_type' =>  'post',
           'number'    =>  5,
-          'mini'    =>  false
+          'category'  =>  '',
+          'category_name' =>  '',
+          'mini'     =>  false,
+          'date'     =>  'show'
       ), $atts );
 
     if ( !array_key_exists('numberposts', $params ) )
@@ -82,6 +85,7 @@ class UW_Blogroll extends WP_Widget
     $posts = get_posts( $params );
 
     $params = (object) $params;
+    print_r($params);
     $mini = $params->mini;
     $html = '';
 
@@ -110,13 +114,18 @@ class UW_Blogroll extends WP_Widget
       $author = $this->is_true( $params->author ) ? '<p class="author-info">' . get_the_author_meta( 'display_name', $post->post_author ) . '</p>' : '';
       $author_mini = $this->is_true( $params->author ) ? get_the_author_meta( 'display_name', $post->post_author ) : '';
 
-      $date   = get_the_time( get_option( 'date_format' ), $post->ID );
+      if ($this->is_true($params->date)){
+        $date = "<p class='date'>" . get_the_time( get_option( 'date_format' ), $post->ID ) . "</p>";
+      }
+      else {
+        $date = '';
+      }
 
       if ($mini){
         $html .= sprintf("<li><a class='widget-thumbnail' href='%s'>%s</a><a class='widget-link' href='%s'>%s<span><small>%s | %s</small></span></a></li>", $link, $image, $link, $post->post_title, $author_mini, $date);
       }
       else {
-        $html  .= "<li$class><span><{$params->titletag}><a href=\"$link\">{$post->post_title}</a><p class=\"date\">{$date}</p></{$params->titletag}>{$author}{$excerpt}</span></li>";
+        $html  .= "<li$class><span><{$params->titletag}><a href=\"$link\">{$post->post_title}</a>{$date}</{$params->titletag}>{$author}{$excerpt}</span></li>";
       }
 
     }
