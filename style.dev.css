@@ -5267,9 +5267,6 @@ a.more:after {
   margin-top: 25px;
   margin-bottom: -25px;
 }
-.uw-body p.date:first-of-type {
-  margin-top: 0px;
-}
 span.next-page {
   display: block;
   margin-top: 50px;
@@ -8088,6 +8085,10 @@ ul.shortcode-blogroll-mini {
 .uw-sidebar .widget_categories .widgettitle:after {
   display: none;
 }
+.uw-twitter .tweet {
+  overflow: hidden;
+  margin: 15px 0 0;
+}
 .uw-twitter .tweet img {
   float: left;
   margin: 0 10px 0 0;
@@ -8097,6 +8098,10 @@ ul.shortcode-blogroll-mini {
 .uw-twitter .tweet p {
   line-height: 1.5;
   font-size: 16px;
+}
+.uw-content .uw-twitter {
+  margin: 50px 0;
+  padding: 0;
 }
 #uwalert-alert-message {
   padding: 0 20px 40px;
