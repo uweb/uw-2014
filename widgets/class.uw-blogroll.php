@@ -85,7 +85,6 @@ class UW_Blogroll extends WP_Widget
     $posts = get_posts( $params );
 
     $params = (object) $params;
-    print_r($params);
     $mini = $params->mini;
     $html = '';
 
