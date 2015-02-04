@@ -42,10 +42,12 @@ class UW_Top_Posts extends WP_Widget
 
     if ( $this->jetpackInstalled() )
       $popular = $this->filterResults( stats_get_csv( 'postviews', array( 'days' => self::DAYS, 'limit' => self::FETCH ) ) );
+    else
+      echo '<!--';
 
     // For development purposes, if there aren't any top posts then default to the latest posts.
-    if ( ! $popular || sizeof( $popular ) < $items  )
-      $popular =  wp_get_recent_posts( array( 'numberposts' => $items, 'post_status' => 'publish' ) , OBJECT );
+    //if ( ! $popular || sizeof( $popular ) < $items  )
+    //  $popular =  wp_get_recent_posts( array( 'numberposts' => $items, 'post_status' => 'publish' ) , OBJECT );
 
     $title = apply_filters( 'widget_title', $title );
 
@@ -81,16 +83,19 @@ class UW_Top_Posts extends WP_Widget
 
     <?php foreach ( $popular as $index => $post ) : if ( $index >= $instance['items'] ) break; ?>
 
+          <?php print_r($post);
+          $post_permalink = get_permalink($post->ID);
+          ?>
           <li>
-            <a class="widget-thumbnail" href="<?php echo $post->post_permalink ?>" title="<?php echo esc_attr( $post->post_title ) ?>">
+            <a class="widget-thumbnail" href="<?php echo $post_permalink ?>" title="<?php echo esc_attr( $post->post_title ) ?>">
 
-            <?php if ( has_post_thumbnail( $post->post_id ) ) : ?>
+            <?php if ( has_post_thumbnail( $post->ID ) ) : ?>
 
-              <?php echo get_the_post_thumbnail( $post->post_id, 'thumbnail' ); ?>
+              <?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?>
 
             <?php endif; ?>
 
-            <a class="widget-link" href="<?php echo $post->post_permalink ?>" title="<?php echo esc_attr( $post->post_title ) ?>">
+            <a class="widget-link" href="<?php echo $post_permalink ?>" title="<?php echo esc_attr( $post->post_title ) ?>">
               <?php echo $post->post_title; ?>
               <p><small><?php echo $this->convertViews( $post->views ) ?></small></p>
             </a>
@@ -103,7 +108,11 @@ class UW_Top_Posts extends WP_Widget
 
     </ul>
 
-    <?php echo $after_widget; ?>
+    <?php echo $after_widget;
+    if (!$this->jetpackInstalled()){
+      echo '-->';
+    }
+    ?>
 
   <?php
 	}
