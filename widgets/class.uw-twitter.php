@@ -107,7 +107,7 @@ class UW_Widget_Twitter extends WP_Widget
 
       $output = $output .    '<div class="tweet">';
       $output = $output .      '<a href="//twitter.com/' . $tweet->author . '"><img src="' . $tweet->img . '" alt="' . $tweet->author . '"/></a>';
-      $output = $output .      '<p><a href="//twitter.com/' . $tweet->author . '"><span>@' . $tweet->author . '</span></a>' . $tweet->text . $tweet->retweet . '</p>';
+      $output = $output .      '<p><a href="//twitter.com/' . $tweet->author . '"><span>@' . $tweet->author . '</span></a> ' . $tweet->text . ' ' . $tweet->retweet . '</p>';
       $output = $output .    '</div>';
 
     endforeach;
