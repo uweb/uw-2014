@@ -93,29 +93,29 @@ class UW_Widget_Twitter extends WP_Widget
     if ( ! is_array( $tweets ) ) return;
     
     $output  = $before_widget;
-    $output .=  '<div class="widget uw-twitter">';
+    $output = $output .  '<div class="widget uw-twitter">';
 
-    $output .=    '<h3 class="widget-title">';
-    $output .=    $before_title;
-    if ( ! empty( $title ) ) output .= $title;
-    $output .=    $after_title;
-    $output .=    '</h3>';
+    $output = $output .    '<h3 class="widget-title">';
+    $output = $output .    $before_title;
+    if ( ! empty( $title ) ) $output = $output . $title;
+    $output = $output .    $after_title;
+    $output = $output .    '</h3>';
 
-    $output .=    '<div class="twitter-feed" data-name="' . $name . '" data-count="' . $count . '">';
+    $output = $output .    '<div class="twitter-feed" data-name="' . $name . '" data-count="' . $count . '">';
 
     foreach ( $tweets as $tweet ) : $tweet = (object) $tweet;
 
-      $output .=    '<div class="tweet">';
-      $output .=      '<a href="//twitter.com/' . $tweet->author . '"><img src="' . $tweet->img . '" alt="' . $tweet->author '" /></a>';
-      $output .=      '<p><a href="//twitter.com/' . $tweet->author . '"><span>@' . $tweet->author '</span></a>' . $tweet->text . $tweet->retweet . '</p>';
-      $output .=    '</div>';
+      $output = $output .    '<div class="tweet">';
+      $output = $output .      '<a href="//twitter.com/' . $tweet->author . '"><img src="' . $tweet->img . '" alt="' . $tweet->author . '"/></a>';
+      $output = $output .      '<p><a href="//twitter.com/' . $tweet->author . '"><span>@' . $tweet->author . '</span></a>' . $tweet->text . $tweet->retweet . '</p>';
+      $output = $output .    '</div>';
 
     endforeach;
 
-    $output .=    '<a class="more" href="//twitter.com/' . $instance['name'] . '">More</a>';
-    $output .=  '</div>';
-    $output .= '</div>';
-    $output .= $after_widget;
+    $output = $output .    '<a class="more" href="//twitter.com/' . $instance['name'] . '">More</a>';
+    $output = $output .  '</div>';
+    $output = $output . '</div>';
+    $output = $output . $after_widget;
     
     return $output;
   }
