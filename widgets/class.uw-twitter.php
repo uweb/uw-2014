@@ -91,40 +91,33 @@ class UW_Widget_Twitter extends WP_Widget
     $tweets = $this->getLatestTweets( $name, $count );
 
     if ( ! is_array( $tweets ) ) return;
-?>
+    
+    $output  = $before_widget;
+    $output .=  '<div class="widget uw-twitter">';
 
-    <?php echo $before_widget; ?>
-      <div class="widget uw-twitter">
+    $output .=    '<h3 class="widget-title">';
+    $output .=    $before_title;
+    if ( ! empty( $title ) ) output .= $title;
+    $output .=    $after_title;
+    $output .=    '</h3>';
 
-        <h3 class="widget-title">
-          <?php echo $before_title;  if ( ! empty( $title ) ) echo $title;  echo $after_title; ?>
-        </h3>
+    $output .=    '<div class="twitter-feed" data-name="' . $name . '" data-count="' . $count . '">';
 
-        <div class="twitter-feed" data-name="<?php echo $name; ?>" data-count="<?php echo $count; ?>">
+    foreach ( $tweets as $tweet ) : $tweet = (object) $tweet;
 
-          <?php foreach ( $tweets as $tweet ) : $tweet = (object) $tweet;  ?>
+      $output .=    '<div class="tweet">';
+      $output .=      '<a href="//twitter.com/' . $tweet->author . '"><img src="' . $tweet->img . '" alt="' . $tweet->author '" /></a>';
+      $output .=      '<p><a href="//twitter.com/' . $tweet->author . '"><span>@' . $tweet->author '</span></a>' . $tweet->text . $tweet->retweet . '</p>';
+      $output .=    '</div>';
 
-          <div class="tweet">
-            <a href="//twitter.com/<?php echo $tweet->author; ?>">
-              <img src="<?php echo $tweet->img; ?>" alt="<?php echo $tweet->author; ?>" />
-            </a>
-            <p>
-              <a href="//twitter.com/<?php echo $tweet->author; ?>">
-                <span>@<?php echo $tweet->author; ?></span>
-              </a>
-              <?php echo $tweet->text; ?>
-              <?php echo $tweet->retweet; ?>
-            </p>
-          </div>
+    endforeach;
 
-          <?php endforeach; ?>
-
-          <a class="more" href="//twitter.com/<?php echo $instance['name'] ?>">More</a>
-        </div>
-      </div>
-    <?php echo $after_widget;?>
-
-<?php
+    $output .=    '<a class="more" href="//twitter.com/' . $instance['name'] . '">More</a>';
+    $output .=  '</div>';
+    $output .= '</div>';
+    $output .= $after_widget;
+    
+    return $output;
   }
 
   function widget($args, $instance)
