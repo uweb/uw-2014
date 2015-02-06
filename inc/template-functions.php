@@ -85,7 +85,7 @@ if ( ! function_exists( 'uw_mobile_front_page_menu' ) ) :
     if (!empty($class)){
         $class = ' ' . $class;
         $spacer = '<div id="spacer"></div>';
-        
+
     }
     echo sprintf( '<nav id="mobile-relative" class="frontpage%s" role="navigation" aria-label="relative">%s%s</nav>', $class, $spacer, uw_list_front_page_menu_items() ) ;
   }
@@ -205,15 +205,17 @@ if ( ! function_exists('get_uw_breadcrumbs') ) :
 
     if ( is_search() )
     {
-        //$html .=  '<li class="current"><a href="'. get_search_link( get_search_query() ) .'" title="'. esc_attr( get_search_query() ) .'">Search results for ' . get_search_query() . '</a>';
         $html .=  '<li class="current"><span>Search results for ' . get_search_query() . '</span>';
     } else
 
     if ( is_author() )
     {
         $author = get_queried_object();
-        //$html .=  '<li class="current"><a href="' . get_author_posts_url( $author->ID ) . '" title="'. esc_attr( $author->display_name ) .'"> Author: '  . $author->display_name . '</a>';
         $html .=  '<li class="current"><span> Author: '  . $author->display_name . '</span>';
+    } else
+
+    if ( get_queried_object_id() === (Int) get_option('page_for_posts')   ) {
+        $html .=  '<li class="current"><span> '. get_the_title( get_queried_object_id() ) . ' </span>';
     }
 
     // If the current view is a post type other than page or attachment then the breadcrumbs will be taxonomies.
@@ -344,7 +346,7 @@ if ( ! function_exists('uw_is_custom_post_type') ) :
 endif;
 
 if ( !function_exists('uw_site_title')):
- 
+
     function uw_site_title()
     {
         $classes = 'uw-site-title';
