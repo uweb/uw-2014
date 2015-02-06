@@ -11,6 +11,7 @@ class UW_Page_Attributes_Meta_Box
 
   function __construct()
   {
+    $this->HIDDEN = array('Big Hero', 'No image', 'No title/image', 'Small Hero' );
     add_action( 'add_meta_boxes', array( $this, 'replace_meta_box' ) );
 
   }
@@ -52,7 +53,7 @@ class UW_Page_Attributes_Meta_Box
 
           $pages = wp_dropdown_pages( $dropdown_args );
 
-          if ( ! empty( $pages ) ) 
+          if ( ! empty( $pages ) )
           { ?>
 
             <p><strong><?php _e('Parent') ?></strong></p>
@@ -95,6 +96,11 @@ class UW_Page_Attributes_Meta_Box
 
     foreach ( array_keys( $templates ) as $template )
     {
+      if( in_array($template, $this->HIDDEN ))
+      {
+        continue;
+      }
+
       $checked = checked( $default, $templates[ $template ], false );
       echo "<p><input type='radio' name='page_template' value='" . $templates[ $template ] . "' $checked >$template</input></p>";
     }
