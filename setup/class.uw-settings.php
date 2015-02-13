@@ -30,13 +30,19 @@ class UW_Settings
 
     function register_settings() {
         register_setting('general', 'overly_long_title');
+        register_setting('reading', 'show_byline_on_posts');
     }
 
     function add_settings_fields() {
         add_settings_field('overly_long_title', 'Does your site title take two lines on desktop?', array($this, 'overly_long_title_callback'), 'general');
+        add_settings_field('show_byline_on_posts', 'Show bylines on single posts and archives?', array($this, 'show_byline_on_posts_callback'), 'reading');
     }
 
     function overly_long_title_callback() {
         echo "<input name='overly_long_title' type='checkbox' value='1'" . checked( 1, get_option('overly_long_title'), false) . "/>(yes if checked)";
+    }
+
+    function show_byline_on_posts_callback() {
+        echo "<input name='show_byline_on_posts' type='checkbox' value='1'" . checked( 1, get_option('show_byline_on_posts'), false) . "/>(yes if checked)";
     }
 }
