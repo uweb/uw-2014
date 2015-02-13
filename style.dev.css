@@ -5265,7 +5265,11 @@ a.more:after {
 }
 .uw-body p.date {
   margin-top: 25px;
-  margin-bottom: -25px;
+  margin-bottom: -19px;
+}
+.uw-body .author-info {
+  margin: -4.5px 0 20px 0;
+  font-weight: 800;
 }
 span.next-page {
   display: block;
