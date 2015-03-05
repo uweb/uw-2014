@@ -3703,17 +3703,21 @@ ul.uw-select li.inactive a {
  *  All styles for UW accordion
  */
 .uw-accordion h3 {
-  background-color: #4b2e83;
-  color: white;
-  padding: 10px;
+  background-color: #E8E8E8;
+  color: #565656;
+  padding: 15px 15px 15px 15px;
   display: block;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 19px;
 }
 .uw-accordion h3:after {
-  font-family: Flat-UI-Icons;
-  content: '\e009';
+  content: " ";
   float: right;
+  display: block;
+  width: 30px;
+  height: 25px;
+  background: url(assets/svg/uw-sprite.svg) no-repeat -283px 2px rgba(255, 255, 255, 0);
 }
 .uw-accordion div {
   height: 0px;
