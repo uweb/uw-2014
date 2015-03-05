@@ -48,14 +48,24 @@ Class TileBox
 
     function tile_handler( $atts, $content ) {
         $this->count++;
+        $tile_atts = shortcode_atts( array(
+          'empty' => 'false',
+        ), $atts);
 
-        if ( empty( $content ) )
-            $content = 'No content for this tile.  Make sure you wrap your content like this: [tile]Content here[/tile]';
+        $classes = 'tile';
 
-        if ( $this->count > self::MAXTILES)
-            $content = 'Too many [tile]s.  Only up to 4 are supported)';
+        if ( $this->count > self::MAXTILES) {
+          $content = 'Too many [tile]s.  Only up to 4 are supported)';
+        }
 
-        return sprintf( '<div class="tile">%s</div>', apply_filters( 'the_content', $content ) );
+        if (filter_var($tile_atts['empty'], FILTER_VALIDATE_BOOLEAN)){
+          $classes = $classes . ' empty';
+        }
+        else if ( empty( $content ) ){
+          $content = 'No content for this tile.  Make sure you wrap your content like this: [tile]Content here[/tile]';
+        }
+
+        return sprintf( '<div class="%s">%s</div>', $classes, apply_filters( 'the_content', $content ) );
     }
 
 }

@@ -3791,6 +3791,10 @@ ul.uw-select li.inactive a {
   margin-top: 20px;
   margin-bottom: 15px;
 }
+.box-outer .box .tile.empty {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
 /* Small Devices, Tablets */
 @media only screen and (max-width: 767px) {
   .box-outer .box {
@@ -5269,7 +5273,11 @@ a.more:after {
 }
 .uw-body p.date {
   margin-top: 25px;
-  margin-bottom: -25px;
+  margin-bottom: -19px;
+}
+.uw-body .author-info {
+  margin: -4.5px 0 20px 0;
+  font-weight: 800;
 }
 span.next-page {
   display: block;

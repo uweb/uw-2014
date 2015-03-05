@@ -29,7 +29,7 @@ class UW_Trumba
             $return = '';
         }
         else {
-            $return = '<script type="text/javascript" src="http://www.trumba.com/scripts/spuds.js"></script>';
+            $return = '<script type="text/javascript" src="//www.trumba.com/scripts/spuds.js"></script>';
             $this->TrumbaAdded = true;
         }
 
