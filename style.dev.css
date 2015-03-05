@@ -3712,7 +3712,7 @@ ul.uw-select li.inactive a {
   font-size: 19px;
   cursor: pointer;
 }
-.uw-accordion h3.inactive:after {
+.uw-accordion h3.active:after {
   background-position: -283px -24px;
 }
 .uw-accordion h3:after {
