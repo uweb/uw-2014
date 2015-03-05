@@ -3710,6 +3710,10 @@ ul.uw-select li.inactive a {
   margin-top: 20px;
   margin-bottom: 20px;
   font-size: 19px;
+  cursor: pointer;
+}
+.uw-accordion h3.inactive:after {
+  background-position: -283px -24px;
 }
 .uw-accordion h3:after {
   content: " ";
