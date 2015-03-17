@@ -3747,21 +3747,13 @@ ul.uw-select li.inactive a {
 .box-outer .box.box-centered {
   text-align: center;
 }
-.box-outer .box.two .tile {
-  width: 47%;
-  margin-right: 3%;
-}
 .box-outer .box.three .tile {
-  width: 31%;
-  margin-right: 2%;
   padding: 0 40px 20px;
 }
 .box-outer .box.three .tile div {
   margin: 0 -41px;
 }
 .box-outer .box.four .tile {
-  width: 24%;
-  margin-right: 1%;
   padding: 0 25px 10px;
 }
 .box-outer .box.four .tile div {
