@@ -3,6 +3,9 @@
   background: url(../img/uw-sprite.png) no-repeat 0 0 rgba(0, 0, 0, 0);
 }
 
+.uw-thinstrip nav {
+	display: inline;
+}
 
 .uw-thinstrip .uw-patch {
 	background-image: url(../img/uw-sprite.png);
@@ -12,16 +15,14 @@
 	background-image: url(../img/uw-sprite.png);
 }
 
-.uw-thinstrip ul.uw-thin-links li.uw-search button {
+button.uw-search  {
 	background-image: url(../img/mag.png);
 	background-repeat: no-repeat;
-	border: none;
+	border: none !important;
 }
 
-.uw-thinstrip ul.uw-thin-links li.uw-quicklinks button {
-	background-image: url(../img/quick.png);
-	background-position: right 0;
-	background-repeat: no-repeat;
+.uw-thinstrip button.uw-quicklinks  {
+	background: url(../img/quick.png) right 0 no-repeat transparent !important;
 }
 
 .uw-thinstrip ul.uw-thin-links li.uw-quicklinks button:before {
