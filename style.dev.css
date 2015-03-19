@@ -4712,6 +4712,13 @@ table th[class*="col-"] {
     top: 0;
     left: 0;
     background-size: 470px;
+    -o-transition: all 0s;
+    -webkit-transition: all 0s;
+    transition: all 0s;
+  }
+  .uw-thinstrip .uw-patch:hover,
+  .uw-thinstrip .uw-patch:focus {
+    background-size: 470px;
   }
   .uw-thinstrip .uw-wordmark {
     width: 155px;
