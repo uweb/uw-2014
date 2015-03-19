@@ -4518,6 +4518,10 @@ table th[class*="col-"] {
   left: 0;
   z-index: 1;
 }
+.uw-thinstrip .uw-patch:focus,
+.uw-thinstrip .uw-patch:hover {
+  background: url(assets/svg/uw-sprite-focus.svg) no-repeat 0 0 transparent;
+}
 .uw-thinstrip .uw-wordmark {
   display: block;
   position: absolute;
@@ -4784,7 +4788,7 @@ table th[class*="col-"] {
   .uw-thinstrip div.align-right {
     position: relative;
   }
-  .uw-thinstrip div.align-right nav#search-quicklinks {
+  .uw-thinstrip div.align-right #search-quicklinks {
     position: absolute;
     top: 0px;
     right: 0px;
