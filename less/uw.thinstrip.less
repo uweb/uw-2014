@@ -31,6 +31,11 @@
     &:hover{
       background: url(assets/svg/uw-sprite-focus.svg) no-repeat 0 0 transparent;
     }
+    &:before {
+      //to preload and cache hover svg
+      content: url(assets/svg/uw-sprite-focus.svg);
+      display: none;
+    }
 	}
 
 
