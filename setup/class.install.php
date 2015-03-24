@@ -12,8 +12,8 @@ class UW_Install_Theme
   const WIDTH = 750;
   public $DEFAULT_HEADERS = array(
       'blossoms' => array(
-        'url'           => '%s/assets/headers/blossoms.jpg',
-        'thumbnail_url' => '%s/assets/headers/blossoms-thumbnail.jpg',
+        'url'           => '%s/assets/headers/suzzallo.jpg',
+        'thumbnail_url' => '%s/assets/headers/suzzallo-thumbnail.jpg',
         'description'   => 'IMA'
       )
   );
