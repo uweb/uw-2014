@@ -44,6 +44,7 @@ class UW_Iframes
       'uw.edu',
       'washington.edu',
       'uwtv.org',
+      'tvw.org',
       'www.uwtv.org',
       'google.com',
       'docs.google.com',

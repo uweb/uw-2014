@@ -4510,6 +4510,14 @@ table th[class*="col-"] {
   left: 0;
   z-index: 1;
 }
+.uw-thinstrip .uw-patch:focus,
+.uw-thinstrip .uw-patch:hover {
+  background: url(assets/svg/uw-sprite-focus.svg) no-repeat 0 0 transparent;
+}
+.uw-thinstrip .uw-patch:before {
+  content: url(assets/svg/uw-sprite-focus.svg);
+  display: none;
+}
 .uw-thinstrip .uw-wordmark {
   display: block;
   position: absolute;
@@ -4700,6 +4708,13 @@ table th[class*="col-"] {
     top: 0;
     left: 0;
     background-size: 470px;
+    -o-transition: all 0s;
+    -webkit-transition: all 0s;
+    transition: all 0s;
+  }
+  .uw-thinstrip .uw-patch:hover,
+  .uw-thinstrip .uw-patch:focus {
+    background-size: 470px;
   }
   .uw-thinstrip .uw-wordmark {
     width: 155px;
@@ -4776,7 +4791,7 @@ table th[class*="col-"] {
   .uw-thinstrip div.align-right {
     position: relative;
   }
-  .uw-thinstrip div.align-right nav#search-quicklinks {
+  .uw-thinstrip div.align-right #search-quicklinks {
     position: absolute;
     top: 0px;
     right: 0px;
@@ -7594,6 +7609,10 @@ body.error404 .woof {
   overflow: hidden;
   margin-top: 50px;
 }
+.uw-footer .footer-wordmark:focus,
+.uw-footer .footer-wordmark:hover {
+  background: url(assets/svg/uw-sprite-focus.svg) no-repeat 0 -434px transparent;
+}
 .uw-footer .be-boundless {
   font-size: 24px;
   background: url(assets/images/boundless.png) no-repeat center top transparent;
@@ -7601,6 +7620,13 @@ body.error404 .woof {
   text-indent: -99999px;
   margin: 10px 0 60px;
   opacity: .6;
+  -o-transition: opacity 0.25s;
+  -webkit-transition: opacity 0.25s;
+  transition: opacity 0.25s;
+}
+.uw-footer .be-boundless:hover,
+.uw-footer .be-boundless:focus {
+  opacity: 1;
 }
 .uw-footer h4 {
   font-family: "Encode Sans Compressed", sans-serif;

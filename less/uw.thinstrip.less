@@ -27,6 +27,15 @@
 		top: -22px;
 		left: 0;
 		z-index: 1;
+    &:focus,
+    &:hover{
+      background: url(assets/svg/uw-sprite-focus.svg) no-repeat 0 0 transparent;
+    }
+    &:before {
+      //to preload and cache hover svg
+      content: url(assets/svg/uw-sprite-focus.svg);
+      display: none;
+    }
 	}
 
 
@@ -241,6 +250,12 @@
 			top: 0;
 			left: 0;
 			background-size: 470px;
+      .transition(all 0s);
+      &:hover,
+      &:focus,
+      {
+        background-size: 470px;
+      }
 		}
 		.uw-wordmark {
 			width: 155px;
@@ -335,7 +350,7 @@
 		}
         div.align-right {
             position: relative;
-            nav#search-quicklinks {
+            #search-quicklinks {
                 position:absolute;
                 top:0px;
                 right:0px;
