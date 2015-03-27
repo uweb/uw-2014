@@ -11012,7 +11012,7 @@ UW.initialize = function( $ )
 
 jQuery(document).ready(function(){
   // switching to anonymous function so UW.initialize can be extended before running
-  UW.initialize();
+  UW.initialize(jQuery);
 })
 
 
