@@ -11010,7 +11010,10 @@ UW.initialize = function( $ )
 
 }
 
-jQuery(document).ready( UW.initialize )
+jQuery(document).ready(function(){
+  // switching to anonymous function so UW.initialize can be extended before running
+  UW.initialize();
+})
 
 
 // Basic UW Components
