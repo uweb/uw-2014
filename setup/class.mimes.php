@@ -8,7 +8,7 @@ class UW_Mimes
 {
 
   public $MIMES = array(
-    'psd' => 'image/photoshop',
+    // 'psd' => 'image/photoshop',
     'ai|eps' => 'application/postscript'
   );
 
@@ -21,6 +21,6 @@ class UW_Mimes
   {
     return array_merge( $existing_mimes, $this->MIMES );
   }
-  
+
 
 }
