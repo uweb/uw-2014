@@ -95,11 +95,11 @@ class UW_Widget_Twitter extends WP_Widget
     $output  = $before_widget;
     $output = $output .  '<div class="widget uw-twitter">';
 
-    $output = $output .    '<h3 class="widget-title">';
+    $output = $output .    '<h2 class="widgettitle">';
     $output = $output .    $before_title;
     if ( ! empty( $title ) ) $output = $output . $title;
     $output = $output .    $after_title;
-    $output = $output .    '</h3>';
+    $output = $output .    '</h2>';
 
     $output = $output .    '<div class="twitter-feed" data-name="' . $name . '" data-count="' . $count . '">';
 
