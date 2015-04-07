@@ -35,6 +35,7 @@ class UW_Recent_Posts extends WP_Widget
 
     $recent  =  wp_get_recent_posts( array( 'numberposts' => $items, 'post_status' => 'publish' ) , OBJECT );
     $title = apply_filters( 'widget_title', $title );
+     if ( empty( $recent ) ) return '';
 
     ?>
 
@@ -56,7 +57,6 @@ class UW_Recent_Posts extends WP_Widget
     </h2>
 
     <ul class="recent-posts">
-
     <?php foreach ( $recent as $post ) : ?>
 
           <li>
@@ -79,7 +79,12 @@ class UW_Recent_Posts extends WP_Widget
 
     </ul>
 
+    <?php if ( get_option( 'page_for_posts' ) ) : ?>
+      <a class="more" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">More</a>
+    <?php endif; ?>
+
     <?php echo $after_widget; ?>
+
 
   <?php
   }

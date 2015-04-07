@@ -18,7 +18,7 @@
 
       <?php get_template_part( 'breadcrumbs' ); ?>
 
-      <div id='main_content' class="uw-body-copy">
+      <div id='main_content' class="uw-body-copy" tabindex="-1">
 
         <?php
           // Start the Loop.

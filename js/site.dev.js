@@ -11010,7 +11010,10 @@ UW.initialize = function( $ )
 
 }
 
-jQuery(document).ready( UW.initialize )
+jQuery(document).ready(function(){
+  // switching to anonymous function so UW.initialize can be extended before running
+  UW.initialize(jQuery);
+})
 
 
 // Basic UW Components
@@ -11775,14 +11778,13 @@ UW.Slideshow = Backbone.View.extend({
          this.current === this.numberOfSlides && this.direction === 'out' )
            return false;
 
-
     return true;
   },
 
   // Set the z-index of the slide based on its index in the DOM.
   zIndex : function( slide )
   {
-    var $this = $( slide )
+    var $this = this.$( slide )
     $this.css({ zIndex : -1 * $this.index() + this.numberOfSlides })
   }
 
