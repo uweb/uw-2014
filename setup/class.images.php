@@ -29,7 +29,7 @@ class UW_Images
     ),
 
     // Same as the sidebar
-    'half' => array(
+    'half-content' => array(
       'name'    => 'Half width',
       'width'   => 375,
       'height'  => 9999,
@@ -38,7 +38,7 @@ class UW_Images
     ),
 
     // Full content width
-    'full' => array(
+    'full-content' => array(
       'name'    => 'Content area',
       'width'   => 750,
       'height'  => 9999,
