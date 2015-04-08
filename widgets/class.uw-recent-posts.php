@@ -35,6 +35,7 @@ class UW_Recent_Posts extends WP_Widget
 
     $recent  =  wp_get_recent_posts( array( 'numberposts' => $items, 'post_status' => 'publish' ) , OBJECT );
     $title = apply_filters( 'widget_title', $title );
+     if ( empty( $recent ) ) return '';
 
     ?>
 
@@ -56,7 +57,6 @@ class UW_Recent_Posts extends WP_Widget
     </h2>
 
     <ul class="recent-posts">
-
     <?php foreach ( $recent as $post ) : ?>
 
           <li>
@@ -79,7 +79,12 @@ class UW_Recent_Posts extends WP_Widget
 
     </ul>
 
+    <?php if ( get_option( 'page_for_posts' ) && $more )  : ?>
+      <a class="more" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">More</a>
+    <?php endif; ?>
+
     <?php echo $after_widget; ?>
+
 
   <?php
   }
@@ -90,6 +95,7 @@ class UW_Recent_Posts extends WP_Widget
   {
     $instance[ 'title' ]   = $new_instance['title'];
     $instance[ 'items' ] = (int) $new_instance['items'];
+    $instance[ 'more' ] = (bool) $new_instance['more'];
     return $instance;
   }
 
@@ -124,6 +130,13 @@ class UW_Recent_Posts extends WP_Widget
 
     </p>
 
+    <p>
+
+      <input type="checkbox" id="<?php echo $this->get_field_id( 'more' ); ?>" name="<?php echo $this->get_field_name( 'more' ); ?>" <?php checked(  $more , true, true )  ?> />
+      <label for="<?php echo $this->get_field_id( 'more' ); ?>"><?php _e( 'Display more link' ); ?></label>
+
+
+    </p>
   <?php
 
   }
