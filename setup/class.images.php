@@ -29,7 +29,7 @@ class UW_Images
     ),
 
     // Same as the sidebar
-    'half-content' => array(
+    'half' => array(
       'name'    => 'Half width',
       'width'   => 375,
       'height'  => 9999,
