@@ -4848,7 +4848,7 @@ table th[class*="col-"] {
   box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
   background-color: white;
   position: relative;
-  z-index: 1;
+  z-index: 5;
   display: block;
 }
 #dawgdrops li {
