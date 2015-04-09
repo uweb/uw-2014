@@ -7818,6 +7818,9 @@ label.screen-reader {
   border-bottom: none;
   text-decoration: underline;
 }
+.uw-body #main_content:focus {
+  outline: none;
+}
 .uw-body .widget a.widget-link:focus,
 .uw-body .widget a.widget-link:hover {
   border-bottom: none;
