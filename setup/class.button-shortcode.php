@@ -2,7 +2,7 @@
 
 /*
  *  Button shortcode allows for styled buttons to be added to content
- *  [button color='gold' button-type='type' url='link url' small='true']Button Text[/button]
+ *  [button color='gold' type='type' url='link url' small='true']Button Text[/button]
  *  optional small attribute makes the button small.  Assume large if not present
  */
 
@@ -13,7 +13,7 @@ class UW_Button
 
     function __construct()
     {
-        add_shortcode('button', array($this, 'button_handler'));        
+        add_shortcode('button', array($this, 'button_handler'));
     }
 
     function button_handler($atts, $content)
@@ -25,10 +25,10 @@ class UW_Button
         $btnColors = shortcode_atts( array(
             'color' => 'none',
         ), $atts );
- 
+
 
         $color = 'btn-' . $btnColors['color'];
-            
+
         if(empty($content)){
             echo 'No text in this button';
             return;

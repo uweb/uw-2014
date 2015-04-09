@@ -1,6 +1,6 @@
 <?php
 // Create the function to output the contents of our Dashboard Widget
-class UW_Documentation
+class UW_Documentation_Dashboard_Widget
 {
 
     function __construct()
@@ -13,7 +13,7 @@ class UW_Documentation
 
         global $wp_meta_boxes;
 
-        wp_add_dashboard_widget('uw-documentation', 'Documentation and FAQs', array($this, 'uw_documentation_html'));
+        wp_add_dashboard_widget('uw-documentation-dashboard-widget', 'Documentation and FAQs', array($this, 'uw_documentation_html'));
 
         $wp_meta_boxes['dashboard']['side']['core']['uw-documentation'] =
         $wp_meta_boxes['dashboard']['normal']['core']['uw-documentation'];
