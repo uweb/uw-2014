@@ -3,6 +3,6 @@
 </div>
 
 <div id="markdown" style="display:none;">
-  <?php include( get_stylesheet_directory() . '/README.md'); ?>
+  <?php include( get_template_directory() . '/README.md'); ?>
 </div>
 
