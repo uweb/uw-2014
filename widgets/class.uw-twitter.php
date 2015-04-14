@@ -13,27 +13,27 @@ if ( defined( 'TWITTER_OAUTH_TOKEN' ) ) :
 class UW_Widget_Twitter extends WP_Widget
 {
 
-  const ID                        = 'uw-twitter-feed';
-  const SHORTCODE         = 'twitter';
-  const NAME                   = 'UW Twitter Feed';
-  const DESCRIPTION         = 'Display your latest tweets';
-  const CLASSNAME          = 'twitter-feed-widget';
+  const ID             = 'uw-twitter-feed';
+  const SHORTCODE      = 'twitter';
+  const NAME           = 'UW Twitter Feed';
+  const DESCRIPTION    = 'Display your latest tweets';
+  const CLASSNAME      = 'twitter-feed-widget';
 
-  const URL                      = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
-  const AUTHOR_URL        = 'https://api.twitter.com/1.1/users/show.json';
+  const URL            = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
+  const AUTHOR_URL     = 'https://api.twitter.com/1.1/users/show.json';
   const REQUESTMETHOD  = 'GET';
-  const GETFIELD              = '?include_entities=true&include_rts=true&screen_name=%s&count=%u';
-  const RETWEET_TEXT      = '<small>Retweeted by <a href="//twitter.com/%s"> @%s</a></small>';
+  const GETFIELD       = '?include_entities=true&include_rts=true&screen_name=%s&count=%u';
+  const RETWEET_TEXT   = '<small>Retweeted by <a href="//twitter.com/%s"> @%s</a></small>';
 
-  const COUNT                 = 5;
-  const ACCOUNT             = 'twitter';
-  const EXPIRES                 = 60;
+  const COUNT          = 5;
+  const ACCOUNT        = 'twitter';
+  const EXPIRES        = 60;
 
   static $SETTINGS = array(
-      'oauth_access_token'            => TWITTER_OAUTH_TOKEN,
+      'oauth_access_token'         => TWITTER_OAUTH_TOKEN,
       'oauth_access_token_secret'  => TWITTER_OAUTH_TOKEN_SECRET,
-      'consumer_key'                     =>TWITTER_CONSUMER_KEY,
-      'consumer_secret'                 => TWITTER_CONSUMER_SECRET
+      'consumer_key'               => TWITTER_CONSUMER_KEY,
+      'consumer_secret'            => TWITTER_CONSUMER_SECRET
   );
 
   function UW_Widget_Twitter()
@@ -77,7 +77,7 @@ class UW_Widget_Twitter extends WP_Widget
   {
     $instance = array();
     $instance['title'] = strip_tags( $new_instance['title'] );
-    $instance['name'] = strip_tags( $new_instance['name'] );
+    $instance['name']  = strip_tags( $new_instance['name'] );
     $instance['count'] = intval( $new_instance['count'] );
     return $instance;
   }
@@ -86,20 +86,15 @@ class UW_Widget_Twitter extends WP_Widget
   {
     extract( $atts );
 
-    $title = apply_filters( 'widget_title', $title );
-
     $tweets = $this->getLatestTweets( $name, $count );
 
     if ( ! is_array( $tweets ) ) return;
     
-    $output  = $before_widget;
-    $output = $output .  '<div class="widget uw-twitter">';
+    $output = '<div class="widget uw-twitter">';
 
-    $output = $output .    '<h2 class="widgettitle">';
-    $output = $output .    $before_title;
-    if ( ! empty( $title ) ) $output = $output . $title;
-    $output = $output .    $after_title;
-    $output = $output .    '</h2>';
+    if ( ! empty( $title ) ){
+      $output = $output .    '<h2 class="widgettitle">' . $title . '</h2>';
+    }
 
     $output = $output .    '<div class="twitter-feed" data-name="' . $name . '" data-count="' . $count . '">';
 
@@ -112,10 +107,9 @@ class UW_Widget_Twitter extends WP_Widget
 
     endforeach;
 
-    $output = $output .    '<a class="more" href="//twitter.com/' . $instance['name'] . '">More</a>';
+    $output = $output .    '<a class="more" href="//twitter.com/' . $name . '">More</a>';
     $output = $output .  '</div>';
     $output = $output . '</div>';
-    $output = $output . $after_widget;
     
     return $output;
   }
@@ -123,7 +117,7 @@ class UW_Widget_Twitter extends WP_Widget
   function widget($args, $instance)
   {
     extract($instance);
-    echo do_shortcode( "[twitter title=$title count=$count name=$name ]");
+    echo do_shortcode(sprintf("[twitter title=\"%s\" count=%s name=%s]", $title, $count, $name));
   }
 
 
@@ -206,7 +200,6 @@ class UW_Widget_Twitter extends WP_Widget
   }
 
 }
-
 require( get_template_directory() . '/assets/frameworks/TwitterAPIExchange.php' );
 
 register_widget( 'UW_Widget_Twitter' );
