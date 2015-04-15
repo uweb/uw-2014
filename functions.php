@@ -1,7 +1,6 @@
 <?php
-// Basic helper and template functions.  TODO: Maybe look at MVC-izing the template functions
-//require( get_template_directory() . '/inc/helper-functions.php' );
 
+// allows child them overwriting of either whole UW object or just parts
 if (!function_exists('setup_uw_object')){
     function setup_uw_object() {
         require( get_template_directory() . '/setup/class.uw.php' );
