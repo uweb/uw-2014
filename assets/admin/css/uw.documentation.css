@@ -1,0 +1,70 @@
+@font-face {
+  font-family: 'Encode Sans Compressed';
+  src: url('../../../assets/fonts/encodesanscondensed-400-regular-webfont.eot');
+  src: url('../../../assets/fonts/encodesanscondensed-400-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../../../assets/fonts/encodesanscondensed-400-regular-webfont.woff') format('woff'), url('assets/fonts/encodesanscondensed-400-regular-webfont.ttf') format('truetype'), url('../../../assets/fonts/encodesanscondensed-400-regular-webfont.svg#encodesanscondensed-400-regular-webfont') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Encode Sans Compressed';
+  src: url('../../../assets/fonts/encodesanscompressed-600-semibold-webfont.eot');
+  src: url('../../../assets/fonts/encodesanscompressed-600-semibold-webfont.eot?#iefix') format('embedded-opentype'), url('../../../assets/fonts/encodesanscompressed-600-semibold-webfont.woff') format('woff'), url('../../../assets/fonts/encodesanscompressed-600-semibold-webfont.ttf') format('truetype'), url('../../../assets/fonts/encodesanscompressed-600-semibold-webfont.svg#encodesanscompressed-600-semibold-webfont') format('svg');
+  font-weight: 600;
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "Encode Sans Compressed",sans-serif;
+  color: rgb(89, 89, 89);
+ }
+
+#uw-documentation h3 {
+  margin-top: 30px;
+  margin-bottom:5px;
+ }
+
+#uw-documentation, #uw-documentation p, #uw-documentation  {
+  font-family: 'Open Sans',sans-serif;
+  font-size: 17px;
+  line-height:  29px;
+  color: #3d3d3d;
+  -webkit-font-smoothing: antialiased;
+}
+
+#uw-documentation p {
+  padding-bottom: 15px;
+  margin:0;
+}
+
+#uw-documentation ul {
+  margin-top:5px;
+  padding-left:25px;
+  margin-bottom:14px;
+  list-style: none;
+  list-style-type: none;
+}
+
+#uw-documentation li {
+  margin-bottom: 6px;
+}
+
+#uw-documentation a {
+  color: #08d;
+  text-decoration: none;
+  -o-transition: .25s;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+#uw-documentation a:hover {
+  color: #c9c9c9;
+  text-decoration: none;
+}
+#uw-documentation pre {
+  background-color:  #f7f7f7;
+  padding: 10px;
+  margin-top: 0;
+}
+#uw-documentation code {
+  background-color:  rgba(0,0,0,0);
+  padding: 10px;
+}

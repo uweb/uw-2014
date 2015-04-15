@@ -38,7 +38,7 @@ class UW_Images
     ),
 
     // Full content width
-    'full' => array(
+    'full-content' => array(
       'name'    => 'Content area',
       'width'   => 750,
       'height'  => 9999,
