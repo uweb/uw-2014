@@ -5209,6 +5209,9 @@ table th[class*="col-"] {
 ul {
   padding-left: 25px;
 }
+dd {
+  margin-bottom: 14.5px;
+}
 hr {
   border-top: 1px solid #EBEBEB;
   clear: both;
