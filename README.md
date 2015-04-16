@@ -43,7 +43,7 @@ Download the [UW 2014 theme](https://github.com/uweb/uw-2014/archive/master.zip)
 ## Bugs and feature requests ##
  - - -
 
-All bugs and feature requests can be issued at the [UW Web Team's GitHub account](https://github.com/uweb/uw-2014/issues) or emailed directly to us at [uweb@uw.edu](mailto:uweb@uw.edu).
+All bugs and feature requests can be issued at the [UW Web Team's GitHub account](https://github.com/uweb/uw-2014/issues) or emailed directly to the UW web team at [uweb@uw.edu](mailto:uweb@uw.edu).
 
 ## Widgets ##
  - - -
@@ -319,7 +319,7 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
 
 ### UW Widget Visibility ###
 
-> This feature provides granular control over where each widget appears on your site. It is based on the [JetPack Widget Visibility plugin](http://jetpack.me/support/widget-visibility/) and allows you to choose specific pages, authors, categories etc. to show a widget on. Follow the link for a brief tutorial on its usage. 
+> This feature provides granular control over where each widget appears on your site. It is based on the [JetPack Widget Visibilityj plugin](http://jetpack.me/support/widget-visibility/) and allows you to choose specific pages, authors, categories etc. to show a widget on. Follow the link for a brief tutorial on its usage. 
 
 ### UW Media Credit ###
 
