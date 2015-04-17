@@ -73,12 +73,21 @@ UW.Select = Backbone.View.extend({
   // Close the UW select menu.
   close : function( e )
   {
-    this.clicked = true
-    this.$target = $(e.currentTarget)
-    this.current = this.$target.index()
+    this.$target = $(e.currentTarget);
+    var selected = this.$target.index();
+    if (this.isDisabled(selected)){
+      return false;
+    }
+    this.clicked = true;
+    this.current = selected
     this.animate()
     this.toggleLIClasses()
     return false
+  },
+
+  isDisabled : function (selected){
+    var value = this.$el.find('li').eq( selected ).data().value;
+    return this.$select.find('option[value="' + value + '"]').prop('disabled');
   },
 
   closeWithoutAnimating : function()
