@@ -69,11 +69,19 @@ UW.Image = Backbone.View.extend({
 
   getAttributes: function( e )
   {
-      var target = $(e.currentTarget)
+      var target = $(e.currentTarget),
+          caption = target.parent('a').siblings('.wp-caption-text').text();
+
+      if (!caption){
+        var gallery_parent = target.parent('a').parent('.gallery-icon')
+        if (gallery_parent){
+          caption = gallery_parent.siblings('.wp-caption-text').text();
+        }
+      }
       return {
         src : target.parent('a').attr('href'),
         alt : target.attr('alt'),
-        caption : target.parent('a').siblings('.wp-caption-text').text(),
+        caption : caption,
         credit : target.parent('a').siblings('.wp-caption-text').find('.wp-media-credit').text()
       }
 
