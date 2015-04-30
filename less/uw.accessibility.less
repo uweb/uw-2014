@@ -82,3 +82,17 @@ label.screen-reader {
         }
     }
 }
+
+// For uw.edu/accessibility only
+
+.site-accessibility {
+    .uw-body-copy, 
+    .uw-sidebar {
+        a {
+            border-bottom: 1px solid #DFDFDF;
+            &:hover {
+                border-bottom: 1px solid @link;
+            }
+        }
+    }
+}

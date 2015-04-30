@@ -7834,6 +7834,14 @@ label.screen-reader {
 .uw-body .widget a.widget-link:focus {
   text-decoration: underline;
 }
+.site-accessibility .uw-body-copy a,
+.site-accessibility .uw-sidebar a {
+  border-bottom: 1px solid #DFDFDF;
+}
+.site-accessibility .uw-body-copy a:hover,
+.site-accessibility .uw-sidebar a:hover {
+  border-bottom: 1px solid #0088dd;
+}
 /*==========  Non-Mobile First Method  ==========*/
 /* Large Devices, Wide Screens */
 /* Medium Devices, Desktops */
