@@ -35,8 +35,8 @@ Class TileBox
         ), $atts );
  
         $color = '';
-        if (isset($boxCenter['color'])){
-          $color = 'box-' . $boxCenter['color'];
+        if (!empty($boxCenter['color'])){
+          $color = ' box-' . $boxCenter['color'];
         }; 
 
         $center = 'box-' . $boxCenter['alignment'];        
@@ -47,7 +47,7 @@ Class TileBox
             return 'No content inside the box element. Make sure your close your box element. Required stucture: [box][tile]content[/tile][/box]';
 
         $output = do_shortcode( $content );
-        return sprintf( '<div class="box-outer"><div class="box %s %s %s">%s</div></div>', $this->NumbersArray[$this->count], $center, $color, $output);
+        return sprintf( '<div class="box-outer"><div class="box %s %s%s">%s</div></div>', $this->NumbersArray[$this->count], $center, $color, $output);
     }
 
     function tile_handler( $atts, $content ) {
