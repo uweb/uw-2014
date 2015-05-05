@@ -72,13 +72,15 @@ class UW_Scripts
 
   function uw_localize_default_scripts()
   {
-      foreach ($this->SCRIPTS as $script )
-      {
-          $script = (object) $script;
-          if (isset($script->variables)){
-              wp_localize_script($script->id, 'uw', $script->variables);
-          }
+    $uw_localization = array();  
+    foreach ($this->SCRIPTS as $script )
+    {
+      $script = (object) $script;
+      if (isset($script->variables)){
+        $uw_localization = array_merge($uw_localization, $script->variables);
+        wp_localize_script($script->id, 'uw', $uw_localization);
       }
+    }
   }
 
   function uw_enqueue_default_scripts()
