@@ -21,13 +21,12 @@
 		display: block;
 		text-indent: -9999px;
 		width: 163px;
-		height: 110px;
+		height: 90px;
 		background: url(assets/svg/uw-sprite.svg) no-repeat 0 0 transparent;
 		position: absolute;
 		top: -22px;
 		left: 0;
 		z-index: 1;
-		.transition(none);
     &:focus,
     &:hover{
       background: url(assets/svg/uw-sprite-focus.svg) no-repeat 0 0 transparent;
@@ -39,8 +38,7 @@
     }
 	}
 
-
-	// Patch
+	// Wordmark
 
 	.uw-wordmark {
 		display: block;
@@ -53,14 +51,14 @@
 		background: url(assets/svg/uw-sprite.svg) no-repeat 0 -431px transparent;
 	}
 
-    div.align-right {
-        float: right;
-    }
+  div.align-right {
+    float: right;
+  }
 
-    nav {
-        display: inline-block;
-        vertical-align: top;
-    }
+  nav {
+    display: inline-block;
+    vertical-align: top;
+  }
 
 	// Audience
 
@@ -110,7 +108,7 @@
         font-family: @font-family-headline;
         font-size: 17px;
         font-weight: 600;
-	    position: relative;
+        position: relative;
         z-index: 1;
         &.uw-search {
             text-indent: -99999px;
@@ -213,13 +211,13 @@
 		// background-position: -472px -317px;
 		&:after {
 			// background-position: -253px -44px;
-            top: 11px;
-            right: 10px;
-            -webkit-transform:rotate(180deg);
-               -moz-transform:rotate(180deg);
-                -ms-transform:rotate(180deg);
-                 -o-transform:rotate(180deg);
-                    transform:rotate(180deg);
+      top: 11px;
+      right: 10px;
+      -webkit-transform:rotate(180deg);
+         -moz-transform:rotate(180deg);
+          -ms-transform:rotate(180deg);
+           -o-transform:rotate(180deg);
+              transform:rotate(180deg);
 		}
 	}
 }
@@ -269,42 +267,42 @@
 			top: 4px;
 			background-size: 397px;
 		}
-        button {
-            &.uw-quicklinks {
-                background-position: -484px -247px;
-                background-size: 900px;
-                text-indent: -99999px;
-                overflow: hidden;
-                padding: 20px 9px 0 0;
-                top: 0;
-                right: 0;
-                position: absolute;
-                &:after {
-                    background-position: -253px 4px;
-                    background-size: 780px;
-                    top: 11px;
-                    right: 9px;
-                }
-            }
-            &.uw-search{
-                top: 0;
-                right: 36px;
-                height: 47px;
-                width: 47px;
-                margin-right: 10px;
-                border: none;
-                overflow: hidden;
-                position: absolute;
-                &:hover {
-                    background-color: transparent;
-                    border: none;
-                }
-                svg {
-                    top: 14px;
-                    left: 14px;
-                }
+    button {
+        &.uw-quicklinks {
+            background-position: -484px -247px;
+            background-size: 900px;
+            text-indent: -99999px;
+            overflow: hidden;
+            padding: 20px 9px 0 0;
+            top: 0;
+            right: 0;
+            position: absolute;
+            &:after {
+                background-position: -253px 4px;
+                background-size: 780px;
+                top: 11px;
+                right: 9px;
             }
         }
+        &.uw-search{
+            top: 0;
+            right: 36px;
+            height: 47px;
+            width: 47px;
+            margin-right: 10px;
+            border: none;
+            overflow: hidden;
+            position: absolute;
+            &:hover {
+                background-color: transparent;
+                border: none;
+            }
+            svg {
+                top: 14px;
+                left: 14px;
+            }
+        }
+    }
 	}
     .search-open {
         .uw-thinstrip {
@@ -349,14 +347,14 @@
 			//top: -60px;
             z-index: 2;
 		}
-        div.align-right {
-            position: relative;
-            #search-quicklinks {
-                position:absolute;
-                top:0px;
-                right:0px;
-            }
+    div.align-right {
+        position: relative;
+        #search-quicklinks {
+            position:absolute;
+            top:0px;
+            right:0px;
         }
+    }
 		ul.uw-thin-links {
 			li {
 				//float: none;
@@ -401,8 +399,8 @@
             }
 		}
 		.uw-wordmark {
-			background-size: 670px;
-			background-position: 0 -331px;
+      left: 100px;
+      .scale(.8,.8);
 		}
 	}
 }

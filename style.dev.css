@@ -4506,15 +4506,12 @@ table th[class*="col-"] {
   display: block;
   text-indent: -9999px;
   width: 163px;
-  height: 110px;
+  height: 90px;
   background: url(assets/svg/uw-sprite.svg) no-repeat 0 0 transparent;
   position: absolute;
   top: -22px;
   left: 0;
   z-index: 1;
-  -o-transition: none;
-  -webkit-transition: none;
-  transition: none;
 }
 .uw-thinstrip .uw-patch:focus,
 .uw-thinstrip .uw-patch:hover {
@@ -4839,8 +4836,11 @@ table th[class*="col-"] {
     padding: 10px 25px 10px 0;
   }
   .uw-thinstrip .uw-wordmark {
-    background-size: 670px;
-    background-position: 0 -331px;
+    left: 100px;
+    -o-transform: scale(0.8, 0.8);
+    -webkit-transform: scale(0.8, 0.8);
+    -ms-transform: scale(0.8, 0.8);
+    transform: scale(0.8, 0.8);
   }
 }
 .assistive-text {
