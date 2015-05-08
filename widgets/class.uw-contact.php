@@ -62,12 +62,10 @@ class UW_Widget_Contact extends WP_Widget
 
         foreach ($remake_form_person as $key => $values) {       
 
-            $the_key = $key;
-
-            $name = $instance['person_name'][$the_key];
-            $title = $instance['person_title'][$the_key];
-            $phone = $instance['person_phone'][$the_key];
-            $email = $instance['person_email'][$the_key];
+            $name = $instance['person_name'][$key];
+            $title = $instance['person_title'][$key];
+            $phone = $instance['person_phone'][$key];
+            $email = $instance['person_email'][$key];
 
             echo '<div class=\'peep\'><p class=\'person-name\'><input data-posttype="post" class="widefat wp-get-posts" id="" name="' . $this->get_field_name( 'person_name' ) . '[]' . '" type="text" value="' . $name . '"/></p>';
             echo '<p class=\'person-title\'><input data-posttype="post" class="widefat wp-get-posts" id="" name="' . $this->get_field_name( 'person_title' ) . '[]' . '" type="text" value="' . $title . '"/></p>';
@@ -144,12 +142,10 @@ class UW_Widget_Contact extends WP_Widget
 
         foreach ($remake_form_person as $key => $values) {   
 
-            $the_key = $key;
-
-            echo '<h3 class=\'person-name\'>' . $instance['person_name'][$the_key] . '</h3>';
-            echo '<p class=\'person-title\'>' . $instance['person_title'][$the_key] . '</p>';
-            echo '<p class=\'person-phone\'>' . $instance['person_phone'][$the_key] . '</p>';
-            echo '<a href=\'mailto:' . $instance['person_email'][$the_key] . '\'class=\'person-email\'>' . $instance['person_email'][$the_key] . '</a>';
+            echo '<h3 class=\'person-name\'>' . $instance['person_name'][$key] . '</h3>';
+            echo '<p class=\'person-title\'>' . $instance['person_title'][$key] . '</p>';
+            echo '<p class=\'person-phone\'>' . $instance['person_phone'][$key] . '</p>';
+            echo '<a href=\'mailto:' . $instance['person_email'][$key] . '\'class=\'person-email\'>' . $instance['person_email'][$key] . '</a>';
 
         }
 

@@ -1,3 +1,5 @@
+/* Card Widget */
+
 .card-labels a {
   position: relative;
 }
@@ -17,6 +19,8 @@
 }
 
 
+/* Contact Widget */
+
 .peep {
 	padding: 14px 25px;  
 	margin: 15px 0;
@@ -26,4 +30,13 @@
 }
 .peep input {
   padding: 8px 11px;
+}
+
+#contact-group input {
+  padding: 8px 11px;
+  margin-top: 10px;
+}
+
+#person-button {
+  margin-bottom: 20px;
 }
