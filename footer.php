@@ -1,4 +1,4 @@
-    <div class="uw-footer">
+    <div role="contentinfo" class="uw-footer">
 
         <a href="http://www.washington.edu" class="footer-wordmark">University of Washington</a>
 
@@ -33,7 +33,7 @@
             </ul>
         </nav>
 
-        <p role="contentinfo">&copy; <?php echo date("Y"); ?> University of Washington  |  Seattle, WA</p>
+        <p>&copy; <?php echo date("Y"); ?> University of Washington  |  Seattle, WA</p>
 
     </div>
 
