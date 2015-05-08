@@ -29,6 +29,8 @@ class UW_Widget_Conditions
   {
     wp_enqueue_style( 'widget-conditions', get_template_directory_uri() .  '/assets/admin/css/uw.widget-conditions.css' );
     wp_enqueue_script( 'widget-conditions', get_template_directory_uri() . '/assets/admin/js/uw.widget-conditions.js' , array( 'jquery', 'jquery-ui-core' ), 20140422, true );
+    wp_enqueue_style( 'widget-cards', get_template_directory_uri() .  '/assets/admin/css/uw.widgets-misc.css' );
+
   }
 
 

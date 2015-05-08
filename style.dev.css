@@ -4512,6 +4512,9 @@ table th[class*="col-"] {
   top: -22px;
   left: 0;
   z-index: 1;
+  -o-transition: none;
+  -webkit-transition: none;
+  transition: none;
 }
 .uw-thinstrip .uw-patch:focus,
 .uw-thinstrip .uw-patch:hover {
@@ -5220,6 +5223,11 @@ hr {
 }
 iframe {
   margin: 40px 0 20px;
+}
+small,
+.small {
+  font-size: 15px;
+  line-height: 1.5;
 }
 .intro {
   font-family: "Encode Sans Compressed", sans-serif;
@@ -7840,7 +7848,7 @@ label.screen-reader {
 }
 .site-accessibility .uw-body-copy a:hover,
 .site-accessibility .uw-sidebar a:hover {
-  border-bottom: 1px solid #0088dd;
+  border-bottom: 1px solid #85754d;
 }
 /*==========  Non-Mobile First Method  ==========*/
 /* Large Devices, Wide Screens */
@@ -8153,6 +8161,192 @@ ul.shortcode-blogroll-mini {
 .uw-content .uw-twitter {
   margin: 50px 0;
   padding: 0;
+}
+.cards-widget {
+  margin-top: 20px;
+}
+.cards-widget h3 {
+  font-family: "Encode Sans Compressed", sans-serif;
+  font-weight: 900;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+.cards-widget .default-card {
+  background-color: #EEEADF;
+  padding: 10% 13% 5% 15%;
+  text-align: left;
+  background-image: url('assets/images/stripes-dark-tile.svg');
+  background-position: 0 140px;
+  background-repeat: repeat-x;
+  background-size: 35px;
+}
+.cards-widget .default-card a.uw-btn {
+  background-color: #4B2E83;
+  color: #FFF;
+}
+.cards-widget .default-card a.uw-btn:before {
+  background-color: #402770;
+}
+.cards-widget .default-card h3 {
+  font-size: 25px;
+}
+.cards-widget .default-card h3 a {
+  color: #4b2e83;
+}
+.cards-widget .default-card p {
+  font-size: 16px;
+  line-height: 1.4;
+  padding-bottom: 10px;
+}
+.cards-widget .default-card .card-image {
+  display: block;
+  width: 139%;
+  margin: -13.5% -21% 0;
+  height: 200px;
+}
+.cards-widget .boundless-card h3 {
+  font-size: 30px;
+}
+.cards-widget .boundless-card h3 a {
+  color: white;
+}
+.cards-widget .boundless-card .udub-slant {
+  margin: 20px 0 25px 0;
+}
+.cards-widget .boundless-card .udub-slant span {
+  height: 8px;
+  width: 100px;
+  background-color: #b7a57a;
+}
+.cards-widget .boundless-card p {
+  padding-bottom: 20px;
+}
+.cards-widget .boundless-card .card-image {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.cards-widget .enhanced-card {
+  margin-top: 30px;
+}
+.cards-widget .enhanced-card h3 {
+  font-size: 18px;
+}
+.cards-widget .enhanced-card h3 .pic-title {
+  position: absolute;
+  top: -65px;
+  left: -17px;
+  background-color: #4B2E83;
+  padding: 10px 10px 10px 20px;
+}
+.cards-widget .enhanced-card h3 .pic-title:after {
+  position: absolute;
+  bottom: 0;
+  right: -10px;
+  top: 0;
+  width: 20px;
+  background-color: #4b2e83;
+  content: " ";
+  display: block;
+  -webkit-transform: skewX(-15deg) skewY(0);
+  -o-transform: skewX(-15deg) skewY(0);
+  transform: skewX(-15deg) skewY(0);
+  -webkit-transform: skew(-15deg, 0);
+  -ms-transform: skewX(-15deg) skewY(0);
+  transform: skew(-15deg, 0);
+}
+.cards-widget .enhanced-card h3 a {
+  color: white;
+}
+.cards-widget .enhanced-card p {
+  padding: 20px 0;
+}
+.cards-widget .enhanced-card,
+.cards-widget .boundless-card {
+  position: relative;
+  padding: 15px 35px 30px 35px;
+}
+.cards-widget .enhanced-card > span,
+.cards-widget .boundless-card > span {
+  position: relative;
+  z-index: 0;
+}
+.cards-widget .enhanced-card .card-image,
+.cards-widget .boundless-card .card-image {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.cards-widget .enhanced-card p,
+.cards-widget .boundless-card p {
+  color: white;
+  font-size: 16px;
+  line-height: 1.35;
+  padding-right: 60px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.cards-widget .enhanced-card .udub-slant,
+.cards-widget .default-card .udub-slant {
+  display: none;
+}
+.cards-widget .card-image {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+}
+.cards-widget a.uw-btn.btn-sm {
+  padding: 5px 11px;
+  font-size: 13px;
+}
+.cards-widget a.uw-btn.btn-sm:after {
+  right: -40px;
+  background-size: 580px;
+  background-position: -21px -317px;
+}
+.cards-widget a.uw-btn.btn-sm:before {
+  width: 35px;
+  right: -35px;
+}
+.contact-widget-inner {
+  padding: 40px;
+  margin-top: 20px;
+  background: url('assets/images/stripes-dark-tile.svg') 0 -58px repeat-x #e8e3d3;
+}
+.contact-widget-inner * {
+  margin: 0;
+  font-size: 16px;
+}
+.contact-widget-inner h3 {
+  font-size: 19px;
+  font-weight: 900;
+  margin-top: 35px;
+  margin-bottom: 5px;
+}
+.contact-widget-inner p.person-phone,
+.contact-widget-inner a.person-email {
+  padding: 1px 0 1px 35px;
+  background-image: url(assets/svg/widgets-sprite.svg);
+}
+.contact-widget-inner p.person-phone {
+  background-position: 0 2px;
+}
+.contact-widget-inner a.person-email {
+  color: inherit;
+  background-position: 0 -30px;
+}
+.uw-sidebar .contact-widget-inner .widgettitle {
+  margin-bottom: 30px;
+}
+.uw-sidebar .contact-widget-inner .widgettitle:after {
+  background-color: #e8e3d3;
 }
 #uwalert-alert-message {
   padding: 0 20px 40px;

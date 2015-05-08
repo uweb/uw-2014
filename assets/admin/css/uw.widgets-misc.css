@@ -1,0 +1,29 @@
+.card-labels a {
+  position: relative;
+}
+.card-labels a span {
+  display: none;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -50px;
+}
+.card-labels a:hover span {
+  display: block;
+}
+.card-image-preview {
+  margin-bottom: 10px;
+  width: 100% !important;
+}
+
+
+.peep {
+	padding: 14px 25px;  
+	margin: 15px 0;
+}
+.peep:nth-child(odd) {
+	background-color: #F5F5F5;
+}
+.peep input {
+  padding: 8px 11px;
+}

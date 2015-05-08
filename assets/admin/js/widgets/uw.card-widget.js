@@ -2,7 +2,7 @@ jQuery(document).ready(function( $ ) {
 
   var frame;
 
-  $('body').on('click', '.select-an-image', function(e){
+  $('body').on('click', '.select-a-card-image', function(e){
 
       e.preventDefault();
 
@@ -39,7 +39,7 @@ jQuery(document).ready(function( $ ) {
   });
 
 /** Panels fix: preview of the image doesn't show otherwise **/
-   $('body').on('mouseenter', '.widget-dialog-uw_widget_single_image', function() {
+   $('body').on('mouseenter', '.widget-dialog-uw_widget_cards', function() {
 
     var $this = $(this)
       , $img  = $this.find('img')

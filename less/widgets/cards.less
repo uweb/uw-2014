@@ -1,0 +1,153 @@
+// Cards Widget
+
+.cards-widget {
+	margin-top: 20px;
+	h3 {
+		font-family: @headings-font-family;
+  		font-weight: @ultra-font-weight;
+  		line-height: @headings-line-height;
+  		text-transform: uppercase;
+  	}
+	.default-card {
+		background-color: #EEEADF;
+		padding: 10% 13% 5% 15%;
+		text-align: left;
+		background-image: url('assets/images/stripes-dark-tile.svg');
+  		background-position: 0 140px;
+  		background-repeat: repeat-x;
+  		background-size: 35px;
+		a.uw-btn {
+  			background-color: #4B2E83;
+  			color: #FFF;
+  			&:before {
+  				background-color: #402770;
+			}			
+		}
+		h3 {
+  			font-size: 25px;
+  			a {  				
+  				color: @purple;
+  			}
+		}
+		p {			
+			font-size: 16px;
+  			line-height: 1.4;
+  			padding-bottom: 10px;
+		}
+		.card-image {
+			display: block;
+  			width: 139%;
+ 			margin: -13.5% -21% 0;
+  			height: 200px;
+		}
+	}
+	.boundless-card {
+		h3 {
+  			font-size: 30px;
+  			a {  				
+  				color: white;
+  			}
+		}
+		.udub-slant {
+			margin: 20px 0 25px 0;
+			span {
+				height: 8px;
+  				width: 100px;
+  				background-color: @lightgold;
+			}
+		}
+		p {
+			padding-bottom: 20px;
+		}
+		.card-image {
+			position: absolute;
+			z-index: 0;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+	}
+	.enhanced-card {
+		margin-top: 30px;
+		h3 {
+  			font-size: 18px;
+  			.pic-title {
+  				position: absolute;
+  				top: -65px;
+  				left: -17px;
+  				background-color: #4B2E83;
+  				padding: 10px 10px 10px 20px;
+  				&:after {
+  					position: absolute;
+  					bottom: 0;
+  					right: -10px;
+  					top: 0;
+  					width: 20px;
+  					background-color: @purple;
+  					content: " ";
+  					display: block;
+  					.skew(-15deg, 0);
+  				}
+  			}
+  			a {  				
+  				color: white;
+  			}
+		}
+		p {
+			padding: 20px 0;
+		}
+	}
+	.enhanced-card,
+	.boundless-card {
+		position: relative;
+		padding: 15px 35px 30px 35px;
+		& > span {
+			position: relative;
+			z-index: 0;
+		}
+		.card-image {
+			position: absolute;
+			z-index: 0;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+		p {
+			color: white;
+			font-size: 16px;
+  			line-height: 1.35;
+  			padding-right: 60px;
+  			text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+		}
+	}
+	.enhanced-card,
+	.default-card {
+		.udub-slant {
+			display: none;
+		}
+	}
+	.card-image {
+		.background-size(cover);
+        background-position: center center;
+	}
+
+	// Adjust buttons to be smaller
+
+	a.uw-btn.btn-sm {
+  		padding: 5px 11px;
+  		font-size: 13px;
+  		&:after {
+  			right: -40px;
+  			background-size: 580px;
+  			background-position: -21px -317px;
+  		}
+  		&:before {
+  			width: 35px;
+  			right: -35px;
+  		}
+	}
+
+
+}
