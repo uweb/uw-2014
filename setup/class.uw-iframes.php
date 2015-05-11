@@ -57,6 +57,8 @@ class UW_Iframes
       'online.gifts.washington.edu',
       'secure.gifts.washington.edu',
       'helperapps.gifts.washington.edu',
+      'uwfoundation.org',
+      'www.uwfoundation.org',
       'www.surveygizmo.com',
       'www.google.com',
       'www.excition.com',
