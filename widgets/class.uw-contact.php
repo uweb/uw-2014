@@ -22,7 +22,7 @@ class UW_Widget_Contact extends WP_Widget
 
   public static function scripts()
   {
-    wp_enqueue_script( 'single-image',  get_bloginfo('template_directory') . '/assets/admin/js/widgets/uw.contact-widget.js' );
+    wp_enqueue_script( 'contact-card',  get_bloginfo('template_directory') . '/assets/admin/js/widgets/uw.contact-widget.js' );
     wp_enqueue_script( 'jquery-ui-autocomplete' );
     wp_enqueue_media();
   }
