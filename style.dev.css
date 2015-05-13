@@ -4872,7 +4872,6 @@ table th[class*="col-"] {
   list-style: none;
 }
 .dawgdrops-inner {
-  position: relative;
   padding: 20px 0 5px 0;
 }
 .menu-block {
@@ -5025,6 +5024,51 @@ table th[class*="col-"] {
   .dawgdrops-item.dawgdrops-item a {
     font-size: 18px;
     padding-bottom: 23px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  nav#dawgdrops .btn-myuw a {
+    font-size: 18px;
+    text-transform: none;
+    color: white;
+    font-weight: 600;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    padding: 13px 20px 8px 50px;
+    z-index: -1;
+  }
+  nav#dawgdrops .btn-myuw a:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 33px;
+    left: 15px;
+    top: 16px;
+    background: url(assets/svg/person.svg) no-repeat 0 0;
+  }
+  nav#dawgdrops .btn-myuw a:hover {
+    color: black;
+  }
+  nav#dawgdrops .btn-myuw a:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 17px;
+    width: 194px;
+    height: 60px;
+    left: -13px;
+    top: -1px;
+    background-color: #85754d;
+    -webkit-transform: skewX(-15deg) skewY(0);
+    -o-transform: skewX(-15deg) skewY(0);
+    transform: skewX(-15deg) skewY(0);
+    -webkit-transform: skew(-15deg, 0);
+    -ms-transform: skewX(-15deg) skewY(0);
+    transform: skew(-15deg, 0);
+    z-index: -1;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
   }
 }
 .uw-hero-image,
