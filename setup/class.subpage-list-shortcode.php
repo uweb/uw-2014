@@ -1,9 +1,15 @@
 <?php
 
 /*
- *  Button shortcode allows for styled buttons to be added to content
- *  [button color='gold' type='type' url='link url' small='true']Button Text[/button]
- *  optional small attribute makes the button small.  Assume large if not present
+ *  This shortcode lists out subpages, their author if show byline on posts option is set,
+ *  their excerpts if excerpts are enabled (via plugin) and curated excerpts are added,
+ *  and a link to the subpage.
+ *
+ *  [subpage-list link='link text' tilebox=boolean]
+ *  optional tilebox attribute invokes tile-box layout for subpage list
+ *  optional link attribute will allow you to specify link text (same for all subpages)
+ *    no link if link is set to empty string or false
+ *    default link text is Read More
  */
 
 class UW_SubpageList
@@ -42,7 +48,7 @@ class UW_SubpageList
               }
             }
             else {
-            
+              //tilebox logic coming 
             }
           }
         }
