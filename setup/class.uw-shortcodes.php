@@ -19,13 +19,15 @@ class UW_Shortcodes
         require_once('class.button-shortcode.php');
         require_once('class.youtube-shortcode.php');
         require_once('class.trumba-shortcode.php');
+        require_once('class.subpage-list-shortcode.php');
     }
 
     private function initialize()
     {
-        $this->tile_box = new TileBox();
-        $this->button   = new UW_Button();
-        $this->youtube  = new UW_YouTube();
-        $this->trumba   = new UW_Trumba();
+        $this->tile_box       = new TileBox();
+        $this->button         = new UW_Button();
+        $this->youtube        = new UW_YouTube();
+        $this->trumba         = new UW_Trumba();
+        $this->subpage_list   = new UW_SubpageList();
     }
 }
