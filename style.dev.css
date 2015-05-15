@@ -7534,6 +7534,28 @@ textarea#jp-carousel-comment-form-comment-field:focus::-webkit-input-placeholder
 .checkbox + .checkbox {
   margin-top: 10px;
 }
+.checkbox .fui-radio-unchecked:before,
+.checkbox .fui-radio-checked:before {
+  background: url(assets/svg/uw-sprite.svg) no-repeat 0 0 rgba(0, 0, 0, 0);
+  content: "";
+  width: 22px;
+  height: 22px;
+  top: 2px;
+  left: 0;
+  position: absolute;
+}
+.checkbox .fui-radio-unchecked:before {
+  background-position: -437px -25px;
+}
+.checkbox .fui-radio-checked:before {
+  background-position: -437px -25px;
+}
+.checkbox.checked .fui-radio-unchecked:before {
+  background-position: -437px 1px;
+}
+.checkbox.checked .fui-radio-checked:before {
+  background-position: -437px 1px;
+}
 a.uw-btn {
   padding: 13px 24px;
   text-transform: uppercase;

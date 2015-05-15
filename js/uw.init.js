@@ -7,6 +7,7 @@ UW.elements = {
   images : 'a > img',
   mobilemenu : '.uw-mobile-menu-toggle',
   radio      : ':radio',
+  checkbox   : ':checkbox',
   search     : '.uw-search',
   select     : '.uw-select',
   quicklinks : '.uw-quicklinks',
@@ -52,8 +53,9 @@ UW.initialize = function( $ )
 
 
   // UW Components - These need to render after all other javascript elements are rendered on page
-  UW.accordion  = _.map( $( UW.elements.accordion ), function( element ) { return new UW.Accordion( { el : element }) } )
+  UW.accordion   = _.map( $( UW.elements.accordion ), function( element ) { return new UW.Accordion( { el : element }) } )
   UW.radio      = _.map( $( UW.elements.radio ),     function( element ) { return new UW.Radio({ el : element }) } )
+  UW.checkbox   = _.map( $( UW.elements.checkbox ),     function( element ) { return new UW.Radio({ el : element }) } )
   UW.select     = _.map( $( UW.elements.select ),    function( element ) { return new UW.Select({ el : element }) } )
 
   UW.alert = new UW.Alert({ after: UW.elements.alert, model: new UW.Alert.Model() });
