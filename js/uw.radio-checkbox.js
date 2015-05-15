@@ -47,7 +47,6 @@ UW.Radio = Backbone.View.extend({
     if ( this.$input.attr('type') === 'checkbox' ) {
       return _.where( UW.checkbox, { name : this.name })
     }
-
   },
 
   toggle : function(e )
@@ -60,7 +59,6 @@ UW.Radio = Backbone.View.extend({
   {
     var checked  = view.$input.prop( this.states.checked )
       , disabled = view.$input.prop( this.states.disabled )
-      console.log("eat it")
     if ( ! disabled &&
           view.$el.removeClass( this.states.checked ) )
         view.$el.removeAttr( this.states.checked ).trigger( 'change' )
