@@ -29,7 +29,7 @@ class UW_SubpageList
       
         global $post;
         
-        $subpages = get_pages(array('parent' => get_the_ID()));
+        $subpages = get_pages(array('parent' => get_the_ID(), 'sort_column'=>'menu_order'));
 
         if (!empty($subpages)){
           $output = '';
