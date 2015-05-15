@@ -18,6 +18,8 @@ This is an overview of the custom widgets, plugins and various features it inclu
   - [UW Single Image ](#uwsingleimage)
   - [UW Top Posts](#uwtopposts)
   - [UW Twitter](#uwtwitter)
+  - [UW Contact Card](#uwcontactcard)
+  - [UW Image Card](#uwimagecard)
 - [Shortcodes](#shortcodes)
   - [Button](#button)
   - [Blogroll](#blogroll)
@@ -134,6 +136,32 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 
 > In order to have the widget display in the widgets a `TWITTER_OAUTH_TOKEN` constant must be defined in your wp-config.php file.  
 > _Requires a Twitter API key_.  
+
+### UW Contact Card ###
+
+> Displays a multiple list of contacts for the group/department.
+
+> Options:  
+
+> - __Title__ : The title of the widget (_Default: Contact us_)   
+> - __Name__ : The person's name (_Default: None_)   
+> - __Title__ : The person's job title (_Default: None_) 
+> - __Phone number__ : The person's phone number (_Default: None_) 
+> - __Email__ : The person's email (_Default: None_)   
+
+
+### UW Image Card ###
+
+> Displays one of three styles of branded card. Both text and image can be customized.
+
+> Options:  
+
+> - __Title__ : The title of the widget (_Default: Image Widget_)   
+> - __Select an image__ : Select an image from the WordPress  media library (_Default: None_)    
+> - __Featured text__ : A small blurb that is shown below or on top of the image (_Default: None_)    
+> - __Link__ : A URL for the More link text (_Default: None_)    
+> - __More link__ : The text to display in the more link (_Default: Read more_)  
+> - __Card style__ : Choose one of three styles (_Default: None_)  
 
 
 ## Shortcodes
