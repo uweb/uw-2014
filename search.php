@@ -23,7 +23,7 @@
               get_template_part( 'content', 'archive' );
             endwhile;
           else :
-            echo '<h3 class=\'no-results\'>Sorry, no posts matched your criteria.</h3>';
+            echo '<h3 class=\'no-results\'>Sorry, no results matched your criteria.</h3>';
           endif;
         ?>
 
