@@ -16,19 +16,17 @@
 
       <div id='main_content' class="uw-body-copy" tabindex="-1">
 
+
         <?php
-          // Start the Loop.
-          while ( have_posts() ) : the_post();
-
-            /*
-             * Include the post format-specific template for the content. If you want to
-             * use this in a child theme, then include a file called called content-___.php
-             * (where ___ is the post format) and that will be used instead.
-             */
-            get_template_part( 'content', 'archive' );
-
-          endwhile;
+          if ( have_posts() ) :
+            while ( have_posts() ) : the_post();
+              get_template_part( 'content', 'archive' );
+            endwhile;
+          else :
+            echo '<h3 class=\'no-results\'>Sorry, no posts matched your criteria.</h3>';
+          endif;
         ?>
+
 
         <?php posts_nav_link(' '); ?>
 
