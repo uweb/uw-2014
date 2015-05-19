@@ -1,3 +1,41 @@
+.fui-radio-unchecked:before,
+.fui-radio-checked:before {
+  background: url(assets/svg/uw-sprite.svg) no-repeat 0 0 rgba(0, 0, 0, 0);
+  content: "";
+  width: 22px;
+  height: 22px;
+  top: 2px;
+  left: 0;
+  position: absolute;
+}
+.fui-radio-unchecked:before {
+  background-position: -380px -25px;
+}
+.fui-radio-checked:before {
+  background-position: -404px -25px;
+}
+.checked {
+  .fui-radio-unchecked:before {
+    background-position: -379px -25px;
+  }
+  .fui-radio-checked:before {
+    background-position: -404px 0px;
+  }
+}
+
+.checkbox:focus .icons .first-icon,
+.radio:focus .icons .first-icon {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.checkbox:focus .icons .second-icon,
+.radio:focus .icons .second-icon {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+
+
 .checkbox {
 
   .fui-radio-unchecked:before,
