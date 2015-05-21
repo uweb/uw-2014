@@ -20,3 +20,10 @@ root.UW = UW
 
 // Current version
 UW.VERSION = '0.1'
+
+// Constant for legible keycodes
+UW.KEYCODES = {
+  TAB: 9,
+  ENTER : 13,
+  ESC : 27
+}

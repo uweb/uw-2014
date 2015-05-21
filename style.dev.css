@@ -5541,6 +5541,20 @@ span.next-page a:hover {
 .checked .fui-radio-checked:before {
   background-position: -404px 0px;
 }
+body.search-open #uwsearcharea {
+  -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
+  -moz-transform: matrix(1, 0, 0, 1, 0, 0);
+  -ms-transform: matrix(1, 0, 0, 1, 0, 0);
+  -o-transform: matrix(1, 0, 0, 1, 0, 0);
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+body.search-open #uwsearcharea .uw-search-wrapper {
+  -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
+  -moz-transform: matrix(1, 0, 0, 1, 0, 0);
+  -ms-transform: matrix(1, 0, 0, 1, 0, 0);
+  -o-transform: matrix(1, 0, 0, 1, 0, 0);
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
 #uwsearcharea {
   -webkit-transform: matrix(1, 0, 0, 1, 0, -100);
   -moz-transform: matrix(1, 0, 0, 1, 0, -100);
@@ -5556,20 +5570,6 @@ span.next-page a:hover {
   -o-transform: matrix(1, 0, 0, 1, 0, -20);
   transform: matrix(1, 0, 0, 1, 0, -20);
   transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-#uwsearcharea.open {
-  -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
-  -moz-transform: matrix(1, 0, 0, 1, 0, 0);
-  -ms-transform: matrix(1, 0, 0, 1, 0, 0);
-  -o-transform: matrix(1, 0, 0, 1, 0, 0);
-  transform: matrix(1, 0, 0, 1, 0, 0);
-}
-#uwsearcharea.open .uw-search-wrapper {
-  -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
-  -moz-transform: matrix(1, 0, 0, 1, 0, 0);
-  -ms-transform: matrix(1, 0, 0, 1, 0, 0);
-  -o-transform: matrix(1, 0, 0, 1, 0, 0);
-  transform: matrix(1, 0, 0, 1, 0, 0);
 }
 #uwsearcharea .uw-results {
   position: relative;
@@ -7555,6 +7555,19 @@ textarea#jp-carousel-comment-form-comment-field:focus::-webkit-input-placeholder
 }
 .checkbox.checked .fui-radio-checked:before {
   background-position: -437px 1px;
+}
+.checkbox input,
+.radio input {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin: 0;
+  outline: 0!important;
+  opacity: 0;
 }
 a.uw-btn {
   padding: 13px 24px;

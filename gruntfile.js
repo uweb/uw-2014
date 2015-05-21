@@ -20,6 +20,7 @@ module.exports = function(grunt) {
           "js/uw.core.js",
           "js/uw.init.js",
           "js/uw.alert.js",
+          "js/uw.searchtoggle.js",
           "js/uw.search.js",
           "js/uw.quicklinks.js",
           "js/uw.slideshow.js",
