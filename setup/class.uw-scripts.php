@@ -18,8 +18,7 @@ class UW_Scripts
 
       'jquery' => array (
         'id'      => 'jquery',
-        //'url'     => 'https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
-        'url'     => 'https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js',
+        'url'     => 'https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
         'deps'    => array(),
         'version' => '1.9.1',
         'admin'   => false
@@ -72,7 +71,7 @@ class UW_Scripts
 
   function uw_localize_default_scripts()
   {
-    $uw_localization = array();  
+    $uw_localization = array();
     foreach ($this->SCRIPTS as $script )
     {
       $script = (object) $script;
