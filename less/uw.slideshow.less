@@ -2,7 +2,7 @@ div.uw-slideshow
 {
 
   position :relative;
-  overflow :hidden;
+  overflow: hidden;
   width: 100%;
   height: 390px;
   margin: 40px 0 20px 0;
@@ -17,6 +17,8 @@ div.uw-slideshow
     bottom: 0;
     width:100%;
     height:100%;
+    overflow: hidden;
+    background-color: #FFF;
 
     img {
       width:100%;
@@ -127,6 +129,123 @@ div.uw-slideshow
 
   }
 
+  // For the simple photo slider
+
+  &.photo-slider {
+
+
+      height: 510px;
+      padding-bottom: 60px;
+
+      // For class switching on dots
+
+      .dotSlide {
+        z-index: 99 !important;
+        left: 0 !important;
+      }
+
+      &:before {
+         background: url(assets/svg/uw-sprite.svg) no-repeat -795px 0 transparent;
+         content: "";
+         width: 45px;
+         height: 95px;
+         position: absolute;
+         bottom: 10%;         
+         right: 65px;
+         z-index: 20;
+         background-size: 1080px;
+      }
+      &:after {
+        content: "";
+        height: 105px;
+        position: absolute;
+          bottom: 10%;
+        right: 0;
+        left: 0;
+        z-index: 3;
+        background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(0,0,0,0.54) 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(0,0,0,0.54))); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.54) 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.54) 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.54) 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.54) 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#8a000000',GradientType=0 ); /* IE6-9 */
+  
+  
+      }
+      & > div.slide {
+        overflow: hidden;
+        height: 90%;
+      }
+      & > div.slide div {
+       display: none;
+      }
+      .uw-slideshow-controls {
+        background-color: transparent;
+        bottom: 10%;
+        &.next, 
+        &.previous {
+          .box-shadow(none);
+          &:hover,
+          &:focus {
+            border-bottom: none;
+          }
+        }
+        &.previous {
+          right: 90px;
+          &:hover,
+          &:focus {
+            right: 100px;
+          }
+        }
+        &.next {
+          right: 45px;
+          &:hover,
+          &:focus {
+            right: 35px;
+          }
+        }
+        &.next:after, 
+        &.previous:after {
+          width: 46px;
+          left: 0;
+          background: url(assets/svg/uw-sprite.svg) no-repeat -55px -672px transparent;
+          background-size: 1190px;
+        }    
+  
+    }
+    .slider-dots {
+      position: relative;
+      bottom: 0;  
+      z-index: 9999;
+      text-align: center;
+      margin-top: 465px;
+      padding: 0;
+      li {
+        list-style: none;
+        display: inline-block;
+        .border-radius(100%);
+        padding: 5px;
+        margin: 0 3px;
+        background-color: #C8C8C8;
+        &:hover,
+        &.select-dot {
+          background-color: #484848;
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width : 1200px) {
+  div.uw-slideshow.photo-slider .slider-dots {
+    margin-top: 390px;
+  }
+  div.uw-slideshow.photo-slider {
+    height: 420px;
+    padding-bottom: 60px;
+  }
 }
 
 
@@ -144,6 +263,34 @@ div.uw-slideshow
     &.next:after,
     &.previous:after {
       top: 3px;
+    }
+  }
+  div.uw-slideshow.photo-slider {
+    height: 420px;
+    padding-bottom: 0;
+    .uw-slideshow-controls {
+      bottom: 55px;
+      &.previous {
+        right: 60px;
+        &:hover,
+        &:focus {
+          right: 65px;
+        }
+      }
+      &.next {
+        right: 15px;
+        &:hover,
+        &:focus {
+          right: 10px;
+        }
+      }
+    }
+    &:before {
+      bottom: 5%;
+      right: 40px;
+    }
+    &:after {
+      bottom: 50px;
     }
   }
   div.uw-slideshow>div.slide div h3 {

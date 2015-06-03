@@ -40,7 +40,8 @@ UW.Slideshow = Backbone.View.extend({
   // The only events necessary are clicking the next and previous control arrows.
   events : {
     'click .previous' : 'animateIn',
-    'click .next' : 'animateOut'
+    'click .next' : 'animateOut',
+    'click .slider-dots li' : 'dotsAnimate'
   },
 
   // When the view is initialized the controls are added to the dom, the number of slides is gathered,
@@ -48,11 +49,14 @@ UW.Slideshow = Backbone.View.extend({
   initialize : function( options )
   {
     this.options = _.extend( {}, this.settings, options )
-    _.bindAll( this, 'animateIn', 'animateOut', 'addControls', 'zIndex' )
+    _.bindAll( this, 'animateIn', 'animateOut', 'addControls', 'zIndex', 'moveDots' )
     this.controls = _.template( this.controls, { classname: this.options.controlclasses.base } )
     this.numberOfSlides = this.$el.find('.slide').length - 1
+    this.photoSlider = this.$el.hasClass('photo-slider')
     this.organizeSlideshow()
     this.addControls()
+    this.photoSlideshow()
+    this.mobileSizing()
   },
 
   // Set the z-index of each slide appropriately.
@@ -61,6 +65,103 @@ UW.Slideshow = Backbone.View.extend({
     // this.$( this.$('.slide').get().reverse() ).each( this.zIndex )
     _.each( this.$('.slide').get(), this.zIndex )
     // this.$( '.slide' ).each( this.zIndex )
+  },
+
+
+  // Mobile width and height
+
+  mobileSizing : function() {
+
+    // Check if it's a photo gallery 
+
+    function checkWidth() {
+        var   mobileContainer = $('.uw-slideshow'), 
+                 mobileHeight = $(".uw-slideshow img:first").height() + 50,
+              mobileDotMargin = mobileContainer.find('.slider-dots')  
+                   windowsize = $(window).width()
+  
+       if (windowsize < 768) {
+          mobileContainer.css('height', mobileHeight);
+          mobileDotMargin.css('marginTop', mobileHeight - 40);
+       } 
+
+
+    }
+
+
+
+    if ( this.photoSlider ) {
+    
+      // Run initially
+      checkWidth()
+
+      // Run on resize
+      $(window).resize(checkWidth)
+
+    }
+
+  },
+
+  // Make it into simple photos slideshow 
+
+  photoSlideshow : function()
+  {
+
+
+    // Add if photo slider exists
+    if ( this.photoSlider ) {
+      
+      $( ".photo-slider" ).append('<ul class="slider-dots"></ul>') 
+
+      // Add LIs to ul
+      for (i = 0; i < this.numberOfSlides + 1; i++) { 
+        $( ".slider-dots" ).append('<li></li>');
+      }
+      
+      // Add initial dot     
+      $(".slider-dots li:nth-child(1)").addClass("select-dot")
+
+    }
+
+
+  },
+
+
+  moveDots : function(){
+
+      // Moves the dots around according to this.current
+
+      $('.slider-dots li').removeClass('select-dot')
+      $(".slider-dots li:nth-child(" + (this.current + 1) + ")").addClass("select-dot")
+
+
+  },
+
+  // Animate the dots
+
+  dotsAnimate : function(e){
+
+        // Store which dot has been click
+        var slideNumber = $('.slider-dots li').index(e.target)
+
+        this.moveDots()
+
+        // If slide needs to go forward
+        if ( slideNumber > this.current ) {
+          for (i = this.current + 1; i <= slideNumber; i++) {
+            this.animateOut()
+
+          }    
+
+        // If slide needs to go backward
+        } else if ( slideNumber < this.current ) { 
+          //Set currentSlide variable outside loop (otherwise it gets reset each time the slide changes) 
+          var currentSlide = this.current - 1
+          for (i = slideNumber; i <= currentSlide; i++) {
+            this.animateIn()
+          }    
+        }
+
   },
 
   // Add the previous and next controls to the slideshow.
@@ -82,6 +183,7 @@ UW.Slideshow = Backbone.View.extend({
       this.animate()
       this.current = this.current < 0 ? 0 : this.current
       this.toggleClasses()
+      this.moveDots()
       return false;
   },
 
@@ -95,6 +197,7 @@ UW.Slideshow = Backbone.View.extend({
       this.animate()
       this.current = this.current === this.numberOfSlides ? this.numberOfSlides : this.current+1
       this.toggleClasses()
+      this.moveDots()
       return false;
   },
 
