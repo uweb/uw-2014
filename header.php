@@ -23,8 +23,10 @@
     <body <?php body_class(); ?> >
     <!--<![endif]-->
 
-    <a href='#main_content' class='screen-reader-shortcut'>Skip to main content</a>
-    <div id='uwsearcharea' aria-hidden="true" class="uw-search-bar-container"></div>
+    <div id="uwsearcharea" aria-hidden="true" class="uw-search-bar-container"></div>
+
+    <a id="main-content" href="#main_content" class='screen-reader-shortcut'>Skip to main content</a>
+
     <div id="uw-container">
 
     <div id="uw-container-inner">
