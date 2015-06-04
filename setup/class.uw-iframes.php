@@ -56,6 +56,7 @@ class UW_Iframes
       'depts.washington.edu',
       'online.gifts.washington.edu',
       'secure.gifts.washington.edu',
+      'payroll.gifts.washington.edu',
       'helperapps.gifts.washington.edu',
       'uwfoundation.org',
       'www.uwfoundation.org',
