@@ -239,6 +239,7 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
     depts.washington.edu,
     online.gifts.washington.edu,
     secure.gifts.washington.edu,
+    payroll.gifts.washington.edu,
     helperapps.gifts.washington.edu,
 ```
 
