@@ -36,6 +36,7 @@ UW.Dropdowns = Backbone.View.extend({
   events : {
     'keydown .dawgdrops-menu a' : 'moveFocusInSubMenu',
     'keydown .dawgdrops-item > a' : 'toggleSubMenu',
+    'focus .dawgdrops-item' : 'positionSubmenu',
     'mouseenter .dawgdrops-item' : 'positionSubmenu'
   },
 
@@ -70,12 +71,10 @@ UW.Dropdowns = Backbone.View.extend({
   },
 
   // todo: tidy up the math / variables
-  positionSubmenu : function( el )
+  positionSubmenu : function( event )
   {
-    var $el = $( el.currentTarget )
-    if ( $el.is('a') ) $el = $el.parent('li')
-
-    var position = $el.position()
+    var $el = $( event.currentTarget )
+      , position = $el.position()
       , menublock = $el.find('.menu-block')
       , shift = ( this.menuBlockWidth * ( menublock.length ) ) + position.left
       , left = shift > UW.$window.width() ? $el.outerWidth() + position.left - ( menublock.length * this.menuBlockWidth ) : position.left
@@ -101,11 +100,6 @@ UW.Dropdowns = Backbone.View.extend({
           .find('a')
             .eq(0)
             .focus()
-
-        //can avoid doublechecking, but mouseenter doesn't, so be consistent
-        //if (this.currentSubMenu.attr('style') !== undefined) {
-        // this.positionSubmenu(e);
-        //}
 
         return false
 
