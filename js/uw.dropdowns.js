@@ -10,7 +10,7 @@ UW.Dropdowns = Backbone.View.extend({
   chunkSize : 8,
   menuWidth : 1170,
   menuBlock : '<div class="menu-block"></div>',
-  menuBlockWidth : 250,
+  menuBlockWidth : 230,
 
   index : {
     topmenu : 0,
@@ -72,14 +72,13 @@ UW.Dropdowns = Backbone.View.extend({
   // todo: tidy up the math / variables
   positionSubmenu : function( el )
   {
-    var $el = $(el.currentTarget);
-    if ($el.is('a')){
-        $el = $el.parent('li');
-    }
+    var $el = $( el.currentTarget )
+    if ( $el.is('a') ) $el = $el.parent('li')
+
     var position = $el.position()
       , menublock = $el.find('.menu-block')
       , shift = ( this.menuBlockWidth * ( menublock.length ) ) + position.left
-      , left = shift > this.menuWidth ? position.left - ( shift - this.menuWidth ) : position.left
+      , left = shift > UW.$window.width() ? $el.outerWidth() + position.left - ( menublock.length * this.menuBlockWidth ) : position.left
 
     $el.find('ul').css( { top : position.top + 58, left: left })
   },
@@ -105,7 +104,7 @@ UW.Dropdowns = Backbone.View.extend({
 
         //can avoid doublechecking, but mouseenter doesn't, so be consistent
         //if (this.currentSubMenu.attr('style') !== undefined) {
-        this.positionSubmenu(e);
+        // this.positionSubmenu(e);
         //}
 
         return false
