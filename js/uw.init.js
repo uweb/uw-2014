@@ -18,17 +18,14 @@ UW.elements = {
 
 }
 
-if (typeof(uw) !== 'undefined') {
-    UW.baseUrl = uw.siteUrl;
-}
-else {
-    UW.baseUrl = Backbone.history.location.origin + '/' +
-                _.first( _.compact( Backbone.history.location.pathname.split('/') ) ) + '/';
-}
-
 UW.sources = {
   quicklinks : UW.baseUrl + 'wp-admin/admin-ajax.php?action=quicklinks',
   search     : UW.baseUrl + 'wp-admin/admin-ajax.php'
+}
+
+UW.getBaseUrl = function() {
+    var site = _.first( _.compact( Backbone.history.location.pathname.split('/') ) )
+    return Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/'
 }
 
 // Initialize all components when the DOM is ready
@@ -37,6 +34,7 @@ UW.initialize = function( $ )
   // Cache common elements that each javascript module calls
   UW.$body       = $('body');
   UW.$window   = $( window );
+  UW.baseUrl = UW.getBaseUrl()
 
   // UW Utilities
   UW.dropdowns  = _.map( $( UW.elements.dropdowns ),     function( element ) { return new UW.Dropdowns({ el : element }) } )
