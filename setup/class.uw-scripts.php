@@ -29,8 +29,7 @@ class UW_Scripts
         'url'       => get_bloginfo('template_directory') . '/js/site' . $this->dev_script() . '.js',
         'deps'      => array( 'backbone' ),
         'version'   => '1.0.3',
-        'admin'     => false,
-        'variables' => array('siteUrl' => $this->get_real_site_url())
+        'admin'     => false
       ),
 
       'admin' => array (
@@ -129,13 +128,4 @@ class UW_Scripts
     return is_user_logged_in() ? '.dev' : '';
   }
 
-  public function get_real_site_url()
-  {
-    $site = get_site_url() . '/';
-    if (!is_user_logged_in()){
-        $site = str_replace('washington.edu/cms/', 'washington.edu/', $site);
-    }
-    $site = str_replace('http:', 'https:', $site);
-    return $site;
-  }
 }
