@@ -10968,14 +10968,14 @@ UW.elements = {
 
 }
 
-UW.sources = {
-  quicklinks : UW.baseUrl + 'wp-admin/admin-ajax.php?action=quicklinks',
-  search     : UW.baseUrl + 'wp-admin/admin-ajax.php'
-}
-
 UW.getBaseUrl = function() {
     var site = _.first( _.compact( Backbone.history.location.pathname.split('/') ) )
     return Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/'
+}
+
+UW.sources = {
+  quicklinks : UW.getBaseUrl() + 'wp-admin/admin-ajax.php?action=quicklinks',
+  search     : UW.getBaseUrl() + 'wp-admin/admin-ajax.php'
 }
 
 // Initialize all components when the DOM is ready
