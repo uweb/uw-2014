@@ -81,11 +81,22 @@ label.screen-reader {
             }
         }
     }
-    input::-webkit-input-placeholder,
-    input:-moz-placeholder,
-    input::-moz-placeholder,
+    // Darken form default color
+    input::-webkit-input-placeholder{
+         color: #7B7B7B;
+    }
+    input:-moz-placeholder{
+         color: #7B7B7B;
+    }
+    input::-moz-placeholder{
+         color: #7B7B7B;
+    }    
     input:-ms-input-placeholder {
          color: #7B7B7B;
+    }
+    // Darkens form colors
+    .form-control {
+        color: #303030;
     }
 }
 

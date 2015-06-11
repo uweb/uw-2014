@@ -30,6 +30,7 @@ This is an overview of the custom widgets, plugins and various features it inclu
   - [Trumba](#trumba)
   - [Twitter](#twitter)
   - [YouTube](#youtube)
+  - [Slideshow](#slideshow)
 - [Features](#features)
   - [UW Widget Visibility](#uwwidgetvisiblity)
   - [UW Media Credit](#uwmediacredit)
@@ -338,6 +339,21 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
 > Example:   
 ```
   [youtube type='playlist' id='PLgNkGpnjFWo9CN_HeVtujhMnUXK05iwgZ' max-results='10']
+```
+
+### Slideshow ###
+
+>  Embed a slideshow into your post content.
+> _Requires the UW Slideshow Plugin (https://github.com/uweb/uw-slideshow)_.  
+
+> Attributes:  
+
+> -  __id__ : Enter the ID of the slideshow you have created via the _Dashboard > Slideshows_. (_Default: None_)   
+> - __simple__ : The youtube video or playlist id  (_Default: None_)  
+
+> Example:   
+```
+  [slideshow simple='true' id='1234']
 ```
 
 

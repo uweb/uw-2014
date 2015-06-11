@@ -96,7 +96,7 @@ class UW_Widget_Cards extends WP_Widget
   function update($new_instance, $old_instance)
   {
 		$instance['title'] = strip_tags( $new_instance['title'] );
-		$instance['text']  = strip_tags( $new_instance['text'] );
+		$instance['text']  = $new_instance['text'] ;
 		$instance['image'] = (Int) $new_instance['image'];
 		$instance['src']   = strip_tags( $new_instance['src'] );
 		$instance['link']  = strip_tags( $new_instance['link'] );
@@ -127,19 +127,19 @@ class UW_Widget_Cards extends WP_Widget
       )'></div>
 
       <span>
+      <h3>
+        <?php if ( ! empty( $link) ) : ?>
+        <a href="<?php echo $link; ?>" class="pic-title">
+        <?php endif; ?>
+  
+            <?php echo $title; ?>
+  
+        <?php if ( ! empty( $link) ) : ?>
+          </a>      
+        <?php endif; ?>
+      </h3>
 
-      <?php if ( ! empty( $link) ) : ?>
-      <h3><a href="<?php echo $link; ?>" class="pic-title">
-      <?php endif; ?>
-
-          <?php echo $title; ?>
-
-      <?php if ( ! empty( $link) ) : ?>
-        </a></h3>
-    
-      <span class="udub-slant"><span></span></span>
-
-      <?php endif; ?>
+      <span class="udub-slant"><span></span></span>    
 
       <?php echo wpautop($text); ?>
 
