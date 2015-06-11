@@ -10968,17 +10968,14 @@ UW.elements = {
 
 }
 
-if (typeof(uw) !== 'undefined') {
-    UW.baseUrl = uw.siteUrl;
-}
-else {
-    UW.baseUrl = Backbone.history.location.origin + '/' +
-                _.first( _.compact( Backbone.history.location.pathname.split('/') ) ) + '/';
-}
-
 UW.sources = {
   quicklinks : UW.baseUrl + 'wp-admin/admin-ajax.php?action=quicklinks',
   search     : UW.baseUrl + 'wp-admin/admin-ajax.php'
+}
+
+UW.getBaseUrl = function() {
+    var site = _.first( _.compact( Backbone.history.location.pathname.split('/') ) )
+    return Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/'
 }
 
 // Initialize all components when the DOM is ready
@@ -10987,6 +10984,7 @@ UW.initialize = function( $ )
   // Cache common elements that each javascript module calls
   UW.$body       = $('body');
   UW.$window   = $( window );
+  UW.baseUrl = UW.getBaseUrl()
 
   // UW Utilities
   UW.dropdowns  = _.map( $( UW.elements.dropdowns ),     function( element ) { return new UW.Dropdowns({ el : element }) } )
@@ -12296,7 +12294,7 @@ UW.Dropdowns = Backbone.View.extend({
   chunkSize : 8,
   menuWidth : 1170,
   menuBlock : '<div class="menu-block"></div>',
-  menuBlockWidth : 250,
+  menuBlockWidth : 230,
 
   index : {
     topmenu : 0,
@@ -12322,6 +12320,7 @@ UW.Dropdowns = Backbone.View.extend({
   events : {
     'keydown .dawgdrops-menu a' : 'moveFocusInSubMenu',
     'keydown .dawgdrops-item > a' : 'toggleSubMenu',
+    'focus .dawgdrops-item' : 'positionSubmenu',
     'mouseenter .dawgdrops-item' : 'positionSubmenu'
   },
 
@@ -12356,16 +12355,13 @@ UW.Dropdowns = Backbone.View.extend({
   },
 
   // todo: tidy up the math / variables
-  positionSubmenu : function( el )
+  positionSubmenu : function( event )
   {
-    var $el = $(el.currentTarget);
-    if ($el.is('a')){
-        $el = $el.parent('li');
-    }
-    var position = $el.position()
+    var $el = $( event.currentTarget )
+      , position = $el.position()
       , menublock = $el.find('.menu-block')
       , shift = ( this.menuBlockWidth * ( menublock.length ) ) + position.left
-      , left = shift > this.menuWidth ? position.left - ( shift - this.menuWidth ) : position.left
+      , left = shift > UW.$window.width() ? $el.outerWidth() + position.left - ( menublock.length * this.menuBlockWidth ) : position.left
 
     $el.find('ul').css( { top : position.top + 58, left: left })
   },
@@ -12388,11 +12384,6 @@ UW.Dropdowns = Backbone.View.extend({
           .find('a')
             .eq(0)
             .focus()
-
-        //can avoid doublechecking, but mouseenter doesn't, so be consistent
-        //if (this.currentSubMenu.attr('style') !== undefined) {
-        this.positionSubmenu(e);
-        //}
 
         return false
 
