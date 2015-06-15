@@ -68,7 +68,7 @@ div.uw-slideshow
     position:absolute;
     background-color:#eee;
     height:80px;
-    width: 75px;
+    width: 45px;
     bottom: 36px;
     &.next:after,
     &.previous:after {
@@ -183,6 +183,7 @@ div.uw-slideshow
       .uw-slideshow-controls {
         background-color: transparent;
         bottom: 10%;
+        width: 75px;
         &.next, 
         &.previous {
           .box-shadow(none);
@@ -237,6 +238,35 @@ div.uw-slideshow
     }
   }
 }
+
+.page-template-no-sidebar {
+  div.uw-slideshow {
+    height: 550px;
+    .uw-slideshow-controls.next {
+      right: 212px;
+    }
+    .uw-slideshow-controls.previous {
+      right: 257px;
+    }
+    &.photo-slider {
+      height: 690px;
+      .uw-slideshow-controls.next {
+        right: 2px;
+      }
+      .uw-slideshow-controls.previous {
+        right: 107px;
+      }
+      .slider-dots {
+        margin-top: 645px;
+      }
+      &  > div.slide {
+        overflow: hidden;
+        height: 92.5%;
+      }
+    }  
+  }
+}
+
 
 
 @media only screen and (max-width : 1200px) {

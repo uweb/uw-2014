@@ -58,6 +58,14 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 > Options:  
 
 > - **Title** : The title of the widget (*Default: Blogroll*)   
+> - **Excerpt** : Uses the excerpt for text if it exists in the post (*Default: true*)   
+> - **Image** : Uses the featured image in the respective post (*Default: hide*)   
+> - **Author** : Shows the authro (*Default: show*)   
+> - **Post type** : Pulls a specific post type (*Default: post*)   
+> - **Category** : Pulls from a category ID (*Default: none*)   
+> - **Category name** : Pulls from a category name (*Default: none*)   
+> - **Mini blogroll** : Creates a minified version of the blogroll for tighter spaces (*Default: false*)   
+> - **Date** : Shows the published date (*Default: show*)   
 > - **Number of posts to display** : The number of post titles to show in the blogroll (*Default: 2*)
 
 ### UW Campus Map ###

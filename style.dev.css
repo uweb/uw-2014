@@ -3509,7 +3509,7 @@ div.uw-slideshow .uw-slideshow-controls {
   position: absolute;
   background-color: #eee;
   height: 80px;
-  width: 75px;
+  width: 45px;
   bottom: 36px;
 }
 div.uw-slideshow .uw-slideshow-controls.next:after,
@@ -3603,6 +3603,7 @@ div.uw-slideshow.photo-slider > div.slide div {
 div.uw-slideshow.photo-slider .uw-slideshow-controls {
   background-color: transparent;
   bottom: 10%;
+  width: 75px;
 }
 div.uw-slideshow.photo-slider .uw-slideshow-controls.next,
 div.uw-slideshow.photo-slider .uw-slideshow-controls.previous {
@@ -3661,6 +3662,31 @@ div.uw-slideshow.photo-slider .slider-dots li {
 div.uw-slideshow.photo-slider .slider-dots li:hover,
 div.uw-slideshow.photo-slider .slider-dots li.select-dot {
   background-color: #484848;
+}
+.page-template-no-sidebar div.uw-slideshow {
+  height: 550px;
+}
+.page-template-no-sidebar div.uw-slideshow .uw-slideshow-controls.next {
+  right: 212px;
+}
+.page-template-no-sidebar div.uw-slideshow .uw-slideshow-controls.previous {
+  right: 257px;
+}
+.page-template-no-sidebar div.uw-slideshow.photo-slider {
+  height: 690px;
+}
+.page-template-no-sidebar div.uw-slideshow.photo-slider .uw-slideshow-controls.next {
+  right: 2px;
+}
+.page-template-no-sidebar div.uw-slideshow.photo-slider .uw-slideshow-controls.previous {
+  right: 107px;
+}
+.page-template-no-sidebar div.uw-slideshow.photo-slider .slider-dots {
+  margin-top: 645px;
+}
+.page-template-no-sidebar div.uw-slideshow.photo-slider > div.slide {
+  overflow: hidden;
+  height: 92.5%;
 }
 @media only screen and (max-width: 1200px) {
   div.uw-slideshow.photo-slider .slider-dots {
