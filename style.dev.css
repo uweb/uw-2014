@@ -3565,40 +3565,85 @@ div.uw-slideshow.photo-slider:before {
   width: 45px;
   height: 95px;
   position: absolute;
-  bottom: 10%;
+  bottom: 40px;
   right: 65px;
   z-index: 20;
+  opacity: .8;
   background-size: 1080px;
 }
 div.uw-slideshow.photo-slider:after {
   content: "";
-  height: 105px;
+  height: 200px;
   position: absolute;
   bottom: 51px;
   right: 0;
-  left: 0;
+  width: 250px;
   z-index: 19;
-  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.54) 100%);
+  background: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0) 0%, rgba(128, 128, 128, 0) 50%, #000000 100%);
   /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(0, 0, 0, 0.54)));
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(128, 128, 128, 0)), color-stop(100%, #000000));
   /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.54) 100%);
+  background: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0) 0%, rgba(128, 128, 128, 0) 50%, #000000 100%);
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.54) 100%);
+  background: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0) 0%, rgba(128, 128, 128, 0) 50%, #000000 100%);
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.54) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0) 0%, rgba(128, 128, 128, 0) 50%, #000000 100%);
   /* IE10+ */
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.54) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0) 0%, rgba(128, 128, 128, 0) 50%, #000000 100%);
   /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#8a000000', GradientType=0);
-  /* IE6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#000000', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
 }
 div.uw-slideshow.photo-slider > div.slide {
   overflow: hidden;
   height: 90%;
 }
-div.uw-slideshow.photo-slider > div.slide div {
+div.uw-slideshow.photo-slider > div.slide.no-text div {
   display: none;
+}
+div.uw-slideshow.photo-slider > div.slide:hover.has-text:after {
+  opacity: 0;
+}
+div.uw-slideshow.photo-slider > div.slide:hover div {
+  bottom: 0;
+}
+div.uw-slideshow.photo-slider > div.slide div {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  padding: 10px 30px;
+  bottom: -300px;
+  -o-transition: bottom ease-in-out 0.1s;
+  -webkit-transition: bottom ease-in-out 0.1s;
+  transition: bottom ease-in-out 0.1s;
+}
+div.uw-slideshow.photo-slider > div.slide div h3 {
+  font-size: 18px;
+}
+div.uw-slideshow.photo-slider > div.slide div p {
+  font-size: 15px;
+}
+div.uw-slideshow.photo-slider .has-text:after {
+  font-family: "Encode Sans Compressed", sans-serif;
+  font-weight: 900;
+  content: "i";
+  font-size: 13px;
+  text-align: center;
+  display: block;
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  z-index: 9999;
+  width: 20px;
+  height: 20px;
+  background-color: #FFF;
+  border-radius: 100%;
+  padding: 0 0 17px 0;
+  opacity: .8;
+  -o-transition: opacity ease-in-out 0.05s;
+  -webkit-transition: opacity ease-in-out 0.05s;
+  transition: opacity ease-in-out 0.05s;
+  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 div.uw-slideshow.photo-slider .uw-slideshow-controls {
   background-color: transparent;
@@ -3633,9 +3678,9 @@ div.uw-slideshow.photo-slider .uw-slideshow-controls.next:focus {
 div.uw-slideshow.photo-slider .uw-slideshow-controls.next:after,
 div.uw-slideshow.photo-slider .uw-slideshow-controls.previous:after {
   width: 46px;
-  left: 0;
-  background: url(assets/svg/uw-sprite.svg) no-repeat -55px -672px transparent;
-  background-size: 1190px;
+  left: 10px;
+  background: url(assets/svg/uw-sprite.svg) no-repeat -55px -545px rgba(0, 0, 0, 0);
+  background-size: 970px;
 }
 div.uw-slideshow.photo-slider .slider-dots {
   position: relative;
@@ -3698,6 +3743,10 @@ div.uw-slideshow.photo-slider .slider-dots li.select-dot {
   }
   div.uw-slideshow.photo-slider:after {
     bottom: 42px;
+  }
+  div.uw-slideshow.photo-slider .has-text:after,
+  div.uw-slideshow.photo-slider > div.slide div {
+    display: none;
   }
 }
 @media only screen and (max-width: 767px) {
