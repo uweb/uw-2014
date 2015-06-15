@@ -3471,6 +3471,9 @@ div.uw-slideshow > div.slide {
   overflow: hidden;
   background-color: #FFF;
 }
+div.uw-slideshow > div.slide.no-text {
+  display: none;
+}
 div.uw-slideshow > div.slide img {
   width: 100%;
   height: auto;
