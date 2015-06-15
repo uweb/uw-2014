@@ -44,7 +44,7 @@ class UW_QuickLinks
 
     if ( $this->MULTISITE ) restore_current_blog();
 
-    wp_send_json( $this->parse_menu( $info ) ) ;
+    wp_send_json( $this->parse_menu() ) ;
   }
 
   function parse_menu()
