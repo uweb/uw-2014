@@ -41,7 +41,8 @@ UW.Slideshow = Backbone.View.extend({
   events : {
     'click .previous' : 'animateIn',
     'click .next' : 'animateOut',
-    'click .slider-dots li' : 'dotsAnimate'
+    'click .slider-dots li' : 'dotsAnimate',
+    'click .fullscreen' : 'goFullscreen'
   },
 
   // When the view is initialized the controls are added to the dom, the number of slides is gathered,
@@ -49,7 +50,7 @@ UW.Slideshow = Backbone.View.extend({
   initialize : function( options )
   {
     this.options = _.extend( {}, this.settings, options )
-    _.bindAll( this, 'animateIn', 'animateOut', 'addControls', 'zIndex', 'moveDots' )
+    _.bindAll( this, 'animateIn', 'animateOut', 'addControls', 'zIndex', 'moveDots', 'goFullscreen' )
     this.controls = _.template( this.controls, { classname: this.options.controlclasses.base } )
     this.numberOfSlides = this.$el.find('.slide').length - 1
     this.photoSlider = this.$el.hasClass('photo-slider')
@@ -110,8 +111,8 @@ UW.Slideshow = Backbone.View.extend({
 
     // Add if photo slider exists
     if ( this.photoSlider ) {
-      
-      $( ".photo-slider" ).append('<ul class="slider-dots"></ul>') 
+
+      $( ".photo-slider" ).append('<ul class="slider-dots"></ul>', '<a class="fullscreen" href="#">Fullscreen</a>') 
 
       // Add LIs to ul
       for (i = 0; i < this.numberOfSlides + 1; i++) { 
@@ -123,6 +124,33 @@ UW.Slideshow = Backbone.View.extend({
 
     }
 
+
+  },
+
+  // Add fullscreen ability
+
+  goFullscreen : function(e){
+
+ //   var sliderWidth = this.$el.width(),
+ //         offsetLeft = this.$el.offset().left,
+ //       scaleNumber = ($(window).width()  - 300) / sliderWidth,
+ //           scaleIf = scaleNumber > 1 ? scaleNumber : 1,
+ //    negativeMargin = sliderWidth * scaleNumber / 2
+//
+ //   this.$el
+ //     .css({
+ //       '-webkit-transform' : 'scale(' + scaleIf + ')',
+ //       '-moz-transform'    : 'scale(' + scaleIf + ')',
+ //       '-ms-transform'     : 'scale(' + scaleIf + ')',
+ //       '-o-transform'      : 'scale(' + scaleIf + ')',
+ //       'transform'         : 'scale(' + scaleIf + ')',
+ //       'margin-left'       :  -negativeMargin
+ //     })
+
+
+    $('body').toggleClass('activeFullscreen');
+
+    event.preventDefault();
 
   },
 

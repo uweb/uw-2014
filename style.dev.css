@@ -3566,9 +3566,9 @@ div.uw-slideshow.photo-slider:before {
   background: url(assets/svg/uw-sprite.svg) no-repeat -795px 0 transparent;
   content: "";
   width: 45px;
-  height: 95px;
+  height: 75px;
   position: absolute;
-  bottom: 40px;
+  bottom: 10%;
   right: 65px;
   z-index: 20;
   opacity: .8;
@@ -3604,9 +3604,6 @@ div.uw-slideshow.photo-slider > div.slide {
 div.uw-slideshow.photo-slider > div.slide.no-text div {
   display: none;
 }
-div.uw-slideshow.photo-slider > div.slide:hover.has-text:after {
-  opacity: 0;
-}
 div.uw-slideshow.photo-slider > div.slide:hover div {
   bottom: 0;
 }
@@ -3633,8 +3630,8 @@ div.uw-slideshow.photo-slider .has-text:after {
   text-align: center;
   display: block;
   position: absolute;
-  bottom: 30px;
-  left: 30px;
+  top: 59px;
+  right: 21px;
   z-index: 9999;
   width: 20px;
   height: 20px;
@@ -3711,30 +3708,96 @@ div.uw-slideshow.photo-slider .slider-dots li:hover,
 div.uw-slideshow.photo-slider .slider-dots li.select-dot {
   background-color: #484848;
 }
-.page-template-no-sidebar div.uw-slideshow {
-  height: 550px;
+div.uw-slideshow.photo-slider a.fullscreen {
+  background: url(assets/svg/widgets-sprite.svg) no-repeat 0px -62px rgba(0, 0, 0, 0);
+  position: absolute;
+  overflow-x: hidden;
+  text-indent: 9999px;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  z-index: 50;
+  -o-transition: scale linear 0.1s;
+  -webkit-transition: scale linear 0.1s;
+  transition: scale linear 0.1s;
+  border-bottom: none;
 }
-.page-template-no-sidebar div.uw-slideshow .uw-slideshow-controls.next {
-  right: 212px;
+div.uw-slideshow.photo-slider a.fullscreen:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2, );
+  -ms-transform: scale(1.2, );
+  transform: scale(1.2, );
+  transform-origin: center center;
 }
-.page-template-no-sidebar div.uw-slideshow .uw-slideshow-controls.previous {
-  right: 257px;
+.activeFullscreen div.uw-slideshow.photo-slider {
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  bottom: 5%;
+  width: 90%;
+  height: auto;
+  z-index: 100;
 }
-.page-template-no-sidebar div.uw-slideshow.photo-slider {
-  height: 690px;
+.activeFullscreen div.uw-slideshow.photo-slider:after {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: auto;
+  width: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: -1;
 }
-.page-template-no-sidebar div.uw-slideshow.photo-slider .uw-slideshow-controls.next {
-  right: 2px;
+.activeFullscreen div.uw-slideshow.photo-slider a.fullscreen {
+  background-position: 0px -93px;
 }
-.page-template-no-sidebar div.uw-slideshow.photo-slider .uw-slideshow-controls.previous {
-  right: 107px;
+.activeFullscreen div.uw-slideshow.photo-slider > div.slide {
+  background-color: black;
 }
-.page-template-no-sidebar div.uw-slideshow.photo-slider .slider-dots {
-  margin-top: 645px;
+.activeFullscreen div.uw-slideshow.photo-slider.last-previous .previous {
+  opacity: 1;
 }
-.page-template-no-sidebar div.uw-slideshow.photo-slider > div.slide {
-  overflow: hidden;
-  height: 92.5%;
+.activeFullscreen div.uw-slideshow.photo-slider.last-next .next {
+  opacity: 1;
+}
+.activeFullscreen div.uw-slideshow.photo-slider .slider-dots {
+  position: absolute;
+  bottom: 20px;
+  right: 45px;
+  margin-top: 0;
+  padding: 0;
+}
+@media only screen and (min-width: 992px) {
+  .page-template-no-sidebar div.uw-slideshow {
+    height: 550px;
+  }
+  .page-template-no-sidebar div.uw-slideshow .uw-slideshow-controls.next {
+    right: 212px;
+  }
+  .page-template-no-sidebar div.uw-slideshow .uw-slideshow-controls.previous {
+    right: 257px;
+  }
+  .page-template-no-sidebar div.uw-slideshow.photo-slider {
+    height: 690px;
+  }
+  .page-template-no-sidebar div.uw-slideshow.photo-slider .uw-slideshow-controls.next {
+    right: 2px;
+  }
+  .page-template-no-sidebar div.uw-slideshow.photo-slider .uw-slideshow-controls.previous {
+    right: 107px;
+  }
+  .page-template-no-sidebar div.uw-slideshow.photo-slider .slider-dots {
+    margin-top: 645px;
+  }
+  .page-template-no-sidebar div.uw-slideshow.photo-slider > div.slide {
+    overflow: hidden;
+    height: 92.5%;
+  }
 }
 @media only screen and (max-width: 1200px) {
   div.uw-slideshow.photo-slider .slider-dots {
