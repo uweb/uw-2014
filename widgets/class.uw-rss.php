@@ -138,14 +138,14 @@ class UW_RSS extends WP_Widget
 
     $content = '<span></span>';
 
-     $rss = fetch_feed( $url );
+     $rss = fetch_feed( wp_specialchars_decode($url) );
 
       if ( ! is_wp_error( $rss ) )
       {
         $url       = $rss->get_permalink();
-        $maxitems  = $rss->get_item_quantity($instance['items']);
+        $maxitems  = $rss->get_item_quantity($number);
 
-        $rss_items = $rss->get_items(0, 2);
+        $rss_items = $rss->get_items(0, $maxitems);
 
         $content  .= "<ul class=\"uw-widget-rss\">";
 
@@ -162,6 +162,7 @@ class UW_RSS extends WP_Widget
           $image = ( $enclosure->link && $show_image !== 'false' ) ?
              "<a class='widget-thumbnail' href='$link' title='$attr'><img src='$src' title='$attr' /></a>" : '';
 
+          $date = '';
           if ( $show_date !== 'false')
           {
             $date = $item->get_date();
