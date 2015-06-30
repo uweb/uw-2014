@@ -29,7 +29,8 @@ class UW_RSS extends WP_Widget
     'span'    => 4,
     'show_image'   => true,
     'show_date'    => true,
-    'show_more'    => true
+    'show_more'    => true,
+    'more'    => null
   );
 
   function __construct()
@@ -142,7 +143,7 @@ class UW_RSS extends WP_Widget
 
       if ( ! is_wp_error( $rss ) )
       {
-        $url       = $rss->get_permalink();
+        $url       = !$more ? $rss->get_permalink() : $more;
         $maxitems  = $rss->get_item_quantity($number);
 
         $rss_items = $rss->get_items(0, $maxitems);
