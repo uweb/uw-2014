@@ -11,7 +11,7 @@ class UW_Page_Attributes_Meta_Box
 
   function __construct()
   {
-    $this->HIDDEN = array('Big Hero', 'No image', 'No title/image', 'Small Hero' );
+    $this->HIDDEN = array( );
     add_action( 'add_meta_boxes', array( $this, 'replace_meta_box' ) );
 
   }
