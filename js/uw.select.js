@@ -39,7 +39,8 @@ UW.Select = Backbone.View.extend({
     'click li.active'   : 'open',
     'click li.inactive' : 'close',
     'click .uw-select-arrow'   : 'open',
-    'click .uw-select-arrow.open'   : 'closeWithoutAnimating'
+    'click .uw-select-arrow.open'   : 'closeWithoutAnimating',
+    'click'             : 'closeWithoutAnimating' //doesnt work bc inside template
   },
 
   // This is the template that replaces the standard select menu.
@@ -57,10 +58,11 @@ UW.Select = Backbone.View.extend({
   // Initialize the view, parse the standard select menu and render the UW select menu.
   initialize : function( options )
   {
-    _.bindAll( this, 'open', 'close', 'addOpenClass', 'removeOpenClass' )
+    _.bindAll( this, 'open', 'close', 'addOpenClass', 'removeOpenClass', 'closeWithoutAnimating' )
     this.options = _.extend( {}, this.settings, this.$el.data() , options )
     this.parseSelect()
     this.render()
+    $("body").click(this.closeWithoutAnimating)
   },
 
   // Open the UW select menu.
