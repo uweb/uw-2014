@@ -26,6 +26,40 @@
 		opacity: .4;
 		background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, .8))) 0 0 no-repeat;
 	}
+	// Page Attributes > Big Hero / Radio button
+	&.hero-height {
+  		height: 350px;
+  		#hero-container {
+  			padding-left: 0;
+			position: static;
+  			h1 {
+			  line-height: 1;
+			  padding: 80px 30% 0 0;
+			  margin: 0;
+			  &:after {
+			    content: "";
+			    display: block;
+			    position: absolute;
+			    top: 0;
+			    height: 360px;
+			    left: -140px;
+  				opacity: .3;
+  				width: 600px;
+			    background: url(assets/svg/slashes-light.svg) no-repeat 0 0;
+			    z-index: 0;
+			  }
+			}
+  		}
+  		&:after{
+  			display: none;
+  		}
+  		#hero-bg {
+  			padding: 0;
+		}
+		.udub-slant span {
+		  background-color: #E8E3D3;
+		}
+	}
 }
 .no-uw-hero-image {
 	background: none;
@@ -87,6 +121,26 @@
 @media only screen and (max-width : 767px) {
 	.uw-hero-image {
 		display: none;
+
+		// Larger hero
+		&.hero-height {
+			padding: 50px 20px 20px;
+			display: block;
+		  	height: auto;
+		  	#hero-container {
+		  		h1 {
+		  			font-size: 40px;
+		  			padding: 0;
+		  			&:after {
+		  				background-size: 80%;
+		  				-moz-background-size: 80%;
+		  				-webkit-background-size: 80%;
+						top: -60px;
+						left: -270px;
+		  			}
+		  		}
+		  	}
+		}
 	}
     .udub-slant {
         margin: 10px 0 15px 0;
