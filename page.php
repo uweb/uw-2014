@@ -1,4 +1,5 @@
-<?php get_header(); ?>
+<?php get_header(); 
+   $sidebar = get_post_meta($post->ID, "sidebar"); ?>
 
 <?php get_template_part( 'header', 'image' ); ?>
 
@@ -6,7 +7,7 @@
 
   <div class="row">
 
-    <div class="col-md-8 uw-content" role='main'>
+    <div class="col-md-<?php echo (($sidebar[0]!="on") ? "8" : "12" ) ?> uw-content" role='main'>
 
       <?php uw_site_title(); ?>
 
@@ -39,7 +40,11 @@
 
     </div>
 
-    <?php get_sidebar() ?>
+    <div id="sidebar"><?php 
+      if($sidebar[0]!="on"){
+        get_sidebar();
+      }
+    ?></div>
 
   </div>
 
