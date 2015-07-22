@@ -20,9 +20,11 @@ class UW_TinyMCE
   {
     foreach ( $this->remove as $buttongroup=>$buttonlist )
     {
-      $buttons = explode( ',' , $settings[ $buttongroup ] ); 
-      $newBtns = array_diff( $buttons, $buttonlist );
-      $settings[ $buttongroup ] = join( ',', $newBtns );
+      if(array_key_exists($buttongroup, $settings)){
+        $buttons = explode( ',' , $settings[ $buttongroup ] ); 
+        $newBtns = array_diff( $buttons, $buttonlist );
+        $settings[ $buttongroup ] = join( ',', $newBtns );
+      }
     }
     return $settings;
   }
