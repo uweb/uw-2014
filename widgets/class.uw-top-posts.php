@@ -81,7 +81,8 @@ class UW_Top_Posts extends WP_Widget
 
     <ul  class="popular-posts">
 
-    <?php foreach ( $popular as $index => $post ) : if ( $index >= $instance['items'] ) break; ?>
+    <?php if (is_array($popular)){ 
+    foreach ( $popular as $index => $post ) : if ( $index >= $instance['items'] ) break; ?>
 
           <?php print_r($post);
           $post_permalink = get_permalink($post->ID);
@@ -104,7 +105,7 @@ class UW_Top_Posts extends WP_Widget
 
           </li>
 
-    <?php endforeach; ?>
+    <?php endforeach; }?>
 
     </ul>
 
