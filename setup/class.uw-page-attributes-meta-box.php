@@ -81,7 +81,7 @@ class UW_Page_Attributes_Meta_Box
 
     <?php } 
     $sidebar = get_post_meta($post->ID, "sidebar");
-
+    wp_nonce_field( 'sidebar_nonce' , 'sidebar_name' );
     ?>
 
     <p><strong><?php _e('Sidebar') ?></strong></p>
@@ -119,14 +119,17 @@ class UW_Page_Attributes_Meta_Box
   }
 
   function save_postdata( $post_ID = 0 ){
+    if ( 'page' != $post->post_type ) {
+        return;
+    }
     $post_ID = (int) $post_ID;
     $post_type = get_post_type( $post_ID );
     $post_status = get_post_status( $post_ID );
-
-    if ($post_type) {
-    update_post_meta($post_ID, "sidebar", $_POST["sidebar"]);
+    if ( ! empty( $_POST ) && check_admin_referer( 'sidebar_nonce', 'sidebar_name') ) { //limit to only pages
+      if ($post_type) {
+      update_post_meta($post_ID, "sidebar", $_POST["sidebar"]);
+      }
     }
-
    return $post_ID;
   }
 
