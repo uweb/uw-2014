@@ -119,12 +119,12 @@ class UW_Page_Attributes_Meta_Box
   }
 
   function save_postdata( $post_ID = 0 ){
-    if ( 'page' != $post->post_type ) {
-        return;
-    }
     $post_ID = (int) $post_ID;
     $post_type = get_post_type( $post_ID );
     $post_status = get_post_status( $post_ID );
+    if (isset($post->post_type) && 'page' != $post->post_type ) {
+        return $post_ID;
+    }
     if ( ! empty( $_POST ) && check_admin_referer( 'sidebar_nonce', 'sidebar_name') ) { //limit to only pages
       if ($post_type) {
       update_post_meta($post_ID, "sidebar", $_POST["sidebar"]);
