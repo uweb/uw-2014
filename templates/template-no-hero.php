@@ -7,7 +7,7 @@
 <?php get_header(); ?>
 
 <div class="uw-hero-image hero-blank">
-	<h1 class="uw-site-title-blank"><?php the_title(); ?></h1>
+	<h1 class="container uw-site-title-blank"><?php the_title(); ?></h1>
 </div>
 
 <div class="container uw-body">
