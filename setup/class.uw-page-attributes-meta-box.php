@@ -122,7 +122,7 @@ class UW_Page_Attributes_Meta_Box
     $post_ID = (int) $post_ID;
     $post_type = get_post_type( $post_ID );
     $post_status = get_post_status( $post_ID );
-    if (isset($post->post_type) && 'page' != $post->post_type ) {
+    if (!isset($post->post_type) || 'page' != $post->post_type ) {
         return $post_ID;
     }
     if ( ! empty( $_POST ) && check_admin_referer( 'sidebar_nonce', 'sidebar_name') ) { //limit to only pages
