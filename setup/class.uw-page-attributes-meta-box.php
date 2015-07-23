@@ -11,8 +11,9 @@ class UW_Page_Attributes_Meta_Box
 
   function __construct()
   {
-    $this->HIDDEN = array( );
+    $this->HIDDEN = array( 'No Sidebar' );
     add_action( 'add_meta_boxes', array( $this, 'replace_meta_box' ) );
+    add_action( 'save_post', array( $this, 'save_postdata' ) );
 
   }
 
@@ -35,7 +36,7 @@ class UW_Page_Attributes_Meta_Box
         'selected'         => $post->post_parent,
         'name'             => 'parent_id',
         'show_option_none' => __('(no parent)'),
-        'sort_column'      => 'menu_order, post_title',
+        'sort_column'      => 'menu_order, post_title, sidebar',
         'echo'             => 0,
       );
 
@@ -78,7 +79,16 @@ class UW_Page_Attributes_Meta_Box
 
     <?php $this->page_template_dropdown($template); ?>
 
-    <?php } ?>
+    <?php } 
+    $sidebar = get_post_meta($post->ID, "sidebar");
+
+    ?>
+
+    <p><strong><?php _e('Sidebar') ?></strong></p>
+
+    <label class="screen-reader-text" for="sidebar"><?php _e('Sidebar') ?></label>
+
+    <p><input type="checkbox" name="sidebar" <?php if( $sidebar[0] == "on" ) { ?>checked="checked"<?php } ?> /><?php _e('No Sidebar') ?></p>
 
     <p><strong><?php _e('Order') ?></strong></p>
 
@@ -106,6 +116,18 @@ class UW_Page_Attributes_Meta_Box
       echo "<p><input type='radio' name='page_template' value='" . $templates[ $template ] . "' $checked >$template</input></p>";
     }
 
+  }
+
+  function save_postdata( $post_ID = 0 ){
+    $post_ID = (int) $post_ID;
+    $post_type = get_post_type( $post_ID );
+    $post_status = get_post_status( $post_ID );
+
+    if ($post_type) {
+    update_post_meta($post_ID, "sidebar", $_POST["sidebar"]);
+    }
+
+   return $post_ID;
   }
 
 }

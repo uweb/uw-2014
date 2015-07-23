@@ -5450,6 +5450,9 @@ table th[class*="col-"] {
 .no-uw-hero-image:before {
   display: none;
 }
+div.hero-blank {
+  height: 30px;
+}
 .udub-slant {
   overflow: hidden;
   display: block;
@@ -8371,7 +8374,7 @@ label.screen-reader {
 .hero-content {
   margin-top: 20px;
 }
-.hero-height {
+.hero-height3 {
   height: 500px;
 }
 .hero-height2 {
