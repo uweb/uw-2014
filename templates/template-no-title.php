@@ -7,13 +7,17 @@
 <?php get_header(); 
     $sidebar = get_post_meta($post->ID, "sidebar");  ?>
 
-<div class="uw-hero-image hero-blank"></div>
+<div class="uw-hero-image hero-blank no-title">
+  <h1 class="container uw-site-title-blank"><?php the_title(); ?></h1>
+</div>
 
 <div class="container uw-body">
 
   <div class="row">
 
     <div class="col-md-<?php echo (($sidebar[0]!="on") ? "8" : "12" ) ?> uw-content" role='main'>
+
+      <?php uw_site_title(); ?>
 
       <?php if (is_front_page()) { get_template_part( 'menu', 'mobile' ); }?>
 

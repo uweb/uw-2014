@@ -5491,7 +5491,7 @@ table th[class*="col-"] {
     height: auto;
   }
   .uw-hero-image.hero-height #hero-container h1 {
-    font-size: 40px;
+    font-size: 35px;
     padding: 0;
   }
   .uw-hero-image.hero-height #hero-container h1:after {
@@ -5500,6 +5500,13 @@ table th[class*="col-"] {
     -webkit-background-size: 80%;
     top: -60px;
     left: -270px;
+  }
+  .uw-hero-image.hero-blank {
+    display: block;
+  }
+  .uw-hero-image.hero-blank .uw-site-title-blank {
+    font-size: 30px;
+    margin: 5px 0 20px 5px;
   }
   .udub-slant {
     margin: 10px 0 15px 0;
@@ -8347,42 +8354,55 @@ label.screen-reader {
   margin: 0 0 30px;
   width: 70%;
 }
-.uw-site-title {
-  font-size: 95px;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-}
-.uw-site-title2 {
-  font-family: "Encode Sans Compressed", sans-serif;
-  text-transform: uppercase;
-  color: #fff !important;
-  position: absolute;
-  top: -225px;
-  left: 11px;
-  font-weight: 900;
-  font-size: 80px;
-  line-height: 1px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
 .uw-site-title-blank {
   font-size: 50px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   padding-top: 20px;
-  margin-top: 0;
-  margin-left: 30px;
-  color: #fff;
+  color: #4b2e83;
+}
+.no-title h1.uw-site-title-blank {
+  display: none;
 }
 .hero-content {
   margin-top: 20px;
 }
-.hero-height3 {
-  height: 500px;
-}
 .hero-height2 {
-  height: 325px;
+  height: 275px;
+}
+.hero-height2 h1 {
+  font-family: "Encode Sans Compressed", sans-serif;
+  text-transform: uppercase;
+  color: #FFF !important;
+  font-weight: 900;
+  font-size: 70px;
+  margin: 100px 0 60px;
+  line-height: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.hero-height2 h1:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  height: 360px;
+  left: -140px;
+  opacity: .3;
+  width: 600px;
+  background: url(assets/svg/slashes-light.svg) no-repeat 0 0;
+  z-index: 0;
+}
+.hero-height2:after {
+  display: none;
+}
+.hero-height2 .udub-slant span {
+  background-color: #e8e3d3;
 }
 .hero-blank {
-  height: 110px;
-  background-color: #e8e3d3;
+  height: auto;
+  background-color: transparent;
+}
+.hero-blank:before,
+.hero-blank:after {
+  display: none;
 }
 /*==========  Non-Mobile First Method  ==========*/
 /* Large Devices, Wide Screens */
