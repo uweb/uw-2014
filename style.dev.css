@@ -5400,30 +5400,22 @@ table th[class*="col-"] {
   background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.8))) 0 0 no-repeat;
 }
 .uw-hero-image.hero-height,
-.no-uw-hero-image.hero-height,
-.uw-hero-image.hero-height2,
-.no-uw-hero-image.hero-height2 {
+.no-uw-hero-image.hero-height {
   height: 350px;
 }
 .uw-hero-image.hero-height #hero-container,
-.no-uw-hero-image.hero-height #hero-container,
-.uw-hero-image.hero-height2 #hero-container,
-.no-uw-hero-image.hero-height2 #hero-container {
+.no-uw-hero-image.hero-height #hero-container {
   padding-left: 0;
   position: static;
 }
 .uw-hero-image.hero-height #hero-container h1,
-.no-uw-hero-image.hero-height #hero-container h1,
-.uw-hero-image.hero-height2 #hero-container h1,
-.no-uw-hero-image.hero-height2 #hero-container h1 {
+.no-uw-hero-image.hero-height #hero-container h1 {
   line-height: 1;
   padding: 80px 30% 0 0;
   margin: 0;
 }
 .uw-hero-image.hero-height #hero-container h1:after,
-.no-uw-hero-image.hero-height #hero-container h1:after,
-.uw-hero-image.hero-height2 #hero-container h1:after,
-.no-uw-hero-image.hero-height2 #hero-container h1:after {
+.no-uw-hero-image.hero-height #hero-container h1:after {
   content: "";
   display: block;
   position: absolute;
@@ -5436,21 +5428,15 @@ table th[class*="col-"] {
   z-index: 0;
 }
 .uw-hero-image.hero-height:after,
-.no-uw-hero-image.hero-height:after,
-.uw-hero-image.hero-height2:after,
-.no-uw-hero-image.hero-height2:after {
+.no-uw-hero-image.hero-height:after {
   display: none;
 }
 .uw-hero-image.hero-height #hero-bg,
-.no-uw-hero-image.hero-height #hero-bg,
-.uw-hero-image.hero-height2 #hero-bg,
-.no-uw-hero-image.hero-height2 #hero-bg {
+.no-uw-hero-image.hero-height #hero-bg {
   padding: 0;
 }
 .uw-hero-image.hero-height .udub-slant span,
-.no-uw-hero-image.hero-height .udub-slant span,
-.uw-hero-image.hero-height2 .udub-slant span,
-.no-uw-hero-image.hero-height2 .udub-slant span {
+.no-uw-hero-image.hero-height .udub-slant span {
   background-color: #E8E3D3;
 }
 .no-uw-hero-image {
@@ -8391,6 +8377,21 @@ label.screen-reader {
   margin: 100px 0 60px;
   line-height: 1px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.hero-height2 h1:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  height: 360px;
+  left: -140px;
+  opacity: .3;
+  width: 600px;
+  background: url(assets/svg/slashes-light.svg) no-repeat 0 0;
+  z-index: 0;
+}
+.hero-height2:after {
+  display: none;
 }
 .hero-height2 .udub-slant span {
   background-color: #e8e3d3;
