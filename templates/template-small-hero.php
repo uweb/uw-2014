@@ -9,14 +9,20 @@
       $sidebar = get_post_meta($post->ID, "sidebar");   ?>
 
 
-<div class="uw-hero-image hero-height2" style="background-image: url(<?php echo $url ?>);"></div>
+<div class="uw-hero-image hero-height2" style="background-image: url(<?php echo $url ?>);">
+
+      <div class="container">
+        <h1 class="uw-site-title2"><?php the_title(); ?></h1>
+        <span class="udub-slant"><span></span></span>      
+      </div>
+
+</div>
 <div class="container uw-body">
   <?php if (!is_front_page()) { get_template_part( 'breadcrumbs' ); }?>
   <div class="row">
 
     <div class="hero-content col-md-<?php echo (($sidebar[0]!="on") ? "8" : "12" ) ?> uw-content" role='main'>
 
-      <h1 class="uw-site-title2"><?php the_title(); ?></h1>
 
       <div id='main_content' class="uw-body-copy" tabindex="-1">
 

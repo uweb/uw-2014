@@ -24,7 +24,7 @@
 	position: relative;
 	z-index: 1;
 	h1 {
-		font-family: "Encode Sans Compressed",sans-serif;
+		font-family: @font-family-headline;
 		text-transform: uppercase;
 		font-weight: 900;
 		font-size: 75px;
@@ -41,45 +41,45 @@
 	}
 }
 
-.uw-site-title {
-	font-size: 95px;
-	text-shadow: 2px 2px 2px rgba(0,0,0,.5);
-}
-
-.uw-site-title2 {
-	font-family: @font-family-headline;
-	text-transform: uppercase;
-	color: #fff !important;
-	position: absolute;
-	top: -225px;
-	left: 11px;
-	font-weight: 900;
-	font-size: 80px;
-	line-height: 1px;
-	text-shadow: 1px 1px 2px rgba(0,0,0,.5);
-}
+// No image, but title remains
 
 .uw-site-title-blank {
 	font-size: 50px;
 	padding-top: 20px;
 	color: @purple;
 }
-
+.no-title {
+	h1.uw-site-title-blank {
+		display: none;
+	}
+}
 
 .hero-content {
 	margin-top: 20px;
 }
 
-.hero-height3 {
-	height: 500px; 
-}
+
+// Hero small
 
 .hero-height2 {
-	height: 325px;
+	height: 275px;
+	h1 {
+		font-family: @font-family-headline;
+		text-transform: uppercase;
+    	color: #FFF !important;
+    	font-weight: 900;
+    	font-size: 70px;
+    	margin: 100px 0 60px;
+    	line-height: 1px;
+		text-shadow: 1px 1px 2px rgba(0,0,0,.5);
+	}
+	.udub-slant span {
+		background-color: @ultralightgold;
+	}
 }
 
 .hero-blank {
-	height: 110px;
+	height: auto;
 	background-color: transparent;
 	&:before,
 	&:after {

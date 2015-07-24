@@ -4,8 +4,7 @@
  */
 ?>
 
-<?php get_header(); 
-    $sidebar = get_post_meta($post->ID, "sidebar");  ?>
+<?php get_header(); ?>
 
 <div class="uw-hero-image hero-blank">
 	<h1 class="container uw-site-title-blank"><?php the_title(); ?></h1>
@@ -15,7 +14,7 @@
 
   <div class="row">
 
-    <div class="col-md-<?php echo (($sidebar[0]!="on") ? "8" : "12" ) ?> uw-content" role='main'>
+    <div class="col-md-8 uw-content" role='main'>
 
       <?php if (is_front_page()) { get_template_part( 'menu', 'mobile' ); }?>
 
@@ -41,11 +40,7 @@
 
     </div>
 
-    <div id="sidebar"><?php 
-      if($sidebar[0]!="on"){
-        get_sidebar();
-      }
-    ?></div>
+    <?php get_sidebar() ?>
 
   </div>
 

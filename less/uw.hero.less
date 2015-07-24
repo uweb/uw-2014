@@ -27,7 +27,8 @@
 		background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, .8))) 0 0 no-repeat;
 	}
 	// Page Attributes > Big Hero / Radio button
-	&.hero-height {
+	&.hero-height,
+	&.hero-height2 {
   		height: 350px;
   		#hero-container {
   			padding-left: 0;
@@ -72,9 +73,7 @@
 		display: none;
 	}
 }
-div.hero-blank {
-	height: 30px;
-}
+
 
 // Dub slant
 
@@ -132,7 +131,7 @@ div.hero-blank {
 		  	height: auto;
 		  	#hero-container {
 		  		h1 {
-		  			font-size: 40px;
+		  			font-size: 35px;
 		  			padding: 0;
 		  			&:after {
 		  				background-size: 80%;
@@ -143,6 +142,13 @@ div.hero-blank {
 		  			}
 		  		}
 		  	}
+		}
+		&.hero-blank {
+			display: block;
+			.uw-site-title-blank {
+    			font-size: 30px;
+  			    margin: 5px 0 20px 5px;
+    		}
 		}
 	}
     .udub-slant {
