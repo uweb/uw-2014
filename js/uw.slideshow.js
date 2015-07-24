@@ -195,9 +195,12 @@ UW.Slideshow = Backbone.View.extend({
   // Add the previous and next controls to the slideshow.
   addControls : function()
   {
-    this.$el.append( this.controls )
-    this.$el.find( this.options.controlclass )
-    this.$el.addClass( this.options.controlclasses.lastPrev )
+    console.log(this.numberOfSlides)
+    if(this.numberOfSlides > 0) { 
+      this.$el.append( this.controls )
+      this.$el.find( this.options.controlclass )
+      this.$el.addClass( this.options.controlclasses.lastPrev )
+    }
   },
 
   // When the `previous` control is clicked, this will animate a slide out of view into view.
