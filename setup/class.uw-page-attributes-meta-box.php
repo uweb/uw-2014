@@ -80,7 +80,7 @@ class UW_Page_Attributes_Meta_Box
     <?php $this->page_template_dropdown($template); ?>
 
     <?php } 
-    $sidebar = get_post_meta($post->ID, "sidebar");
+    $sidebar = get_post_meta($post->ID, "sidebar", true);
     wp_nonce_field( 'sidebar_nonce' , 'sidebar_name' );
     ?>
 
@@ -88,7 +88,7 @@ class UW_Page_Attributes_Meta_Box
 
     <label class="screen-reader-text" for="sidebar"><?php _e('Sidebar') ?></label>
 
-    <p><input type="checkbox" name="sidebar" <?php if( $sidebar[0] == "on" ) { ?>checked="checked"<?php } ?> /><?php _e('No Sidebar') ?></p>
+    <p><input type="checkbox" id="sidebar_id" name="sidebarcheck" value="on" <?php if( !empty($sidebar) ) { ?>checked="checked"<?php } ?> /><?php _e('No Sidebar') ?></p>
 
     <p><strong><?php _e('Order') ?></strong></p>
 
@@ -118,16 +118,16 @@ class UW_Page_Attributes_Meta_Box
 
   }
 
-  function save_postdata( $post_ID = 0 ){
+  function save_postdata( $post_ID = 0 ){ 
     $post_ID = (int) $post_ID;
     $post_type = get_post_type( $post_ID );
     $post_status = get_post_status( $post_ID );
-    if (!isset($post->post_type) || 'page' != $post->post_type ) {
+    if (!isset($post_type) || 'page' != $post_type ) {
         return $post_ID;
     }
     if ( ! empty( $_POST ) && check_admin_referer( 'sidebar_nonce', 'sidebar_name') ) { //limit to only pages
       if ($post_type) {
-      update_post_meta($post_ID, "sidebar", $_POST["sidebar"]);
+      update_post_meta($post_ID, "sidebar", $_POST["sidebarcheck"]);
       }
     }
    return $post_ID;
