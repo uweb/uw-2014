@@ -7,8 +7,8 @@
   display: none;
   position: absolute;
   bottom: 20px;
-  left: 50%;
-  margin-left: -100px;
+  left: auto;
+  margin-left: -325px;
 }
 .uw-admin-template a:hover span {
   display: block;
