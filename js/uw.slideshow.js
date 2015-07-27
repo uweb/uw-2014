@@ -195,7 +195,6 @@ UW.Slideshow = Backbone.View.extend({
   // Add the previous and next controls to the slideshow.
   addControls : function()
   {
-    console.log(this.numberOfSlides)
     if(this.numberOfSlides > 0) { 
       this.$el.append( this.controls )
       this.$el.find( this.options.controlclass )
