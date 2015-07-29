@@ -99,6 +99,7 @@ class UW_Page_Attributes_Meta_Box
   }
 
   function page_template_dropdown( $default = '' ) {
+    
     $previews = array('Big Hero' => '/assets/images/template-big-hero.png', 'Small Hero' => '/assets/images/template-small-hero.png', 'No image' => '/assets/images/template-no-image.png', 'No title/image' => '/assets/images/template-no-title.png', 'Default Template' => '/assets/images/template-default.png');
 
     $templates = get_page_templates( get_post() );
@@ -106,7 +107,7 @@ class UW_Page_Attributes_Meta_Box
     ksort( $templates );
 
     echo "<div class='uw-admin-template'>";
-    $checked = checked( $default, 'Default Template', false );
+    $checked = checked( $default, 'default', false );
     echo "<p><input type='radio' name='page_template' value='default' $checked >Default Template</input> (<a id='enchanced-preview' href='#'>preview<span><img src='" . get_stylesheet_directory_uri() . $previews['Default Template'] . "' alt='' width='300px' height='' />
 </span></a>)</p>";
     foreach ( array_keys( $templates ) as $template )
