@@ -6,11 +6,13 @@
 
 <?php get_header(); 
       $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+      if(!$url){
+        $url = get_site_url() . "/wp-content/themes/uw-2014/assets/headers/suzzallo.jpg";
+      }
       $sidebar = get_post_meta($post->ID, "sidebar");   ?>
 
 
 <div class="uw-hero-image hero-height2" style="background-image: url(<?php echo $url ?>);">
-
       <div class="container">
         <h1 class="uw-site-title2"><?php the_title(); ?></h1>
         <span class="udub-slant"><span></span></span>      
