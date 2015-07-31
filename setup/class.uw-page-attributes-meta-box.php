@@ -78,7 +78,7 @@ class UW_Page_Attributes_Meta_Box
 
     <?php $this->page_template_dropdown($template); ?>
 
-    <?php } 
+    <?php }
     $sidebar = get_post_meta($post->ID, "sidebar", true);
     wp_nonce_field( 'sidebar_nonce' , 'sidebar_name' );
     ?>
@@ -99,7 +99,7 @@ class UW_Page_Attributes_Meta_Box
   }
 
   function page_template_dropdown( $default = '' ) {
-    
+
     $previews = array('Big Hero' => '/assets/images/template-big-hero.png', 'Small Hero' => '/assets/images/template-small-hero.png', 'No image' => '/assets/images/template-no-image.png', 'No title/image' => '/assets/images/template-no-title.png', 'Default Template' => '/assets/images/template-default.png');
 
     $templates = get_page_templates( get_post() );
@@ -129,16 +129,18 @@ class UW_Page_Attributes_Meta_Box
       wp_enqueue_style( 'uw-admin-template', get_template_directory_uri() . '/assets/admin/css/uw.admin.template.css' );
   }
 
-  function save_postdata( $post_ID = 0 ){ 
+  function save_postdata( $post_ID = 0 ){
     $post_ID = (int) $post_ID;
     $post_type = get_post_type( $post_ID );
     $post_status = get_post_status( $post_ID );
     if (!isset($post_type) || 'page' != $post_type ) {
         return $post_ID;
     }
-    if ( ! empty( $_POST ) && check_admin_referer( 'sidebar_nonce', 'sidebar_name') ) { //limit to only pages
-      if ($post_type) {
-      update_post_meta($post_ID, "sidebar", $_POST["sidebarcheck"]);
+    if ( isset( $_POST['sidebarcheck'] ) && isset( $_POST['sidebar_name'] ) ) {
+      if ( ! empty( $_POST ) && check_admin_referer( 'sidebar_nonce', 'sidebar_name') ) { //limit to only pages
+        if ($post_type) {
+        update_post_meta($post_ID, "sidebar", $_POST["sidebarcheck"]);
+        }
       }
     }
    return $post_ID;
