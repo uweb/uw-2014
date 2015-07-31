@@ -11676,9 +11676,11 @@ UW.Slideshow = Backbone.View.extend({
   // Add the previous and next controls to the slideshow.
   addControls : function()
   {
-    this.$el.append( this.controls )
-    this.$el.find( this.options.controlclass )
-    this.$el.addClass( this.options.controlclasses.lastPrev )
+    if(this.numberOfSlides > 0) { 
+      this.$el.append( this.controls )
+      this.$el.find( this.options.controlclass )
+      this.$el.addClass( this.options.controlclasses.lastPrev )
+    }
   },
 
   // When the `previous` control is clicked, this will animate a slide out of view into view.
@@ -12642,8 +12644,12 @@ UW.Select = Backbone.View.extend({
   },
 
   // Open the UW select menu.
-  open : function()
+  open : function(e)
   {
+    if(this.isOpen()){
+      this.close(e);
+      return false;
+    }
     this.addOpenClass()
     return false
   },
@@ -12679,7 +12685,7 @@ UW.Select = Backbone.View.extend({
   {
     this.scroll = this.$target.offset().top - this.$el.find('li').first().offset().top;
     //var current_top = this.$el.position().top;
-    this.$el.children('ul').animate( { scrollTop : this.scroll }, { queue: false, complete: this.removeOpenClass } )
+    this.$el.children('ul').animate( { scrollTop : this.scroll }, { queue: false, complete: this.removeOpenClass } );
     //this.$el.animate( { top : current_top - (this.$target.offset().top - this.$el.find('li.active').offset().top) }, { queue: false, complete: this.removeOpenClass } )
   },
 
