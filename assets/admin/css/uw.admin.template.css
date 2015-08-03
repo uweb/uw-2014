@@ -1,0 +1,19 @@
+/* Template Previews */
+
+.uw-admin-template a {
+  position: relative;
+}
+.uw-admin-template a span {
+  display: none;
+  position: absolute;
+  bottom: 20px;
+  left: auto;
+  margin-left: -325px;
+}
+.uw-admin-template a:hover span {
+  display: block;
+}
+.uw-admin-template-preview {
+  margin-bottom: 10px;
+  width: 100% !important;
+}

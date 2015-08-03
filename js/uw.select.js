@@ -66,8 +66,12 @@ UW.Select = Backbone.View.extend({
   },
 
   // Open the UW select menu.
-  open : function()
+  open : function(e)
   {
+    if(this.isOpen()){
+      this.close(e);
+      return false;
+    }
     this.addOpenClass()
     return false
   },
@@ -103,7 +107,7 @@ UW.Select = Backbone.View.extend({
   {
     this.scroll = this.$target.offset().top - this.$el.find('li').first().offset().top;
     //var current_top = this.$el.position().top;
-    this.$el.children('ul').animate( { scrollTop : this.scroll }, { queue: false, complete: this.removeOpenClass } )
+    this.$el.children('ul').animate( { scrollTop : this.scroll }, { queue: false, complete: this.removeOpenClass } );
     //this.$el.animate( { top : current_top - (this.$target.offset().top - this.$el.find('li.active').offset().top) }, { queue: false, complete: this.removeOpenClass } )
   },
 
