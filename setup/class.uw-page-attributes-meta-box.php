@@ -137,10 +137,10 @@ class UW_Page_Attributes_Meta_Box
         return $post_ID;
     }
 
-    if ( isset( $_POST['sidebar_name'] ) ) { //isset( $_POST['sidebarcheck'] )
+    if ( isset( $_POST['sidebar_name'] ) ) { 
       if ( ! empty( $_POST ) && check_admin_referer( 'sidebar_nonce', 'sidebar_name') ) { //limit to only pages
         if ($post_type) {
-        update_post_meta($post_ID, "sidebar", $_POST["sidebarcheck"]);
+        update_post_meta($post_ID, "sidebar", isset($_POST["sidebarcheck"]));
         }
       }
     }
