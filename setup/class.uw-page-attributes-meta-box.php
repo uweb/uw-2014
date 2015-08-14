@@ -87,7 +87,7 @@ class UW_Page_Attributes_Meta_Box
 
     <label class="screen-reader-text" for="sidebar"><?php _e('Sidebar') ?></label>
 
-    <p><input type="checkbox" id="sidebar_id" name="sidebarcheck" value="on" <?php if( !empty($sidebar) ) { ?>checked="checked"<?php } ?> /><?php _e('No Sidebar') ?></p>
+    <p><?php echo $sidebar ?><input type="checkbox" id="sidebar_id" name="sidebarcheck" value="on" <?php if( !empty($sidebar) ) { ?>checked="checked"<?php } ?> /><?php _e('No Sidebar') ?></p>
 
     <p><strong><?php _e('Order') ?></strong></p>
 
@@ -136,7 +136,8 @@ class UW_Page_Attributes_Meta_Box
     if (!isset($post_type) || 'page' != $post_type ) {
         return $post_ID;
     }
-    if ( isset( $_POST['sidebarcheck'] ) && isset( $_POST['sidebar_name'] ) ) {
+
+    if ( isset( $_POST['sidebar_name'] ) ) { //isset( $_POST['sidebarcheck'] )
       if ( ! empty( $_POST ) && check_admin_referer( 'sidebar_nonce', 'sidebar_name') ) { //limit to only pages
         if ($post_type) {
         update_post_meta($post_ID, "sidebar", $_POST["sidebarcheck"]);
