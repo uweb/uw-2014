@@ -3,7 +3,7 @@
 /* box shortcode:
  * meant for front page (maybe disable on not front page?)
  * boxes contain tiles.  Boxes support only tiles inside and only between 1 and 4 tiles.
- * 
+ *
  * structure: [box alignment="centered"][tile][/tile][tile][/tile][/box]
  */
 
@@ -11,7 +11,7 @@
 Class TileBox
 {
     const MAXTILES = 4;
-    const PRIORITY = 11;
+    const PRIORITY = 100;
     private $count = 0;
     private $NumbersArray = array('zero', 'one', 'two', 'three', 'four'); //arrays can't be constants in PHP.  Privates at least can't be changed
 
@@ -33,13 +33,13 @@ Class TileBox
             'alignment' => 'none',
             'color' => ''
         ), $atts );
- 
+
         $color = '';
         if (!empty($boxCenter['color'])){
           $color = ' box-' . $boxCenter['color'];
-        }; 
+        };
 
-        $center = 'box-' . $boxCenter['alignment'];        
+        $center = 'box-' . $boxCenter['alignment'];
 
         $this->count = 0;
 
