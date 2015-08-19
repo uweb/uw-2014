@@ -14,7 +14,6 @@ module.exports = function(grunt) {
           "js/libraries/imagesloaded.pkgd.js",
           "js/libraries/jetpack.carousel.js",
           "js/libraries/prettify.js",
-
         ],
         theme : [
           "js/uw.core.js",
