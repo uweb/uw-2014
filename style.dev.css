@@ -5532,7 +5532,7 @@ table th[class*="col-"] {
   position: relative;
 }
 .uw-breadcrumbs li:first-child a {
-  background: url(assets/svg/uw-sprite.svg) no-repeat -249px 3px;
+  background: url(assets/svg/uw-sprite.svg) no-repeat -249px 5px;
   text-indent: -99999px;
   width: 30px;
   padding: 5px 0 5px 0;
@@ -5540,6 +5540,9 @@ table th[class*="col-"] {
 }
 .uw-breadcrumbs li:first-child a:before {
   right: -18px;
+}
+.uw-breadcrumbs li:first-child:after {
+  top: 17px;
 }
 .uw-breadcrumbs li.current span {
   color: #85754d;
@@ -5562,7 +5565,7 @@ table th[class*="col-"] {
   height: 10px;
   width: 10px;
   right: 5px;
-  top: 13px;
+  top: 7px;
   opacity: 0.8;
   filter: alpha(opacity=80);
   background: url('assets/svg/caret.svg') no-repeat;
@@ -5587,18 +5590,17 @@ table th[class*="col-"] {
   font-family: "Encode Sans Compressed", sans-serif;
   color: #535353;
   font-weight: 500;
-  font-size: 16px;
-  padding: 5px 25px 5px 0;
+  font-size: 15px;
+  padding: 0 25px 0 0;
   display: block;
   white-space: nowrap;
   overflow: hidden;
-  max-width: 250px;
 }
 @media only screen and (max-width: 767px) {
   .uw-breadcrumbs {
     float: none;
     padding: 0;
-    margin: 15px 0 0 -5px;
+    margin: 0 0 0 -5px;
   }
   .uw-breadcrumbs li {
     float: left;
@@ -5608,12 +5610,12 @@ table th[class*="col-"] {
   .uw-breadcrumbs li span {
     padding: 0 25px 0 0;
   }
-  .uw-breadcrumbs li:after {
-    top: 8px;
-  }
   .uw-breadcrumbs li:first-child a {
     background-position: -250px -3px;
     padding: 0;
+  }
+  .uw-breadcrumbs li:first-child:after {
+    top: 8px;
   }
 }
 ul {
@@ -6162,8 +6164,8 @@ ul.uw-sidebar-menu li.pagenav span,
 ul.uw-mobile-menu li.pagenav span,
 ul.uw-sidebar-menu > div span,
 ul.uw-mobile-menu > div span {
-  font-family: "Encode Sans Compressed", sans-serif;
   display: block;
+  font-size: 16px;
   padding: 10px 10px 10px 20px;
 }
 ul.uw-sidebar-menu li.pagenav a.homelink,
@@ -6183,6 +6185,8 @@ ul.uw-mobile-menu li.pagenav ul,
 ul.uw-sidebar-menu > div ul,
 ul.uw-mobile-menu > div ul {
   font-size: 20px;
+  line-height: 1.3;
+  font-size: 19px;
 }
 ul.uw-sidebar-menu li.pagenav ul li.current_page_item,
 ul.uw-mobile-menu li.pagenav ul li.current_page_item,
@@ -6193,6 +6197,19 @@ ul.uw-mobile-menu li.pagenav ul li.current_page_parent,
 ul.uw-sidebar-menu > div ul li.current_page_parent,
 ul.uw-mobile-menu > div ul li.current_page_parent {
   background-color: #4b2e83;
+}
+ul.uw-sidebar-menu li.pagenav ul li.current_page_item > a,
+ul.uw-mobile-menu li.pagenav ul li.current_page_item > a,
+ul.uw-sidebar-menu > div ul li.current_page_item > a,
+ul.uw-mobile-menu > div ul li.current_page_item > a,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_parent > a,
+ul.uw-mobile-menu li.pagenav ul li.current_page_parent > a,
+ul.uw-sidebar-menu > div ul li.current_page_parent > a,
+ul.uw-mobile-menu > div ul li.current_page_parent > a {
+  font-weight: bold;
+  padding-left: 19px;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 ul.uw-sidebar-menu li.pagenav ul li.current_page_item a,
 ul.uw-mobile-menu li.pagenav ul li.current_page_item a,
@@ -6261,12 +6278,12 @@ ul.uw-mobile-menu li.pagenav ul li.current_page_parent.current_page_ancestor > a
 ul.uw-sidebar-menu > div ul li.current_page_parent.current_page_ancestor > a:after,
 ul.uw-mobile-menu > div ul li.current_page_parent.current_page_ancestor > a:after {
   content: "";
-  background: url(assets/svg/uw-sprite.svg) no-repeat -186px -476px;
+  background: url(assets/svg/uw-sprite.svg) no-repeat -191px -478px;
   display: inline-block;
-  height: 54px;
-  width: 54px;
+  height: 52px;
+  width: 44px;
   margin-left: 7px;
-  margin-top: -27px;
+  margin-top: -26px;
   position: absolute;
   right: 0;
   top: 50%;
@@ -6426,7 +6443,7 @@ ul.uw-mobile-menu > div ul li.current_page_ancestor ul.children li.current_page_
   background-color: white;
   color: #5a5a5a;
   border-left: none;
-  padding-left: 35px;
+  padding-left: 25px;
 }
 ul.uw-sidebar-menu li.pagenav ul li.current_page_item ul.children li.current_page_item ul.children a:before,
 ul.uw-mobile-menu li.pagenav ul li.current_page_item ul.children li.current_page_item ul.children a:before,
