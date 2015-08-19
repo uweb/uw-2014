@@ -6205,7 +6205,15 @@ ul.uw-mobile-menu > div ul li.current_page_item > a,
 ul.uw-sidebar-menu li.pagenav ul li.current_page_parent > a,
 ul.uw-mobile-menu li.pagenav ul li.current_page_parent > a,
 ul.uw-sidebar-menu > div ul li.current_page_parent > a,
-ul.uw-mobile-menu > div ul li.current_page_parent > a {
+ul.uw-mobile-menu > div ul li.current_page_parent > a,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_item > span,
+ul.uw-mobile-menu li.pagenav ul li.current_page_item > span,
+ul.uw-sidebar-menu > div ul li.current_page_item > span,
+ul.uw-mobile-menu > div ul li.current_page_item > span,
+ul.uw-sidebar-menu li.pagenav ul li.current_page_parent > span,
+ul.uw-mobile-menu li.pagenav ul li.current_page_parent > span,
+ul.uw-sidebar-menu > div ul li.current_page_parent > span,
+ul.uw-mobile-menu > div ul li.current_page_parent > span {
   font-weight: bold;
   padding-left: 19px;
   padding-top: 16px;
