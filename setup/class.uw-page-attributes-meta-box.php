@@ -136,10 +136,15 @@ class UW_Page_Attributes_Meta_Box
     if (!isset($post_type) || 'page' != $post_type ) {
         return $post_ID;
     }
-    if ( isset( $_POST['sidebarcheck'] ) && isset( $_POST['sidebar_name'] ) ) {
+
+    if ( isset( $_POST['sidebar_name'] ) ) { 
       if ( ! empty( $_POST ) && check_admin_referer( 'sidebar_nonce', 'sidebar_name') ) { //limit to only pages
         if ($post_type) {
-        update_post_meta($post_ID, "sidebar", $_POST["sidebarcheck"]);
+          if(isset($_POST["sidebarcheck"])) {
+            update_post_meta($post_ID, "sidebar", $_POST["sidebarcheck"]);
+          } else {
+            update_post_meta($post_ID, "sidebar", null); 
+          }
         }
       }
     }
