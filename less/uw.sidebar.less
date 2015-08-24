@@ -21,8 +21,9 @@ ul.uw-mobile-menu
 	{
 			a, span
 			{
-				font-family: @font-family-headline;
+				// font-family: @font-family-headline;
 				display: block;
+			    font-size: 16px;
 				padding: 10px 10px 10px 20px;
 
 				&.homelink
@@ -37,10 +38,19 @@ ul.uw-mobile-menu
 			{
 
 				font-size:20px;
+				line-height: 1.3;
+    			font-size: 19px;
 
 				li.current_page_item, li.current_page_parent
 				{
 					background-color: @purple;
+					& > a,
+					& > span {
+						font-weight: bold;
+						padding-left: 19px;
+						padding-top: 16px;
+						padding-bottom: 16px;
+					}
                     a,
 					span {
 						color:white;
@@ -57,12 +67,12 @@ ul.uw-mobile-menu
                             }
 							&:after {
 								content: "";
-								background: url(assets/svg/uw-sprite.svg) no-repeat -186px -476px;
+								background: url(assets/svg/uw-sprite.svg) no-repeat -191px -478px;
 								display: inline-block;
-								height: 54px;
-								width: 54px;
+								height: 52px;
+								width: 44px;
 								margin-left: 7px;
-								margin-top: -27px;
+								margin-top: -26px;
 								position: absolute;
 								right: 0;
 								top: 50%;
@@ -131,7 +141,7 @@ ul.uw-mobile-menu
 									background-color: white;
 									color: @darkgray;
 									border-left: none;
-									padding-left: 35px;
+									padding-left: 25px;
 									&:before {
 										content: "- ";
 									}
