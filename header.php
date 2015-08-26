@@ -9,22 +9,6 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <?php 
-
-            // Register the script
-            wp_register_script( 'search_init', 'js/uw.init.js' );
-
-            // Localize the script with new data
-            $translation_array = array(
-                'is_multisite' => ( is_multisite() )
-            );
-            wp_localize_script( 'search_init', 'multisite_tester', $translation_array );
-
-            // Enqueued script with localized data.
-            wp_enqueue_script( 'search_init' );
-
-        ?>
-
         <?php wp_head(); ?>
 
         <!--[if lt IE 9]>

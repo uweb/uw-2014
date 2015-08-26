@@ -19,7 +19,7 @@ UW.elements = {
 }
 
 UW.getBaseUrl = function() {
-    if (multisite_tester.is_multisite) {
+    if (uw.is_multisite == 1) {
       var site = _.first( _.compact( Backbone.history.location.pathname.split('/') ) )
       return Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/'
     } 
