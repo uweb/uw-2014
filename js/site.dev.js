@@ -10969,8 +10969,11 @@ UW.elements = {
 }
 
 UW.getBaseUrl = function() {
-    var site = _.first( _.compact( Backbone.history.location.pathname.split('/') ) )
-    return Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/'
+    if (uw.is_multisite == 1) {
+      var site = _.first( _.compact( Backbone.history.location.pathname.split('/') ) )
+      return Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/'
+    } 
+      return Backbone.history.location.origin
 }
 
 UW.sources = {
@@ -11495,8 +11498,8 @@ UW.Slideshow = Backbone.View.extend({
   // This is the template for the Previous and Next controls.
   // We're using an Undercore template to simplify the slideshow's markup.
   controls : '' +
-    '<a href="#" class="<%= classname %> next"></a>' +
-    '<a href="#" class="<%= classname %> previous"></a>'
+    '<a tabIndex="-1" href="#" class="<%= classname %> next"></a>' +
+    '<a tabIndex="-1" href="#" class="<%= classname %> previous"></a>'
   ,
 
   // This is a placeholder that is set to the final animation points for the slides
@@ -11523,7 +11526,10 @@ UW.Slideshow = Backbone.View.extend({
     'click .previous' : 'animateIn',
     'click .next' : 'animateOut',
     'click .slider-dots li' : 'dotsAnimate',
-    'click .fullscreen' : 'goFullscreen'
+    'click .fullscreen' : 'goFullscreen',
+    // 'keypress .uw-slideshow .last-previous' : 'keySlide',
+    //'keypress .previous' : 'keySlideOut',
+   
   },
 
   // When the view is initialized the controls are added to the dom, the number of slides is gathered,
@@ -11539,6 +11545,7 @@ UW.Slideshow = Backbone.View.extend({
     this.addControls()
     this.photoSlideshow()
     this.mobileSizing()
+    this.focusControls(this)
   },
 
   // Set the z-index of each slide appropriately.
@@ -11593,7 +11600,7 @@ UW.Slideshow = Backbone.View.extend({
     // Add if photo slider exists
     if ( this.photoSlider ) {
 
-      $( ".photo-slider" ).append('<ul class="slider-dots"></ul>', '<a class="fullscreen" href="#">Fullscreen</a>') 
+      $( ".photo-slider" ).append('<ul class="slider-dots"></ul>', '<a tabIndex="-1" class="fullscreen" href="#">Fullscreen</a>') 
 
       // Add LIs to ul
       for (i = 0; i < this.numberOfSlides + 1; i++) { 
@@ -11749,7 +11756,73 @@ UW.Slideshow = Backbone.View.extend({
   {
     var $this = this.$( slide )
     $this.css({ zIndex : -1 * $this.index() + this.numberOfSlides })
+  },
+
+  // set focus controls
+  focusControls : function(el) {
+
+      // get slides
+      function getSlides(parent){
+        var children = parent.context.activeElement.children;
+        var kids = [];
+        var child;
+        for(var i = 0; i < children.length; i++ ) {
+          child = children[i];
+          if ( child.className.indexOf("slide") === 0 ){
+            kids.push(child);
+          }
+        }
+        return kids;
+      }
+
+      function getSlide(parent) {
+        var slides = getSlides(parent);
+        var slide;
+        for(var j = 0; j < slides.length; j++) {
+          slide = slides[j];
+          if( slide.style.left != "100%" ) {
+            return slide;
+          }
+        }
+        return false;
+      }
+
+      function getUrl(slide) {
+        return slide.children[0].href;
+        
+      }
+
+      // focus controls
+      function keyPress(e) {
+
+        if( e.keyCode == 39 || e.keyCode == 9 ){
+          if (e.keyCode == 9 && !el.nextSlideExists() ){
+            return true;
+          }
+          el.animateOut(e);
+          return false;
+        }
+        if( e.keyCode == 37 ){
+          el.animateIn(e);
+          return false;
+        }
+        if( e.keyCode == 13 ){
+          var slide = getSlide($this);
+          if (slide) {
+            var url = getUrl(slide);
+            window.location.href = url;
+          }
+        }
+        
+        return false;
+      }
+
+      var $this = $( '.uw-slideshow' );
+      $this.keydown(keyPress);
+
   }
+  
+  
 
 })
 ;// ### UW Youtube
