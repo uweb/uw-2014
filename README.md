@@ -31,6 +31,7 @@ This is an overview of the custom widgets, plugins and various features it inclu
   - [Twitter](#twitter)
   - [YouTube](#youtube)
   - [Slideshow](#slideshow)
+  - [Subpage List](#subpagelist)
 - [Features](#features)
   - [UW Widget Visibility](#uwwidgetvisiblity)
   - [UW Media Credit](#uwmediacredit)
@@ -365,6 +366,23 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
   [slideshow simple='true' id='1234']
 ```
 
+### Subpage List ###
+
+> This shortcode lists out all the subpages relative to the current page. 
+> There are two views this shortcode can render: list or grid. 
+> The list view displays all the subpages as anchor tags in an HTML list element.
+> The grid view displays all the subpages as boxes, with their title, excerpt and author if available.
+
+> Attributes: 
+
+> - __link__ : The text in the anchor tag that will link to the subpage (_Default: Read more_)
+> - __tilebox__ : Enable the grid layout of the subpages ( _Default: false_ )
+
+
+> Example: 
+```
+ [subpage-list link="More information here" tilebox=true ]
+```
 
 
 ## Features
