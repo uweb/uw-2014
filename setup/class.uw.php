@@ -43,6 +43,15 @@ class UW
         require_once($parent . 'class.uw-enclosure.php' );
         require_once($parent . 'class.uw-carousel.php' );
         require_once($parent . 'class.uw-settings.php' );
+        require_once($parent . 'class.uw-page-attributes-meta-box.php' );
+
+        require_once(get_template_directory() . '/inc/template-functions.php' );
+        require_once(get_template_directory() . '/docs/class.uw-documentation.php' );
+
+        foreach (glob( get_template_directory() . "/widgets/*.php") as $filename)
+        {
+            include $filename;
+        }
     }
 
     private function initialize()
