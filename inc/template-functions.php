@@ -101,7 +101,7 @@ if ( ! function_exists( 'uw_list_pages') ) :
 
     $parent = get_post( $post->post_parent );
 
-    if ( ! $mobile && ! get_children( $post->ID ) && $parent->ID == $post->ID ) return;
+    if ( ! $mobile && ! get_children( array('post_parent' => $post->ID, 'post_status' => 'publish' ) ) && $parent->ID == $post->ID ) return;
 
     $toggle = $mobile ? '<button class="uw-mobile-menu-toggle">Menu</button>' : '';
     $class  = $mobile ? 'uw-mobile-menu' : 'uw-sidebar-menu';

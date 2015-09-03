@@ -6,7 +6,7 @@
 .uw-admin-template a span {
   display: none;
   position: absolute;
-  bottom: 20px;
+  bottom: -80px;
   left: auto;
   margin-left: -325px;
 }

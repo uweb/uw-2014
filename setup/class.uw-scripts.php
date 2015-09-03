@@ -29,7 +29,8 @@ class UW_Scripts
         'url'       => get_bloginfo('template_directory') . '/js/site' . $this->dev_script() . '.js',
         'deps'      => array( 'backbone' ),
         'version'   => '1.0.3',
-        'admin'     => false
+        'admin'     => false,
+        'variables' => array( 'is_multisite' => ( is_multisite() ) )
       ),
 
       'admin' => array (

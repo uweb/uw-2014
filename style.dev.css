@@ -3542,6 +3542,11 @@ div.uw-slideshow .uw-slideshow-controls.previous {
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
+div.uw-slideshow .uw-slideshow-controls:hover,
+div.uw-slideshow .uw-slideshow-controls:focus {
+  -webkit-box-shadow: -1px 0px 5px 0 #917b4c;
+  box-shadow: -1px 0px 5px 0 #917b4c;
+}
 div.uw-slideshow.last-previous .next {
   z-index: 100;
 }
