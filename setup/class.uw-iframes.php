@@ -67,7 +67,8 @@ class UW_Iframes
       'pgcalc.com',
       'www.pgcalc.com',
       'matchinggifts.com',
-      'www.matchinggifts.com'
+      'www.matchinggifts.com',
+      'embed.pac-12.com'
     );
   }
 
