@@ -12321,7 +12321,7 @@ UW.Radio = Backbone.View.extend({
     'click input' : 'toggle'
   },
 
-  template: '<span class="icons" tabIndex="0"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span>',
+  template: '<span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span>',
 
   initialize : function( options )
   {
