@@ -10,7 +10,7 @@
   	}
 	.default-card {
 		background-color: #EEEADF;
-		padding: 10% 13% 5% 15%;
+		padding: 10% 14% 5% 14%;
 		text-align: left;
 		background-image: url('assets/images/stripes-dark-tile.svg');
   		background-position: 0 140px;
@@ -38,7 +38,7 @@
 		.card-image {
 			display: block;
   			width: 139%;
- 			margin: -13.5% -21% 0;
+ 			margin: -13.5% -20% 0 -19.5%;
   			height: 200px;
 		}
 	}
@@ -70,26 +70,27 @@
 		}
 	}
 	.enhanced-card {
-		margin-top: 30px;
+		& > span {
+			display: block;
+		}
 		h3 {
-  			font-size: 18px;
-  			.pic-title {
+    		font-size: 18px;
+    		position: relative;
+    		background-color:  @purple;
+    		margin: 8px 0 0 -35px;
+    		padding: 10px 0px 10px 35px;
+    		width: 90%;
+ 			&:after {
   				position: absolute;
-  				top: -65px;
-  				left: -17px;
-  				background-color: #4B2E83;
-  				padding: 10px 10px 10px 20px;
-  				&:after {
-  					position: absolute;
-  					bottom: 0;
-  					right: -10px;
-  					top: 0;
-  					width: 20px;
-  					background-color: @purple;
-  					content: " ";
-  					display: block;
-  					.skew(-15deg, 0);
-  				}
+  				bottom: 0;
+  				right: -10px;
+  				top: 0;
+  				width: 40px;
+  				background-color: @purple;
+  				content: " ";
+  				display: block;
+  				.skew(-15deg, 0);
+			    z-index: -1;
   			}
   			a {  				
   				color: white;

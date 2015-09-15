@@ -8762,7 +8762,7 @@ ul.shortcode-blogroll-mini {
 }
 .cards-widget .default-card {
   background-color: #EEEADF;
-  padding: 10% 13% 5% 15%;
+  padding: 10% 14% 5% 14%;
   text-align: left;
   background-image: url('assets/images/stripes-dark-tile.svg');
   background-position: 0 140px;
@@ -8791,7 +8791,7 @@ ul.shortcode-blogroll-mini {
 .cards-widget .default-card .card-image {
   display: block;
   width: 139%;
-  margin: -13.5% -21% 0;
+  margin: -13.5% -20% 0 -19.5%;
   height: 200px;
 }
 .cards-widget .boundless-card h3 {
@@ -8819,25 +8819,23 @@ ul.shortcode-blogroll-mini {
   right: 0;
   bottom: 0;
 }
-.cards-widget .enhanced-card {
-  margin-top: 30px;
+.cards-widget .enhanced-card > span {
+  display: block;
 }
 .cards-widget .enhanced-card h3 {
   font-size: 18px;
+  position: relative;
+  background-color: #4b2e83;
+  margin: 8px 0 0 -35px;
+  padding: 10px 0px 10px 35px;
+  width: 90%;
 }
-.cards-widget .enhanced-card h3 .pic-title {
-  position: absolute;
-  top: -65px;
-  left: -17px;
-  background-color: #4B2E83;
-  padding: 10px 10px 10px 20px;
-}
-.cards-widget .enhanced-card h3 .pic-title:after {
+.cards-widget .enhanced-card h3:after {
   position: absolute;
   bottom: 0;
   right: -10px;
   top: 0;
-  width: 20px;
+  width: 40px;
   background-color: #4b2e83;
   content: " ";
   display: block;
@@ -8847,6 +8845,7 @@ ul.shortcode-blogroll-mini {
   -webkit-transform: skew(-15deg, 0);
   -ms-transform: skewX(-15deg) skewY(0);
   transform: skew(-15deg, 0);
+  z-index: -1;
 }
 .cards-widget .enhanced-card h3 a {
   color: white;
@@ -8926,11 +8925,11 @@ ul.shortcode-blogroll-mini {
   background-image: url(assets/svg/widgets-sprite.svg);
 }
 .contact-widget-inner p.person-phone {
-  background-position: 0 2px;
+  background-position: 0 -30px;
 }
 .contact-widget-inner a.person-email {
   color: inherit;
-  background-position: 0 -30px;
+  background-position: 0 1px;
 }
 .uw-sidebar .contact-widget-inner .widgettitle {
   margin-bottom: 30px;
