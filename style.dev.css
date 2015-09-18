@@ -3555,7 +3555,7 @@ div.uw-slideshow.last-next .previous {
   z-index: 100;
 }
 div.uw-slideshow.photo-slider {
-  height: 555px;
+  height: 510px;
   padding-bottom: 51px;
 }
 div.uw-slideshow.photo-slider .dotSlide {
@@ -3568,7 +3568,7 @@ div.uw-slideshow.photo-slider:before {
   width: 45px;
   height: 75px;
   position: absolute;
-  bottom: 9.3%;
+  bottom: 10%;
   right: 65px;
   z-index: 20;
   opacity: .8;
@@ -3599,9 +3599,7 @@ div.uw-slideshow.photo-slider:after {
 }
 div.uw-slideshow.photo-slider > div.slide {
   overflow: hidden;
-  height: 90.8%;
-  text-align: center;
-  background-color: #000;
+  height: 90%;
 }
 div.uw-slideshow.photo-slider > div.slide.no-text div {
   display: none;
@@ -3609,16 +3607,11 @@ div.uw-slideshow.photo-slider > div.slide.no-text div {
 div.uw-slideshow.photo-slider > div.slide:hover div {
   bottom: 0;
 }
-div.uw-slideshow.photo-slider > div.slide img {
-  width: auto;
-  height: 100%;
-}
 div.uw-slideshow.photo-slider > div.slide div {
   background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
   padding: 10px 30px;
   bottom: -300px;
-  text-align: left;
   -o-transition: bottom ease-in-out 0.1s;
   -webkit-transition: bottom ease-in-out 0.1s;
   transition: bottom ease-in-out 0.1s;
@@ -3654,7 +3647,7 @@ div.uw-slideshow.photo-slider .has-text:after {
 }
 div.uw-slideshow.photo-slider .uw-slideshow-controls {
   background-color: transparent;
-  bottom: 9.3%;
+  bottom: 10%;
   width: 75px;
 }
 div.uw-slideshow.photo-slider .uw-slideshow-controls.next,
@@ -3694,7 +3687,7 @@ div.uw-slideshow.photo-slider .slider-dots {
   bottom: 0;
   z-index: 9999;
   text-align: center;
-  margin-top: 510px;
+  margin-top: 465px;
   padding: 0;
 }
 div.uw-slideshow.photo-slider .slider-dots li {
@@ -8769,7 +8762,7 @@ ul.shortcode-blogroll-mini {
 }
 .cards-widget .default-card {
   background-color: #EEEADF;
-  padding: 10% 13% 5% 15%;
+  padding: 10% 14% 5% 14%;
   text-align: left;
   background-image: url('assets/images/stripes-dark-tile.svg');
   background-position: 0 140px;
@@ -8798,7 +8791,7 @@ ul.shortcode-blogroll-mini {
 .cards-widget .default-card .card-image {
   display: block;
   width: 139%;
-  margin: -13.5% -21% 0;
+  margin: -13.5% -20% 0 -19.5%;
   height: 200px;
 }
 .cards-widget .boundless-card h3 {
@@ -8826,25 +8819,23 @@ ul.shortcode-blogroll-mini {
   right: 0;
   bottom: 0;
 }
-.cards-widget .enhanced-card {
-  margin-top: 30px;
+.cards-widget .enhanced-card > span {
+  display: block;
 }
 .cards-widget .enhanced-card h3 {
   font-size: 18px;
+  position: relative;
+  background-color: #4b2e83;
+  margin: 8px 0 0 -35px;
+  padding: 8px 0 20px -35px;
+  width: 90%;
 }
-.cards-widget .enhanced-card h3 .pic-title {
-  position: absolute;
-  top: -65px;
-  left: -17px;
-  background-color: #4B2E83;
-  padding: 10px 10px 10px 20px;
-}
-.cards-widget .enhanced-card h3 .pic-title:after {
+.cards-widget .enhanced-card h3:after {
   position: absolute;
   bottom: 0;
   right: -10px;
   top: 0;
-  width: 20px;
+  width: 40px;
   background-color: #4b2e83;
   content: " ";
   display: block;
@@ -8854,12 +8845,10 @@ ul.shortcode-blogroll-mini {
   -webkit-transform: skew(-15deg, 0);
   -ms-transform: skewX(-15deg) skewY(0);
   transform: skew(-15deg, 0);
+  z-index: -1;
 }
 .cards-widget .enhanced-card h3 a {
   color: white;
-}
-.cards-widget .enhanced-card p {
-  padding: 20px 0;
 }
 .cards-widget .enhanced-card,
 .cards-widget .boundless-card {
@@ -8933,11 +8922,11 @@ ul.shortcode-blogroll-mini {
   background-image: url(assets/svg/widgets-sprite.svg);
 }
 .contact-widget-inner p.person-phone {
-  background-position: 0 2px;
+  background-position: 0 -30px;
 }
 .contact-widget-inner a.person-email {
   color: inherit;
-  background-position: 0 -30px;
+  background-position: 0 1px;
 }
 .uw-sidebar .contact-widget-inner .widgettitle {
   margin-bottom: 30px;

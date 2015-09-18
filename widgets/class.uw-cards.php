@@ -129,13 +129,7 @@ class UW_Widget_Cards extends WP_Widget
       <span>
       <h3>
         <?php if ( ! empty( $link) ) : ?>
-        <a href="<?php echo $link; ?>" class="pic-title">
-        <?php endif; ?>
-  
-            <?php echo $title; ?>
-  
-        <?php if ( ! empty( $link) ) : ?>
-          </a>      
+        <a href="<?php echo $link; ?>" class="pic-title"><?php endif; ?><?php echo $title; ?><?php if ( ! empty( $link) ) : ?></a>      
         <?php endif; ?>
       </h3>
 
