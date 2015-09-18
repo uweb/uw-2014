@@ -10969,7 +10969,7 @@ UW.elements = {
 }
 
 UW.getBaseUrl = function() {
-    if (uw_ismultisite) {
+    if (uw_ismultisite === true) {
       var site = _.first( _.compact( Backbone.history.location.pathname.split('/') ) )
       return Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/'
     } 
