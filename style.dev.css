@@ -8826,8 +8826,8 @@ ul.shortcode-blogroll-mini {
   font-size: 18px;
   position: relative;
   background-color: #4b2e83;
-  margin: 8px 0 0 -35px;
-  padding: 8px 0 20px -35px;
+  margin: 8px 0 20px -35px;
+  padding: 10px 0px 10px 35px;
   width: 90%;
 }
 .cards-widget .enhanced-card h3:after {
