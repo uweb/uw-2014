@@ -14,7 +14,7 @@ class UW_Scripts
   function __construct()
   {
 
-    $multisite = is_multisite();
+    $multi = is_multisite();
 
     $this->SCRIPTS = array_merge( array(
 
@@ -32,7 +32,7 @@ class UW_Scripts
         'deps'      => array( 'backbone' ),
         'version'   => '1.0.3',
         'admin'     => false,
-        'variables' => array( 'is_multisite' =>  $multisite )
+        'variables' => array( 'is_multisite' =>  $multi )
       ),
 
       'admin' => array (
@@ -79,7 +79,7 @@ class UW_Scripts
       $script = (object) $script;
       if (isset($script->variables)){
         $uw_localization = array_merge($uw_localization, $script->variables);
-        wp_localize_script($script->id, 'uw_ismultisite', $script->variables['is_multisite']);
+        wp_localize_script($script->id, 'uw_ismultisite', $script->variables); //error line
       }
     }
   }
