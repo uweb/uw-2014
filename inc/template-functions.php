@@ -37,15 +37,13 @@ if ( ! function_exists( 'uw_has_sidebar' ) ) :
   }
 endif;
 
-if ( ! function_exists( 'uw_dropdowns') )
-{
+if ( ! function_exists( 'uw_dropdowns') ) :
   function uw_dropdowns()
   {
 
-    echo
-        '<nav id="dawgdrops" aria-label="Main menu" role="navigation"><div class="dawgdrops-inner container" role="application">';
-
-          wp_nav_menu( array(
+    echo '<nav id="dawgdrops" aria-label="Main menu" role="navigation"><div class="dawgdrops-inner container" role="application">';
+          
+    echo  wp_nav_menu( array(
             'theme_location'  => UW_Dropdowns::LOCATION,
             'container'       => false,
             //'container_class' => 'dawgdrops-inner container',
@@ -56,8 +54,7 @@ if ( ! function_exists( 'uw_dropdowns') )
 
     echo '</div></nav>';
   }
-
-}
+endif;
 
 if ( ! function_exists('uw_sidebar_menu') ) :
 
