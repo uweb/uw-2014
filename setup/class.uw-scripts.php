@@ -32,7 +32,7 @@ class UW_Scripts
         'deps'      => array( 'backbone' ),
         'version'   => '1.0.3',
         'admin'     => false,
-        'variables' => array( 'is_multisite' =>  $multi )
+        //'variables' => array( 'is_multisite' =>  $multi )
       ),
 
       'admin' => array (
