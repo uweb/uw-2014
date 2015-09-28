@@ -8690,8 +8690,14 @@ label.screen-reader {
 ul.shortcode-blogroll-mini {
   padding-left: 0;
 }
-.uw-widget-rss {
+.uw-content .uw-widget-rss {
   padding: 0;
+}
+.uw-sidebar .uw-widget-rss.widget {
+  padding: 10px 0 0 40px;
+}
+.uw-sidebar .uw-widget-rss.widget > span:nth-child(1) {
+  display: none;
 }
 .widget_yarpp_widget ul,
 .uw-widget-related-posts ul {
