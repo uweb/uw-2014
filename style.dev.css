@@ -5516,6 +5516,18 @@ table th[class*="col-"] {
     height: 8px;
     margin: 0 0 0 -145px;
   }
+  div.container.uw-body {
+    padding-top: 0;
+  }
+  div.container.uw-body h2.uw-site-title {
+    margin-top: 0;
+  }
+  button.uw-mobile-menu-toggle {
+    bottom: 10px;
+  }
+  div.hero-content.col-md-12.uw-content {
+    margin-top: 0;
+  }
 }
 .uw-breadcrumbs {
   margin: -17px 0 0 -30px;
@@ -8391,6 +8403,9 @@ label.screen-reader {
 .hero-content {
   margin-top: 20px;
 }
+.hero-content .uw-site-title {
+  display: none;
+}
 .hero-height2 {
   height: 245px;
 }
@@ -8438,6 +8453,11 @@ label.screen-reader {
 .hero-blank:before,
 .hero-blank:after {
   display: none;
+}
+@media only screen and (max-width: 767px) {
+  .hero-content .uw-site-title {
+    display: block;
+  }
 }
 /*==========  Non-Mobile First Method  ==========*/
 /* Large Devices, Wide Screens */

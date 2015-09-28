@@ -18,10 +18,8 @@
     <div class="col-md-<?php echo (($sidebar[0]!="on") ? "8" : "12" ) ?> uw-content" role='main'>
 
       <?php uw_site_title(); ?>
-
-      <?php if (is_front_page()) { get_template_part( 'menu', 'mobile' ); }?>
-
-      <?php if (!is_front_page()) { get_template_part( 'breadcrumbs' ); }?>
+      <?php get_template_part( 'menu', 'mobile' ); ?>
+      <?php get_template_part( 'breadcrumbs' ); ?>
 
       <div id='main_content' class="uw-body-copy" tabindex="-1">
 

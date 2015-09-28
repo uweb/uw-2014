@@ -17,14 +17,14 @@
         <h1 class="uw-site-title2"><?php the_title(); ?></h1>
         <span class="udub-slant"><span></span></span>      
       </div>
-
 </div>
 <div class="container uw-body">
-  <?php if (!is_front_page()) { get_template_part( 'breadcrumbs' ); }?>
   <div class="row">
-
     <div class="hero-content col-md-<?php echo (($sidebar[0]!="on") ? "8" : "12" ) ?> uw-content" role='main'>
 
+      <?php uw_site_title(); ?>
+      <?php get_template_part( 'menu', 'mobile' ); ?>
+      <?php get_template_part( 'breadcrumbs' ); ?>
 
       <div id='main_content' class="uw-body-copy" tabindex="-1">
 

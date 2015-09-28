@@ -81,3 +81,4 @@ class UW
         $this->Settings          = new UW_Settings;
     }
 }
+ 

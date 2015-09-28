@@ -10969,11 +10969,8 @@ UW.elements = {
 }
 
 UW.getBaseUrl = function() {
-    if (UW.is_multisite == 1) {
-      var site = _.first( _.compact( Backbone.history.location.pathname.split('/') ) )
-      return Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/'
-    } 
-      return Backbone.history.location.origin
+  var site = _.first( _.compact( Backbone.history.location.pathname.split('/') ) )
+  return Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/'
 }
 
 UW.sources = {
