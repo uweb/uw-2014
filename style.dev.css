@@ -5829,6 +5829,12 @@ span.next-page a:hover {
 .links li:last-child {
   border-bottom: none;
 }
+img.attachment-post-thumbnail.wp-post-image {
+  gruntfloat: left;
+  margin: 5px 50px 0 0;
+  height: 150px;
+  width: auto;
+}
 /* Small Devices, Tablets */
 @media only screen and (max-width: 767px) {
   .uw-body {
