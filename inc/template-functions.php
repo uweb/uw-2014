@@ -237,7 +237,8 @@ if ( ! function_exists('get_uw_breadcrumbs') ) :
       {
         if ( has_category() )
         {
-          $category = array_shift( get_the_category( $post->ID  ) ) ;
+          $thecat = get_the_category( $post->ID  );
+          $category = array_shift( $thecat ) ;
           $html .=  '<li><a href="'  . get_category_link( $category->term_id ) .'" title="'. get_cat_name( $category->term_id ).'">'. get_cat_name($category->term_id ) . '</a>';
         }
         if ( uw_is_custom_post_type() )
