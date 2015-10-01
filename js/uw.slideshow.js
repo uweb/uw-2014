@@ -115,16 +115,16 @@ UW.Slideshow = Backbone.View.extend({
 
     // Add if photo slider exists
     if ( this.photoSlider ) {
-
-      $( ".photo-slider" ).append('<ul class="slider-dots"></ul>', '<a tabIndex="-1" class="fullscreen" href="#">Fullscreen</a>') 
+      console.log(this.el.classList[2])
+      $( "." + this.el.classList[2] ).append('<ul class="slider-dots slider-dots-' + this.el.classList[2] + '"></ul>', '<a tabIndex="-1" class="fullscreen" href="#">Fullscreen</a>') 
 
       // Add LIs to ul
       for (i = 0; i < this.numberOfSlides + 1; i++) { 
-        $( ".slider-dots" ).append('<li></li>');
+        $( ".slider-dots-" + this.el.classList[2] ).append('<li></li>');
       }
       
       // Add initial dot     
-      $(".slider-dots li:nth-child(1)").addClass("select-dot")
+      $(".slider-dots-" + this.el.classList[2] + " li:nth-child(1)").addClass("select-dot")
 
     }
 
@@ -163,8 +163,8 @@ UW.Slideshow = Backbone.View.extend({
 
       // Moves the dots around according to this.current
 
-      $('.slider-dots li').removeClass('select-dot')
-      $(".slider-dots li:nth-child(" + (this.current + 1) + ")").addClass("select-dot")
+      $(".slider-dots-" + this.el.classList[2] + " li").removeClass('select-dot')
+      $(".slider-dots-" + this.el.classList[2] + " li:nth-child(" + (this.current + 1) + ")").addClass("select-dot")
 
 
   },
@@ -174,7 +174,7 @@ UW.Slideshow = Backbone.View.extend({
   dotsAnimate : function(e){
 
         // Store which dot has been click
-        var slideNumber = $('.slider-dots li').index(e.target)
+        var slideNumber = $(".slider-dots-" + this.el.classList[2] + " li").index(e.target)
 
         this.moveDots()
 
