@@ -8459,6 +8459,14 @@ label.screen-reader {
     display: block;
   }
 }
+#trumba\.spud\.0 iframe,
+#trumba\.spud\.1 iframe,
+#trumba\.spud\.2 iframe,
+#trumba\.spud\.3 iframe,
+#trumba\.spud\.4 iframe,
+#trumba\.spud\.5 iframe {
+  margin: 0;
+}
 /*==========  Non-Mobile First Method  ==========*/
 /* Large Devices, Wide Screens */
 /* Medium Devices, Desktops */
