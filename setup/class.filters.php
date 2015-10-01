@@ -44,8 +44,14 @@ class UW_Filters
       add_filter( 'body_class', array( $this, 'add_site_title_body_class' ) );
     }
 
+    // Custom except ending
+    add_filter( 'excerpt_more', array( $this, 'custom_excerpt_more' ) );
+
   }
 
+  function custom_excerpt_more( $more ) {
+    return '...';
+  }
 
   function modify_post_mime_types( $post_mime_types ) {
 
