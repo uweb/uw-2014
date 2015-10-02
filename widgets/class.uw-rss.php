@@ -144,7 +144,7 @@ class UW_RSS extends WP_Widget
       if ( ! is_wp_error( $rss ) )
       {
         $url       = !$more ? $rss->get_permalink() : $more;
-        $maxitems  = $rss->get_item_quantity($number);
+        $maxitems  = $rss->get_item_quantity($atts['number']);
 
         $rss_items = $rss->get_items(0, $maxitems);
 
