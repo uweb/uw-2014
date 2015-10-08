@@ -7984,6 +7984,10 @@ textarea#jp-carousel-comment-form-comment-field:focus::-webkit-input-placeholder
   outline: 0!important;
   opacity: 0;
 }
+.wpcf7 .fui-radio-unchecked:before,
+.wpcf7 .fui-radio-checked:before {
+  display: none;
+}
 a.uw-btn {
   padding: 13px 24px;
   text-transform: uppercase;
