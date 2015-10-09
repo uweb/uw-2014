@@ -37,7 +37,7 @@ class UW_Page_Attributes_Meta_Box
         'selected'         => $post->post_parent,
         'name'             => 'parent_id',
         'show_option_none' => __('(no parent)'),
-        'sort_column'      => 'menu_order, post_title, sidebar',
+        'sort_column'      => 'menu_order, post_title, sidebar, parent',
         'echo'             => 0,
       );
 
@@ -61,7 +61,12 @@ class UW_Page_Attributes_Meta_Box
             <p><strong><?php _e('Parent') ?></strong></p>
             <label class="screen-reader-text" for="parent_id"><?php _e('Parent') ?></label>
 
-            <?php echo $pages; ?>
+            <?php echo $pages; 
+                  $parent = get_post_meta($post->ID, "parent", true);
+                  wp_nonce_field( 'parent_nonce' , 'parent_name' );
+            ?>
+
+            <p><input type="checkbox" id="parent_id" name="parentcheck" value="on" <?php if( !empty($parent) ) { ?>checked="checked"<?php } ?> /><?php _e('Hide from menu') ?></p>
 
             <?php
           } // end empty pages check
@@ -148,6 +153,19 @@ class UW_Page_Attributes_Meta_Box
         }
       }
     }
+
+    if ( isset( $_POST['parent_name'] ) ) { 
+      if ( ! empty( $_POST ) && check_admin_referer( 'parent_nonce', 'parent_name') ) { //limit to only pages
+        if ($post_type) {
+          if(isset($_POST["parentcheck"])) {
+            update_post_meta($post_ID, "parent", $_POST["parentcheck"]);
+          } else {
+            update_post_meta($post_ID, "parent", null); 
+          }
+        }
+      }
+    }
+
    return $post_ID;
   }
 

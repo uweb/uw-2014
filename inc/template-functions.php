@@ -111,6 +111,23 @@ if ( ! function_exists( 'uw_list_pages') ) :
 
     $ids = ! is_front_page() ? array_map( function($sibling) { return $sibling->ID; }, $siblings ) : array();
 
+    $args1 = array(
+      'child_of' => $post->ID,
+      'post_type'   => 'page',
+      'post_status' => 'publish',
+      'depth'       => 1
+    ); 
+    $children_array = get_pages( $args1 );
+    $count = 0; 
+    foreach($children_array as $children) {
+      $hidden = get_post_meta($children->ID, "parent", true);
+      if ( ($hidden == "on") || ( in_array($children->post_parent, $ids) ) ) {  //problem causer!
+        $ids[] = $children->ID;  
+      } else {
+        $count++;
+      }
+    }
+
     $pages = wp_list_pages(array(
       'title_li'     => '<a href="'.get_bloginfo('url').'" title="Home" class="homelink">Home</a>',
       'child_of'     => $parent->post_parent,
@@ -120,7 +137,7 @@ if ( ! function_exists( 'uw_list_pages') ) :
       'walker'       => $UW->SidebarMenuWalker
     ));
 
-    return $pages ? sprintf( '%s<ul class="%s first-level">%s</ul>', $toggle, $class, $pages ) : '';
+    return ( $pages && $count!=0 ) ? sprintf( '%s<ul class="%s first-level">%s</ul>', $toggle, $class, $pages ) : '';
 
   }
 
