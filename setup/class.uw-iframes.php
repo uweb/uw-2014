@@ -30,11 +30,25 @@ class UW_Iframes
       if ( array_key_exists('host', $parsed) && !in_array($parsed['host'], $this->ALLOWED_IFRAMES ) )
         return '';
 
-      $query = http_build_query($_GET);
+      $iframeSrc = html_entity_decode($params['src']);
+      $iframeQueryString = parse_url($iframeSrc, PHP_URL_QUERY);	  
+      $parentQueryString = http_build_query($_GET);      
+    	 
+      if($iframeQueryString != '' && $parentQueryString != '')
+      {
+        $iframeQuery = parse_str($iframeQueryString, $iframeQueryParams);
+        $parentQuery = parse_str($parentQueryString, $parentQueryParams);
+        $query_merged = array_merge($iframeQueryParams, $parentQueryParams);
+        $iframeSrc = str_replace($iframeQueryString, http_build_query($query_merged), $iframeSrc);
+      } 
+      else if ($parentQueryString != '')
+      {
+        $iframeSrc .= "?" . $parentQueryString;
+      }
+    
+      $iframeSrc = esc_url($iframeSrc, array('http', 'https'));
 
-      $query =  $query  ? "?$query" : '';
-
-      return "<iframe src=\"{$params['src']}$query\" width=\"{$params['width']}\" height=\"{$params['height']}\" frameborder=\"0\"></iframe>";
+      return "<iframe src=\"$iframeSrc\" width=\"{$params['width']}\" height=\"{$params['height']}\" frameborder=\"0\"></iframe>";
 
   }
 
@@ -59,6 +73,7 @@ class UW_Iframes
       'payroll.gifts.washington.edu',
       'helperapps.gifts.washington.edu',
       'uwfoundation.org',
+      'support.gifts.washington.edu',
       'www.uwfoundation.org',
       'www.surveygizmo.com',
       'www.google.com',
