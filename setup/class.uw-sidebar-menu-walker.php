@@ -54,6 +54,8 @@ class UW_Sidebar_Menu_Walker extends Walker_Page {
         $args['link_after'] = empty( $args['link_after'] ) ? '' : $args['link_after'];
 
         /** This filter is documented in wp-includes/post-template.php */
+
+        $parent = get_post_meta($page->ID, "parent"); 
         
         if ($is_current) {
             $output .= $indent . sprintf(
@@ -63,7 +65,7 @@ class UW_Sidebar_Menu_Walker extends Walker_Page {
                 apply_filters( 'the_title', $page->post_title, $page->ID ),
                 $args['link_after']
             );   
-        } else {
+        } else if ($parent[0]!="on") {
             $output .= $indent . sprintf(
                 '<li class="%s"><a href="%s">%s%s%s</a>',
                 $css_classes,
