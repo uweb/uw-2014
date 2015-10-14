@@ -11156,7 +11156,7 @@ UW.Search = Backbone.View.extend({
 
                     '<input type="submit" value="search" class="search" tabindex="-1"/>'+
 
-                    '<div class="labels hidden-xs">'+
+                    '<div id="search-labels" class="labels hidden-xs">'+
                       '<label class="radio">'+
                         '<input type="radio" name="search" value="uw" data-toggle="radio" checked />'+
                         'All the UW'+
@@ -11166,7 +11166,7 @@ UW.Search = Backbone.View.extend({
                         '<input type="radio" name="search" value="site" data-toggle="radio" />'+
                         'Current site'+
                       '</label>'+
-
+                    '</div>'+
                 '</div>'+
               '</div>',
 
@@ -11223,6 +11223,12 @@ UW.Search = Backbone.View.extend({
   {
     switch ( event.keyCode )
     {
+      case UW.KEYCODES.TAB :
+        //if (current on buttons) then ESC else move focus to buttons
+        console.log(this)
+        //console.log(this.$el.find('#search-labels')) //.toggle.$el.focus()
+        //this.$el.find('#search-labels').focus();
+        return true
 
       case UW.KEYCODES.ESC :
         event.stopPropagation()

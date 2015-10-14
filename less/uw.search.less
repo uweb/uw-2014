@@ -101,6 +101,22 @@ body.search-open #uwsearcharea {
     }
   }
 
+  #search-labels {
+    label:focus {
+      background-color: red;
+      input:focus {
+        background-color: blue;
+      }
+      span:focus {
+        background-color: green;
+        span:focus {
+          background-color: black;
+        }
+      }
+    }
+    
+  }
+
   input.search
   {
     border: none;

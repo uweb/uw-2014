@@ -5983,6 +5983,18 @@ body.search-open #uwsearcharea .uw-search-wrapper {
   font-weight: 600;
   cursor: pointer;
 }
+.uw-search-bar-container #search-labels label:focus {
+  background-color: red;
+}
+.uw-search-bar-container #search-labels label:focus input:focus {
+  background-color: blue;
+}
+.uw-search-bar-container #search-labels label:focus span:focus {
+  background-color: green;
+}
+.uw-search-bar-container #search-labels label:focus span:focus span:focus {
+  background-color: black;
+}
 .uw-search-bar-container input.search {
   border: none;
   font-size: 0px;
