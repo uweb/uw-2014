@@ -6558,6 +6558,8 @@ ul.uw-mobile-menu ul.children {
   transform: skew(-25deg, 0);
   left: 80px;
   background-color: white;
+  bottom: 4px;
+  height: 8px;
 }
 body.home .uw-sidebar-menu {
   display: none;
