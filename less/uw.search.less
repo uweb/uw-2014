@@ -101,20 +101,9 @@ body.search-open #uwsearcharea {
     }
   }
 
-  #search-labels {
-    label:focus {
-      background-color: red;
-      input:focus {
-        background-color: blue;
-      }
-      span:focus {
-        background-color: green;
-        span:focus {
-          background-color: black;
-        }
-      }
-    }
-    
+  div#search-labels.labels.hidden-xs.focused {
+    zoom: 1.2;
+    margin-top: -15px;
   }
 
   input.search
@@ -132,6 +121,11 @@ body.search-open #uwsearcharea {
     -o-background-size: 22px;
     background-size: 22px;
     padding: 0px 60px 0px 0px;
+  }
+
+  input.search:focus {
+    zoom: 1.2;
+    bottom: 5px;
   }
 
   .uw-results

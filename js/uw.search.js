@@ -25,16 +25,16 @@ UW.Search = Backbone.View.extend({
                       '<option value="site">Current site</option>' +
                     '</select>' +
 
-                    '<input type="submit" value="search" class="search" tabindex="-1"/>'+
+                    '<input type="submit" value="search" class="search" tabindex="0"/>'+
 
                     '<div id="search-labels" class="labels hidden-xs">'+
                       '<label class="radio">'+
-                        '<input type="radio" name="search" value="uw" data-toggle="radio" checked />'+
+                        '<input class="radiobtn" type="radio" name="search" value="uw" data-toggle="radio" checked />'+
                         'All the UW'+
                       '</label>'+
 
                       '<label class="radio">'+
-                        '<input type="radio" name="search" value="site" data-toggle="radio" />'+
+                        '<input class="radiobtn" type="radio" name="search" value="site" data-toggle="radio" />'+
                         'Current site'+
                       '</label>'+
                     '</div>'+
@@ -95,10 +95,9 @@ UW.Search = Backbone.View.extend({
     switch ( event.keyCode )
     {
       case UW.KEYCODES.TAB :
-        //if (current on buttons) then ESC else move focus to buttons
-        console.log(this)
-        //console.log(this.$el.find('#search-labels')) //.toggle.$el.focus()
-        //this.$el.find('#search-labels').focus();
+        if ($( event.target)[0] == $('input.search')[0] && ! $(event)[0].shiftKey) $('#search-labels').addClass('focused')
+        if (($( event.target)[0] != $('input.search')[0]) && $('#search-labels').hasClass('focused')) $('#search-labels').removeClass('focused')
+        if ($( event.target)[0] == $('input.radiobtn')[0] && ! $(event)[0].shiftKey){ this.toggle.$el.focus(); return false }
         return true
 
       case UW.KEYCODES.ESC :
