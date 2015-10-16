@@ -2,6 +2,9 @@
  *  All styles for UW accordion
  */
 
+
+
+
 .uw-accordion {
     h3 {
         background-color: #E8E8E8;
@@ -34,23 +37,45 @@
 }
 
 .uw-accordion-shortcode__panel[aria-hidden=true] {
-  display: none;
+    display: none;
+}
+.uw-accordion-shortcode__header {
+    position: relative;
 }
 .uw-accordion-shortcode__header {
     display: block;
     background: none;
     font-family: inherit;
-    font-size: 1.625em;
+    font-size: 1.125em;
     text-align: left;
     width: 100%;
     font-weight: bold;
     border: 0;
+    padding: 7px 0;
+    border-bottom: 1px solid #DEDEDE;
+    p {
+        margin: 10px 0 30px;
+    }
 }
+.uw-accordion-shortcode__header:before {
+    content: " ";
+    display: block;
+    float: right;
+    width: 30px;
+    height: 25px;
+    margin-top: 3px;
+    background-image: url(assets/svg/uw-sprite.svg);
+    background-repeat: no-repeat;
+}
+
 .uw-accordion-shortcode__header[aria-expanded="true"]:before {
-  content: "- ";
+    background-position: -283px -23px;
 }
 .uw-accordion-shortcode__header[aria-expanded="false"]:before {
-  content: "+ ";
+    background-position: -283px 2px;
+}
+.uw-accordion-shortcode__header[aria-expanded="true"] {
+    margin-bottom: 20px;
 }
 .uw-accordion-shortcode__title {
     height: 1px;
