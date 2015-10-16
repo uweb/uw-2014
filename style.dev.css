@@ -4025,6 +4025,30 @@ ul.uw-select li.inactive a {
 .uw-accordion div.active {
   height: auto;
 }
+.uw-accordion-shortcode__panel[aria-hidden=true] {
+  display: none;
+}
+.uw-accordion-shortcode__header {
+  display: block;
+  background: none;
+  font-family: inherit;
+  font-size: 1.625em;
+  text-align: left;
+  width: 100%;
+  font-weight: bold;
+  border: 0;
+}
+.uw-accordion-shortcode__header[aria-expanded="true"]:before {
+  content: "- ";
+}
+.uw-accordion-shortcode__header[aria-expanded="false"]:before {
+  content: "+ ";
+}
+.uw-accordion-shortcode__title {
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
 /*
  *  All styles for Boxes shortcode
  */

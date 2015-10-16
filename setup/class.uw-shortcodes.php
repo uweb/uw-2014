@@ -20,6 +20,7 @@ class UW_Shortcodes
         require_once('class.youtube-shortcode.php');
         require_once('class.trumba-shortcode.php');
         require_once('class.subpage-list-shortcode.php');
+        require_once('class.accordion-shortcode.php');
     }
 
     private function initialize()
@@ -29,5 +30,6 @@ class UW_Shortcodes
         $this->youtube        = new UW_YouTube();
         $this->trumba         = new UW_Trumba();
         $this->subpage_list   = new UW_SubpageList();
+        $this->accordion      = new UW_AccordionShortcode();
     }
 }
