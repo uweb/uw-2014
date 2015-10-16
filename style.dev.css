@@ -4040,11 +4040,16 @@ ul.uw-select li.inactive a {
   width: 100%;
   font-weight: bold;
   border: 0;
-  padding: 7px 0;
+  padding: 7px 5px;
   border-bottom: 1px solid #DEDEDE;
+  -o-transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.uw-accordion-shortcode__header p {
-  margin: 10px 0 30px;
+.uw-accordion-shortcode__header:hover,
+.uw-accordion-shortcode__header:focus {
+  outline: none;
+  background-color: #ddd;
 }
 .uw-accordion-shortcode__header:before {
   content: " ";

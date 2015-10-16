@@ -51,10 +51,13 @@
     width: 100%;
     font-weight: bold;
     border: 0;
-    padding: 7px 0;
-    border-bottom: 1px solid #DEDEDE;
-    p {
-        margin: 10px 0 30px;
+    padding: 7px 5px;
+    border-bottom: 1px solid #DEDEDE;    
+    .transition (all .1s cubic-bezier(0.25, 0.46, 0.45, 0.94));
+    &:hover,
+    &:focus {
+        outline: none;
+        background-color: #ddd;
     }
 }
 .uw-accordion-shortcode__header:before {
@@ -62,7 +65,7 @@
     display: block;
     float: right;
     width: 30px;
-    height: 25px;
+    height: 25px;;
     margin-top: 3px;
     background-image: url(assets/svg/uw-sprite.svg);
     background-repeat: no-repeat;
