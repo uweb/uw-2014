@@ -368,7 +368,7 @@ if ( !function_exists('uw_site_title')):
         if (get_option('overly_long_title')){
             $classes .= ' long-title';
         }
-        echo '<a href="' . home_url('/') . '" title="' . esc_attr( get_bloginfo() ) . '"><h2 class="' . $classes . '">' . get_bloginfo() . '</h2></a>';
+        echo '<a href="' . home_url('/') . '" title="' . esc_attr( get_bloginfo() ) . '"><div class="' . $classes . '">' . get_bloginfo() . '</div></a>';
     }
 
 endif;
