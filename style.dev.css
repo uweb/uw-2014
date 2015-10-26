@@ -3290,6 +3290,7 @@ address {
 #uw-container #quicklinks ul#big-links li a:hover,
 #uw-container #quicklinks ul#big-links li a:focus {
   color: #ffd800;
+  text-decoration: underline;
 }
 #uw-container #quicklinks ul#big-links li span {
   display: block;
@@ -3423,6 +3424,7 @@ address {
 #uw-container #quicklinks ul#little-links li a:hover,
 #uw-container #quicklinks ul#little-links li a:focus {
   color: #ffd800;
+  text-decoration: underline;
 }
 #uw-container #quicklinks a {
   color: white;
@@ -4924,7 +4926,7 @@ table th[class*="col-"] {
 .uw-thinstrip ul.uw-thin-links li a:focus,
 .uw-thinstrip ul.uw-thin-links li button:focus {
   color: #b7a57a;
-  text-decoration: none;
+  text-decoration: underline;
 }
 .uw-thinstrip button {
   border: none;
@@ -4991,6 +4993,7 @@ table th[class*="col-"] {
 .uw-thinstrip button.uw-quicklinks:focus {
   color: #FFF;
   text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.54);
+  text-decoration: underline;
   outline: none;
   -o-transition: all 0.2s ease;
   -webkit-transition: all 0.2s ease;
@@ -5569,7 +5572,7 @@ table th[class*="col-"] {
   div.container.uw-body {
     padding-top: 0;
   }
-  div.container.uw-body h2.uw-site-title {
+  div.container.uw-body div.uw-site-title {
     margin-top: 0;
   }
   button.uw-mobile-menu-toggle {
@@ -5764,6 +5767,10 @@ a.more:after {
 }
 .uw-body .uw-site-title span {
   font-weight: 700;
+}
+.uw-body div.uw-site-title {
+  margin-top: 29px;
+  margin-bottom: 14.5px;
 }
 .uw-body p.date {
   margin-top: 25px;
@@ -9199,7 +9206,7 @@ pre.prettyprint ol.linenums li {
   .site-regents h2 {
     font-size: 20px  !important;
   }
-  .site-regents h2.uw-site-title {
+  .site-regents div.uw-site-title {
     font-size: 40px !important;
   }
   .site-regents h3,

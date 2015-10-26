@@ -11796,11 +11796,10 @@ UW.Slideshow = Backbone.View.extend({
 
       // focus controls
       function keyPress(e) {
-
-        if( e.keyCode == 39 || e.keyCode == 9 ){
-          if (e.keyCode == 9 && !el.nextSlideExists() ){
-            return true;
-          }
+        if ( e.keyCode == 9 ) {
+          return true;
+        }
+        if( e.keyCode == 39 ) {
           el.animateOut(e);
           return false;
         }
