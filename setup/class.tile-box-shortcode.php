@@ -11,7 +11,7 @@
 Class TileBox
 {
     const MAXTILES = 4;
-    const PRIORITY = 11;
+    const PRIORITY = 12;
     private $count = 0;
     private $NumbersArray = array('zero', 'one', 'two', 'three', 'four'); //arrays can't be constants in PHP.  Privates at least can't be changed
 

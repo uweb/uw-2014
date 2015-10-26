@@ -32,6 +32,7 @@ This is an overview of the custom widgets, plugins and various features it inclu
   - [YouTube](#youtube)
   - [Slideshow](#slideshow)
   - [Subpage List](#subpagelist)
+  - [Accordion](#accordion)
 - [Features](#features)
   - [UW Widget Visibility](#uwwidgetvisiblity)
   - [UW Media Credit](#uwmediacredit)
@@ -383,6 +384,21 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
 ```
  [subpage-list link="More information here" tilebox=true ]
 ```
+
+### Accordion ###
+> This is an accessible version of the accordion menu based off of Nicolas Hoffmann's [accessible jQuery accordion](http://a11y.nicolas-hoffmann.net/accordion/)
+> 
+> Example:   
+```
+  [accordion name='Accessible Accordion']
+    [section title='Example'] Section[/section]
+    [section title='Example'] Section[/section]
+    [section title='Example'] Section[/section]
+   [/accordion]
+```
+
+
+
 
 
 ## Features

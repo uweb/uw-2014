@@ -8349,7 +8349,7 @@ a.screen-reader-shortcut {
   top: -99px;
 }
 a.screen-reader-shortcut:focus {
-  z-index: 5;
+  z-index: 999;
   font-size: 14px;
   font-weight: 700;
   top: 6px;
