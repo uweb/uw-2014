@@ -23,6 +23,7 @@ class UW_Campus_Map extends WP_Widget
     extract( $instance );
 
 		$title = apply_filters( 'widget_title', $instance['title'] );
+    $buildingCode = apply_filters( 'uw_campus_map_buildingcode', $instance['buildingCode'] );
 
     if ( !empty( $title ) )
        $content .= "<h3 class=\"widget-title\"> $before_title $title $after_title </h3>";
