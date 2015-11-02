@@ -136,7 +136,7 @@ class UW_Widget_Contact extends WP_Widget
 
    <?php 
 
-      $remake_form_person = $instance['person_name'];
+      $remake_form_person = isset($instance['person_name']) ? $instance['person_name'] : '';
 
       if(is_array($remake_form_person)){
 
