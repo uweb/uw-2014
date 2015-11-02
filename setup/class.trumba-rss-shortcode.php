@@ -2,7 +2,7 @@
 
 /*
  * Shortcode for embedding a RSS feed from a trumba calendar
- * [trumba-rss url='calendar rss url']
+ * [trumba-rss url='calendar rss url' category='true' description='false' ]
  */
 
 class UW_TrumbaRSS
@@ -15,7 +15,12 @@ class UW_TrumbaRSS
 
     function trumba_rss_handler($atts)
     {
-        $attributes = (object) $atts;
+        $defaults = shortcode_atts( array(
+          'url' => null,
+          'category' => 'true',
+          'description' => 'false'
+        ), $atts);
+        $attributes = (object) $defaults;
         if (isset($attributes->url)){
             $url = $attributes->url;
         }
@@ -28,22 +33,11 @@ class UW_TrumbaRSS
         $return = "";
 
         foreach ($xml->channel->item as $item) {
-            $info = $item->description;
-            $info = explode("PDT", $info);
-            $description = trim($info[1]);
 
-            $date = explode("<br/>", $info[0]);
-            $date = array_pop($date);
-            $date = explode(',', $date);
-            $day = $date[0] . ", " . $date[1];
-
-            $return =   $return . 
-                        "<h3>" . strtoupper($day) . ": <span>" . strtoupper($item->title) . "</span></h3>" .  
-                        "<p>" . strip_tags($description) . "</p>";
-
-            // $return.=  "<div class='trumbarss'><h3><span>" . strtoupper($item->title) . "</span></h3>" . 
-            //         "<p>" . $info[0] . "</p>" . 
-            //         "<p>" . strip_tags($description) . "</p></div>";
+            $return .= "<h3 class='trumba-title'><span>" . $item->title . "</span></h3>" ;
+            $return .= ($attributes->category == 'true') ? "<p class='trumba-category'>" . $item->category . "</p>" : '';
+            $return .= ($attributes->description == 'true') ? "<p class='trumba-description'>" . $item->description . "</p>" : '';
+                        
         }
 
         return $return;
