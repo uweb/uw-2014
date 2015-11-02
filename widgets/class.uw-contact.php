@@ -31,16 +31,17 @@ class UW_Widget_Contact extends WP_Widget
   {
 
     $title = isset($instance['title']) ? esc_attr($instance['title']) : 'Contact us';
-    $person_name = isset($instance['person_name']) ? esc_attr($instance['person_name']) : 'Name';
-    $person_title = isset($instance['person_title']) ? esc_attr($instance['person_title']) : 'Title';
-    $person_phone = isset($instance['person_phone']) ? esc_attr($instance['person_phone']) : 'Telephone number';
-    $person_email = isset($instance['person_email']) ? esc_attr($instance['person_email']) : 'Email';
+    //$person_name = isset($instance['person_name']) ? esc_attr($instance['person_name']) : 'Name';
+    //$person_title = isset($instance['person_title']) ? esc_attr($instance['person_title']) : 'Title';
+    //$person_phone = isset($instance['person_phone']) ? esc_attr($instance['person_phone']) : 'Telephone number';
+    //$person_email = isset($instance['person_email']) ? esc_attr($instance['person_email']) : 'Email';
     
 
     ?>
 
     <div id="contact-group">
       <p>
+        <?php print_r($instance); ?>
         <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?>  <small><b>(Search and autofill by typing a title)</b></small></label>
         <input data-posttype="post" class="widefat wp-get-posts" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
       </p>
@@ -56,7 +57,7 @@ class UW_Widget_Contact extends WP_Widget
   
     <?php
 
-      $remake_form_person = $instance['person_name'];
+      $remake_form_person = isset($instance['person_name']) ? $instance['person_name'] : '';
 
       if(is_array($remake_form_person)){
 
