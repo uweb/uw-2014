@@ -2900,13 +2900,6 @@ td.visible-print {
 }
 @font-face {
   font-family: 'Encode Sans Compressed';
-  src: url('assets/fonts/encodesanscondensed-500-medium-webfont.eot');
-  src: url('assets/fonts/encodesanscondensed-500-medium-webfont.eot?#iefix') format('embedded-opentype'), url('assets/fonts/encodesanscondensed-500-medium-webfont.woff') format('woff'), url('assets/fonts/encodesanscondensed-500-medium-webfont.ttf') format('truetype'), url('assets/fonts/encodesanscondensed-500-medium-webfont.svg#encodesanscondensed-500-medium-webfont') format('svg');
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Encode Sans Compressed';
   src: url('assets/fonts/encodesanscompressed-600-semibold-webfont.eot');
   src: url('assets/fonts/encodesanscompressed-600-semibold-webfont.eot?#iefix') format('embedded-opentype'), url('assets/fonts/encodesanscompressed-600-semibold-webfont.woff') format('woff'), url('assets/fonts/encodesanscompressed-600-semibold-webfont.ttf') format('truetype'), url('assets/fonts/encodesanscompressed-600-semibold-webfont.svg#encodesanscompressed-600-semibold-webfont') format('svg');
   font-weight: 600;
@@ -4044,6 +4037,7 @@ ul.uw-select li.inactive a {
   border: 0;
   padding: 7px 5px;
   border-bottom: 1px solid #DEDEDE;
+  color: #4b2e83;
   -o-transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -webkit-transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -4812,7 +4806,7 @@ table th[class*="col-"] {
   overflow: hidden;
 }
 .shortcode-blogroll > li p.date {
-  font-weight: 800;
+  font-weight: 600;
   margin: 10px 0 0;
   font-family: "Encode Sans Compressed", sans-serif;
 }
@@ -5655,7 +5649,7 @@ table th[class*="col-"] {
 .uw-breadcrumbs span {
   font-family: "Encode Sans Compressed", sans-serif;
   color: #535353;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 15px;
   padding: 0 25px 0 0;
   display: block;
@@ -5778,7 +5772,7 @@ a.more:after {
 }
 .uw-body .author-info {
   margin: -4.5px 0 20px 0;
-  font-weight: 800;
+  font-weight: 900;
 }
 span.next-page {
   display: block;
@@ -7802,7 +7796,7 @@ textarea#jp-carousel-comment-form-comment-field:focus::-webkit-input-placeholder
     box-sizing: border-box;
   }
   .jp-carousel-close-hint {
-    font-weight: 800 !important;
+    font-weight: 900 !important;
     font-size: 26px !important;
     position: fixed !important;
     top: -10px;
@@ -8596,7 +8590,7 @@ label.screen-reader {
   padding: 14px 0 13px 25px;
   border: none;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   outline: none;
   background-color: #F5F5F5;
 }
@@ -8741,7 +8735,7 @@ label.screen-reader {
   font-size: 17px;
   color: #818181;
   margin-top: 3px;
-  font-weight: 500;
+  font-weight: 400;
 }
 .shortcode-blogroll-mini a.widget-link:hover,
 .widget_recent_entries a.widget-link:hover,
@@ -9051,6 +9045,7 @@ ul.shortcode-blogroll-mini {
 }
 #uwalert-alert-message h1 {
   color: white;
+  font-size: 25px;
 }
 #uwalert-alert-message p {
   color: white;
@@ -9059,6 +9054,10 @@ ul.shortcode-blogroll-mini {
 }
 #uwalert-alert-message a.more {
   color: #FDE048;
+  display: inline-block;
+}
+#uwalert-alert-message a.more:after {
+  bottom: 0px;
 }
 #uwalert-alert-message.uwalert-red,
 #uwalert-alert-message.red-alert-urgent {
