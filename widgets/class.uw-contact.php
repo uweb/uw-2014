@@ -31,10 +31,10 @@ class UW_Widget_Contact extends WP_Widget
   {
 
     $title = isset($instance['title']) ? esc_attr($instance['title']) : 'Contact us';
-    $person_name = isset($instance['person_name']) ? esc_attr($instance['person_name']) : 'Name';
-    $person_title = isset($instance['person_title']) ? esc_attr($instance['person_title']) : 'Title';
-    $person_phone = isset($instance['person_phone']) ? esc_attr($instance['person_phone']) : 'Telephone number';
-    $person_email = isset($instance['person_email']) ? esc_attr($instance['person_email']) : 'Email';
+    //$person_name = isset($instance['person_name']) ? esc_attr($instance['person_name']) : 'Name';
+    //$person_title = isset($instance['person_title']) ? esc_attr($instance['person_title']) : 'Title';
+    //$person_phone = isset($instance['person_phone']) ? esc_attr($instance['person_phone']) : 'Telephone number';
+    //$person_email = isset($instance['person_email']) ? esc_attr($instance['person_email']) : 'Email';
     
 
     ?>
@@ -56,7 +56,7 @@ class UW_Widget_Contact extends WP_Widget
   
     <?php
 
-      $remake_form_person = $instance['person_name'];
+      $remake_form_person = isset($instance['person_name']) ? $instance['person_name'] : '';
 
       if(is_array($remake_form_person)){
 
@@ -136,7 +136,7 @@ class UW_Widget_Contact extends WP_Widget
 
    <?php 
 
-      $remake_form_person = $instance['person_name'];
+      $remake_form_person = isset($instance['person_name']) ? $instance['person_name'] : '';
 
       if(is_array($remake_form_person)){
 

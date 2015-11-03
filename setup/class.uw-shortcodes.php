@@ -19,6 +19,7 @@ class UW_Shortcodes
         require_once('class.button-shortcode.php');
         require_once('class.youtube-shortcode.php');
         require_once('class.trumba-shortcode.php');
+        require_once('class.trumba-rss-shortcode.php');
         require_once('class.subpage-list-shortcode.php');
         require_once('class.accordion-shortcode.php');
         require_once('class.bookmarks-shortcode.php');
@@ -30,6 +31,7 @@ class UW_Shortcodes
         $this->button         = new UW_Button();
         $this->youtube        = new UW_YouTube();
         $this->trumba         = new UW_Trumba();
+        $this->trumba_rss     = new UW_TrumbaRSS();
         $this->subpage_list   = new UW_SubpageList();
         $this->accordion      = new UW_AccordionShortcode();
         $this->bookmarks      = new UW_BookmarkShortcode();
