@@ -51,7 +51,6 @@ class UW_Widget_Contact extends WP_Widget
   <!--||||||||||||||| Build out form from array |||||||||||||||-->
 
 
-  <?php print_r($instance) ?>
   <div id="the-people">
   
     <?php
@@ -77,7 +76,16 @@ class UW_Widget_Contact extends WP_Widget
         }
 
       } else {
-        
+            $name = $instance['person_name'];
+            $title = $instance['person_title'];
+            $phone = $instance['person_phone'];
+            $email = $instance['person_email'];
+
+            echo '<div class=\'peep\'><p class=\'person-name\'><input data-posttype="post" class="widefat wp-get-posts" id="" name="' . $this->get_field_name( 'person_name' ) . '[]' . '" type="text" value="' . $name . '"/></p>';
+            echo '<p class=\'person-title\'><input data-posttype="post" class="widefat wp-get-posts" id="" name="' . $this->get_field_name( 'person_title' ) . '[]' . '" type="text" value="' . $title . '"/></p>';
+            echo '<p class=\'person-phone\'><input data-posttype="post" class="widefat wp-get-posts" id="" name="' . $this->get_field_name( 'person_phone' ) . '[]' . '" type="text" value="' . $phone . '"/></p>';
+            echo '<p class=\'person-email\'><input data-posttype="post" class="widefat wp-get-posts" id="" name="' . $this->get_field_name( 'person_email' ) . '[]' . '" type="text" value="' . $email . '"/></p><a class=\'remove button\'>Remove</a></div>';
+
       }
     }
 
@@ -140,7 +148,9 @@ class UW_Widget_Contact extends WP_Widget
 
    <?php 
 
-      $remake_form_person = isset($instance['person_name']) ? $instance['person_name'] : '';
+    if (isset($instance['person_name'])) {
+
+      $remake_form_person = $instance['person_name'];
 
       if(is_array($remake_form_person)){
 
@@ -153,7 +163,13 @@ class UW_Widget_Contact extends WP_Widget
 
         }
 
+      } else {
+        echo '<h3 class=\'person-name\'>' . $instance['person_name'] . '</h3>';
+        echo '<p class=\'person-title\'>' . $instance['person_title'] . '</p>';
+        echo '<p class=\'person-phone\'>' . $instance['person_phone'] . '</p>';
+        echo '<a href=\'mailto:' . $instance['person_email'] . '\'class=\'person-email\'>' . $instance['person_email'] . '</a>';
       }
+    }
 
   ?>
   </div>
