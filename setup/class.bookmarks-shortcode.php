@@ -20,9 +20,13 @@ class UW_BookmarkShortcode
         add_shortcode('bookmark', array($this, 'bookmarks_shortcode'));      
     }
 
-    function bookmarks_shortcode( $atts = array() ) {
-        $atts['echo'] = false;
-        return wp_list_bookmarks( $atts );
+    function bookmarks_shortcode( $atts ) {
+        $defaults = shortcode_atts( array(
+          'echo' => false,
+          'categorize' => '0',
+          'title_li' => ''
+        ), $atts);
+        return wp_list_bookmarks( $defaults );
     }
     
 
