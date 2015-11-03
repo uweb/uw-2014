@@ -51,12 +51,14 @@ class UW_Widget_Contact extends WP_Widget
   <!--||||||||||||||| Build out form from array |||||||||||||||-->
 
 
-
+  <?php print_r($instance) ?>
   <div id="the-people">
   
     <?php
 
-      $remake_form_person = isset($instance['person_name']) ? $instance['person_name'] : '';
+    if (isset($instance['person_name'])) {
+
+      $remake_form_person =  $instance['person_name'];
 
       if(is_array($remake_form_person)){
 
@@ -74,8 +76,10 @@ class UW_Widget_Contact extends WP_Widget
 
         }
 
+      } else {
+        
       }
-
+    }
 
 
     ?>
