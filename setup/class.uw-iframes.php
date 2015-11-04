@@ -66,6 +66,7 @@ class UW_Iframes
       'excition.com',
       'uwregents.wufoo.com',
       'www.uw.edu',
+      'catalyst.uw.edu',
       'www.washington.edu',
       'depts.washington.edu',
       'online.gifts.washington.edu',
