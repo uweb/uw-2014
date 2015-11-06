@@ -384,11 +384,11 @@ h1,
 }
 h2,
 .h2 {
-  font-size: 31px;
+  font-size: 28px;
 }
 h3,
 .h3 {
-  font-size: 24px;
+  font-size: 23px;
 }
 h4,
 .h4 {
@@ -3027,11 +3027,11 @@ h1,
 }
 h2,
 .h2 {
-  font-size: 31px;
+  font-size: 28px;
 }
 h3,
 .h3 {
-  font-size: 24px;
+  font-size: 23px;
 }
 h4,
 .h4 {
@@ -3895,7 +3895,7 @@ ul.uw-select.open li.inactive a {
 ul.uw-select li {
   cursor: pointer;
   color: #565656;
-  font-weight: 700;
+  font-weight: 800;
   transition: padding-left 0.5s;
   opacity: 0;
   transition: opacity .5s;
@@ -4672,7 +4672,7 @@ table th[class*="col-"] {
   color: #4b2e83;
   text-transform: uppercase;
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 800;
 }
 .vidSmall button.vid-active div {
   opacity: 1;
@@ -4691,7 +4691,7 @@ table th[class*="col-"] {
   left: 0;
   right: 0;
   bottom: 0;
-  font-weight: bold;
+  font-weight: 800;
   color: #FFF;
   padding: 5px 10px 5px 10px;
   overflow: hidden;
@@ -4806,7 +4806,7 @@ table th[class*="col-"] {
   overflow: hidden;
 }
 .shortcode-blogroll > li p.date {
-  font-weight: 600;
+  font-weight: 800;
   margin: 10px 0 0;
   font-family: "Encode Sans Compressed", sans-serif;
 }
@@ -4884,7 +4884,7 @@ table th[class*="col-"] {
   margin: 0;
   position: relative;
   z-index: 1;
-  font-weight: 700;
+  font-weight: 600;
   padding: 0;
 }
 .uw-thinstrip ul.uw-thin-links li {
@@ -5235,7 +5235,7 @@ table th[class*="col-"] {
 .dawgdrops-item.dawgdrops-item li a {
   font-family: "Encode Sans Compressed", sans-serif;
   text-transform: none;
-  font-weight: 600;
+  font-weight: 800;
   padding-bottom: 4px;
   padding-left: 10px;
   padding-top: 4px;
@@ -5375,7 +5375,7 @@ table th[class*="col-"] {
     font-size: 18px;
     text-transform: none;
     color: #FFF;
-    font-weight: 600;
+    font-weight: 800;
     position: absolute;
     top: 65px;
     right: 0;
@@ -5742,7 +5742,7 @@ a.more:after {
 .uw-body h3,
 .uw-body h4,
 .uw-body h5 {
-  font-weight: 700;
+  font-weight: 800;
 }
 .uw-body blockquote p {
   font-family: "Encode Sans Compressed", sans-serif;
@@ -5760,7 +5760,7 @@ a.more:after {
   -webkit-font-smoothing: antialiased;
 }
 .uw-body .uw-site-title span {
-  font-weight: 700;
+  font-weight: 800;
 }
 .uw-body div.uw-site-title {
   margin-top: 29px;
@@ -5783,7 +5783,6 @@ span.next-page a {
   text-transform: uppercase;
   background-color: #e8e3d3;
   font-family: "Encode Sans Compressed", sans-serif;
-  font-weight: 800;
   color: #5a5a5a;
   display: inline-block;
   position: relative;
@@ -5794,7 +5793,7 @@ span.next-page a {
   z-index: 1;
   line-height: 24px;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 800;
   border-radius: 0;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -6031,7 +6030,7 @@ body.search-open #uwsearcharea .uw-search-wrapper {
   margin-bottom: -5px;
   font-family: "Encode Sans Compressed", sans-serif;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 800;
   cursor: pointer;
 }
 .uw-search-bar-container div#search-labels.labels.hidden-xs.focused {
@@ -8050,7 +8049,7 @@ textarea#jp-carousel-comment-form-comment-field:focus::-webkit-input-placeholder
   display: none;
 }
 a.uw-btn {
-  padding: 13px 24px;
+  padding: 11px 20px;
   text-transform: uppercase;
   background-color: #e8e3d3;
   font-family: "Encode Sans Compressed", sans-serif;
@@ -8061,28 +8060,29 @@ a.uw-btn {
   background-image: none !important;
   border-bottom: none;
   margin-bottom: 25px;
-  margin-right: 55px;
+  margin-right: 50px;
   z-index: 1;
   line-height: 24px;
+  font-size: 16px;
 }
 a.uw-btn.btn-sm {
-  padding: 10px 16px;
+  padding: 8px 14px;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 800;
   border-radius: 0;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
 }
 a.uw-btn.btn-sm:before {
-  width: 45px;
-  right: -45px;
+  width: 43px;
+  right: -43px;
 }
 a.uw-btn.btn-sm:after {
   width: 45px;
   height: 45px;
   top: 50%;
   margin-top: -21px;
-  right: -45px;
+  right: -43px;
   background-size: 740px;
   background-position: -32px -410px;
 }
@@ -8128,15 +8128,15 @@ a.uw-btn:after {
   bottom: 0;
   width: 55px;
   height: 55px;
-  right: -55px;
+  right: -50px;
   top: 50%;
   margin-top: -28px;
   background: url(assets/svg/uw-sprite.svg) no-repeat -36px -475px transparent;
 }
 a.uw-btn:before {
   content: "";
-  width: 55px;
-  right: -55px;
+  width: 48px;
+  right: -48px;
   top: 0;
   bottom: 0;
   position: absolute;
@@ -8352,7 +8352,7 @@ a.screen-reader-shortcut {
 a.screen-reader-shortcut:focus {
   z-index: 999;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 800;
   top: 6px;
   padding: 15px 23px 14px;
   background-color: #f1f1f1;
@@ -8457,7 +8457,7 @@ label.screen-reader {
 }
 #hero-container p {
   color: #fff;
-  font-weight: 600;
+  font-weight: 800;
   font-size: 1.1em;
   line-height: 23px;
   margin: 0 0 30px;
@@ -8720,7 +8720,7 @@ label.screen-reader {
   font-family: "Encode Sans Compressed", sans-serif;
   color: #4b2e83;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 800;
   line-height: 1.4;
   overflow: hidden;
   display: block;
