@@ -5601,6 +5601,9 @@ table th[class*="col-"] {
 .uw-breadcrumbs li:first-child a:before {
   right: -18px;
 }
+.uw-breadcrumbs li:first-child a br {
+  display: none;
+}
 .uw-breadcrumbs li:first-child:after {
   top: 17px;
 }
