@@ -5224,7 +5224,7 @@ table th[class*="col-"] {
 }
 .dawgdrops-item.dawgdrops-item a {
   font-family: "Encode Sans Compressed", sans-serif;
-  font-weight: 800;
+  font-weight: 600;
   font-size: 19px;
   padding: 5px 10px 21px 15px;
 }
@@ -5601,9 +5601,6 @@ table th[class*="col-"] {
 .uw-breadcrumbs li:first-child a:before {
   right: -18px;
 }
-.uw-breadcrumbs li:first-child a br {
-  display: none;
-}
 .uw-breadcrumbs li:first-child:after {
   top: 17px;
 }
@@ -5658,6 +5655,10 @@ table th[class*="col-"] {
   display: block;
   white-space: nowrap;
   overflow: hidden;
+}
+.uw-breadcrumbs a br,
+.uw-breadcrumbs span br {
+  display: none;
 }
 @media only screen and (max-width: 767px) {
   .uw-breadcrumbs {
