@@ -21,11 +21,9 @@ class UW_TinyShortcode
 
     function init() {
         if( !is_admin() ) {
-                wp_enqueue_style( 'bs_bootstrap', plugins_url( 'css/bootstrap.css', __FILE__ ) );
-                wp_enqueue_style( 'bs_shortcodes', plugins_url( 'css/shortcodes.css', __FILE__ ) );
-                wp_enqueue_script( 'bs_bootstrap', get_stylesheet_directory_uri() . '/assets/admin/css/bootstrap.js' , array( 'jquery' ) );
+            return;
         } else {
-            wp_enqueue_style( 'bs_admin_style', get_stylesheet_directory_uri() . '/assets/admin/css/bootstrap-shortcode-admin.css'  );
+            wp_enqueue_style( 'bs_admin_style', get_template_directory_uri() . '/assets/admin/css/bootstrap-shortcode-admin.css'  );
         }
         if ( !current_user_can( 'edit_posts' ) && !current_user_can( 'edit_pages' ) ) {
             return;
@@ -45,7 +43,7 @@ class UW_TinyShortcode
 
     function regplugins( $plgs) {
         foreach ( $this->shortcodes as &$shortcode ) {
-            $plgs[ 'bs_' . $shortcode ] = get_stylesheet_directory_uri() . '/js/plugins/' . $shortcode . '.js' ;
+            $plgs[ 'bs_' . $shortcode ] = get_template_directory_uri() . '/js/plugins/' . $shortcode . '.js' ;
         }
         return $plgs;
     }

@@ -1,20 +1,5 @@
-@font-face {
-  font-family: 'Encode Sans Compressed';
-  src: url('../../../assets/fonts/encodesanscondensed-400-regular-webfont.eot');
-  src: url('../../../assets/fonts/encodesanscondensed-400-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../../../assets/fonts/encodesanscondensed-400-regular-webfont.woff') format('woff'), url('assets/fonts/encodesanscondensed-400-regular-webfont.ttf') format('truetype'), url('../../../assets/fonts/encodesanscondensed-400-regular-webfont.svg#encodesanscondensed-400-regular-webfont') format('svg');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Encode Sans Compressed';
-  src: url('../../../assets/fonts/encodesanscompressed-600-semibold-webfont.eot');
-  src: url('../../../assets/fonts/encodesanscompressed-600-semibold-webfont.eot?#iefix') format('embedded-opentype'), url('../../../assets/fonts/encodesanscompressed-600-semibold-webfont.woff') format('woff'), url('../../../assets/fonts/encodesanscompressed-600-semibold-webfont.ttf') format('truetype'), url('../../../assets/fonts/encodesanscompressed-600-semibold-webfont.svg#encodesanscompressed-600-semibold-webfont') format('svg');
-  font-weight: 600;
-  font-style: normal;
-}
-
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Encode Sans Compressed",sans-serif;
+  font-family: 'Open Sans',sans-serif;
   color: rgb(89, 89, 89);
  }
 
