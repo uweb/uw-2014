@@ -23,7 +23,7 @@ class UW_Shortcodes
         require_once('class.subpage-list-shortcode.php');
         require_once('class.accordion-shortcode.php');
         require_once('class.bookmarks-shortcode.php');
-        require_once('class.tiny-shortcode.php');
+      //  require_once('class.tiny-shortcode.php');
         require_once('class.grid-shortcode.php');
     }
 
@@ -37,7 +37,7 @@ class UW_Shortcodes
         $this->subpage_list   = new UW_SubpageList();
         $this->accordion      = new UW_AccordionShortcode();
         $this->bookmarks      = new UW_BookmarkShortcode();
-        $this->bootstrap      = new UW_TinyShortcode();
+      //  $this->bootstrap      = new UW_TinyShortcode();
         $this->bootstrap      = new UW_GridShortcode();
     }
 }
