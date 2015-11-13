@@ -36,7 +36,7 @@ class UW_Users
             $role = $role;
     }
 
-    if($role == "editor") { 
+    if(isset($role) && $role == "editor") { 
        remove_submenu_page( 'themes.php', 'themes.php' );
        remove_submenu_page( 'themes.php', 'nav-menus.php' );
        global $submenu;
