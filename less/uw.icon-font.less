@@ -6,13 +6,12 @@
 	font-variant: normal;
 	text-transform: none;
 	line-height: 1;
-
+	display: block;
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	&:before {
 		font-size: 70px;
-	    display: block;
 	    color: @purple;
 	}
 	&.gold {
@@ -20,11 +19,17 @@
 		a {
 			color: @darkgold;
 		}
+	}	
+	&.gray {
+		&:before,
+		a {
+			color: @darkgray;
+		}
 	}
 }
 .sm  {
 	&:before {
-		font-size: 20px;
+		font-size: 35px;
 	}
 }
 .lg  {
@@ -166,30 +171,32 @@
 
 // Menu using icons 
 
-.iccon-menu {
+.icon-menu {
     text-align: center;
-    padding: 25px 0 20px;
     margin: 40px 0;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
+    ul {
+    	padding-left: 0;
+    }
 	li {
 		list-style: none;
 		text-align: center;
 		display: inline-block;
-		padding: 0 30px;
+		padding: 30px;
 		position: relative;
-		&:after {
-    		content: "";
-    		display: block;
-    		width: 1px;
-    		height: 100px;
-    		background-color: #ddd;
-    		position: absolute;
-    		right: -10px;
-    		top: 50%;
-    		margin-top: -50px;
-    		.skew(-15deg, 0);
-		}
+//		&:after {
+//    		content: "";
+//    		display: block;
+//    		width: 1px;
+//    		height: 100px;
+//    		background-color: #ddd;
+//    		position: absolute;
+//    		right: -10px;
+//    		top: 50%;
+//    		margin-top: -50px;
+//    		.skew(-15deg, 0);
+//		}
 	}
 	a {
 		line-height: @headings-line-height;
@@ -201,11 +208,27 @@
 	    padding-top: 100px;
     	margin-top: -85px;
 		.transition(all .5s cubic-bezier(0.165, 0.84, 0.44, 1));
-		&:hover {
+		&:hover,
+		&:focus {
 			.translate(0, -10px);
 		}
 	}
 }
 
 
+@media only screen and (max-width : 767px) {
 
+	.icon-menu {
+	    ul {
+
+	    }
+		li {
+			padding: 20px 0px;
+    		width: 47%;
+		}
+		a {
+
+		}
+	}	
+
+}

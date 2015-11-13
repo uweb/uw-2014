@@ -8558,6 +8558,7 @@ label.screen-reader {
   font-variant: normal;
   text-transform: none;
   line-height: 1;
+  display: block;
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -8565,7 +8566,6 @@ label.screen-reader {
 [class^="ic-"]:before,
 [class*=" ic-"]:before {
   font-size: 70px;
-  display: block;
   color: #4b2e83;
 }
 [class^="ic-"].gold:before,
@@ -8574,8 +8574,14 @@ label.screen-reader {
 [class*=" ic-"].gold a {
   color: #85754d;
 }
+[class^="ic-"].gray:before,
+[class*=" ic-"].gray:before,
+[class^="ic-"].gray a,
+[class*=" ic-"].gray a {
+  color: #5a5a5a;
+}
 .sm:before {
-  font-size: 20px;
+  font-size: 35px;
 }
 .lg:before {
   font-size: 100px;
@@ -8709,38 +8715,23 @@ label.screen-reader {
 .ic-right-arrow:before {
   content: "\e92a";
 }
-.iccon-menu {
+.icon-menu {
   text-align: center;
-  padding: 25px 0 20px;
   margin: 40px 0;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 }
-.iccon-menu li {
+.icon-menu ul {
+  padding-left: 0;
+}
+.icon-menu li {
   list-style: none;
   text-align: center;
   display: inline-block;
-  padding: 0 30px;
+  padding: 30px;
   position: relative;
 }
-.iccon-menu li:after {
-  content: "";
-  display: block;
-  width: 1px;
-  height: 100px;
-  background-color: #ddd;
-  position: absolute;
-  right: -10px;
-  top: 50%;
-  margin-top: -50px;
-  -webkit-transform: skewX(-15deg) skewY(0);
-  -o-transform: skewX(-15deg) skewY(0);
-  transform: skewX(-15deg) skewY(0);
-  -webkit-transform: skew(-15deg, 0);
-  -ms-transform: skewX(-15deg) skewY(0);
-  transform: skew(-15deg, 0);
-}
-.iccon-menu a {
+.icon-menu a {
   line-height: 1.3;
   font-family: "Encode Sans Compressed", sans-serif;
   font-size: 16px;
@@ -8753,11 +8744,18 @@ label.screen-reader {
   -webkit-transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-.iccon-menu a:hover {
+.icon-menu a:hover,
+.icon-menu a:focus {
   -o-transform: translate(0, -10px);
   -webkit-transform: translate(0, -10px);
   -ms-transform: translate(0, -10px);
   transform: translate(0, -10px);
+}
+@media only screen and (max-width: 767px) {
+  .icon-menu li {
+    padding: 20px 0px;
+    width: 47%;
+  }
 }
 /*==========  Non-Mobile First Method  ==========*/
 /* Large Devices, Wide Screens */

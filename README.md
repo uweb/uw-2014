@@ -33,6 +33,7 @@ This is an overview of the custom widgets, plugins and various features it inclu
   - [Slideshow](#slideshow)
   - [Subpage List](#subpagelist)
   - [Accordion](#accordion)
+  - [Custom Menu](#custommenu)
 - [Features](#features)
   - [UW Widget Visibility](#uwwidgetvisiblity)
   - [UW Media Credit](#uwmediacredit)
@@ -397,6 +398,17 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
    [/accordion]
 ```
 
+
+### Custom Menu ###
+> This shortcode pulls in a custom menu that can be created under _Dashboard > Appearance > Menus_. Icons can be added in the class field in the menu builder. View the [full set of icons](http://www.washington.edu/brand/web-2/html-web-components/web-icons/) for more information.
+> 
+> Example:   
+```
+  [custommenu menu=Menu-name-here]
+```
+> Attributes:  
+
+> -  __menu__ : Enter the name of the menu found in _Dashboard > Appearance > Menus_. (_Default: Main menu_)   
 
 
 
