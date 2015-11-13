@@ -8558,7 +8558,6 @@ label.screen-reader {
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-  display: block;
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -8567,6 +8566,7 @@ label.screen-reader {
 [class*=" ic-"]:before {
   font-size: 70px;
   color: #4b2e83;
+  display: block;
 }
 [class^="ic-"].gold:before,
 [class*=" ic-"].gold:before,
