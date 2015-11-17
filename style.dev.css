@@ -8586,6 +8586,36 @@ label.screen-reader {
 .lg:before {
   font-size: 100px;
 }
+.ic-directions:before {
+  content: "\e92b";
+}
+.ic-capitol:before {
+  content: "\e92c";
+}
+.ic-map-marker:before {
+  content: "\e92d";
+}
+.ic-passport:before {
+  content: "\e92e";
+}
+.ic-handshake:before {
+  content: "\e92f";
+}
+.ic-suitcase:before {
+  content: "\e930";
+}
+.ic-administration:before {
+  content: "\e931";
+}
+.ic-plane:before {
+  content: "\e932";
+}
+.ic-globe2:before {
+  content: "\e933";
+}
+.ic-podium:before {
+  content: "\e934";
+}
 .ic-flag:before {
   content: "\e900";
 }
