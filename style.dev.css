@@ -8549,8 +8549,11 @@ label.screen-reader {
 #trumba\.spud\.5 iframe {
   margin: 0;
 }
-[class^="ic-"],
-[class*=" ic-"] {
+[class^="ic-"]:before,
+[class*=" ic-"]:before {
+  font-size: 70px;
+  color: #4b2e83;
+  display: block;
   font-family: 'uw-icon';
   speak: none;
   font-style: normal;
@@ -8561,12 +8564,6 @@ label.screen-reader {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-[class^="ic-"]:before,
-[class*=" ic-"]:before {
-  font-size: 70px;
-  color: #4b2e83;
-  display: block;
 }
 [class^="ic-"].gold:before,
 [class*=" ic-"].gold:before,
