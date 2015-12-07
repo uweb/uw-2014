@@ -66,18 +66,11 @@ class UW_Sidebar_Menu_Walker extends Walker_Page {
                 $args['link_after']
             );   
         } else if ($parent[0] === "on" && $depth != 0) { 
-            //  $output .= $indent . sprintf(
-            //     '<li class="%s"><a href="%s">%s%s%s</a>',
-            //     $css_classes,
-            //     get_permalink( $page->ID ),
-            //     $args['link_before'],
-            //     apply_filters( 'the_title', $page->post_title, $page->ID ),
-            //     $args['link_after']
-            // );
+            //$output = '';
         } else {
               $output .= $indent . sprintf(
                 '<li class="%s"><a href="%s">%s%s%s</a>',
-                $css_classes,
+                $css_classes . " child-page-existance-tester",
                 get_permalink( $page->ID ),
                 $args['link_before'],
                 apply_filters( 'the_title', $page->post_title, $page->ID ),
