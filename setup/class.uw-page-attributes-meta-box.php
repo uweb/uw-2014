@@ -113,7 +113,7 @@ class UW_Page_Attributes_Meta_Box
 
     echo "<div class='uw-admin-template'>";
     $checked = checked( $default, 'default', false );
-    echo "<p><input type='radio' name='page_template' value='default' $checked >Default Template</input> (<a id='enchanced-preview' href='#'>preview<span><img src='" . get_stylesheet_directory_uri() . $previews['Default Template'] . "' alt='' width='300px' height='' />
+    echo "<p><input type='radio' name='page_template' value='default' $checked >Default Template</input> (<a id='enchanced-preview' href='#'>preview<span><img src='" . get_template_directory_uri() . $previews['Default Template'] . "' alt='' width='300px' height='' />
 </span></a>)</p>";
     foreach ( array_keys( $templates ) as $template )
     {
@@ -123,7 +123,7 @@ class UW_Page_Attributes_Meta_Box
       }
 
       $checked = checked( $default, $templates[ $template ], false );
-      echo "<p><input type='radio' name='page_template' value='" . $templates[ $template ] . "' $checked >$template</input> (<a id='enchanced-preview' href='#'>preview<span><img src='" . get_stylesheet_directory_uri() . $previews[$template] . "' alt='' width='300px' height='' />
+      echo "<p><input type='radio' name='page_template' value='" . $templates[ $template ] . "' $checked >$template</input> (<a id='enchanced-preview' href='#'>preview<span><img src='" . get_template_directory_uri() . $previews[$template] . "' alt='' width='300px' height='' />
 </span></a>)</p>";
     }
     echo "</div>";
