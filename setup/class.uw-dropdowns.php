@@ -84,7 +84,7 @@ class UW_Dropdowns
         $this->add_menu_item( 'Academic Departments', 'http://uw.edu/about/academics/departments/', $parent = 'Academics' );
         $this->add_menu_item( 'Colleges & Schools', 'http://uw.edu/about/academics/', $parent = 'Academics' );
         $this->add_menu_item( 'Course Descriptions', 'http://www.washington.edu/students/crscat/', $parent = 'Academics' );
-        $this->add_menu_item( 'Registration', 'http://depts.washington.edu/registra/learning/registration-resources/', $parent = 'Academics' );
+        $this->add_menu_item( 'Registration', 'http://helpcenter.uw.edu/registration-resources/', $parent = 'Academics' );
         $this->add_menu_item( 'Student Guide', 'http://www.washington.edu/students/', $parent = 'Academics' );
         $this->add_menu_item( 'Time Schedule', 'http://uw.edu/students/timeschd/', $parent = 'Academics');
 
