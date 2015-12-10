@@ -151,8 +151,6 @@ class UW_Dropdowns
             if (!current_user_can('Super Admin')){
                 wp_die('Insufficient permission: can not edit the default dropdowns menu.');
             } 
-            $all_menus = wp_get_nav_menu_object( 'dropdowns' );
-            wp_die( print_r( $all_menus ) );
         } 
     }
 
