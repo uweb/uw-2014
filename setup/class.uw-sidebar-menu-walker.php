@@ -65,7 +65,7 @@ class UW_Sidebar_Menu_Walker extends Walker_Page {
                 apply_filters( 'the_title', $page->post_title, $page->ID ),
                 $args['link_after']
             );   
-        } else if ($parent[0] === "on" && $depth != 0) { 
+        } else if ((isset($parent[0]) && $parent[0] === "on") && $depth != 0) { 
             //$output = '';
         } else {
               $output .= $indent . sprintf(

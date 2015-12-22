@@ -49,7 +49,7 @@ class UW_QuickLinks
 
   function parse_menu()
   {
-    if ( $this->items )
+    if ( isset($this->items) )
       foreach( $this->items as $index=>$item )
       {
         // Only keep the necessary keys of the $item
@@ -61,7 +61,7 @@ class UW_QuickLinks
 
       }
 
-    return $menu ? $menu : array();
+    return isset($menu) ? $menu : array();
   }
 
 }
