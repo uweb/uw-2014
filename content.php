@@ -20,6 +20,7 @@ endif;
 ?>
 
 <?php
+  the_post_thumbnail();
 
   if ( is_archive() || is_home() )
     the_excerpt();
