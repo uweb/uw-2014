@@ -20,10 +20,12 @@ endif;
 ?>
 
 <?php
+  
 
-  if ( is_archive() || is_home() )
+  if ( is_archive() || is_home() ) {
+    the_post_thumbnail();
     the_excerpt();
-  else
+  } else
     the_content();
     //comments_template(true);
  ?>

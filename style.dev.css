@@ -4064,6 +4064,10 @@ ul.uw-select li.inactive a {
   background-image: url(assets/svg/uw-sprite.svg);
   background-repeat: no-repeat;
 }
+.uw-accordion-shortcode__panel .uw-accordion-shortcode__header {
+  color: #595959;
+  padding-left: 20px;
+}
 .uw-accordion-shortcode__header[aria-expanded="true"]:before {
   background-position: -283px -23px;
 }

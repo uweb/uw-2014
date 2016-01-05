@@ -22,7 +22,8 @@ class UW_AccordionShortcode
         add_filter( 'the_excerpt', 'wpautop' , self::PRIORITY );
 
         add_shortcode('accordion', array($this, 'accordion_handler'));
-        add_shortcode('section', array($this, 'section_handler'));      
+        add_shortcode('section', array($this, 'section_handler'));
+        add_shortcode('subsection', array($this, 'subsection_handler'));      
     }
 
     function accordion_handler( $atts, $content )
@@ -47,7 +48,20 @@ class UW_AccordionShortcode
         if ( empty( $content ) ){
           $content = 'No content for this tile.  Make sure you wrap your content like this: [tile]Content here[/tile]';
         }
+        $output = do_shortcode( $content );
+        return sprintf( '<h2 class="js-accordion__header">%s</h2><div class="js-accordion__panel">%s</div>', $section_atts['title'], apply_filters( 'the_content', $output ) );
+    }
 
-        return sprintf( '<h2 class="js-accordion__header">%s</h2><div class="js-accordion__panel">%s</div>', $section_atts['title'], apply_filters( 'the_content', $content ) );
+    function subsection_handler( $atts, $content )
+    {
+        $section_atts = shortcode_atts( array(
+          'title' => '',
+        ), $atts);
+
+        if ( empty( $content ) ){
+          $content = 'No content for this tile.  Make sure you wrap your content like this: [tile]Content here[/tile]';
+        }
+        $output = do_shortcode( $content );
+        return sprintf( '<h3 class="js-accordion__header uw-accordion-subheader">%s</h3><div class="js-accordion__panel">%s</div>', $section_atts['title'], apply_filters( 'the_content', $output ) );
     }
 }

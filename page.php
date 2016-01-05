@@ -7,7 +7,7 @@
 
   <div class="row">
 
-    <div class="col-md-<?php echo (($sidebar[0]!="on") ? "8" : "12" ) ?> uw-content" role='main'>
+    <div class="col-md-<?php echo ((!isset($sidebar[0]) || $sidebar[0]!="on") ? "8" : "12" ) ?> uw-content" role='main'>
 
       <?php uw_site_title(); ?>
 
@@ -41,7 +41,7 @@
     </div>
 
     <div id="sidebar"><?php 
-      if($sidebar[0]!="on"){
+      if(!isset($sidebar[0]) || $sidebar[0]!="on"){
         get_sidebar();
       }
     ?></div>

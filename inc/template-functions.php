@@ -120,7 +120,9 @@ if ( ! function_exists( 'uw_list_pages') ) :
       'walker'       => $UW->SidebarMenuWalker
     ));
 
-    return  $pages  ? sprintf( '%s<ul class="%s first-level">%s</ul>', $toggle, $class, $pages ) : '';
+    $bool = strpos($pages , 'child-page-existance-tester');
+
+    return  $bool ? sprintf( '%s<ul class="%s first-level">%s</ul>', $toggle, $class, $pages ) : '';
 
   }
 
