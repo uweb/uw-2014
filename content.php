@@ -23,8 +23,9 @@ endif;
   
 
   if ( is_archive() || is_home() ) {
-    the_post_thumbnail();
+    the_post_thumbnail( array(130, 130), array( 'class' => 'attachment-post-thumbnail blogroll-img' ) );
     the_excerpt();
+    echo "<hr>";
   } else
     the_content();
     //comments_template(true);

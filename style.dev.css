@@ -5900,6 +5900,10 @@ img.attachment-post-thumbnail.wp-post-image {
   height: 150px;
   width: auto;
 }
+img.attachment-post-thumbnail.wp-post-image.blogroll-img {
+  margin-bottom: 20px;
+  height: 130px;
+}
 /* Small Devices, Tablets */
 @media only screen and (max-width: 767px) {
   .uw-body {
