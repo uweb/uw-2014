@@ -10975,6 +10975,10 @@ UW.getBaseUrl = function() {
     url = Backbone.history.location.origin// + ( site ? '/' + site : '' ) + '/'
   else
     url = Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/'
+  console.log("index: " + Backbone.history.location.origin.indexOf('www.washington.edu'))
+  console.log("origin: " + Backbone.history.location.origin) 
+  console.log("site: " + Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/') 
+  console.log("url: " + url)
   return url
 }
 
