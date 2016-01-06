@@ -294,6 +294,7 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
 > Attributes:  
 
 > - __alignment__ : How the text is aligned in each tile. Options: __centered__ or __none__ (_Default: none_)
+> - __color__ : Background color of the tiles. Options: __tan__ (_Default: none_)
 
 > Example:   
 ```
