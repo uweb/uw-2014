@@ -10970,7 +10970,12 @@ UW.elements = {
 
 UW.getBaseUrl = function() {
   var site = _.first( _.compact( Backbone.history.location.pathname.split('/') ) )
-  return Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/'
+  var url = ''
+  if (!Backbone.history.location.origin.indexOf('www.washington.edu'))
+    url = Backbone.history.location.origin// + ( site ? '/' + site : '' ) + '/'
+  else
+    url = Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/'
+  return url
 }
 
 UW.sources = {
