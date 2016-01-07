@@ -21,10 +21,11 @@ UW.elements = {
 UW.getBaseUrl = function() {
   var site = _.first( _.compact( Backbone.history.location.pathname.split('/') ) )
   var url = ''
-  if (!Backbone.history.location.origin.indexOf('www.washington.edu'))
-    url = Backbone.history.location.origin// + ( site ? '/' + site : '' ) + '/'
-  else
+  if (Backbone.history.location.origin.indexOf('www.washington.edu') != -1) {
     url = Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/'
+  } else {
+    url = Backbone.history.location.origin
+  }
   console.log("index: " + Backbone.history.location.origin.indexOf('www.washington.edu'))
   console.log("origin: " + Backbone.history.location.origin) 
   console.log("site: " + Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/') 
