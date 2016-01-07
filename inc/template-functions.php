@@ -109,7 +109,7 @@ if ( ! function_exists( 'uw_list_pages') ) :
       'exclude'   => $parent->ID
     ) );
 
-    $ids = ! is_front_page() ? array_map( function($sibling) { return $sibling->ID; }, $siblings ) : array();
+    $ids = !is_front_page() ? array_map( function($sibling) { return $sibling->ID; }, $siblings ) : array();
 
     $pages = wp_list_pages(array(
       'title_li'     => '<a href="'.get_bloginfo('url').'" title="Home" class="homelink">Home</a>',
@@ -122,7 +122,7 @@ if ( ! function_exists( 'uw_list_pages') ) :
 
     $bool = strpos($pages , 'child-page-existance-tester');
 
-    return  $bool ? sprintf( '%s<ul class="%s first-level">%s</ul>', $toggle, $class, $pages ) : '';
+    return  $bool && !is_search() ? sprintf( '%s<ul class="%s first-level">%s</ul>', $toggle, $class, $pages ) : '';
 
   }
 
