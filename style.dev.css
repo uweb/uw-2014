@@ -8482,6 +8482,42 @@ label.screen-reader {
   margin: 0 0 30px;
   width: 70%;
 }
+#hero-container #hashtag {
+  position: absolute;
+  font-family: "Encode Sans Compressed", sans-serif;
+  font-weight: 900;
+  color: #4B2E83;
+  font-size: 21px;
+  overflow: hidden;
+}
+#hero-container #hashtag span {
+  background-color: rgba(255, 255, 255, 0.9);
+  -webkit-transform: skew(-15deg, 0);
+  -ms-transform: skewX(-15deg) skewY(0);
+  transform: skew(-15deg, 0);
+  padding: 2px 25px 3px 28px;
+  display: block;
+  margin: 0 10px 0 -10px;
+}
+#hero-container #hashtag span span {
+  transform: skew(15deg, 0);
+  display: block;
+  background-color: transparent;
+}
+#hero-container #hashtag span span big {
+  font-size: xx-large;
+}
+#hero-container #hashtag span span small {
+  font-family: 'Uni Sans', sans-serif;
+  font-weight: 300;
+}
+#hero-container a.uw-btn {
+  background-color: #fff;
+  color: #4B2E83;
+}
+#hero-container a.uw-btn:before {
+  background-color: #b7a57a;
+}
 .uw-site-title-blank {
   font-size: 50px;
   padding-top: 20px;
@@ -8499,9 +8535,46 @@ label.screen-reader {
 .hero-height2 {
   height: 245px;
 }
-.hero-height2 .container {
-  height: 145px;
-  line-height: 145px;
+.hero-height2 .container #hashtag.mask {
+  position: inherit;
+  visibility: hidden;
+}
+.hero-height2 .container #hashtag {
+  position: absolute;
+  top: 0px;
+  font-family: "Encode Sans Compressed", sans-serif;
+  font-weight: 900;
+  color: #4B2E83;
+  font-size: 21px;
+  overflow: hidden;
+}
+.hero-height2 .container #hashtag span {
+  background-color: rgba(255, 255, 255, 0.9);
+  -webkit-transform: skew(-15deg, 0);
+  -ms-transform: skewX(-15deg) skewY(0);
+  transform: skew(-15deg, 0);
+  padding: 2px 25px 3px 28px;
+  display: block;
+  margin: 0 10px 0 -10px;
+}
+.hero-height2 .container #hashtag span span {
+  transform: skew(15deg, 0);
+  display: block;
+  background-color: transparent;
+}
+.hero-height2 .container #hashtag span span big {
+  font-size: xx-large;
+}
+.hero-height2 .container #hashtag span span small {
+  font-family: 'Uni Sans', sans-serif;
+  font-weight: 300;
+}
+.hero-height2 .container a.uw-btn {
+  background-color: #fff;
+  color: #4B2E83;
+}
+.hero-height2 .container a.uw-btn:before {
+  background-color: #b7a57a;
 }
 .hero-height2 h1 {
   font-family: "Encode Sans Compressed", sans-serif;
@@ -8526,6 +8599,9 @@ label.screen-reader {
   width: 600px;
   background: url(assets/svg/slashes-light.svg) no-repeat 0 0;
   z-index: 0;
+}
+.hero-height2:before {
+  display: none;
 }
 .hero-height2:after {
   display: none;

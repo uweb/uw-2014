@@ -81,7 +81,7 @@ class UW_Page_Attributes_Meta_Box
 
     <label class="screen-reader-text" for="page_template"><?php _e('Page Template') ?></label>
 
-    <?php $this->page_template_dropdown($template); ?>
+    <?php $this->page_template_dropdown($template , $post); ?>
 
     <?php }
     $sidebar = get_post_meta($post->ID, "sidebar", true);
@@ -103,7 +103,7 @@ class UW_Page_Attributes_Meta_Box
     <?php
   }
 
-  function page_template_dropdown( $default = '' ) {
+  function page_template_dropdown( $default = '' , $post) {
 
     $previews = array('Big Hero' => '/assets/images/template-big-hero.png', 'Small Hero' => '/assets/images/template-small-hero.png', 'No image' => '/assets/images/template-no-image.png', 'No title/image' => '/assets/images/template-no-title.png', 'Default Template' => '/assets/images/template-default.png');
 
@@ -127,7 +127,21 @@ class UW_Page_Attributes_Meta_Box
 </span></a>)</p>";
     }
     echo "</div>";
+    if ($default === "templates/template-big-hero.php" || $default === "templates/template-small-hero.php") { 
+      if (is_super_admin()) { 
+        $banner = get_post_meta($post->ID, "banner", true);
+        wp_nonce_field( 'banner_nonce' , 'banner_name' );
 
+        $buttontext = get_post_meta($post->ID, "buttontext", true);
+        wp_nonce_field( 'buttontext_nonce' , 'buttontext_name' );
+
+        $buttonlink = get_post_meta($post->ID, "buttonlink", true);
+        wp_nonce_field( 'buttonlink_nonce' , 'buttonlink_name' );
+
+        echo "<p><b>Banner</b></br><input type='text' name='bannertext' value='" . $banner . "'></p>";
+        echo "<p><b>Button</b></br>Text</br><input type='text' name='buttontext' value='" . $buttontext . "'></br>Link</br><input type='text' name='buttonlink' value='" . $buttonlink . "'></p>";
+      }
+    }
   }
 
   function custom_style() {
@@ -140,6 +154,42 @@ class UW_Page_Attributes_Meta_Box
     $post_status = get_post_status( $post_ID );
     if (!isset($post_type) || 'page' != $post_type ) {
         return $post_ID;
+    }
+
+    if ( isset( $_POST['banner_name'] ) ) { 
+      if ( ! empty( $_POST ) && check_admin_referer( 'banner_nonce', 'banner_name') ) { //limit to only pages
+        if ($post_type) {
+          if(isset($_POST["bannertext"])) {
+            update_post_meta($post_ID, "banner", $_POST["bannertext"]);
+          } else {
+            update_post_meta($post_ID, "banner", null); 
+          }
+        }
+      }
+    }
+
+    if ( isset( $_POST['buttontext_name'] ) ) { 
+      if ( ! empty( $_POST ) && check_admin_referer( 'buttontext_nonce', 'buttontext_name') ) { //limit to only pages
+        if ($post_type) {
+          if(isset($_POST["buttontext"])) {
+            update_post_meta($post_ID, "buttontext", $_POST["buttontext"]);
+          } else {
+            update_post_meta($post_ID, "buttontext", null); 
+          }
+        }
+      }
+    }
+
+    if ( isset( $_POST['buttonlink_name'] ) ) { 
+      if ( ! empty( $_POST ) && check_admin_referer( 'buttonlink_nonce', 'buttonlink_name') ) { //limit to only pages
+        if ($post_type) {
+          if(isset($_POST["buttonlink"])) {
+            update_post_meta($post_ID, "buttonlink", $_POST["buttonlink"]);
+          } else {
+            update_post_meta($post_ID, "buttonlink", null); 
+          }
+        }
+      }
     }
 
     if ( isset( $_POST['sidebar_name'] ) ) { 

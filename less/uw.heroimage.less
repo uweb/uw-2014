@@ -39,6 +39,42 @@
 		margin: 0 0 30px;
 		width: 70%;
 	}
+	#hashtag {
+		position: absolute;
+	    font-family: "Encode Sans Compressed" , sans-serif;
+	    font-weight: 900;
+	    color: #4B2E83;
+	    font-size: 21px;
+	    overflow: hidden;
+	    span {
+	    	background-color: rgba(255,255,255,.9);
+		    -webkit-transform: skew(-15deg,0);
+		    -ms-transform: skewX(-15deg) skewY(0);
+		    transform: skew(-15deg,0);
+		    padding: 2px 25px 3px 28px;
+		    display: block;
+		    margin: 0 10px 0 -10px;
+		    span {
+		    	transform: skew(15deg,0);
+    			display: block;
+    			background-color: transparent;
+    			big {
+    				font-size: xx-large;
+    			}
+    			small {
+    				font-family: 'Uni Sans', sans-serif;
+    				font-weight: 300;
+    			}
+		    }
+	    }
+	}
+	a.uw-btn {
+		background-color: #fff;
+		color: #4B2E83;
+		&:before {
+			background-color: #b7a57a;
+		}
+	}
 }
 
 // No image, but title remains
@@ -67,8 +103,47 @@
 .hero-height2 {
 	height: 245px;
 	.container {
-    	height: 145px;
-    	line-height: 145px;
+    	#hashtag.mask {
+    		position: inherit;
+    		visibility: hidden;
+    	}
+    	#hashtag {
+			position: absolute;
+			top: 0px;
+		    font-family: "Encode Sans Compressed" , sans-serif;
+		    font-weight: 900;
+		    color: #4B2E83;
+		    font-size: 21px;
+		    overflow: hidden;
+		    span {
+		    	background-color: rgba(255,255,255,.9);
+			    -webkit-transform: skew(-15deg,0);
+			    -ms-transform: skewX(-15deg) skewY(0);
+			    transform: skew(-15deg,0);
+			    padding: 2px 25px 3px 28px;
+			    display: block;
+			    margin: 0 10px 0 -10px;
+			    span {
+			    	transform: skew(15deg,0);
+	    			display: block;
+	    			background-color: transparent;
+	    			big {
+	    				font-size: xx-large;
+	    			}
+	    			small {
+	    				font-family: 'Uni Sans', sans-serif;
+	    				font-weight: 300;
+	    			}
+			    }
+		    }
+		}
+		a.uw-btn {
+			background-color: #fff;
+			color: #4B2E83;
+			&:before {
+				background-color: #b7a57a;
+			}
+		}
 	}
 	h1 {
 		font-family: @font-family-headline;
@@ -94,7 +169,9 @@
 		  	z-index: 0;
 		}
 	}
-	&:after {
+	&:before {
+		display: none;
+	}&:after {
 		display: none;
 	}
 	.udub-slant {

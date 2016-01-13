@@ -9,13 +9,19 @@
       if(!$url){
         $url = get_site_url() . "/wp-content/themes/uw-2014/assets/headers/suzzallo.jpg";
       }
-      $sidebar = get_post_meta($post->ID, "sidebar");   ?>
+      $sidebar = get_post_meta($post->ID, "sidebar");
+      $banner = get_post_meta($post->ID, "banner");
+      $buttontext = get_post_meta($post->ID, "buttontext");
+      $buttonlink = get_post_meta($post->ID, "buttonlink");   ?>
 
 
 <div class="uw-hero-image hero-height2" style="background-image: url(<?php echo $url ?>);">
       <div class="container">
+        <div id="hashtag" class="mask"><span><span><?php echo $banner[0] ? $banner[0] : ''; ?></span></span></div>
+        <div id="hashtag"><span><span><?php echo $banner[0] ? $banner[0] : ''; ?></span></span></div>
         <h1 class="uw-site-title2"><?php the_title(); ?></h1>
-        <span class="udub-slant"><span></span></span>      
+        <span class="udub-slant"><span></span></span>
+        <a class="uw-btn btn-sm btn-none" href="<?php echo $buttonlink[0] ? $buttonlink[0] : ''; ?>"><?php echo $buttontext[0] ? $buttontext[0] : ''; ?></a>      
       </div>
 </div>
 <div class="container uw-body">
