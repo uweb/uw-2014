@@ -28,6 +28,8 @@ class UW_TrumbaRSS
             return 'missing required URL to identify the feed';
         }
 
+        echo $attributes->description;
+
         $xml=simplexml_load_file($url) or die("Error: Cannot create feed from URL.");
 
         $return = "";
