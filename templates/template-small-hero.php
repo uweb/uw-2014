@@ -17,8 +17,8 @@
 
 <div class="uw-hero-image hero-height2" style="background-image: url(<?php echo $url ?>);">
       <div class="container">
-        <?php if(!empty($banner[0])){ ?>
         <div id="hashtag" class="mask"><span><span><?php echo $banner[0] ? $banner[0] : ''; ?></span></span></div>
+        <?php if($banner[0]){ ?>
         <div id="hashtag"><span><span><?php echo $banner[0] ? $banner[0] : ''; ?></span></span></div>
         <?php } ?>
         <h1 class="uw-site-title2"><?php the_title(); ?></h1>
