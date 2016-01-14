@@ -10968,8 +10968,6 @@ UW.elements = {
 
 }
 
-
-
 UW.getBaseUrl = function() {
   var site = _.first( _.compact( Backbone.history.location.pathname.split('/') ) )
   var url = ''
@@ -10979,9 +10977,9 @@ UW.getBaseUrl = function() {
   }
 
   if (Backbone.history.location.origin.indexOf('www.washington.edu') != -1) {
-    url = Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/'
+    url = Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/';
   } else {
-    url = Backbone.history.location.origin
+    url = Backbone.history.location.origin + '/';
   }
   return url
 }
