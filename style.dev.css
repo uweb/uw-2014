@@ -8629,6 +8629,9 @@ label.screen-reader {
     margin-top: -50px;
     font-size: 18px;
   }
+  #hero-container #hashtag span span big {
+    font-size: 18px;
+  }
 }
 #trumba\.spud\.0 iframe,
 #trumba\.spud\.1 iframe,
