@@ -8625,6 +8625,10 @@ label.screen-reader {
   .hero-content .uw-site-title {
     display: block;
   }
+  #hero-container #hashtag {
+    margin-top: -50px;
+    font-size: 18px;
+  }
 }
 #trumba\.spud\.0 iframe,
 #trumba\.spud\.1 iframe,
