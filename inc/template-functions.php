@@ -340,7 +340,7 @@ if ( ! function_exists('uw_is_custom_post_type') ) :
 
   function uw_is_custom_post_type()
   {
-    return array_key_exists(  get_post_type(),  get_post_types( array( '_builtin'=>false) ) );
+    return get_post_type() ? array_key_exists(  get_post_type(),  get_post_types( array( '_builtin'=>false) ) ) : true;
   }
 
 endif;
