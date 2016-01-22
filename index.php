@@ -6,7 +6,7 @@
 
   <div class="row">
 
-    <div <?php uw_content_class(); ?> role='main'>
+    <div <?php if(function_exists('uw_content_class')){uw_content_class();} ?> role='main'>
 
       <?php uw_site_title(); ?>
 
