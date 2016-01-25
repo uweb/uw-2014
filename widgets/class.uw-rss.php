@@ -30,6 +30,7 @@ class UW_RSS extends WP_Widget
     'show_image'   => true,
     'show_date'    => true,
     'show_more'    => true,
+    'show_desc'    => false,
     'more'    => null
   );
 
@@ -154,6 +155,7 @@ class UW_RSS extends WP_Widget
         {
           $title = $item->get_title();
           $link  = $item->get_link();
+          $desc = $item->get_description();
 
           $enclosure = $item->get_enclosure();
           $src = $enclosure->link;
@@ -170,7 +172,17 @@ class UW_RSS extends WP_Widget
             $date = human_time_diff( strtotime( $date ) ) . ' ago';
           }
 
-          $title = "<a class='widget-link' href='$link' title='$attr'>$attr<span>$date</span></a>";
+          $desc = '';
+          if ( $show_desc == 'true' )
+          {
+            $desc = $item->get_description();
+            if( $show_date !== 'false')
+            {
+              $desc = "<br style='line-height:2;'>" . $desc;
+            }
+          }
+
+          $title = "<a class='widget-link' href='$link' title='$attr'>$attr<span>$date$desc</span></a>";
 
           $content .= "<li>$image$title</li>";
 
