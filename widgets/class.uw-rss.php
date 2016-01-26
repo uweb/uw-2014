@@ -12,8 +12,9 @@ class UW_RSS extends WP_Widget
   const ITEMS       = 10;
 
   private static $WIDGET_DEFAULTS  = array(
-    'url'          => true,
-    'title'        => true,
+    'url'          => '',
+    'title'        => '',
+    'text'         => '',
     'items'        => 10,
     'show_summary' => true,
     'show_author'  => true,
@@ -31,6 +32,7 @@ class UW_RSS extends WP_Widget
     'show_date'    => true,
     'show_more'    => true,
     'show_desc'    => false,
+    'has_blurb'    => false, 
     'more'    => null
   );
 
@@ -55,8 +57,10 @@ class UW_RSS extends WP_Widget
 
     extract( $inputs );
 
-    $number = esc_attr( $number );
+    //$number = esc_attr( $number );
     $title  = esc_attr( $title );
+    //$title = empty($title) ? '' : $title;
+    $text = esc_textarea( $text );
     $url    = esc_url( $url );
     $items  = ( $items < 1 || 20 < $items ) ? self::ITEMS : $items;
 
@@ -65,27 +69,32 @@ class UW_RSS extends WP_Widget
   ?>
 		<p>
 		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Give the feed a title (optional):' ); ?></label>
-    <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $instance['title']); ?>" />
+    <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" /> 
 		</p>
 
 		<p>
 		<label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php _e( 'Featured blurb:' ); ?></label>
-		<textarea class="widefat" style="resize:vertical" rows="14" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo esc_textarea($instance['text']); ?></textarea>
+		<textarea class="widefat" style="resize:vertical" rows="14" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea>
 		</p>
 
 		<p>
 		<label for="<?php echo $this->get_field_id( 'url' ); ?>"><?php _e( 'Enter the RSS feed URL here:' ); ?></label>
-		<input class="widefat" id="<?php echo $this->get_field_id( 'url' ); ?>" name="<?php echo $this->get_field_name( 'url' ); ?>" type="text" value="<?php echo esc_attr( $instance['url']); ?>" />
+		<input class="widefat" id="<?php echo $this->get_field_id( 'url' ); ?>" name="<?php echo $this->get_field_name( 'url' ); ?>" type="text" value="<?php echo $url ?>" />
 		</p>
 
     <p>
     <label for="<?php echo $this->get_field_id( 'items' ) ?>"><?php _e('Number of items to display:'); ?></label>
-    <select id="<?php echo $this->get_field_id( 'items' ) ?>" name="<?php echo $this->get_field_name( 'items' ) ?>">
+    <select id="<?php echo $this->get_field_id( 'items' ) ?>" name="<?php echo $this->get_field_name( 'items' ); ?>" value="<?php echo $items ?>">
       <?php
           for ( $i = 1; $i <= 20; ++$i )
             echo "<option value='$i' " . selected( $items, $i, false ) . ">$i</option>";
       ?>
     </select>
+    </p>
+
+    <p>
+      <label for="<?php echo $this->get_field_id( 'show_date' ); ?>"><?php _e( 'Show the date?' ); ?></label>
+      <input type="checkbox" id="<?php echo $this->get_field_id( 'show_date' ); ?>" name="<?php echo $this->get_field_name( 'show_date' ); ?>" <?php checked(  $show_date , true, true )  ?> />
     </p>
 
 <?php
@@ -100,7 +109,7 @@ class UW_RSS extends WP_Widget
 		$instance['show_image']   = (int) ( $new_instance['show_image'] );
 		$instance['show_summary'] = (int) ( $new_instance['show_summary'] );
 		$instance['show_author']  = (int) ( $new_instance['show_author'] );
-		$instance['show_date']    = (int) ( $new_instance['show_date'] );
+		$instance['show_date']    = (bool) ( $new_instance['show_date'] );
 
     // todo: this still necessary?
 		if ( current_user_can('unfiltered_html') )
@@ -122,9 +131,12 @@ class UW_RSS extends WP_Widget
 
     if ( ! empty( $title ) ) $content .= $before_title . $title . $after_title;
 
-    $content .= "<div class=\"featured\">$text</div>";
+    $content .= empty($text) ? "" : "<div class=\"featured\">$text</div>";
 
-    $content .= do_shortcode( "[rss url={$url}]");
+    $date_string = $show_date ? "true" : "false";
+    $has_blurb = empty($text) ? false : true;
+
+    $content .= do_shortcode( "[rss url={$url} number={$items} show_date={$date_string} has_blurb={$has_blurb}]");
 
     echo $before_widget . $content . $after_widget;
   }
@@ -138,14 +150,14 @@ class UW_RSS extends WP_Widget
 
     $title = apply_filters( 'widget_title', $title );
 
-    $content = '<span></span>';
+    $content = $has_blurb ? '<span></span>' : '';
 
      $rss = fetch_feed( wp_specialchars_decode($url) );
 
       if ( ! is_wp_error( $rss ) )
       {
         $url       = !$more ? $rss->get_permalink() : $more;
-        $maxitems  = $rss->get_item_quantity($atts['number']);
+        $maxitems  = $number;
 
         $rss_items = $rss->get_items(0, $maxitems);
 
