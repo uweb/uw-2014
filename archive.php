@@ -16,6 +16,8 @@
 
       <div id='main_content' class="uw-body-copy" tabindex="-1">
 
+      <h1><?php echo single_cat_title( '', false ); ?></h1><hr>
+
         <?php
           // Start the Loop.
           while ( have_posts() ) : the_post();
@@ -26,6 +28,7 @@
              * (where ___ is the post format) and that will be used instead.
              */
             get_template_part( 'content', 'archive' );
+
 
           endwhile;
         ?>
