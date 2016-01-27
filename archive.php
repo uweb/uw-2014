@@ -29,8 +29,8 @@
 
           endwhile;
         ?>
-
-        <?php posts_nav_link(' '); ?>
+        </br>
+        <?php posts_nav_link(' ', 'Previous page', 'Next page'); ?>
 
       </div>
 
