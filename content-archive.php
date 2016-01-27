@@ -15,7 +15,7 @@ endif;
     uw_mobile_menu();
   endif;
  if ( has_post_thumbnail() ) :
- 	the_post_thumbnail();
+ 	the_post_thumbnail( 'post-thumbnail' , 'style=margin-bottom:20px;');
  endif;
 ?>
 <?php the_excerpt(); ?>
