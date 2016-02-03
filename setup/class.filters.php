@@ -47,6 +47,17 @@ class UW_Filters
     // Custom except ending
     add_filter( 'excerpt_more', array( $this, 'custom_excerpt_more' ) );
 
+    add_filter('next_posts_link_attributes', array( $this, 'posts_link_attributes_right' ) );
+    add_filter('previous_posts_link_attributes', array( $this, 'posts_link_attributes_left' ) );
+
+  }
+
+  function posts_link_attributes_right() {
+    return 'class="uw-btn btn-sm"';
+  }
+
+  function posts_link_attributes_left() {
+    return 'class="uw-btn btn-sm btn-left"';
   }
 
   function custom_excerpt_more( $more ) {

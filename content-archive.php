@@ -1,7 +1,7 @@
 <?php the_date('F j, Y', '<p class="date">', '</p>'); ?>
-<h1>
+<h2 style="font-size: 27px;">
   <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title() ?></a>
-</h1>
+</h2>
 <?php
 if (get_option('show_byline_on_posts')) :
 ?>
@@ -15,7 +15,8 @@ endif;
     uw_mobile_menu();
   endif;
  if ( has_post_thumbnail() ) :
- 	the_post_thumbnail();
+ 	the_post_thumbnail( 'post-thumbnail' , 'style=margin-bottom:5px;');
  endif;
 ?>
 <?php the_excerpt(); ?>
+<hr>

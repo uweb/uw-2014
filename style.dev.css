@@ -8105,6 +8105,21 @@ a.uw-btn.btn-sm:after {
   background-size: 740px;
   background-position: -32px -410px;
 }
+a.uw-btn.btn-sm.btn-left {
+  margin-left: 43px;
+}
+a.uw-btn.btn-sm.btn-left:before {
+  left: -43px;
+  border-right: 5px solid rgba(0, 0, 0, 0.3);
+  border-left: none;
+}
+a.uw-btn.btn-sm.btn-left:after {
+  left: -43px;
+  margin-top: -25px;
+  transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+}
 a.uw-btn.btn-sm.btn-play:after {
   background-position: -31px -466px;
 }
@@ -8538,6 +8553,7 @@ label.screen-reader {
 .hero-height2 .container #hashtag.mask {
   position: inherit;
   visibility: hidden;
+  min-height: 70px;
 }
 .hero-height2 .container #hashtag {
   position: absolute;
@@ -8623,6 +8639,13 @@ label.screen-reader {
 @media only screen and (max-width: 767px) {
   .hero-content .uw-site-title {
     display: block;
+  }
+  #hero-container #hashtag {
+    margin-top: -50px;
+    font-size: 18px;
+  }
+  #hero-container #hashtag span span big {
+    font-size: 18px;
   }
 }
 #trumba\.spud\.0 iframe,

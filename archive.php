@@ -16,6 +16,8 @@
 
       <div id='main_content' class="uw-body-copy" tabindex="-1">
 
+      <h1><?php echo single_cat_title( '', false ); ?></h1><hr>
+
         <?php
           // Start the Loop.
           while ( have_posts() ) : the_post();
@@ -27,10 +29,11 @@
              */
             get_template_part( 'content', 'archive' );
 
+
           endwhile;
         ?>
-
-        <?php posts_nav_link(' '); ?>
+        </br>
+        <?php posts_nav_link(' ', 'Previous page', 'Next page'); ?>
 
       </div>
 
