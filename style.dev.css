@@ -8690,6 +8690,12 @@ label.screen-reader {
 .lg:before {
   font-size: 100px;
 }
+.ic-umbrella:before {
+  content: "\e935";
+}
+.ic-ribbon:before {
+  content: "\e936";
+}
 .ic-passport:before {
   content: "\e92b";
 }
