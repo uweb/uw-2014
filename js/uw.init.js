@@ -28,9 +28,11 @@ UW.getBaseUrl = function() {
 
   if (Backbone.history.location.origin.indexOf('www.washington.edu') != -1) {
     url = Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/';
+  } else if (Backbone.history.location.origin.indexOf('depts.washington.edu') != -1) {
+    url = Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/';
   } else {
     url = Backbone.history.location.origin + '/';
-  }
+  } 
   return url
 }
 
