@@ -6,7 +6,9 @@ Shortcode for using the Links list found in the dashboard
 
 Example: 
 [bookmark category_name=pfw categorize="0" title_li=""]
-See https://codex.wordpress.org/Function_Reference/wp_list_bookmarks for attributes that can be set
+[row]
+    [col class='col-md-12']Text[/col]
+[/row]
 
  */
 

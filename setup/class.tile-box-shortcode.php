@@ -4,16 +4,16 @@
  * meant for front page (maybe disable on not front page?)
  * boxes contain tiles.  Boxes support only tiles inside and only between 1 and 4 tiles.
  * 
- * structure: [box alignment="centered"][tile][/tile][tile][/tile][/box]
+ * structure: [box alignment="centered" shadow="none" padding="none"][tile][/tile][tile][/tile][/box]
  */
 
 
 Class TileBox
 {
-    const MAXTILES = 4;
+    const MAXTILES = 12;
     const PRIORITY = 11;
     private $count = 0;
-    private $NumbersArray = array('zero', 'one', 'two', 'three', 'four'); //arrays can't be constants in PHP.  Privates at least can't be changed
+    private $NumbersArray = array('zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve'); //arrays can't be constants in PHP.  Privates at least can't be changed
 
     function __construct()
     {
@@ -31,12 +31,24 @@ Class TileBox
 
         $boxCenter = shortcode_atts( array(
             'alignment' => 'none',
-            'color' => ''
+            'color' => '',
+            'padding' => '',
+            'shadow' => ''
         ), $atts );
  
         $color = '';
         if (!empty($boxCenter['color'])){
           $color = ' box-' . $boxCenter['color'];
+        }; 
+
+        $padding = '';
+        if (!empty($boxCenter['padding'])){
+          $padding = ' nopad';
+        }; 
+
+        $shadow = '';
+        if (!empty($boxCenter['shadow'])){
+          $shadow = ' noshadow';
         }; 
 
         $center = 'box-' . $boxCenter['alignment'];        
@@ -47,7 +59,7 @@ Class TileBox
             return 'No content inside the box element. Make sure your close your box element. Required stucture: [box][tile]content[/tile][/box]';
 
         $output = do_shortcode( $content );
-        return sprintf( '<div class="box-outer"><div class="box %s %s%s">%s</div></div>', $this->NumbersArray[$this->count], $center, $color, $output);
+        return sprintf( '<div class="box-outer"><div class="box %s %s%s%s%s%s">%s</div></div>', $this->NumbersArray[$this->count], $center, $color, $padding, $shadow, $custom, $output);
     }
 
     function tile_handler( $atts, $content ) {
@@ -59,7 +71,7 @@ Class TileBox
         $classes = 'tile';
 
         if ( $this->count > self::MAXTILES) {
-          $content = 'Too many [tile]s.  Only up to 4 are supported)';
+          $content = 'Too many [tile]s.  Only up 12 are supported)';
         }
 
         if (filter_var($tile_atts['empty'], FILTER_VALIDATE_BOOLEAN)){

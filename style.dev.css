@@ -4111,6 +4111,14 @@ ul.uw-select li.inactive a {
 .box-outer .box.four .tile div {
   margin: 0 -26px;
 }
+.box-outer .box.nopad .tile {
+  padding: 0;
+}
+.box-outer .box.noshadow .tile {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: transparent;
+}
 .box-outer .box .tile {
   display: table-cell;
   padding: 0 50px 20px;
@@ -4154,7 +4162,11 @@ ul.uw-select li.inactive a {
   .box-outer .box.two .tile,
   .box-outer .box.one .tile,
   .box-outer .box.three .tile,
-  .box-outer .box.four .tile {
+  .box-outer .box.four .tile,
+  .box-outer .box.five .tile,
+  .box-outer .box.six .tile,
+  .box-outer .box.seven .tile,
+  .box-outer .box.eight .tile {
     display: block;
     width: 100%;
     margin: 0 0 30px 0;
@@ -4163,8 +4175,19 @@ ul.uw-select li.inactive a {
   .box-outer .box.two .tile div,
   .box-outer .box.one .tile div,
   .box-outer .box.three .tile div,
-  .box-outer .box.four .tile div {
+  .box-outer .box.four .tile div,
+  .box-outer .box.five .tile div,
+  .box-outer .box.six .tile div,
+  .box-outer .box.seven .tile div,
+  .box-outer .box.eight .tile div {
     margin: 0 -21px;
+  }
+  .box-outer .box.five .tile,
+  .box-outer .box.six .tile,
+  .box-outer .box.seven .tile,
+  .box-outer .box.eight .tile {
+    width: 50%;
+    display: inline-block;
   }
 }
 table {
@@ -8504,6 +8527,7 @@ label.screen-reader {
   color: #4B2E83;
   font-size: 21px;
   overflow: hidden;
+  z-index: 1;
 }
 #hero-container #hashtag span {
   background-color: rgba(255, 255, 255, 0.9);

@@ -41,7 +41,17 @@
                 }
             }
         }
-
+        &.nopad {
+            .tile {
+                padding: 0;
+            }
+        }
+        &.noshadow {
+            .tile {
+                .box-shadow(none);
+                background-color: transparent;
+            }
+        }
 
         .tile {
             div {
@@ -90,7 +100,11 @@
             &.two,
             &.one,
             &.three,
-            &.four {
+            &.four,
+            &.five,
+            &.six,
+            &.seven,
+            &.eight {
                 .tile {
                     div {
                         margin: 0 -21px;
@@ -99,6 +113,15 @@
                     width: 100%;
                     margin: 0 0 30px 0;
                     padding: 0 20px 20px;
+                }
+            }
+            &.five,
+            &.six,
+            &.seven,
+            &.eight {
+                .tile {
+                    width: 50%;
+                    display: inline-block;
                 }
             }
         }
