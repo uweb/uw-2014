@@ -49,7 +49,20 @@ class UW_Scripts
     add_action( 'wp_enqueue_scripts', array( $this, 'uw_localize_default_scripts' ) );
     add_action( 'wp_enqueue_scripts', array( $this, 'uw_enqueue_default_scripts' ) );
     add_action( 'admin_enqueue_scripts', array( $this, 'uw_enqueue_admin_scripts' ) );
+    add_action( 'customize_controls_init', array( $this, 'uw_customizer_preview' ) );
 
+  }
+
+  function uw_customizer_preview()
+  {
+    // wp_enqueue_script( 
+    //     'uw-themecustomizer',      //ID
+    //     get_bloginfo('template_directory') .'/js/uw.themecustomizer.js',//URL
+    //     array( 'jquery','customize-preview' ),  //dependencies
+    //     '',           //version (optional) 
+    //     true            //Put script in footer?
+    // );
+    wp_enqueue_script( 'uw-themecustomize', get_bloginfo('template_directory') .'/js/uw.themecustomizer.js', array( 'jquery', 'customize-controls' ), false, true );
   }
 
   function uw_register_default_scripts()
