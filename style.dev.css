@@ -5583,6 +5583,31 @@ table th[class*="col-"] {
     top: -60px;
     left: -270px;
   }
+  .uw-hero-image.hero-height2 {
+    padding: 20px;
+    display: block;
+    height: auto;
+  }
+  .uw-hero-image.hero-height2 .container #hashtag {
+    font-size: 16px;
+  }
+  .uw-hero-image.hero-height2 .container #hashtag span {
+    padding: 2px 5px 3px 18px;
+  }
+  .uw-hero-image.hero-height2 .container #hashtag.mask {
+    min-height: auto;
+  }
+  .uw-hero-image.hero-height2 h1 {
+    font-size: 35px;
+    padding: 0;
+  }
+  .uw-hero-image.hero-height2 h1:after {
+    background-size: 80%;
+    -moz-background-size: 80%;
+    -webkit-background-size: 80%;
+    top: -60px;
+    left: -270px;
+  }
   .uw-hero-image.hero-blank {
     display: block;
   }
@@ -6732,7 +6757,7 @@ body.home .uw-sidebar-menu {
     display: none;
   }
   #mobile-relative.frontpage {
-    margin-top: -18px;
+    margin-top: -10px;
     position: relative;
   }
   #mobile-relative.frontpage button.uw-mobile-menu-toggle {
