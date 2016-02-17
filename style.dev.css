@@ -5622,6 +5622,10 @@ table th[class*="col-"] {
     height: 8px;
     margin: 0 0 0 -145px;
   }
+  .page-template-small-hero .uw-body .uw-site-title {
+    visibility: hidden;
+    height: 60px;
+  }
   div.container.uw-body {
     padding-top: 0;
   }
