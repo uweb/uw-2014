@@ -105,7 +105,7 @@ class UW_Page_Attributes_Meta_Box
 
   function page_template_dropdown( $default = '' , $post) {
 
-    $previews = array('Big Hero' => '/assets/images/template-big-hero.png', 'Small Hero' => '/assets/images/template-small-hero.png', 'No image' => '/assets/images/template-no-image.png', 'No title/image' => '/assets/images/template-no-title.png', 'Default Template' => '/assets/images/template-default.png');
+    $previews = array('Big Hero' => '/assets/images/template-big-hero.jpg', 'Small Hero' => '/assets/images/template-small-hero.jpg', 'No image' => '/assets/images/template-no-image.jpg', 'No title/image' => '/assets/images/template-no-title.jpg', 'Default Template' => '/assets/images/template-default.jpg');
 
     $templates = get_page_templates( get_post() );
 

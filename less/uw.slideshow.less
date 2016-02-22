@@ -88,7 +88,7 @@ div.uw-slideshow
 
     &.next {
       z-index:101;
-      right: 125px;
+      left: 77.5%;
       .box-shadow(-1px 0px 5px 0 rgba(0, 0, 0, .4));
       &:after {
 
@@ -98,7 +98,8 @@ div.uw-slideshow
 
     &.previous {
       z-index:100;
-      right: 170px;
+      left: 77.5%;
+      margin-left: -45px;
       .box-shadow(-1px 0px 5px 0 rgba(0, 0, 0, .4));
       .rotate(180deg);
       // background: white url('@{local-image-path}/slideshow-arrow-left.png') center no-repeat;
@@ -418,9 +419,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
     bottom: 0;
     &.next {
       right: 0;
+      left: auto;
     }
     &.previous {
       right: 45px;
+      left: auto;
+      margin-left: 0;
     }
     &.next:after,
     &.previous:after {
