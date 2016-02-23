@@ -20,9 +20,9 @@ class UW_Scripts
 
       'jquery' => array (
         'id'      => 'jquery',
-        'url'     => 'https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js',
+        'url'     => 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js',
         'deps'    => array(),
-        'version' => '1.9.1',
+        'version' => '1.11.3',
         'admin'   => false
       ),
 
