@@ -5951,14 +5951,14 @@ span.next-page a:hover {
   border-bottom: none;
 }
 img.attachment-post-thumbnail.wp-post-image,
-img.attachment-thumbnail.wp-post-image {
+.archive .uw-body-copy img.attachment-thumbnail.wp-post-image {
   float: left;
   margin: 5px 50px 0 0;
   height: 150px;
   width: auto;
 }
 img.attachment-post-thumbnail.wp-post-image.blogroll-img,
-img.attachment-thumbnail.wp-post-image.blogroll-img {
+.archive .uw-body-copy img.attachment-thumbnail.wp-post-image.blogroll-img {
   margin-bottom: 20px;
   height: 130px;
 }
