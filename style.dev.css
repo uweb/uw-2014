@@ -5523,7 +5523,7 @@ table th[class*="col-"] {
 }
 .uw-hero-image.hero-height .udub-slant span,
 .no-uw-hero-image.hero-height .udub-slant span {
-  background-color: #E8E3D3;
+  background-color: #b7a57a;
 }
 .no-uw-hero-image {
   background: none;
@@ -5950,13 +5950,15 @@ span.next-page a:hover {
 .links li:last-child {
   border-bottom: none;
 }
-img.attachment-post-thumbnail.wp-post-image {
+img.attachment-post-thumbnail.wp-post-image,
+img.attachment-thumbnail.wp-post-image {
   float: left;
   margin: 5px 50px 0 0;
   height: 150px;
   width: auto;
 }
-img.attachment-post-thumbnail.wp-post-image.blogroll-img {
+img.attachment-post-thumbnail.wp-post-image.blogroll-img,
+img.attachment-thumbnail.wp-post-image.blogroll-img {
   margin-bottom: 20px;
   height: 130px;
 }
@@ -8683,7 +8685,7 @@ label.screen-reader {
   margin-top: 22px;
 }
 .hero-height2 .udub-slant span {
-  background-color: #e8e3d3;
+  background-color: #b7a57a;
 }
 .hero-blank {
   height: auto;
