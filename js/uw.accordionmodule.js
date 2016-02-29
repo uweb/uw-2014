@@ -6,6 +6,7 @@ $(document).ready(function(){
         * License MIT: https://github.com/nico3333fr/jquery-accessible-accordion-aria/blob/master/LICENSE
         */
         var $accordions = $( ".js-accordion" );
+                
         if ( $accordions.length  ) { // if there are at least one :)
            
            // init 
@@ -217,7 +218,12 @@ $(document).ready(function(){
                }
                
            });
-        
+           
+
+           // Add an option to open Accordion tab with a URL hash
+           var urlcheck = '#' + window.location.hash.substr(1).toString();
+           urlcheck.length > 2 ? $(urlcheck).click() : null;
+
         
         }
  
