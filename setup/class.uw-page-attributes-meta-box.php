@@ -123,8 +123,8 @@ class UW_Page_Attributes_Meta_Box
       }
 
       $checked = checked( $default, $templates[ $template ], false );
-      echo "<p><input type='radio' name='page_template' value='" . $templates[ $template ] . "' $checked >$template</input> (<a id='enchanced-preview' href='#'>preview<span><img src='" . get_stylesheet_directory_uri() . $previews[$template] . "' alt='' width='300px' height='' />
-</span></a>)</p>";
+      echo "<p><input type='radio' name='page_template' value='" . $templates[ $template ] . "' $checked >$template</input> " . ( array_key_exists( $template , $previews ) ? "(<a id='enchanced-preview' href='#'>preview<span><img src='" . get_stylesheet_directory_uri() . $previews[$template] . "' alt='' width='300px' height='' />
+</span></a>)" : "") . "</p>";
     }
     echo "</div>";
     if ($default === "templates/template-big-hero.php" || $default === "templates/template-small-hero.php") { 
