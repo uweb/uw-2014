@@ -12,6 +12,16 @@ UW.Image = Backbone.View.extend({
                    '</div>' +
                  '</div>',
 
+  templateVideo : '<div class="uw-overlay">' +
+                    '<div></div>' +
+                    '<div class="wrapper" style="width:560px; margin-top:-157px; margin-left:-280px;">' +
+                     '<span class="close"> Close</span>' +
+                     '<iframe width="560" height="315" src="<%= src %>" frameborder="0" allowfullscreen></iframe>' +
+                     '<p><%= caption %></p>' +
+                     '<p><%= credit %></p>' +
+                   '</div>' +
+                 '</div>',
+
   events : {
     'click' : 'fetchImage'
   },
@@ -32,7 +42,7 @@ UW.Image = Backbone.View.extend({
   {
 
     // todo make this quicker
-    if ( images.hasAnyBroken ) {
+    if ( !this.attrs.rel && images.hasAnyBroken ) {
       window.location = this.attrs.src;
       return
     }
@@ -58,6 +68,9 @@ UW.Image = Backbone.View.extend({
   render : function()
   {
     UW.$body.one( 'click', this.remove )
+    if ( this.attrs.rel == "uw-lightbox-video" ) {
+      return  UW.$body.append( _.template( this.templateVideo, this.attrs ) )
+    }
     return  UW.$body.append( _.template( this.template, this.attrs ) )
   },
 
@@ -78,9 +91,11 @@ UW.Image = Backbone.View.extend({
           caption = gallery_parent.siblings('.wp-caption-text').text();
         }
       }
+
       return {
         src : target.parent('a').attr('href'),
         alt : target.attr('alt'),
+        rel : target.parent('a').attr('rel'),
         caption : caption,
         credit : target.parent('a').siblings('.wp-caption-text').find('.wp-media-credit').text()
       }
