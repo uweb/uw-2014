@@ -17,6 +17,11 @@
             <link rel='stylesheet' href='<?php bloginfo("template_directory"); ?>/assets/ie/css/ie.css' type='text/css' media='all' />
         <![endif]-->
 
+        <?php 
+        echo get_post_meta( get_the_ID() , 'javascript' , 'true' ); 
+        echo get_post_meta( get_the_ID() , 'css' , 'true' ); 
+        ?>
+
     </head>
     <!--[if lt IE 9]> <body <?php body_class('lt-ie9'); ?>> <![endif]-->
     <!--[if gt IE 8]><!-->
