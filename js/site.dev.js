@@ -12951,9 +12951,9 @@ UW.Select = Backbone.View.extend({
 
   templateVideo : '<div class="uw-overlay">' +
                     '<div></div>' +
-                    '<div class="wrapper" style="width:560px; margin-top:-157px; margin-left:-280px;">' +
+                    '<div class="wrapper" style="width:<%= width %>px; margin-top:-<%= height/2 %>px; margin-left:-<%= width/2 %>px;">' +
                      '<span class="close"> Close</span>' +
-                     '<iframe width="560" height="315" src="<%= src %>" frameborder="0" allowfullscreen></iframe>' +
+                     '<iframe width="<%= width %>" height="<%= height %>" src="<%= src %>" frameborder="0" allowfullscreen></iframe>' +
                      '<p><%= caption %></p>' +
                      '<p><%= credit %></p>' +
                    '</div>' +
@@ -12979,21 +12979,32 @@ UW.Select = Backbone.View.extend({
   {
 
     // todo make this quicker
-    if ( !this.attrs.rel && images.hasAnyBroken ) {
+    if ( !this.attrs.rel.includes("uw-lightbox-video") && images.hasAnyBroken ) {
       window.location = this.attrs.src;
       return
     }
 
-    this.image = _.first( images.images )
-    var aspect_ratio = this.image.img.width / this.image.img.height;
-    this.attrs.height = this.image.img.height
-    this.attrs.width  = this.image.img.width
+    var aspect_ratio;
+
+    if ( this.attrs.rel.includes("uw-lightbox-video") ) {
+      aspect_ratio = 560 / 315;
+      this.attrs.height = 315;
+      this.attrs.width  = 560;
+    } else {
+      this.image = _.first( images.images )
+      aspect_ratio = this.image.img.width / this.image.img.height;
+      this.attrs.height = this.image.img.height
+      this.attrs.width  = this.image.img.width
+    }
+
+    console.log(UW.$window.width())
 
     if ( this.attrs.height > (this.RATIO * UW.$window.height())){
         this.attrs.height = this.RATIO * UW.$window.height();
         this.attrs.width = aspect_ratio * this.attrs.height;
     }
     if ( this.attrs.width > (this.RATIO * UW.$window.width())){
+        console.log("mobile")
         this.attrs.width = this.RATIO * UW.$window.width();
         this.attrs.height = this.attrs.width / aspect_ratio;
     }
