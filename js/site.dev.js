@@ -10951,10 +10951,10 @@ UW.KEYCODES = {
 ;// List out the classes that each component searches for
 UW.elements = {
 
-  alert : '.uw-thinstrip',
+  alert      : '.uw-thinstrip',
   accordion  : '.uw-accordion',
   dropdowns  : '#dawgdrops',
-  images : 'a > img',
+  images     : 'a > img',
   mobilemenu : '.uw-mobile-menu-toggle',
   radio      : ':radio',
   checkbox   : ':checkbox',
@@ -10995,16 +10995,16 @@ UW.sources = {
 UW.initialize = function( $ )
 {
   // Cache common elements that each javascript module calls
-  UW.$body       = $('body');
-  UW.$window   = $( window );
-  UW.baseUrl = UW.getBaseUrl()
+  UW.$body      = $('body');
+  UW.$window    = $( window );
+  UW.baseUrl    = UW.getBaseUrl()
 
   // UW Utilities
   UW.dropdowns  = _.map( $( UW.elements.dropdowns ),     function( element ) { return new UW.Dropdowns({ el : element }) } )
   UW.mobilemenu = _.map( $( UW.elements.mobilemenu ),     function( element ) { return new UW.MobileMenu({ el : element }) } )
   UW.quicklinks = _.map( $( UW.elements.quicklinks ),    function( element ) { return new UW.QuickLinks( { el : element, url : UW.sources.quicklinks }) } )
   UW.search     = _.map( $( UW.elements.search ),    function( element ) { return new UW.Search( { el : element } ) } )
-  UW.images   = _.map( $( UW.elements.images ),    function( element ) { return new UW.Image({ el : element }) } )
+  UW.images     = _.map( $( UW.elements.images ),    function( element ) { return new UW.Image({ el : element }) } )
 
   // UW Modules
   UW.slideshows = _.map( $( UW.elements.slideshow ), function( element ) { return new UW.Slideshow( { el : element }) } )
@@ -11014,7 +11014,7 @@ UW.initialize = function( $ )
 
 
   // UW Components - These need to render after all other javascript elements are rendered on page
-  UW.accordion   = _.map( $( UW.elements.accordion ), function( element ) { return new UW.Accordion( { el : element }) } )
+  UW.accordion  = _.map( $( UW.elements.accordion ), function( element ) { return new UW.Accordion( { el : element }) } )
   UW.radio      = _.map( $( UW.elements.radio ),     function( element ) { return new UW.Radio({ el : element }) } )
   UW.checkbox   = _.map( $( UW.elements.checkbox ),     function( element ) { return new UW.Radio({ el : element }) } )
   UW.select     = _.map( $( UW.elements.select ),    function( element ) { return new UW.Select({ el : element }) } )
@@ -12949,23 +12949,13 @@ UW.Select = Backbone.View.extend({
                    '</div>' +
                  '</div>',
 
-  templateVideo : '<div class="uw-overlay">' +
-                    '<div></div>' +
-                    '<div class="wrapper" style="width:<%= width %>px; margin-top:-<%= height/2 %>px; margin-left:-<%= width/2 %>px;">' +
-                     '<span class="close"> Close</span>' +
-                     '<iframe width="<%= width %>" height="<%= height %>" src="<%= src %>" frameborder="0" allowfullscreen></iframe>' +
-                     '<p><%= caption %></p>' +
-                     '<p><%= credit %></p>' +
-                   '</div>' +
-                 '</div>',
-
   events : {
     'click' : 'fetchImage'
   },
 
   initialize : function()
   {
-    _.bindAll( this, 'fetchImage', 'overlay' , 'render' )
+    _.bindAll( this, 'fetchImage', 'overlay' , 'render', 'video' )
   },
 
   fetchImage : function( e )
@@ -12979,32 +12969,21 @@ UW.Select = Backbone.View.extend({
   {
 
     // todo make this quicker
-    if ( !this.attrs.rel.includes("uw-lightbox-video") && images.hasAnyBroken ) {
+    if ( images.hasAnyBroken && !this.attrs.rel ) {
       window.location = this.attrs.src;
       return
     }
 
-    var aspect_ratio;
-
-    if ( this.attrs.rel.includes("uw-lightbox-video") ) {
-      aspect_ratio = 560 / 315;
-      this.attrs.height = 315;
-      this.attrs.width  = 560;
-    } else {
-      this.image = _.first( images.images )
-      aspect_ratio = this.image.img.width / this.image.img.height;
-      this.attrs.height = this.image.img.height
-      this.attrs.width  = this.image.img.width
-    }
-
-    console.log(UW.$window.width())
+    this.image = _.first( images.images )
+    var aspect_ratio = this.image.img.width / this.image.img.height;
+    this.attrs.height = this.image.img.height
+    this.attrs.width  = this.image.img.width
 
     if ( this.attrs.height > (this.RATIO * UW.$window.height())){
         this.attrs.height = this.RATIO * UW.$window.height();
         this.attrs.width = aspect_ratio * this.attrs.height;
     }
     if ( this.attrs.width > (this.RATIO * UW.$window.width())){
-        console.log("mobile")
         this.attrs.width = this.RATIO * UW.$window.width();
         this.attrs.height = this.attrs.width / aspect_ratio;
     }
@@ -13016,16 +12995,21 @@ UW.Select = Backbone.View.extend({
   render : function()
   {
     UW.$body.one( 'click', this.remove )
-    if ( this.attrs.rel == "uw-lightbox-video" ) {
-      return  UW.$body.append( _.template( this.templateVideo, this.attrs ) )
+    UW.$body.append( _.template( this.template, this.attrs ) )
+    if(this.attrs.rel) {
+      this.video();
     }
-    return  UW.$body.append( _.template( this.template, this.attrs ) )
+  },
+
+  video: function(e){
+    $('.uw-overlay img').replaceWith('<iframe width="560" height="315" src="' + this.attrs.src + '" frameborder="0" allowfullscreen></iframe>');
+    return false;
   },
 
   remove : function()
   {
     UW.$body.find( '.uw-overlay' ).remove()
-    return false;
+    return false; 
   },
 
   getAttributes: function( e )
@@ -13039,7 +13023,6 @@ UW.Select = Backbone.View.extend({
           caption = gallery_parent.siblings('.wp-caption-text').text();
         }
       }
-
       return {
         src : target.parent('a').attr('href'),
         alt : target.attr('alt'),
@@ -13050,8 +13033,7 @@ UW.Select = Backbone.View.extend({
 
   }
 
-})
-;// ### UW HTML5 Player
+});// ### UW HTML5 Player
 
 // This function creates a UW HTML5 player
 // For usage please refer to the [UW Web Components Player](http://uw.edu/brand/web/#player)
