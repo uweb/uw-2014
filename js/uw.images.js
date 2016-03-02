@@ -49,25 +49,22 @@ UW.Image = Backbone.View.extend({
 
     var aspect_ratio;
 
+    this.image = _.first( images.images )
+    aspect_ratio = this.image.img.width / this.image.img.height;
+    this.attrs.height = this.image.img.height
+    this.attrs.width  = this.image.img.width
+
     if ( this.attrs.rel.includes("uw-lightbox-video") ) {
       aspect_ratio = 560 / 315;
-      this.attrs.height = 315;
-      this.attrs.width  = 560;
-    } else {
-      this.image = _.first( images.images )
-      aspect_ratio = this.image.img.width / this.image.img.height;
-      this.attrs.height = this.image.img.height
-      this.attrs.width  = this.image.img.width
-    }
-
-    console.log(UW.$window.width())
+      this.attrs.height = 630;
+      this.attrs.width  = 1120;
+    } 
 
     if ( this.attrs.height > (this.RATIO * UW.$window.height())){
         this.attrs.height = this.RATIO * UW.$window.height();
         this.attrs.width = aspect_ratio * this.attrs.height;
     }
     if ( this.attrs.width > (this.RATIO * UW.$window.width())){
-        console.log("mobile")
         this.attrs.width = this.RATIO * UW.$window.width();
         this.attrs.height = this.attrs.width / aspect_ratio;
     }
@@ -103,10 +100,12 @@ UW.Image = Backbone.View.extend({
         }
       }
 
+      $rel = target.parent('a').attr('rel') ? target.parent('a').attr('rel') : '';
+
       return {
         src : target.parent('a').attr('href'),
         alt : target.attr('alt'),
-        rel : target.parent('a').attr('rel'),
+        rel : $rel,
         caption : caption,
         credit : target.parent('a').siblings('.wp-caption-text').find('.wp-media-credit').text()
       }

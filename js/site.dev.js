@@ -12949,13 +12949,23 @@ UW.Select = Backbone.View.extend({
                    '</div>' +
                  '</div>',
 
+  templateVideo : '<div class="uw-overlay">' +
+                    '<div></div>' +
+                    '<div class="wrapper" style="width:<%= width %>px; margin-top:-<%= height/2 %>px; margin-left:-<%= width/2 %>px;">' +
+                     '<span class="close"> Close</span>' +
+                     '<iframe width="<%= width %>" height="<%= height %>" src="<%= src %>" frameborder="0" allowfullscreen></iframe>' +
+                     '<p><%= caption %></p>' +
+                     '<p><%= credit %></p>' +
+                   '</div>' +
+                 '</div>',
+
   events : {
     'click' : 'fetchImage'
   },
 
   initialize : function()
   {
-    _.bindAll( this, 'fetchImage', 'overlay' , 'render', 'video' )
+    _.bindAll( this, 'fetchImage', 'overlay' , 'render' )
   },
 
   fetchImage : function( e )
@@ -12969,15 +12979,23 @@ UW.Select = Backbone.View.extend({
   {
 
     // todo make this quicker
-    if ( images.hasAnyBroken && !this.attrs.rel ) {
+    if ( !this.attrs.rel.includes("uw-lightbox-video") && images.hasAnyBroken ) {
       window.location = this.attrs.src;
       return
     }
 
+    var aspect_ratio;
+
     this.image = _.first( images.images )
-    var aspect_ratio = this.image.img.width / this.image.img.height;
+    aspect_ratio = this.image.img.width / this.image.img.height;
     this.attrs.height = this.image.img.height
     this.attrs.width  = this.image.img.width
+
+    if ( this.attrs.rel.includes("uw-lightbox-video") ) {
+      aspect_ratio = 560 / 315;
+      this.attrs.height = 630;
+      this.attrs.width  = 1120;
+    } 
 
     if ( this.attrs.height > (this.RATIO * UW.$window.height())){
         this.attrs.height = this.RATIO * UW.$window.height();
@@ -12995,21 +13013,16 @@ UW.Select = Backbone.View.extend({
   render : function()
   {
     UW.$body.one( 'click', this.remove )
-    UW.$body.append( _.template( this.template, this.attrs ) )
-    if(this.attrs.rel) {
-      this.video();
+    if ( this.attrs.rel == "uw-lightbox-video" ) {
+      return  UW.$body.append( _.template( this.templateVideo, this.attrs ) )
     }
-  },
-
-  video: function(e){
-    $('.uw-overlay img').replaceWith('<iframe width="560" height="315" src="' + this.attrs.src + '" frameborder="0" allowfullscreen></iframe>');
-    return false;
+    return  UW.$body.append( _.template( this.template, this.attrs ) )
   },
 
   remove : function()
   {
     UW.$body.find( '.uw-overlay' ).remove()
-    return false; 
+    return false;
   },
 
   getAttributes: function( e )
@@ -13023,17 +13036,21 @@ UW.Select = Backbone.View.extend({
           caption = gallery_parent.siblings('.wp-caption-text').text();
         }
       }
+
+      $rel = target.parent('a').attr('rel') ? target.parent('a').attr('rel') : '';
+
       return {
         src : target.parent('a').attr('href'),
         alt : target.attr('alt'),
-        rel : target.parent('a').attr('rel'),
+        rel : $rel,
         caption : caption,
         credit : target.parent('a').siblings('.wp-caption-text').find('.wp-media-credit').text()
       }
 
   }
 
-});// ### UW HTML5 Player
+})
+;// ### UW HTML5 Player
 
 // This function creates a UW HTML5 player
 // For usage please refer to the [UW Web Components Player](http://uw.edu/brand/web/#player)
