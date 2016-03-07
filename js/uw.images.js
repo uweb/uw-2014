@@ -43,7 +43,9 @@ UW.Image = Backbone.View.extend({
 
     // todo make this quicker
     if ( (!this.attrs.rel || !this.attrs.rel.includes("uw-lightbox-video")) && images.hasAnyBroken ) {
-      window.location = this.attrs.src;
+      if ( this.attrs.src ) {
+        window.location = this.attrs.src;
+      }
       return
     }
 
@@ -103,7 +105,7 @@ UW.Image = Backbone.View.extend({
       var relation = target.parent('a').attr('rel') ? target.parent('a').attr('rel') : '';
 
       return {
-        src : target.parent('a').attr('href'),
+        src : target.parent('a').attr('href') ? target.parent('a').attr('href') : '',
         alt : target.attr('alt'),
         rel : relation,
         caption : caption,
