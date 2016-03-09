@@ -5587,9 +5587,6 @@ table th[class*="col-"] {
     -o-background-size: cover;
     background-size: cover;
   }
-  .uw-hero-image.hero-mobile-image.hero-height #hero-bg #hero-container {
-    padding-left: 10px;
-  }
   .uw-hero-image.hero-mobile-image.hero-height #hero-bg #hero-container h1.uw-site-title {
     padding-top: 40px;
   }
