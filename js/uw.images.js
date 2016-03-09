@@ -42,8 +42,10 @@ UW.Image = Backbone.View.extend({
   {
 
     // todo make this quicker
-    if ( !this.attrs.rel.includes("uw-lightbox-video") && images.hasAnyBroken ) {
-      window.location = this.attrs.src;
+    if ( (!this.attrs.rel || !this.attrs.rel.includes("uw-lightbox-video")) && images.hasAnyBroken ) {
+      if ( this.attrs.src ) {
+        window.location = this.attrs.src;
+      }
       return
     }
 
@@ -100,12 +102,12 @@ UW.Image = Backbone.View.extend({
         }
       }
 
-      $rel = target.parent('a').attr('rel') ? target.parent('a').attr('rel') : '';
+      var relation = target.parent('a').attr('rel') ? target.parent('a').attr('rel') : '';
 
       return {
-        src : target.parent('a').attr('href'),
+        src : target.parent('a').attr('href') ? target.parent('a').attr('href') : '',
         alt : target.attr('alt'),
-        rel : $rel,
+        rel : relation,
         caption : caption,
         credit : target.parent('a').siblings('.wp-caption-text').find('.wp-media-credit').text()
       }
