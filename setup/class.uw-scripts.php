@@ -32,7 +32,8 @@ class UW_Scripts
         'deps'      => array( 'backbone' ),
         'version'   => '1.0.3',
         'admin'     => false,
-        //'variables' => array( 'is_multisite' =>  $multi )
+        'style_dir' => site_url()
+        // 'variables' => array( 'is_multisite' =>  $multi ),
       ),
 
       'admin' => array (
@@ -90,9 +91,11 @@ class UW_Scripts
     foreach ($this->SCRIPTS as $script )
     {
       $script = (object) $script;
-      if (isset($script->variables)){
-        $uw_localization = array_merge($uw_localization, $script->variables);
-        wp_localize_script($script->id, 'uw_ismultisite', $script->variables); //error line
+      // if (isset($script->variables)){
+      //   wp_localize_script($script->id, 'uw_ismultisite', $script->variables); //error line
+      // }
+      if (isset($script->style_dir)){
+        wp_localize_script($script->id, 'style_dir', $script->style_dir); //error line
       }
     }
   }

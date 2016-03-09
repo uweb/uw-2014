@@ -5792,7 +5792,8 @@ small,
   font-size: 15px;
   line-height: 1.5;
 }
-.intro {
+.intro,
+.lead {
   font-family: "Encode Sans Compressed", sans-serif;
   font-size: 23px;
   font-weight: 400;
