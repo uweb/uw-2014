@@ -10991,7 +10991,15 @@ UW.wpinstance = function(){
 }
 
 UW.sources = {
-  quicklinks : UW.getBaseUrl() + 'wp-admin/admin-ajax.php?action=quicklinks',
+  // Note: style_dir is a variable created by the Wordpress' wp_localize_script in class.uw-scripts.php
+  quicklinks : function(){
+    if( style_dir ) {
+      return style_dir + '/wp-admin/admin-ajax.php?action=quicklinks'
+    } else {
+      // Check in case style_dir fails (it requires Wordpress)
+      return UW.getBaseUrl() + 'wp-admin/admin-ajax.php?action=quicklinks'
+    }
+  },
   search     : UW.getBaseUrl() + 'wp-admin/admin-ajax.php'
 }
 
