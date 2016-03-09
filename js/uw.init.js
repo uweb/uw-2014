@@ -36,8 +36,12 @@ UW.getBaseUrl = function() {
   return url
 }
 
+UW.wpinstance = function(){
+  return Backbone.history.location.pathname ? Backbone.history.location.pathname : "";
+}
+
 UW.sources = {
-  quicklinks : UW.getBaseUrl() + 'wp-admin/admin-ajax.php?action=quicklinks',
+  quicklinks : style_dir + '/wp-admin/admin-ajax.php?action=quicklinks',
   search     : UW.getBaseUrl() + 'wp-admin/admin-ajax.php'
 }
 
