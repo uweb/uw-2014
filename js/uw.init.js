@@ -41,7 +41,7 @@ UW.wpinstance = function(){
 }
 
 UW.sources = {
-  quicklinks : style_dir + '/wp-admin/admin-ajax.php?action=quicklinks',
+  quicklinks : UW.getBaseUrl() + 'wp-admin/admin-ajax.php?action=quicklinks',
   search     : UW.getBaseUrl() + 'wp-admin/admin-ajax.php'
 }
 
