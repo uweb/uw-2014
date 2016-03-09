@@ -9,13 +9,22 @@
       if(!$url){
         $url = get_site_url() . "/wp-content/themes/uw-2014/assets/headers/suzzallo.jpg";
       }
+      $mobileimage = get_post_meta($post->ID, "mobileimage");
+      $hasmobileimage = '';
+      if( !empty($mobileimage) && $mobileimage[0] !== "") {
+        $mobileimage = $mobileimage[0];
+        $hasmobileimage = 'hero-mobile-image';
+      }
       $sidebar = get_post_meta($post->ID, "sidebar");
       $banner = get_post_meta($post->ID, "banner");
       $buttontext = get_post_meta($post->ID, "buttontext");
       $buttonlink = get_post_meta($post->ID, "buttonlink");   ?>
 
 
-<div class="uw-hero-image hero-height" style="background-image: url(<?php echo $url ?>);">
+<div class="uw-hero-image hero-height <?php echo $hasmobileimage ?>" style="background-image: url(<?php echo $url ?>);">
+    <?php if( !empty($mobileimage) ) { ?>
+    <div class="mobile-image" style="background-image: url(<?php echo $mobileimage ?>);"></div>
+    <?php } ?>
     <div id="hero-bg">
       <div id="hero-container" class="container">
       <?php if(!empty($banner) && $banner[0]){ ?>

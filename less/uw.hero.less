@@ -122,6 +122,34 @@
 	.uw-hero-image {
 		display: none;
 
+		&.hero-mobile-image.hero-height {
+			height: 480px;
+
+			.mobile-image {
+		      display: block;
+		      top: 0;
+		      left: 0;
+		      height: 480px;
+		      position: absolute;
+		      right: 0;
+		      background-position: center bottom;
+		      -webkit-background-size: cover;
+		      -moz-background-size: cover;
+		      -o-background-size: cover;
+		      background-size: cover;
+		    }
+
+		    #hero-bg #hero-container {
+				padding-left: 10px;
+		    	h1.uw-site-title {
+					padding-top: 40px;
+				    &:after{
+				    	background: none;
+				    }
+				}   
+			} 
+		}
+
 		// Larger hero
 		&.hero-height {
 			padding: 50px 20px 20px;

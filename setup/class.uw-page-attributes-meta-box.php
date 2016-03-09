@@ -138,8 +138,12 @@ class UW_Page_Attributes_Meta_Box
         $buttonlink = get_post_meta($post->ID, "buttonlink", true);
         wp_nonce_field( 'buttonlink_nonce' , 'buttonlink_name' );
 
+        $mobileimage = get_post_meta($post->ID, "mobileimage", true);
+        wp_nonce_field( 'mobileimage_nonce' , 'mobileimage_name' );
+
         echo "<p><b>Banner</b></br><input type='text' name='bannertext' value='" . $banner . "'></p>";
         echo "<p><b>Button</b></br>Text</br><input type='text' name='buttontext' value='" . $buttontext . "'></br>Link</br><input type='text' name='buttonlink' value='" . $buttonlink . "'></p>";
+        echo "<p><b>Mobile Header Image</b></br><input type='text' name='mobileimagetext' value='" . $mobileimage . "'></p>";
       }
     }
   }
@@ -187,6 +191,18 @@ class UW_Page_Attributes_Meta_Box
             update_post_meta($post_ID, "buttonlink", $_POST["buttonlink"]);
           } else {
             update_post_meta($post_ID, "buttonlink", null); 
+          }
+        }
+      }
+    }
+
+    if ( isset( $_POST['mobileimage_name'] ) ) { 
+      if ( ! empty( $_POST ) && check_admin_referer( 'mobileimage_nonce', 'mobileimage_name') ) { //limit to only pages
+        if ($post_type) {
+          if(isset($_POST["mobileimagetext"])) {
+            update_post_meta($post_ID, "mobileimage", $_POST["mobileimagetext"]);
+          } else {
+            update_post_meta($post_ID, "mobileimage", null); 
           }
         }
       }
