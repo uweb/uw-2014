@@ -6877,6 +6877,7 @@ img {
   bottom: 0;
   z-index: 999;
   cursor: -webkit-zoom-out;
+  background-color: rgba(255, 255, 255, 0.95);
 }
 .uw-overlay div.wrapper {
   position: absolute;
@@ -6890,16 +6891,6 @@ img {
 }
 .uw-overlay div.wrapper img {
   border: 1px solid #ECECEC;
-}
-.uw-overlay:before {
-  content: " ";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: white;
-  opacity: 0.9;
 }
 @media only screen and (max-width: 767px) {
   .alignright,
