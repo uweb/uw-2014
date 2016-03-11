@@ -12967,7 +12967,14 @@ UW.Select = Backbone.View.extend({
                  '</div>',
 
   events : {
-    'click' : 'fetchImage'
+    'click' : function(e){      
+      this.attrs = this.getAttributes( e );
+      // This just checks to see if the anchor has a source (some slideshows and plugins use blank anchors to do their work)
+      if( this.attrs.src ){
+        this.fetchImage();
+        return false;
+      }
+    }
   },
 
   initialize : function()
@@ -12977,7 +12984,6 @@ UW.Select = Backbone.View.extend({
 
   fetchImage : function( e )
   {
-    this.attrs = this.getAttributes( e )
     $('<img src="'+ this.attrs.src +'"/>').imagesLoaded( this.overlay )
     return false;
   },
@@ -12985,8 +12991,10 @@ UW.Select = Backbone.View.extend({
   overlay : function( images )
   {
 
+    var video = this.attrs.rel.indexOf("uw-lightbox-video") > -1 ? true : false;
+
     // todo make this quicker
-    if ( (!this.attrs.rel || !this.attrs.rel.includes("uw-lightbox-video")) && images.hasAnyBroken ) {
+    if ( !video && images.hasAnyBroken ) {
       if ( this.attrs.src ) {
         window.location = this.attrs.src;
       }
@@ -13046,12 +13054,10 @@ UW.Select = Backbone.View.extend({
         }
       }
 
-      var relation = target.parent('a').attr('rel') ? target.parent('a').attr('rel') : '';
-
       return {
         src : target.parent('a').attr('href') ? target.parent('a').attr('href') : '',
         alt : target.attr('alt'),
-        rel : relation,
+        rel : target.parent('a').attr('rel') ? target.parent('a').attr('rel') : '',
         caption : caption,
         credit : target.parent('a').siblings('.wp-caption-text').find('.wp-media-credit').text()
       }
