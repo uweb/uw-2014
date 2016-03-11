@@ -47,10 +47,12 @@ UW.Image = Backbone.View.extend({
   overlay : function( images )
   {
 
-    var video = this.attrs.rel.indexOf("uw-lightbox-video") > -1 ? true : false;
+    var videoLightbox = this.attrs.rel.indexOf("uw-lightbox-video") > -1 ? true : false;
+
+
 
     // todo make this quicker
-    if ( !video && images.hasAnyBroken ) {
+    if ( !videoLightbox && images.hasAnyBroken ) {
       if ( this.attrs.src ) {
         window.location = this.attrs.src;
       }
@@ -64,7 +66,7 @@ UW.Image = Backbone.View.extend({
     this.attrs.height = this.image.img.height
     this.attrs.width  = this.image.img.width
 
-    if ( this.attrs.rel.includes("uw-lightbox-video") ) {
+    if ( videoLightbox ) {
       aspect_ratio = 560 / 315;
       this.attrs.height = 630;
       this.attrs.width  = 1120;

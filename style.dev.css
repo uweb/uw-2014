@@ -6914,6 +6914,11 @@ img {
 .uw-overlay div.wrapper img {
   border: 1px solid #ECECEC;
 }
+@media only screen and (max-width: 1024px) {
+  .uw-overlay {
+    cursor: pointer;
+  }
+}
 @media only screen and (max-width: 767px) {
   .uw-overlay {
     cursor: pointer;
