@@ -41,7 +41,7 @@ class UW_Trumba
         if (isset($attributes->base)){
             $teaser = $attributes->base;
         }
-        $trumba .= sprintf('$Trumba.addSpud({webName:"%s",spudType:"%s",BorderColor:"#FFFFFF"', $name, $type);
+        $trumba .= sprintf('$Trumba.addSpud({webName:"%s",spudType:"%s",BorderColor:"#FFFFFF",marginTop:0', $name, $type);
         if (isset($teaser)){
             $trumba .= sprintf(',teaserBase:"%s"', $teaser);
         }
