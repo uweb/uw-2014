@@ -8730,8 +8730,9 @@ label.screen-reader {
     font-size: 18px;
   }
 }
-div[id*='trumba\.spud'] iframe {
+div[id*='trumba'] iframe {
   margin: 0;
+  box-sizing: border-box;
 }
 [class^="ic-"]:before,
 [class*=" ic-"]:before {
