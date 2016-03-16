@@ -8730,12 +8730,7 @@ label.screen-reader {
     font-size: 18px;
   }
 }
-#trumba\.spud\.0 iframe,
-#trumba\.spud\.1 iframe,
-#trumba\.spud\.2 iframe,
-#trumba\.spud\.3 iframe,
-#trumba\.spud\.4 iframe,
-#trumba\.spud\.5 iframe {
+div[id*='trumba\.spud'] iframe {
   margin: 0;
 }
 [class^="ic-"]:before,
