@@ -6363,7 +6363,6 @@ ul.uw-sidebar-menu li.pagenav ul,
 ul.uw-mobile-menu li.pagenav ul,
 ul.uw-sidebar-menu > div ul,
 ul.uw-mobile-menu > div ul {
-  font-size: 20px;
   line-height: 1.3;
   font-size: 19px;
 }
@@ -9234,9 +9233,6 @@ ul.shortcode-blogroll-mini {
 .uw-content .uw-widget-rss {
   padding: 0;
 }
-.uw-sidebar .uw-widget-rss.widget {
-  padding: 10px 0 0 40px;
-}
 .uw-sidebar .uw-widget-rss.widget > span:nth-child(1) {
   display: none;
 }
@@ -9480,6 +9476,32 @@ ul.shortcode-blogroll-mini {
 }
 .uw-sidebar .contact-widget-inner .widgettitle:after {
   background-color: #e8e3d3;
+}
+.widget_nav_menu li {
+  background-color: #eee;
+  border-bottom: 1px solid #fff;
+  line-height: 1.3;
+}
+.widget_nav_menu li a {
+  color: #5a5a5a;
+  padding: 10px 30px 10px 15px;
+  border: none;
+  display: block;
+  -webkit-font-smoothing: auto;
+  font-size: 16px;
+}
+.widget_nav_menu li a:hover,
+.widget_nav_menu li a:focus {
+  background-color: #DDD;
+  border: none;
+  color: inherit;
+}
+.widget_nav_menu li a:focus {
+  outline: 1px solid #c9c9c9;
+}
+.widget_nav_menu > li {
+  padding: 10px 10px 10px 20px;
+  display: block;
 }
 #uwalert-alert-message {
   padding: 0 20px 40px;
