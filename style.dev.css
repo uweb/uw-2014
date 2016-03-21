@@ -5573,10 +5573,12 @@ table th[class*="col-"] {
   .uw-hero-image {
     display: none;
   }
-  .uw-hero-image.hero-mobile-image.hero-height {
+  .uw-hero-image.hero-mobile-image.hero-height,
+  .uw-hero-image.hero-mobile-image.hero-height2 {
     height: 480px;
   }
-  .uw-hero-image.hero-mobile-image.hero-height .mobile-image {
+  .uw-hero-image.hero-mobile-image.hero-height .mobile-image,
+  .uw-hero-image.hero-mobile-image.hero-height2 .mobile-image {
     display: block;
     top: 0;
     left: 0;
@@ -5589,11 +5591,22 @@ table th[class*="col-"] {
     -o-background-size: cover;
     background-size: cover;
   }
-  .uw-hero-image.hero-mobile-image.hero-height #hero-bg #hero-container h1.uw-site-title {
+  .uw-hero-image.hero-mobile-image.hero-height #hero-bg #hero-container h1.uw-site-title,
+  .uw-hero-image.hero-mobile-image.hero-height2 #hero-bg #hero-container h1.uw-site-title,
+  .uw-hero-image.hero-mobile-image.hero-height div.container h1.uw-site-title2,
+  .uw-hero-image.hero-mobile-image.hero-height2 div.container h1.uw-site-title2 {
     padding-top: 40px;
   }
-  .uw-hero-image.hero-mobile-image.hero-height #hero-bg #hero-container h1.uw-site-title:after {
+  .uw-hero-image.hero-mobile-image.hero-height #hero-bg #hero-container h1.uw-site-title:after,
+  .uw-hero-image.hero-mobile-image.hero-height2 #hero-bg #hero-container h1.uw-site-title:after,
+  .uw-hero-image.hero-mobile-image.hero-height div.container h1.uw-site-title2:after,
+  .uw-hero-image.hero-mobile-image.hero-height2 div.container h1.uw-site-title2:after {
     background: none;
+  }
+  .uw-hero-image.hero-mobile-image.hero-height .container,
+  .uw-hero-image.hero-mobile-image.hero-height2 .container {
+    position: absolute;
+    top: 0;
   }
   .uw-hero-image.hero-height {
     padding: 50px 20px 20px;
@@ -8704,9 +8717,6 @@ label.screen-reader {
 .hero-height2:after {
   display: none;
 }
-.hero-height2 .udub-slant {
-  margin-top: 22px;
-}
 .hero-height2 .udub-slant span {
   background-color: #b7a57a;
 }
@@ -8726,8 +8736,20 @@ label.screen-reader {
     margin-top: -50px;
     font-size: 18px;
   }
+  #hero-container #hashtag span {
+    padding: 2px 5px 3px 18px;
+  }
   #hero-container #hashtag span span big {
     font-size: 18px;
+  }
+  div.uw-hero-image.hero-height2 div.container #hashtag {
+    font-size: 18px;
+  }
+  div.uw-hero-image.hero-height2 div.container #hashtag span span big {
+    font-size: 18px;
+  }
+  div.uw-hero-image.hero-height2 div.container #hashtag.mask {
+    position: relative;
   }
 }
 div[id*='trumba\.spud'] iframe {
