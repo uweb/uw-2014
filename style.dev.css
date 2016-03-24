@@ -6321,6 +6321,7 @@ body.search-open #uw-container {
 ul.uw-sidebar-menu,
 ul.uw-mobile-menu {
   margin-left: 20px;
+  margin-right: -20px;
   padding: 20px;
   margin-top: -124px;
   background-color: white;

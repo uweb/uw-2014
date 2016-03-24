@@ -85,7 +85,8 @@ class UW_Iframes
       'matchinggifts.com',
       'www.matchinggifts.com',
       'embed.pac-12.com',
-      'storify.com'
+      'storify.com',
+      'w.soundcloud.com'
     );
   }
 
