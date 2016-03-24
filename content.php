@@ -8,7 +8,7 @@ if (is_single() || is_home()){
 if ((is_single() || is_home()) && get_option('show_byline_on_posts')) :
 ?>
 <div class="author-info">
-    <?php the_author(); ?>
+    <?php if ( function_exists( 'coauthors' ) ) { coauthors(); } else { the_author(); } ?>
     <p class="author-desc"> <small><?php the_author_meta(); ?></small></p>
 </div>
 <?php

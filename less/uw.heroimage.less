@@ -177,7 +177,7 @@
 		display: none;
 	}
 	.udub-slant {
-		margin-top: 22px;
+		//margin-top: 22px;
 		span {
 			background-color: @lightgold;
 		}
@@ -203,8 +203,22 @@
 	#hero-container #hashtag {
 		margin-top: -50px;
 		font-size: 18px;
+		span {
+			padding: 2px 5px 3px 18px;
+			span big {
+				font-size: 18px;
+			}
+		}
+	}
+
+	div.uw-hero-image.hero-height2 div.container #hashtag {
+		//margin-top: -50px;
+		font-size: 18px;
 		span span big {
 			font-size: 18px;
 		}
+		&.mask {
+			position: relative;
+		} 
 	}
 }

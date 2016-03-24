@@ -132,7 +132,14 @@ if ( ! function_exists( 'uw_list_mobile_pages' ) ) :
 
   function uw_list_mobile_pages()
   {
-    if ( ! is_front_page() ) return uw_list_pages( $mobile = true );
+    if ( ! is_front_page() ) {
+      $isMenuEmpty = uw_list_pages( $mobile = true );
+      $alwaysMobile = get_option('use_main_menu_on_mobile');
+      if(empty($isMenuEmpty) && $alwaysMobile){
+        return uw_list_front_page_menu_items();
+      }
+      return $isMenuEmpty;
+    }
 
     $locations = get_nav_menu_locations();
 
