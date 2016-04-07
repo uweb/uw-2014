@@ -1,8 +1,8 @@
 
 <h1 class="entry-title"><?php the_title(); ?></h1>
 
-<div>
-  <a href="<?php echo wp_get_attachment_url(get_the_ID());?>" title="<?php the_title(); ?>" target="_blank">Download</a>
+<div style="margin-top: 30px">
+  <a class="uw-btn btn-sm btn-plus" href="<?php echo wp_get_attachment_url(get_the_ID());?>" title="<?php the_title(); ?>" target="_blank">Download</a>
 </div>
 
 <?php the_excerpt(); ?>
