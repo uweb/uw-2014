@@ -89,9 +89,9 @@ UW.Image = Backbone.View.extend({
   {
     UW.$body.one( 'click', this.remove )
     if ( this.attrs.rel == "uw-lightbox-video" ) {
-      return  UW.$body.append( _.template( this.templateVideo, this.attrs ) )
+      return  UW.$body.append( _.template( this.templateVideo )( this.attrs ) )
     }
-    return  UW.$body.append( _.template( this.template, this.attrs ) )
+    return  UW.$body.append( _.template( this.template )( this.attrs ) )
   },
 
   remove : function()

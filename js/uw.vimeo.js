@@ -81,7 +81,7 @@ UW.Vimeo = Backbone.View.extend({
   // This loads the single video template and puts it into the DOM
   single : function()
   {
-    this.player = _.template( this.templates.video, this.options )
+    this.player = _.template( this.templates.video )( this.options )
     this.$el.html( this.player )
   },
 
@@ -90,9 +90,9 @@ UW.Vimeo = Backbone.View.extend({
   {
 
     _.extend( this.options, { video : this.videos.first().get('id') } )
-    this.player = _.template( this.templates.video, this.options )
+    this.player = _.template( this.templates.video )( this.options ) 
 
-    this.videoList = _.template( this.templates.playlist, { videos : this.videos.toJSON() })
+    this.videoList = _.template( this.templates.playlist)( { videos : this.videos.toJSON() } )
 
     this.$el.html( this.player )
     this.$el.append( this.videoList )

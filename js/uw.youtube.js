@@ -314,7 +314,7 @@ UW.YouTube.PlaylistItemView = Backbone.View.extend({
     // gets the data ready, templates it, then appends to the playlist section
     render: function () {
         var item = this.model.toJSON();
-        var small_vid = _.template(this.template, item);
+        var small_vid = _.template(this.template)( item );
         this.$el.append(small_vid);
     },
 });

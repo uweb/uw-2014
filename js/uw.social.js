@@ -32,7 +32,7 @@ UW.Social = Backbone.View.extend({
   initialize : function( options )
   {
     this.options = _.extend( {}, this.settings, this.$el.data() , options )
-    this.buttons = _.template( this.template, this.options )
+    this.buttons = _.template( this.template )( this.options )
     this.$el.html( this.buttons )
   },
 

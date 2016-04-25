@@ -19,7 +19,7 @@ UW.Alert = Backbone.View.extend({
   {
     if ( this.model.get('title'))
      {
-      $(this.options.after).after( _.template( this.template, this.model.toJSON() ) )
+      $(this.options.after).after( _.template( this.template )( this.model.toJSON() ) )
       this.setElement( $( this.alert ) )
     }
   },

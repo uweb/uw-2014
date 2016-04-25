@@ -50,11 +50,12 @@ UW.Slideshow = Backbone.View.extend({
 
   // When the view is initialized the controls are added to the dom, the number of slides is gathered,
   // and the z-index of the slides is reversed to keep the first image in the markup on top.
+  
   initialize : function( options )
   {
     this.options = _.extend( {}, this.settings, options )
     _.bindAll( this, 'animateIn', 'animateOut', 'addControls', 'zIndex', 'moveDots', 'goFullscreen' )
-    this.controls = _.template( this.controls, { classname: this.options.controlclasses.base } )
+    this.controls = _.template( this.controls )( { classname: this.options.controlclasses.base } )
     this.numberOfSlides = this.$el.find('.slide').length - 1
     this.photoSlider = this.$el.hasClass('photo-slider')
     this.organizeSlideshow()

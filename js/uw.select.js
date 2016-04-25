@@ -135,7 +135,7 @@ UW.Select = Backbone.View.extend({
   // This also keeps a cached version of the select menu with the `this.$select` property.
   render : function()
   {
-    this.html = _.template( this.template, { lis : this.LIs } )
+    this.html = _.template( this.template )( { lis : this.LIs }  )
     this.$el.hide().after( this.html )
     this.$select = this.$el
     this.setElement( this.$el.next() )

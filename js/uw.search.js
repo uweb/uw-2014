@@ -76,7 +76,7 @@ UW.Search = Backbone.View.extend({
   // since most events take place within that view.
   render : function()
   {
-    this.$el.html( _.template( this.searchbar, this.settings ))
+    this.$el.html( _.template( this.searchbar )( this.settings ))
   },
 
   // todo: cleanup this function

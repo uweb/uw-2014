@@ -184,7 +184,7 @@ UW.Search = Backbone.View.extend({
 
     this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
 
-    this.$searchbar = $( _.template( this.searchbar , this.settings ) )
+    this.$searchbar = $( _.template( this.searchbar )( this.settings ) )
 
     this.render()
 
@@ -363,7 +363,7 @@ UW.Search = Backbone.View.extend({
     _.each(data, function( person, index ) {
       if ( person.commonname )
       {
-        var template = _.template( result, person )
+        var template = _.template( result )( person )
         $results.prepend( template )
       }
     })
@@ -466,9 +466,9 @@ UW.QuickLinks = Backbone.View.extend({
 
     append_menu_item: function ( link ) {
         if ( link.get('classes') )
-            this.$big_list.append( _.template( this.template, link.toJSON() ) )
+            this.$big_list.append( _.template( this.template )( link.toJSON() ) )
          else
-            this.$little_list.append( _.template( this.template, link.toJSON() ) )
+            this.$little_list.append( _.template( this.template )( link.toJSON() ) )
     },
 
     add_lists : function () {
@@ -622,7 +622,7 @@ UW.Slideshow = Backbone.View.extend({
   {
     this.options = _.extend( {}, this.settings, options )
     _.bindAll( this, 'animateIn', 'animateOut', 'addControls', 'zIndex' )
-    this.controls = _.template( this.controls, { classname: this.options.controlclasses.base } )
+    this.controls = _.template( this.controls )( { classname: this.options.controlclasses.base } )
     this.numberOfSlides = this.$el.find('.slide').length - 1
     this.organizeSlideshow()
     this.addControls()
@@ -922,7 +922,7 @@ UW.YouTube.PlaylistItemView = Backbone.View.extend({
 
     render: function () {
         var item = this.model.toJSON();
-        var small_vid = _.template(this.template, item);
+        var small_vid = _.template(this.template)( item );
         this.$el.append(small_vid);
     },
 });
@@ -1009,7 +1009,7 @@ UW.Vimeo = Backbone.View.extend({
   // This loads the single video template and puts it into the DOM
   single : function()
   {
-    this.player = _.template( this.templates.video, this.options )
+    this.player = _.template( this.templates.video )( this.options )
     this.$el.html( this.player )
   },
 
@@ -1018,9 +1018,9 @@ UW.Vimeo = Backbone.View.extend({
   {
 
     _.extend( this.options, { video : this.videos.first().get('id') } )
-    this.player = _.template( this.templates.video, this.options )
+    this.player = _.template( this.templates.video )( this.options )
 
-    this.videoList = _.template( this.templates.playlist, { videos : this.videos.toJSON() })
+    this.videoList = _.template( this.templates.playlist )( { videos : this.videos.toJSON() } )
 
     this.$el.html( this.player )
     this.$el.append( this.videoList )
@@ -1470,7 +1470,7 @@ UW.Select = Backbone.View.extend({
   // This also keeps a cached version of the select menu with the `this.$select` property.
   render : function()
   {
-    this.html = _.template( this.template, { lis : this.LIs } )
+    this.html = _.template( this.template )( { lis : this.LIs } )
     this.$el.hide().after( this.html )
     this.$select = this.$el
     this.setElement( this.$el.next().children('ul') )
@@ -1653,7 +1653,7 @@ UW.Social = Backbone.View.extend({
   initialize : function( options )
   {
     this.options = _.extend( {}, this.settings, this.$el.data() , options )
-    this.buttons = _.template( this.template, this.options )
+    this.buttons = _.template( this.template )( this.options )
     this.$el.html( this.buttons )
   },
 
