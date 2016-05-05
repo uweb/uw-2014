@@ -5,7 +5,7 @@ UW.elements = {
   accordion  : '.uw-accordion',
   dropdowns  : '#dawgdrops',
   images     : 'a > img',
-  mobilemenu : '.uw-mobile-menu-toggle',
+  mobilemenu : '#mobile-relative',
   radio      : ':radio',
   checkbox   : ':checkbox',
   search     : '#uwsearcharea',
