@@ -6825,8 +6825,36 @@ body.home .uw-sidebar-menu {
   #mobile-relative.frontpage ul.uw-mobile-menu {
     z-index: 1;
   }
-  #mobile-relative.frontpage ul.uw-mobile-menu .menu-dropdowns-container {
+  #mobile-relative.frontpage ul.uw-mobile-menu > div {
     margin-top: 0px;
+  }
+  #mobile-relative.frontpage ul.uw-mobile-menu > div > ul {
+    margin: -10px -20px 0;
+  }
+  #mobile-relative.frontpage ul.uw-mobile-menu > div > ul .active-menu ul.sub-menu {
+    display: block;
+  }
+  #mobile-relative.frontpage ul.uw-mobile-menu > div > ul .active-menu.menu-item-has-children > a:after {
+    background-position: -284px -25px;
+  }
+  #mobile-relative.frontpage ul.uw-mobile-menu > div > ul ul.sub-menu {
+    display: none;
+  }
+  #mobile-relative.frontpage ul.uw-mobile-menu > div > ul ul.sub-menu a {
+    background-color: white;
+  }
+  #mobile-relative.frontpage ul.uw-mobile-menu > div > ul .menu-item-has-children > a {
+    position: relative;
+  }
+  #mobile-relative.frontpage ul.uw-mobile-menu > div > ul .menu-item-has-children > a:after {
+    content: "";
+    position: absolute;
+    top: 11px;
+    right: 11px;
+    width: 26px;
+    height: 23px;
+    background: url(assets/svg/uw-sprite.svg) -284px 0 no-repeat rgba(0, 0, 0, 0);
+    opacity: .8;
   }
   #mobile-relative.frontpage.bighero {
     margin-top: 0px;

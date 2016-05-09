@@ -181,7 +181,7 @@ function uw_list_front_page_menu_items()
       $items = wp_nav_menu( array(
               'title_li'     => '<a href="'.get_bloginfo('url').'" title="Home" class="homelink">Home</a>',
               'theme_location'  => UW_Dropdowns::LOCATION,
-              'depth' => 1,
+              'depth' => 2,
               'container_class' => '',
               'menu_class'      => '',
               'fallback_cb'     => '',
