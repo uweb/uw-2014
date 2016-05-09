@@ -12615,6 +12615,8 @@ UW.MobileMenu = Backbone.View.extend({
           $targetUl = $target.next('ul')
 
       $target.next('ul').first().prepend('<li>' + $target[0].outerHTML + '</li>');
+
+      // Initial ARIA tags
       $target.attr('aria-expanded', false);
       $targetUl.attr('aria-hidden', true)
     }) 
@@ -12626,6 +12628,7 @@ UW.MobileMenu = Backbone.View.extend({
 
     if( $targeUl.length > 0 ){
       event.preventDefault();  
+      // Toggle ARIA tags 
       $targeUl.attr('aria-hidden', function(index, attr){
         return attr === 'true' ? 'false' : 'true';
       });  
@@ -12648,26 +12651,7 @@ UW.MobileMenu = Backbone.View.extend({
     this.$mobilemenu.find('li').removeAttr('style');
   }
 
-})
-
-
-//   accessible : function (argument)
-//   {
-//       this.$el.attr( 'aria-expanded', this.open )
-//       this.quicklinks.attr('aria-hidden',  ( ! this.open ).toString() )
-//       if ( this.open ) {
-//           this.$el.attr('aria-label', 'Close quick links');
-//           this.quicklinks.find('a').attr( 'tabindex', 0 ).first().focus()
-//          $('#uw-container-inner').attr('aria-hidden', true);
-//          $('.screen-reader-shortcut').attr('aria-hidden', true)
-//       } else {
-//           this.$el.attr('aria-label', 'Open quick links');
-//           this.quicklinks.find('a').attr( 'tabindex', -1 )
-//           this.$el.focus()
-//          $('#uw-container-inner').attr('aria-hidden', false);
-//          $('.screen-reader-shortcut').attr('aria-hidden', false);
-//       }
-//   },;// ### UW Accordion
+});// ### UW Accordion
 
 // This creates a UW Accordion
 // For usage, refer to the [UW Web Components webpage](http://uw.edu/brand/web#accordion)
