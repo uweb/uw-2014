@@ -89,6 +89,13 @@
             //width: calc(~"100% - 40px");
             & > div {
                 margin-top: 0px;
+                ul {
+                  li {
+                    .current_page_parent {
+                      background-color: #909090;
+                    }
+                  }
+                }
                 & > ul {
                   margin: -10px -20px 0;
                   .active-menu {
@@ -105,13 +112,21 @@
                   }
                   ul.sub-menu {
                     display: none;
+                    li.current-menu-item a {
+                      background-color: #eee;
+                    } 
                     a {
                       background-color: white;
+                      color: #5F5F5F;
                     }
                   }
                   .menu-item-has-children {
                     & > a {
                       position: relative;
+                      padding: 10px 10px 10px 20px;
+                      &:focus {
+                        color: black;
+                      }
                       &:after {
                         content: "";
                             position: absolute;
@@ -121,6 +136,7 @@
                             height: 23px;
                             background: url(assets/svg/uw-sprite.svg) -284px 0 no-repeat rgba(0, 0, 0, 0);
                             opacity: .8;
+                            margin-top: 0;
                       }
                     }
                   }
