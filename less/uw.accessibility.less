@@ -100,9 +100,14 @@ label.screen-reader {
     }
     // 
     div.wp-caption > a > img {
-        &:hover,
-        &:focus {
-            outline: 7px solid #C3C3C3;
+        &:hover {
+                outline: 7px solid #C3C3C3;
+        }
+    }
+
+    div.wp-caption > a {
+        &:focus > img {
+                outline: 7px solid #C3C3C3;
         }
     }
 

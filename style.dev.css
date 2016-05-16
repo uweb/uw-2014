@@ -8592,8 +8592,10 @@ label.screen-reader {
 .uw-body .form-control {
   color: #303030;
 }
-.uw-body div.wp-caption > a > img:hover,
-.uw-body div.wp-caption > a > img:focus {
+.uw-body div.wp-caption > a > img:hover {
+  outline: 7px solid #C3C3C3;
+}
+.uw-body div.wp-caption > a:focus > img {
   outline: 7px solid #C3C3C3;
 }
 .site-accessibility .uw-body-copy a,
