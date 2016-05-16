@@ -1,4 +1,5 @@
-<form role="search" method="get" id="searchform" class="searchform" action="<?php echo set_url_scheme( site_url('/') ) ?>">
+<?php $url = is_multisite() ? network_site_url('/') : site_url('/'); ?>
+<form role="search" method="get" id="searchform" class="searchform" action="<?php echo set_url_scheme( $url ) ?>">
 	<div>
 		<label class="screen-reader-text" for="s">Search for:</label>
 		<input type="text" value="" name="s" id="s" placeholder="Search for:" autocomplete="off">
