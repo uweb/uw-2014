@@ -88,7 +88,8 @@ class UW_Iframes
       'storify.com',
       'w.soundcloud.com',
       'api.soundcloud.com', 
-      'flickr.com'
+      'flickr.com',
+      'vimeo.com'
     );
   }
 
