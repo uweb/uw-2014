@@ -89,7 +89,9 @@ class UW_Iframes
       'w.soundcloud.com',
       'api.soundcloud.com', 
       'flickr.com',
-      'vimeo.com'
+      'vimeo.com',
+      'www.facebook.com'
+      
     );
   }
 
