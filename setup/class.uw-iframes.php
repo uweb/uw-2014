@@ -90,7 +90,8 @@ class UW_Iframes
       'api.soundcloud.com', 
       'flickr.com',
       'vimeo.com',
-      'www.facebook.com'
+      'www.facebook.com',
+      'form.jotform.com'
       
     );
   }
