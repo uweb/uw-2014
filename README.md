@@ -231,7 +231,7 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 
 > Example:   
 ```
-    [iframe src="https://www.youtube.com/watch?v=0h33Y9Zw8oQ" height="500" width="700"]
+    [iframe src="https://www.youtube.com/embed/0h33Y9Zw8oQ" height="500" width="700"]
 ```
 
 > Allowed domains:
