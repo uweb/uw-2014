@@ -5,12 +5,12 @@
  * [trumba-rss url='calendar rss url' category='true' description='false' ]
  */
 
-class UW_TrumbaRSS
+class UAMS_TrumbaRSS
 {
 
     function __construct()
     {
-        add_shortcode('trumba-rss', array($this, 'trumba_rss_handler'));        
+        add_shortcode('trumba-rss', array($this, 'trumba_rss_handler'));
     }
 
     function trumba_rss_handler($atts)
@@ -37,7 +37,7 @@ class UW_TrumbaRSS
             $return .= "<h3 class='trumba-title'><span>" . $item->title . "</span></h3>" ;
             $return .= ($attributes->category == 'true') ? "<p class='trumba-category'>" . $item->category . "</p>" : '';
             $return .= ($attributes->description == 'true') ? "<p class='trumba-description'>" . $item->description . "</p>" : '';
-                        
+
         }
 
         return $return;

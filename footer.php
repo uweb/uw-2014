@@ -1,4 +1,4 @@
-    <div role="contentinfo" class="uw-footer">
+    <div role="contentinfo" class="uams-footer">
 
         <a href="http://www.washington.edu" class="footer-wordmark">University of Washington</a>
 
@@ -37,8 +37,8 @@
 
     </div>
 
-    </div><!-- #uw-container-inner -->
-    </div><!-- #uw-container -->
+    </div><!-- #uams-container-inner -->
+    </div><!-- #uams-container -->
 
 <?php wp_footer(); ?>
 

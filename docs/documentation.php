@@ -1,5 +1,5 @@
 <div class="wrap">
-  <div id="uw-documentation"></div>
+  <div id="uams-documentation"></div>
 </div>
 
 <div id="markdown" style="display:none;">

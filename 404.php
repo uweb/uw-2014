@@ -2,11 +2,11 @@
 
 <?php get_template_part( 'header', 'image' ); ?>
 
-<div class="container uw-body">
+<div class="container uams-body">
 
   <div class="row">
 
-    <div <?php uw_content_class(); ?> role="main">
+    <div <?php uams_content_class(); ?> role="main">
 
       <?php get_template_part( 'breadcrumbs' ); ?>
 

@@ -5,13 +5,13 @@
  * [trumba name='web name' type='spud type' base='teaser base url']
  */
 
-class UW_Trumba
+class UAMS_Trumba
 {
 
     function __construct()
     {
         $this->TrumbaAdded = false;
-        add_shortcode('trumba', array($this, 'trumba_handler'));        
+        add_shortcode('trumba', array($this, 'trumba_handler'));
     }
 
     function trumba_handler($atts)
@@ -37,7 +37,7 @@ class UW_Trumba
         if (isset($attributes->type)){
             $type = $attributes->type;
         }
-        
+
         if (isset($attributes->base)){
             $teaser = $attributes->base;
         }

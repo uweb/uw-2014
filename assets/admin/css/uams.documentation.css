@@ -1,0 +1,55 @@
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: 'Open Sans',sans-serif;
+  color: rgb(89, 89, 89);
+ }
+
+#uams-documentation h3 {
+  margin-top: 30px;
+  margin-bottom:5px;
+ }
+
+#uams-documentation, #uams-documentation p, #uams-documentation  {
+  font-family: 'Open Sans',sans-serif;
+  font-size: 17px;
+  line-height:  29px;
+  color: #3d3d3d;
+  -webkit-font-smoothing: antialiased;
+}
+
+#uams-documentation p {
+  padding-bottom: 15px;
+  margin:0;
+}
+
+#uams-documentation ul {
+  margin-top:5px;
+  padding-left:25px;
+  margin-bottom:14px;
+  list-style: none;
+  list-style-type: none;
+}
+
+#uams-documentation li {
+  margin-bottom: 6px;
+}
+
+#uams-documentation a {
+  color: #08d;
+  text-decoration: none;
+  -o-transition: .25s;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+#uams-documentation a:hover {
+  color: #c9c9c9;
+  text-decoration: none;
+}
+#uams-documentation pre {
+  background-color:  #f7f7f7;
+  padding: 10px;
+  margin-top: 0;
+}
+#uams-documentation code {
+  background-color:  rgba(0,0,0,0);
+  padding: 10px;
+}

@@ -9,10 +9,10 @@
  * [/accordion]
  */
 
-class UW_AccordionShortcode
+class UAMS_AccordionShortcode
 {
     const PRIORITY = 12;
-    
+
     function __construct()
     {
         remove_filter( 'the_content', 'wpautop' );
@@ -23,7 +23,7 @@ class UW_AccordionShortcode
 
         add_shortcode('accordion', array($this, 'accordion_handler'));
         add_shortcode('section', array($this, 'section_handler'));
-        add_shortcode('subsection', array($this, 'subsection_handler'));      
+        add_shortcode('subsection', array($this, 'subsection_handler'));
     }
 
     function accordion_handler( $atts, $content )

@@ -1,1 +1,1 @@
-<?php uw_breadcrumbs() ?>
+<?php uams_breadcrumbs() ?>

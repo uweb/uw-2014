@@ -1,0 +1,106 @@
+// UW Breadcrumbs
+
+.uams-breadcrumbs {
+	margin: -17px 0 15px -30px;
+	background-color: white;
+	display: inline-block;
+	padding: 20px 20px 0 30px;
+	ul {
+		padding: 0;
+		margin: 0;
+	}
+	li {
+		list-style: none;
+		display: inline-block;
+		position: relative;
+		&:first-child {
+			a {
+				background: url(assets/svg/uams-sprite.svg) no-repeat -349px 5px;
+				text-indent: -99999px;
+				width: 30px;
+				padding: 5px 0 5px 0;
+				margin-right: 25px;
+				&:before {
+					right: -18px;
+				}
+			}
+			&:after {
+				top: 17px;
+			}
+		}
+		&.current {
+            span {
+                color: @darkgold;
+            }
+			&:after {
+				display: none;
+			}
+		}
+		&:before {
+			content: "";
+			position: absolute;
+			height: 29px;
+			width: 25px;
+			right: 0;
+			top: 4px;
+			background: url('assets/images/breadcrumb-gradient.png') right top repeat-y transparent;
+		}
+		&:after {
+			content: "";
+			position: absolute;
+			height: 10px;
+			width: 10px;
+			right: 5px;
+			top: 7px;
+			.opacity(.8);
+			background: url('assets/svg/caret.svg') no-repeat;
+			.background-size(7px 5px);
+			.rotate(-90deg);
+		}
+		&:empty {
+			display: none;
+		}
+		a:hover {
+			border-bottom: none;
+			text-decoration: underline;
+		}
+	}
+	a, span {
+		font-family: @font-family-headline;
+		color: #535353;
+		font-weight: 400;
+		font-size: 15px;
+		padding: 0 25px 0 0;
+		display: block;
+		white-space: nowrap;
+		overflow: hidden;
+		//Caret
+		br {
+			display: none;
+		}
+	}
+}
+@media only screen and (max-width : 767px) {
+	.uams-breadcrumbs {
+		float: none;
+		padding: 0;
+		margin: 0 0 0 -5px;
+		li {
+			float: left;
+			display: initial;
+			a, span {
+				padding: 0 25px 0 0;
+			}
+			&:first-child {
+				a {
+					background-position: -250px -3px;
+					padding: 0;
+				}
+				&:after {
+					top: 8px;
+				}
+			}
+
+		}
+	}
+}

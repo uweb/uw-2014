@@ -17,9 +17,9 @@
             <link rel='stylesheet' href='<?php bloginfo("template_directory"); ?>/assets/ie/css/ie.css' type='text/css' media='all' />
         <![endif]-->
 
-        <?php 
-        echo get_post_meta( get_the_ID() , 'javascript' , 'true' ); 
-        echo get_post_meta( get_the_ID() , 'css' , 'true' ); 
+        <?php
+        echo get_post_meta( get_the_ID() , 'javascript' , 'true' );
+        echo get_post_meta( get_the_ID() , 'css' , 'true' );
         ?>
 
     </head>
@@ -28,16 +28,16 @@
     <body <?php body_class(); ?> >
     <!--<![endif]-->
 
-    <div id="uwsearcharea" aria-hidden="true" class="uw-search-bar-container"></div>
+    <div id="uamssearcharea" aria-hidden="true" class="uams-search-bar-container"></div>
 
     <a id="main-content" href="#main_content" class='screen-reader-shortcut'>Skip to main content</a>
 
-    <div id="uw-container">
+    <div id="uams-container">
 
-    <div id="uw-container-inner">
+    <div id="uams-container-inner">
 
 
     <?php get_template_part('thinstrip'); ?>
 
-    <?php require( get_template_directory() . '/inc/template-functions.php' ); 
-          uw_dropdowns(); ?>
+    <?php require( get_template_directory() . '/inc/template-functions.php' );
+          uams_dropdowns(); ?>

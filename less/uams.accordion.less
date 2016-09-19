@@ -1,0 +1,93 @@
+/*
+ *  All styles for UW accordion
+ */
+
+
+
+
+.uams-accordion {
+    h3 {
+        background-color: #E8E8E8;
+        color: #565656;
+        padding: 15px 15px 15px 15px;
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 19px;
+        cursor: pointer;
+        &.active:after {
+            background-position: -283px -23px;
+        }
+    }
+    h3:after {
+        content: " ";
+        float: right;
+        display: block;
+        width: 30px;
+        height: 25px;
+        background: url(assets/svg/uams-sprite.svg) no-repeat -283px 2px rgba(255, 255, 255, 0);
+    }
+    div {
+        height: 0px;
+        overflow: hidden;
+    }
+    div.active {
+        height: auto;
+    }
+}
+
+.uams-accordion-shortcode__panel[aria-hidden=true] {
+    display: none;
+}
+.uams-accordion-shortcode__header {
+    position: relative;
+}
+.uams-accordion-shortcode__header {
+    display: block;
+    background: none;
+    font-family: inherit;
+    font-size: 1.125em;
+    text-align: left;
+    width: 100%;
+    font-weight: bold;
+    border: 0;
+    padding: 7px 5px;
+    border-bottom: 1px solid #DEDEDE;
+    color: @red;
+    .transition (all .1s cubic-bezier(0.25, 0.46, 0.45, 0.94));
+    &:hover,
+    &:focus {
+        outline: none;
+        background-color: #ddd;
+    }
+}
+.uams-accordion-shortcode__header:before {
+    content: " ";
+    display: block;
+    float: right;
+    width: 30px;
+    height: 25px;;
+    margin-top: 3px;
+    background-image: url(assets/svg/uams-sprite.svg);
+    background-repeat: no-repeat;
+}
+.uams-accordion-shortcode__panel {
+    .uams-accordion-shortcode__header {
+        color: #595959;
+        padding-left: 20px;
+    }
+}
+.uams-accordion-shortcode__header[aria-expanded="true"]:before {
+    background-position: -283px -23px;
+}
+.uams-accordion-shortcode__header[aria-expanded="false"]:before {
+    background-position: -283px 2px;
+}
+.uams-accordion-shortcode__header[aria-expanded="true"] {
+    margin-bottom: 20px;
+}
+.uams-accordion-shortcode__title {
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}

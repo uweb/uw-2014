@@ -1,33 +1,33 @@
 <?php
 
 //
-// UW Dropdown Menus
+// UAMS Dropdown Menus
 //
 
-if ( ! function_exists('uw_content_class') ) :
-  function uw_content_class( $class = '' )
+if ( ! function_exists('uams_content_class') ) :
+  function uams_content_class( $class = '' )
   {
-    echo 'class="' . join( ' ', get_uw_content_class( $class ) ) . '"';
+    echo 'class="' . join( ' ', get_uams_content_class( $class ) ) . '"';
   }
 endif;
 
-if ( ! function_exists('get_uw_content_class') ) :
-  function get_uw_content_class( $class = '' )
+if ( ! function_exists('get_uams_content_class') ) :
+  function get_uams_content_class( $class = '' )
   {
-    $classes = array( 'uw-content' );
-    if ( uw_has_sidebar() )
+    $classes = array( 'uams-content' );
+    if ( uams_has_sidebar() )
       $classes[] = 'col-md-8';
     else
       $classes[] = 'col-md-12';
 
     $classes = array_map( 'esc_attr', $classes );
 
-    return apply_filters( 'uw_content_class', $classes, $class );
+    return apply_filters( 'uams_content_class', $classes, $class );
   }
 endif;
 
-if ( ! function_exists( 'uw_has_sidebar' ) ) :
-  function uw_has_sidebar()
+if ( ! function_exists( 'uams_has_sidebar' ) ) :
+  function uams_has_sidebar()
   {
     global $post;
 
@@ -37,46 +37,46 @@ if ( ! function_exists( 'uw_has_sidebar' ) ) :
   }
 endif;
 
-if ( ! function_exists( 'uw_dropdowns') ) :
-  function uw_dropdowns()
+if ( ! function_exists( 'uams_dropdowns') ) :
+  function uams_dropdowns()
   {
 
     echo '<nav id="dawgdrops" aria-label="Main menu" role="navigation"><div class="dawgdrops-inner container" role="application">';
-          
+
     echo  wp_nav_menu( array(
-            'theme_location'  => UW_Dropdowns::LOCATION,
+            'theme_location'  => UAMS_Dropdowns::LOCATION,
             'container'       => false,
             //'container_class' => 'dawgdrops-inner container',
             'menu_class'      => 'dawgdrops-nav',
             'fallback_cb'     => '',
-            'walker'          => new UW_Dropdowns_Walker_Menu()
+            'walker'          => new UAMS_Dropdowns_Walker_Menu()
           ) );
 
     echo '</div></nav>';
   }
 endif;
 
-if ( ! function_exists('uw_sidebar_menu') ) :
+if ( ! function_exists('uams_sidebar_menu') ) :
 
-  function uw_sidebar_menu()
+  function uams_sidebar_menu()
   {
-    echo sprintf( '<nav id="desktop-relative" role="navigation" aria-label="relative">%s</nav>', uw_list_pages() ) ;
+    echo sprintf( '<nav id="desktop-relative" role="navigation" aria-label="relative">%s</nav>', uams_list_pages() ) ;
   }
 
 endif;
 
-if ( ! function_exists( 'uw_mobile_menu' ) ) :
+if ( ! function_exists( 'uams_mobile_menu' ) ) :
 
-  function uw_mobile_menu()
+  function uams_mobile_menu()
   {
-    echo sprintf( '<nav id="mobile-relative" role="navigation" aria-label="relative">%s</nav>', uw_list_mobile_pages() ) ;
+    echo sprintf( '<nav id="mobile-relative" role="navigation" aria-label="relative">%s</nav>', uams_list_mobile_pages() ) ;
   }
 
 endif;
 
-if ( ! function_exists( 'uw_mobile_front_page_menu' ) ) :
+if ( ! function_exists( 'uams_mobile_front_page_menu' ) ) :
 
-  function uw_mobile_front_page_menu($class='')
+  function uams_mobile_front_page_menu($class='')
   {
     $spacer = '';
     if (!empty($class)){
@@ -84,24 +84,24 @@ if ( ! function_exists( 'uw_mobile_front_page_menu' ) ) :
         $spacer = '<div id="spacer"></div>';
 
     }
-    echo sprintf( '<nav id="mobile-relative" class="frontpage%s" role="navigation" aria-label="relative">%s%s</nav>', $class, $spacer, uw_list_front_page_menu_items() ) ;
+    echo sprintf( '<nav id="mobile-relative" class="frontpage%s" role="navigation" aria-label="relative">%s%s</nav>', $class, $spacer, uams_list_front_page_menu_items() ) ;
   }
 
 endif;
 
-if ( ! function_exists( 'uw_list_pages') ) :
+if ( ! function_exists( 'uams_list_pages') ) :
 
-  function uw_list_pages( $mobile = false )
+  function uams_list_pages( $mobile = false )
   {
-    global $UW;
+    global $UAMS;
     global $post;
 
     $parent = get_post( $post->post_parent );
 
     if ( ! $mobile && ! get_children( array('post_parent' => $post->ID, 'post_status' => 'publish' ) ) && $parent->ID == $post->ID ) return;
 
-    $toggle = $mobile ? '<button class="uw-mobile-menu-toggle">Menu</button>' : '';
-    $class  = $mobile ? 'uw-mobile-menu' : 'uw-sidebar-menu';
+    $toggle = $mobile ? '<button class="uams-mobile-menu-toggle">Menu</button>' : '';
+    $class  = $mobile ? 'uams-mobile-menu' : 'uams-sidebar-menu';
 
     $siblings = get_pages( array (
       'parent'    => $parent->post_parent,
@@ -117,7 +117,7 @@ if ( ! function_exists( 'uw_list_pages') ) :
       'exclude_tree' => $ids,
       'depth'        => 3,
       'echo'         => 0,
-      'walker'       => $UW->SidebarMenuWalker
+      'walker'       => $UAMS->SidebarMenuWalker
     ));
 
     $bool = strpos($pages , 'child-page-existance-tester');
@@ -128,28 +128,28 @@ if ( ! function_exists( 'uw_list_pages') ) :
 
 endif;
 
-if ( ! function_exists( 'uw_list_mobile_pages' ) ) :
+if ( ! function_exists( 'uams_list_mobile_pages' ) ) :
 
-  function uw_list_mobile_pages()
+  function uams_list_mobile_pages()
   {
     if ( ! is_front_page() ) {
-      $isMenuEmpty = uw_list_pages( $mobile = true );
+      $isMenuEmpty = uams_list_pages( $mobile = true );
       $alwaysMobile = get_option('use_main_menu_on_mobile');
       if(empty($isMenuEmpty) && $alwaysMobile){
-        return uw_list_front_page_menu_items();
+        return uams_list_front_page_menu_items();
       }
       return $isMenuEmpty;
     }
 
     $locations = get_nav_menu_locations();
 
-    $menu      = wp_get_nav_menu_object( $locations[ UW_Dropdowns::LOCATION ] );
+    $menu      = wp_get_nav_menu_object( $locations[ UAMS_Dropdowns::LOCATION ] );
 
     if ( ! $menu ) return;
 
     $items     = wp_get_nav_menu_items( $menu->term_id );
 
-    $toggle    = '<button class="uw-mobile-menu-toggle">Menu</button>';
+    $toggle    = '<button class="uams-mobile-menu-toggle">Menu</button>';
 
 
     foreach( $items as $item )
@@ -164,44 +164,44 @@ if ( ! function_exists( 'uw_list_mobile_pages' ) ) :
       'sort_order'   => 'menu_order',
       'depth'        => 1,
       'echo'         => 0,
-      'walker'       => $UW->SidebarMenuWalker
+      'walker'       => $UAMS->SidebarMenuWalker
     ));
 
-    return $pages ? sprintf( '%s<ul class="uw-mobile-menu first-level">%s</ul>', $toggle, $pages ) : '';
+    return $pages ? sprintf( '%s<ul class="uams-mobile-menu first-level">%s</ul>', $toggle, $pages ) : '';
 
   }
 
 endif;
 
-if ( ! function_exists( 'uw_list_front_page_menu_items' ) ) :
+if ( ! function_exists( 'uams_list_front_page_menu_items' ) ) :
 
-function uw_list_front_page_menu_items()
+function uams_list_front_page_menu_items()
 {
-      $toggle = '<button class="uw-mobile-menu-toggle">Menu</button>';
+      $toggle = '<button class="uams-mobile-menu-toggle">Menu</button>';
       $items = wp_nav_menu( array(
               'title_li'     => '<a href="'.get_bloginfo('url').'" title="Home" class="homelink">Home</a>',
-              'theme_location'  => UW_Dropdowns::LOCATION,
-              'depth' => 2,
+              'theme_location'  => UAMS_Dropdowns::LOCATION,
+              'depth' => 3,
               'container_class' => '',
               'menu_class'      => '',
               'fallback_cb'     => '',
               'echo' => false,
-              // 'walker'          => new UW_Dropdowns_Walker_Menu()
+              // 'walker'          => new UAMS_Dropdowns_Walker_Menu()
       ) );
 
-      return $items ? sprintf( '%s<ul class="uw-mobile-menu first-level">%s</ul>', $toggle, $items ) : '';
+      return $items ? sprintf( '%s<ul class="uams-mobile-menu first-level">%s</ul>', $toggle, $items ) : '';
 
 
 }
 
-if ( ! function_exists('get_uw_breadcrumbs') ) :
+if ( ! function_exists('get_uams_breadcrumbs') ) :
 
-  function get_uw_breadcrumbs()
+  function get_uams_breadcrumbs()
   {
 
     global $post;
     $ancestors = array_reverse( get_post_ancestors( $post->ID ) );
-    $html = '<li><a href="http://uw.edu" title="University of Washington">Home</a></li>';
+    $html = '<li><a href="http://www.uams.edu" title="University of Arkansas for Medical Scineces">Home</a></li>';
     $html .= '<li' . (is_front_page() ? ' class="current"' : '') . '><a href="' . home_url('/') . '" title="' . get_bloginfo('title') . '">' . get_bloginfo('title') . '</a><li>';
 
     if ( is_404() )
@@ -250,7 +250,7 @@ if ( ! function_exists('get_uw_breadcrumbs') ) :
           $category = array_shift( $thecat ) ;
           $html .=  '<li><a href="'  . get_category_link( $category->term_id ) .'" title="'. get_cat_name( $category->term_id ).'">'. get_cat_name($category->term_id ) . '</a>';
         }
-        if ( uw_is_custom_post_type() )
+        if ( uams_is_custom_post_type() )
         {
           $posttype = get_post_type_object( get_post_type() );
           $archive_link = get_post_type_archive_link( $posttype->query_var );
@@ -291,31 +291,31 @@ if ( ! function_exists('get_uw_breadcrumbs') ) :
 
     }
 
-    return "<nav class='uw-breadcrumbs' role='navigation' aria-label='breadcrumbs'><ul>$html</ul></nav>";
+    return "<nav class='uams-breadcrumbs' role='navigation' aria-label='breadcrumbs'><ul>$html</ul></nav>";
   }
 
 endif;
 
-if ( ! function_exists('uw_breadcrumbs') ) :
+if ( ! function_exists('uams_breadcrumbs') ) :
 
-  function uw_breadcrumbs()
+  function uams_breadcrumbs()
   {
-    echo get_uw_breadcrumbs();
+    echo get_uams_breadcrumbs();
   }
 
 endif;
 
 endif;
 
-if ( ! function_exists( 'uw_thumbnail_url' ) ) :
-  function uw_thumbnail_url( $size = 'original' )
+if ( ! function_exists( 'uams_thumbnail_url' ) ) :
+  function uams_thumbnail_url( $size = 'original' )
   {
-    echo uw_get_thumbnail_url( $size );
+    echo uams_get_thumbnail_url( $size );
   }
 endif;
 
-if ( ! function_exists( 'uw_get_thumbnail_url' ) ) :
-  function uw_get_thumbnail_url( $size = 'original' )
+if ( ! function_exists( 'uams_get_thumbnail_url' ) ) :
+  function uams_get_thumbnail_url( $size = 'original' )
   {
     $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id(), 'original', true);
     return $thumbnail[0];
@@ -330,8 +330,8 @@ if ( ! function_exists( 'is_pdf' ) ):
 
 endif;
 
-if ( ! function_exists( 'uw_get_sticky_posts' ))  :
-   function uw_get_sticky_posts( $args = null )
+if ( ! function_exists( 'uams_get_sticky_posts' ))  :
+   function uams_get_sticky_posts( $args = null )
   {
     $stickyposts = get_option( 'sticky_posts' );
 
@@ -343,24 +343,37 @@ if ( ! function_exists( 'uw_get_sticky_posts' ))  :
   }
 endif;
 
-if ( ! function_exists('uw_is_custom_post_type') ) :
+if ( ! function_exists('uams_is_custom_post_type') ) :
 
-  function uw_is_custom_post_type()
+  function uams_is_custom_post_type()
   {
     return get_post_type() ? array_key_exists(  get_post_type(),  get_post_types( array( '_builtin'=>false) ) ) : true;
   }
 
 endif;
 
-if ( !function_exists('uw_site_title')):
+if ( !function_exists('uams_site_title')):
 
-    function uw_site_title()
+    function uams_site_title()
     {
-        $classes = 'uw-site-title';
+        $classes = 'uams-site-title';
         if (get_option('overly_long_title')){
             $classes .= ' long-title';
         }
         echo '<a href="' . home_url('/') . '" title="' . esc_attr( get_bloginfo() ) . '"><div class="' . $classes . '">' . get_bloginfo() . '</div></a>';
+    }
+
+endif;
+
+if ( !function_exists('uams_page_title')):
+
+    function uams_page_title()
+    {
+        $classes = 'uams-site-title';
+        if (get_option('overly_long_title')){
+            $classes .= ' long-title';
+        }
+        echo '<a href="" title="' . esc_attr( get_the_title() ) . '"><div class="' . $classes . '">' . get_the_title() . '</div></a>';
     }
 
 endif;

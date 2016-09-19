@@ -12,7 +12,7 @@
  *    default link text is Read More
  */
 
-class UW_SubpageList
+class UAMS_SubpageList
 {
 
     function __construct()
@@ -26,18 +26,18 @@ class UW_SubpageList
             'link'    => 'Read more',
             'tilebox' => false
         ), $atts );
-      
+
         global $post;
-        
+
         $subpages = get_pages(array('parent' => get_the_ID(), 'sort_column'=>'menu_order'));
 
         if (!empty($subpages)){
           $output = '';
           $tiles = 0;
           foreach ($subpages as $page){
-            
+
             $permalink = get_post_permalink($page->ID);
-            
+
             if (!$attributes->tilebox){
               $output = $output . sprintf("<h2><a href='%s'>%s</a></h2>", $permalink, $page->post_title);
               if (get_option('show_byline_on_posts')){
@@ -45,7 +45,7 @@ class UW_SubpageList
               }
               $output = $output . sprintf('<p>%s</p>', $page->post_excerpt);
               if (!empty($attributes->link)){
-                $output = $output . sprintf("<a class='uw-btn btn-sm' href='%s'>%s</a>", $permalink, $attributes->link);
+                $output = $output . sprintf("<a class='uams-btn btn-sm' href='%s'>%s</a>", $permalink, $attributes->link);
               }
             }
             else {
@@ -70,7 +70,7 @@ class UW_SubpageList
 
           if ($tiles == 1){
             //we've been incrementing tiles, so tilebox is active, but we are missing a blank tile and closing tags
-            $output = $output . "<div class='tile empty'></div></div></div>"; 
+            $output = $output . "<div class='tile empty'></div></div></div>";
           }
         }
 

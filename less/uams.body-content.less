@@ -1,0 +1,352 @@
+// Sets bulleted items to a default padding:
+
+ul {
+	padding-left: 25px;
+	//list-style-position: inside;
+}
+dd {
+	margin-bottom: 24.5px;
+}
+
+// Basic styles
+
+hr {
+	border-top: 1px solid #EBEBEB;
+	clear: both;
+}
+
+iframe {
+	margin: 40px 0 20px;
+}
+
+
+// This overrides the line-height issue with bootrap
+small,
+.small {
+	font-size: 15px;
+	line-height: 1.5;
+}
+
+
+.intro,
+.lead {
+	font-family: @font-family-headline;
+	font-size: 23px;
+	font-weight: 400;
+	line-height: 1.5;
+	margin-bottom: 20px;
+}
+
+// Makes heavy
+.uams-body-copy .weight-900 {
+	font-weight: @ultra;
+}
+
+a.more {
+  position: relative;
+ // display: inline-block;
+  &:after {
+    background: url(/wp-content/themes/uams-2014/assets/svg/uams-sprite.svg) no-repeat -206px -492px;
+    content: "";
+    position: absolute;
+    right: -24px;
+    bottom: 0px;
+    width: 14px;
+    height: 21px;
+    .rotate(90deg);
+  }
+}
+
+
+// Wrapper
+
+.uams-body {
+	position:relative;
+	&.container {
+		background-color: white;
+		margin-bottom: 80px;
+	}
+}
+
+// Actual content area (includes sideabar)
+
+.uams-body {
+	padding-top: 10px;
+	-webkit-font-smoothing: antialiased;
+	h1, h2 {
+		color: @red;
+		display: block;
+	}
+	h2, h3, h4, h5 {
+		font-weight: @bold;
+	}
+	blockquote {
+		p {
+			font-family: @font-family-headline;
+			font-size: 21px;
+		}
+	}
+	.uams-site-title {
+		position: absolute;
+		top: -150px;
+		left: 11px;
+		color: #fff;
+		font-family: @font-family-headline;
+		font-size: 50px;
+		line-height: 55px;
+		font-weight: @ultra;
+		-webkit-font-smoothing: antialiased;
+		span {
+			font-weight: @bold;
+		}
+	}
+	div.uams-site-title {
+		margin-top: 29px;
+		margin-bottom: 14.5px;
+	}
+  p.date {
+    margin-top: 25px;
+    margin-bottom: -19px;
+    // &:first-of-type{
+    //     margin-top: 0px;
+    // }
+  }
+  .author-info {
+    margin: -4.5px 0 20px 0;
+    font-weight: @ultra;
+  }
+
+}
+
+// Next link in the blog
+
+span.next-page {
+	display: block;
+	margin-top: 50px;
+	a {
+	  padding: 10px 40px 10px 19px;
+	  text-transform: uppercase;
+	  background-color: @ultralightgold;
+	  font-family: @font-family-headline;
+	  font-weight: @bold;
+	  color: @darkgray;
+	  display: inline-block;
+	  position: relative;
+	  background-image: none !important;
+	  border-bottom: none;
+	  margin-bottom: 25px;
+	  margin-right: 55px;
+	  z-index: 1;
+	  line-height: 24px;
+	  font-size: 14px;
+	  font-weight: @bold;
+	  border-radius:0;
+	  -webkit-border-radius:0;
+	  -moz-border-radius:0;
+	  &:after {
+		background: url(/wp-content/themes/uams-2014/assets/svg/uams-sprite.svg) no-repeat -206px -492px;
+		content: "";
+		position: absolute;
+		right: 17px;
+		top: 12px;
+		bottom: 3px;
+		width: 14px;
+		height: 21px;
+		.rotate(90deg);
+	  }
+	  &:hover {
+	  	 background-color: darken(@ultralightgold, 5%);
+	  }
+	}
+}
+
+
+ // (doesn't include sidebar)
+
+.uams-body-copy {
+	h1 a,
+	h2 a,
+	h3 a,
+	h4 a,
+	h5 a {
+		border-bottom: none;
+		color: inherit;
+	}
+	a {
+		text-decoration: none;
+		// border-bottom: 1px solid #D3D3D3;
+
+	}
+}
+
+
+.info-box {
+	width: 310px;
+	float: left;
+	margin-right: 50px;
+	margin-bottom: 50px;
+	margin-top: 20px;
+	margin-left: -150px;
+	padding: 30px 30px 30px;
+	.box-shadow(0px 1px 2px rgba(0, 0, 0, 0.2));
+	border-top: 6px solid @lightgold;
+	position: relative;
+	background: url('assets/images/stripes-dark-tile.svg') repeat-x 0 -88px transparent;
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+	&:after {
+		top: auto;
+		bottom: -40px;
+	}
+	p, li, a {
+		font-size: 16px;
+		line-height: 1.6;
+	}
+	h1, h2, h3, h4, h5 {
+		margin-top: 0;
+	}
+}
+.uams-body-copy ul.links {
+	overflow: visible;
+}
+
+.links {
+	padding: 0;
+	margin-top: 20px;
+	overflow: visible;
+	a {
+//		position: relative;
+//		&:after {
+//			background: url(/wp-content/themes/uams-2014/assets/svg/uams-sprite.svg) no-repeat -206px -492px;
+//			content: "";
+//			opacity: .4;
+//			position: absolute;
+//			right: -23px;
+//			bottom: 1px;
+//			width: 14px;
+//			height: 21px;
+//			.rotate(90deg);
+//		}
+	}
+	li {
+		padding: 0;
+		list-style: none;
+		margin-bottom: 6px;
+		padding-bottom: 6px;
+		border-bottom: 1px solid #EEE;
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+}
+
+img.attachment-post-thumbnail.wp-post-image,
+.archive .uams-body-copy img.attachment-thumbnail.wp-post-image {
+	float: left;
+    margin: 5px 50px 0 0;
+    height: 150px;
+    width: auto;
+
+	// Images on the blogroll page
+	&.blogroll-img {
+	    margin-bottom: 20px;
+	    height: 130px;
+	}
+}
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 767px) {
+	.uams-body {
+		padding: 20px;
+		.uams-site-title {
+			color: @red;
+			font-size: 25px;
+			line-height: 1.2;
+			font-weight: @ultra;
+			margin: -20px -20px 20px -20px;
+			padding: 15px 15px 15px 20px;
+			position: static;
+			text-shadow: 0 1px 2px rgba(0,0,0,.2);
+		}
+		h1 {
+			margin: 10px 80px 20px 0;
+			font-size: 33px;
+		}
+        p.date {
+            margin-bottom: -15px;
+        }
+	}
+    .home {
+        .uams-body {
+            .uams-site-title{
+                padding-right: 65px;
+             }
+        }
+    }
+}
+
+@media only screen and (min-width : 768px) {
+    .uams-body {
+        .uams-site-title {
+            &.long-title {
+                margin-top: 3px;
+            }
+        }
+    }
+}
+
+// .home .uams-sidebar-menu {
+// 	display: none;
+// }
+
+.widget {
+	padding: 10px 0 0 40px;
+}
+
+
+// Big Screens
+
+@media only screen and (max-width : 1600px) {
+	.info-box {
+		margin-left: -50px;
+	}
+}
+
+@media only screen and (max-width : 767px) {
+
+	.widget {
+		padding: 0;
+	}
+	.info-box {
+		margin-left: 0;
+		width: 100%;
+	}
+    .uams-body-copy {
+        h1,h2,h3,h4,p:first-of-type {
+            clear: right;
+        }
+        >div.row {
+            clear:both;
+        }
+    }
+
+}
+@media only screen and (min-width : 768px) {
+
+	.uams-body {
+		.uams-site-title {
+			text-shadow: 1px 1px 2px rgba(0,0,0,.5);
+		}
+	}
+
+	// Fixes floated images next to a bulleted list. The bullets weren't indenting properly
+	.uams-body-copy {
+		ul {
+			overflow: hidden;
+		}
+	}
+
+}

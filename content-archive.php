@@ -12,7 +12,7 @@ if (get_option('show_byline_on_posts')) :
 <?php
 endif;
   if ( ! is_home() && ! is_search() && ! is_archive() ) :
-    uw_mobile_menu();
+    uams_mobile_menu();
   endif;
  if ( has_post_thumbnail() ) :
  	the_post_thumbnail( 'thumbnail' , 'style=margin-bottom:5px;');

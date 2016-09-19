@@ -1,0 +1,192 @@
+#mobile-relative {
+    display: none;
+    ul.uams-mobile-menu {
+      display: none;
+      width: 100%;
+      float: right;
+      clear: both;
+      list-style:none;
+      padding:0;
+      margin:0 0 25px;
+      > ul
+      {
+        display: block;
+        list-style:none;
+        padding:0;
+        margin:0;
+      }
+      li {
+        width: 100%;
+      }
+    }
+}
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 768px) {
+
+  //Hides desktop version
+  #desktop-relative {
+    display: none;
+  }
+
+  .uams-mobile-menu li {
+    background-color: #eee;
+    border-bottom: 1px solid #fff;
+  }
+  #mobile-relative {
+    display: block;
+    button.uams-mobile-menu-toggle
+    {
+      display:block;
+      position: relative;
+      float:right;
+      margin-top: -55px;
+      margin-right: -10px;
+      font-size: @font-size-base / 1.2;
+      line-height: @line-height-base / 1.2;
+      font-family: @font-family-headline;
+      font-weight: @bold;
+      text-align: center;
+      width: 50px;
+      height: 40px;
+      text-transform: uppercase;
+      color:@red;
+      background: url(assets/svg/uams-sprite.svg) no-repeat -475px 20px transparent;
+      background-size: 1200px;
+      border: none;
+      padding: 0 0 20px 0;
+      &:before {
+        content: "";
+        position: absolute;
+        right: 55px;
+        top: -4px;
+        width: 20px;
+        height: 40px;
+        background: url(assets/svg/uams-sprite.svg) no-repeat -600px 0 transparent;
+      }
+    }
+    ul.uams-mobile-menu li.pagenav ul li.current_page_parent.current_page_ancestor > a:after {
+      display: none;
+    }
+    &.frontpage {
+        margin-top: -10px;
+        position: relative;
+        button.uams-mobile-menu-toggle {
+            position: absolute;
+            right: -20px;
+            z-index: 10;
+            margin: 0;
+            top: -50px;
+        }
+        ul.uams-mobile-menu {
+            //position: absolute;
+            //right: 20px;
+            z-index: 1;
+            //margin-top: 62px;
+            //width: calc(~"100% - 40px");
+            & > div {
+                margin-top: 0px;
+                ul {
+                  li {
+                    .current_page_parent {
+                      background-color: #909090;
+                    }
+                  }
+                }
+                & > ul {
+                  margin: -10px -20px 0;
+                  .active-menu {
+                    ul.sub-menu {
+                      display: block;
+                    }
+                    &.menu-item-has-children {
+                      & > a {
+                        &:after {
+                          background-position: -284px -25px;
+                        }
+                      }
+                    }
+                  }
+                  ul.sub-menu {
+                    display: none;
+                    li.current-menu-item a {
+                      background-color: #eee;
+                    }
+                    a {
+                      background-color: white;
+                      color: #5F5F5F;
+                    }
+                  }
+                  .menu-item-has-children {
+                    & > a {
+                      position: relative;
+                      padding: 10px 10px 10px 20px;
+                      &:focus {
+                        color: black;
+                      }
+                      &:after {
+                        content: "";
+                            position: absolute;
+                            top: 11px;
+                            right: 11px;
+                            width: 26px;
+                            height: 23px;
+                            background: url(assets/svg/uams-sprite.svg) -284px 0 no-repeat rgba(0, 0, 0, 0);
+                            opacity: .8;
+                            margin-top: 0;
+                      }
+                    }
+                  }
+                }
+            }
+        }
+        &.bighero {
+            margin-top: 0px;
+            background-color: white;
+            button.uams-mobile-menu-toggle {
+                right: 0px;
+                top: 12px;
+            }
+            ul.uams-mobile-menu {
+                margin: 0;
+            }
+            #spacer {
+                height: 58px;
+                margin-bottom: 2px;
+                width: 100%;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+    &:after { //clearfix
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+   }
+  }
+
+  // Next few lines for the homepage only
+ .home
+   #mobile-relative {
+    li{
+      a:hover,
+      a:focus {
+        border-bottom: 1px solid #eee;
+      }
+      &:last-child {
+        a:hover,
+        a:focus {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+}
+

@@ -14,13 +14,13 @@ if ((is_single() || is_home()) && get_option('show_byline_on_posts')) :
 <?php
 endif;
   if ( ! is_home() && ! is_search() && ! is_archive() ) :
-    uw_mobile_menu();
+    uams_mobile_menu();
   endif;
 
 ?>
 
 <?php
-  
+
 
   if ( is_archive() || is_home() ) {
     the_post_thumbnail( array(130, 130), array( 'class' => 'attachment-post-thumbnail blogroll-img' ) );

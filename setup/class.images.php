@@ -4,7 +4,7 @@
 // Installs the custom image sizes
 //
 
-class UW_Images
+class UAMS_Images
 {
 
   // If `$show` is true it will appear in the image dropdown menu
@@ -86,11 +86,11 @@ class UW_Images
 
   function __construct()
   {
-    add_action( 'after_setup_theme', array( $this, 'add_uw_image_sizes' ) );
+    add_action( 'after_setup_theme', array( $this, 'add_uams_image_sizes' ) );
     add_filter( 'image_size_names_choose', array( $this, 'show_image_sizes') );
   }
 
-  function add_uw_image_sizes()
+  function add_uams_image_sizes()
   {
 
     foreach ( $this->IMAGE_SIZES as $name=>$image )

@@ -5,7 +5,7 @@
    *  This removes the classnames and adds accessibility tags
    */
 
-class UW_Dropdowns_Walker_Menu extends Walker_Nav_Menu
+class UAMS_Dropdowns_Walker_Menu extends Walker_Nav_Menu
 {
 
   private $CURRENT = '';
@@ -23,29 +23,44 @@ class UW_Dropdowns_Walker_Menu extends Walker_Nav_Menu
 
   function start_lvl( &$output, $depth = 0, $args = array() )
   {
-    if ( $depth > 0 ) return;
-		$output .= "<ul role=\"group\" id=\"menu-{$this->CURRENT}\" aria-labelledby='{$this->CURRENT}' aria-expanded=\"false\" class=\"dawgdrops-menu\">\n";
+	$indent = str_repeat( "\t", $depth );
+	if ($depth > 0) {
+		$output .= "\n$indent<ul class=\"sub-menu\">";
+	} else {
+		$output .= "\n$indent<ul role=\"group\" id=\"menu-{$this->CURRENT}\" aria-labelledby='{$this->CURRENT}' aria-expanded=\"false\" class=\"dawgdrops-menu\">";
 	}
+/*
+	if( $depth == 0 ) {
+			$output .= "\n$indent<div class=\"col\">";
+		}
+*/
+	$output .= "\n";
+   }
 
   function end_lvl( &$output, $depth = 0, $args = array() )
   {
-    if ( $depth > 0 )
-      return;
+    //if ( $depth > 0 )
+    //  return;
+    $indent = str_repeat("\t", $depth);
 
-		$indent = str_repeat("\t", $depth);
+/*
+    if( $depth == 0 ) {
+		$output .= "$indent</div>\n$indent<div class=\"clear\"></div>";
+	}
+*/
+
+
 		$output .= "$indent</ul>\n";
 	}
 
-  function display_element ($element, &$children_elements, $max_depth, $depth = 0, $args, &$output)
-  {
-      $element->has_children = isset($children_elements[$element->ID]) && !empty($children_elements[$element->ID]);
-      return parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
-  }
+  function display_element ($element, &$children_elements, $max_depth, $depth, $args, &$output)
+		{
+	      	$element->has_children = isset($children_elements[$element->ID]) && !empty($children_elements[$element->ID]);
+		  	return parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
+	  	}
 
-  function start_el(&$output, $item, $depth = 0, $args = array() , $id=0)
+  function start_el(&$output, $item, $depth, $args = array() , $id=0)
   {
-    if ( $depth > 1 )
-      return;
 
     $this->CURRENT = $item->post_name;
     $title = ! empty( $item->title ) ? $item->title : $item->post_title;
@@ -54,14 +69,15 @@ class UW_Dropdowns_Walker_Menu extends Walker_Nav_Menu
 
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
+		$class_names = $value = '';
+
 		$classes     = $depth == 0 ? array( 'dawgdrops-item', $item->classes[0] ) : array();
 		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
 
     $li_classnames = ! empty($classes) ? 'class="'. $class_names .'"' : '';
-    //$li_attributes = $depth == 0 ? ' role="presentation" ' : '';
     $li_attributes = $depth == 0 ? ' ' : '';
 
-		$output .= $indent . '<li' . $li_attributes . $li_classnames .'>';
+		$output .= $indent . '<li ' . $li_attributes . $li_classnames .'>';
 
 		$attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
 		$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
@@ -70,7 +86,7 @@ class UW_Dropdowns_Walker_Menu extends Walker_Nav_Menu
 
 		$attributes .= $depth == 0 && $item->has_children ? ' class="dropdown-toggle"' : '';
 
-		$attributes .= $depth == 1                ? ' tabindex="-1" '                                : '';
+		$attributes .= $depth > 0                ? ' tabindex="-1" '                                : '';
 		$attributes .= ' title="'. $title .'" ';
         $attributes .= $controls;
 
@@ -84,5 +100,6 @@ class UW_Dropdowns_Walker_Menu extends Walker_Nav_Menu
 
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 	}
+
 
 }

@@ -6,7 +6,7 @@
  *  optional small attribute makes the button small.  Assume large if not present
  */
 
-class UW_Button
+class UAMS_Button
 {
 
     private static $types = array('plus', 'go', 'external', 'play');
@@ -20,7 +20,7 @@ class UW_Button
     {
         $attributes = (object) $atts;
 
-        $classes = array('uw-btn');
+        $classes = array('uams-btn');
 
         $btnColors = shortcode_atts( array(
             'color' => 'none',
