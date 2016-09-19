@@ -1,0 +1,24 @@
+.uw-widget-campus-map .uw-campus-map-widget {
+  position: relative;
+}
+.uw-widget-campus-map .uw-campus-map-widget iframe {
+  margin: 0;
+}
+.uw-widget-campus-map .uw-campus-map-widget a {
+  position: absolute;
+  top: 10px;
+  width: 30px;
+  height: 30px;
+  right: 14px;
+  background: url('assets/svg/uw-sprite.svg') -109px -489px no-repeat #ffffff;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  display: block;
+  overflow: hidden;
+  text-indent: -999px;
+  opacity: .95;
+}

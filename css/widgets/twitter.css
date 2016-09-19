@@ -1,0 +1,18 @@
+.uw-twitter .tweet {
+  overflow: hidden;
+  margin: 15px 0 0;
+}
+.uw-twitter .tweet img {
+  float: left;
+  margin: 0 10px 0 0;
+  width: 40px;
+  height: auto;
+}
+.uw-twitter .tweet p {
+  line-height: 1.5;
+  font-size: 16px;
+}
+.uw-content .uw-twitter {
+  margin: 50px 0;
+  padding: 0;
+}

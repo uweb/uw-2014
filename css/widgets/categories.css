@@ -1,0 +1,7 @@
+.uw-sidebar .widget_categories .widgettitle {
+  padding-bottom: 10px;
+}
+.uw-sidebar .widget_categories .widgettitle:before,
+.uw-sidebar .widget_categories .widgettitle:after {
+  display: none;
+}

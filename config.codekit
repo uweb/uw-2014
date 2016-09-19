@@ -47,38 +47,38 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/assets\/admin\/css\/uw.admin.template.css": {
+	"\/assets\/admin\/css\/uams.admin.template.css": {
 		"fileType": 16,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/admin\/css\/uw.admin.template.css",
+		"inputAbbreviatedPath": "\/assets\/admin\/css\/uams.admin.template.css",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/assets\/admin\/css\/uw.documentation.css": {
+	"\/assets\/admin\/css\/uams.documentation.css": {
 		"fileType": 16,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/admin\/css\/uw.documentation.css",
+		"inputAbbreviatedPath": "\/assets\/admin\/css\/uams.documentation.css",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/assets\/admin\/css\/uw.widget-conditions.css": {
+	"\/assets\/admin\/css\/uams.widget-conditions.css": {
 		"fileType": 16,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/admin\/css\/uw.widget-conditions.css",
+		"inputAbbreviatedPath": "\/assets\/admin\/css\/uams.widget-conditions.css",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/assets\/admin\/css\/uw.widgets-misc.css": {
+	"\/assets\/admin\/css\/uams.widgets-misc.css": {
 		"fileType": 16,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/admin\/css\/uw.widgets-misc.css",
+		"inputAbbreviatedPath": "\/assets\/admin\/css\/uams.widgets-misc.css",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -138,56 +138,56 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/assets\/admin\/js\/uw.bootstrap.shortcode-init.js": {
+	"\/assets\/admin\/js\/uams.bootstrap.shortcode-init.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/admin\/js\/uw.bootstrap.shortcode-init.js",
-		"outputAbbreviatedPath": "\/assets\/admin\/js\/min\/uw.bootstrap.shortcode-init-min.js",
+		"inputAbbreviatedPath": "\/assets\/admin\/js\/uams.bootstrap.shortcode-init.js",
+		"outputAbbreviatedPath": "\/assets\/admin\/js\/min\/uams.bootstrap.shortcode-init-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/assets\/admin\/js\/uw.widget-conditions.js": {
+	"\/assets\/admin\/js\/uams.widget-conditions.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/admin\/js\/uw.widget-conditions.js",
-		"outputAbbreviatedPath": "\/assets\/admin\/js\/min\/uw.widget-conditions-min.js",
+		"inputAbbreviatedPath": "\/assets\/admin\/js\/uams.widget-conditions.js",
+		"outputAbbreviatedPath": "\/assets\/admin\/js\/min\/uams.widget-conditions-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/assets\/admin\/js\/widgets\/uw.card-widget.js": {
+	"\/assets\/admin\/js\/widgets\/uams.card-widget.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/admin\/js\/widgets\/uw.card-widget.js",
-		"outputAbbreviatedPath": "\/assets\/admin\/js\/widgets\/min\/uw.card-widget-min.js",
+		"inputAbbreviatedPath": "\/assets\/admin\/js\/widgets\/uams.card-widget.js",
+		"outputAbbreviatedPath": "\/assets\/admin\/js\/widgets\/min\/uams.card-widget-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/assets\/admin\/js\/widgets\/uw.contact-widget.js": {
+	"\/assets\/admin\/js\/widgets\/uams.contact-widget.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/admin\/js\/widgets\/uw.contact-widget.js",
-		"outputAbbreviatedPath": "\/assets\/admin\/js\/widgets\/min\/uw.contact-widget-min.js",
+		"inputAbbreviatedPath": "\/assets\/admin\/js\/widgets\/uams.contact-widget.js",
+		"outputAbbreviatedPath": "\/assets\/admin\/js\/widgets\/min\/uams.contact-widget-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/assets\/admin\/js\/widgets\/uw.single-image-widget.js": {
+	"\/assets\/admin\/js\/widgets\/uams.single-image-widget.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/admin\/js\/widgets\/uw.single-image-widget.js",
-		"outputAbbreviatedPath": "\/assets\/admin\/js\/widgets\/min\/uw.single-image-widget-min.js",
+		"inputAbbreviatedPath": "\/assets\/admin\/js\/widgets\/uams.single-image-widget.js",
+		"outputAbbreviatedPath": "\/assets\/admin\/js\/widgets\/min\/uams.single-image-widget-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -343,13 +343,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/assets\/ie\/img\/uw-sprite.png": {
+	"\/assets\/ie\/img\/uams-sprite.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 67158,
-		"inputAbbreviatedPath": "\/assets\/ie\/img\/uw-sprite.png",
-		"outputAbbreviatedPath": "\/assets\/ie\/img\/uw-sprite.png",
+		"inputAbbreviatedPath": "\/assets\/ie\/img\/uams-sprite.png",
+		"outputAbbreviatedPath": "\/assets\/ie\/img\/uams-sprite.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -482,6 +482,17 @@
 		"initialSize": 1318,
 		"inputAbbreviatedPath": "\/assets\/images\/carousel-sprite.png",
 		"outputAbbreviatedPath": "\/assets\/images\/carousel-sprite.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/footer-orig.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 29758,
+		"inputAbbreviatedPath": "\/assets\/images\/footer-orig.jpg",
+		"outputAbbreviatedPath": "\/assets\/images\/footer-orig.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -888,20 +899,20 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/css\/uw.variables.css": {
+	"\/css\/uams.variables.css": {
 		"fileType": 16,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/css\/uw.variables.css",
+		"inputAbbreviatedPath": "\/css\/uams.variables.css",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/docs\/class.uw-documentation.php": {
+	"\/docs\/class.uams-documentation.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/docs\/class.uw-documentation.php",
+		"inputAbbreviatedPath": "\/docs\/class.uams-documentation.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -1119,243 +1130,243 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/uw.accordion.js": {
+	"\/js\/uams.accordion.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/uw.accordion.js",
-		"outputAbbreviatedPath": "\/js\/min\/uw.accordion-min.js",
+		"inputAbbreviatedPath": "\/js\/uams.accordion.js",
+		"outputAbbreviatedPath": "\/js\/min\/uams.accordion-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/uw.accordionmodule.js": {
+	"\/js\/uams.accordionmodule.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/uw.accordionmodule.js",
-		"outputAbbreviatedPath": "\/js\/min\/uw.accordionmodule-min.js",
+		"inputAbbreviatedPath": "\/js\/uams.accordionmodule.js",
+		"outputAbbreviatedPath": "\/js\/min\/uams.accordionmodule-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/uw.alert.js": {
+	"\/js\/uams.alert.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/uw.alert.js",
-		"outputAbbreviatedPath": "\/js\/min\/uw.alert-min.js",
+		"inputAbbreviatedPath": "\/js\/uams.alert.js",
+		"outputAbbreviatedPath": "\/js\/min\/uams.alert-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/uw.core.js": {
+	"\/js\/uams.core.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/uw.core.js",
-		"outputAbbreviatedPath": "\/js\/min\/uw.core-min.js",
+		"inputAbbreviatedPath": "\/js\/uams.core.js",
+		"outputAbbreviatedPath": "\/js\/min\/uams.core-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/uw.dropdowns.js": {
+	"\/js\/uams.dropdowns.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/uw.dropdowns.js",
-		"outputAbbreviatedPath": "\/js\/min\/uw.dropdowns-min.js",
+		"inputAbbreviatedPath": "\/js\/uams.dropdowns.js",
+		"outputAbbreviatedPath": "\/js\/min\/uams.dropdowns-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/uw.images.js": {
+	"\/js\/uams.images.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/uw.images.js",
-		"outputAbbreviatedPath": "\/js\/min\/uw.images-min.js",
+		"inputAbbreviatedPath": "\/js\/uams.images.js",
+		"outputAbbreviatedPath": "\/js\/min\/uams.images-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/uw.init.js": {
+	"\/js\/uams.init.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/uw.init.js",
-		"outputAbbreviatedPath": "\/js\/min\/uw.init-min.js",
+		"inputAbbreviatedPath": "\/js\/uams.init.js",
+		"outputAbbreviatedPath": "\/js\/min\/uams.init-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/uw.intro.js": {
+	"\/js\/uams.intro.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/uw.intro.js",
-		"outputAbbreviatedPath": "\/js\/min\/uw.intro-min.js",
+		"inputAbbreviatedPath": "\/js\/uams.intro.js",
+		"outputAbbreviatedPath": "\/js\/min\/uams.intro-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/uw.js": {
+	"\/js\/uams.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/uw.js",
-		"outputAbbreviatedPath": "\/js\/min\/uw-min.js",
+		"inputAbbreviatedPath": "\/js\/uams.js",
+		"outputAbbreviatedPath": "\/js\/min\/uams-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/uw.mobile-menu.js": {
+	"\/js\/uams.mobile-menu.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/uw.mobile-menu.js",
-		"outputAbbreviatedPath": "\/js\/min\/uw.mobile-menu-min.js",
+		"inputAbbreviatedPath": "\/js\/uams.mobile-menu.js",
+		"outputAbbreviatedPath": "\/js\/min\/uams.mobile-menu-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/uw.outro.js": {
+	"\/js\/uams.outro.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/uw.outro.js",
-		"outputAbbreviatedPath": "\/js\/min\/uw.outro-min.js",
+		"inputAbbreviatedPath": "\/js\/uams.outro.js",
+		"outputAbbreviatedPath": "\/js\/min\/uams.outro-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/uw.player.js": {
+	"\/js\/uams.player.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/uw.player.js",
-		"outputAbbreviatedPath": "\/js\/min\/uw.player-min.js",
+		"inputAbbreviatedPath": "\/js\/uams.player.js",
+		"outputAbbreviatedPath": "\/js\/min\/uams.player-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/uw.quicklinks.js": {
+	"\/js\/uams.quicklinks.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/uw.quicklinks.js",
-		"outputAbbreviatedPath": "\/js\/min\/uw.quicklinks-min.js",
+		"inputAbbreviatedPath": "\/js\/uams.quicklinks.js",
+		"outputAbbreviatedPath": "\/js\/min\/uams.quicklinks-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/uw.radio-checkbox.js": {
+	"\/js\/uams.radio-checkbox.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/uw.radio-checkbox.js",
-		"outputAbbreviatedPath": "\/js\/min\/uw.radio-checkbox-min.js",
+		"inputAbbreviatedPath": "\/js\/uams.radio-checkbox.js",
+		"outputAbbreviatedPath": "\/js\/min\/uams.radio-checkbox-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/uw.search.js": {
+	"\/js\/uams.search.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/uw.search.js",
-		"outputAbbreviatedPath": "\/js\/min\/uw.search-min.js",
+		"inputAbbreviatedPath": "\/js\/uams.search.js",
+		"outputAbbreviatedPath": "\/js\/min\/uams.search-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/uw.searchtoggle.js": {
+	"\/js\/uams.searchtoggle.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/uw.searchtoggle.js",
-		"outputAbbreviatedPath": "\/js\/min\/uw.searchtoggle-min.js",
+		"inputAbbreviatedPath": "\/js\/uams.searchtoggle.js",
+		"outputAbbreviatedPath": "\/js\/min\/uams.searchtoggle-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/uw.select.js": {
+	"\/js\/uams.select.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/uw.select.js",
-		"outputAbbreviatedPath": "\/js\/min\/uw.select-min.js",
+		"inputAbbreviatedPath": "\/js\/uams.select.js",
+		"outputAbbreviatedPath": "\/js\/min\/uams.select-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/uw.slideshow.js": {
+	"\/js\/uams.slideshow.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/uw.slideshow.js",
-		"outputAbbreviatedPath": "\/js\/min\/uw.slideshow-min.js",
+		"inputAbbreviatedPath": "\/js\/uams.slideshow.js",
+		"outputAbbreviatedPath": "\/js\/min\/uams.slideshow-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/uw.social.js": {
+	"\/js\/uams.social.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/uw.social.js",
-		"outputAbbreviatedPath": "\/js\/min\/uw.social-min.js",
+		"inputAbbreviatedPath": "\/js\/uams.social.js",
+		"outputAbbreviatedPath": "\/js\/min\/uams.social-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/uw.themecustomizer.js": {
+	"\/js\/uams.themecustomizer.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/uw.themecustomizer.js",
-		"outputAbbreviatedPath": "\/js\/min\/uw.themecustomizer-min.js",
+		"inputAbbreviatedPath": "\/js\/uams.themecustomizer.js",
+		"outputAbbreviatedPath": "\/js\/min\/uams.themecustomizer-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/uw.vimeo.js": {
+	"\/js\/uams.vimeo.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/uw.vimeo.js",
-		"outputAbbreviatedPath": "\/js\/min\/uw.vimeo-min.js",
+		"inputAbbreviatedPath": "\/js\/uams.vimeo.js",
+		"outputAbbreviatedPath": "\/js\/min\/uams.vimeo-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/uw.youtube.js": {
+	"\/js\/uams.youtube.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/uw.youtube.js",
-		"outputAbbreviatedPath": "\/js\/min\/uw.youtube-min.js",
+		"inputAbbreviatedPath": "\/js\/uams.youtube.js",
+		"outputAbbreviatedPath": "\/js\/min\/uams.youtube-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -3541,7 +3552,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.404.less": {
+	"\/less\/uams.404.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -3549,8 +3560,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.404.less",
-		"outputAbbreviatedPath": "\/css\/uw.404.css",
+		"inputAbbreviatedPath": "\/less\/uams.404.less",
+		"outputAbbreviatedPath": "\/css\/uams.404.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -3561,7 +3572,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.accessibility.less": {
+	"\/less\/uams.accessibility.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -3569,8 +3580,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.accessibility.less",
-		"outputAbbreviatedPath": "\/css\/uw.accessibility.css",
+		"inputAbbreviatedPath": "\/less\/uams.accessibility.less",
+		"outputAbbreviatedPath": "\/css\/uams.accessibility.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -3581,7 +3592,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.accordion.less": {
+	"\/less\/uams.accordion.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -3589,8 +3600,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.accordion.less",
-		"outputAbbreviatedPath": "\/css\/uw.accordion.css",
+		"inputAbbreviatedPath": "\/less\/uams.accordion.less",
+		"outputAbbreviatedPath": "\/css\/uams.accordion.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -3601,7 +3612,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.alert.less": {
+	"\/less\/uams.alert.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -3609,8 +3620,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.alert.less",
-		"outputAbbreviatedPath": "\/css\/uw.alert.css",
+		"inputAbbreviatedPath": "\/less\/uams.alert.less",
+		"outputAbbreviatedPath": "\/css\/uams.alert.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -3621,7 +3632,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.blogroll.less": {
+	"\/less\/uams.blogroll.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -3629,8 +3640,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.blogroll.less",
-		"outputAbbreviatedPath": "\/css\/uw.blogroll.css",
+		"inputAbbreviatedPath": "\/less\/uams.blogroll.less",
+		"outputAbbreviatedPath": "\/css\/uams.blogroll.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -3641,7 +3652,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.body-content.less": {
+	"\/less\/uams.body-content.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -3649,8 +3660,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.body-content.less",
-		"outputAbbreviatedPath": "\/css\/uw.body-content.css",
+		"inputAbbreviatedPath": "\/less\/uams.body-content.less",
+		"outputAbbreviatedPath": "\/css\/uams.body-content.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -3661,7 +3672,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.boxes.less": {
+	"\/less\/uams.boxes.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -3669,8 +3680,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.boxes.less",
-		"outputAbbreviatedPath": "\/css\/uw.boxes.css",
+		"inputAbbreviatedPath": "\/less\/uams.boxes.less",
+		"outputAbbreviatedPath": "\/css\/uams.boxes.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -3681,7 +3692,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.breadcrumbs.less": {
+	"\/less\/uams.breadcrumbs.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -3689,8 +3700,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.breadcrumbs.less",
-		"outputAbbreviatedPath": "\/css\/uw.breadcrumbs.css",
+		"inputAbbreviatedPath": "\/less\/uams.breadcrumbs.less",
+		"outputAbbreviatedPath": "\/css\/uams.breadcrumbs.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -3701,7 +3712,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.buttons.less": {
+	"\/less\/uams.buttons.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -3709,8 +3720,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.buttons.less",
-		"outputAbbreviatedPath": "\/css\/uw.buttons.css",
+		"inputAbbreviatedPath": "\/less\/uams.buttons.less",
+		"outputAbbreviatedPath": "\/css\/uams.buttons.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -3721,7 +3732,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.carousel.less": {
+	"\/less\/uams.carousel.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -3729,8 +3740,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.carousel.less",
-		"outputAbbreviatedPath": "\/css\/uw.carousel.css",
+		"inputAbbreviatedPath": "\/less\/uams.carousel.less",
+		"outputAbbreviatedPath": "\/css\/uams.carousel.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -3741,7 +3752,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.checkbox-and-radio.less": {
+	"\/less\/uams.checkbox-and-radio.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -3749,8 +3760,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.checkbox-and-radio.less",
-		"outputAbbreviatedPath": "\/css\/uw.checkbox-and-radio.css",
+		"inputAbbreviatedPath": "\/less\/uams.checkbox-and-radio.less",
+		"outputAbbreviatedPath": "\/css\/uams.checkbox-and-radio.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -3761,7 +3772,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.dropdowns.less": {
+	"\/less\/uams.dropdowns.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -3769,8 +3780,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.dropdowns.less",
-		"outputAbbreviatedPath": "\/css\/uw.dropdowns.css",
+		"inputAbbreviatedPath": "\/less\/uams.dropdowns.less",
+		"outputAbbreviatedPath": "\/css\/uams.dropdowns.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -3781,7 +3792,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.fonts.less": {
+	"\/less\/uams.fonts.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -3789,8 +3800,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.fonts.less",
-		"outputAbbreviatedPath": "\/css\/uw.fonts.css",
+		"inputAbbreviatedPath": "\/less\/uams.fonts.less",
+		"outputAbbreviatedPath": "\/css\/uams.fonts.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -3801,7 +3812,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.footer.less": {
+	"\/less\/uams.footer.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -3809,8 +3820,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.footer.less",
-		"outputAbbreviatedPath": "\/css\/uw.footer.css",
+		"inputAbbreviatedPath": "\/less\/uams.footer.less",
+		"outputAbbreviatedPath": "\/css\/uams.footer.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -3821,7 +3832,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.gallery.less": {
+	"\/less\/uams.gallery.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -3829,8 +3840,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.gallery.less",
-		"outputAbbreviatedPath": "\/css\/uw.gallery.css",
+		"inputAbbreviatedPath": "\/less\/uams.gallery.less",
+		"outputAbbreviatedPath": "\/css\/uams.gallery.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -3841,7 +3852,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.hero.less": {
+	"\/less\/uams.hero.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -3849,8 +3860,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.hero.less",
-		"outputAbbreviatedPath": "\/css\/uw.hero.css",
+		"inputAbbreviatedPath": "\/less\/uams.hero.less",
+		"outputAbbreviatedPath": "\/css\/uams.hero.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -3861,7 +3872,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.heroimage.less": {
+	"\/less\/uams.heroimage.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -3869,8 +3880,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.heroimage.less",
-		"outputAbbreviatedPath": "\/css\/uw.heroimage.css",
+		"inputAbbreviatedPath": "\/less\/uams.heroimage.less",
+		"outputAbbreviatedPath": "\/css\/uams.heroimage.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -3881,7 +3892,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.icon-font.less": {
+	"\/less\/uams.icon-font.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -3889,8 +3900,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.icon-font.less",
-		"outputAbbreviatedPath": "\/css\/uw.icon-font.css",
+		"inputAbbreviatedPath": "\/less\/uams.icon-font.less",
+		"outputAbbreviatedPath": "\/css\/uams.icon-font.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -3901,7 +3912,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.images.less": {
+	"\/less\/uams.images.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -3909,8 +3920,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.images.less",
-		"outputAbbreviatedPath": "\/css\/uw.images.css",
+		"inputAbbreviatedPath": "\/less\/uams.images.less",
+		"outputAbbreviatedPath": "\/css\/uams.images.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -3921,7 +3932,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.mobile-menu.less": {
+	"\/less\/uams.mobile-menu.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -3929,8 +3940,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.mobile-menu.less",
-		"outputAbbreviatedPath": "\/css\/uw.mobile-menu.css",
+		"inputAbbreviatedPath": "\/less\/uams.mobile-menu.less",
+		"outputAbbreviatedPath": "\/css\/uams.mobile-menu.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -3941,7 +3952,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.player.less": {
+	"\/less\/uams.player.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -3949,8 +3960,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.player.less",
-		"outputAbbreviatedPath": "\/css\/uw.player.css",
+		"inputAbbreviatedPath": "\/less\/uams.player.less",
+		"outputAbbreviatedPath": "\/css\/uams.player.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -3961,7 +3972,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.prettify.less": {
+	"\/less\/uams.prettify.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -3969,8 +3980,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.prettify.less",
-		"outputAbbreviatedPath": "\/css\/uw.prettify.css",
+		"inputAbbreviatedPath": "\/less\/uams.prettify.less",
+		"outputAbbreviatedPath": "\/css\/uams.prettify.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -3981,7 +3992,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.print.less": {
+	"\/less\/uams.print.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -3989,8 +4000,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.print.less",
-		"outputAbbreviatedPath": "\/css\/uw.print.css",
+		"inputAbbreviatedPath": "\/less\/uams.print.less",
+		"outputAbbreviatedPath": "\/css\/uams.print.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -4001,7 +4012,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.quicklinks.less": {
+	"\/less\/uams.quicklinks.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -4009,8 +4020,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.quicklinks.less",
-		"outputAbbreviatedPath": "\/css\/uw.quicklinks.css",
+		"inputAbbreviatedPath": "\/less\/uams.quicklinks.less",
+		"outputAbbreviatedPath": "\/css\/uams.quicklinks.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -4021,7 +4032,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.search.less": {
+	"\/less\/uams.search.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -4029,8 +4040,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.search.less",
-		"outputAbbreviatedPath": "\/css\/uw.search.css",
+		"inputAbbreviatedPath": "\/less\/uams.search.less",
+		"outputAbbreviatedPath": "\/css\/uams.search.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -4041,7 +4052,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.select.less": {
+	"\/less\/uams.select.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -4049,8 +4060,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.select.less",
-		"outputAbbreviatedPath": "\/css\/uw.select.css",
+		"inputAbbreviatedPath": "\/less\/uams.select.less",
+		"outputAbbreviatedPath": "\/css\/uams.select.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -4061,7 +4072,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.sidebar.less": {
+	"\/less\/uams.sidebar.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -4069,8 +4080,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.sidebar.less",
-		"outputAbbreviatedPath": "\/css\/uw.sidebar.css",
+		"inputAbbreviatedPath": "\/less\/uams.sidebar.less",
+		"outputAbbreviatedPath": "\/css\/uams.sidebar.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -4081,7 +4092,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.site-boundless.less": {
+	"\/less\/uams.site-boundless.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -4089,8 +4100,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.site-boundless.less",
-		"outputAbbreviatedPath": "\/css\/uw.site-boundless.css",
+		"inputAbbreviatedPath": "\/less\/uams.site-boundless.less",
+		"outputAbbreviatedPath": "\/css\/uams.site-boundless.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -4101,7 +4112,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.slideshow.less": {
+	"\/less\/uams.slideshow.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -4109,8 +4120,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.slideshow.less",
-		"outputAbbreviatedPath": "\/css\/uw.slideshow.css",
+		"inputAbbreviatedPath": "\/less\/uams.slideshow.less",
+		"outputAbbreviatedPath": "\/css\/uams.slideshow.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -4121,7 +4132,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.tables.less": {
+	"\/less\/uams.tables.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -4129,8 +4140,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.tables.less",
-		"outputAbbreviatedPath": "\/css\/uw.tables.css",
+		"inputAbbreviatedPath": "\/less\/uams.tables.less",
+		"outputAbbreviatedPath": "\/css\/uams.tables.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -4141,7 +4152,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.templates.less": {
+	"\/less\/uams.templates.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -4149,8 +4160,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.templates.less",
-		"outputAbbreviatedPath": "\/css\/uw.templates.css",
+		"inputAbbreviatedPath": "\/less\/uams.templates.less",
+		"outputAbbreviatedPath": "\/css\/uams.templates.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -4161,7 +4172,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.thinstrip.less": {
+	"\/less\/uams.thinstrip.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -4169,8 +4180,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.thinstrip.less",
-		"outputAbbreviatedPath": "\/css\/uw.thinstrip.css",
+		"inputAbbreviatedPath": "\/less\/uams.thinstrip.less",
+		"outputAbbreviatedPath": "\/css\/uams.thinstrip.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -4181,7 +4192,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.trumba.less": {
+	"\/less\/uams.trumba.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -4189,8 +4200,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.trumba.less",
-		"outputAbbreviatedPath": "\/css\/uw.trumba.css",
+		"inputAbbreviatedPath": "\/less\/uams.trumba.less",
+		"outputAbbreviatedPath": "\/css\/uams.trumba.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -4201,7 +4212,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.variables.less": {
+	"\/less\/uams.variables.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -4209,8 +4220,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.variables.less",
-		"outputAbbreviatedPath": "\/css\/uw.variables.css",
+		"inputAbbreviatedPath": "\/less\/uams.variables.less",
+		"outputAbbreviatedPath": "\/css\/uams.variables.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -4221,7 +4232,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.vimeo.less": {
+	"\/less\/uams.vimeo.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -4229,8 +4240,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.vimeo.less",
-		"outputAbbreviatedPath": "\/css\/uw.vimeo.css",
+		"inputAbbreviatedPath": "\/less\/uams.vimeo.less",
+		"outputAbbreviatedPath": "\/css\/uams.vimeo.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -4241,7 +4252,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/less\/uw.youtube.less": {
+	"\/less\/uams.youtube.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -4249,8 +4260,8 @@
 		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/less\/uw.youtube.less",
-		"outputAbbreviatedPath": "\/css\/uw.youtube.css",
+		"inputAbbreviatedPath": "\/less\/uams.youtube.less",
+		"outputAbbreviatedPath": "\/css\/uams.youtube.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -4704,182 +4715,182 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/setup\/class.uams-basic-custom-post.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/setup\/class.uams-basic-custom-post.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/setup\/class.uams-carousel.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/setup\/class.uams-carousel.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/setup\/class.uams-documentation-dashboard-widget.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/setup\/class.uams-documentation-dashboard-widget.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/setup\/class.uams-dropdowns.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/setup\/class.uams-dropdowns.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/setup\/class.uams-enclosure.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/setup\/class.uams-enclosure.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/setup\/class.uams-iframes.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/setup\/class.uams-iframes.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/setup\/class.uams-media-caption.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/setup\/class.uams-media-caption.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/setup\/class.uams-media-credit.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/setup\/class.uams-media-credit.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/setup\/class.uams-oembeds.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/setup\/class.uams-oembeds.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/setup\/class.uams-page-attributes-meta-box.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/setup\/class.uams-page-attributes-meta-box.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/setup\/class.uams-quicklinks.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/setup\/class.uams-quicklinks.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/setup\/class.uams-replace-media.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/setup\/class.uams-replace-media.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/setup\/class.uams-scripts.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/setup\/class.uams-scripts.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/setup\/class.uams-settings.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/setup\/class.uams-settings.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/setup\/class.uams-shortcodes.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/setup\/class.uams-shortcodes.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/setup\/class.uams-sidebar-menu-walker.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/setup\/class.uams-sidebar-menu-walker.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/setup\/class.uams-styles.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/setup\/class.uams-styles.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/setup\/class.uams-tinymce.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/setup\/class.uams-tinymce.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/setup\/class.uams.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/setup\/class.uams.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/setup\/class.users.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/setup\/class.users.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/setup\/class.uw-basic-custom-post.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/setup\/class.uw-basic-custom-post.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/setup\/class.uw-carousel.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/setup\/class.uw-carousel.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/setup\/class.uw-documentation-dashboard-widget.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/setup\/class.uw-documentation-dashboard-widget.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/setup\/class.uw-dropdowns.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/setup\/class.uw-dropdowns.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/setup\/class.uw-enclosure.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/setup\/class.uw-enclosure.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/setup\/class.uw-iframes.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/setup\/class.uw-iframes.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/setup\/class.uw-media-caption.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/setup\/class.uw-media-caption.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/setup\/class.uw-media-credit.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/setup\/class.uw-media-credit.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/setup\/class.uw-oembeds.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/setup\/class.uw-oembeds.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/setup\/class.uw-page-attributes-meta-box.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/setup\/class.uw-page-attributes-meta-box.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/setup\/class.uw-quicklinks.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/setup\/class.uw-quicklinks.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/setup\/class.uw-replace-media.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/setup\/class.uw-replace-media.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/setup\/class.uw-scripts.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/setup\/class.uw-scripts.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/setup\/class.uw-settings.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/setup\/class.uw-settings.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/setup\/class.uw-shortcodes.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/setup\/class.uw-shortcodes.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/setup\/class.uw-sidebar-menu-walker.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/setup\/class.uw-sidebar-menu-walker.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/setup\/class.uw-styles.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/setup\/class.uw-styles.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/setup\/class.uw-tinymce.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/setup\/class.uw-tinymce.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/setup\/class.uw.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/setup\/class.uw.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -5032,119 +5043,119 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/widgets\/class.uw-blogroll.php": {
+	"\/widgets\/class.uams-blogroll.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/widgets\/class.uw-blogroll.php",
+		"inputAbbreviatedPath": "\/widgets\/class.uams-blogroll.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/widgets\/class.uw-campus-map.php": {
+	"\/widgets\/class.uams-campus-map.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/widgets\/class.uw-campus-map.php",
+		"inputAbbreviatedPath": "\/widgets\/class.uams-campus-map.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/widgets\/class.uw-cards.php": {
+	"\/widgets\/class.uams-cards.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/widgets\/class.uw-cards.php",
+		"inputAbbreviatedPath": "\/widgets\/class.uams-cards.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/widgets\/class.uw-contact.php": {
+	"\/widgets\/class.uams-contact.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/widgets\/class.uw-contact.php",
+		"inputAbbreviatedPath": "\/widgets\/class.uams-contact.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/widgets\/class.uw-intro.php": {
+	"\/widgets\/class.uams-intro.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/widgets\/class.uw-intro.php",
+		"inputAbbreviatedPath": "\/widgets\/class.uams-intro.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/widgets\/class.uw-recent-posts.php": {
+	"\/widgets\/class.uams-recent-posts.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/widgets\/class.uw-recent-posts.php",
+		"inputAbbreviatedPath": "\/widgets\/class.uams-recent-posts.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/widgets\/class.uw-related-posts.php": {
+	"\/widgets\/class.uams-related-posts.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/widgets\/class.uw-related-posts.php",
+		"inputAbbreviatedPath": "\/widgets\/class.uams-related-posts.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/widgets\/class.uw-rss.php": {
+	"\/widgets\/class.uams-rss.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/widgets\/class.uw-rss.php",
+		"inputAbbreviatedPath": "\/widgets\/class.uams-rss.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/widgets\/class.uw-sidebar.php": {
+	"\/widgets\/class.uams-sidebar.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/widgets\/class.uw-sidebar.php",
+		"inputAbbreviatedPath": "\/widgets\/class.uams-sidebar.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/widgets\/class.uw-single-image.php": {
+	"\/widgets\/class.uams-single-image.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/widgets\/class.uw-single-image.php",
+		"inputAbbreviatedPath": "\/widgets\/class.uams-single-image.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/widgets\/class.uw-top-posts.php": {
+	"\/widgets\/class.uams-top-posts.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/widgets\/class.uw-top-posts.php",
+		"inputAbbreviatedPath": "\/widgets\/class.uams-top-posts.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/widgets\/class.uw-twitter.php": {
+	"\/widgets\/class.uams-twitter.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/widgets\/class.uw-twitter.php",
+		"inputAbbreviatedPath": "\/widgets\/class.uams-twitter.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/widgets\/class.uw-widget-visibility.php": {
+	"\/widgets\/class.uams-widget-visibility.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/widgets\/class.uw-widget-visibility.php",
+		"inputAbbreviatedPath": "\/widgets\/class.uams-widget-visibility.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
