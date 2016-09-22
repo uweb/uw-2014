@@ -11,29 +11,30 @@
 	position: relative;
 	.footer-wordmark {
 		display: inline-block;
-		width: 335px;
-		background: url(assets/svg/uams-sprite.svg) no-repeat 0 -434px transparent;
+		width: 320px;
+		height: 50px;
+		background: url(assets/svg/uams-sprite.svg) no-repeat 0 0 transparent;
 		text-indent: -9999px;
 		overflow: hidden;
 		margin-top: 50px;
     &:focus,
     &:hover {
-      background: url(assets/svg/uams-sprite-focus.svg) no-repeat 0 -434px transparent;
+      background: url(assets/svg/uams-sprite-focus.svg) no-repeat 0 0 transparent;
     }
 	}
-	.be-boundless {
-		font-size: 24px;
-		background: url(assets/images/boundless.png) no-repeat center top transparent;
-		display: block;
-		text-indent: -99999px;
-		margin: 10px 0 60px;
-		opacity: .6;
-    .transition(opacity .25s);
-    &:hover,
-    &:focus {
-      opacity: 1;
-    }
-	}
+	//.be-boundless {
+	//	font-size: 24px;
+	//	background: url(assets/images/boundless.png) no-repeat center top transparent;
+	//	display: block;
+	//	text-indent: -99999px;
+	//	margin: 10px 0 60px;
+	//	opacity: .6;
+    //.transition(opacity .25s);
+    //&:hover,
+    //&:focus {
+    //  opacity: 1;
+    //}
+	//}
 	h4 {
 		font-family: "Fira Sans", sans-serif;
 		color: #fff;
@@ -115,8 +116,9 @@
 					top: -2px;
 				}
                 &:focus, &:hover {
-                    color: @700grey;
+                    color: @200grey;
                     text-decoration:none;
+                    border-bottom: 1px dotted @200grey;
                     &:after {
                         color: #fff;
                     }

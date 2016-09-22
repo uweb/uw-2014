@@ -6590,7 +6590,7 @@ ul.uams-mobile-menu li.pagenav ul li.current_page_parent.current_page_ancestor >
 ul.uams-sidebar-menu > div ul li.current_page_parent.current_page_ancestor > a:after,
 ul.uams-mobile-menu > div ul li.current_page_parent.current_page_ancestor > a:after {
   content: "";
-  background: url(assets/svg/uams-sprite.svg) no-repeat -191px -478px;
+  background: url(assets/svg/uams-sprite.svg) no-repeat -224px -478px;
   display: inline-block;
   height: 52px;
   width: 44px;
@@ -8254,16 +8254,16 @@ textarea#jp-carousel-comment-form-comment-field:focus::-webkit-input-placeholder
   position: absolute;
 }
 .fui-radio-unchecked:before {
-  background-position: -380px -25px;
+  background-position: -480px -25px;
 }
 .fui-radio-checked:before {
-  background-position: -404px -25px;
+  background-position: -504px -25px;
 }
 .checked .fui-radio-unchecked:before {
-  background-position: -379px -25px;
+  background-position: -479px -25px;
 }
 .checked .fui-radio-checked:before {
-  background-position: -404px 0px;
+  background-position: -504px 0px;
 }
 .checkbox:focus .icons .first-icon,
 .radio:focus .icons .first-icon {
@@ -8456,30 +8456,16 @@ body.error404 .woof {
 }
 .uams-footer .footer-wordmark {
   display: inline-block;
-  width: 335px;
-  background: url(assets/svg/uams-sprite.svg) no-repeat 0 -434px transparent;
+  width: 320px;
+  height: 50px;
+  background: url(assets/svg/uams-sprite.svg) no-repeat 0 0 transparent;
   text-indent: -9999px;
   overflow: hidden;
   margin-top: 50px;
 }
 .uams-footer .footer-wordmark:focus,
 .uams-footer .footer-wordmark:hover {
-  background: url(assets/svg/uams-sprite-focus.svg) no-repeat 0 -434px transparent;
-}
-.uams-footer .be-boundless {
-  font-size: 24px;
-  background: url(assets/images/boundless.png) no-repeat center top transparent;
-  display: block;
-  text-indent: -99999px;
-  margin: 10px 0 60px;
-  opacity: .6;
-  -o-transition: opacity 0.25s;
-  -webkit-transition: opacity 0.25s;
-  transition: opacity 0.25s;
-}
-.uams-footer .be-boundless:hover,
-.uams-footer .be-boundless:focus {
-  opacity: 1;
+  background: url(assets/svg/uams-sprite-focus.svg) no-repeat 0 0 transparent;
 }
 .uams-footer h4 {
   font-family: "Fira Sans", sans-serif;
@@ -8604,8 +8590,9 @@ body.error404 .woof {
 }
 .uams-footer ul.footer-links li a:focus,
 .uams-footer ul.footer-links li a:hover {
-  color: #616161;
+  color: #e6e6e6;
   text-decoration: none;
+  border-bottom: 1px dotted #e6e6e6;
 }
 .uams-footer ul.footer-links li a:focus:after,
 .uams-footer ul.footer-links li a:hover:after {
