@@ -59,7 +59,7 @@ class UAMS_Dropdowns_Walker_Menu extends Walker_Nav_Menu
 		  	return parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
 	  	}
 
-  function start_el(&$output, $item, $depth, $args = array() , $id=0)
+  function start_el(&$output, $item, $depth = 0, $args = array() , $id=0)
   {
 
     $this->CURRENT = $item->post_name;

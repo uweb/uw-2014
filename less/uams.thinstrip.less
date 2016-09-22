@@ -1,13 +1,14 @@
 // UW Thinstrip
 
 .uams-thinstrip {
-	height: 90px;
+	height: 140px;
 	width: 100%;
-	background: @red;
+	background: @200grey;
 	padding-top: 22px;
 	position: relative;
 	z-index: 2;
 	.box-shadow(0 2px 5px rgba(0,0,0,.3));
+	border-top: 6px solid @red;
 
 	// Container
 
@@ -15,21 +16,32 @@
 		position: relative;
 	}
 
+	// Top Header
+
+	#top-header {
+		height: 40px;
+		position: absolute;
+		width: 100%;
+		background-color: @700grey;
+		top: 0;
+	}
+
 	// Patch
 
 	.uams-patch {
 		display: block;
 		text-indent: -9999px;
-		width: 163px;
-		height: 90px;
-		background: url(assets/svg/uams-sprite.svg) no-repeat 0 0 transparent;
+		width: 320px;
+		height: 48px;
+		background: url(assets/svg/uams-sprite.svg) no-repeat 0 0 @red;
 		position: absolute;
-		top: -22px;
-		left: 0;
+		top: -2px;
+		left: auto;
+		right: 140px;
 		z-index: 1;
     &:focus,
     &:hover{
-      background: url(assets/svg/uams-sprite-focus.svg) no-repeat 0 0 transparent;
+      background: url(assets/svg/uams-sprite-focus.svg) no-repeat 0 0 @red;
     }
     &:before {
       //to preload and cache hover svg
@@ -122,7 +134,7 @@
             margin: 0 15px;
             overflow: hidden;
             &:hover, &:focus {
-                border: 2px solid @lightgold;
+                border: 2px solid @700grey;
                 background-color: darken(@red, 10%);
                 .transition(all .1s linear)
             }
@@ -154,8 +166,8 @@
                 overflow: hidden;
                 &:hover,
                 &:focus {
-                	color: #FFF;
-					text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.54);
+                	color: @700grey;
+					text-shadow: 0px 0px 4px rgba(240, 240, 240, 0.54);
 					text-decoration: underline;
 					outline: none;
 					.transition(all 0.2s ease);
@@ -202,6 +214,32 @@
 	}
 	svg {
 		top: -37px;
+	}
+}
+
+#site-title {
+	float: left;
+	max-width: 40%;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	top: 22px;
+	height: 85px;
+	& h1 {
+		margin: 0;
+		padding: 0;
+		font-size: 35px;
+		& a {
+			color: @red;
+			&.long-title {
+			font-size: 32px;
+			}
+			&:hover,
+			&:focus {
+				color: darken(@red, 5%);
+                border-bottom: 1px dotted darken(@red, 5%);
+			}
+		}
 	}
 }
 

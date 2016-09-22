@@ -129,7 +129,7 @@ span.next-page {
 	a {
 	  padding: 10px 40px 10px 19px;
 	  text-transform: uppercase;
-	  background-color: @ultralightgold;
+	  background-color: @200grey;
 	  font-family: @font-family-headline;
 	  font-weight: @bold;
 	  color: @darkgray;
@@ -158,7 +158,7 @@ span.next-page {
 		.rotate(90deg);
 	  }
 	  &:hover {
-	  	 background-color: darken(@ultralightgold, 5%);
+	  	 background-color: darken(@200grey, 5%);
 	  }
 	}
 }
@@ -177,7 +177,8 @@ span.next-page {
 	}
 	a {
 		text-decoration: none;
-		// border-bottom: 1px solid #D3D3D3;
+		//border-bottom: 1px dotted @link;
+		font-weight: 400;
 
 	}
 }
@@ -192,7 +193,7 @@ span.next-page {
 	margin-left: -150px;
 	padding: 30px 30px 30px;
 	.box-shadow(0px 1px 2px rgba(0, 0, 0, 0.2));
-	border-top: 6px solid @lightgold;
+	border-top: 6px solid @700grey;
 	position: relative;
 	background: url('assets/images/stripes-dark-tile.svg') repeat-x 0 -88px transparent;
 	img {
@@ -258,6 +259,18 @@ img.attachment-post-thumbnail.wp-post-image,
 	    height: 130px;
 	}
 }
+
+//Vertical Align
+.vertical-align {
+	position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
 
 
 /* Small Devices, Tablets */

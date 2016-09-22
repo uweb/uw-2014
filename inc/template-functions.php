@@ -356,11 +356,11 @@ if ( !function_exists('uams_site_title')):
 
     function uams_site_title()
     {
-        $classes = 'uams-site-title';
+        $classes = '';
         if (get_option('overly_long_title')){
             $classes .= ' long-title';
         }
-        echo '<a href="' . home_url('/') . '" title="' . esc_attr( get_bloginfo() ) . '"><div class="' . $classes . '">' . get_bloginfo() . '</div></a>';
+        echo '<a href="' . home_url('/') . '" title="' . esc_attr( get_bloginfo() ) . '" tabindex="-1" aria-hidden="true" class="' . $classes . '">' . get_bloginfo() . '</a>';
     }
 
 endif;

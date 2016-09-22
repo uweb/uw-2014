@@ -1,9 +1,11 @@
-<header class="uams-thinstrip" style="border-top: 6px solid #9d2235; height: 140px; background-color: #e6e6e6;">
-  <div id="top-header" style="height: 40px; position: absolute; width: 100%; background-color: #6c696a; top: 0;">
-  	<a href="http://www.uams.edu" title="University of Washington Home" class="uams-patch" style="width:320px; height: 48px; top:-2px; right: 140px; left:auto; background-color: #9d2235;">University of Arkansas for Medical Scineces</a>
+<header class="uams-thinstrip">
+  <div id="top-header">
+  	<a href="http://www.uams.edu" title="University of Washington Home" class="uams-patch">University of Arkansas for Medical Scineces</a>
   </div>
   <div class="container">
-    <h1 class="site-title" style=" padding: 0; margin: 0; width: 40%; float: left; display: block; position: absolute; font-size: 32px; top: 22px;"><a href="<?php bloginfo('url'); ?>" title="University of Washington Home" class="" tabindex='-1' aria-hidden='true' style="color: #9d2235;"><?php bloginfo( 'name' ); ?></a>
+	<div id="site-title">
+    	<h1 class="vertical-align"><?php uams_site_title(); ?></h1>
+    </div>
   </div>
   <div class='align-right' style="margin-top: 45px; ">
       <nav class="uams-thin-strip-nav" role='navigation' aria-label='audience based'>
