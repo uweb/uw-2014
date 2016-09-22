@@ -19,8 +19,11 @@
 		list-style: none;
 		display: inline-block;
 		li {
-			width: 80%;
-			margin: 0 10%;
+			width: 86%;
+			margin: 0 7%;
+			li {
+				margin: 0 0 0 8%;
+			}
 		}
 	}
 	ul {
@@ -66,7 +69,27 @@
 			margin-right: 0;
 			margin-top: 6px;
 			margin-bottom: 6px;
-			font-size: 18px;
+			font-size: 17px;
+			line-height: 28px;
+			&:hover,
+			&:focus {
+				color: @red;
+				background-color: #E7E7E7;
+			}
+		}
+		li li a {
+			font-family: @font-family-headline;
+			text-transform: none;
+			font-weight: @light;
+			letter-spacing: -0.03em;
+			padding-bottom: 4px;
+			padding-left: 10px;
+			padding-top: 4px;
+			margin-left: 0;
+			margin-right: 0;
+			margin-top: 6px;
+			margin-bottom: 6px;
+			font-size: 17px;
 			line-height: 28px;
 			&:hover,
 			&:focus {
@@ -102,7 +125,7 @@
 				width: 10px;
 				right: 8px;
 				top: 17px;
-				background: url(assets/svg/uams-sprite.svg) no-repeat -353px 0px;
+				background: url(assets/svg/uams-sprite.svg) no-repeat -453px 0px;
 			}
 		}
 		// Forward slash menu-separator

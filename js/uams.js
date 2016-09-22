@@ -95,7 +95,7 @@ UAMS.Search = Backbone.View.extend({
   // This property caches the current value in the search field so the same search doesn't execute multiple times.
   value : '',
 
-  // These are the three search options: the UW, the current site and the directory
+  // These are the three search options: the UAMS, the current site and the directory
   searchFeatures : {
     uams        : 'uams',
     site      : 'site',
@@ -111,7 +111,7 @@ UAMS.Search = Backbone.View.extend({
                     '</form>'+
 
                     '<select id="mobile-search-select" class="visible-xs">' +
-                      '<option value="uams" selected>All the UW</option>' +
+                      '<option value="uams" selected>All the UAMS</option>' +
                       '<option value="site">Current Site</option>' +
                     '</select>' +
 
@@ -120,7 +120,7 @@ UAMS.Search = Backbone.View.extend({
                     '<div class="labels hidden-xs">'+
                       '<label class="radio">'+
                         '<input type="radio" name="search" value="uams" data-toggle="radio" checked tabindex="-1">'+
-                        'All the UW'+
+                        'All the UAMS'+
                       '</label>'+
 
                       '<label class="radio">'+
@@ -163,7 +163,7 @@ UAMS.Search = Backbone.View.extend({
   // List of events
   // A keydown on the input field will trigger an ajax search if more than two characters are present.
   // Clicking on a result's more icon or name unveil more information
-  // Toggling the radio buttons changes the function of the search bar from searhing the UW, searching the current site and searching the directory.
+  // Toggling the radio buttons changes the function of the search bar from searhing the UAMS, searching the current site and searching the directory.
   events :
   {
     'keydown'                   : 'keyDownDispatch',
@@ -200,7 +200,7 @@ UAMS.Search = Backbone.View.extend({
   // since most events take place within that view.
   render : function()
   {
-    UW.$body.prepend( this.$searchbar )
+    UAMS.$body.prepend( this.$searchbar )
 
     this.$toggle = this.$el.find('button');
     this.$toggle.bind( {
@@ -384,7 +384,7 @@ UAMS.Search = Backbone.View.extend({
 
 })
 
-UW.Search.DirectoryModel = Backbone.Model.extend({
+UAMS.Search.DirectoryModel = Backbone.Model.extend({
 
   settings : {
     action : 'directory',
@@ -408,7 +408,7 @@ UW.Search.DirectoryModel = Backbone.Model.extend({
 })
 ;// This section builds and populates the quicklinks section (off-canvas right)
 
-UW.QuickLinks = Backbone.View.extend({
+UAMS.QuickLinks = Backbone.View.extend({
 
     // todo: the default list and these elements could be put into the php templates
     container: 'div#uams-container',
@@ -427,7 +427,7 @@ UW.QuickLinks = Backbone.View.extend({
 
     initialize: function ( options ) {
         _.bindAll( this, 'render', 'append_menu_item', 'close_quicklinks', 'focused', 'blurred', 'button_blur', 'keyup' );
-        this.links = new UW.QuickLinks.Collection( options )
+        this.links = new UAMS.QuickLinks.Collection( options )
         this.links.on( 'sync', this.render )
         this.$button = this.$el.find('button');
         this.$button.blur(this.button_blur);
@@ -443,7 +443,7 @@ UW.QuickLinks = Backbone.View.extend({
     },
 
     make_drawer: function () {
-        UW.$body.children().not('#wpadminbar').not('script').wrapAll('<div id="uams-container"><div id="uams-container-inner"></div></div>');
+        UAMS.$body.children().not('#wpadminbar').not('script').wrapAll('<div id="uams-container"><div id="uams-container-inner"></div></div>');
         this.$container = $(this.container);
     },
 
@@ -547,11 +547,11 @@ UW.QuickLinks = Backbone.View.extend({
     }
 });
 
-UW.QuickLinks.Model = Backbone.Model.extend({});
+UAMS.QuickLinks.Model = Backbone.Model.extend({});
 
-UW.QuickLinks.Collection = Backbone.Collection.extend({
+UAMS.QuickLinks.Collection = Backbone.Collection.extend({
 
-    model: UW.QuickLinks.Model,
+    model: UAMS.QuickLinks.Model,
 
     initialize: function ( options ) {
         // _.bindAll(this, 'parse', 'make_view');

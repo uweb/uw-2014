@@ -89,6 +89,9 @@ UAMS.Dropdowns = Backbone.View.extend({
       , shift = ( this.menuBlockWidth * ( menublock.length ) ) + position.left
       , left = shift > UAMS.$window.width() ? $el.outerWidth() + position.left - ( menublock.length * this.menuBlockWidth ) : position.left
 
+      if (left < 0)  // Make sure the left is not negative margin.  If so, center the menu
+    	left = ( UAMS.$window.width() - this.menuBlockWidth * ( menublock.length )) * 0.5
+
     $el.find('ul').css( { top : position.top + 48, left: left })
   },
 

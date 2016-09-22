@@ -1,6 +1,6 @@
-//     UAMS.js 0.1
+//     UW.js 0.1
 //     uw.edu/marketing/web/
-//     A UAMS JavaScript library that implements various web components to any site
+//     A UW JavaScript library that implements various web components to any site
 //     Includes hard dependencies jQuery (v2.1.1), Backbone (1.1.2), and Underscore (1.6.0)
 
 ;(function () {
@@ -11,33 +11,33 @@
  * to offer multiple easing options
  *
  * TERMS OF USE - jQuery Easing
- *
- * Open source under the BSD License.
- *
+ * 
+ * Open source under the BSD License. 
+ * 
  * Copyright © 2008 George McGinley Smith
  * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without modification,
+ * 
+ * Redistribution and use in source and binary forms, with or without modification, 
  * are permitted provided that the following conditions are met:
- *
- * Redistributions of source code must retain the above copyright notice, this list of
+ * 
+ * Redistributions of source code must retain the above copyright notice, this list of 
  * conditions and the following disclaimer.
- * Redistributions in binary form must reproduce the above copyright notice, this list
- * of conditions and the following disclaimer in the documentation and/or other materials
+ * Redistributions in binary form must reproduce the above copyright notice, this list 
+ * of conditions and the following disclaimer in the documentation and/or other materials 
  * provided with the distribution.
- *
- * Neither the name of the author nor the names of contributors may be used to endorse
+ * 
+ * Neither the name of the author nor the names of contributors may be used to endorse 
  * or promote products derived from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
+ * 
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
  * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
  * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
  *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
  *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
- *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
+ *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
  * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
- *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
- * OF THE POSSIBILITY OF SUCH DAMAGE.
+ *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
+ * OF THE POSSIBILITY OF SUCH DAMAGE. 
  *
 */
 
@@ -153,7 +153,7 @@ jQuery.extend( jQuery.easing,
 		return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
 	},
 	easeInOutBack: function (x, t, b, c, d, s) {
-		if (s == undefined) s = 1.70158;
+		if (s == undefined) s = 1.70158; 
 		if ((t/=d/2) < 1) return c/2*(t*t*(((s*=(1.525))+1)*t - s)) + b;
 		return c/2*((t-=2)*t*(((s*=(1.525))+1)*t + s) + 2) + b;
 	},
@@ -180,33 +180,33 @@ jQuery.extend( jQuery.easing,
 /*
  *
  * TERMS OF USE - EASING EQUATIONS
- *
- * Open source under the BSD License.
- *
+ * 
+ * Open source under the BSD License. 
+ * 
  * Copyright © 2001 Robert Penner
  * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without modification,
+ * 
+ * Redistribution and use in source and binary forms, with or without modification, 
  * are permitted provided that the following conditions are met:
- *
- * Redistributions of source code must retain the above copyright notice, this list of
+ * 
+ * Redistributions of source code must retain the above copyright notice, this list of 
  * conditions and the following disclaimer.
- * Redistributions in binary form must reproduce the above copyright notice, this list
- * of conditions and the following disclaimer in the documentation and/or other materials
+ * Redistributions in binary form must reproduce the above copyright notice, this list 
+ * of conditions and the following disclaimer in the documentation and/or other materials 
  * provided with the distribution.
- *
- * Neither the name of the author nor the names of contributors may be used to endorse
+ * 
+ * Neither the name of the author nor the names of contributors may be used to endorse 
  * or promote products derived from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
+ * 
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
  * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
  * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
  *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
  *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
- *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
+ *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
  * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
- *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
- * OF THE POSSIBILITY OF SUCH DAMAGE.
+ *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
+ * OF THE POSSIBILITY OF SUCH DAMAGE. 
  *
  */;;(function (factory)
 {
@@ -1909,10 +1909,10 @@ vjs.findPosition = function(el) {
 vjs.util = {};
 
 /**
- * Merge two options objects,
+ * Merge two options objects, 
  * recursively merging any plain object properties as well.
  * Previously `deepMerge`
- *
+ * 
  * @param  {Object} obj1 Object to override values in
  * @param  {Object} obj2 Overriding object
  * @return {Object}      New object -- obj1 and obj2 will be untouched
@@ -8514,7 +8514,7 @@ vjs.plugin = function(name, init){
  */
 
 (function () {
-
+	
 
 	/**
 	 * Class for managing events.
@@ -9063,7 +9063,7 @@ if ( typeof define === 'function' && define.amd ) {
  * MIT License
  */
 
-( function( window, factory ) {
+( function( window, factory ) { 
   // universal module definition
 
   /*global define: false, module: false, require: false */
@@ -10406,7 +10406,7 @@ jQuery(document).ready(function($) {
 				'DSC_',                   // Nikon
 				'DSCF',                   // Fuji
 				'DSCN',                   // Nikon
-				'DUAMS',                    // some mobile phones
+				'DUW',                    // some mobile phones
 				'GEDC',                   // GE
 				'IMG',                    // generic
 				'JD',                     // Jenoptik
@@ -11444,7 +11444,7 @@ UAMS.QuickLinks.Collection = Backbone.Collection.extend({
     },
 
     defaults : [{
-       "title": "MyUAMS",
+       "title": "MyUW",
        "url": "http:\/\/myuw.washington.edu",
        "classes": ["icon-myuw"]
    }, {
@@ -11460,7 +11460,7 @@ UAMS.QuickLinks.Collection = Backbone.Collection.extend({
        "url": "http:\/\/www.lib.washington.edu\/",
        "classes": ["icon-libraries"]
    }, {
-       "title": "UAMS Medicine",
+       "title": "UW Medicine",
        "url": "http:\/\/www.uwmedicine.org",
        "classes": ['icon-medicine']
    }, {
@@ -11468,7 +11468,7 @@ UAMS.QuickLinks.Collection = Backbone.Collection.extend({
        "url": "http:\/\/uw.edu\/maps",
        "classes": ["icon-maps"]
    }, {
-       "title": "UAMS Today",
+       "title": "UW Today",
        "url": "http:\/\/www.uw.edu\/news",
        "classes": ["icon-uwtoday"]
    }, {
@@ -11484,20 +11484,20 @@ UAMS.QuickLinks.Collection = Backbone.Collection.extend({
        "url": "http:\/\/www.hfs.washington.edu\/huskycard\/",
        "classes": false
    }, {
-       "title": "UAMS Bothell",
+       "title": "UW Bothell",
        "url": "http:\/\/www.bothell.washington.edu\/",
        "classes": false
    }, {
-       "title": "UAMS Tacoma",
+       "title": "UW Tacoma",
        "url": "http:\/\/www.tacoma.uw.edu\/",
        "classes": false
    }, {
-       "title": "UAMS Facebook",
+       "title": "UW Facebook",
        "url": "https:\/\/www.facebook.com\/UofWA",
        "classes": false
    }, {
-       "title": "UAMS Twitter",
-       "url": "https:\/\/twitter.com\/UAMS",
+       "title": "UW Twitter",
+       "url": "https:\/\/twitter.com\/UW",
        "classes": false
    }]
 
@@ -12408,13 +12408,13 @@ UAMS.Radio = Backbone.View.extend({
 ;// ### UAMS Dropdowns
 
 // This function creates the UAMS Dropdowns
-// For usage please refer to the [UAMS Web Components Dropdowns](http://uw.edu/brand/web/#dropdowns)
+// For usage please refer to the [UW Web Components Dropdowns](http://uw.edu/brand/web/#dropdowns)
 
 
 
 UAMS.Dropdowns = Backbone.View.extend({
 
-  chunkSize : 6,
+  chunkSize : 8,
   menuWidth : 1170,
   menuBlock : '<div class="menu-block"></div>',
   menuBlockWidth : 230,
@@ -12458,6 +12458,7 @@ UAMS.Dropdowns = Backbone.View.extend({
     this.render()
   },
 
+
   render : function()
   {
     _.each( this.$topLevelNav, this.wrapChildren )
@@ -12495,7 +12496,7 @@ UAMS.Dropdowns = Backbone.View.extend({
       , shift = ( this.menuBlockWidth * ( menublock.length ) ) + position.left
       , left = shift > UAMS.$window.width() ? $el.outerWidth() + position.left - ( menublock.length * this.menuBlockWidth ) : position.left
 
-    if (left < 0)
+      if (left < 0)  // Make sure the left is not negative margin.  If so, center the menu
     	left = ( UAMS.$window.width() - this.menuBlockWidth * ( menublock.length )) * 0.5
 
     $el.find('ul').css( { top : position.top + 48, left: left })
@@ -13136,8 +13137,8 @@ UAMS.Player = Backbone.View.extend({
 })
 ;// ### UAMS Social
 
-// This function creates the UAMS social media buttons
-// For usage please refer to the [UAMS Web Components Social](http://uw.edu/brand/web/#social)
+// This function creates the UW social media buttons
+// For usage please refer to the [UW Web Components Social](http://uw.edu/brand/web/#social)
 
 UAMS.Social = Backbone.View.extend({
 
