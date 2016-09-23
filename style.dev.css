@@ -4916,7 +4916,7 @@ table th[class*="col-"] {
 .uams-thinstrip {
   height: 140px;
   width: 100%;
-  background: #e6e6e6;
+  background: #eeeeee;
   padding-top: 22px;
   position: relative;
   z-index: 2;
@@ -5545,12 +5545,12 @@ table th[class*="col-"] {
     left: 33px;
     top: -1px;
     background-color: #212121;
-    -webkit-transform: skewX(-15deg) skewY(0);
-    -o-transform: skewX(-15deg) skewY(0);
-    transform: skewX(-15deg) skewY(0);
-    -webkit-transform: skew(-15deg, 0);
-    -ms-transform: skewX(-15deg) skewY(0);
-    transform: skew(-15deg, 0);
+    -webkit-transform: skewX(-22deg) skewY(0);
+    -o-transform: skewX(-22deg) skewY(0);
+    transform: skewX(-22deg) skewY(0);
+    -webkit-transform: skew(-22deg, 0);
+    -ms-transform: skewX(-22deg) skewY(0);
+    transform: skew(-22deg, 0);
     z-index: -1;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
   }
@@ -5992,7 +5992,7 @@ span.next-page {
 span.next-page a {
   padding: 10px 40px 10px 19px;
   text-transform: uppercase;
-  background-color: #e6e6e6;
+  background-color: #eeeeee;
   font-family: "Fira Sans", sans-serif;
   color: #5a5a5a;
   display: inline-block;
@@ -6024,7 +6024,7 @@ span.next-page a:after {
   transform: rotate(90deg);
 }
 span.next-page a:hover {
-  background-color: #d9d9d9;
+  background-color: #e1e1e1;
 }
 .uams-body-copy h1 a,
 .uams-body-copy h2 a,
@@ -8286,16 +8286,16 @@ textarea#jp-carousel-comment-form-comment-field:focus::-webkit-input-placeholder
   position: absolute;
 }
 .checkbox .fui-radio-unchecked:before {
-  background-position: -437px -25px;
+  background-position: -537px -25px;
 }
 .checkbox .fui-radio-checked:before {
-  background-position: -437px -25px;
+  background-position: -537px -25px;
 }
 .checkbox.checked .fui-radio-unchecked:before {
-  background-position: -437px 1px;
+  background-position: -537px 1px;
 }
 .checkbox.checked .fui-radio-checked:before {
-  background-position: -437px 1px;
+  background-position: -537px 1px;
 }
 .checkbox input,
 .radio input {
@@ -8317,7 +8317,7 @@ textarea#jp-carousel-comment-form-comment-field:focus::-webkit-input-placeholder
 a.uams-btn {
   padding: 11px 20px;
   text-transform: uppercase;
-  background-color: #e6e6e6;
+  background-color: #eeeeee;
   font-family: "Fira Sans", sans-serif;
   font-weight: 800;
   color: #5a5a5a;
@@ -8590,9 +8590,9 @@ body.error404 .woof {
 }
 .uams-footer ul.footer-links li a:focus,
 .uams-footer ul.footer-links li a:hover {
-  color: #e6e6e6;
+  color: #eeeeee;
   text-decoration: none;
-  border-bottom: 1px dotted #e6e6e6;
+  border-bottom: 1px dotted #eeeeee;
 }
 .uams-footer ul.footer-links li a:focus:after,
 .uams-footer ul.footer-links li a:hover:after {
@@ -8741,22 +8741,22 @@ label.screen-reader {
   position: absolute;
   font-family: "Fira Sans", sans-serif;
   font-weight: 800;
-  color: #4B2E83;
+  color: #9d2235;
   font-size: 21px;
   overflow: hidden;
   z-index: 1;
 }
 #hero-container #hashtag span {
   background-color: rgba(255, 255, 255, 0.9);
-  -webkit-transform: skew(-15deg, 0);
-  -ms-transform: skewX(-15deg) skewY(0);
-  transform: skew(-15deg, 0);
+  -webkit-transform: skew(-22deg, 0);
+  -ms-transform: skewX(-22deg) skewY(0);
+  transform: skew(-22deg, 0);
   padding: 2px 25px 3px 28px;
   display: block;
   margin: 0 10px 0 -10px;
 }
 #hero-container #hashtag span span {
-  transform: skew(15deg, 0);
+  transform: skew(22deg, 0);
   display: block;
   background-color: transparent;
 }
@@ -8769,7 +8769,7 @@ label.screen-reader {
 }
 #hero-container a.uams-btn {
   background-color: #fff;
-  color: #4B2E83;
+  color: #9d2235;
 }
 #hero-container a.uams-btn:before {
   background-color: #616161;
@@ -8801,21 +8801,21 @@ label.screen-reader {
   top: 0px;
   font-family: "Fira Sans", sans-serif;
   font-weight: 800;
-  color: #4B2E83;
+  color: #9d2235;
   font-size: 21px;
   overflow: hidden;
 }
 .hero-height2 .container #hashtag span {
   background-color: rgba(255, 255, 255, 0.9);
-  -webkit-transform: skew(-15deg, 0);
-  -ms-transform: skewX(-15deg) skewY(0);
-  transform: skew(-15deg, 0);
+  -webkit-transform: skew(-22deg, 0);
+  -ms-transform: skewX(-22deg) skewY(0);
+  transform: skew(-22deg, 0);
   padding: 2px 25px 3px 28px;
   display: block;
   margin: 0 10px 0 -10px;
 }
 .hero-height2 .container #hashtag span span {
-  transform: skew(15deg, 0);
+  transform: skew(22deg, 0);
   display: block;
   background-color: transparent;
 }
@@ -8828,10 +8828,10 @@ label.screen-reader {
 }
 .hero-height2 .container a.uams-btn {
   background-color: #fff;
-  color: #4B2E83;
+  color: #9d2235;
 }
 .hero-height2 .container a.uams-btn:before {
-  background-color: #b7a57a;
+  background-color: #616161;
 }
 .hero-height2 h1 {
   font-family: "Fira Sans", sans-serif;
@@ -8854,7 +8854,7 @@ label.screen-reader {
   left: -140px;
   opacity: .3;
   width: 600px;
-  background: url(assets/svg/slashes-light.svg) no-repeat 0 0;
+  background: url(assets/svg/triangle-light.svg) no-repeat 0 0;
   z-index: 0;
 }
 .hero-height2:before {
@@ -9473,7 +9473,7 @@ ul.shortcode-blogroll-mini {
   background-size: 35px;
 }
 .cards-widget .default-card a.uw-btn {
-  background-color: #4B2E83;
+  background-color: #9d2235;
   color: #FFF;
 }
 .cards-widget .default-card a.uw-btn:before {
@@ -9542,12 +9542,12 @@ ul.shortcode-blogroll-mini {
   background-color: #9d2235;
   content: " ";
   display: block;
-  -webkit-transform: skewX(-15deg) skewY(0);
-  -o-transform: skewX(-15deg) skewY(0);
-  transform: skewX(-15deg) skewY(0);
-  -webkit-transform: skew(-15deg, 0);
-  -ms-transform: skewX(-15deg) skewY(0);
-  transform: skew(-15deg, 0);
+  -webkit-transform: skewX(-22deg) skewY(0);
+  -o-transform: skewX(-22deg) skewY(0);
+  transform: skewX(-22deg) skewY(0);
+  -webkit-transform: skew(-22deg, 0);
+  -ms-transform: skewX(-22deg) skewY(0);
+  transform: skew(-22deg, 0);
   z-index: -1;
 }
 .cards-widget .enhanced-card h3 a {
@@ -9607,7 +9607,7 @@ ul.shortcode-blogroll-mini {
 .contact-widget-inner {
   padding: 40px;
   margin-top: 20px;
-  background: url('assets/images/stripes-dark-tile.svg') 0 -58px repeat-x #e6e6e6;
+  background: url('assets/images/stripes-dark-tile.svg') 0 -58px repeat-x #eeeeee;
 }
 .contact-widget-inner * {
   margin: 0;
@@ -9635,7 +9635,7 @@ ul.shortcode-blogroll-mini {
   margin-bottom: 30px;
 }
 .uw-sidebar .contact-widget-inner .widgettitle:after {
-  background-color: #e6e6e6;
+  background-color: #eeeeee;
 }
 .widget_nav_menu ul.menu > li {
   background-color: #DDD;
@@ -9677,7 +9677,7 @@ ul.shortcode-blogroll-mini {
   content: "- ";
 }
 .widget_nav_menu ul.menu span {
-  border-left: 10px solid #b7a57a;
+  border-left: 10px solid #616161;
   padding-left: 20px;
   background-color: #ddd;
   border-bottom: none;

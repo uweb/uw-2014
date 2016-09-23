@@ -17,7 +17,7 @@
 
     <div class="col-md-<?php echo (($sidebar[0]!="on") ? "8" : "12" ) ?> uams-content" role='main'>
 
-      <?php uams_site_title(); ?>
+      <?php //uams_page_title(); ?>
       <?php get_template_part( 'menu', 'mobile' ); ?>
       <?php get_template_part( 'breadcrumbs' ); ?>
 
