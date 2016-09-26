@@ -12,8 +12,8 @@ class UAMS_Install_Theme
   const WIDTH = 750;
   public $DEFAULT_HEADERS = array(
       'blossoms' => array(
-        'url'           => '%s/assets/headers/suzzallo.jpg',
-        'thumbnail_url' => '%s/assets/headers/suzzallo-thumbnail.jpg',
+        'url'           => '%s/assets/headers/uams-pattern-grey.png',
+        'thumbnail_url' => '%s/assets/headers/uams-pattern-grey-thumb.jpg',
         'description'   => 'IMA'
       )
   );
