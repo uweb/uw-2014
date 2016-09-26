@@ -7,7 +7,7 @@
 <?php get_header();
       $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
       if(!$url){
-        $url = get_site_url() . "/wp-content/themes/uw-2014/assets/headers/suzzallo.jpg";
+        $url = get_site_url() . "/wp-content/themes/uams-2016/assets/headers/uams-pattern-grey.png";
       }
       $mobileimage = get_post_meta($post->ID, "mobileimage");
       $hasmobileimage = '';
@@ -20,7 +20,7 @@
       $buttontext = get_post_meta($post->ID, "buttontext");
       $buttonlink = get_post_meta($post->ID, "buttonlink");   ?>
 
-
+<div class="col-md-12 mobile-menu"> <?php get_template_part( 'menu', 'mobile' ); ?> </div>
 <div class="uams-hero-image hero-height2 <?php echo $hasmobileimage ?>" style="background-image: url(<?php echo $url ?>);">
      <?php if( !empty($mobileimage) ) { ?>
     <div class="mobile-image" style="background-image: url(<?php echo $mobileimage ?>);"></div>
@@ -42,7 +42,7 @@
     <div class="hero-content col-md-<?php echo (($sidebar[0]!="on") ? "8" : "12" ) ?> uams-content" role='main'>
 
       <?php //uams_page_title(); ?>
-      <?php get_template_part( 'menu', 'mobile' ); ?>
+      <?php //get_template_part( 'menu', 'mobile' ); ?>
       <?php get_template_part( 'breadcrumbs' ); ?>
 
       <div id='main_content' class="uams-body-copy" tabindex="-1">

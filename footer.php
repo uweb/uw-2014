@@ -1,6 +1,6 @@
     <div role="contentinfo" class="uams-footer">
 
-        <a href="http://www.uams.edu" class="footer-wordmark">University of Washington</a>
+        <a href="http://www.uams.edu" class="footer-wordmark">University of Arkansas for Medical Sciences</a>
 
         <h4>Connect with us:</h4>
 

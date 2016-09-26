@@ -7,7 +7,7 @@
       clear: both;
       list-style:none;
       padding:0;
-      margin:0 0 25px;
+      margin:15px 0 0;
       > ul
       {
         display: block;
@@ -54,32 +54,38 @@
       height: 40px;
       text-transform: uppercase;
       color:@red;
-      background: url(assets/svg/uams-sprite.svg) no-repeat -475px 20px transparent;
+      background: url(assets/svg/uams-sprite.svg) no-repeat -612px 20px transparent;
       background-size: 1200px;
       border: none;
       padding: 0 0 20px 0;
-      &:before {
-        content: "";
-        position: absolute;
-        right: 55px;
-        top: -4px;
-        width: 20px;
-        height: 40px;
-        background: url(assets/svg/uams-sprite.svg) no-repeat -600px 0 transparent;
-      }
+
+      position: absolute;
+      right: -15px;
+      z-index: 10;
+      margin: 0;
+      top: -42px;
+      //&:before {
+      //  content: "";
+      //  position: absolute;
+      //  right: 55px;
+      //  top: -4px;
+      //  width: 20px;
+      //  height: 40px;
+      //  background: url(assets/svg/uams-sprite.svg) no-repeat -700px 0 transparent;
+      //}
     }
     ul.uams-mobile-menu li.pagenav ul li.current_page_parent.current_page_ancestor > a:after {
       display: none;
     }
     &.frontpage {
-        margin-top: -10px;
+        //margin-top: -10px;
         position: relative;
         button.uams-mobile-menu-toggle {
             position: absolute;
-            right: -20px;
+            right: -15px;
             z-index: 10;
             margin: 0;
-            top: -50px;
+            top: -42px;
         }
         ul.uams-mobile-menu {
             //position: absolute;
@@ -102,10 +108,23 @@
                     ul.sub-menu {
                       display: block;
                     }
+                    & ul ul.sub-menu {
+	                    display: none;
+                    }
+                    & ul li.active-menu ul.sub-menu {
+	                    display: block;
+                    }
                     &.menu-item-has-children {
                       & > a {
                         &:after {
-                          background-position: -284px -25px;
+                          background-position: -384px -25px;
+                        }
+                      }
+                    }
+                    &.current_page_item.menu-item-has-children {
+	                    & > a {
+                        &:after {
+                          background-position: -384px -105px;
                         }
                       }
                     }
@@ -118,6 +137,13 @@
                     a {
                       background-color: white;
                       color: #5F5F5F;
+                    }
+                    .menu-item-has-children a {
+                        background-color: #f5f5f5;
+
+                    }
+                    ul.sub-menu a {
+	                    background-color: white;
                     }
                   }
                   .menu-item-has-children {
@@ -134,9 +160,27 @@
                             right: 11px;
                             width: 26px;
                             height: 23px;
-                            background: url(assets/svg/uams-sprite.svg) -284px 0 no-repeat rgba(0, 0, 0, 0);
+                            background: url(assets/svg/uams-sprite.svg) -384px 0 no-repeat rgba(0, 0, 0, 0);
                             opacity: .8;
                             margin-top: 0;
+                      }
+                    }
+                  }
+                  .current_page_item.menu-item-has-children {
+                    & > a {
+	                  &:focus {
+                        color: @200grey;
+                      }
+                      &:after {
+//	                      content: "";
+//                            position: absolute;
+//                            top: 11px;
+//                            right: 11px;
+//                            width: 26px;
+//                            height: 23px;
+	                      background: url(assets/svg/uams-sprite.svg) -384px -78px no-repeat rgba(0, 0, 0, 0);
+//	                      opacity: .8;
+//                            margin-top: 0;
                       }
                     }
                   }
@@ -147,8 +191,11 @@
             margin-top: 0px;
             background-color: white;
             button.uams-mobile-menu-toggle {
-                right: 0px;
-                top: 12px;
+	            position: absolute;
+	            right: -15px;
+	            z-index: 10;
+	            margin: 0;
+	            top: -42px;
             }
             ul.uams-mobile-menu {
                 margin: 0;

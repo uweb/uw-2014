@@ -278,21 +278,25 @@
 
 	.uams-thinstrip {
 		padding: 0;
-		height: 45px;
+		height: 160px;
 		.container {
 			position: static;
 		}
+
+		#top-header {
+			height: 54px;
+		}
 		.uams-patch {
-			width: 73px;
+			width: 142px;
 			height: 45px;
 			top: 0;
-			left: 0;
-			background-size: 470px;
+			left: 10px;
+			background-size: 780px;
       .transition(all 0s);
       &:hover,
       &:focus,
       {
-        background-size: 470px;
+        background-size: 640px;
       }
 		}
 		.uams-wordmark {
@@ -308,7 +312,7 @@
 		}
     button {
         &.uams-quicklinks {
-            background-position: -484px -247px;
+            background-position: -757px -247px;
             background-size: 900px;
             text-indent: -99999px;
             overflow: hidden;
@@ -317,6 +321,7 @@
             top: 0;
             right: 0;
             position: absolute;
+            height: 47px;
             &:after {
                 background-position: -253px 4px;
                 background-size: 780px;
@@ -325,21 +330,21 @@
             }
         }
         &.uams-search{
-            top: 0;
+            top: 2px;
             right: 36px;
-            height: 47px;
-            width: 47px;
-            margin-right: 10px;
-            border: none;
+            height: 45px;
+            width: 45px;
+            margin-right: 15px;
+            border: 1px solid #eee;
             overflow: hidden;
             position: absolute;
             &:hover {
-                background-color: transparent;
+                background-color: darken(@red, 5%);
                 border: none;
             }
             svg {
-                top: 14px;
-                left: 14px;
+                top: 13px;
+                left: 12px;
             }
         }
     }
@@ -353,6 +358,19 @@
                 }
             }
         }
+    }
+
+    #site-title {
+	    max-width: 100%;
+	    top: 62px;
+	    & h1 {
+		    font-size: 30px;
+		    & a {
+			    &.long-title {
+				font-size: 26px;
+				}
+			}
+	    }
     }
 }
 

@@ -369,7 +369,7 @@ if ( !function_exists('uams_page_title')):
 
     function uams_page_title()
     {
-        $classes = 'uams-site-title';
+        $classes = 'uams-page-title';
         if (get_option('overly_long_title')){
             $classes .= ' long-title';
         }
