@@ -127,7 +127,7 @@ class UAMS_Page_Attributes_Meta_Box
 </span></a>)" : "") . "</p>";
     }
     echo "</div>";
-    if ($default === "templates/template-big-hero.php" || $default === "templates/template-small-hero.php") {
+    if ($default === "templates/template-big-hero.php" || $default === "templates/template-small-hero.php" || $default === "templates/template-home.php") {
       if (is_super_admin()) {
         $banner = get_post_meta($post->ID, "banner", true);
         wp_nonce_field( 'banner_nonce' , 'banner_name' );
@@ -143,7 +143,44 @@ class UAMS_Page_Attributes_Meta_Box
 
         echo "<p><b>Banner</b></br><input type='text' name='bannertext' value='" . $banner . "'></p>";
         echo "<p><b>Button</b></br>Text</br><input type='text' name='buttontext' value='" . $buttontext . "'></br>Link</br><input type='text' name='buttonlink' value='" . $buttonlink . "'></p>";
-        echo "<p><b>Mobile Header Image</b></br><input type='text' name='mobileimagetext' value='" . $mobileimage . "'></p>";
+        echo "<p><b>Mobile Header Image</b></br><input type='text' class='meta-image' name='mobileimagetext' value='" . $mobileimage . "'><input type='button' class='button image-upload' value='Browse'></p>";
+        echo "<div class='image-preview'><img src='" . $mobileimage ."' style='max-width: 140px;'></div>";
+        ?>
+        <script>
+			jQuery(document).ready(function ($) {
+
+			// Instantiates the variable that holds the media library frame.
+			var meta_image_frame;
+			// Runs when the image button is clicked.
+			$('.image-upload').click(function (e) {
+				e.preventDefault();
+				var meta_image = $(this).parent().children('.meta-image');
+
+				// If the frame already exists, re-open it.
+				if (meta_image_frame) {
+					meta_image_frame.open();
+					return;
+				}
+				// Sets up the media library frame
+				meta_image_frame = wp.media.frames.meta_image_frame = wp.media({
+					title: meta_image.title,
+					button: {
+						text: meta_image.button
+					}
+				});
+				// Runs when an image is selected.
+				meta_image_frame.on('select', function () {
+					// Grabs the attachment selection and creates a JSON representation of the model.
+					var media_attachment = meta_image_frame.state().get('selection').first().toJSON();
+					// Sends the attachment URL to our custom image input field.
+					meta_image.val(media_attachment.url);
+				});
+				// Opens the media library frame.
+				meta_image_frame.open();
+			});
+		});
+		</script>
+<?php
       }
     }
   }
