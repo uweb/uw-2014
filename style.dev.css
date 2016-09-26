@@ -4943,7 +4943,7 @@ table th[class*="col-"] {
   position: absolute;
   top: -2px;
   left: auto;
-  right: 140px;
+  right: 5%;
   z-index: 1;
 }
 .uams-thinstrip .uams-patch:focus,
@@ -5148,7 +5148,7 @@ table th[class*="col-"] {
   transform: rotate(180deg);
 }
 /* Small Devices, Tablets */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   #uams-container.open .uams-quicklinks button {
     color: black;
     background-position: -492px -317px;
@@ -5168,11 +5168,11 @@ table th[class*="col-"] {
     height: 54px;
   }
   .uams-thinstrip .uams-patch {
-    width: 142px;
-    height: 45px;
+    width: 240px;
+    height: 38px;
     top: 0;
     left: 10px;
-    background-size: 780px;
+    background-size: 640px;
     -o-transition: all 0s;
     -webkit-transition: all 0s;
     transition: all 0s;
@@ -5233,7 +5233,7 @@ table th[class*="col-"] {
     left: 14px;
   }
   #site-title {
-    max-width: 100%;
+    max-width: 90%;
     top: 62px;
   }
   #site-title h1 {
@@ -5243,7 +5243,7 @@ table th[class*="col-"] {
     font-size: 26px;
   }
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   .uams-thinstrip ul.uams-thin-links li {
     display: none;
   }
@@ -5258,9 +5258,28 @@ table th[class*="col-"] {
     display: none;
   }
 }
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+/* Tablet devices */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .uams-thinstrip .uams-patch {
+    width: 320px;
+    height: 48px;
+    background-size: auto;
+  }
+}
+/* Extra Small devices */
+@media only screen and (max-width: 360px) {
+  .uams-thinstrip .uams-patch {
+    width: 142px;
+    height: 45px;
+    background-size: 780px;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 991px) {
   .uams-thinstrip {
-    height: 140px;
+    height: 190px;
+  }
+  .uams-thinstrip .uams-patch {
+    right: 40px;
   }
   .uams-thinstrip .uams-wordmark {
     z-index: 2;
@@ -5279,13 +5298,11 @@ table th[class*="col-"] {
     height: 50px;
     width: 100%;
     content: "";
-    background-color: #9d2235;
   }
   .uams-thinstrip ul.uams-thin-links li a,
   .uams-thinstrip ul.uams-thin-links li button {
     font-size: 16px;
     padding: 10px 25px 10px 0;
-    color: white;
   }
   .uams-thinstrip li {
     margin-top: 68px;
@@ -5302,12 +5319,16 @@ table th[class*="col-"] {
     top: -69px;
     margin: 0;
   }
+  #site-title {
+    height: 134px;
+    max-width: 55%;
+  }
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .uams-thinstrip ul.uams-thin-links li a,
   .uams-thinstrip ul.uams-thin-links li button {
     font-size: 16px;
-    padding: 10px 25px 10px 0;
+    padding: 10px 20px 10px 0;
   }
   .uams-thinstrip .uams-wordmark {
     left: 100px;
@@ -5491,7 +5512,7 @@ table th[class*="col-"] {
   border: none;
 }
 /* Small Devices, Tablets */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   #dawgdrops {
     display: none;
   }

@@ -37,7 +37,7 @@
 		position: absolute;
 		top: -2px;
 		left: auto;
-		right: 140px;
+		right: 5%;
 		z-index: 1;
     &:focus,
     &:hover{
@@ -262,7 +262,7 @@
 }
 
 /* Small Devices, Tablets */
-@media only screen and (max-width : 767px) {
+@media only screen and (max-width : 768px) {
 
 	#uams-container {
 		&.open .uams-quicklinks button {
@@ -287,11 +287,11 @@
 			height: 54px;
 		}
 		.uams-patch {
-			width: 142px;
-			height: 45px;
+			width: 240px;
+			height: 38px;
 			top: 0;
 			left: 10px;
-			background-size: 780px;
+			background-size: 640px;
       .transition(all 0s);
       &:hover,
       &:focus,
@@ -361,7 +361,7 @@
     }
 
     #site-title {
-	    max-width: 100%;
+	    max-width: 90%;
 	    top: 62px;
 	    & h1 {
 		    font-size: 30px;
@@ -374,7 +374,7 @@
     }
 }
 
-@media only screen and (max-width : 767px) {
+@media only screen and (max-width : 768px) {
 	.uams-thinstrip {
 		ul.uams-thin-links {
 			li {
@@ -395,24 +395,49 @@
 	}
 
 }
-@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+/* Tablet devices */
+@media only screen and (min-width : 600px) and (max-width : 768px) {
 	.uams-thinstrip {
-		height: 140px;
 		.uams-patch {
-			//top: -90px;
+			width: 320px;
+			height: 48px;
+			background-size: auto;
+		}
+	}
+
+}
+
+/* Extra Small devices */
+@media only screen and (max-width : 360px) {
+	.uams-thinstrip {
+		.uams-patch {
+			width: 142px;
+			height: 45px;
+			background-size: 780px;
+		}
+	}
+
+}
+
+@media only screen and (min-width : 769px) and (max-width : 991px) {
+	.uams-thinstrip {
+		height: 190px;
+		.uams-patch {
+			right: 40px;
 		}
 		.uams-wordmark {
 			//top: -60px;
             z-index: 2;
 		}
-    div.align-right {
-        position: relative;
-        #search-quicklinks {
-            position:absolute;
-            top:0px;
-            right:0px;
-        }
-    }
+		div.align-right {
+	        position: relative;
+	        #search-quicklinks {
+	            position:absolute;
+	            top:0px;
+	            right:0px;
+	        	}
+    	}
 		ul.uams-thin-links {
 			li {
 				//float: none;
@@ -423,12 +448,12 @@
 				height: 50px;
 				width: 100%;
 				content: "";
-				background-color: @red;
+				//background-color: @red;
 			}
 			li a,li button {
 				font-size: 16px;
 				padding: 10px 25px 10px 0;
-				color: white;
+				//color: white;
 			}
 		}
 		li {
@@ -447,13 +472,17 @@
 			margin: 0;
 		}
 	}
+	#site-title {
+		height: 134px;
+		max-width: 55%;
+	}
 }
 @media only screen and (min-width : 992px) and (max-width : 1200px) {
 	.uams-thinstrip {
 		ul.uams-thin-links li{
             a, button {
 			    font-size: 16px;
-			    padding: 10px 25px 10px 0;
+			    padding: 10px 20px 10px 0;
             }
 		}
 		.uams-wordmark {
