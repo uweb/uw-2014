@@ -17,7 +17,7 @@ class UW_Recent_Posts extends WP_Widget
   // Register the widget
   function __construct()
   {
-    parent::WP_Widget(
+    parent::__construct(
       $id      = self::ID,
       $name    = self::TITLE,
       $options = array(

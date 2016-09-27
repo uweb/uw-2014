@@ -41,7 +41,7 @@ class UW_RSS extends WP_Widget
 
     add_shortcode( 'rss', array( $this, 'uw_rss_shortcode') );
 
-		parent::WP_Widget(
+		parent::__construct(
       $id      = self::ID,
       $name    = self::NAME,
       $options = array(
