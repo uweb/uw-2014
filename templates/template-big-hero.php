@@ -20,7 +20,6 @@
       $buttontext = get_post_meta($post->ID, "buttontext");
       $buttonlink = get_post_meta($post->ID, "buttonlink");   ?>
 
-<div class="col-md-12 mobile-menu"> <?php get_template_part( 'menu', 'mobile' ); ?> </div>
 <div class="uams-hero-image hero-height <?php echo $hasmobileimage ?>" style="background-image: url(<?php echo $url ?>);">
     <?php if( !empty($mobileimage) ) { ?>
     <div class="mobile-image" style="background-image: url(<?php echo $mobileimage ?>);"></div>

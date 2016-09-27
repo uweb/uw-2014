@@ -10951,7 +10951,7 @@ UAMS.KEYCODES = {
 ;// List out the classes that each component searches for
 UAMS.elements = {
 
-  alert      : '.uams-thinstrip',
+  alert      : '.mobile-menu',
   accordion  : '.uams-accordion',
   dropdowns  : '#dawgdrops',
   images     : 'a > img',

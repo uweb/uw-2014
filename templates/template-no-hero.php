@@ -8,7 +8,6 @@
       $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
       $sidebar = get_post_meta($post->ID, "sidebar");   ?>
 
-<div class="col-md-12 mobile-menu"> <?php get_template_part( 'menu', 'mobile' ); ?> </div>
 <div class="uams-hero-image hero-blank">
 	<h1 class="container uams-site-title-blank"><?php the_title(); ?></h1>
 </div>
