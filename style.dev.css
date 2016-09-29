@@ -9009,6 +9009,9 @@ div[id*='trumba'] iframe {
 .ic-right-arrow:before {
   content: "\e92a";
 }
+.ic-money:before {
+  content: "\e937";
+}
 .icon-menu {
   text-align: center;
   margin: 40px 0;
