@@ -26,9 +26,9 @@ UAMS.getBaseUrl = function() {
     Backbone.history.location.origin = Backbone.history.location.protocol + "//" + Backbone.history.location.hostname + (Backbone.history.location.port ? ':' + Backbone.history.location.port: '');
   }
 
-  if (Backbone.history.location.origin.indexOf('www.washington.edu') != -1) {
+  if (Backbone.history.location.origin.indexOf('www.uams.edu') != -1) {
     url = Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/';
-  } else if (Backbone.history.location.origin.indexOf('depts.washington.edu') != -1) {
+  } else if (Backbone.history.location.origin.indexOf('uamsonline.com') != -1) {
     url = Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/';
   } else {
     url = Backbone.history.location.origin + '/';

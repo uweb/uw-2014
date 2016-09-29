@@ -15,12 +15,14 @@
 	p.person-title {
 		// font-weight: bold;
 	}
-	p.person-phone,
+	a.person-phone,
 	a.person-email {
 		padding: 1px 0 1px 35px;
 		background-image: url(assets/svg/widgets-sprite.svg);
 	}
-	p.person-phone {
+	a.person-phone {
+		color: inherit;
+		background-size: 580px;
 		background-position: 0 -30px;
 	}
 	a.person-email {
@@ -31,7 +33,7 @@
 
 }
 
-.uw-sidebar .contact-widget-inner .widgettitle {
+.uams-sidebar .contact-widget-inner .widgettitle {
 	margin-bottom: 30px;
 	&:after {
 		background-color: @200grey;

@@ -9673,12 +9673,14 @@ ul.shortcode-blogroll-mini {
   margin-top: 35px;
   margin-bottom: 5px;
 }
-.contact-widget-inner p.person-phone,
+.contact-widget-inner a.person-phone,
 .contact-widget-inner a.person-email {
   padding: 1px 0 1px 35px;
   background-image: url(assets/svg/widgets-sprite.svg);
 }
-.contact-widget-inner p.person-phone {
+.contact-widget-inner a.person-phone {
+  color: inherit;
+  background-size: 580px;
   background-position: 0 -30px;
 }
 .contact-widget-inner a.person-email {
