@@ -15,6 +15,7 @@ class UAMS_Styles
   {
     $this->STYLES = array(
 
+/*
       'google-font-open' => array(
           'id'      => 'google-font-open',
           'url'     => 'https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700',
@@ -22,6 +23,7 @@ class UAMS_Styles
           'version' => '3.6',
           'admin'   => true
       ),
+*/
 
       'uams-master' => array (
         'id'      => 'uams-master',

@@ -14,7 +14,7 @@ class UAMS_Install_Theme
       'blossoms' => array(
         'url'           => '%s/assets/headers/uams-pattern-grey.png',
         'thumbnail_url' => '%s/assets/headers/uams-pattern-grey-thumb.jpg',
-        'description'   => 'IMA'
+        'description'   => 'UAMS Pattern'
       )
   );
 

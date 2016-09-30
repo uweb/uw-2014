@@ -44,6 +44,8 @@ class UAMS
         require_once($parent . 'class.uams-carousel.php' );
         require_once($parent . 'class.uams-settings.php' );
         require_once($parent . 'class.uams-page-attributes-meta-box.php' );
+        require_once($parent . 'custom-post-types.php' );
+        require_once($parent . 'class.uams-homeslider-meta-box.php' );
 
         require_once(get_template_directory() . '/inc/template-functions.php' );
         require_once(get_template_directory() . '/docs/class.uams-documentation.php' );

@@ -1,17 +1,19 @@
 jQuery(document).ready(function(){
 
     var sliderstate = 'desktop';
-    
+
     function initialize_slider () {
-	
-	var slides = jQuery('.uw-homepage-slider-container .uw-homepage-slider');
+
+	var slides = jQuery('.uams-homepage-slider-container .uams-homepage-slider');
 	var totalslides = slides.length;
-	
+
 	var next = jQuery('.slideshow-controls');
+
+	var slidetitle = jQuery('.uams-homepage-slider-container .uams-homepage-slider .slide-title')
 	var thenextslide = 1;
-	var thenexttitle = slides[1].childNodes[0].childNodes[0].innerText;
+	var thenexttitle = slidetitle[1].innerText;
 	next[0].childNodes[3].innerText = thenexttitle;
-	
+
 	next.click(function(){
 	    slides.removeClass('activeslide');
 	    console.log(slides);
@@ -19,14 +21,14 @@ jQuery(document).ready(function(){
 	    console.log(thenextslide);
 	    thenextslide = (thenextslide == totalslides - 1) ? 0 : thenextslide + 1;
 	    console.log(thenextslide);
-	    thenexttitle = slides[thenextslide].childNodes[0].childNodes[0].innerText;
+	    thenexttitle = slidetitle[thenextslide].innerText;
 	    next[0].childNodes[3].innerText = thenexttitle;
 	    console.log(thenexttitle);
 	});
-	
+
     }
-    
-    if(jQuery('.uw-homepage-slider-container').length == 1){
+
+    if(jQuery('.uams-homepage-slider-container').length == 1){
 	initialize_slider();
     }
 
@@ -36,7 +38,7 @@ jQuery(document).ready(function(){
 	console.log(thewidth);
 	if (thewidth < 750 && sliderstate == 'desktop'){
 	    sliderstate = 'mobile';
-	    $('.uw-homepage-slider-container > div').each(function(){
+	    $('.uams-homepage-slider-container > div').each(function(){
 		newimage = $(this).attr('data-mobimg');
 		if (newimage != undefined && newimage != ''){
 		    $(this).css('background-image','url(\'' + newimage + '\')');
@@ -45,7 +47,7 @@ jQuery(document).ready(function(){
 	}
 	else if (thewidth > 749 && sliderstate == 'mobile') {
 	    sliderstate = 'desktop';
-	    $('.uw-homepage-slider-container > div').each(function(){
+	    $('.uams-homepage-slider-container > div').each(function(){
 		newimage = $(this).attr('data-dtimg');
 		if (newimage != undefined && newimage != ''){
 		    $(this).css('background-image','url(\'' + newimage + '\')');
@@ -59,5 +61,5 @@ jQuery(document).ready(function(){
     $( window ).resize(function(){
 	set_background();
     });
-    
+
 });
