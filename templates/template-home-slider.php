@@ -9,7 +9,7 @@
 
 <?php
 	$first = true; // used to write class on first slide
-	$loop = new WP_Query( array( 'post_type' => 'home_sliders',
+	$loop = new WP_Query( array( 'post_type' => 'home_slider',
         'posts_per_page' => 3, 'orderby' => 'menu_order date', 'order'   => 'DESC' )
             );
     if ( $loop->have_posts() ) : ?>
@@ -17,21 +17,21 @@
 	<?php
         while ( $loop->have_posts() ) : $loop->the_post();
 
-			$mobileimage = get_post_meta($post->ID, "mobileimage");
+			$mobileimage = get_post_meta($post->ID, "_data_mobileimage");
 			$hasmobileimage = false;
 			if( !empty($mobileimage) && $mobileimage[0] !== "") {
 	        	$mobileimage = $mobileimage[0];
 				$hasmobileimage = true;
 	      	}
-		  	//$buttonlink = get_post_meta($post->ID, "buttonlink");
+		  	$buttonlink = get_post_meta($post->ID, "_data_linkurl", true);
 
       ?>
 
-    <div data-mobimg="<? echo ($hasmobileimage ? $mobileimage : the_post_thumbnail_url() ); ?>" data-dtimg="<? the_post_thumbnail_url() ?>>" class="uams-hero-image uams-homepage-slider lighttext <?php echo ($first ? ' activeslide' : '' ); ?>" style="background-position: center center; background-image:url('<? the_post_thumbnail_url() ?>');">
+    <div data-mobimg="<? echo ($hasmobileimage ? $mobileimage : the_post_thumbnail_url() ); ?>" data-dtimg="<? the_post_thumbnail_url() ?>" class="uams-hero-image uams-homepage-slider lighttext <?php echo ($first ? ' activeslide' : '' ); ?>" style="background-position: center center; background-image:url('<? the_post_thumbnail_url() ?>');">
 		<div>
 			<h3 class="slide-title"><?php echo get_the_title($post->ID); ?></a><span class="udub-slant"><span style="background-color: #b7a57a;"></span></span></h3>
 			<?php the_content($post->ID); ?>
-			<p><a class="uams-btn btn-sm btn-none" href="<? the_post_thumbnail_url() ?>">Learn more</a></p>
+			<p><a class="uams-btn btn-sm btn-none" href="<? echo $buttonlink ?>">Learn more</a></p>
 		</div>
 	</div>
 

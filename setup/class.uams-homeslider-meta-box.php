@@ -26,7 +26,7 @@ class UAMS_Home_Slider_Meta_Box
 			array($this, 'hs_meta_box_function'),
 			$post_type,
 			'side',
-			'low');
+			'high');
 		}
 	}
 

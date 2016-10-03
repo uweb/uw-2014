@@ -4058,7 +4058,7 @@ ul.uams-select li.inactive a {
   cursor: pointer;
 }
 .uams-accordion h3.active:after {
-  background-position: -283px -23px;
+  background-position: -383px -23px;
 }
 .uams-accordion h3:after {
   content: " ";
@@ -4066,7 +4066,7 @@ ul.uams-select li.inactive a {
   display: block;
   width: 30px;
   height: 25px;
-  background: url(assets/svg/uams-sprite.svg) no-repeat -283px 2px rgba(255, 255, 255, 0);
+  background: url(assets/svg/uams-sprite.svg) no-repeat -383px 2px rgba(255, 255, 255, 0);
 }
 .uams-accordion div {
   height: 0px;
@@ -4117,10 +4117,10 @@ ul.uams-select li.inactive a {
   padding-left: 20px;
 }
 .uams-accordion-shortcode__header[aria-expanded="true"]:before {
-  background-position: -283px -23px;
+  background-position: -383px -23px;
 }
 .uams-accordion-shortcode__header[aria-expanded="false"]:before {
-  background-position: -283px 2px;
+  background-position: -383px 2px;
 }
 .uams-accordion-shortcode__header[aria-expanded="true"] {
   margin-bottom: 20px;

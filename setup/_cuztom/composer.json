@@ -1,0 +1,20 @@
+{
+    "name": "gizburdt/cuztom",
+    "description": "Cuztom. Easy meta data.",
+    "license": "GPL-2.0",
+    "keywords": ["wordpress", "meta"],
+    "authors": [
+        {
+            "name": "Gijs Jorissen",
+            "email": "lol@gizburdt.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "files": [
+            "src/Gizburdt/Cuztom/Cuztom.php"
+        ]
+    }
+}
