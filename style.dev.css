@@ -5825,18 +5825,41 @@ table th[class*="col-"] {
   height: 112px;
   width: 250px;
   line-height: 17px;
-  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
   text-align: left;
   cursor: pointer;
   padding: 14px 14px 0 14px;
   z-index: 11;
-  background-color: rgba(0, 0, 0, 0.25);
 }
 .uams-homepage-slider-container .slideshow-controls:hover {
   text-shadow: 0px 3px 4px black;
 }
-.uams-homepage-slider-container .slideshow-controls .uwn-slideshow-next-text {
+.uams-homepage-slider-container .slideshow-controls.lighttext {
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.uams-homepage-slider-container .slideshow-controls.lighttext .uwn-slideshow-next-text {
   color: white;
+}
+.uams-homepage-slider-container .slideshow-controls.lighttext .uwn-slideshow-next-title {
+  color: white;
+}
+.uams-homepage-slider-container .slideshow-controls.lighttext .udub-slant span {
+  background-color: white;
+}
+.uams-homepage-slider-container .slideshow-controls.darktext {
+  text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.25);
+}
+.uams-homepage-slider-container .slideshow-controls.darktext .uwn-slideshow-next-text {
+  color: #212121;
+}
+.uams-homepage-slider-container .slideshow-controls.darktext .uwn-slideshow-next-title {
+  color: #212121;
+}
+.uams-homepage-slider-container .slideshow-controls.darktext .udub-slant span {
+  background-color: #212121;
+}
+.uams-homepage-slider-container .slideshow-controls .uwn-slideshow-next-text {
   font-weight: bold;
   font-style: italic;
   font-size: 13px;
@@ -5846,9 +5869,12 @@ table th[class*="col-"] {
   white-space: pre;
 }
 .uams-homepage-slider-container .slideshow-controls .uwn-slideshow-next-title {
-  color: white;
   font-weight: bold;
   cursor: pointer;
+}
+.uams-homepage-slider-container .slideshow-controls .udub-slant span {
+  height: 5px;
+  width: 57px;
 }
 .uams-homepage-slider-container .uams-homepage-slider {
   position: absolute;

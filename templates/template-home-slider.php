@@ -48,10 +48,10 @@
 	$first = false;
 	endwhile; wp_reset_query();
 	?>
-	<div class="slideshow-controls">
+	<div class="slideshow-controls <?php echo ($textcolor ? $textcolor : 'lighttext' ); ?>">
 		<span class="uwn-slideshow-next-text">NEXT</span>
 		<span class="uwn-slideshow-next-title">NEXT TITLE HERE</span>
-		<span class="udub-slant" style="margin-top: 10px;"><span style="background-color: #fff; height: 5px; width: 57px;"></span></span>
+		<span class="udub-slant" style="margin-top: 10px;"><span></span></span>
 	</div>
 </div>
 	<?php

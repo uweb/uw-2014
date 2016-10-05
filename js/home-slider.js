@@ -19,6 +19,14 @@ jQuery(document).ready(function(){
 	    console.log(slides);
 	    slides[thenextslide].className = slides[thenextslide].className + ' activeslide';
 	    console.log(thenextslide);
+	    //Change Next color
+	    if (slides[thenextslide].className.indexOf("lighttext") >=0) {
+	    	next.removeClass('darktext');
+	    	next.addClass('lighttext');
+	    } else {
+		    next.removeClass('lighttext');
+	    	next.addClass('darktext');
+	    }
 	    thenextslide = (thenextslide == totalslides - 1) ? 0 : thenextslide + 1;
 	    console.log(thenextslide);
 	    thenexttitle = slidetitle[thenextslide].innerText;
