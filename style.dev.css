@@ -5598,16 +5598,17 @@ table th[class*="col-"] {
   -o-background-size: cover;
   background-size: cover;
   position: relative;
-}
-.uams-hero-image:after,
-.no-uams-hero-image:after {
-  position: absolute;
-  bottom: 0;
-  height: 80px;
-  width: 100%;
-  content: "";
-  background: url('assets/images/stripes-dark-tile.svg');
-  opacity: .2;
+  /*
+	&:after {
+		position:absolute;
+		bottom: 0;
+		height: 80px;
+		width: 100%;
+		content: "";
+		background: url('assets/images/stripes-dark-tile.svg');
+		opacity: .2;
+	}
+*/
 }
 .uams-hero-image:before,
 .no-uams-hero-image:before {

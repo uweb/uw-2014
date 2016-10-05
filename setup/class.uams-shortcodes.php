@@ -18,8 +18,8 @@ class UAMS_Shortcodes
         require_once('class.tile-box-shortcode.php');
         require_once('class.button-shortcode.php');
         require_once('class.youtube-shortcode.php');
-        require_once('class.trumba-shortcode.php');
-        require_once('class.trumba-rss-shortcode.php');
+      //  require_once('class.trumba-shortcode.php');
+      //  require_once('class.trumba-rss-shortcode.php');
         require_once('class.subpage-list-shortcode.php');
         require_once('class.accordion-shortcode.php');
       //  require_once('class.tiny-shortcode.php');
@@ -32,8 +32,8 @@ class UAMS_Shortcodes
         $this->tile_box       = new TileBox();
         $this->button         = new UAMS_Button();
         $this->youtube        = new UAMS_YouTube();
-        $this->trumba         = new UAMS_Trumba();
-        $this->trumba_rss     = new UAMS_TrumbaRSS();
+      //  $this->trumba         = new UAMS_Trumba();
+      //  $this->trumba_rss     = new UAMS_TrumbaRSS();
         $this->subpage_list   = new UAMS_SubpageList();
         $this->accordion      = new UAMS_AccordionShortcode();
       //  $this->tiny           = new UAMS_TinyShortcode();
