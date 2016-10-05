@@ -212,6 +212,9 @@ class UAMS_Widget_Contact extends WP_Widget
             		echo (!empty($person_emails[$num]) ? '<a href=\'mailto:' . $person_emails[$num] . '\'class=\'person-email\'>' . $person_emails[$num] . '</a>' : '');
 			endif;
 		endforeach;
+	?>
+		</div><!-- /.contact-widget-inner -->
+	<?php
 
 		echo $after_widget;
 	}

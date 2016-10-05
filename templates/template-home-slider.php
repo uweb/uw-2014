@@ -86,112 +86,6 @@
 <?php
 endif;
 ?>
-<style>
-	.uams-homepage-slider-container {
-		position: relative;
-		height: calc(100vh - 45px); }
-	@media (min-width: 992px) {
-		.uams-homepage-slider-container {
-			height: 430px; }
-	}
-	.uams-homepage-slider-container .slideshow-controls {
-		position: absolute;
-		bottom: 0;
-		height: 112px;
-		width: 250px;
-		line-height: 17px;
-		text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
-		cursor: pointer;
-		padding: 14px 14px 0 14px;
-		z-index: 11;
-		background-color: rgba(0,0,0,0.25) }
-	@media (min-width: 768px) {
-		.uams-homepage-slider-container .slideshow-controls {
-			left: 48px; }
-	}
-	@media (min-width: 992px) {
-		.uams-homepage-slider-container .slideshow-controls {
-			left: 60%; }
-	}
-	.uams-homepage-slider-container .slideshow-controls:hover {
-		text-shadow: 0px 3px 4px black; }
-/*
-	.uams-homepage-slider-container .slideshow-controls::after {
-		background: url("/wp-content/themes/uams-2016/assets/svg/uams-sprite.svg") no-repeat -730px 0;
-		content: "";
-		position: absolute;
-		bottom: 0;
-		width: 38px;
-		height: 112px;
-		margin-right: 279px;
-		left: -38px;
-		text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5); }
-*/
-	.uams-homepage-slider-container .slideshow-controls .uwn-slideshow-next-text {
-		color: white;
-		font-weight: bold;
-		font-style: italic;
-		font-size: 13px; }
-	.uams-homepage-slider-container .slideshow-controls .uwn-slideshow-next-text::after {
-		content: "\A";
-		white-space: pre; }
-	.uams-homepage-slider-container .slideshow-controls .uwn-slideshow-next-title {
-		color: white;
-		font-weight: bold;
-		cursor: pointer; }
-	.uams-homepage-slider-container .uams-homepage-slider {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		opacity: 0;
-		z-index: 1;
-		transition: opacity 1s;
-		pointer-events: none; }
-	.uams-homepage-slider-container .uams-homepage-slider.activeslide {
-		opacity: 1;
-		pointer-events: auto; }
-	.uams-homepage-slider-container .uams-homepage-slider div {
-		padding: 24px; }
-	.uams-homepage-slider.lighttext div h3, .uams-homepage-slider.lighttext div p {
-		color: #fff;
-		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-	}
-	.uams-homepage-slider.darktext div h3, .uams-homepage-slider.darktext div p {
-		color: #212121;
-		text-shadow: 1px 1px 1px rgba(225, 225, 225, 0.3);
-	}
-	@media (min-width: 992px) {
-		.uams-homepage-slider-container .uams-homepage-slider div {
-			margin: 45px auto;
-			width: 970px; }
-	}
-	@media (min-width: 1200px) {
-		.uams-homepage-slider-container .uams-homepage-slider div {
-			margin: 45px auto;
-			width: 1170px; }
-	}
-	.uams-homepage-slider-container .uams-homepage-slider div h3.slide-title {
-		font-size: 48px;
-		line-height: 52px;
-		text-transform: uppercase;
-		}
-	.uams-homepage-slider-container .uams-homepage-slider div p {
-		font-size: 18px;
-		line-height: 28px;
-		font-weight: 400;
-		}
-	@media (min-width: 1200px) {
-		.uams-homepage-slider-container .uams-homepage-slider div p {
-			width: 44%; }
-	}
-	@media only screen and (max-width: 767px) {
-		.uams-hero-image {
-			display: block !important; }
-	}
-
-</style>
 <div class="container uams-body">
 
   <div class="row">
@@ -241,6 +135,6 @@ endif;
 </div>
 
 
-<?php wp_enqueue_script( 'script', get_template_directory_uri() . '/js/home-slider.js', array ( 'jquery' ), 1.1, true); ?>
+<?php// wp_enqueue_script( 'script', get_template_directory_uri() . '/js/home-slider.js', array ( 'jquery' ), 1.1, true); ?>
 
 <?php get_footer(); ?>

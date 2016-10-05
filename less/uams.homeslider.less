@@ -1,0 +1,112 @@
+// UAMS Home Slider
+
+.uams-homepage-slider-container {
+	position: relative;
+	height: calc(100vh - 45px);
+	.slideshow-controls {
+		position: absolute;
+		bottom: 0;
+		height: 112px;
+		width: 250px;
+		line-height: 17px;
+		text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+		cursor: pointer;
+		padding: 14px 14px 0 14px;
+		z-index: 11;
+		background-color: rgba(0,0,0,0.25);
+		&:hover {
+			text-shadow: 0px 3px 4px black;
+		}
+		.uwn-slideshow-next-text {
+			color: white;
+			font-weight: bold;
+			font-style: italic;
+			font-size: 13px;
+			&:after {
+				content: "\A";
+				white-space: pre;
+			}
+		}
+		.uwn-slideshow-next-title {
+			color: white;
+			font-weight: bold;
+			cursor: pointer;
+		}
+	}
+	.uams-homepage-slider {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		z-index: 1;
+		transition: opacity 1s;
+		pointer-events: none;
+		&.activeslide {
+			opacity: 1;
+			pointer-events: auto;
+		}
+		div {
+			padding: 24px;
+			h3.slide-title {
+				font-size: 48px;
+				line-height: 52px;
+				text-transform: uppercase;
+			}
+			p {
+				font-size: 18px;
+				line-height: 28px;
+				font-weight: 400;
+			}
+		}
+		&.lighttext {
+			div {
+				h3, p {
+					color: #fff;
+					text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+				}
+			}
+		}
+		&.darktext {
+			div {
+				h3, p {
+					color: #212121;
+					text-shadow: 1px 1px 1px rgba(225, 225, 225, 0.3);
+				}
+			}
+		}
+	}
+}
+@media only screen and (max-width: 767px) {
+	.uams-hero-image {
+		display: block !important;
+	}
+}
+@media (min-width: 768px) {
+	.uams-homepage-slider-container .slideshow-controls {
+		left: 48px;
+	}
+}
+@media (min-width: 992px) {
+	.uams-homepage-slider-container {
+		height: 430px;
+		.uams-homepage-slider div {
+			margin: 45px auto;
+			width: 970px;
+		}
+		.slideshow-controls {
+			left: 60%;
+		}
+	}
+}
+@media (min-width: 1200px) {
+	.uams-homepage-slider-container .uams-homepage-slider div {
+		margin: 45px auto;
+		width: 1170px;
+	}
+	.uams-homepage-slider-container .uams-homepage-slider div p {
+		width: 44%;
+	}
+}
+
