@@ -377,3 +377,4 @@ if ( !function_exists('uams_page_title')):
     }
 
 endif;
+

@@ -1,6 +1,6 @@
 <?php
 
-//	include( 'cuztom/cuztom.php' );
+	include( 'cuztom/cuztom.php' );
 
 /*
 $homeSlider = new UAMS_Custom_Post(
@@ -25,7 +25,6 @@ $homeSlider = new UAMS_Custom_Post(
 );
 */
 
-/*
 $homeSlider = new Cuztom_Post_Type(
     'home_slider',
 	array(
@@ -39,7 +38,7 @@ $homeSlider = new Cuztom_Post_Type(
             'hierarchical' => true,
             'menu_position' => 5,
             'menu_icon' => 'dashicons-images-alt',
-            'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'page-attributes' )
+            'supports' => array( 'title', 'author', 'thumbnail' )
     ),
     array(
 	    'menu_name' => 'Home Slider',
@@ -49,6 +48,7 @@ $homeSlider = new Cuztom_Post_Type(
 
 );
 
+/*
 $box = new Cuztom_Meta_Box(
     'data',
     __('Slide Options', 'cuztom'),
@@ -68,6 +68,7 @@ $box = new Cuztom_Meta_Box(
 );
 */
 
+/*
 add_filter('piklist_post_types', 'uams_2016_post_types');
   function uams_2016_post_types($post_types)
   {
@@ -101,3 +102,4 @@ add_filter('piklist_post_types', 'uams_2016_post_types');
     );
     return $post_types;
   }
+*/

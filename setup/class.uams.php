@@ -49,6 +49,8 @@ class UAMS
         require_once($parent . 'class-tgm-plugin-activation.php' ); //tgm activation
         require_once($parent . 'class.uams-plugins.php' );
 
+        require_once($parent . 'class.uams-acf.php' );
+
         require_once(get_template_directory() . '/inc/template-functions.php' );
         require_once(get_template_directory() . '/docs/class.uams-documentation.php' );
 

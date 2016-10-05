@@ -58,17 +58,17 @@ Order: 10
     ,'field' => 'menu_order'
     ,'scope' => 'post'
     ,'label' => __('Slider Order', 'homepage-slider')
-    ,'description' => "Higher is first (0-100)"
+    ,'description' => "Higher is first (1-100)"
     ,'attributes' => array(
       'class' => 'small-text'
-      ,'placeholder' => __('0', 'homepage-slider')
+      ,'placeholder' => __('1', 'homepage-slider')
     )
     ,'required' => true
     ,'validate' => array(
 	  array(
 	    'type' => 'range'
 	    ,'options' => array(
-	      'min' => 0
+	      'min' => 1
 	      ,'max' => 100
 	    )
 	  )

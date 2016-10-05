@@ -64,14 +64,14 @@ function uams_2016_register_required_plugins() {
 
 
 			array(
-				'name'               	=> 'Piklist', // The plugin name.
-				'slug'               	=> 'piklist', // The plugin slug (typically the folder name).
-//				'source'             	=> THEME_DIR .'/plugins/piklist.zip', // The plugin source.
+				'name'               	=> 'Advanced Custom Fields PRO', // The plugin name.
+				'slug'               	=> 'advanced-custom-fields-pro', // The plugin slug (typically the folder name).
+				'source'             	=> get_template_directory() .'/plugins/advanced-custom-fields-pro.zip', // The plugin source.
 				'required'           	=> true, // If false, the plugin is only 'recommended' instead of required.
 // 				'version'            	=> '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
 // 				'force_activation'   	=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 // 				'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
- 				'external_url'       	=> 'https://wordpress.org/plugins/piklist/', // If set, overrides default API URL and points to an external URL.
+// 				'external_url'       	=> 'https://wordpress.org/plugins/piklist/', // If set, overrides default API URL and points to an external URL.
 // 				'is_callable'        	=> '', // If set, this callable will be be checked for availability to determine if a plugin is active.
 			),
 
@@ -103,7 +103,7 @@ function uams_2016_register_required_plugins() {
 		'has_notices'  => true,                    // Show admin notices or not.
 		'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
 		'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
-		'is_automatic' => false,                   // Automatically activate plugins after installation or not.
+		'is_automatic' => true,                   // Automatically activate plugins after installation or not.
 		'message'      => '',                      // Message to output right before the plugins table.
 
 		/*

@@ -9,29 +9,37 @@
 
 <?php
 	$first = true; // used to write class on first slide
-	$loop = new WP_Query( array( 'post_type' => 'home_slider',
-        'posts_per_page' => 3, 'orderby' => 'menu_order date', 'order'   => 'DESC' )
+	$loop = new WP_Query( array(
+		'post_type' => 'home_slider',
+        'posts_per_page' => 5,
+        'meta_key'			=> 'hs_order',
+		'orderby'			=> 'meta_value_num date',
+/*
+		'order'				=> 'DESC'
+        'orderby' => 'menu_order date',
+*/
+        'order'   => 'DESC' )
             );
     if ( $loop->have_posts() ) : ?>
 <div class="uams-homepage-slider-container" role="region">
 	<?php
         while ( $loop->have_posts() ) : $loop->the_post();
 
-			$mobileimage = get_post_meta($post->ID, "hs_mobile_image");
+			$mobileimage = get_field("hs_mobile_image");
 			$hasmobileimage = false;
-			if( !empty($mobileimage) && $mobileimage[0] !== "") {
-	        	$mobileimage = $mobileimage[0];
+			if( !empty($mobileimage) && $mobileimage['url'] !== "") {
+	        	$mobileimage = $mobileimage['url'];
 				$hasmobileimage = true;
 	      	}
-		  	$buttonlink = get_post_meta($post->ID, "hs_button_url", true);
-		  	$textcolor = get_post_meta($post->ID, "hs_text_color", true);
+		  	$buttonlink = get_field( "hs_button_url", $post->ID );
+		  	$textcolor = get_field( "hs_text_color", $post->ID );
 
       ?>
 
     <div data-mobimg="<? echo ($hasmobileimage ? $mobileimage : the_post_thumbnail_url() ); ?>" data-dtimg="<? the_post_thumbnail_url() ?>" class="uams-hero-image uams-homepage-slider <?php echo ($textcolor ? $textcolor : 'lighttext' ); ?> <?php echo ($first ? 'activeslide' : '' ); ?>" style="background-position: center center; background-image:url('<? the_post_thumbnail_url() ?>');">
 		<div>
 			<h3 class="slide-title"><?php echo get_the_title($post->ID); ?></a><span class="udub-slant"><span style="background-color: #b7a57a;"></span></span></h3>
-			<?php the_content($post->ID); ?>
+			<?php the_field( "hs_content", $post->ID ); //the_content($post->ID); ?>
 			<p><a class="uams-btn btn-sm btn-none" href="<? echo $buttonlink ?>">Learn more</a></p>
 		</div>
 	</div>
@@ -135,6 +143,6 @@ endif;
 </div>
 
 
-<?php// wp_enqueue_script( 'script', get_template_directory_uri() . '/js/home-slider.js', array ( 'jquery' ), 1.1, true); ?>
+<?php wp_enqueue_script( 'script', get_template_directory_uri() . '/js/home-slider.js', array ( 'jquery' ), 1.1, true); ?>
 
 <?php get_footer(); ?>
