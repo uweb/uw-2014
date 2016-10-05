@@ -9,6 +9,8 @@
 
 <?php
 	$first = true; // used to write class on first slide
+	$i = 0;
+	$slidecolor = array();
 	$loop = new WP_Query( array(
 		'post_type' => 'home_slider',
         'posts_per_page' => 5,
@@ -46,9 +48,11 @@
 
 <?php
 	$first = false;
+	$slidecolor[$i] = $textcolor;
+	$i++;
 	endwhile; wp_reset_query();
 	?>
-	<div class="slideshow-controls <?php echo ($textcolor ? $textcolor : 'lighttext' ); ?>">
+	<div class="slideshow-controls <?php echo $slidecolor[0]; ?>">
 		<span class="uwn-slideshow-next-text">NEXT</span>
 		<span class="uwn-slideshow-next-title">NEXT TITLE HERE</span>
 		<span class="udub-slant" style="margin-top: 10px;"><span></span></span>
