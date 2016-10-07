@@ -12,7 +12,6 @@ This is an overview of the custom widgets, plugins and various features it inclu
 - [Bugs and feature requests](#bugsandfeaturerequests)
 - [Widgets](#widgets)
   - [UAMS Blogroll](#uamsblogroll)
-  - [UAMS Campus Map](#uamscampusmap)
   - [UAMS Recent Posts](#uamsrecentposts)
   - [UAMS RSS](#uamsrss)
   - [UAMS Single Image ](#uamssingleimage)
@@ -27,7 +26,6 @@ This is an overview of the custom widgets, plugins and various features it inclu
   - [Intro](#intro)
   - [RSS](#rss)
   - [Tile box](#tilebox)
-  - [Trumba](#trumba)
   - [Twitter](#twitter)
   - [YouTube](#youtube)
   - [Slideshow](#slideshow)
@@ -70,15 +68,6 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 > - **Mini blogroll** : Creates a minified version of the blogroll for tighter spaces (*Default: false*)   
 > - **Date** : Shows the published date (*Default: show*)   
 > - **Number of posts to display** : The number of post titles to show in the blogroll (*Default: 2*)
-
-### UAMS Campus Map ###
-
->Embed the location of a UAMS campus building on your page using the UAMS branded campus map. 
-
-> Options:  
-
-> - **Title** : The title of the widget (*Default: None*)   
-> - **Building code** : The UAMS campus building code for the desired building to embed, ie: 'kne' for Kane Hall. (*Default: None*)
 
 
 ### UAMS Recent Posts ###
@@ -304,21 +293,6 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
     [tile] Text for tile three [/tile]
     [tile] Text for tile four [/tile]
   [/box]
-```
-
-### Trumba ###
-
->  Display a Trumba calendar spud in the post or page content.
-
-> Attributes:  
-
-> - __name__ : __Required__ Trumba web name of the desired calendar (_Default: none_)
-> - __type__ : The Trumba spud type of the desired calendar (_Default: none_)
-> - __base__ : The Trumba teaser base url of the desired calendar (_Default: none_)
-
-> Example:   
-```
-    [trumba name='my web name' type='desired spud type' base='teaser base url']
 ```
 
 ### Twitter ###

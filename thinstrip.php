@@ -10,10 +10,9 @@
   <div class='align-right' style="margin-top: 45px; ">
       <nav class="uams-thin-strip-nav" role='navigation' aria-label='audience based'>
           <ul class="uams-thin-links">
-            <li><a href="http://uw.edu/studentlife" title="Students">Students</a></li>
-            <li><a href="http://uw.edu/parents" title="Parents">Parents</a></li>
-            <li><a href="http://uw.edu/facultystaff" title="Faculty & Staff">Faculty & Staff</a></li>
-            <li><a href="http://uw.edu/alumni" title="Alumni">Alumni</a></li>
+            <li><a href="http://uamshealth.com" title="UAMSHealth" class="">UAMSHealth</a></li>
+            <li><a href="http://jobs.uams.edu" title="Jobs @ UAMS">Jobs</a></li>
+            <li><a href="http://giving.uams.edu" title="Giving">Giving</a></li>
           </ul>
       </nav>
       <nav id='search-quicklinks' role='navigation' aria-label='search and quick links'>
