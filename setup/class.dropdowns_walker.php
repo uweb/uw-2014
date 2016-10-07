@@ -18,7 +18,7 @@ class UAMS_Dropdowns_Walker_Menu extends Walker_Nav_Menu
 
 //  function add_role_menubar($html)
 //  {
-//    return str_replace('class="dawgdrops-nav"', 'class="dawgdrops-nav" role="menubar"', $html);
+//    return str_replace('class="reddiedrops-nav"', 'class="reddiedrops-nav" role="menubar"', $html);
 //  }
 
   function start_lvl( &$output, $depth = 0, $args = array() )
@@ -27,7 +27,7 @@ class UAMS_Dropdowns_Walker_Menu extends Walker_Nav_Menu
 	if ($depth > 0) {
 		$output .= "\n$indent<ul class=\"sub-menu\">";
 	} else {
-		$output .= "\n$indent<ul role=\"group\" id=\"menu-{$this->CURRENT}\" aria-labelledby='{$this->CURRENT}' aria-expanded=\"false\" class=\"dawgdrops-menu\">";
+		$output .= "\n$indent<ul role=\"group\" id=\"menu-{$this->CURRENT}\" aria-labelledby='{$this->CURRENT}' aria-expanded=\"false\" class=\"reddiedrops-menu\">";
 	}
 /*
 	if( $depth == 0 ) {
@@ -71,7 +71,7 @@ class UAMS_Dropdowns_Walker_Menu extends Walker_Nav_Menu
 
 		$class_names = $value = '';
 
-		$classes     = $depth == 0 ? array( 'dawgdrops-item', $item->classes[0] ) : array();
+		$classes     = $depth == 0 ? array( 'reddiedrops-item', $item->classes[0] ) : array();
 		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
 
     $li_classnames = ! empty($classes) ? 'class="'. $class_names .'"' : '';

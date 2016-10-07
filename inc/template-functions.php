@@ -41,13 +41,13 @@ if ( ! function_exists( 'uams_dropdowns') ) :
   function uams_dropdowns()
   {
 
-    echo '<nav id="dawgdrops" aria-label="Main menu" role="navigation"><div class="dawgdrops-inner container" role="application">';
+    echo '<nav id="reddiedrops" aria-label="Main menu" role="navigation"><div class="reddiedrops-inner container" role="application">';
 
     echo  wp_nav_menu( array(
             'theme_location'  => UAMS_Dropdowns::LOCATION,
             'container'       => false,
-            //'container_class' => 'dawgdrops-inner container',
-            'menu_class'      => 'dawgdrops-nav',
+            //'container_class' => 'reddiedrops-inner container',
+            'menu_class'      => 'reddiedrops-nav',
             'fallback_cb'     => '',
             'walker'          => new UAMS_Dropdowns_Walker_Menu()
           ) );

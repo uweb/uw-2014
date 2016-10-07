@@ -3,7 +3,7 @@ UAMS.elements = {
 
   alert      : '.mobile-menu',
   accordion  : '.uams-accordion',
-  dropdowns  : '#dawgdrops',
+  dropdowns  : '#reddiedrops',
   images     : 'a > img',
   mobilemenu : '#mobile-relative',
   radio      : ':radio',

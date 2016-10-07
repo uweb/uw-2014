@@ -30,7 +30,7 @@ UAMS.VERSION = '0.1'
 UAMS.elements = {
 
   accordion  : '.uams-accordion',
-  dropdowns  : '#dawgdrops',
+  dropdowns  : '#reddiedrops',
   mobilemenu : '.uams-mobile-menu-toggle',
   radio      : ':radio',
   search     : '.uams-search',
@@ -1175,7 +1175,7 @@ UAMS.Dropdowns = Backbone.View.extend({
   },
 
   elements : {
-    toplevel : '.dawgdrops-item'
+    toplevel : '.reddiedrops-item'
   },
 
   keys : {
@@ -1191,9 +1191,9 @@ UAMS.Dropdowns = Backbone.View.extend({
 
 
   events : {
-    'keydown .dawgdrops-menu a' : 'moveFocusInSubMenu',
-    'keydown .dawgdrops-item > a' : 'toggleSubMenu',
-    'mouseenter .dawgdrops-item' : 'positionSubmenu'
+    'keydown .reddiedrops-menu a' : 'moveFocusInSubMenu',
+    'keydown .reddiedrops-item > a' : 'toggleSubMenu',
+    'mouseenter .reddiedrops-item' : 'positionSubmenu'
   },
 
 

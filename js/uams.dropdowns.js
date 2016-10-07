@@ -18,7 +18,7 @@ UAMS.Dropdowns = Backbone.View.extend({
   },
 
   elements : {
-    toplevel : '.dawgdrops-item',
+    toplevel : '.reddiedrops-item',
     megamenu : '.mega-menu'
   },
 
@@ -35,10 +35,10 @@ UAMS.Dropdowns = Backbone.View.extend({
 
 
   events : {
-    'keydown .dawgdrops-menu a' : 'moveFocusInSubMenu',
-    'keydown .dawgdrops-item > a' : 'toggleSubMenu',
-    'focus .dawgdrops-item' : 'positionSubmenu',
-    'mouseenter .dawgdrops-item' : 'positionSubmenu'
+    'keydown .reddiedrops-menu a' : 'moveFocusInSubMenu',
+    'keydown .reddiedrops-item > a' : 'toggleSubMenu',
+    'focus .reddiedrops-item' : 'positionSubmenu',
+    'mouseenter .reddiedrops-item' : 'positionSubmenu'
   },
 
 
