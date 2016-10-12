@@ -5248,7 +5248,7 @@ table th[class*="col-"] {
   clip: rect(1px, 1px, 1px, 1px);
   z-index: -1;
 }
-#dawgdrops {
+#reddiedrops {
   -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
   box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
   background-color: white;
@@ -5256,38 +5256,38 @@ table th[class*="col-"] {
   z-index: 5;
   display: block;
 }
-#dawgdrops li {
+#reddiedrops li {
   list-style: none;
   display: inline-block;
 }
-#dawgdrops li li {
+#reddiedrops li li {
   width: 80%;
   margin: 0 10%;
 }
-#dawgdrops ul {
+#reddiedrops ul {
   padding-left: 0;
   padding-right: 0;
   margin: 0;
   list-style: none;
 }
-.dawgdrops-inner {
+.reddiedrops-inner {
   padding: 20px 0 5px 0;
 }
 .menu-block {
   float: left;
   width: 230px;
 }
-.dawgdrops-item.dawgdrops-item a {
+.reddiedrops-item.reddiedrops-item a {
   font-family: "Encode Sans Compressed", sans-serif;
   font-weight: 800;
   font-size: 19px;
   padding: 5px 10px 21px 15px;
 }
-.dawgdrops-item.dawgdrops-item a:focus,
-.dawgdrops-item.dawgdrops-item a:hover {
+.reddiedrops-item.reddiedrops-item a:focus,
+.reddiedrops-item.reddiedrops-item a:hover {
   color: #85754d;
 }
-.dawgdrops-item.dawgdrops-item li a {
+.reddiedrops-item.reddiedrops-item li a {
   font-family: "Encode Sans Compressed", sans-serif;
   text-transform: none;
   font-weight: 600;
@@ -5301,12 +5301,12 @@ table th[class*="col-"] {
   font-size: 18px;
   line-height: 28px;
 }
-.dawgdrops-item.dawgdrops-item li a:hover,
-.dawgdrops-item.dawgdrops-item li a:focus {
+.reddiedrops-item.reddiedrops-item li a:hover,
+.reddiedrops-item.reddiedrops-item li a:focus {
   color: #9D2235;
   background-color: #E7E7E7;
 }
-.dawgdrops-item a {
+.reddiedrops-item a {
   color: #9D2235;
   -webkit-font-smoothing: antialiased;
   font-size: 22px;
@@ -5315,10 +5315,10 @@ table th[class*="col-"] {
   display: block;
   position: relative;
 }
-.dawgdrops-item a.dropdown-toggle {
+.reddiedrops-item a.dropdown-toggle {
   padding-right: 30px;
 }
-.dawgdrops-item a.dropdown-toggle:hover:before {
+.reddiedrops-item a.dropdown-toggle:hover:before {
   background: url(assets/svg/uw-sprite.svg) no-repeat -203px -490px;
   -o-transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
@@ -5329,7 +5329,7 @@ table th[class*="col-"] {
   right: 4px;
   top: 8px;
 }
-.dawgdrops-item a.dropdown-toggle:before {
+.reddiedrops-item a.dropdown-toggle:before {
   content: "";
   position: absolute;
   height: 10px;
@@ -5338,7 +5338,7 @@ table th[class*="col-"] {
   top: 17px;
   background: url(assets/svg/uw-sprite.svg) no-repeat -353px 0px;
 }
-.dawgdrops-item a:after {
+.reddiedrops-item a:after {
   content: "";
   position: absolute;
   right: -14px;
@@ -5347,13 +5347,13 @@ table th[class*="col-"] {
   top: 14px;
   background: url('assets/svg/slash.svg') no-repeat;
 }
-.dawgdrops-item:hover .dawgdrops-menu {
+.reddiedrops-item:hover .reddiedrops-menu {
   display: block;
 }
-.dawgdrops-item:last-child a:after {
+.reddiedrops-item:last-child a:after {
   display: none;
 }
-.dawgdrops-menu {
+.reddiedrops-menu {
   top: 66px;
   left: 0;
   position: absolute;
@@ -5370,63 +5370,63 @@ table th[class*="col-"] {
   -moz-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
 }
-.dawgdrops-menu li {
+.reddiedrops-menu li {
   float: left;
   clear: left;
   border-bottom: thin solid #eee;
 }
-.dawgdrops-menu li a {
+.reddiedrops-menu li a {
   color: #707070;
   font-size: 17px;
   margin: 10px 30px 0px 20px;
   text-align: left;
   padding: 0 10px;
 }
-.dawgdrops-menu li a:after {
+.reddiedrops-menu li a:after {
   background: none;
 }
-.dawgdrops-menu li:first-child {
+.reddiedrops-menu li:first-child {
   margin-top: 5px;
 }
-.dawgdrops-menu li:last-child {
+.reddiedrops-menu li:last-child {
   margin-bottom: 10px;
   border: none;
 }
 /* Small Devices, Tablets */
 @media only screen and (max-width: 767px) {
-  #dawgdrops {
+  #reddiedrops {
     display: none;
   }
 }
 /* Medium Devices, Desktops */
 @media only screen and (max-width: 992px) {
-  .dawgdrops-inner {
+  .reddiedrops-inner {
     padding: 20px 0;
   }
-  .dawgdrops-item.dawgdrops-item:hover .dawgdrops-menu {
+  .reddiedrops-item.reddiedrops-item:hover .reddiedrops-menu {
     display: none;
   }
-  .dawgdrops-item.dawgdrops-item a {
+  .reddiedrops-item.reddiedrops-item a {
     padding: 4px 10px 10px 15px;
   }
-  .dawgdrops-item.dawgdrops-item a.dropdown-toggle {
+  .reddiedrops-item.reddiedrops-item a.dropdown-toggle {
     padding-right: 10px;
   }
-  .dawgdrops-item.dawgdrops-item a:before {
+  .reddiedrops-item.reddiedrops-item a:before {
     display: none;
   }
-  .dawgdrops-item.dawgdrops-item a:after {
+  .reddiedrops-item.reddiedrops-item a:after {
     top: 13px;
   }
 }
 @media only screen and (min-width: 993px) and (max-width: 1200px) {
-  .dawgdrops-item.dawgdrops-item a {
+  .reddiedrops-item.reddiedrops-item a {
     font-size: 18px;
     padding-bottom: 23px;
   }
 }
 @media only screen and (min-width: 768px) {
-  nav#dawgdrops .btn-myuw a {
+  nav#reddiedrops .btn-myuw a {
     font-size: 18px;
     text-transform: none;
     color: #FFF;
@@ -5438,7 +5438,7 @@ table th[class*="col-"] {
     z-index: -1;
     overflow: hidden;
   }
-  nav#dawgdrops .btn-myuw a:after {
+  nav#reddiedrops .btn-myuw a:after {
     content: "";
     display: block;
     position: absolute;
@@ -5448,10 +5448,10 @@ table th[class*="col-"] {
     top: 16px;
     background: url(assets/svg/person.svg) no-repeat 0 0;
   }
-  nav#dawgdrops .btn-myuw a:hover {
+  nav#reddiedrops .btn-myuw a:hover {
     color: black;
   }
-  nav#dawgdrops .btn-myuw a:before {
+  nav#reddiedrops .btn-myuw a:before {
     content: "";
     display: block;
     position: absolute;
@@ -8554,10 +8554,10 @@ label.screen-reader {
   font-size: 1px;
   left: -9999px;
 }
-#dawgdrops li.dawgdrops-item a:focus {
+#reddiedrops li.reddiedrops-item a:focus {
   text-decoration: underline;
 }
-#dawgdrops li.dawgdrops-item ul.dawgdrops-menu a:focus {
+#reddiedrops li.reddiedrops-item ul.reddiedrops-menu a:focus {
   text-decoration: none;
 }
 .uw-body a:focus,
@@ -9724,7 +9724,7 @@ pre.prettyprint ol.linenums li {
     width: 8.5in !important;
   }
   .uw-thinstrip,
-  #dawgdrops,
+  #reddiedrops,
   #quicklinks,
   #uwsearcharea,
   .uw-breadcrumbs,

@@ -98,6 +98,35 @@
 <?php
 endif;
 ?>
+<?php if( have_rows('action_menu') ):  ?>
+<div class="full-bar">
+	<nav aria-label="popular links" class="container action-bar">
+		<ul class="center-block">
+<?php
+		// Get count for class
+		$rows = get_field('action_menu');
+		$row_count = count($rows);
+		// loop through the rows of data
+		while ( have_rows('action_menu') ) : the_row();
+
+		// vars
+		$linktitle = get_sub_field('action_link_title');
+		$icon = get_sub_field('action_link_icon');
+		$external = get_sub_field( 'action_link' );
+		$internalurl = get_sub_field( 'action_link_page');
+		$externalurl = get_sub_field('action_link_url');
+
+?>
+			<li class="ab-1_<?php echo $row_count; ?>"><a href="<?php echo ($external ? $externalurl : $internalurl); ?>" title="<?php echo $linktitle ?>"><span class="icon <?php echo $icon ?>"></span><span><?php echo $linktitle ?></span></a></li>
+<?php
+		endwhile; ?>
+		</ul>
+	</nav>
+</div>
+<?
+	endif;
+?>
+
 <div class="container uams-body">
 
   <div class="row">
