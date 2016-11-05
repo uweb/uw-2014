@@ -1,0 +1,103 @@
+/* Card Widget */
+
+.card-labels a {
+  position: relative;
+}
+.card-labels a span {
+  display: none;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -50px;
+}
+.card-labels a:hover span {
+  display: block;
+}
+.card-image-preview {
+  margin-bottom: 10px;
+  width: 100% !important;
+}
+
+
+/* Contact Widget */
+
+.moving-handle {
+	cursor:n-resize;
+	border:1px solid #e5e5e5;
+	-webkit-box-shadow:0 1px 1px rgba(0,0,0,.04);
+	box-shadow:0 1px 1px rgba(0,0,0,.04);
+	padding:15px 8px;
+	background-color:#fafafa;
+	margin: 0;
+	position: relative; zoom: 1;
+	font-size: 14px;
+	font-weight: normal;
+	color:#444;
+}
+.moving-handle .number {
+	font-size:16px;
+	font-weight: bold;
+}
+.uams-contact-action{
+	float: right;
+	position: relative;
+	cursor: pointer;
+}
+.uams-contact-action:after{
+	right:0;
+	content: '\f140';
+	font: 400 20px/1 dashicons;
+	display: block;
+	color:#aaa;
+	padding-left:12px;
+	text-align: center;
+}
+.moving-handle:hover a.uams-contact-action:after{
+	color:#777;
+}
+.list-item {padding:6px 0 4px; display:block; position: relative; zoom: 1;}
+.list-item:hover .moving-handle {background:#eaeaea;}
+.sortable-placeholder {border:1px solid #FF9; background:#FFFFDF; display:block; margin:12px 0 0;}
+.uams-contact-delete{cursor:pointer; display:block; margin-top:5px; float:right;}
+.uams-contact-row{ margin:12px 0; text-align:right; }
+.uams-contact-delete img, .uams-contact-add img {
+	vertical-align:bottom;
+	opacity:0.3;
+	filter:alpha(opacity=30); /* For IE8 and earlier */
+	transition: opacity .3s ease-out;
+}
+.uams-contact-add img {
+	vertical-align: text-top;
+}
+.uams-contact-delete:hover img, .uams-contact-add:hover img {
+	opacity:1.0;
+	filter:alpha(opacity=100); /* For IE8 and earlier */
+	transition: opacity .3s ease-in;
+}
+.uams-contact-instructions{
+	list-style:none;
+	margin-left:0;
+	padding-left:1em;
+	text-indent:-1em;
+	font-size:smaller;
+}
+.uams-contact-instructions li {margin-bottom:3px;}
+.uams-contact-instructions li:before {content: "\02A \020";}
+.widefat{margin:1px 0 6px;}
+
+.uams-contact-edit-item {margin-bottom: 10px;}
+.toggled-off {display: none;}
+
+/* Accessibility Styles */
+.widgets_access .moving-handle {
+	cursor: auto;
+}
+.widgets_access .hide-if-js {
+	display: block !important;
+}
+.widgets_access .uams-contact-action,
+.widgets_access .uams-contact-delete,
+.widgets_access .uams-contact-add,
+.widgets_access .uams-contact-list .hide-if-no-js,
+.widgets_access .uams-contact-instructions .hide-if-no-js
+{display: none;}

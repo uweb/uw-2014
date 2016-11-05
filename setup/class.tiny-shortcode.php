@@ -5,9 +5,9 @@
  */
 
 
-class UW_TinyShortcode
+class UAMS_TinyShortcode
 {
-    
+
     public $shortcodes = array(
         'grid',
         'button',

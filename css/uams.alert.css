@@ -1,0 +1,57 @@
+#uamsalert-alert-message {
+  padding: 0 20px 40px;
+  position: relative;
+  z-index: 1;
+}
+#uamsalert-alert-message h1 {
+  color: white;
+  font-size: 25px;
+}
+#uamsalert-alert-message a.more:after {
+  background-position: -239px -492px;
+}
+#uamsalert-alert-message p {
+  color: white;
+  line-height: 1.62222;
+  display: inline;
+}
+#uamsalert-alert-message a.more {
+  color: #FDE048;
+  display: inline-block;
+}
+#uamsalert-alert-message a.more:after {
+  bottom: 3px;
+}
+#uamsalert-alert-message.uamsalert-red,
+#uamsalert-alert-message.red-alert-urgent {
+  background-color: #C61029;
+}
+#uamsalert-alert-message.uamsalert-orange,
+#uamsalert-alert-message.orange-alert {
+  background-color: #ec7330;
+}
+#uamsalert-alert-message.uamsalert-steel,
+#uamsalert-alert-message.steel-alert-fyis {
+  background-color: #597286;
+}
+#uamsalert-alert-message .close {
+  position: absolute;
+  background: url(assets/svg/uams-sprite.svg) no-repeat -721px 6px transparent;
+  text-indent: -9999px;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  margin-top: 30px;
+  opacity: 1;
+  background-size: 1330px;
+  display: block;
+  right: 30px;
+  top: 0;
+  cursor: pointer;
+}
+@media only screen and (min-width: 1201px) {
+  #uamsalert-alert-message {
+    background: url(assets/images/alert.png) no-repeat 0 -10px transparent;
+    padding-left: 125px;
+  }
+}

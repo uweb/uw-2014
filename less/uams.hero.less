@@ -1,0 +1,241 @@
+// UAMS Hero
+
+.uams-hero-image,
+.no-uams-hero-image  {
+	height: 170px;
+	.background-size(cover);
+	position: relative;
+/*
+	&:after {
+		position:absolute;
+		bottom: 0;
+		height: 80px;
+		width: 100%;
+		content: "";
+		background: url('assets/images/stripes-dark-tile.svg');
+		opacity: .2;
+	}
+*/
+	&:before {
+		position:absolute;
+		bottom: 0;
+		left: 0;
+		height: 80px;
+		width: 100%;
+		content: "";
+		opacity: .4;
+		background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, .8))) 0 0 no-repeat;
+	}
+	// Page Attributes > Big Hero / Radio button
+	&.hero-height {
+  		height: 350px;
+  		#hero-container {
+  			padding-left: 0;
+			position: static;
+  			h1 {
+			  line-height: 1;
+			  padding: 80px 20% 0 0;
+			  margin: 0;
+		      text-shadow: 1px 1px 3px rgba(0,0,0,.5);
+			  &:after {
+			    content: "";
+			    display: block;
+			    position: absolute;
+			    top: 0;
+			    height: 360px;
+			    left: -140px;
+  				opacity: .3;
+  				width: 600px;
+			    background: url(assets/svg/triangle-light.svg) no-repeat 0 0;
+			    z-index: 0;
+			  }
+			}
+  		}
+  		&:after{
+  			display: none;
+  		}
+  		#hero-bg {
+  			padding: 0;
+		}
+		.udub-slant span {
+		  background-color: @700grey;
+		}
+	}
+}
+.no-uams-hero-image {
+	background: none;
+	background-color: #e8e3d3;
+	height: 130px;
+	&:after {
+		opacity: .2;
+	}
+	&:before {
+		display: none;
+	}
+}
+
+
+// Dub slant
+
+.udub-slant {
+    overflow: hidden;
+    display: block;
+    margin: 30px 0 25px 0;
+    span {
+      .skew(-25deg,0);
+      display:block;
+      height: 11px;
+      width: 210px;
+      background-color:white;
+      margin: 0 0 0 -5px;
+    }
+}
+
+
+// No image
+
+.page-template-templatestemplate-no-hero-php {
+	.uams-body {
+		.uams-site-title {
+			color: @darkgray
+		}
+	}
+}
+
+// No site title
+
+.page-template-templatestemplate-no-title-php {
+	.uams-body {
+		.uams-site-title {
+			display: none;
+		}
+		&.container {
+			margin-top: 30px;
+		}
+	}
+	ul.uams-sidebar-menu {
+		margin-top: -20px;
+	}
+}
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 767px) {
+	.uams-hero-image {
+		display: none;
+
+		&.hero-mobile-image.hero-height ,
+		&.hero-mobile-image.hero-height2 {
+			height: 480px;
+
+			.mobile-image {
+		      display: block;
+		      top: 0;
+		      left: 0;
+		      height: 480px;
+		      position: absolute;
+		      right: 0;
+		      background-position: center bottom;
+		      -webkit-background-size: cover;
+		      -moz-background-size: cover;
+		      -o-background-size: cover;
+		      background-size: cover;
+		    }
+
+		    #hero-bg #hero-container h1.uams-site-title ,
+		    div.container h1.uams-site-title2 {
+				padding-top: 40px;
+			    &:after{
+			    	background: none;
+			    }
+			}
+
+			.container {
+				position: absolute;
+    			top: 0;
+			}
+		}
+
+
+		// Larger hero
+		&.hero-height {
+			padding: 50px 20px 20px;
+			display: block;
+		  	height: auto;
+		  	#hero-container {
+		  		h1 {
+		  			font-size: 35px;
+		  			padding: 0;
+		  			&:after {
+		  				background-size: 80%;
+		  				-moz-background-size: 80%;
+		  				-webkit-background-size: 80%;
+						top: -60px;
+						left: -270px;
+		  			}
+		  		}
+		  	}
+		}
+		// Smaller hero
+		&.hero-height2 {
+			padding: 5px;
+			display: block;
+		  	height: auto;
+		  	.container {
+		  		#hashtag {
+			  		font-size: 16px;
+			  		span {
+			  		    padding: 2px 5px 3px 18px;
+			  		}
+			  		&.mask {
+			  			min-height: auto;
+			  		}
+			  	}
+		  	}
+		  	h1 {
+		  		font-size: 35px;
+		  		padding: 0;
+		  		&:after {
+		  			background-size: 80%;
+		  			-moz-background-size: 80%;
+		  			-webkit-background-size: 80%;
+					top: -60px;
+					left: -270px;
+		  		}
+		  	}
+		}
+		&.hero-blank {
+			display: block;
+			.uams-site-title-blank {
+    			font-size: 30px;
+  			    margin: 5px 0 20px 5px;
+    		}
+		}
+	}
+    .udub-slant {
+        margin: 10px 0 15px 0;
+        span {
+            height: 8px;
+            margin: 0 0 0 -145px;
+        }
+    }
+    .page-template-small-hero .uams-body .uams-site-title {
+        visibility: hidden;
+        height: 60px;
+    }
+
+    div.container.uams-body {
+    	padding-top: 0;
+    }
+    div.container.uams-body {
+	   	div.uams-site-title {
+			margin-top: 0;
+	    }
+	}
+    button.uams-mobile-menu-toggle {
+    	bottom: 10px;
+    }
+    div.hero-content.col-md-12.uams-content {
+    	margin-top: 0;
+    }
+}

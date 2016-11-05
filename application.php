@@ -1,15 +1,15 @@
 <?php get_header(); ?>
 
 <?php get_template_part( 'header', 'image' ); ?>
-<div class="container uw-body">
+<div class="container uams-body">
 
   <div class="row">
 
-    <div class="col-md-8 uw-content" role='main'>
+    <div class="col-md-8 uams-content" role='main'>
 
-      <?php uw_site_title(); ?>
+      <?php uams_site_title(); ?>
 
-      <div class="uw-body-copy">
+      <div class="uams-body-copy">
 
         <?php
           // Start the Loop.

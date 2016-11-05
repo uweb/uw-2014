@@ -16,28 +16,28 @@ module.exports = function(grunt) {
           "js/libraries/prettify.js",
         ],
         theme : [
-          "js/uw.core.js",
-          "js/uw.init.js",
-          "js/uw.alert.js",
-          "js/uw.searchtoggle.js",
-          "js/uw.search.js",
-          "js/uw.quicklinks.js",
-          "js/uw.slideshow.js",
-          "js/uw.youtube.js",
-          "js/uw.vimeo.js",
-          "js/uw.radio-checkbox.js",
-          "js/uw.dropdowns.js",
-          "js/uw.mobile-menu.js",
-          "js/uw.accordion.js",
-          "js/uw.select.js",
-          "js/uw.images.js",
-          "js/uw.player.js",
-          "js/uw.social.js",
+          "js/uams.core.js",
+          "js/uams.init.js",
+          "js/uams.alert.js",
+          "js/uams.searchtoggle.js",
+          "js/uams.search.js",
+          "js/uams.quicklinks.js",
+          "js/uams.slideshow.js",
+          "js/uams.youtube.js",
+          "js/uams.vimeo.js",
+          "js/uams.radio-checkbox.js",
+          "js/uams.dropdowns.js",
+          "js/uams.mobile-menu.js",
+          "js/uams.accordion.js",
+          "js/uams.select.js",
+          "js/uams.images.js",
+          "js/uams.player.js",
+          "js/uams.social.js",
         ],
         components : [
-          // todo: put just external components here for the uw.js we will give out
+          // todo: put just external components here for the uams.js we will give out
         ],
-        src: [ 'js/uw.intro.js', '<%= concat.dist.libraries %>', '<%= concat.dist.theme %>', 'js/uw.outro.js' ],
+        src: [ 'js/uams.intro.js', '<%= concat.dist.libraries %>', '<%= concat.dist.theme %>', 'js/uams.outro.js' ],
         dest: 'js/site.dev.js'
       }
     },
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'js/site.js': ['<%= concat.dist.dest %>'],
-          'uw.js': ['<%= concat.dist.dest %>']
+          'uams.js': ['<%= concat.dist.dest %>']
         }
       }
     },
@@ -59,6 +59,7 @@ module.exports = function(grunt) {
         smarttabs: true,
         laxcomma: true,
         lastsemic: true,
+        reporterOutput: "",
         // options here to override JSHint defaults
         globals: {
           jQuery: true,
@@ -83,7 +84,7 @@ module.exports = function(grunt) {
 			},
 			files: {
 				'style.css': 'less/style.less',
-                        'uw.css': 'less/style.less'
+                        'uams.css': 'less/style.less'
 			}
 		},
 		development: {

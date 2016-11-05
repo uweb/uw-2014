@@ -1,16 +1,16 @@
 <?php
-// UW Filters
+// UAMS Filters
 //
-// These are filters the UW 2014 theme adds and globally uses.
+// These are filters the UAMS 2016 theme adds and globally uses.
 
-class UW_Filters
+class UAMS_Filters
 {
 
   private $REPLACE_TEMPLATE_CLASS = array( 'templatestemplate-', '-php' );
 
   function __construct()
   {
-    // Custom UW Filters
+    // Custom UAMS Filters
     add_filter( 'italics', array( $this, 'italicize') );
     add_filter( 'abbreviation', array( $this, 'abbreviate') );
 
@@ -56,11 +56,11 @@ class UW_Filters
   }
 
   function posts_link_attributes_right() {
-    return 'class="uw-btn btn-sm"';
+    return 'class="uams-btn btn-sm"';
   }
 
   function posts_link_attributes_left() {
-    return 'class="uw-btn btn-sm btn-left"';
+    return 'class="uams-btn btn-sm btn-left"';
   }
 
   function custom_excerpt_more( $more ) {
@@ -102,7 +102,7 @@ class UW_Filters
 
   function custom_widget_classes( $args )
   {
-    $args['class' ] = 'uw-select uw-select-wp';
+    $args['class' ] = 'uams-select uams-select-wp';
     return $args;
   }
 

@@ -2,17 +2,17 @@
 
 <?php get_template_part( 'header', 'image' ); ?>
 
-<div class="container uw-body">
+<div class="container uams-body">
 
   <div class="row">
 
-    <div class="col-md-12 uw-content center-block" role='main'>
+    <div class="col-md-12 uams-content center-block" role='main'>
 
-      <a href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr( get_bloginfo() ) ?>"><h2 class="uw-site-title"><?php bloginfo(); ?></h2></a>
+      <a href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr( get_bloginfo() ) ?>"><h2 class="uams-site-title"><?php bloginfo(); ?></h2></a>
 
       <?php get_template_part( 'breadcrumbs' ); ?>
 
-      <div class="uw-body-copy">
+      <div class="uams-body-copy">
 
         <?php
           // Start the Loop.

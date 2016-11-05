@@ -1,0 +1,25 @@
+.widget_yarpp_widget ul,
+.uw-widget-related-posts ul {
+  padding: 0;
+}
+.widget_yarpp_widget li,
+.uw-widget-related-posts li {
+  margin-left: 0;
+  background: none;
+  padding-left: 0;
+  border-bottom: 1px solid #F4F4F4;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  clear: both;
+  padding-top: 5px;
+  overflow: hidden;
+}
+.widget_yarpp_widget span,
+.uw-widget-related-posts span {
+  display: block;
+  overflow: hidden;
+}
+.widget_yarpp_widget small,
+.uw-widget-related-posts small {
+  display: block;
+}

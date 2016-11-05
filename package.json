@@ -1,5 +1,5 @@
 {
-  "name": "uw",
+  "name": "uams",
   "version": "0.1.0",
   "devDependencies": {
     "grunt": "*",
@@ -8,7 +8,7 @@
     "grunt-contrib-concat": "*",
     "grunt-contrib-watch": "*",
     "grunt-contrib-less": "~0.11.3",
-    "grunt-notify": "~0.3.0",
+    "grunt-notify": "~0.4.5",
     "clean-css": "~2.2.7"
   }
 }

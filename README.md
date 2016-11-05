@@ -1,7 +1,7 @@
 
 # UW 2014 Theme
 
-The UW 2014 Theme is available to anyone wishing to apply the Boundless UW brand to their website.  
+The UAMS 2014 Theme is available to anyone wishing to apply the Boundless UW brand to their website.  
 This is an overview of the custom widgets, plugins and various features it includes.
 
 
@@ -11,15 +11,14 @@ This is an overview of the custom widgets, plugins and various features it inclu
 - [Quick start](#quickstart)
 - [Bugs and feature requests](#bugsandfeaturerequests)
 - [Widgets](#widgets)
-  - [UW Blogroll](#uwblogroll)
-  - [UW Campus Map](#uwcampusmap)
-  - [UW Recent Posts](#uwrecentposts)
-  - [UW RSS](#uwrss)
-  - [UW Single Image ](#uwsingleimage)
-  - [UW Top Posts](#uwtopposts)
-  - [UW Twitter](#uwtwitter)
-  - [UW Contact Card](#uwcontactcard)
-  - [UW Image Card](#uwimagecard)
+  - [UAMS Blogroll](#uamsblogroll)
+  - [UAMS Recent Posts](#uamsrecentposts)
+  - [UAMS RSS](#uamsrss)
+  - [UAMS Single Image ](#uamssingleimage)
+  - [UAMS Top Posts](#uamstopposts)
+  - [UAMS Twitter](#uamstwitter)
+  - [UAMS Contact Card](#uamscontactcard)
+  - [UAMS Image Card](#uamsimagecard)
 - [Shortcodes](#shortcodes)
   - [Button](#button)
   - [Blogroll](#blogroll)
@@ -27,7 +26,6 @@ This is an overview of the custom widgets, plugins and various features it inclu
   - [Intro](#intro)
   - [RSS](#rss)
   - [Tile box](#tilebox)
-  - [Trumba](#trumba)
   - [Twitter](#twitter)
   - [YouTube](#youtube)
   - [Slideshow](#slideshow)
@@ -35,8 +33,8 @@ This is an overview of the custom widgets, plugins and various features it inclu
   - [Accordion](#accordion)
   - [Custom Menu](#custommenu)
 - [Features](#features)
-  - [UW Widget Visibility](#uwwidgetvisiblity)
-  - [UW Media Credit](#uwmediacredit)
+  - [UAMS Widget Visibility](#uamswidgetvisiblity)
+  - [UAMS Media Credit](#uamsmediacredit)
 - [Creators](#creators)
 - [Contributors](#contributors)
 - [License](#license)
@@ -54,7 +52,7 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 ## Widgets ##
  - - -
 
-### UW Blogroll ###
+### UAMS Blogroll ###
 
 > Display the most recent posts on your blog.  
 
@@ -71,17 +69,8 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 > - **Date** : Shows the published date (*Default: show*)   
 > - **Number of posts to display** : The number of post titles to show in the blogroll (*Default: 2*)
 
-### UW Campus Map ###
 
->Embed the location of a UW campus building on your page using the UW branded campus map. 
-
-> Options:  
-
-> - **Title** : The title of the widget (*Default: None*)   
-> - **Building code** : The UW campus building code for the desired building to embed, ie: 'kne' for Kane Hall. (*Default: None*)
-
-
-### UW Recent Posts ###
+### UAMS Recent Posts ###
 
 >  Similar to the default WordPress widget Recent Posts but with different options and layout.
 
@@ -91,7 +80,7 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 > - **Number of posts to display** : The number of posts to show (*Default: 1*)
 > - **Display more link** : Display an anchor tag that links to the blogroll page (*Default: false*)
 
-### UW Related Posts ###
+### UAMS Related Posts ###
 
 >  Uses the WordPress JetPack API to show a list of posts related to the one currently being views.  
  _Requires the JetPack Plugin to be installed_ otherwise it will not appear in the Widgets admin area.  
@@ -102,7 +91,7 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 
 > _Requires the JetPack Plugin to be installed_.
 
-### UW RSS ###
+### UAMS RSS ###
 
 > Similar to the WordPress RSS widget except with a branded layout that displays RSS images.
 
@@ -113,7 +102,7 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 > - __RSS URL__ : The URL of the RSS feed to display (_Default: None_)    
 > - __Number of items to display__ : The number of items in the RSS feed to display (_Default: 10_)    
 
-### UW Single Image ###
+### UAMS Single Image ###
 
 > Displays a single image with a blurb of text below it.
 
@@ -125,7 +114,7 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 > - __Link__ : A URL for the More link text (_Default: None_)    
 > - __More link__ : The text to display in the more link (_Default: Read more_)    
 
-### UW Top Posts ###
+### UAMS Top Posts ###
 
 > Shows the most popular posts on your blog.  
 
@@ -136,7 +125,7 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 
 > _Requires JetPack to be installed_.
 
-### UW Twitter ###
+### UAMS Twitter ###
 
 > Shows the latest tweets from a specific Twitter account. 
 
@@ -149,7 +138,7 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 > In order to have the widget display in the widgets a `TWITTER_OAUTH_TOKEN` constant must be defined in your wp-config.php file.  
 > _Requires a Twitter API key_.  
 
-### UW Contact Card ###
+### UAMS Contact Card ###
 
 > Displays a multiple list of contacts for the group/department.
 
@@ -162,7 +151,7 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 > - __Email__ : The person's email (_Default: None_)   
 
 
-### UW Image Card ###
+### UAMS Image Card ###
 
 > Displays one of three styles of branded card. Both text and image can be customized.
 
@@ -269,7 +258,7 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 
 ### RSS ###
 
->  This is a shortcode embeds an RSS blogroll into the body content. It behaves similarly to the UW RSS Widget.
+>  This is a shortcode embeds an RSS blogroll into the body content. It behaves similarly to the UAMS RSS Widget.
 
 > Attributes:  
 
@@ -304,21 +293,6 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
     [tile] Text for tile three [/tile]
     [tile] Text for tile four [/tile]
   [/box]
-```
-
-### Trumba ###
-
->  Display a Trumba calendar spud in the post or page content.
-
-> Attributes:  
-
-> - __name__ : __Required__ Trumba web name of the desired calendar (_Default: none_)
-> - __type__ : The Trumba spud type of the desired calendar (_Default: none_)
-> - __base__ : The Trumba teaser base url of the desired calendar (_Default: none_)
-
-> Example:   
-```
-    [trumba name='my web name' type='desired spud type' base='teaser base url']
 ```
 
 ### Twitter ###
@@ -417,11 +391,11 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
 ## Features
 - - -
 
-### UW Widget Visibility ###
+### UAMS Widget Visibility ###
 
 > This feature provides granular control over where each widget appears on your site. It is based on the [JetPack Widget Visibilityj plugin](http://jetpack.me/support/widget-visibility/) and allows you to choose specific pages, authors, categories etc. to show a widget on. Follow the link for a brief tutorial on its usage. 
 
-### UW Media Credit ###
+### UAMS Media Credit ###
 
 > This feature allows images to have author credits next to them. When an image is selected in the Media Library a field for Media Credit will appear next to its other attributes. This credit will always appear after the image caption. 
 

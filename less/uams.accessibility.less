@@ -1,0 +1,130 @@
+ // .checkbox, .radio{
+ //     input {
+ //         display: block;
+ //         position: relative;
+ //         opacity: 0;
+ //     }
+ // }
+a.screen-reader-shortcut {
+        position: absolute;
+        left: 6px;
+        top: -99px;
+        &:focus {
+            z-index: 999;
+            font-size: 14px;
+            font-weight: @bold;
+            top: 6px;
+            padding: 15px 23px 14px;
+            background-color: #f1f1f1;
+            color: @red;
+            box-shadow: 0 0 2px 2px rgba(0,0,0,.6);
+        }
+}
+label.screen-reader {
+    position: absolute;
+    opacity: 0;
+    //opacity hack questionable support in IE8
+    //left: -99999px;
+}
+.offscreen {
+    position: absolute;
+    font-size: 1px;
+    left: -9999px;
+}
+#reddiedrops {
+    li.reddiedrops-item{
+        a:focus{
+            text-decoration: underline;
+        }
+        ul.reddiedrops-menu {
+            a:focus {
+                text-decoration: none;
+            }
+        }
+    }
+}
+.uams-body {
+    a:focus,
+    a:hover {
+        color: @900grey;
+        border-bottom: 1px solid #BDBDBD;
+        // We don't want buttons underlined on hover
+        &.uams-btn {
+            border-bottom: none;
+        }
+    }
+    a.uams-btn:focus {
+        text-decoration: underline;
+    }
+    .uams-breadcrumbs {
+        a:focus {
+            border-bottom: none;
+            text-decoration: underline;
+        }
+    }
+    #main_content:focus {
+      outline:none;
+    }
+    .widget {
+        a.widget-link{
+            &:focus,
+            &:hover{
+                border-bottom: none;
+                color: @900grey;
+            }
+            &:focus {
+                text-decoration: underline;
+                // can't override according to spec. We'll have to redo the structure to get this done
+                //p {
+                //    text-decoration: none;
+                //}
+            }
+        }
+    }
+    // Darken form default color
+    input::-webkit-input-placeholder{
+         color: #7B7B7B;
+    }
+    input:-moz-placeholder{
+         color: #7B7B7B;
+    }
+    input::-moz-placeholder{
+         color: #7B7B7B;
+    }
+    input:-ms-input-placeholder {
+         color: #7B7B7B;
+    }
+    // Darkens form colors
+    .form-control {
+        color: #303030;
+    }
+    //
+    div.wp-caption > a > img {
+        &:hover {
+                outline: 7px solid #C3C3C3;
+        }
+    }
+
+    div.wp-caption > a {
+        &:focus > img {
+                outline: 7px solid #C3C3C3;
+        }
+    }
+
+}
+
+
+
+// For uams.edu/accessibility only
+
+.site-accessibility {
+    .uams-body-copy,
+    .uams-sidebar {
+        a {
+            border-bottom: 1px solid #DFDFDF;
+            &:hover {
+                border-bottom: 1px solid @900grey;
+            }
+        }
+    }
+}

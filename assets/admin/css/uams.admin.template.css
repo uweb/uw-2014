@@ -1,0 +1,19 @@
+/* Template Previews */
+
+.uams-admin-template a {
+  position: relative;
+}
+.uams-admin-template a span {
+  display: none;
+  position: absolute;
+  bottom: -80px;
+  left: auto;
+  margin-left: -325px;
+}
+.uams-admin-template a:hover span {
+  display: block;
+}
+.uams-admin-template-preview {
+  margin-bottom: 10px;
+  width: 100% !important;
+}

@@ -7,24 +7,24 @@
  *  - automatic feed links
  */
 
-class UW_Install_Theme
+class UAMS_Install_Theme
 {
   const WIDTH = 750;
   public $DEFAULT_HEADERS = array(
       'blossoms' => array(
-        'url'           => '%s/assets/headers/suzzallo.jpg',
-        'thumbnail_url' => '%s/assets/headers/suzzallo-thumbnail.jpg',
-        'description'   => 'IMA'
+        'url'           => '%s/assets/headers/uams-pattern-grey.png',
+        'thumbnail_url' => '%s/assets/headers/uams-pattern-grey-thumb.jpg',
+        'description'   => 'UAMS Pattern'
       )
   );
 
   function __construct()
   {
-    add_filter( 'embed_defaults', array( $this, 'uw_setup_embed_defaults' ), 1  );
-    add_action( 'after_setup_theme', array( $this, 'uw_setup' ) );
+    add_filter( 'embed_defaults', array( $this, 'uams_setup_embed_defaults' ), 1  );
+    add_action( 'after_setup_theme', array( $this, 'uams_setup' ) );
   }
 
-  function uw_setup()
+  function uams_setup()
   {
 
     $defaultImage = reset( $this->DEFAULT_HEADERS );
@@ -48,7 +48,7 @@ class UW_Install_Theme
     register_default_headers( $this->DEFAULT_HEADERS );
   }
 
-  function uw_setup_embed_defaults( $dimensions )
+  function uams_setup_embed_defaults( $dimensions )
   {
     $dimensions['width']  = self::WIDTH;
     //based on the original wp_embed_defaults function

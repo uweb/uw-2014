@@ -1,20 +1,22 @@
-<header class="uw-thinstrip">
-
-  <div class="container">
-    <a href="http://uw.edu" title="University of Washington Home" class="uw-patch">University of Washington</a>
-    <a href="http://uw.edu" title="University of Washington Home" class="uw-wordmark" tabindex='-1' aria-hidden='true'>University of Washington</a>
+<header class="uams-thinstrip">
+  <div id="top-header">
+  	<a href="http://www.uams.edu" title="University of Washington Home" class="uams-patch">University of Arkansas for Medical Scineces</a>
   </div>
-  <div class='align-right'>
-      <nav class="uw-thin-strip-nav" role='navigation' aria-label='audience based'>
-          <ul class="uw-thin-links">
-            <li><a href="http://uw.edu/studentlife" title="Students">Students</a></li>
-            <li><a href="http://uw.edu/parents" title="Parents">Parents</a></li>
-            <li><a href="http://uw.edu/facultystaff" title="Faculty & Staff">Faculty & Staff</a></li>
-            <li><a href="http://uw.edu/alumni" title="Alumni">Alumni</a></li>
+  <div class="container">
+	<div id="site-title">
+    	<h1 class="vertical-align"><?php uams_site_title(); ?></h1>
+    </div>
+  </div>
+  <div class='align-right' style="margin-top: 45px; ">
+      <nav class="uams-thin-strip-nav" role='navigation' aria-label='audience based'>
+          <ul class="uams-thin-links">
+            <li><a href="http://uamshealth.com" title="UAMSHealth" class="">UAMSHealth</a></li>
+            <li><a href="http://jobs.uams.edu" title="Jobs @ UAMS">Jobs</a></li>
+            <li><a href="http://giving.uams.edu" title="Giving">Giving</a></li>
           </ul>
       </nav>
       <nav id='search-quicklinks' role='navigation' aria-label='search and quick links'>
-      <button class='uw-search' aria-owns='uwsearcharea' aria-controls='uwsearcharea' aria-expanded='false' aria-label='open search area' aria-haspopup='true'>
+      <button class='uams-search' aria-owns='uamssearcharea' aria-controls='uamssearcharea' aria-expanded='false' aria-label='open search area' aria-haspopup='true'>
 <!--[if gt IE 8]><!-->
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                width="19px" height="51px" viewBox="0 0 18.776 51.062" enable-background="new 0 0 18.776 51.062" xml:space="preserve" focusable="false">
@@ -32,7 +34,7 @@
           </svg>
 <!--<![endif]-->
       </button>
-      <button class='uw-quicklinks' aria-haspopup='true' aria-expanded="false" aria-label="Open quick links">Quick Links<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="15.63px" height="69.13px" viewBox="0 0 15.63 69.13" enable-background="new 0 0 15.63 69.13" xml:space="preserve" focusable="false"><polygon fill="#FFFFFF" points="12.8,7.776 12.803,7.773 5.424,0 3.766,1.573 9.65,7.776 3.766,13.98 5.424,15.553 12.803,7.78"/><polygon fill="#FFFFFF" points="9.037,61.351 9.036,61.351 14.918,55.15 13.26,53.577 7.459,59.689 1.658,53.577 0,55.15 5.882,61.351 5.882,61.351 5.884,61.353 0,67.557 1.658,69.13 7.459,63.019 13.26,69.13 14.918,67.557 9.034,61.353"/></svg></button>
+      <button class='uams-quicklinks' aria-haspopup='true' aria-expanded="false" aria-label="Open quick links">Quick Links<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="15.63px" height="69.13px" viewBox="0 0 15.63 69.13" enable-background="new 0 0 15.63 69.13" xml:space="preserve" focusable="false"><polygon fill="#FFFFFF" points="12.8,7.776 12.803,7.773 5.424,0 3.766,1.573 9.65,7.776 3.766,13.98 5.424,15.553 12.803,7.78"/><polygon fill="#FFFFFF" points="9.037,61.351 9.036,61.351 14.918,55.15 13.26,53.577 7.459,59.689 1.658,53.577 0,55.15 5.882,61.351 5.882,61.351 5.884,61.353 0,67.557 1.658,69.13 7.459,63.019 13.26,69.13 14.918,67.557 9.034,61.353"/></svg></button>
       </nav>
   </div>
 

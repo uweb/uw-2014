@@ -1,0 +1,493 @@
+// UW Thinstrip
+
+.uams-thinstrip {
+	height: 140px;
+	width: 100%;
+	background: @200grey;
+	padding-top: 22px;
+	position: relative;
+	z-index: 2;
+	.box-shadow(0 2px 5px rgba(0,0,0,.3));
+	border-top: 6px solid @red;
+
+	// Container
+
+	.container {
+		position: relative;
+	}
+
+	// Top Header
+
+	#top-header {
+		height: 40px;
+		position: absolute;
+		width: 100%;
+		background-color: @700grey;
+		top: 0;
+	}
+
+	// Patch
+
+	.uams-patch {
+		display: block;
+		text-indent: -9999px;
+		width: 320px;
+		height: 48px;
+		background: url(assets/svg/uams-sprite.svg) no-repeat 0 0 @red;
+		position: absolute;
+		top: -2px;
+		left: auto;
+		right: 5%;
+		z-index: 1;
+    &:focus,
+    &:hover{
+      background: url(assets/svg/uams-sprite-focus.svg) no-repeat 0 0 @red;
+    }
+    &:before {
+      //to preload and cache hover svg
+      content: url(assets/svg/uams-sprite-focus.svg);
+      display: none;
+    }
+	}
+
+	// Wordmark
+
+	.uams-wordmark {
+		display: block;
+		position: absolute;
+		top: 12px;
+		left: 150px;
+		text-indent: -9999px;
+		width: 330px;
+		height: 24px;
+		background: url(assets/svg/uams-sprite.svg) no-repeat 0 -431px transparent;
+	}
+
+  div.align-right {
+    float: right;
+  }
+
+  nav {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+	// Audience
+
+	ul.uams-thin-links {
+		margin: 0;
+		position: relative;
+		z-index: 1;
+		font-weight: @medium;
+		padding: 0;
+
+		li {
+			float: left;
+			list-style: none;
+			&:last-child a:after {
+				display: none;
+			}
+			a, button {
+				font-family: @font-family-headline;
+				color: @red;
+				font-size: 17px;
+				font-weight: @medium;
+				position: relative;
+				float: right;
+				padding: 8px 25px 10px 0;
+				letter-spacing: .01em;
+				&:after {
+					position: absolute;
+					right: 6px;
+					height:32px;
+					width: 12px;
+					top: 7px;
+					content: "";
+					background: url(assets/svg/uams-sprite.svg) no-repeat -696px 0;
+				}
+				&:hover,
+				&:focus {
+					color: darken(@red, 10%);
+                    text-decoration: underline;
+				}
+			}
+        }
+    }
+    button{
+        border: none;
+        display: inline-block;
+        vertical-align: top;
+        font-family: @font-family-headline;
+        font-size: 17px;
+        font-weight: @medium;
+        position: relative;
+        z-index: 1;
+        &.uams-search {
+            text-indent: -99999px;
+            padding-right: 78px;
+            border: 2px solid white;
+            background-color: @red;
+            .border-radius(100%);
+            width: 45px;
+            padding: 0;
+            height: 45px;
+            margin: 0 15px;
+            overflow: hidden;
+            &:hover, &:focus {
+                border: 2px solid @700grey;
+                background-color: darken(@red, 10%);
+                .transition(all .1s linear)
+            }
+            &:after {
+                display: none;
+            }
+            svg {
+                position: absolute;
+                top: 12px;
+                left: 11px;
+            }
+        }
+        &.uams-quicklinks {
+            div {
+                position: absolute;
+                top: -22px;
+                right: 0px;
+                    width: 160px;
+                    height: 68px;
+                    margin: 0px;
+                }
+                height: 45px;
+                padding-left: 38px;
+                margin-left: -15px;
+                margin-right: 0;
+                padding-right: 54px;
+                color: #404040;
+                background: url(assets/svg/uams-sprite.svg) no-repeat -451px -235px;
+                overflow: hidden;
+                &:hover,
+                &:focus {
+                	color: @700grey;
+					text-shadow: 0px 0px 4px rgba(240, 240, 240, 0.54);
+					text-decoration: underline;
+					outline: none;
+					.transition(all 0.2s ease);
+                    svg {
+                    	right: 15px;
+                    }
+                }
+                &:after {
+                    display: none;
+                }
+                //&:before {
+                //	position: absolute;
+                //	top: 1px;
+                //	right: -7px;
+                //	content: "";
+                //	width: 51px;
+                //	height: 45px;
+                //	display: block;
+                //	transform: skewX(-14deg);
+                //	background: linear-gradient(to right,#2e2e2e 0,#686868 4%,#686868 100%);
+                //}
+                svg {
+                    position: absolute;
+                    right: 11px;
+                    top: 16px;
+                    .transition(right 0.2s ease);
+                }
+
+            }
+        }
+    }
+    // Active state of search button
+
+    .search-open .uams-thinstrip button.uams-search {
+        svg {
+		top: -20px;
+		left: 10px;
+	}
+}
+.open .uams-thinstrip ul.uams-thin-links li.uams-quicklinks button {
+	&:hover svg,
+	&:focus svg {
+		right: 11px;
+	}
+	svg {
+		top: -37px;
+	}
+}
+
+#site-title {
+	float: left;
+	max-width: 42%;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	top: 22px;
+	height: 85px;
+	& h1 {
+		margin: 0;
+		padding: 0;
+		font-size: 35px;
+		& a {
+			color: @red;
+			&.long-title {
+			font-size: 32px;
+			}
+			&:hover,
+			&:focus {
+				color: darken(@red, 5%);
+                border-bottom: 1px dotted darken(@red, 5%);
+			}
+		}
+	}
+}
+
+
+#uams-container {
+	&.open .uams-quicklinks a {
+		color: black;
+		// background-position: -472px -317px;
+		&:after {
+			// background-position: -253px -44px;
+      top: 11px;
+      right: 10px;
+      -webkit-transform:rotate(180deg);
+         -moz-transform:rotate(180deg);
+          -ms-transform:rotate(180deg);
+           -o-transform:rotate(180deg);
+              transform:rotate(180deg);
+		}
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+	#uams-container {
+		&.open .uams-quicklinks button {
+			color: black;
+			background-position: -492px -317px;
+			&:after {
+				background-position: -294px -52px;
+				background-size: 880px;
+			}
+		}
+	}
+
+
+	.uams-thinstrip {
+		padding: 0;
+		height: 160px;
+		.container {
+			position: static;
+		}
+
+		#top-header {
+			height: 54px;
+		}
+		.uams-patch {
+			width: 240px;
+			height: 38px;
+			top: 0;
+			left: 10px;
+			background-size: 640px;
+      .transition(all 0s);
+      &:hover,
+      &:focus,
+      {
+        background-size: 640px;
+      }
+		}
+		.uams-wordmark {
+			width: 155px;
+			height: 34px;
+			background: url(assets/svg/uams-sprite.svg) no-repeat 0 -185px transparent;
+			margin: 0;
+			float: none;
+			position: absolute;
+			left: 78px;
+			top: 4px;
+			background-size: 397px;
+		}
+    button {
+        &.uams-quicklinks {
+            background-position: -757px -247px;
+            background-size: 900px;
+            text-indent: -99999px;
+            overflow: hidden;
+            padding: 20px 9px 0 0;
+            width: 50px;
+            top: 0;
+            right: 0;
+            position: absolute;
+            height: 47px;
+            &:after {
+                background-position: -253px 4px;
+                background-size: 780px;
+                top: 11px;
+                right: 9px;
+            }
+        }
+        &.uams-search{
+            top: 2px;
+            right: 36px;
+            height: 45px;
+            width: 45px;
+            margin-right: 15px;
+            border: 1px solid #eee;
+            overflow: hidden;
+            position: absolute;
+            &:hover {
+                background-color: darken(@red, 5%);
+                border: none;
+            }
+            svg {
+                top: 13px;
+                left: 12px;
+            }
+        }
+    }
+	}
+    .search-open {
+        .uams-thinstrip {
+            button.uams-search {
+                svg {
+                    top: -17px;
+                    left: 14px;
+                }
+            }
+        }
+    }
+
+    #site-title {
+	    max-width: 90%;
+	    top: 62px;
+	    & h1 {
+		    font-size: 30px;
+		    & a {
+			    &.long-title {
+				font-size: 26px;
+				}
+			}
+	    }
+    }
+}
+
+@media only screen and (max-width : 768px) {
+	.uams-thinstrip {
+		ul.uams-thin-links {
+			li {
+			    display: none;
+			    &.uams-search, &.uams-quicklinks {
+			    	display: block;
+			    }
+	                &.uams-quicklinks {
+	                	button:before {
+							background: none;
+						}
+	                	div {
+	                    	display: none;
+	                	}
+				}
+			}
+		}
+	}
+
+}
+
+/* Tablet devices */
+@media only screen and (min-width : 600px) and (max-width : 768px) {
+	.uams-thinstrip {
+		.uams-patch {
+			width: 320px;
+			height: 48px;
+			background-size: auto;
+		}
+	}
+
+}
+
+/* Extra Small devices */
+@media only screen and (max-width : 360px) {
+	.uams-thinstrip {
+		.uams-patch {
+			width: 142px;
+			height: 45px;
+			background-size: 780px;
+		}
+	}
+
+}
+
+@media only screen and (min-width : 769px) and (max-width : 991px) {
+	.uams-thinstrip {
+		height: 190px;
+		.uams-patch {
+			right: 40px;
+		}
+		.uams-wordmark {
+			//top: -60px;
+            z-index: 2;
+		}
+		div.align-right {
+	        position: relative;
+	        #search-quicklinks {
+	            position:absolute;
+	            top:0px;
+	            right:0px;
+	        	}
+    	}
+		ul.uams-thin-links {
+			li {
+				//float: none;
+			}
+			&:before {
+				position: absolute;
+				top: 0;
+				height: 50px;
+				width: 100%;
+				content: "";
+				//background-color: @red;
+			}
+			li a,li button {
+				font-size: 16px;
+				padding: 10px 25px 10px 0;
+				//color: white;
+			}
+		}
+		li {
+			margin-top: 68px;
+		}
+		li.uams-quicklinks {
+			position: absolute;
+			right: 0;
+			top: -69px;
+			margin: 0;
+		}
+		ul.uams-thin-links li.uams-search {
+			position: absolute;
+			right: 145px;
+			top: -69px;
+			margin: 0;
+		}
+	}
+	#site-title {
+		height: 134px;
+		max-width: 55%;
+	}
+}
+@media only screen and (min-width : 992px) and (max-width : 1200px) {
+	.uams-thinstrip {
+		ul.uams-thin-links li{
+            a, button {
+			    font-size: 16px;
+			    padding: 10px 20px 10px 0;
+            }
+		}
+		.uams-wordmark {
+      left: 100px;
+      .scale(.8,.8);
+		}
+	}
+}

@@ -1,0 +1,4 @@
+div[id*='trumba'] iframe {
+  margin: 0;
+  box-sizing: border-box;
+}

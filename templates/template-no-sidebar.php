@@ -8,17 +8,17 @@
 
 <?php get_template_part( 'header', 'image' ); ?>
 
-<div class="container uw-body">
+<div class="container uams-body">
 
   <div class="row">
 
-    <div class="col-md-12 uw-content" role='main'>
+    <div class="col-md-12 uams-content" role='main'>
 
-      <?php uw_site_title(); ?>
+      <?php //uams_page_title(); ?>
       <?php get_template_part( 'menu', 'mobile' ); ?>
       <?php get_template_part( 'breadcrumbs' ); ?>
 
-      <div id='main_content' class="uw-body-copy" tabindex="-1">
+      <div id='main_content' class="uams-body-copy" tabindex="-1">
 
         <?php
           // Start the Loop.

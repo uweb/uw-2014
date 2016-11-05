@@ -1,0 +1,242 @@
+ul.uams-sidebar-menu,
+ul.uams-mobile-menu
+
+{
+	margin-left: 20px;
+	margin-right: -20px;
+	padding: 20px;
+	margin-top: -124px;
+	background-color:white;
+
+	ul, li
+	{
+		display: block;
+		list-style:none;
+		padding:0;
+		margin:0;
+		-webkit-font-smoothing: auto;
+	}
+
+	li.pagenav,
+	>div
+	{
+			a, span
+			{
+				// font-family: @font-family-headline;
+				display: block;
+			    font-size: 16px;
+				padding: 10px 10px 10px 20px;
+
+				&.homelink
+				{
+					display:none;
+					color:@red;
+					font-size:25px;
+				}
+			}
+
+			ul
+			{
+
+				line-height: 1.3;
+    			font-size: 19px;
+
+				li.current_page_item, li.current_page_parent
+				{
+					background-color: @red;
+					& > a,
+					& > span {
+						font-weight: bold;
+						padding-left: 19px;
+						padding-top: 16px;
+						padding-bottom: 16px;
+					}
+                    a,
+					span {
+						color:white;
+						border-bottom: none;
+						border-left: 10px solid @700grey;
+					}
+					&.current_page_ancestor {
+						position: relative;
+						& > a {
+							padding-right: 60px;
+                            &:hover,
+                            &:focus{
+                                color: @50grey;
+                            }
+							&:after {
+								content: "";
+								background: url(assets/svg/uams-sprite.svg) no-repeat -224px -478px;
+								display: inline-block;
+								height: 52px;
+								width: 44px;
+								margin-left: 7px;
+								margin-top: -26px;
+								position: absolute;
+								right: 0;
+								top: 50%;
+								background-color: @900grey;
+							}
+						}
+						a,
+                        span {
+							border-left: none;
+							position: relative;
+
+						}
+					}
+
+					li.page_item_has_children ul {
+						display:none;
+					}
+
+					li.page_item_has_children.current_page_item ul {
+						display:block;
+					}
+
+				}
+
+				li
+				{
+					a	{
+						color: @red;
+						border-bottom: thin solid #eee;
+					}
+					&.current_page_item ul.children, &.current_page_ancestor ul.children
+					{
+						display:block;
+						font-size: 17px;
+						background-color:white;
+
+						li
+						{
+							background-color:#eee;
+							border-bottom: 1px solid #fff;
+							a,
+                            span
+							{
+								color:@darkgray;
+								padding: 10px 30px 10px 30px;
+								border-left: none;
+								&:hover,
+                                &:focus {
+									background-color: #DDD;
+								}
+							}
+
+						}
+
+						li.current_page_item
+						{
+							// background-color:white;
+							ul.children {
+								li {
+									border-bottom: 1px solid #E0E0E0;
+								}
+								li:last-child {
+									border-bottom: none;
+								}
+								a {
+									background-color: white;
+									color: @darkgray;
+									border-left: none;
+									padding-left: 25px;
+									&:before {
+										content: "- ";
+									}
+								}
+							}
+							span
+							{
+								// background-color:#757575;
+								border-left: 10px solid @700grey;
+								padding-left: 20px;
+								background-color: #ddd;
+								a
+								{
+									color:white;
+									border-bottom: none;
+								}
+								// color:white;
+								border-bottom: none;
+							}
+						}
+
+
+					}
+
+
+				}
+
+				li:last-child
+				{
+					a
+					{
+						// color:@red;
+						border-bottom: none;
+					}
+				}
+
+			}
+
+		}
+
+		ul.children {
+			display:none;
+		}
+
+}
+
+// Sidebar widget titles
+
+.uams-sidebar {
+	.widgettitle {
+        clear:left;
+		font-weight: @ultra;
+		font-size: 22px;
+		text-transform: uppercase;
+		position: relative;
+		padding-bottom: 20px;
+		&:after,
+		&:before {
+			position: absolute;
+			left: 0;
+			bottom: 5px;
+			content: "";
+			height: 4px;
+		}
+		&:before {
+			width: 100px;
+			background-color: @700grey;
+		}
+		&:after {
+			width: 40px;
+			.skew(-25deg,0);
+			left: 80px;
+			background-color: white;
+			bottom: 3px;
+			height: 8px;
+		}
+	}
+}
+
+
+body.home .uams-sidebar-menu {
+	display: none;
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	ul.uams-sidebar-menu {
+		padding: 0;
+		margin: 50px 0 0 0;
+		clear: both;
+	}
+}
+
+@media only screen and (min-width : 768px) {
+	.uams-sidebar {
+		padding-top: 40px;
+	}
+}

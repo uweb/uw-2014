@@ -10925,50 +10925,50 @@ PR_NOCODE:"nocode",PR_PLAIN:"pln",PR_PUNCTUATION:"pun",PR_SOURCE:"src",PR_STRING
 // Establish the root object `window`.
 var root = this
 
-// Create a safe reference to the UW object which will be used to establish the global UW object.
-var UW = function(obj)
+// Create a safe reference to the UAMS object which will be used to establish the global UAMS object.
+var UAMS = function(obj)
 {
-    if ( obj instanceof UW ) return obj
+    if ( obj instanceof UAMS ) return obj
 
-    if ( ! ( this instanceof UW )) return new UW(obj)
+    if ( ! ( this instanceof UAMS )) return new UAMS(obj)
 
     this._wrapped = obj
 };
 
-// Establish the global UW object `window.UW`
-root.UW = UW
+// Establish the global UAMS object `window.UAMS`
+root.UAMS = UAMS
 
 
 // Current version
-UW.VERSION = '0.1'
+UAMS.VERSION = '0.1'
 
 // Constant for legible keycodes
-UW.KEYCODES = {
+UAMS.KEYCODES = {
   TAB: 9,
   ENTER : 13,
   ESC : 27
 }
 ;// List out the classes that each component searches for
-UW.elements = {
+UAMS.elements = {
 
-  alert      : '.uw-thinstrip',
-  accordion  : '.uw-accordion',
-  dropdowns  : '#dawgdrops',
+  alert      : '.mobile-menu',
+  accordion  : '.uams-accordion',
+  dropdowns  : '#reddiedrops',
   images     : 'a > img',
   mobilemenu : '#mobile-relative',
   radio      : ':radio',
   checkbox   : ':checkbox',
-  search     : '#uwsearcharea',
-  select     : '.uw-select',
-  quicklinks : '.uw-quicklinks',
-  slideshow  : '.uw-slideshow',
-  social     : '.uw-social',
-  vimeo      : '.uw-vimeo',
-  youtube    : '.uw-youtube'
+  search     : '#uamssearcharea',
+  select     : '.uams-select',
+  quicklinks : '.uams-quicklinks',
+  slideshow  : '.uams-slideshow',
+  social     : '.uams-social',
+  vimeo      : '.uams-vimeo',
+  youtube    : '.uams-youtube'
 
 }
 
-UW.getBaseUrl = function() {
+UAMS.getBaseUrl = function() {
   var site = _.first( _.compact( Backbone.history.location.pathname.split('/') ) )
   var url = ''
 
@@ -10976,55 +10976,55 @@ UW.getBaseUrl = function() {
     Backbone.history.location.origin = Backbone.history.location.protocol + "//" + Backbone.history.location.hostname + (Backbone.history.location.port ? ':' + Backbone.history.location.port: '');
   }
 
-  if (Backbone.history.location.origin.indexOf('www.washington.edu') != -1) {
+  if (Backbone.history.location.origin.indexOf('www.uams.edu') != -1) {
     url = Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/';
-  } else if (Backbone.history.location.origin.indexOf('depts.washington.edu') != -1) {
+  } else if (Backbone.history.location.origin.indexOf('uamsonline.com') != -1) {
     url = Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/';
   } else {
     url = Backbone.history.location.origin + '/';
-  } 
+  }
   return url
 }
 
-UW.wpinstance = function(){
+UAMS.wpinstance = function(){
   return Backbone.history.location.pathname ? Backbone.history.location.pathname : "";
 }
 
-UW.sources = {
-  // Note: style_dir is a variable created by the Wordpress' wp_localize_script in class.uw-scripts.php
-  quicklinks : typeof(style_dir) !== 'undefined' ? style_dir + '/wp-admin/admin-ajax.php?action=quicklinks' : UW.getBaseUrl() + 'wp-admin/admin-ajax.php?action=quicklinks',
-  search     : UW.getBaseUrl() + 'wp-admin/admin-ajax.php'
+UAMS.sources = {
+  // Note: style_dir is a variable created by the Wordpress' wp_localize_script in class.uams-scripts.php
+  quicklinks : typeof(style_dir) !== 'undefined' ? style_dir + '/wp-admin/admin-ajax.php?action=quicklinks' : UAMS.getBaseUrl() + 'wp-admin/admin-ajax.php?action=quicklinks',
+  search     : UAMS.getBaseUrl() + 'wp-admin/admin-ajax.php'
 }
 
 // Initialize all components when the DOM is ready
-UW.initialize = function( $ )
+UAMS.initialize = function( $ )
 {
   // Cache common elements that each javascript module calls
-  UW.$body      = $('body');
-  UW.$window    = $( window );
-  UW.baseUrl    = UW.getBaseUrl()
+  UAMS.$body      = $('body');
+  UAMS.$window    = $( window );
+  UAMS.baseUrl    = UAMS.getBaseUrl()
 
-  // UW Utilities
-  UW.dropdowns  = _.map( $( UW.elements.dropdowns ),     function( element ) { return new UW.Dropdowns({ el : element }) } )
-  UW.mobilemenu = _.map( $( UW.elements.mobilemenu ),     function( element ) { return new UW.MobileMenu({ el : element }) } )
-  UW.quicklinks = _.map( $( UW.elements.quicklinks ),    function( element ) { return new UW.QuickLinks( { el : element, url : UW.sources.quicklinks }) } )
-  UW.search     = _.map( $( UW.elements.search ),    function( element ) { return new UW.Search( { el : element } ) } )
-  UW.images     = _.map( $( UW.elements.images ),    function( element ) { return new UW.Image({ el : element }) } )
+  // UAMS Utilities
+  UAMS.dropdowns  = _.map( $( UAMS.elements.dropdowns ),     function( element ) { return new UAMS.Dropdowns({ el : element }) } )
+  UAMS.mobilemenu = _.map( $( UAMS.elements.mobilemenu ),     function( element ) { return new UAMS.MobileMenu({ el : element }) } )
+  UAMS.quicklinks = _.map( $( UAMS.elements.quicklinks ),    function( element ) { return new UAMS.QuickLinks( { el : element, url : UAMS.sources.quicklinks }) } )
+  UAMS.search     = _.map( $( UAMS.elements.search ),    function( element ) { return new UAMS.Search( { el : element } ) } )
+  UAMS.images     = _.map( $( UAMS.elements.images ),    function( element ) { return new UAMS.Image({ el : element }) } )
 
-  // UW Modules
-  UW.slideshows = _.map( $( UW.elements.slideshow ), function( element ) { return new UW.Slideshow( { el : element }) } )
-  UW.social     = _.map( $( UW.elements.social ),    function( element ) { return new UW.Social({ el : element }) } )
-  UW.vimeo      = _.map( $( UW.elements.vimeo ),     function( element ) { return new UW.Vimeo({ el : element }) } )
-  UW.youtube    = _.map( $( UW.elements.youtube ),   function( element ) { return new UW.YouTube.Collection({ el: element})})
+  // UAMS Modules
+  UAMS.slideshows = _.map( $( UAMS.elements.slideshow ), function( element ) { return new UAMS.Slideshow( { el : element }) } )
+  UAMS.social     = _.map( $( UAMS.elements.social ),    function( element ) { return new UAMS.Social({ el : element }) } )
+  UAMS.vimeo      = _.map( $( UAMS.elements.vimeo ),     function( element ) { return new UAMS.Vimeo({ el : element }) } )
+  UAMS.youtube    = _.map( $( UAMS.elements.youtube ),   function( element ) { return new UAMS.YouTube.Collection({ el: element})})
 
 
-  // UW Components - These need to render after all other javascript elements are rendered on page
-  UW.accordion  = _.map( $( UW.elements.accordion ), function( element ) { return new UW.Accordion( { el : element }) } )
-  UW.radio      = _.map( $( UW.elements.radio ),     function( element ) { return new UW.Radio({ el : element }) } )
-  UW.checkbox   = _.map( $( UW.elements.checkbox ),     function( element ) { return new UW.Radio({ el : element }) } )
-  UW.select     = _.map( $( UW.elements.select ),    function( element ) { return new UW.Select({ el : element }) } )
+  // UAMS Components - These need to render after all other javascript elements are rendered on page
+  UAMS.accordion  = _.map( $( UAMS.elements.accordion ), function( element ) { return new UAMS.Accordion( { el : element }) } )
+  UAMS.radio      = _.map( $( UAMS.elements.radio ),     function( element ) { return new UAMS.Radio({ el : element }) } )
+  UAMS.checkbox   = _.map( $( UAMS.elements.checkbox ),     function( element ) { return new UAMS.Radio({ el : element }) } )
+  UAMS.select     = _.map( $( UAMS.elements.select ),    function( element ) { return new UAMS.Select({ el : element }) } )
 
-  UW.alert = new UW.Alert({ after: UW.elements.alert, model: new UW.Alert.Model() });
+  UAMS.alert = new UAMS.Alert({ after: UAMS.elements.alert, model: new UAMS.Alert.Model() });
 
   // todo: add to separate file
   $('table').addClass('table table-striped')
@@ -11036,22 +11036,22 @@ UW.initialize = function( $ )
 }
 
 jQuery(document).ready(function(){
-  // switching to anonymous function so UW.initialize can be extended before running
-  UW.initialize(jQuery);
+  // switching to anonymous function so UAMS.initialize can be extended before running
+  UAMS.initialize(jQuery);
 })
 
 
-// Basic UW Components
+// Basic UAMS Components
 // --------------
-;UW.Alert = Backbone.View.extend({
+;UAMS.Alert = Backbone.View.extend({
 
-  alert : '#uwalert-alert-message',
+  alert : '#uamsalert-alert-message',
 
   events : {
     'click .close' : 'hide'
   },
 
-  template : '<div id="uwalert-alert-message" class="<% _.each( categories, function( category ) { %> <%= category.slug %> <% }) %>"><div class="container"><span class="close">Close</span><h1><%= title %></h1><p><%= excerpt %><a class="more" href="http://emergency.uw.edu" title="<%= title %>">More info</a></p></div></div>',
+  template : '<div id="uamsalert-alert-message" class="<% _.each( categories, function( category ) { %> <%= category.slug %> <% }) %>"><div class="container"><span class="close">Close</span><h1><%= title %></h1><p><%= excerpt %><a class="more" href="http://emergency.uw.edu" title="<%= title %>">More info</a></p></div></div>',
 
   initialize  : function( options )
   {
@@ -11076,7 +11076,7 @@ jQuery(document).ready(function(){
 
 })
 
-UW.Alert.Model = Backbone.Model.extend({
+UAMS.Alert.Model = Backbone.Model.extend({
 
   alerts :  [
     'red-alert-urgent',
@@ -11104,16 +11104,16 @@ UW.Alert.Model = Backbone.Model.extend({
   {
     var post = _.first( data.posts )
     _.extend( post.categories, {alert: { slug : window.location.hash.replace('#','') } } )
-    if ( _.intersection( _.pluck(  post.categories, 'slug' ), this.alerts ).length || post.categories.alert.slug.indexOf( 'uwalert' ) !== -1 )
+    if ( _.intersection( _.pluck(  post.categories, 'slug' ), this.alerts ).length || post.categories.alert.slug.indexOf( 'uamsalert' ) !== -1 )
       return post
   }
 
-});;// ### UW Search Toggle
+});;// ### UAMS Search Toggle
 
-// This works with the search toggle icon and is only used by the UW Search View
-UW.SearchToggle = Backbone.View.extend({
+// This works with the search toggle icon and is only used by the UAMS Search View
+UAMS.SearchToggle = Backbone.View.extend({
 
-  el : 'button.uw-search',
+  el : 'button.uams-search',
 
   events: {
     'click' : 'toggleSearchBar'
@@ -11131,7 +11131,7 @@ UW.SearchToggle = Backbone.View.extend({
 
     this.trigger( 'open' )
 
-    UW.$body.toggleClass( 'search-open' )
+    UAMS.$body.toggleClass( 'search-open' )
 
     if ( this.settings.isOpen ) {
       this.$el.attr('aria-label', 'close search area');
@@ -11145,30 +11145,30 @@ UW.SearchToggle = Backbone.View.extend({
   },
 
 })
-;// ### UW Search
+;// ### UAMS Search
 
-// This function creates a UW Search
-// For usage please refer to the [UW Web Components Search](http://uw.edu/brand/web/#search)
+// This function creates a UAMS Search
+// For usage please refer to the [UAMS Web Components Search](http://uw.edu/brand/web/#search)
 
-UW.Search = Backbone.View.extend({
+UAMS.Search = Backbone.View.extend({
 
-  // These are the three search options: the UW, the current site
+  // These are the three search options: the UAMS, the current site
   searchFeatures : {
-    uw        : 'uw',
+    uams        : 'uams',
     site      : 'site'
   },
 
   // This is the HTML for the search bar that is preprended to the body tag.
   searchbar :
                '<div class="container no-height">'+
-                  '<div class="center-block uw-search-wrapper">'+
-                    '<form class="uw-search" action="<%= UW.baseUrl %>">'+
-                      '<label class="screen-reader" for="uw-search-bar">Enter search text</label>' +
-                      '<input id="uw-search-bar" type="search" name="s" value="" autocomplete="off" />'+
+                  '<div class="center-block uams-search-wrapper">'+
+                    '<form class="uams-search" action="<%= UAMS.baseUrl %>">'+
+                      '<label class="screen-reader" for="uams-search-bar">Enter search text</label>' +
+                      '<input id="uams-search-bar" type="search" name="s" value="" autocomplete="off" />'+
                     '</form>'+
 
                     '<select id="mobile-search-select" class="visible-xs">' +
-                      '<option value="uw" selected>All the UW</option>' +
+                      '<option value="uams" selected>All the UAMS</option>' +
                       '<option value="site">Current site</option>' +
                     '</select>' +
 
@@ -11176,8 +11176,8 @@ UW.Search = Backbone.View.extend({
 
                     '<div id="search-labels" class="labels hidden-xs">'+
                       '<label class="radio">'+
-                        '<input class="radiobtn" type="radio" name="search" value="uw" data-toggle="radio" checked />'+
-                        'All the UW'+
+                        '<input class="radiobtn" type="radio" name="search" value="uams" data-toggle="radio" checked />'+
+                        'All the UAMS'+
                       '</label>'+
 
                       '<label class="radio">'+
@@ -11192,7 +11192,7 @@ UW.Search = Backbone.View.extend({
   defaults : {},
 
   // List of events
-  // Toggling the radio buttons changes the function of the search bar from searching the UW and searching the current site
+  // Toggling the radio buttons changes the function of the search bar from searching the UAMS and searching the current site
   events :
   {
     'click label.radio' : 'toggleSearchFeature',
@@ -11212,7 +11212,7 @@ UW.Search = Backbone.View.extend({
 
     this.render()
 
-    this.toggle = new UW.SearchToggle()
+    this.toggle = new UAMS.SearchToggle()
 
     this.toggle.on( 'open', this.toggleBlur, this )
 
@@ -11230,7 +11230,7 @@ UW.Search = Backbone.View.extend({
   toggleBlur: function()
   {
     if ( this.toggle.settings.isOpen ) {
-        this.$el.find( '#uw-search-bar' ).focus();
+        this.$el.find( '#uams-search-bar' ).focus();
         this.$el.attr( 'aria-hidden', 'false' ).attr( 'role', 'search' );
     } else {
         this.$el.attr( 'aria-hidden', 'true' ).removeAttr( 'role' );
@@ -11241,13 +11241,13 @@ UW.Search = Backbone.View.extend({
   {
     switch ( event.keyCode )
     {
-      case UW.KEYCODES.TAB :
+      case UAMS.KEYCODES.TAB :
         if ($( event.target)[0] == $('input.search')[0] && ! $(event)[0].shiftKey) $('#search-labels').addClass('focused')
         if (($( event.target)[0] != $('input.search')[0]) && $('#search-labels').hasClass('focused')) $('#search-labels').removeClass('focused')
         if ($( event.target)[0] == $('input.radiobtn')[0] && ! $(event)[0].shiftKey){ this.toggle.$el.focus(); return false }
         return true
 
-      case UW.KEYCODES.ESC :
+      case UAMS.KEYCODES.ESC :
         event.stopPropagation()
         this.toggle.toggleSearchBar()
         this.toggle.$el.focus()
@@ -11272,14 +11272,14 @@ UW.Search = Backbone.View.extend({
     if ( ! this.toggle.settings.isOpen ) $('#main-content').focus()
   },
 
-  // Determine if the client wants to search current site or the entire UW
+  // Determine if the client wants to search current site or the entire UAMS
   submitSearch : function( e )
   {
     switch ( this.searchFeature )
     {
-      case this.searchFeatures.uw :
+      case this.searchFeatures.uams :
         this.$el.find( 'input' ).attr( 'name', 'q' )
-        this.$el.find( 'form' ).attr( 'action', Backbone.history.location.protocol + '//uw.edu/search/' )
+        this.$el.find( 'form' ).attr( 'action', Backbone.history.location.protocol + '//uams.edu/search/' )
         return true;
 
       case this.searchFeatures.site :
@@ -11300,14 +11300,14 @@ UW.Search = Backbone.View.extend({
 
 ;// This section builds and populates the quicklinks section (off-canvas right)
 
-UW.QuickLinks = Backbone.View.extend({
+UAMS.QuickLinks = Backbone.View.extend({
 
     DELAY : 500,
 
     settings : {},
 
     // todo: the default list and these elements could be put into the php templates
-    container: '#uw-container',
+    container: '#uams-container',
 
     template : '<nav id="quicklinks" role="navigation" aria-label="quick links" aria-hidden="true">' +
                         '<ul id="big-links">' +
@@ -11345,7 +11345,7 @@ UW.QuickLinks = Backbone.View.extend({
 
         this.options = _.extend( {}, this.settings , options )
 
-        this.links = new UW.QuickLinks.Collection( this.options )
+        this.links = new UAMS.QuickLinks.Collection( this.options )
 
         this.links.on( 'sync', this.render )
 
@@ -11366,8 +11366,8 @@ UW.QuickLinks = Backbone.View.extend({
         this.$container = $(this.container);
         this.$container.prepend( this.quicklinks )
         this.$el.attr( 'aria-controls', 'quicklinks' ).attr( 'aria-owns', 'quicklinks' )
-        UW.$body.on( 'keydown', '#quicklinks a:first', this.inner_keydown )
-        UW.$body.on( 'keyup', '#quicklinks a', this.animate )
+        UAMS.$body.on( 'keydown', '#quicklinks a:first', this.inner_keydown )
+        UAMS.$body.on( 'keyup', '#quicklinks a', this.animate )
         this.quicklinks.on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', this.transitionEnd);
     },
 
@@ -11405,7 +11405,7 @@ UW.QuickLinks = Backbone.View.extend({
         }
     },
 
-    // todo : cache the uw-container-inner and screen-reader
+    // todo : cache the uams-container-inner and screen-reader
     accessible : function (argument)
     {
         this.$el.attr( 'aria-expanded', this.open )
@@ -11413,13 +11413,13 @@ UW.QuickLinks = Backbone.View.extend({
         if ( this.open ) {
             this.$el.attr('aria-label', 'Close quick links');
             this.quicklinks.find('a').attr( 'tabindex', 0 ).first().focus()
-           $('#uw-container-inner').attr('aria-hidden', true);
+           $('#uams-container-inner').attr('aria-hidden', true);
            $('.screen-reader-shortcut').attr('aria-hidden', true)
         } else {
             this.$el.attr('aria-label', 'Open quick links');
             this.quicklinks.find('a').attr( 'tabindex', -1 )
             this.$el.focus()
-           $('#uw-container-inner').attr('aria-hidden', false);
+           $('#uams-container-inner').attr('aria-hidden', false);
            $('.screen-reader-shortcut').attr('aria-hidden', false);
         }
     },
@@ -11432,11 +11432,11 @@ UW.QuickLinks = Backbone.View.extend({
 
 });
 
-UW.QuickLinks.Model = Backbone.Model.extend({});
+UAMS.QuickLinks.Model = Backbone.Model.extend({});
 
-UW.QuickLinks.Collection = Backbone.Collection.extend({
+UAMS.QuickLinks.Collection = Backbone.Collection.extend({
 
-    model: UW.QuickLinks.Model,
+    model: UAMS.QuickLinks.Model,
 
     initialize: function ( options )
     {
@@ -11502,15 +11502,15 @@ UW.QuickLinks.Collection = Backbone.Collection.extend({
    }]
 
 });
-;// ### UW Slideshow
+;// ### UAMS Slideshow
 
-// This function creates a UW Slideshow.
-// For usage please refer to the [UW Web Components Slideshow](http://uw.edu/brand/web/#slideshow)
+// This function creates a UAMS Slideshow.
+// For usage please refer to the [UAMS Web Components Slideshow](http://uw.edu/brand/web/#slideshow)
 
-UW.Slideshow = Backbone.View.extend({
+UAMS.Slideshow = Backbone.View.extend({
 
   // The classname of the elements that will become slideshows
-  el : '.uw-slideshow',
+  el : '.uams-slideshow',
 
   // The `current` property indicates which slide number to animate in or out
   current : 0,
@@ -11530,7 +11530,7 @@ UW.Slideshow = Backbone.View.extend({
   settings : {
     slideclass : '.slide',
     controlclasses : {
-      base : 'uw-slideshow-controls',
+      base : 'uams-slideshow-controls',
       lastNext : 'last-next',
       lastPrev : 'last-previous'
     },
@@ -11547,14 +11547,14 @@ UW.Slideshow = Backbone.View.extend({
     'click .next' : 'animateOut',
     'click .slider-dots li' : 'dotsAnimate',
     'click .fullscreen' : 'goFullscreen',
-    // 'keypress .uw-slideshow .last-previous' : 'keySlide',
+    // 'keypress .uams-slideshow .last-previous' : 'keySlide',
     //'keypress .previous' : 'keySlideOut',
-   
+
   },
 
   // When the view is initialized the controls are added to the dom, the number of slides is gathered,
   // and the z-index of the slides is reversed to keep the first image in the markup on top.
-  
+
   initialize : function( options )
   {
     this.options = _.extend( {}, this.settings, options )
@@ -11582,18 +11582,18 @@ UW.Slideshow = Backbone.View.extend({
 
   mobileSizing : function() {
 
-    // Check if it's a photo gallery 
+    // Check if it's a photo gallery
 
     function checkWidth() {
-        var   mobileContainer = $('.uw-slideshow'), 
-                 mobileHeight = $(".uw-slideshow img:first").height() + 50,
-              mobileDotMargin = mobileContainer.find('.slider-dots')  
+        var   mobileContainer = $('.uams-slideshow'),
+                 mobileHeight = $(".uams-slideshow img:first").height() + 50,
+              mobileDotMargin = mobileContainer.find('.slider-dots')
                    windowsize = $(window).width()
-  
+
        if (windowsize < 768) {
           mobileContainer.css('height', mobileHeight);
           mobileDotMargin.css('marginTop', mobileHeight - 40);
-       } 
+       }
 
 
     }
@@ -11601,7 +11601,7 @@ UW.Slideshow = Backbone.View.extend({
 
 
     if ( this.photoSlider ) {
-    
+
       // Run initially
       checkWidth()
 
@@ -11612,7 +11612,7 @@ UW.Slideshow = Backbone.View.extend({
 
   },
 
-  // Make it into simple photos slideshow 
+  // Make it into simple photos slideshow
 
   photoSlideshow : function()
   {
@@ -11620,15 +11620,15 @@ UW.Slideshow = Backbone.View.extend({
 
     // Add if photo slider exists
     if ( this.photoSlider ) {
-      
-      $( "." + this.el.classList[2] ).append('<ul class="slider-dots slider-dots-' + this.el.classList[2] + '"></ul>', '<a tabIndex="-1" class="fullscreen" href="#">Fullscreen</a>') 
+
+      $( "." + this.el.classList[2] ).append('<ul class="slider-dots slider-dots-' + this.el.classList[2] + '"></ul>', '<a tabIndex="-1" class="fullscreen" href="#">Fullscreen</a>')
 
       // Add LIs to ul
-      for (i = 0; i < this.numberOfSlides + 1; i++) { 
+      for (i = 0; i < this.numberOfSlides + 1; i++) {
         $( ".slider-dots-" + this.el.classList[2] ).append('<li></li>');
       }
-      
-      // Add initial dot     
+
+      // Add initial dot
       $(".slider-dots-" + this.el.classList[2] + " li:nth-child(1)").addClass("select-dot")
 
     }
@@ -11688,15 +11688,15 @@ UW.Slideshow = Backbone.View.extend({
           for (i = this.current + 1; i <= slideNumber; i++) {
             this.animateOut()
 
-          }    
+          }
 
         // If slide needs to go backward
-        } else if ( slideNumber < this.current ) { 
-          //Set currentSlide variable outside loop (otherwise it gets reset each time the slide changes) 
+        } else if ( slideNumber < this.current ) {
+          //Set currentSlide variable outside loop (otherwise it gets reset each time the slide changes)
           var currentSlide = this.current - 1
           for (i = slideNumber; i <= currentSlide; i++) {
             this.animateIn()
-          }    
+          }
         }
 
   },
@@ -11704,7 +11704,7 @@ UW.Slideshow = Backbone.View.extend({
   // Add the previous and next controls to the slideshow.
   addControls : function()
   {
-    if(this.numberOfSlides > 0) { 
+    if(this.numberOfSlides > 0) {
       this.$el.append( this.controls )
       this.$el.find( this.options.controlclass )
       this.$el.addClass( this.options.controlclasses.lastPrev )
@@ -11810,7 +11810,7 @@ UW.Slideshow = Backbone.View.extend({
 
       function getUrl(slide) {
         return slide.children[0].href;
-        
+
       }
 
       // focus controls
@@ -11833,34 +11833,34 @@ UW.Slideshow = Backbone.View.extend({
             window.location.href = url;
           }
         }
-        
+
         return false;
       }
 
-      var $this = $( '.uw-slideshow' );
+      var $this = $( '.uams-slideshow' );
       $this.keydown(keyPress);
 
   }
-  
-  
+
+
 
 })
-;// ### UW Youtube
+;// ### UAMS Youtube
 
-// This provides the structure and functionality of the UW Youtube player
-// For usage please refer to the [UW Web Youtube Player](http://uw.edu/brand/web/#youtube)
+// This provides the structure and functionality of the UAMS Youtube player
+// For usage please refer to the [UAMS Web Youtube Player](http://uw.edu/brand/web/#youtube)
 // It can support a single youtube video or playlist embed
-// options include max results for playlists, modest youtube branding and default resolution 
-// requires a unique id for each div.uw-youtube even if there is just one
+// options include max results for playlists, modest youtube branding and default resolution
+// requires a unique id for each div.uams-youtube even if there is just one
 
-//       Single: <div id='some-unique-id' class="uw-youtube" data-uw-youtube='youtube_id_here' data-uw-youtube-type='single'></div>
-//       Playlist: <div id='some-unique-id' class="uw-youtube" data-uw-youtube='youtube_playlist_id_here' data-uw-youtube-type='playlist'></div>
+//       Single: <div id='some-unique-id' class="uams-youtube" data-uams-youtube='youtube_id_here' data-uams-youtube-type='single'></div>
+//       Playlist: <div id='some-unique-id' class="uams-youtube" data-uams-youtube='youtube_playlist_id_here' data-uams-youtube-type='playlist'></div>
 
-UW.YouTube = {};
+UAMS.YouTube = {};
 
-//the UW.YouTube.Collection object contains data in models that refer to youtube videos
+//the UAMS.YouTube.Collection object contains data in models that refer to youtube videos
 //(alone or in a playlist) and has a view that renders the proper player with the data
-UW.YouTube.Collection = Backbone.Collection.extend({
+UAMS.YouTube.Collection = Backbone.Collection.extend({
 
     // Initialize the player embeds
     // once the player type has been determined, get the associated data
@@ -11868,17 +11868,17 @@ UW.YouTube.Collection = Backbone.Collection.extend({
         _(this).bindAll('parse');
         this.el = options.el;
         this.$el = $(this.el);
-        this.youtube_id = this.$el.data('uw-youtube');
+        this.youtube_id = this.$el.data('uams-youtube');
         this.setup_for_type();
         this.make_view();
         this.fetch({success: this.view.onDataReady});
     },
 
-    // See if the div.uw-youtube is a playlist or single video
+    // See if the div.uams-youtube is a playlist or single video
     // setup the proper request and model type
     // setup some other relative parameters
     setup_for_type : function (youtube_id) {
-        this.type = this.$el.data('uw-youtube-type');
+        this.type = this.$el.data('uams-youtube-type');
         this.modest = this.$el.data('modest');
         this.resolution = this.$el.data('resolution');
         if (this.type == 'playlist'){
@@ -11887,11 +11887,11 @@ UW.YouTube.Collection = Backbone.Collection.extend({
             if (max_results_temp > 0) {
                 this.max_results = max_results_temp;
             }
-            this.model = UW.YouTube.PlaylistItem;
+            this.model = UAMS.YouTube.PlaylistItem;
             this.url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=' + this.youtube_id + '&key=AIzaSyApmhFr5oa8bmKPcpN7bm-h0mekjkUVypU&maxResults=' + this.max_results;
         }
         else if (this.type == 'single') {
-            this.model = UW.YouTube.Video;
+            this.model = UAMS.YouTube.Video;
             this.url = 'https://www.googleapis.com/youtube/v3/videos?part=snippet&id=' + this.youtube_id + '&key=AIzaSyApmhFr5oa8bmKPcpN7bm-h0mekjkUVypU';
         }
     },
@@ -11906,17 +11906,17 @@ UW.YouTube.Collection = Backbone.Collection.extend({
             return item.snippet;
         });
     },
-    
+
     // make the view at the proper time
     make_view: function (type) {
-        this.view = new UW.YouTube.CollectionView({collection: this});
+        this.view = new UAMS.YouTube.CollectionView({collection: this});
     },
 
 });
 
 // The CollectionView builds the html for the player and the control structure for the vidoes
-UW.YouTube.CollectionView = Backbone.View.extend({
-    
+UAMS.YouTube.CollectionView = Backbone.View.extend({
+
     // template that all videos get
     template : "<div class='nc-video-player' role='region' aria-label='video' tabindex=-1><div class='tube-wrapper'></div></div>",
 
@@ -11965,18 +11965,18 @@ UW.YouTube.CollectionView = Backbone.View.extend({
 
     // if we don't have a copy of the youtube iframe api yet. add it
     add_iFrame_api: function () {
-        if (UW.$body.find('script#iFrame').length === 0){
-            UW.$body.append('<script id="iFrame" src="//www.youtube.com/player_api" type="text/javascript"></script>');
+        if (UAMS.$body.find('script#iFrame').length === 0){
+            UAMS.$body.append('<script id="iFrame" src="//www.youtube.com/player_api" type="text/javascript"></script>');
             this.add_iFrame_function();
         }
     },
 
     // at this point, all the collections should be created.
-    // Each gets a uwplayer variable that is a YT.Player corresponding to the collection
+    // Each gets a uamsplayer variable that is a YT.Player corresponding to the collection
     add_iFrame_function: function () {
         window.onYouTubeIframeAPIReady = function() {
-            for (var i = 0, length = UW.youtube.length; i < length; i++){
-                var collection = UW.youtube[i], player_vars = {};
+            for (var i = 0, length = UAMS.youtube.length; i < length; i++){
+                var collection = UAMS.youtube[i], player_vars = {};
                 // if the collection desires no youtube branding, set these parameters
                 if (collection.modest) {
                     player_vars = {
@@ -11989,7 +11989,7 @@ UW.YouTube.CollectionView = Backbone.View.extend({
                 //     player_vars.VQ = collection.resolution;
                 // }
                 //attach the YT.player to the relevant view, each view gets one
-                collection.view.uwplayer = new YT.Player(collection.$el.attr('id'), {
+                collection.view.uamsplayer = new YT.Player(collection.$el.attr('id'), {
                     videoId: '',
                     playerVars: player_vars,
                     events: {
@@ -12052,14 +12052,14 @@ UW.YouTube.CollectionView = Backbone.View.extend({
     check_all_ready: function() {
         if (this.data_ready && this.player_ready){
             this.play(this.collection.models[0].get('resourceId').videoId);
-        } 
+        }
     },
 
     // when the player changes state, this is run.
     // Currently stuff only happens if this is a playlist
     // TODO: add a publicly visible event on video end for showcase pages
     onStateChange: function (event) {
-        if (this.is_playlist) { 
+        if (this.is_playlist) {
             //event.data is 0 when a video finishes playing.  Find out what video we just finished, then play the next one or loop back to the beginning of the playlist
             if (event.data === 0) {
                 var video = this.$vidContent.find('.vid-active').attr('id');
@@ -12079,11 +12079,11 @@ UW.YouTube.CollectionView = Backbone.View.extend({
     play: function (id, playnow){
         playnow = playnow || false;
         if (playnow) {
-            this.uwplayer.loadVideoById(id);
+            this.uamsplayer.loadVideoById(id);
             this.$el.focus();
         }
         else {
-            this.uwplayer.cueVideoById(id);
+            this.uamsplayer.cueVideoById(id);
         }
         //If this is a playlist we must also manipulate the placeholder drawer.  Move the selected video's placeholder to the front if we can, otherwise move the listas far as we can without creating whitespace.  Then visually distinguish the selected video's placeholder
         if (this.collection.type == 'playlist') {
@@ -12110,18 +12110,18 @@ UW.YouTube.CollectionView = Backbone.View.extend({
 
 
 // Video is a model for a single video
-UW.YouTube.Video = Backbone.Model.extend({
+UAMS.YouTube.Video = Backbone.Model.extend({
     initialize: function () {
         if (this.get('resourceId')){
-            this.view = new UW.YouTube.VideoView({model: this});
+            this.view = new UAMS.YouTube.VideoView({model: this});
         }
     }
 });
 
 // Video View is a view for single video. Currently does nothing
-UW.YouTube.VideoView = Backbone.View.extend({
+UAMS.YouTube.VideoView = Backbone.View.extend({
     //template: underscore + html string here,
-    
+
     initialize: function () {
         this.render();
     },
@@ -12135,18 +12135,18 @@ UW.YouTube.VideoView = Backbone.View.extend({
 });
 
 // PlaylistItem is the model for a video in a playlist
-UW.YouTube.PlaylistItem = Backbone.Model.extend({
+UAMS.YouTube.PlaylistItem = Backbone.Model.extend({
 
     // if the video is a real video and not an error code, make a view
     initialize: function () {
         if (this.get('resourceId')){
-            this.view = new UW.YouTube.PlaylistItemView({model:this});
+            this.view = new UAMS.YouTube.PlaylistItemView({model:this});
         }
     },
 });
 
 // PlaylistItemView is the view for a playlist item
-UW.YouTube.PlaylistItemView = Backbone.View.extend({
+UAMS.YouTube.PlaylistItemView = Backbone.View.extend({
 
     // this is the template for a playlist item preview
     // goes inside the playlist section
@@ -12165,20 +12165,20 @@ UW.YouTube.PlaylistItemView = Backbone.View.extend({
         this.$el.append(small_vid);
     },
 });
-;// ### UW Vimeo
+;// ### UAMS Vimeo
 
-// This function creates the UW Vimeo player
-// For usage please refer to the [UW Web Vimeo Player](http://uw.edu/brand/web/#vimeo)
+// This function creates the UAMS Vimeo player
+// For usage please refer to the [UAMS Web Vimeo Player](http://uw.edu/brand/web/#vimeo)
 // TODO: Get postMessage to work after iframe has loaded or find the correct API postMessage
 
-//       Single: <div class="uw-vimeo" data-video=76979871 data-width=800 data-height=500></div>
-//       Playlist :<div class="uw-vimeo" data-username=uwathleticsmarketing data-width=800 data-height=500></div>
+//       Single: <div class="uams-vimeo" data-video=76979871 data-width=800 data-height=500></div>
+//       Playlist :<div class="uams-vimeo" data-username=uwathleticsmarketing data-width=800 data-height=500></div>
 
 
-UW.Vimeo = Backbone.View.extend({
+UAMS.Vimeo = Backbone.View.extend({
 
   // The classname to look for when embedding Vimeo videos
-  el : '.uw-vimeo',
+  el : '.uams-vimeo',
 
   // List the events in the view.
   // Clicking a preview item will load that video
@@ -12220,7 +12220,7 @@ UW.Vimeo = Backbone.View.extend({
   },
 
   // Initialize the video embeds.
-  // Check to see if the `div.uw-vimeo` is requesting a single video or a playlist.
+  // Check to see if the `div.uams-vimeo` is requesting a single video or a playlist.
   // Note: Playlists are currently restricted to usernames.
   initialize : function( options )
   {
@@ -12233,13 +12233,13 @@ UW.Vimeo = Backbone.View.extend({
 
     if ( this.options.video )
     {
-      this.video = new UW.Vimeo.Video( this.options.video )
+      this.video = new UAMS.Vimeo.Video( this.options.video )
       this.video.on( 'sync', this.single )
     }
 
     if ( this.options.username )
     {
-      this.videos = new UW.Vimeo.Playlist( { username : this.options.username } )
+      this.videos = new UAMS.Vimeo.Playlist( { username : this.options.username } )
       this.videos.on( 'sync', this.playlist )
     }
 
@@ -12257,7 +12257,7 @@ UW.Vimeo = Backbone.View.extend({
   {
 
     _.extend( this.options, { video : this.videos.first().get('id') } )
-    this.player = _.template( this.templates.video )( this.options ) 
+    this.player = _.template( this.templates.video )( this.options )
 
     this.videoList = _.template( this.templates.playlist)( { videos : this.videos.toJSON() } )
 
@@ -12283,7 +12283,7 @@ UW.Vimeo = Backbone.View.extend({
 
 // This is a model for a Vimeo video.
 // It takes its attributes from the Vimeo JSON API.
-UW.Vimeo.Video = Backbone.Model.extend({
+UAMS.Vimeo.Video = Backbone.Model.extend({
 
   url : function()
   {
@@ -12304,9 +12304,9 @@ UW.Vimeo.Video = Backbone.Model.extend({
 })
 
 // This is a collection for a Vimeo feed
-// It takes its attributes from the Vimeo JSON API much like the `UW.Vimeo.Video` model does.
+// It takes its attributes from the Vimeo JSON API much like the `UAMS.Vimeo.Video` model does.
 // Only videos with the property of `{ embed_privacy : anywhere }` will be shown.
-UW.Vimeo.Playlist = Backbone.Collection.extend({
+UAMS.Vimeo.Playlist = Backbone.Collection.extend({
 
     url : function()
     {
@@ -12328,7 +12328,7 @@ UW.Vimeo.Playlist = Backbone.Collection.extend({
 ;/* RADIO PUBLIC CLASS DEFINITION
  * ============================== */
 
-UW.Radio = Backbone.View.extend({
+UAMS.Radio = Backbone.View.extend({
 
   states :
   {
@@ -12369,10 +12369,10 @@ UW.Radio = Backbone.View.extend({
   getGroup : function()
   {
     if ( this.$input.attr('type') === 'radio' ) {
-      return _.where( UW.radio, { name : this.name })
+      return _.where( UAMS.radio, { name : this.name })
     }
     if ( this.$input.attr('type') === 'checkbox' ) {
-      return _.where( UW.checkbox, { name : this.name })
+      return _.where( UAMS.checkbox, { name : this.name })
     }
   },
 
@@ -12405,14 +12405,14 @@ UW.Radio = Backbone.View.extend({
   }
 
 })
-;// ### UW Dropdowns
+;// ### UAMS Dropdowns
 
-// This function creates the UW Dropdowns
+// This function creates the UAMS Dropdowns
 // For usage please refer to the [UW Web Components Dropdowns](http://uw.edu/brand/web/#dropdowns)
 
 
 
-UW.Dropdowns = Backbone.View.extend({
+UAMS.Dropdowns = Backbone.View.extend({
 
   chunkSize : 8,
   menuWidth : 1170,
@@ -12425,7 +12425,8 @@ UW.Dropdowns = Backbone.View.extend({
   },
 
   elements : {
-    toplevel : '.dawgdrops-item'
+    toplevel : '.reddiedrops-item',
+    megamenu : '.mega-menu'
   },
 
   keys : {
@@ -12441,24 +12442,27 @@ UW.Dropdowns = Backbone.View.extend({
 
 
   events : {
-    'keydown .dawgdrops-menu a' : 'moveFocusInSubMenu',
-    'keydown .dawgdrops-item > a' : 'toggleSubMenu',
-    'focus .dawgdrops-item' : 'positionSubmenu',
-    'mouseenter .dawgdrops-item' : 'positionSubmenu'
+    'keydown .reddiedrops-menu a' : 'moveFocusInSubMenu',
+    'keydown .reddiedrops-item > a' : 'toggleSubMenu',
+    'focus .reddiedrops-item' : 'positionSubmenu',
+    'mouseenter .reddiedrops-item' : 'positionSubmenu'
   },
 
 
   initialize : function(options)
   {
-    _.bindAll( this, 'render', 'chunk', 'wrap', 'wrapChildren', 'positionSubmenu', 'toggleSubMenu' )
+    _.bindAll( this, 'render', 'chunk', 'wrap', 'wrapChildren', 'wrapMega', 'positionSubmenu', 'toggleSubMenu' )
     this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
-    this.$topLevelNav = this.$el.find( this.elements.toplevel )
+    this.$topLevelNav = this.$el.find( this.elements.toplevel ).not(this.elements.megamenu )
+    this.$topLevelMega = this.$el.find( this.elements.megamenu )
     this.render()
   },
+
 
   render : function()
   {
     _.each( this.$topLevelNav, this.wrapChildren )
+    _.each( this.$topLevelMega, this.wrapMega )
   },
 
   chunk : function( element, index )
@@ -12470,6 +12474,12 @@ UW.Dropdowns = Backbone.View.extend({
   {
     if ( $(element).find('li').length > this.chunkSize )
         _.each( _.groupBy( $( element ).find('li'), this.chunk ), this.wrap )
+  },
+
+  wrapMega : function( element )
+  {
+ 	//if ( $(element).find('li').not('.sub-menu li') )
+    	_.each( $( element ).find('li').not('.sub-menu li'), this.wrap )
   },
 
   wrap : function( elements )
@@ -12484,9 +12494,12 @@ UW.Dropdowns = Backbone.View.extend({
       , position = $el.position()
       , menublock = $el.find('.menu-block')
       , shift = ( this.menuBlockWidth * ( menublock.length ) ) + position.left
-      , left = shift > UW.$window.width() ? $el.outerWidth() + position.left - ( menublock.length * this.menuBlockWidth ) : position.left
+      , left = shift > UAMS.$window.width() ? $el.outerWidth() + position.left - ( menublock.length * this.menuBlockWidth ) : position.left
 
-    $el.find('ul').css( { top : position.top + 58, left: left })
+      if (left < 0)  // Make sure the left is not negative margin.  If so, center the menu
+    	left = ( UAMS.$window.width() - this.menuBlockWidth * ( menublock.length )) * 0.5
+
+    $el.find('ul').css( { top : position.top + 48, left: left })
   },
 
   toggleSubMenu : function( e )
@@ -12590,11 +12603,11 @@ UW.Dropdowns = Backbone.View.extend({
   }
 
 })
-;// ### UW Dropdowns
+;// ### UAMS Dropdowns
 
-// This function creates the UW mobile menu toggle
+// This function creates the UAMS mobile menu toggle
 
-UW.MobileMenu = Backbone.View.extend({
+UAMS.MobileMenu = Backbone.View.extend({
 
   events: {
     'click button' : 'toggle',
@@ -12605,7 +12618,7 @@ UW.MobileMenu = Backbone.View.extend({
   {
     _.bindAll(this, 'toggle','reset_li','openmenu','cloneMenuAnchors');
     this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
-    this.$mobilemenu_ul = this.$el.find('ul.uw-mobile-menu');
+    this.$mobilemenu_ul = this.$el.find('ul.uams-mobile-menu');
   },
 
   // Clone the first item in the menu if it has a flyout, as it can't be used as both an anchor and button
@@ -12619,24 +12632,24 @@ UW.MobileMenu = Backbone.View.extend({
       // Initial ARIA tags
       $target.attr('aria-expanded', false);
       $targetUl.attr('aria-hidden', true)
-    }) 
+    })
   }),
 
-  openmenu : function(event){    
+  openmenu : function(event){
     var $target = $(event.target),
         $targeUl = $target.next();
 
     if( $targeUl.length > 0 ){
-      event.preventDefault();  
-      // Toggle ARIA tags 
+      event.preventDefault();
+      // Toggle ARIA tags
       $targeUl.attr('aria-hidden', function(index, attr){
         return attr === 'true' ? 'false' : 'true';
-      });  
+      });
       $target.attr('aria-expanded', function(index, attr){
         return attr === 'true' ? 'false' : 'true';
       });
       $target.parent().toggleClass('active-menu');
-    }     
+    }
   },
 
   toggle: function(event)
@@ -12651,15 +12664,15 @@ UW.MobileMenu = Backbone.View.extend({
     this.$mobilemenu.find('li').removeAttr('style');
   }
 
-});// ### UW Accordion
+});// ### UAMS Accordion
 
-// This creates a UW Accordion
-// For usage, refer to the [UW Web Components webpage](http://uw.edu/brand/web#accordion)
+// This creates a UAMS Accordion
+// For usage, refer to the [UAMS Web Components webpage](http://uw.edu/brand/web#accordion)
 
-UW.Accordion = Backbone.View.extend({
+UAMS.Accordion = Backbone.View.extend({
 
     //what element becomes an accordion
-    el: '.uw-accordion',
+    el: '.uams-accordion',
 
     events: {
         'click h3' : 'animate'
@@ -12700,10 +12713,10 @@ UW.Accordion = Backbone.View.extend({
         }
     },
 });
-;// ### UW Select
+;// ### UAMS Select
 
-// This function creates the UW select menu
-// For usage please refer to the [UW Web Components Select](http://uw.edu/brand/web/#select)
+// This function creates the UAMS select menu
+// For usage please refer to the [UAMS Web Components Select](http://uw.edu/brand/web/#select)
 // data-submit='true' will cause the form to submit immediately
 // data-type='links' will cause the chosen option's value (a url) to be visisted immediately
 /* TODO: add accessiblity attributes to the html markup
@@ -12713,10 +12726,10 @@ UW.Accordion = Backbone.View.extend({
     step 4: tie events from the select (like focus change or select) back to the ul visually
 */
 
-UW.Select = Backbone.View.extend({
+UAMS.Select = Backbone.View.extend({
 
-  // The class to look for when rendering UW select menu.
-  el : '.uw-select',
+  // The class to look for when rendering UAMS select menu.
+  el : '.uams-select',
 
   submit: false,
 
@@ -12734,30 +12747,30 @@ UW.Select = Backbone.View.extend({
   },
 
   // List the events within the view.
-  // The two events needed trigger opening and closing the UW select menu
+  // The two events needed trigger opening and closing the UAMS select menu
   events :
   {
     'keydown li'        : 'openMenuOnKeydown',
     'click li.active'   : 'open',
     'click li.inactive' : 'close',
-    'click .uw-select-arrow'   : 'open',
-    'click .uw-select-arrow.open'   : 'closeWithoutAnimating',
+    'click .uams-select-arrow'   : 'open',
+    'click .uams-select-arrow.open'   : 'closeWithoutAnimating',
     'click'             : 'closeWithoutAnimating' //doesnt work bc inside template
   },
 
   // This is the template that replaces the standard select menu.
   // It will be placed after the select menu and mimics the values and
   // text for each option tag.
-  template : '<div class="uw-select-mask">' +
-              '<ul class="uw-select">' +
+  template : '<div class="uams-select-mask">' +
+              '<ul class="uams-select">' +
                '<% _.each( lis, function( title, value ) { %>' +
                  '<li data-value="<%= value %>"><a href="#"><%= title %></a></li>' +
                '<% }) %>'+
                '</ul>' +
-               '<span class="uw-select-arrow"></span>' +
+               '<span class="uams-select-arrow"></span>' +
              '</div>',
 
-  // Initialize the view, parse the standard select menu and render the UW select menu.
+  // Initialize the view, parse the standard select menu and render the UAMS select menu.
   initialize : function( options )
   {
     _.bindAll( this, 'open', 'close', 'addOpenClass', 'removeOpenClass', 'closeWithoutAnimating' )
@@ -12767,7 +12780,7 @@ UW.Select = Backbone.View.extend({
     $("body").click(this.closeWithoutAnimating)
   },
 
-  // Open the UW select menu.
+  // Open the UAMS select menu.
   open : function(e)
   {
     if(this.isOpen()){
@@ -12778,7 +12791,7 @@ UW.Select = Backbone.View.extend({
     return false
   },
 
-  // Close the UW select menu.
+  // Close the UAMS select menu.
   close : function( e )
   {
     this.$target = $(e.currentTarget);
@@ -12813,7 +12826,7 @@ UW.Select = Backbone.View.extend({
     //this.$el.animate( { top : current_top - (this.$target.offset().top - this.$el.find('li.active').offset().top) }, { queue: false, complete: this.removeOpenClass } )
   },
 
-  // Whenever an item is clicked on the UW select menu make sure the standard
+  // Whenever an item is clicked on the UAMS select menu make sure the standard
   // select menu is set to that value as well.
   cloneSelectEvents : function()
   {
@@ -12827,12 +12840,12 @@ UW.Select = Backbone.View.extend({
         window.location = value;
     }
 
-    if ( this.$select.hasClass('uw-select-wp') )
-      window.location = UW.baseUrl + '?cat=' + value;
+    if ( this.$select.hasClass('uams-select-wp') )
+      window.location = UAMS.baseUrl + '?cat=' + value;
 
   },
 
-  // Render the UW select menu HTML and then set the view's element to the newly
+  // Render the UAMS select menu HTML and then set the view's element to the newly
   // rendered HTML.
   // This also keeps a cached version of the select menu with the `this.$select` property.
   render : function()
@@ -12972,11 +12985,11 @@ UW.Select = Backbone.View.extend({
   }
 
 })
-;UW.Image = Backbone.View.extend({
+;UAMS.Image = Backbone.View.extend({
 
   RATIO : 0.8,
 
-  template : '<div class="uw-overlay">' +
+  template : '<div class="uams-overlay">' +
                     '<div></div>' +
                     '<div class="wrapper" style="width:<%= width %>px; margin-top:-<%= height/2 %>px; margin-left:-<%= width/2 %>px;">' +
                      '<span class="close"> Close</span>' +
@@ -12986,7 +12999,7 @@ UW.Select = Backbone.View.extend({
                    '</div>' +
                  '</div>',
 
-  templateVideo : '<div class="uw-overlay">' +
+  templateVideo : '<div class="uams-overlay">' +
                     '<div></div>' +
                     '<div class="wrapper" style="width:<%= width %>px; margin-top:-<%= height/2 %>px; margin-left:-<%= width/2 %>px;">' +
                      '<span class="close"> Close</span>' +
@@ -12997,7 +13010,7 @@ UW.Select = Backbone.View.extend({
                  '</div>',
 
   events : {
-    'click' : function(e){      
+    'click' : function(e){
       this.attrs = this.getAttributes( e );
       // This just checks to see if the anchor has a source (some slideshows and plugins use blank anchors to do their work)
       if( this.attrs.src ){
@@ -13021,7 +13034,7 @@ UW.Select = Backbone.View.extend({
   overlay : function( images )
   {
 
-    var videoLightbox = this.attrs.rel.indexOf("uw-lightbox-video") > -1 ? true : false;
+    var videoLightbox = this.attrs.rel.indexOf("uams-lightbox-video") > -1 ? true : false;
 
 
 
@@ -13044,14 +13057,14 @@ UW.Select = Backbone.View.extend({
       aspect_ratio = 560 / 315;
       this.attrs.height = 630;
       this.attrs.width  = 1120;
-    } 
+    }
 
-    if ( this.attrs.height > (this.RATIO * UW.$window.height())){
-        this.attrs.height = this.RATIO * UW.$window.height();
+    if ( this.attrs.height > (this.RATIO * UAMS.$window.height())){
+        this.attrs.height = this.RATIO * UAMS.$window.height();
         this.attrs.width = aspect_ratio * this.attrs.height;
     }
-    if ( this.attrs.width > (this.RATIO * UW.$window.width())){
-        this.attrs.width = this.RATIO * UW.$window.width();
+    if ( this.attrs.width > (this.RATIO * UAMS.$window.width())){
+        this.attrs.width = this.RATIO * UAMS.$window.width();
         this.attrs.height = this.attrs.width / aspect_ratio;
     }
 
@@ -13061,16 +13074,16 @@ UW.Select = Backbone.View.extend({
 
   render : function()
   {
-    UW.$body.one( 'click', this.remove )
-    if ( this.attrs.rel == "uw-lightbox-video" ) {
-      return  UW.$body.append( _.template( this.templateVideo )( this.attrs ) )
+    UAMS.$body.one( 'click', this.remove )
+    if ( this.attrs.rel == "uams-lightbox-video" ) {
+      return  UAMS.$body.append( _.template( this.templateVideo )( this.attrs ) )
     }
-    return  UW.$body.append( _.template( this.template )( this.attrs ) )
+    return  UAMS.$body.append( _.template( this.template )( this.attrs ) )
   },
 
   remove : function()
   {
-    UW.$body.find( '.uw-overlay' ).remove()
+    UAMS.$body.find( '.uams-overlay' ).remove()
     return false;
   },
 
@@ -13097,12 +13110,12 @@ UW.Select = Backbone.View.extend({
   }
 
 })
-;// ### UW HTML5 Player
+;// ### UAMS HTML5 Player
 
-// This function creates a UW HTML5 player
-// For usage please refer to the [UW Web Components Player](http://uw.edu/brand/web/#player)
+// This function creates a UAMS HTML5 player
+// For usage please refer to the [UAMS Web Components Player](http://uw.edu/brand/web/#player)
 
-UW.Player = Backbone.View.extend({
+UAMS.Player = Backbone.View.extend({
 
   defaults : {
 
@@ -13122,24 +13135,24 @@ UW.Player = Backbone.View.extend({
 
 
 })
-;// ### UW Social
+;// ### UAMS Social
 
 // This function creates the UW social media buttons
 // For usage please refer to the [UW Web Components Social](http://uw.edu/brand/web/#social)
 
-UW.Social = Backbone.View.extend({
+UAMS.Social = Backbone.View.extend({
 
   // The classname of the elements that will become a set of social buttons
-  el : '.uw-social',
+  el : '.uams-social',
 
   // The template that generates the social buttons. Only the chosen buttons are rendered.
-  // See the [UW Web Components](http://uw.edu/brand/#social) for instructions on how to choose each button.
+  // See the [UAMS Web Components](http://uw.edu/brand/#social) for instructions on how to choose each button.
   template : '<ul>' +
-              '<% if ( _.isString( facebook ) ) { %> <li><a class="uw-social-facebook" href="http://www.facebook.com/sharer.php?u=<%= url %>">Facebook</a></li> <% } %>' +
-              '<% if ( _.isString( twitter ) ) { %> <li><a class="uw-social-twitter" href="http://twitter.com/?status=<%= url %>">Twitter</a></li> <% } %>' +
-              '<% if ( _.isString( reddit ) ) { %> <li><a class="uw-social-reddit" href="http://reddit.com/submit?url=<%= url %>">Reddit</a></li> <% } %>' +
-              '<% if ( _.isString( digg ) ) { %> <li><a class="uw-social-reddit" href="http://digg.com/submit?url=<%= url %>">Digg</a></li> <% } %>' +
-              '<% if ( _.isString( stumbleupon ) ) { %> <li><a class="uw-social-reddit" href="http://www.stumbleupon.com/submit?url=<%= url %>">StumbleUpon</a></li> <% } %>' +
+              '<% if ( _.isString( facebook ) ) { %> <li><a class="uams-social-facebook" href="http://www.facebook.com/sharer.php?u=<%= url %>">Facebook</a></li> <% } %>' +
+              '<% if ( _.isString( twitter ) ) { %> <li><a class="uams-social-twitter" href="http://twitter.com/?status=<%= url %>">Twitter</a></li> <% } %>' +
+              '<% if ( _.isString( reddit ) ) { %> <li><a class="uams-social-reddit" href="http://reddit.com/submit?url=<%= url %>">Reddit</a></li> <% } %>' +
+              '<% if ( _.isString( digg ) ) { %> <li><a class="uams-social-reddit" href="http://digg.com/submit?url=<%= url %>">Digg</a></li> <% } %>' +
+              '<% if ( _.isString( stumbleupon ) ) { %> <li><a class="uams-social-reddit" href="http://www.stumbleupon.com/submit?url=<%= url %>">StumbleUpon</a></li> <% } %>' +
              '</ul>',
 
   // Default list of compatible buttons
@@ -13152,7 +13165,7 @@ UW.Social = Backbone.View.extend({
     url         : document.URL
   },
 
-  // Initialize and render the button view. The data attributes of `div.uw-social` will be parsed and used to determine which buttons to render.
+  // Initialize and render the button view. The data attributes of `div.uams-social` will be parsed and used to determine which buttons to render.
   initialize : function( options )
   {
     this.options = _.extend( {}, this.settings, this.$el.data() , options )

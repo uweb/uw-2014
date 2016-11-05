@@ -1,7 +1,7 @@
 .contact-widget-inner{
 	padding: 40px;
 	margin-top: 20px;
-	background: url('assets/images/stripes-dark-tile.svg') 0 -58px repeat-x @ultralightgold;
+	background: url('assets/images/stripes-dark-tile.svg') 0 -58px repeat-x @200grey;
 	* {
 		margin: 0;
 		font-size: 16px;
@@ -15,12 +15,14 @@
 	p.person-title {
 		// font-weight: bold;
 	}
-	p.person-phone,
+	a.person-phone,
 	a.person-email {
 		padding: 1px 0 1px 35px;
 		background-image: url(assets/svg/widgets-sprite.svg);
 	}
-	p.person-phone {
+	a.person-phone {
+		color: inherit;
+		background-size: 580px;
 		background-position: 0 -30px;
 	}
 	a.person-email {
@@ -31,10 +33,10 @@
 
 }
 
-.uw-sidebar .contact-widget-inner .widgettitle {
+.uams-sidebar .contact-widget-inner .widgettitle {
 	margin-bottom: 30px;
 	&:after {
-		background-color: @ultralightgold;
+		background-color: @200grey;
 	}
 }
 

@@ -1,0 +1,125 @@
+a.uams-btn {
+  padding: 11px 20px;
+  text-transform: uppercase;
+  background-color: @200grey;
+  font-family: @font-family-headline;
+  font-weight: @bold;
+  color: @darkgray;
+  display: inline-block;
+  position: relative;
+  background-image: none !important;
+  border-bottom: none;
+  margin-bottom: 25px;
+  margin-right: 50px;
+  z-index: 1;
+  line-height: 24px;
+  font-size: 16px;
+  &.btn-sm {
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: @bold;
+    border-radius:0;
+    -webkit-border-radius:0;
+    -moz-border-radius:0;
+    &:before {
+      width: 43px;
+      right: -43px;
+    }
+    &:after {
+      width: 45px;
+      height: 45px;
+      top: 50%;
+      margin-top: -21px;
+      right: -43px;
+      background-size: 740px;
+      background-position: -32px -410px;
+    }
+    &.btn-left {
+      margin-left: 43px;
+      &:before {
+        left: -43px;
+        border-right: 5px solid rgba(0, 0, 0, 0.3);
+        border-left: none;
+      }
+      &:after {
+        left: -43px;
+        margin-top: -25px;
+        transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+      }
+    }
+    &.btn-play:after {
+      background-position: -31px -466px;
+    }
+    &.btn-external:after {
+      background-position: -126px -410px;
+    }
+    &.btn-plus:after {
+      background-position: -83px -465px;
+    }
+  }
+  &:hover, &:focus {
+    color: @900grey;
+    background-color: #f5f5f5;
+    &:before {
+      background-color: lighten(@red, 10%);
+    }
+  }
+  &.btn-gold {
+    &:hover:before {
+      background-color: lighten(@900grey, 10%);
+    }
+  }
+  &.btn-purple {
+    background-color: @red;
+    color: white;
+    &:hover, &:focus {
+      background-color: darken(@red, 5%);
+    }
+    &:before {
+      background-color: darken(@red, 5%);
+    }
+    &:hover:before {
+      background-color: darken(@red, 20%);
+    }
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 55px;
+    height: 55px;
+    right: -50px;
+    top: 50%;
+    margin-top: -28px;
+    background: url(assets/svg/uams-sprite.svg) no-repeat -36px -475px transparent;
+  }
+  &:before {
+    content: "";
+    width: 48px;
+    right: -48px;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: @red;
+    border-left: 5px solid rgba(0,0,0,.3);
+  }
+  &.btn-play:after {
+    background-position: -36px -539px;
+  }
+  &.btn-external:after {
+      background-position: -146px -475px;
+  }
+  &.btn-plus:after {
+      background-position: -95px -539px;
+  }
+  &.btn-gold:before {
+    background-color: @900grey;
+  }
+  &.btn-gold:before {
+    border-left: 5px solid rgba(0,0,0,.1);
+  }
+
+}

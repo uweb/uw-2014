@@ -4,7 +4,7 @@
  *
  */
 
-class UW_Mimes
+class UAMS_Mimes
 {
 
   public $MIMES = array(
