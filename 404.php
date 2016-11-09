@@ -19,6 +19,7 @@
 
               <div class="col-md-6">
                 <?php get_search_form(); ?>
+				<h2>Random Change</h2>
                 <h3>Not what you were expecting?</h3>
                 <p>Dubs tells us this page might not be what you had in mind when you set out on your journey through the UW Web.  Don&#146;t worry, you&#146;re not in the Dawg House! Here are some of Dubs&#146; favorite pages if you feel like exploring: </p>
               </div>
