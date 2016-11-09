@@ -77,7 +77,7 @@ class UW_Page_Attributes_Meta_Box
       ?>
 
 
-    <p><strong><?php _e('Template') ?></strong></p>
+    <p><strong><?php _e('TemplateSample') ?></strong></p>
 
     <label class="screen-reader-text" for="page_template"><?php _e('Page Template') ?></label>
 
