@@ -8600,7 +8600,7 @@ label.screen-reader {
 }
 .site-accessibility .uw-body-copy a,
 .site-accessibility .uw-sidebar a {
-  border-bottom: 1px solid #DFDFDF;
+  border-bottom: 2px solid #C3C3C3;
 }
 .site-accessibility .uw-body-copy a:hover,
 .site-accessibility .uw-sidebar a:hover {
