@@ -15,7 +15,6 @@
                 <li><a class="youtube" href="http://www.youtube.com/user/uwhuskies">YouTube</a></li>
                 <li><a class="linkedin" href="http://www.linkedin.com/company/university-of-washington">LinkedIn</a></li>
                 <li><a class="pinterest" href="http://www.pinterest.com/uofwa/">Pinterest</a></li>
-                <li><a class="vine" href="https://vine.co/uofwa">Vine</a></li>
                 <li><a class="google" href="https://plus.google.com/+universityofwashington/posts">Google+</a></li>
             </ul>
         </nav>
