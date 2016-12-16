@@ -1,4 +1,4 @@
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: 'Open Sans',sans-serif;
   color: rgb(89, 89, 89);
  }
@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 #uw-documentation a {
-  color: #08d;
+  color: #0074bb;
   text-decoration: none;
   -o-transition: .25s;
   -webkit-transition: .25s;
