@@ -5808,7 +5808,8 @@ iframe {
   max-width: 100%;
 }
 iframe[src*="youtu.be"],
-iframe[src*="youtube.com"] {
+iframe[src*="youtube.com"],
+iframe[src*="www.facebook.com/plugins/video"] {
   max-height: 50vw;
 }
 small,
