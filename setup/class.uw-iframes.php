@@ -62,6 +62,7 @@ class UW_Iframes
       'www.uwtv.org',
       'google.com',
       'docs.google.com',
+      'drive.google.com',
       'youtube.com',
       'excition.com',
       'uwregents.wufoo.com',
