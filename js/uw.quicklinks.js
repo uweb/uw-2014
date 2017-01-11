@@ -173,7 +173,7 @@ UW.QuickLinks.Collection = Backbone.Collection.extend({
        "classes": ["icon-uwtoday"]
    }, {
        "title": "Computing\/IT",
-       "url": "http:\/\/www.washington.edu\/itconnect\/forstudents.html",
+       "url": "http:\/\/itconnect.uw.edu",
        "classes": false
    }, {
        "title": "Employee Self Service",
