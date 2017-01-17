@@ -17,7 +17,7 @@ class UW_Intro_Text extends WP_Widget
 
     add_shortcode( 'intro', array( $this, 'intro_shortcode' ) );
 
-    parent::WP_Widget(
+    parent::__construct(
       $id = self::ID,
       $name = self::TITLE,
       $options = array(

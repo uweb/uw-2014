@@ -36,9 +36,9 @@ class UW_Widget_Twitter extends WP_Widget
       'consumer_secret'            => TWITTER_CONSUMER_SECRET
   );
 
-  function UW_Widget_Twitter()
+  function __construct()
   {
-    parent::WP_Widget(
+    parent::__construct(
       $id = self::ID,
       $name = self::NAME,
       $options = array(
@@ -49,6 +49,12 @@ class UW_Widget_Twitter extends WP_Widget
     add_shortcode( self::SHORTCODE , array( $this, 'shortcode' ) );
 
   }
+
+    function UW_Widget_Twitter()
+    {
+        self::__construct();
+    }
+
 
   function form($instance)
   {

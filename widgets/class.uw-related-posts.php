@@ -15,7 +15,7 @@ class UW_Widget_Related_Posts extends WP_Widget
   const ITEMS = 5;
 
   // Instantiate the widget and the Jetpack_RelatedPosts class to use for gathering related posts.
-  function UW_Widget_Related_Posts()
+  function __construct()
   {
       // Possible paramters to pass to the the `get_for_post_id` function: `size`, `post_type`, `has_terms`, `date_range` and `exclude_post_ids`.
       // - By default related posts go back one year
@@ -27,7 +27,7 @@ class UW_Widget_Related_Posts extends WP_Widget
       // Instantiate the Jetpack_RelatedPosts class
       $this->RelatedPosts = Jetpack_RelatedPosts::init(); //get_current_blog_id() , Jetpack_Options::get_option( 'id' ) );
 
-      parent::WP_Widget(
+      parent::__construct(
         $id      = self::ID,
         $name    = self::TITLE,
         $options = array(
@@ -36,6 +36,11 @@ class UW_Widget_Related_Posts extends WP_Widget
         )
       );
 
+  }
+
+  function UW_Widget_Related_Posts()
+  {
+    self::__construct();
   }
 
   function widget( $args, $instance )

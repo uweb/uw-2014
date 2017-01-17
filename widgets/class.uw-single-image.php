@@ -12,12 +12,17 @@ class UW_Widget_Single_Image extends WP_Widget
 
   const DEFAULT_LINK_TEXT = 'More';
 
-  function UW_Widget_Single_Image()
+  function __construct()
   {
-		parent::WP_Widget( $id = 'pic-text', $name = 'Single Image', $options = array( 'description' => 'Display an image with some featured text.', 'classname' => 'pic-text-widget' ) );
+		parent::__construct( $id = 'pic-text', $name = 'Single Image', $options = array( 'description' => 'Display an image with some featured text.', 'classname' => 'pic-text-widget' ) );
 
     if ( is_admin() )
       add_action('admin_enqueue_scripts', array( __CLASS__, 'scripts') );
+  }
+
+  function UW_Widget_Single_Image()
+  {
+  	self::__construct();
   }
 
   public static function scripts()
