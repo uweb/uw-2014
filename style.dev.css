@@ -6138,12 +6138,12 @@ body.search-open #uwsearcharea .uw-search-wrapper {
   width: 890px;
   margin-top: 30px;
 }
-.uw-search-bar-container form {
+.uw-search-bar-container div.search-form-wrapper {
   float: left;
   width: calc(100% - 240px);
   outline: 2px solid #ADADAD;
 }
-.uw-search-bar-container form input {
+.uw-search-bar-container div.search-form-wrapper input {
   width: 100%;
   height: 54px;
   padding: 10px 0 10px 15px;
