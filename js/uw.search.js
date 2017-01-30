@@ -13,14 +13,14 @@ UW.Search = Backbone.View.extend({
 
   // This is the HTML for the search bar that is preprended to the body tag.
   searchbar :
-               '<div class="container no-height">'+
+               '<div class="container no-height" role="search">'+
                   '<div class="center-block uw-search-wrapper">'+
                     '<form class="uw-search" action="<%= UW.baseUrl %>">'+
                       '<label class="screen-reader" for="uw-search-bar">Enter search text</label>' +
                       '<input id="uw-search-bar" type="search" name="s" value="" autocomplete="off" />'+
                     '</form>'+
 
-                    '<select id="mobile-search-select" class="visible-xs">' +
+                    '<select id="mobile-search-select" class="visible-xs" aria-label="Search Scope">' +
                       '<option value="uw" selected>All the UW</option>' +
                       '<option value="site">Current site</option>' +
                     '</select>' +
