@@ -6169,6 +6169,7 @@ body.search-open #uwsearcharea .uw-search-wrapper {
 .uw-search-bar-container div#search-labels.labels.hidden-xs.focused {
   zoom: 1.2;
   margin-top: -15px;
+  margin-left: 30px;
 }
 .uw-search-bar-container input.search {
   border: none;
