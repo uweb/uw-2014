@@ -17,9 +17,9 @@
             <link rel='stylesheet' href='<?php bloginfo("template_directory"); ?>/assets/ie/css/ie.css' type='text/css' media='all' />
         <![endif]-->
 
-        <?php 
-        echo get_post_meta( get_the_ID() , 'javascript' , 'true' ); 
-        echo get_post_meta( get_the_ID() , 'css' , 'true' ); 
+        <?php
+        echo get_post_meta( get_the_ID() , 'javascript' , 'true' );
+        echo get_post_meta( get_the_ID() , 'css' , 'true' );
         ?>
 
     </head>
@@ -39,5 +39,5 @@
 
     <?php get_template_part('thinstrip'); ?>
 
-    <?php require( get_template_directory() . '/inc/template-functions.php' ); 
+    <?php require( get_template_directory() . '/inc/template-functions.php' );
           uw_dropdowns(); ?>
