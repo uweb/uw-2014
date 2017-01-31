@@ -17,6 +17,12 @@ hr {
 
 iframe {
 	margin: 40px 0 20px;
+	max-width: 100%;
+	&[src*="youtu.be"],
+	&[src*="youtube.com"],
+	&[src*="www.facebook.com/plugins/video"] {
+		max-height: 50vw;
+	}
 }
 
 
@@ -305,6 +311,13 @@ img.attachment-post-thumbnail.wp-post-image,
 .widget {
 	padding: 10px 0 0 40px;
 }
+
+
+@media only screen and (max-width : 992px) {
+	.widget {
+	padding: 10px 0 0 0px; }
+}
+
 
 
 // Big Screens

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" class="no-js">
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title> <?php wp_title(' | ',TRUE,'right'); bloginfo('name'); ?> </title>
