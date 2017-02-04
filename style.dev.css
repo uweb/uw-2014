@@ -2892,6 +2892,13 @@ td.visible-print {
   }
 }
 @font-face {
+  font-family: 'Encode Sans Normal';
+  src: url('assets/fonts/EncodeSans-Normal-Black.eot');
+  src: url('assets/fonts/EncodeSans-Normal-Black.eot?#iefix') format('embedded-opentype'), url('assets/fonts/EncodeSans-Normal-Black.woff') format('woff'), url('assets/fonts/EncodeSans-Normal-Black.ttf') format('truetype'), url('assets/fonts/EncodeSans-Normal-Black.svg#EncodeSans-Normal-Black') format('svg');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
   font-family: 'Encode Sans Compressed';
   src: url('assets/fonts/encodesanscondensed-400-regular-webfont.eot');
   src: url('assets/fonts/encodesanscondensed-400-regular-webfont.eot?#iefix') format('embedded-opentype'), url('assets/fonts/encodesanscondensed-400-regular-webfont.woff') format('woff'), url('assets/fonts/encodesanscondensed-400-regular-webfont.ttf') format('truetype'), url('assets/fonts/encodesanscondensed-400-regular-webfont.svg#encodesanscondensed-400-regular-webfont') format('svg');
