@@ -87,8 +87,7 @@ class UW_Widget_Contact extends WP_Widget
             echo '<p class=\'person-email\'><input data-posttype="post" class="widefat wp-get-posts" id="" name="' . $this->get_field_name( 'person_email' ) . '[]' . '" type="text" value="' . $email . '"/></p><a class=\'remove uw-contact-card-remove button\'>Remove</a></div>';
 
       }
-    }
-
+     } 
 
     ?>
 
@@ -100,7 +99,9 @@ class UW_Widget_Contact extends WP_Widget
     <!--||||||||||||||| Underscore template |||||||||||||||-->
 
     <script type="text/template" id="redirect-template" class="uw-contact-card-redirect-template">
-        <?php $this->number = '<%= number %>'; ?>
+        <?php 
+          $this->number = '<%- number %>'; 
+        ?>
         <div class='peep'>
           <p><input class="widefat wp-get-posts" data-posttype="post" name="<?php echo $this->get_field_name( 'person_name][' ); ?>" type="text"  placeholder="Name"/></p>
           <p><input class="widefat wp-get-posts" data-posttype="post" name="<?php echo $this->get_field_name( 'person_title][' ); ?>" type="text"  placeholder="Title"/></p>          

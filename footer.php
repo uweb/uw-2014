@@ -6,7 +6,7 @@
 
         <h4>Connect with us:</h4>
 
-        <nav role="navigation" aria-label="social networking">
+        <nav aria-label="social networking">
             <ul class="footer-social">
                 <li><a class="facebook" href="http://www.facebook.com/UofWA">Facebook</a></li>
                 <li><a class="twitter" href="http://twitter.com/UW">Twitter</a></li>
@@ -19,7 +19,7 @@
             </ul>
         </nav>
 
-        <nav role="navigation" aria-label="footer links">
+        <nav aria-label="footer links">
             <ul class="footer-links">
                 <li><a href="http://www.uw.edu/accessibility">Accessibility</a></li>
                 <li><a href="http://uw.edu/home/siteinfo/form">Contact Us</a></li>
