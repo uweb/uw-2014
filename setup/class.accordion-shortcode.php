@@ -36,7 +36,7 @@ class UW_AccordionShortcode
             return 'No content inside the accordion element. Make sure your close your accordion element. Required stucture: [accordion][section]content[/section][/accordion]';
 
         $output = do_shortcode( $content );
-        return sprintf( '<script src="' . get_template_directory_uri() . '/js/uw.accordionmodule.js" type="text/javascript"></script><div id="accordion uw-accordion-shortcode"><h3>%s</h3><div class="js-accordion" data-accordion-prefix-classes="uw-accordion-shortcode">%s</div></div>', $accordion_atts['name'], $output );
+        return sprintf( '<script src="' . get_template_directory_uri() . '/js/uw.accordionmodule.js" type="text/javascript"></script><div id="uw-accordion-shortcode"><h3>%s</h3><div class="js-accordion" data-accordion-prefix-classes="uw-accordion-shortcode">%s</div></div>', $accordion_atts['name'], $output );
     }
 
     function section_handler( $atts, $content )
