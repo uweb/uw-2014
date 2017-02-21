@@ -54,6 +54,10 @@ class UW_Recent_Posts extends WP_Widget
       </g>
       </svg>
 
+      <?php if ( $feed )  : ?>
+        <a class="feed" href="<?php echo bloginfo('rss2_url'); ?>">feed</a>
+      <?php endif; ?>
+
     </h2>
 
     <ul class="recent-posts">
@@ -96,6 +100,7 @@ class UW_Recent_Posts extends WP_Widget
     $instance[ 'title' ]   = $new_instance['title'];
     $instance[ 'items' ] = (int) $new_instance['items'];
     $instance[ 'more' ] = (bool) $new_instance['more'];
+    $instance[ 'feed' ] = (bool) $new_instance['feed'];
     return $instance;
   }
 
@@ -134,6 +139,14 @@ class UW_Recent_Posts extends WP_Widget
 
       <input type="checkbox" id="<?php echo $this->get_field_id( 'more' ); ?>" name="<?php echo $this->get_field_name( 'more' ); ?>" <?php checked(  $more , true, true )  ?> />
       <label for="<?php echo $this->get_field_id( 'more' ); ?>"><?php _e( 'Display more link' ); ?></label>
+
+
+    </p>
+     <p>
+
+      <input type="checkbox" id="<?php echo $this->get_field_id( 'feed' ); ?>" name="<?php echo $this->get_field_name( 'feed' ); ?>" <?php checked(  $feed , true, true )  ?> />
+      <label for="<?php echo $this->get_field_id( 'feed' ); ?>"><?php _e( 'Display rss feed link' ); ?></label>
+      <!-- <input class="widefat" id="<?php echo $this->get_field_id( 'feed' ); ?>" name="<?php echo $this->get_field_name( 'feed' ); ?>" type="text" value="<?php echo esc_attr( $feed ) ?>" /> -->
 
 
     </p>
