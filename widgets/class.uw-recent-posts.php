@@ -44,7 +44,7 @@ class UW_Recent_Posts extends WP_Widget
     <h2><?php  echo $title; ?>
 
       <?php if ( $feed )  : ?>
-        <a class="feed" href="<?php echo bloginfo('rss2_url'); ?>" >
+        <a class="feed" id="rssfeed" href="<?php echo bloginfo('rss2_url'); ?>" alt=”subscribe via rss”>
           <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
              width="22.564px" height="22.948px" viewBox="0 0 22.564 22.948" enable-background="new 0 0 22.564 22.948" xml:space="preserve">
           <g>
@@ -58,6 +58,10 @@ class UW_Recent_Posts extends WP_Widget
           <circle fill="#4C2F83" cx="3.16" cy="19.198" r="2.015"/>
           </svg>
         </a>
+        <p class="hide feed">
+          Copy & paste URL into e-reader
+          <input type="text" name="textbox" value="<?php echo bloginfo('rss2_url'); ?>" style="width:100%;" /> <!-- //onclick="this.select()" --> 
+        </p>
       <?php else: ?>
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
            width="25.526px" height="24.609px" viewBox="0 0 25.526 24.609" enable-background="new 0 0 25.526 24.609" xml:space="preserve">
@@ -102,7 +106,14 @@ class UW_Recent_Posts extends WP_Widget
       <a class="more" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">More</a>
     <?php endif; ?>
 
+    <script>
+    $("a.feed").unbind('click').on("click" , function(event){
+      event.preventDefault();
+      $("p.feed").toggleClass("hide");
+      $("p.feed > input").select();
+    });
 
+    </script>
 
     <?php echo $after_widget; ?>
 
