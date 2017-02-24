@@ -44,7 +44,7 @@ class UW_Recent_Posts extends WP_Widget
     <h2><?php  echo $title; ?>
 
       <?php if ( $feed )  : ?>
-        <a class="feed" id="rssfeed" href="<?php echo bloginfo('rss2_url'); ?>" alt=”subscribe via rss” style="float:right; font-size:14px; margin-top:4px; color:#4b2e83;">Subscribe
+        <a class="feed" id="rssfeed" href="<?php echo bloginfo('rss2_url'); ?>" alt=”subscribe via rss” style="float:right; font-size:14px; text-align:center; color:#4b2e83; margin-top:-7px">
           <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
              width="22.564px" height="22.948px" viewBox="0 0 22.564 22.948" enable-background="new 0 0 22.564 22.948" xml:space="preserve">
           <g>
@@ -57,6 +57,8 @@ class UW_Recent_Posts extends WP_Widget
           </g>
           <circle fill="#4C2F83" cx="3.16" cy="19.198" r="2.015"/>
           </svg>
+          </br>
+          Subscribe
         </a>
         <p class="hide feed">
           Copy & paste URL into e-reader
