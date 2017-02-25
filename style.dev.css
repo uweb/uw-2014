@@ -5196,6 +5196,7 @@ table th[class*="col-"] {
     position: absolute;
     top: 0px;
     right: 0px;
+    min-width: 233px;
   }
   .uw-thinstrip ul.uw-thin-links:before {
     position: absolute;
@@ -5710,14 +5711,20 @@ table th[class*="col-"] {
   position: relative;
 }
 .uw-breadcrumbs li:first-child a {
-  background: url(assets/svg/uw-sprite.svg) no-repeat -249px 5px;
+  background: url(assets/svg/uw-sprite.svg) no-repeat -253px 5px;
   text-indent: -99999px;
-  width: 30px;
+  width: 25px;
   padding: 5px 0 5px 0;
   margin-right: 25px;
 }
 .uw-breadcrumbs li:first-child a:before {
   right: -18px;
+}
+.uw-breadcrumbs li:first-child a:focus,
+.uw-breadcrumbs li:first-child a:active,
+.uw-breadcrumbs li:first-child a:hover {
+  border-bottom: 1px solid #85754d;
+  margin-bottom: -1px;
 }
 .uw-breadcrumbs li:first-child:after {
   top: 17px;
