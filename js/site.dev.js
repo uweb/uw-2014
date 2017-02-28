@@ -11160,30 +11160,33 @@ UW.Search = Backbone.View.extend({
 
   // This is the HTML for the search bar that is preprended to the body tag.
   searchbar :
-               '<div class="container no-height">'+
+               '<div class="container no-height" role="search">'+
                   '<div class="center-block uw-search-wrapper">'+
                     '<form class="uw-search" action="<%= UW.baseUrl %>">'+
-                      '<label class="screen-reader" for="uw-search-bar">Enter search text</label>' +
-                      '<input id="uw-search-bar" type="search" name="s" value="" autocomplete="off" />'+
-                    '</form>'+
+                      '<div class="search-form-wrapper">'+
+                        '<label class="screen-reader" for="uw-search-bar">Enter search text</label>' +
+                        '<input id="uw-search-bar" type="search" name="s" value="" autocomplete="off" />'+
+                      '</div>'+
 
-                    '<select id="mobile-search-select" class="visible-xs">' +
-                      '<option value="uw" selected>All the UW</option>' +
-                      '<option value="site">Current site</option>' +
-                    '</select>' +
+                      '<select id="mobile-search-select" class="visible-xs" aria-label="Search Scope">' +
+                        '<option value="uw" selected>All the UW</option>' +
+                        '<option value="site">Current site</option>' +
+                      '</select>' +
 
-                    '<input type="submit" value="search" class="search" tabindex="0"/>'+
+                      '<input type="submit" value="search" class="search" tabindex="0"/>'+
 
-                    '<div id="search-labels" class="labels hidden-xs">'+
-                      '<label class="radio">'+
-                        '<input class="radiobtn" type="radio" name="search" value="uw" data-toggle="radio" checked />'+
-                        'All the UW'+
-                      '</label>'+
+                      '<div id="search-labels" class="labels hidden-xs">'+
+                        '<label class="radio">'+
+                          '<input class="radiobtn" type="radio" name="search" value="uw" data-toggle="radio" checked />'+
+                          'All the UW'+
+                        '</label>'+
 
-                      '<label class="radio">'+
-                        '<input class="radiobtn" type="radio" name="search" value="site" data-toggle="radio" />'+
-                        'Current site'+
-                      '</label>'+
+                        '<label class="radio">'+
+                          '<input class="radiobtn" type="radio" name="search" value="site" data-toggle="radio" />'+
+                          'Current site'+
+                        '</label>'+
+
+                      '</form>'+
                     '</div>'+
                 '</div>'+
               '</div>',
@@ -11275,10 +11278,11 @@ UW.Search = Backbone.View.extend({
   // Determine if the client wants to search current site or the entire UW
   submitSearch : function( e )
   {
+    this.$el.find( 'input.radiobtn' ).attr('disabled', 'disabled')
     switch ( this.searchFeature )
     {
       case this.searchFeatures.uw :
-        this.$el.find( 'input' ).attr( 'name', 'q' )
+        this.$el.find( '#uw-search-bar' ).attr( 'name', 'q' )
         this.$el.find( 'form' ).attr( 'action', Backbone.history.location.protocol + '//uw.edu/search/' )
         return true;
 
@@ -11469,7 +11473,7 @@ UW.QuickLinks.Collection = Backbone.Collection.extend({
        "classes": ["icon-maps"]
    }, {
        "title": "UW Today",
-       "url": "http:\/\/www.uw.edu\/news",
+       "url": "http:\/\/uw.edu\/news",
        "classes": ["icon-uwtoday"]
    }, {
        "title": "Computing\/IT",

@@ -169,7 +169,7 @@ UW.QuickLinks.Collection = Backbone.Collection.extend({
        "classes": ["icon-maps"]
    }, {
        "title": "UW Today",
-       "url": "http:\/\/www.uw.edu\/news",
+       "url": "http:\/\/uw.edu\/news",
        "classes": ["icon-uwtoday"]
    }, {
        "title": "Computing\/IT",
