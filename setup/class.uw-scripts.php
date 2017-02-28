@@ -32,7 +32,7 @@ class UW_Scripts
         'deps'      => array( 'backbone' ),
         'version'   => '1.0.3',
         'admin'     => false,
-        'style_dir' => site_url()
+        'style_dir' => array( 'url' => site_url() )
         // 'variables' => array( 'is_multisite' =>  $multi ),
       ),
 
