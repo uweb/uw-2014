@@ -6955,7 +6955,6 @@ body.home .uw-sidebar-menu {
     width: 33px;
     height: 30px;
     position: relative;
-    right: 8px;
     float: left;
     display: inline-block;
     margin: 4px 4px -2px 2px;
@@ -6977,6 +6976,7 @@ body.home .uw-sidebar-menu {
     background: #85754d;
     border-radius: 1px;
     opacity: 1;
+    left: 0;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
