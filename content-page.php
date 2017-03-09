@@ -1,6 +1,7 @@
 <h1><?php the_title() ?></h1>
 
 <div id="mobile-sidebar">
+
 	<button id="mobile-sidebar-menu" class="visible-xs" aria-hidden="true" tabindex="1"> 
 
 	    <div aria-hidden="true" id="ham"> 
@@ -14,7 +15,7 @@
 <?php 
         echo text_cut();
 
-		function text_cut($text, $length = 22, $dots = true) {   
+		function text_cut($text, $length = 27, $dots = true) {   
 		$text =get_the_title(); 
 		$text = trim(preg_replace('#[\s\n\r\t]{2,}#', ' ', $text));    
 		$text_temp = $text;    
