@@ -13,6 +13,8 @@
 	   <div id="mobile-sidebar-title" class="page_item">
 
 <?php 
+
+        //limitation of the characters
         echo text_cut();
 
 		function text_cut($text, $length = 27, $dots = true) {   
