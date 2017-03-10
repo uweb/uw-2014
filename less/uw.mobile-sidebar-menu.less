@@ -1,0 +1,125 @@
+/*==========  Hidden for all devices ==========*/
+
+#mobile-sidebar-links{display:none;} 
+
+
+
+
+/*==========  Mobile Devices  ==========*/
+@media only screen and (max-width : 768px) {
+
+#mobile-sidebar-links {
+      margin: -20px 0 20px 0;
+}
+
+button#mobile-sidebar-menu {
+  margin:5px 0 15px; 
+  padding:5px 10px 1px; 
+  color:#85754d; 
+  background-color:#fff;  
+  border:2px solid #85754d;
+  cursor: pointer;
+  width:100%;
+}
+    
+#mobile-sidebar-title {
+ margin-left:20px;
+ margin-top:1px;
+ display:inline;
+ float:left;
+ font-size:15px;
+ font-family: "Encode Sans Compressed",sans-serif;
+}        
+  
+#ham{
+  width: 33px;
+  height: 30px;
+  position: relative;
+  float:left;
+  display: inline-block;
+  margin:4px 4px -2px 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+#ham span {
+  display: inline;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: #85754d;
+  border-radius: 1px;
+  opacity: 1;
+  left:0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+#ham span:nth-child(1) {
+  top: 0px;
+}
+
+#ham span:nth-child(2),#ham span:nth-child(3) {
+  top: 9px;
+}
+
+#ham span:nth-child(4) {
+  top: 18px;
+}
+
+#mobile-sidebar-menu.open span:nth-child(1) {
+  top: 9px;
+  width: 0%;
+  left: 50%;
+}
+
+#mobile-sidebar-menu.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#mobile-sidebar-menu.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#mobile-sidebar-menu.open span:nth-child(4) {
+  top: 9px;
+  width: 0%;
+  left: 50%;
+}
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+    

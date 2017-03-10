@@ -15,7 +15,10 @@
 
       <?php get_template_part( 'breadcrumbs' ); ?>
 
+
       <div id='main_content' class="uw-body-copy" tabindex="-1">
+
+      
 
         <?php
           // Start the Loop.
@@ -28,6 +31,9 @@
              */
             get_template_part( 'content', 'page' );
 
+
+
+
             // If comments are open or we have at least one comment, load up the comment template.
             if ( comments_open() || get_comments_number() ) {
               comments_template();
@@ -36,15 +42,19 @@
           endwhile;
         ?>
 
+
+
       </div>
 
     </div>
 
-    <div id="sidebar"><?php 
+  
+          <div id="sidebar"><?php 
       if(!isset($sidebar[0]) || $sidebar[0]!="on"){
         get_sidebar();
       }
     ?></div>
+
 
   </div>
 
