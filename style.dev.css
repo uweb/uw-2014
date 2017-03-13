@@ -6772,10 +6772,10 @@ body.home .uw-sidebar-menu {
   }
 }
 #mobile-relative {
-  display: block;
+  display: none;
 }
 #mobile-relative ul.uw-mobile-menu {
-  display: block;
+  display: none;
   width: 100%;
   float: right;
   clear: both;
@@ -9140,6 +9140,15 @@ div[id*='trumba'] iframe {
 }
 .ic-external:before {
   content: "\e93a";
+}
+.ic-check:before {
+  content: "\e901";
+}
+.ic-check-purple:before {
+  content: "\e900";
+}
+.ic-check-purple:before {
+  content: "\e900";
 }
 .icon-menu {
   text-align: center;
