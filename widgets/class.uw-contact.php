@@ -39,7 +39,7 @@ class UW_Widget_Contact extends WP_Widget
 
     ?>
 
-    <div id="contact-group">
+    <div id="contact-group" class="uw-contact-card-contact-group">
       <p>
         <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?>  <small><b>(Search and autofill by typing a title)</b></small></label>
         <input data-posttype="post" class="widefat wp-get-posts" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
@@ -51,7 +51,7 @@ class UW_Widget_Contact extends WP_Widget
   <!--||||||||||||||| Build out form from array |||||||||||||||-->
 
 
-  <div id="the-people">
+  <div id="the-people" class="uw-contact-card-the-people">
   
     <?php
 
@@ -71,7 +71,7 @@ class UW_Widget_Contact extends WP_Widget
             echo '<div class=\'peep\'><p class=\'person-name\'><input data-posttype="post" class="widefat wp-get-posts" id="" name="' . $this->get_field_name( 'person_name' ) . '[]' . '" type="text" value="' . $name . '"/></p>';
             echo '<p class=\'person-title\'><input data-posttype="post" class="widefat wp-get-posts" id="" name="' . $this->get_field_name( 'person_title' ) . '[]' . '" type="text" value="' . $title . '"/></p>';
             echo '<p class=\'person-phone\'><input data-posttype="post" class="widefat wp-get-posts" id="" name="' . $this->get_field_name( 'person_phone' ) . '[]' . '" type="text" value="' . $phone . '"/></p>';
-            echo '<p class=\'person-email\'><input data-posttype="post" class="widefat wp-get-posts" id="" name="' . $this->get_field_name( 'person_email' ) . '[]' . '" type="text" value="' . $email . '"/></p><a class=\'remove button\'>Remove</a></div>';
+            echo '<p class=\'person-email\'><input data-posttype="post" class="widefat wp-get-posts" id="" name="' . $this->get_field_name( 'person_email' ) . '[]' . '" type="text" value="' . $email . '"/></p><a class=\'remove uw-contact-card-remove button\'>Remove</a></div>';
 
         }
 
@@ -84,22 +84,24 @@ class UW_Widget_Contact extends WP_Widget
             echo '<div class=\'peep\'><p class=\'person-name\'><input data-posttype="post" class="widefat wp-get-posts" id="" name="' . $this->get_field_name( 'person_name' ) . '[]' . '" type="text" value="' . $name . '"/></p>';
             echo '<p class=\'person-title\'><input data-posttype="post" class="widefat wp-get-posts" id="" name="' . $this->get_field_name( 'person_title' ) . '[]' . '" type="text" value="' . $title . '"/></p>';
             echo '<p class=\'person-phone\'><input data-posttype="post" class="widefat wp-get-posts" id="" name="' . $this->get_field_name( 'person_phone' ) . '[]' . '" type="text" value="' . $phone . '"/></p>';
-            echo '<p class=\'person-email\'><input data-posttype="post" class="widefat wp-get-posts" id="" name="' . $this->get_field_name( 'person_email' ) . '[]' . '" type="text" value="' . $email . '"/></p><a class=\'remove button\'>Remove</a></div>';
+            echo '<p class=\'person-email\'><input data-posttype="post" class="widefat wp-get-posts" id="" name="' . $this->get_field_name( 'person_email' ) . '[]' . '" type="text" value="' . $email . '"/></p><a class=\'remove uw-contact-card-remove button\'>Remove</a></div>';
 
       }
-    }
-
+     } 
 
     ?>
 
   </div>
 
-    <a class="button button-primary" href="#" id="person-button">Add person</a>
+    <a class="button button-primary uw-contact-card-add-person-button" href="#" id="person-button">Add person</a>
 
     
     <!--||||||||||||||| Underscore template |||||||||||||||-->
 
-    <script type="text/template" id="redirect-template">
+    <script type="text/template" id="redirect-template" class="uw-contact-card-redirect-template">
+        <?php 
+          $this->number = '<%- number %>'; 
+        ?>
         <div class='peep'>
           <p><input class="widefat wp-get-posts" data-posttype="post" name="<?php echo $this->get_field_name( 'person_name][' ); ?>" type="text"  placeholder="Name"/></p>
           <p><input class="widefat wp-get-posts" data-posttype="post" name="<?php echo $this->get_field_name( 'person_title][' ); ?>" type="text"  placeholder="Title"/></p>          
