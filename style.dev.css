@@ -9047,6 +9047,9 @@ div[id*='trumba'] iframe {
 .ic-external:before {
   content: "\e93a";
 }
+.ic-check2:before {
+  content: "\e93b";
+}
 .icon-menu {
   text-align: center;
   margin: 40px 0;
