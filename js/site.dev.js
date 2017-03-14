@@ -10951,20 +10951,21 @@ UW.KEYCODES = {
 ;// List out the classes that each component searches for
 UW.elements = {
 
-  alert      : '.uw-thinstrip',
-  accordion  : '.uw-accordion',
-  dropdowns  : '#dawgdrops',
-  images     : 'a > img',
-  mobilemenu : '#mobile-relative',
-  radio      : ':radio',
-  checkbox   : ':checkbox',
-  search     : '#uwsearcharea',
-  select     : '.uw-select',
-  quicklinks : '.uw-quicklinks',
-  slideshow  : '.uw-slideshow',
-  social     : '.uw-social',
-  vimeo      : '.uw-vimeo',
-  youtube    : '.uw-youtube'
+  alert         : '.uw-thinstrip',
+  accordion     : '.uw-accordion',
+  dropdowns     : '#dawgdrops',
+  images        : 'a > img',
+  mobilemenu    : '#mobile-relative',
+  togglemobile  : '#mobile-sidebar',
+  radio         : ':radio',
+  checkbox      : ':checkbox',
+  search        : '#uwsearcharea',
+  select        : '.uw-select',
+  quicklinks    : '.uw-quicklinks',
+  slideshow     : '.uw-slideshow',
+  social        : '.uw-social',
+  vimeo         : '.uw-vimeo',
+  youtube       : '.uw-youtube'
 
 }
 
@@ -11010,6 +11011,8 @@ UW.initialize = function( $ )
   UW.quicklinks = _.map( $( UW.elements.quicklinks ),    function( element ) { return new UW.QuickLinks( { el : element, url : UW.sources.quicklinks }) } )
   UW.search     = _.map( $( UW.elements.search ),    function( element ) { return new UW.Search( { el : element } ) } )
   UW.images     = _.map( $( UW.elements.images ),    function( element ) { return new UW.Image({ el : element }) } )
+  
+  UW.togglemobile = _.map( $( UW.elements.togglemobile ),     function( element ) { return new UW.ToggleSidebarMenu({ el : element }) } )
 
   // UW Modules
   UW.slideshows = _.map( $( UW.elements.slideshow ), function( element ) { return new UW.Slideshow( { el : element }) } )
@@ -12655,7 +12658,68 @@ UW.MobileMenu = Backbone.View.extend({
     this.$mobilemenu.find('li').removeAttr('style');
   }
 
-});// ### UW Accordion
+});/* Sidebar Navigation Toggle Button for Mobile Devices - Hide and Show The Sidebar Content    */
+
+
+UW.ToggleSidebarMenu = Backbone.View.extend({
+
+  events: {
+    'click button': 'toggleContent'
+  },
+
+  initialize : function() {
+    console.log(this.el);
+    this.toggleContent();
+  },
+
+  toggleContent: function(e){
+
+    if (this.showmeState === false) {
+      this.showLinks();
+    } else {
+      this.hideLinks();
+    }
+
+  },
+
+
+  showLinks: function() {
+    this.$el.find('#mobile-sidebar-links').show();
+    this.$el.find('#mobile-sidebar-menu').addClass('open');
+    this.showmeState = true;
+
+  },
+
+  hideLinks: function() {
+    this.$el.find('#mobile-sidebar-links').hide();
+    this.$el.find('#mobile-sidebar-menu').removeClass('open');
+    this.showmeState = false; 
+
+  }
+
+})
+
+
+
+/* Sidebar Navigation Hamburger Button for Mobile Devices */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;// ### UW Accordion
 
 // This creates a UW Accordion
 // For usage, refer to the [UW Web Components webpage](http://uw.edu/brand/web#accordion)
