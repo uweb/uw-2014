@@ -6772,10 +6772,10 @@ body.home .uw-sidebar-menu {
   }
 }
 #mobile-relative {
-  display: block;
+  display: none;
 }
 #mobile-relative ul.uw-mobile-menu {
-  display: block;
+  display: none;
   width: 100%;
   float: right;
   clear: both;
@@ -6938,8 +6938,8 @@ body.home .uw-sidebar-menu {
     margin: -20px 0 20px 0;
   }
   button#mobile-sidebar-menu {
-    margin: 10px 0 20px;
-    padding: 10px 5px 5px;
+    margin: 5px 0 15px;
+    padding: 5px 5px 2px 10px;
     color: #85754d;
     background-color: #fff;
     border: 2px solid #85754d;
@@ -6947,17 +6947,20 @@ body.home .uw-sidebar-menu {
     width: 100%;
   }
   #mobile-sidebar-title {
-    margin-left: 25px;
+    margin-left: 10px;
+    margin-top: 0;
     display: inline;
     float: left;
+    font-size: 16px;
+    font-family: "Encode Sans Condensed", sans-serif;
   }
   #ham {
-    width: 33px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     position: relative;
     float: left;
     display: inline-block;
-    margin: 4px 4px -2px 2px;
+    margin: 4px 4px -2px 0;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
@@ -6991,13 +6994,13 @@ body.home .uw-sidebar-menu {
   }
   #ham span:nth-child(2),
   #ham span:nth-child(3) {
-    top: 9px;
+    top: 7px;
   }
   #ham span:nth-child(4) {
-    top: 18px;
+    top: 14px;
   }
   #mobile-sidebar-menu.open span:nth-child(1) {
-    top: 9px;
+    top: 7px;
     width: 0%;
     left: 50%;
   }
@@ -7014,7 +7017,7 @@ body.home .uw-sidebar-menu {
     transform: rotate(-45deg);
   }
   #mobile-sidebar-menu.open span:nth-child(4) {
-    top: 9px;
+    top: 7px;
     width: 0%;
     left: 50%;
   }
@@ -9137,6 +9140,9 @@ div[id*='trumba'] iframe {
 }
 .ic-external:before {
   content: "\e93a";
+}
+.ic-check2:before {
+  content: "\e93b";
 }
 .icon-menu {
   text-align: center;
