@@ -104,6 +104,9 @@ class UW_Blogroll extends WP_Widget
           $excerpt = wpautop( $excerpt );
       }
 
+      $image = "";
+      $class = "";
+
       if ( $this->is_true( $params->image ) )
       {
           $image = get_the_post_thumbnail( $post->ID , 'thumbnail' );
