@@ -9,6 +9,11 @@ class UW_Shortcodes
 {
     function __construct()
     {
+        add_action( 'wp_loaded', array($this, 'run_after_wp_loads') );
+    }
+
+    //added after updating from 4.3 -> 4.7
+    function run_after_wp_loads(){
         $this->includes();
         $this->initialize();
     }

@@ -12,7 +12,7 @@ class UW_Blogroll extends WP_Widget
   function __construct()
   {
 
-    parent::WP_Widget( self::ID , __( self::NAME ), array(
+    parent::__construct( self::ID , __( self::NAME ), array(
       'classname' => self::CLASSNAME,
       'description' => __( self::DESCRIPTION )
     ));

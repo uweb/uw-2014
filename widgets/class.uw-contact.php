@@ -14,7 +14,7 @@ class UW_Widget_Contact extends WP_Widget
 
   function UW_Widget_Contact()
   {
-		parent::WP_Widget( $id = 'contact-list', $name = 'Contact list', $options = array( 'description' => 'Display important contact information', 'classname' => 'contact-widget' ) );
+		parent::__construct( $id = 'contact-list', $name = 'Contact list', $options = array( 'description' => 'Display important contact information', 'classname' => 'contact-widget' ) );
 
     if ( is_admin() )
       add_action('admin_enqueue_scripts', array( __CLASS__, 'scripts') );

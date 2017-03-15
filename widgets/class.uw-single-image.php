@@ -14,7 +14,7 @@ class UW_Widget_Single_Image extends WP_Widget
 
   function UW_Widget_Single_Image()
   {
-		parent::WP_Widget( $id = 'pic-text', $name = 'Single Image', $options = array( 'description' => 'Display an image with some featured text.', 'classname' => 'pic-text-widget' ) );
+		parent::__construct( $id = 'pic-text', $name = 'Single Image', $options = array( 'description' => 'Display an image with some featured text.', 'classname' => 'pic-text-widget' ) );
 
     if ( is_admin() )
       add_action('admin_enqueue_scripts', array( __CLASS__, 'scripts') );

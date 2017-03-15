@@ -11,7 +11,7 @@ class UW_Campus_Map extends WP_Widget
 
   function __construct()
   {
-		parent::WP_Widget( 'uw-campus-map', __('UW Campus Map'), array(
+		parent::__construct( 'uw-campus-map', __('UW Campus Map'), array(
       'description' => __('Show your building on the UW campus map.'),
       'classname'   => 'uw-widget-campus-map'
     ) );
