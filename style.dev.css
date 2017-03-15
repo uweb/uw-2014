@@ -6948,7 +6948,7 @@ body.home .uw-sidebar-menu {
   }
   #mobile-sidebar-title {
     margin-left: 10px;
-    margin-top: 0;
+    margin-top: -1px;
     display: inline;
     float: left;
     font-size: 16px;
@@ -9144,11 +9144,8 @@ div[id*='trumba'] iframe {
 .ic-check:before {
   content: "\e901";
 }
-.ic-check-purple:before {
-  content: "\e900";
-}
-.ic-check-purple:before {
-  content: "\e900";
+.ic-check2:before {
+  content: "\e93b";
 }
 .icon-menu {
   text-align: center;
