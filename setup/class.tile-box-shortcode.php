@@ -33,7 +33,8 @@ Class TileBox
             'alignment' => 'none',
             'color' => '',
             'padding' => '',
-            'shadow' => ''
+            'shadow' => '',
+            'custom' => ''
         ), $atts );
  
         $color = '';
@@ -50,6 +51,11 @@ Class TileBox
         if (!empty($boxCenter['shadow'])){
           $shadow = ' noshadow';
         }; 
+
+        $custom = '';
+        if (!empty($boxCenter['custom'])){
+          $custom = $boxCenter['custom'];
+        };
 
         $center = 'box-' . $boxCenter['alignment'];        
 
