@@ -93,7 +93,8 @@ class UW_Iframes
       'vimeo.com',
       'www.facebook.com',
       'form.jotform.com',
-      'oga-dev.s.uw.edu'
+      'oga-dev.s.uw.edu', //testing
+      'bitools.uw.edu' //testing
       
     );
   }
