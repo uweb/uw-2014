@@ -94,7 +94,8 @@ class UW_Iframes
       'www.facebook.com',
       'form.jotform.com',
       'oga-dev.s.uw.edu', //testing
-      'bitools.uw.edu' //testing
+      'bitools.uw.edu', //testing
+      'tableau.washington.edu'
       
     );
   }
