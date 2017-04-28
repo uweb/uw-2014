@@ -6321,6 +6321,9 @@ body.search-open #uw-container {
   .uw-search-bar-container {
     padding: 0px;
   }
+  .uw-search-bar-container div.search-form-wrapper {
+    width: 100%;
+  }
   .uw-search-bar-container .container.no-height {
     padding: 0px 10px;
   }
@@ -6357,11 +6360,11 @@ body.search-open #uw-container {
     width: 100%;
   }
   body.search-open #uw-container {
-    -webkit-transform: matrix(1, 0, 0, 1, 0, 136);
-    -moz-transform: matrix(1, 0, 0, 1, 0, 136);
-    -ms-transform: matrix(1, 0, 0, 1, 0, 136);
-    -o-transform: matrix(1, 0, 0, 1, 0, 136);
-    transform: matrix(1, 0, 0, 1, 0, 136);
+    -webkit-transform: matrix(1, 0, 0, 1, 0, 80);
+    -moz-transform: matrix(1, 0, 0, 1, 0, 80);
+    -ms-transform: matrix(1, 0, 0, 1, 0, 80);
+    -o-transform: matrix(1, 0, 0, 1, 0, 80);
+    transform: matrix(1, 0, 0, 1, 0, 80);
   }
 }
 ul.uw-sidebar-menu,
