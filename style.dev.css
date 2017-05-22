@@ -9147,6 +9147,12 @@ div[id*='trumba'] iframe {
 .ic-check2:before {
   content: "\e93b";
 }
+.ic-people:before {
+  content: "\e93c";
+}
+.ic-clipboard-check:before {
+  content: "\e93d";
+}
 .icon-menu {
   text-align: center;
   margin: 40px 0;
