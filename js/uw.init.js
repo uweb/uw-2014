@@ -80,7 +80,7 @@ UW.initialize = function( $ )
   UW.alert = new UW.Alert({ after: UW.elements.alert, model: new UW.Alert.Model() });
 
   // todo: add to separate file
-  $('table').addClass('table table-striped')
+  $('table').addClass('table table-striped').attr( "border", 1 )
 
   $('pre').addClass('prettyprint')
 
