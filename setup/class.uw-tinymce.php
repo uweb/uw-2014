@@ -11,7 +11,7 @@ class UW_TinyMCE
     'theme_advanced_buttons2' => array( 'justifyfull' )
   );
   
-  function UW_TinyMCE()
+  function __construct()
   {
     add_filter('tiny_mce_before_init', array( $this, 'buttons' ) );   
   }
