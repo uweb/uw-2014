@@ -9,7 +9,9 @@ class UW_Mimes
 
   public $MIMES = array(
     // 'psd' => 'image/photoshop',
-    'ai|eps' => 'application/postscript'
+    'ai|eps' => 'application/postscript',
+    'ppt|pptx' => 'application/powerpoint'
+
   );
 
   function __construct()
