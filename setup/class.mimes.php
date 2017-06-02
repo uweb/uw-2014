@@ -10,7 +10,8 @@ class UW_Mimes
   public $MIMES = array(
     // 'psd' => 'image/photoshop',
     'ai|eps' => 'application/postscript',
-    'ppt|pptx' => 'application/powerpoint'
+    'pptx' => 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+    'ppt' => 'application/vnd.ms-powerpoint'
 
   );
 
