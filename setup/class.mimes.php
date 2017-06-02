@@ -22,7 +22,7 @@ class UW_Mimes
 
   function uw_add_custom_upload_mimes( $existing_mimes )
   {
-    echo '<script type="text/javascript">console.log("' . implode( '\n', $existing_mimes) . '")</script>';
+    //echo '<script type="text/javascript">console.log("' . implode( '\n', $existing_mimes) . '")</script>';
     return array_merge( $existing_mimes, $this->MIMES );
   }
 
