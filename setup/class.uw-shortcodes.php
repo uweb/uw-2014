@@ -30,8 +30,6 @@ class UW_Shortcodes
       //  require_once('class.tiny-shortcode.php');
         require_once('class.grid-shortcode.php');
         require_once('class.menu-shortcode.php');
-
-        require_once('class.test-shortcode.php');
     }
 
     private function initialize()
@@ -46,9 +44,5 @@ class UW_Shortcodes
       //  $this->tiny           = new UW_TinyShortcode();
         $this->bootstrap      = new UW_GridShortcode();
         $this->custommenu     = new UW_MenuShortcode();
-        
-
-        $this->testershort    = new UW_TesterShortcode();
-
     }
 }

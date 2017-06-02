@@ -12,7 +12,7 @@ class UW_Widget_Contact extends WP_Widget
 
   const DEFAULT_LINK_TEXT = 'More';
 
-  function __construct()
+  function UW_Widget_Contact()
   {
 		parent::__construct( $id = 'contact-list', $name = 'Contact list', $options = array( 'description' => 'Display important contact information', 'classname' => 'contact-widget' ) );
 

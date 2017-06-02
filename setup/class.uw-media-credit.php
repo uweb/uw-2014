@@ -6,7 +6,7 @@
 class UW_Media_Credit
 {
 
-  function __construct()
+  function UW_Media_Credit()
   {
 
 	add_filter( 'mce_external_plugins', array( $this, 'add_media_credit_shortcode_to_tinymce' ) );

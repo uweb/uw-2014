@@ -36,7 +36,7 @@ class UW_Widget_Twitter extends WP_Widget
       'consumer_secret'            => TWITTER_CONSUMER_SECRET
   );
 
-  function __construct()
+  function UW_Widget_Twitter()
   {
     parent::__construct(
       $id = self::ID,
