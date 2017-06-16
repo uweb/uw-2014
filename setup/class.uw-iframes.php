@@ -91,6 +91,7 @@ class UW_Iframes
       'api.soundcloud.com', 
       'flickr.com',
       'vimeo.com',
+      'player.vimeo.com',
       'www.facebook.com',
       'form.jotform.com',
       'oga-dev.s.uw.edu', //testing
