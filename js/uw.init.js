@@ -15,7 +15,8 @@ UW.elements = {
   slideshow     : '.uw-slideshow',
   social        : '.uw-social',
   vimeo         : '.uw-vimeo',
-  youtube       : '.uw-youtube'
+  youtube       : '.uw-youtube',
+//  customlink    : '.uw-custom-link'
 
 }
 
@@ -33,7 +34,7 @@ UW.getBaseUrl = function() {
     url = Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/';
   } else {
     url = Backbone.history.location.origin + '/';
-  } 
+  }
   return url
 }
 
@@ -61,8 +62,9 @@ UW.initialize = function( $ )
   UW.quicklinks = _.map( $( UW.elements.quicklinks ),    function( element ) { return new UW.QuickLinks( { el : element, url : UW.sources.quicklinks }) } )
   UW.search     = _.map( $( UW.elements.search ),    function( element ) { return new UW.Search( { el : element } ) } )
   UW.images     = _.map( $( UW.elements.images ),    function( element ) { return new UW.Image({ el : element }) } )
-  
+
   UW.togglemobile = _.map( $( UW.elements.togglemobile ),     function( element ) { return new UW.ToggleSidebarMenu({ el : element }) } )
+  //UW.customlink = _.map( $( UW.elements.customlink ),     function( element ) { return new UW.CustomLink({ el: elemnt }) } )
 
   // UW Modules
   UW.slideshows = _.map( $( UW.elements.slideshow ), function( element ) { return new UW.Slideshow( { el : element }) } )

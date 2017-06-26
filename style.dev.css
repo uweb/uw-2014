@@ -4894,6 +4894,10 @@ a.uw-custom-link {
 a.uw-custom-link:hover {
   font-size: 24px;
 }
+.disable_a_href {
+  pointer-events: none;
+  cursor: default;
+}
 .uw-thinstrip {
   height: 90px;
   width: 100%;
