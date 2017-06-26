@@ -4885,6 +4885,15 @@ table th[class*="col-"] {
 .shortcode-blogroll br {
   display: none;
 }
+/*
+ * css stylign for custom-link shortcode
+ */
+a.uw-custom-link {
+  color: red;
+}
+a.uw-custom-link:hover {
+  font-size: 24px;
+}
 .uw-thinstrip {
   height: 90px;
   width: 100%;
