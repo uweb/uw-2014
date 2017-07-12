@@ -84,7 +84,7 @@ if ( ! function_exists( 'uw_mobile_front_page_menu' ) ) :
         $spacer = '<div id="spacer"></div>';
 
     }
-    echo sprintf( '<nav id="mobile-relative" class="frontpage%s" aria-label="relative">%s%s</nav>', $class, $spacer, uw_list_front_page_menu_items() ) ;
+    echo sprintf( '<nav id="mobile-relative" class="frontpage%s" aria-label="mobile menu">%s%s</nav>', $class, $spacer, uw_list_front_page_menu_items() ) ;
   }
 
 endif;
