@@ -35,7 +35,7 @@
   				endwhile;
   			?>
 
-            <span class="next-page"><?php next_posts_link( 'Next page', '' ); ?></span>
+            <span class="next-page"><?php next_posts_link( 'Next pageeeeeeeeeeeeeee', '' ); ?></span>
 
       </div>
 
