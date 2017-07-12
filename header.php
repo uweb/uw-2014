@@ -27,9 +27,11 @@
     <body <?php body_class(); ?> >
     <!--<![endif]-->
 
+    <a role="main" id="main-content" href="#main_content" class='screen-reader-shortcut'>Skip to main content</a>
+
     <div id="uwsearcharea" aria-hidden="true" class="uw-search-bar-container"></div>
 
-    <a id="main-content" href="#main_content" class='screen-reader-shortcut'>Skip to main content</a>
+    <!-- <a role="main" id="main-content" href="#main_content" class='screen-reader-shortcut'>Skip to main content</a> -->
 
     <div id="uw-container">
 

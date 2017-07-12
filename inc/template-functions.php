@@ -42,7 +42,7 @@ if ( ! function_exists( 'uw_dropdowns') ) :
   {
 
     echo '<nav id="dawgdrops" aria-label="Main menu"><div class="dawgdrops-inner container" role="application">';
-          
+
     echo  wp_nav_menu( array(
             'theme_location'  => UW_Dropdowns::LOCATION,
             'container'       => false,
@@ -60,7 +60,7 @@ if ( ! function_exists('uw_sidebar_menu') ) :
 
   function uw_sidebar_menu()
   {
-    echo sprintf( '<nav id="desktop-relative" aria-label="relative">%s</nav>', uw_list_pages() ) ;
+    echo sprintf( '<nav id="desktop-relative" aria-describedby="mobile menu that is not visible in the desktop version">%s</nav>', uw_list_pages() ) ;
   }
 
 endif;
@@ -69,7 +69,7 @@ if ( ! function_exists( 'uw_mobile_menu' ) ) :
 
   function uw_mobile_menu()
   {
-    echo sprintf( '<nav id="mobile-relative" aria-label="relative">%s</nav>', uw_list_mobile_pages() ) ;
+    echo sprintf( '<nav id="mobile-relative" aria-describedby="mobile menu">%s</nav>', uw_list_mobile_pages() ) ;
   }
 
 endif;
@@ -84,7 +84,7 @@ if ( ! function_exists( 'uw_mobile_front_page_menu' ) ) :
         $spacer = '<div id="spacer"></div>';
 
     }
-    echo sprintf( '<nav id="mobile-relative" class="frontpage%s" aria-label="relative">%s%s</nav>', $class, $spacer, uw_list_front_page_menu_items() ) ;
+    echo sprintf( '<nav id="mobile-relative" class="frontpage%s" aria-label="mobile menu">%s%s</nav>', $class, $spacer, uw_list_front_page_menu_items() ) ;
   }
 
 endif;

@@ -10965,7 +10965,8 @@ UW.elements = {
   slideshow     : '.uw-slideshow',
   social        : '.uw-social',
   vimeo         : '.uw-vimeo',
-  youtube       : '.uw-youtube'
+  youtube       : '.uw-youtube',
+//  customlink    : '.uw-custom-link'
 
 }
 
@@ -10983,7 +10984,7 @@ UW.getBaseUrl = function() {
     url = Backbone.history.location.origin + ( site ? '/' + site : '' ) + '/';
   } else {
     url = Backbone.history.location.origin + '/';
-  } 
+  }
   return url
 }
 
@@ -11011,8 +11012,9 @@ UW.initialize = function( $ )
   UW.quicklinks = _.map( $( UW.elements.quicklinks ),    function( element ) { return new UW.QuickLinks( { el : element, url : UW.sources.quicklinks }) } )
   UW.search     = _.map( $( UW.elements.search ),    function( element ) { return new UW.Search( { el : element } ) } )
   UW.images     = _.map( $( UW.elements.images ),    function( element ) { return new UW.Image({ el : element }) } )
-  
+
   UW.togglemobile = _.map( $( UW.elements.togglemobile ),     function( element ) { return new UW.ToggleSidebarMenu({ el : element }) } )
+  //UW.customlink = _.map( $( UW.elements.customlink ),     function( element ) { return new UW.CustomLink({ el: elemnt }) } )
 
   // UW Modules
   UW.slideshows = _.map( $( UW.elements.slideshow ), function( element ) { return new UW.Slideshow( { el : element }) } )
@@ -13058,14 +13060,14 @@ UW.Select = Backbone.View.extend({
                     '<div></div>' +
                     '<div class="wrapper" style="width:<%= width %>px; margin-top:-<%= height/2 %>px; margin-left:-<%= width/2 %>px;">' +
                      '<span class="close"> Close</span>' +
-                     '<iframe width="<%= width %>" height="<%= height %>" src="<%= src %>" frameborder="0" allowfullscreen></iframe>' +
+                     '<iframe width="<%= width %>" height="<%= height %>" src="<%= src %>" style="border:0;" allowfullscreen="" title="<%= caption %>"></iframe>' +
                      '<p><%= caption %></p>' +
                      '<p><%= credit %></p>' +
                    '</div>' +
                  '</div>',
 
   events : {
-    'click' : function(e){      
+    'click' : function(e){
       this.attrs = this.getAttributes( e );
       // This just checks to see if the anchor has a source (some slideshows and plugins use blank anchors to do their work)
       if( this.attrs.src ){
@@ -13112,7 +13114,7 @@ UW.Select = Backbone.View.extend({
       aspect_ratio = 560 / 315;
       this.attrs.height = 630;
       this.attrs.width  = 1120;
-    } 
+    }
 
     if ( this.attrs.height > (this.RATIO * UW.$window.height())){
         this.attrs.height = this.RATIO * UW.$window.height();
@@ -13229,4 +13231,10 @@ UW.Social = Backbone.View.extend({
   },
 
 })
+;// ### UW Custom Link
+// This file makes links not clickable.
+
+jQuery(document).ready(function($) {
+  $("a.uw-custom-link").addClass("disable_a_href");
+});
 ;}).call(this)

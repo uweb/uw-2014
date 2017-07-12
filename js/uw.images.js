@@ -16,14 +16,14 @@ UW.Image = Backbone.View.extend({
                     '<div></div>' +
                     '<div class="wrapper" style="width:<%= width %>px; margin-top:-<%= height/2 %>px; margin-left:-<%= width/2 %>px;">' +
                      '<span class="close"> Close</span>' +
-                     '<iframe width="<%= width %>" height="<%= height %>" src="<%= src %>" frameborder="0" allowfullscreen></iframe>' +
+                     '<iframe width="<%= width %>" height="<%= height %>" src="<%= src %>" style="border:0;" allowfullscreen="" title="<%= caption %>"></iframe>' +
                      '<p><%= caption %></p>' +
                      '<p><%= credit %></p>' +
                    '</div>' +
                  '</div>',
 
   events : {
-    'click' : function(e){      
+    'click' : function(e){
       this.attrs = this.getAttributes( e );
       // This just checks to see if the anchor has a source (some slideshows and plugins use blank anchors to do their work)
       if( this.attrs.src ){
@@ -70,7 +70,7 @@ UW.Image = Backbone.View.extend({
       aspect_ratio = 560 / 315;
       this.attrs.height = 630;
       this.attrs.width  = 1120;
-    } 
+    }
 
     if ( this.attrs.height > (this.RATIO * UW.$window.height())){
         this.attrs.height = this.RATIO * UW.$window.height();

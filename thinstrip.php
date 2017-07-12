@@ -5,7 +5,7 @@
     <a href="http://uw.edu" title="University of Washington Home" class="uw-wordmark" tabindex='-1' aria-hidden='true'>University of Washington</a>
   </div>
   <div class='align-right'>
-      <nav class="uw-thin-strip-nav" aria-label='audience based'>
+      <nav class="uw-thin-strip-nav" aria-label='role navigation'>
           <ul class="uw-thin-links">
             <li><a href="http://uw.edu/studentlife" title="Students">Students</a></li>
             <li><a href="http://uw.edu/parents" title="Parents">Parents</a></li>
@@ -37,4 +37,3 @@
   </div>
 
 </header>
-
