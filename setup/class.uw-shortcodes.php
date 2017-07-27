@@ -9,6 +9,11 @@ class UW_Shortcodes
 {
     function __construct()
     {
+        add_action( 'wp_loaded', array($this, 'run_after_wp_loads') );
+    }
+
+    //added after updating from 4.3 -> 4.7
+    function run_after_wp_loads(){
         $this->includes();
         $this->initialize();
     }
@@ -25,6 +30,8 @@ class UW_Shortcodes
       //  require_once('class.tiny-shortcode.php');
         require_once('class.grid-shortcode.php');
         require_once('class.menu-shortcode.php');
+
+        require_once('class.uw-custom-link.php');
     }
 
     private function initialize()
@@ -39,5 +46,7 @@ class UW_Shortcodes
       //  $this->tiny           = new UW_TinyShortcode();
         $this->bootstrap      = new UW_GridShortcode();
         $this->custommenu     = new UW_MenuShortcode();
+
+        $this->custom_link = new UW_CustomLinks();
     }
 }

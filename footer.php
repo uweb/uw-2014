@@ -19,10 +19,10 @@
             </ul>
         </nav>
 
-        <nav aria-label="footer links">
+        <nav aria-label="footer navigation">
             <ul class="footer-links">
                 <li><a href="http://www.uw.edu/accessibility">Accessibility</a></li>
-                <li><a href="http://uw.edu/home/siteinfo/form">Contact Us</a></li>
+                <li><a href="http://uw.edu/contact">Contact Us</a></li>
                 <li><a href="http://www.washington.edu/jobs">Jobs</a></li>
                 <li><a href="http://www.washington.edu/safety">Campus Safety</a></li>
                 <li><a href="http://myuw.washington.edu/">My UW</a></li>

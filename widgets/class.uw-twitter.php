@@ -38,7 +38,7 @@ class UW_Widget_Twitter extends WP_Widget
 
   function UW_Widget_Twitter()
   {
-    parent::WP_Widget(
+    parent::__construct(
       $id = self::ID,
       $name = self::NAME,
       $options = array(
@@ -126,7 +126,7 @@ class UW_Widget_Twitter extends WP_Widget
 
     $transientName = 'twitter-feed-'. $name . '-' . $count;
 
-    if ( false == get_transient( $transientName ) ) {
+    //if ( false == get_transient( $transientName ) ) {
 
       $parameters = sprintf(self::GETFIELD, $name, $count );
 
@@ -166,11 +166,13 @@ class UW_Widget_Twitter extends WP_Widget
       }
 
       // json_encode fixed get_transient returning serialized string instead of array for some tweets
-      set_transient( $transientName , json_encode( $latest ) , self::EXPIRES );
-    }
+      //set_transient( $transientName , json_encode( $latest ) , self::EXPIRES );
+      //trying to not set transient so that twitter updates actually
 
-    return json_decode( get_transient( $transientName ) );
+   // }
 
+    //return json_decode( get_transient( $transientName ) );
+      return $latest;
   }
 
   private function formatText( $text )

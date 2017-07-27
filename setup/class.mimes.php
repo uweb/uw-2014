@@ -9,7 +9,10 @@ class UW_Mimes
 
   public $MIMES = array(
     // 'psd' => 'image/photoshop',
-    'ai|eps' => 'application/postscript'
+    'ai|eps' => 'application/postscript',
+    'pptx' => 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+    'ppt' => 'application/vnd.ms-powerpoint'
+
   );
 
   function __construct()
@@ -19,6 +22,7 @@ class UW_Mimes
 
   function uw_add_custom_upload_mimes( $existing_mimes )
   {
+    //echo '<script type="text/javascript">console.log("' . implode( '\n', $existing_mimes) . '")</script>';
     return array_merge( $existing_mimes, $this->MIMES );
   }
 

@@ -27,7 +27,7 @@ class UW_Widget_Related_Posts extends WP_Widget
       // Instantiate the Jetpack_RelatedPosts class
       $this->RelatedPosts = Jetpack_RelatedPosts::init(); //get_current_blog_id() , Jetpack_Options::get_option( 'id' ) );
 
-      parent::WP_Widget(
+      parent::__construct(
         $id      = self::ID,
         $name    = self::TITLE,
         $options = array(

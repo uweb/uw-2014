@@ -90,3 +90,20 @@
 .wpcf7 .fui-radio-checked:before {
     display: none
 }
+
+//
+// This section contains Gravity Forms workarounds for the short term:   mbw 05/15/2017
+//
+
+// Discard theming for gform_wrapper (Gravity Forms) - fixes checkbox target overlays on checkboxen
+.gform_wrapper .fui-radio-unchecked:before,
+.gform_wrapper .fui-radio-checked:before {
+    display: none
+}
+
+// This fixes the field of checkboxes to remove the line break that puts the element on the next line
+// which might be from the 2 column form setup we did.... so this suppresses it
+
+.gfield_checkbox br {
+   display: none; 
+}

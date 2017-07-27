@@ -8,11 +8,11 @@
 
 class UW_Button
 {
-
     private static $types = array('plus', 'go', 'external', 'play');
 
     function __construct()
     {
+        //remove_shortcode('button');
         add_shortcode('button', array($this, 'button_handler'));
     }
 

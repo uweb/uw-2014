@@ -22,6 +22,15 @@ class UW_Install_Theme
   {
     add_filter( 'embed_defaults', array( $this, 'uw_setup_embed_defaults' ), 1  );
     add_action( 'after_setup_theme', array( $this, 'uw_setup' ) );
+    add_filter( 'redirect_canonical', array( $this, 'disable_front_page_redirect_madness' ) );
+  }
+
+  function disable_front_page_redirect_madness($redirect_url) {
+    if( is_front_page() ) {
+      $redirect_url = false;
+    }
+
+    return $redirect_url;
   }
 
   function uw_setup()

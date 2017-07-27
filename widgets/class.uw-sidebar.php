@@ -6,7 +6,7 @@ class UW_Sidebar
   const NAME          = 'Sidebar';
   const ID            = 'sidebar';
   const DESCRIPTION   = 'Right column widgets';
-  const BEFORE_WIDGET = '<div id="%1$s" class="widget %2$s">';
+  const BEFORE_WIDGET = '<div role="navigation" id="%1$s" class="widget %2$s">';
   const AFTER_WIDGET  = '</div>';
 
   function __construct()

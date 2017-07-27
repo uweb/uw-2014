@@ -295,6 +295,8 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
 
 > - __alignment__ : How the text is aligned in each tile. Options: __centered__ or __none__ (_Default: none_)
 > - __color__ : Background color of the tiles. Options: __tan__ (_Default: none_)
+> - __empty__ : (Add this to [tile], not [box]). If tile has no content, allow it to be transparent, but take up the normal amount of space. Options: __true__ (_Default: false)
+
 
 > Example:   
 ```
@@ -305,6 +307,8 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
     [tile] Text for tile four [/tile]
   [/box]
 ```
+
+
 
 ### Trumba ###
 
