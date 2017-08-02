@@ -20,7 +20,7 @@ class UW_Scripts
 
       'jquery' => array (
         'id'      => 'jquery',
-        'url'     => 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js',
+        'url'     => get_bloginfo('template_directory') . '/js/libraries/jquery.min.js',
         'deps'    => array(),
         'version' => '1.11.3',
         'admin'   => false
