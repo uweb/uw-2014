@@ -34,7 +34,7 @@ class UW_Styles
           'id'      => 'uw-style',
           'url'     => get_bloginfo('stylesheet_url'),
           'deps'    => array('uw-master'),
-          'version' => '3.6',
+          'version' => wp_get_theme()->get('Version'),
           'child'   => true
       ),
 
