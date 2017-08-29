@@ -88,7 +88,7 @@ class UW_Iframes
       'embed.pac-12.com',
       'storify.com',
       'w.soundcloud.com',
-      'api.soundcloud.com', 
+      'api.soundcloud.com',
       'flickr.com',
       'vimeo.com',
       'player.vimeo.com',
@@ -97,8 +97,8 @@ class UW_Iframes
       'oga-dev.s.uw.edu', //testing
       'bitools.uw.edu', //testing
       'tableau.washington.edu',
-      'www.iqmediacorp.com'
-      
+      'www.iqmediacorp.com',
+      'fusiontables.google.com',
     );
   }
 
