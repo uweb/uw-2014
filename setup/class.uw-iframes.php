@@ -99,6 +99,7 @@ class UW_Iframes
       'tableau.washington.edu',
       'www.iqmediacorp.com',
       'fusiontables.google.com',
+      'myuwgiving.gifts.washington.edu',
     );
   }
 
