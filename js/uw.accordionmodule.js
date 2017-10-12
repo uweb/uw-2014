@@ -54,9 +54,9 @@ $(document).ready(function(){
                             "id": "accordion" + $index_accordion + "_panel" + $index_header,
                             "aria-hidden": "true"
                       }).addClass( $accordions_prefix_classes + "__panel" );
-                      
+                      //console.log($accordion_panel.attr("data-accordion-opened"));
                       // if opened by default
-                      if ( $that.attr( "data-accordion-opened" ) == "true" ) {
+                      if ( $accordion_panel.attr( "data-accordion-opened" ) == "true" ) {
                          $accordion_header.attr( "aria-expanded", "true" ).removeAttr( "data-accordion-opened" );
                          $accordion_panel.attr( "aria-hidden", "false" );
                          }
