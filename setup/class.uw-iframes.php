@@ -100,6 +100,7 @@ class UW_Iframes
       'www.iqmediacorp.com',
       'fusiontables.google.com',
       'myuwgiving.gifts.washington.edu',
+      'cdn.knightlab.com',
     );
   }
 
