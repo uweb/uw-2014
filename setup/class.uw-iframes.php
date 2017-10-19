@@ -101,6 +101,7 @@ class UW_Iframes
       'fusiontables.google.com',
       'myuwgiving.gifts.washington.edu',
       'cdn.knightlab.com',
+      'uploads.knightlab.com',
     );
   }
 
