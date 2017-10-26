@@ -14,28 +14,27 @@ UW.ToggleSidebarMenu = Backbone.View.extend({
 
   toggleContent: function(e){
 
-    if (this.showmeState === false) {
-      this.showLinks();
-    } else {
+    if (this.showmeState === true) {
       this.hideLinks();
+    } else {
+      this.showLinks();
     }
 
   },
 
-
-  showLinks: function() {
-    this.$el.find('#mobile-sidebar-links').show();
-    this.$el.find('#mobile-sidebar-menu').addClass('open');
-    this.showmeState = true;
-
-  },
-
   hideLinks: function() {
-    this.$el.find('#mobile-sidebar-links').hide();
+    this.$el.find('#mobile-sidebar-links').removeClass('visible-xs');
     this.$el.find('#mobile-sidebar-menu').removeClass('open');
     this.showmeState = false; 
 
+  },
+  showLinks: function() {
+    this.$el.find('#mobile-sidebar-links').addClass('visible-xs');
+    this.$el.find('#mobile-sidebar-menu').addClass('open');
+    this.showmeState = true;
+
   }
+
 
 })
 
