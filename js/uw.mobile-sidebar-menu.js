@@ -25,12 +25,14 @@ UW.ToggleSidebarMenu = Backbone.View.extend({
   hideLinks: function() {
     this.$el.find('#mobile-sidebar-links').removeClass('visible-xs');
     this.$el.find('#mobile-sidebar-menu').removeClass('open');
+    this.$el.find('#mobile-sidebar-title').html('Open Menu');
     this.showmeState = false; 
 
   },
   showLinks: function() {
     this.$el.find('#mobile-sidebar-links').addClass('visible-xs');
     this.$el.find('#mobile-sidebar-menu').addClass('open');
+    this.$el.find('#mobile-sidebar-title').html('Close Menu');
     this.showmeState = true;
 
   }
@@ -40,7 +42,7 @@ UW.ToggleSidebarMenu = Backbone.View.extend({
 
 
 
-/* Sidebar Navigation Hamburger Button for Mobile Devices */
+/* End Sidebar Navigation Hamburger Button for Mobile Devices */
 
 
 

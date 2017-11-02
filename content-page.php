@@ -25,9 +25,7 @@
 				<span></span> 
 				<span></span>        
 			</div>
-	   		<div id="mobile-sidebar-title" class="page_item">
-				<?php echo text_cut(); ?>
-	  		</div>
+	   		<div id="mobile-sidebar-title" class="page_item"> Close Menu </div>
 		</button>
 		<div id="mobile-sidebar-links" aria-hidden="true" class="visible-xs">  <?php uw_sidebar_menu(); ?></div>
 	</div>

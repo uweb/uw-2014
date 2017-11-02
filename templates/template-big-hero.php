@@ -50,17 +50,22 @@
 
       <div id='main_content' class="uw-body-copy" tabindex="-1">
 
+
         <?php
+
           // Start the Loop.
           while ( have_posts() ) : the_post(); 
+
 
             /*
              * Include the post format-specific template for the content. If you want to
              * use this in a child theme, then include a file called called content-___.php
              * (where ___ is the post format) and that will be used instead.
              */
+              
+           //the_content();
+            get_template_part( 'content', 'page' );
 
-              the_content();
 
             // If comments are open or we have at least one comment, load up the comment template.
             if ( comments_open() || get_comments_number() ) {
@@ -71,9 +76,15 @@
           
         ?>
 
+
+
+
       </div>
 
     </div>
+
+
+
 
     <?php 
     if($sidebar[0]!="on"){ ?>
@@ -85,5 +96,8 @@
   </div>
 
 </div>
+
+
+
 
 <?php get_footer(); ?>
