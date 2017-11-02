@@ -11318,7 +11318,7 @@ UW.QuickLinks = Backbone.View.extend({
     // todo: the default list and these elements could be put into the php templates
     container: '#uw-container',
 
-    template : '<nav id="quicklinks" role="navigation" aria-label="quick links" aria-hidden="true">' +
+    template : '<nav id="quicklinks" aria-label="quick links" aria-hidden="true">' +
                         '<ul id="big-links">' +
                             '<% _.each( links, function( link ) { %> ' +
                                 '<% if (link.classes) { %>' +
@@ -12676,34 +12676,35 @@ UW.ToggleSidebarMenu = Backbone.View.extend({
 
   toggleContent: function(e){
 
-    if (this.showmeState === false) {
-      this.showLinks();
-    } else {
+    if (this.showmeState === true) {
       this.hideLinks();
+    } else {
+      this.showLinks();
     }
 
   },
 
-
-  showLinks: function() {
-    this.$el.find('#mobile-sidebar-links').show();
-    this.$el.find('#mobile-sidebar-menu').addClass('open');
-    this.showmeState = true;
-
-  },
-
   hideLinks: function() {
-    this.$el.find('#mobile-sidebar-links').hide();
+    this.$el.find('#mobile-sidebar-links').removeClass('visible-xs');
     this.$el.find('#mobile-sidebar-menu').removeClass('open');
+    this.$el.find('#mobile-sidebar-title').html('Open Menu');
     this.showmeState = false; 
 
+  },
+  showLinks: function() {
+    this.$el.find('#mobile-sidebar-links').addClass('visible-xs');
+    this.$el.find('#mobile-sidebar-menu').addClass('open');
+    this.$el.find('#mobile-sidebar-title').html('Close Menu');
+    this.showmeState = true;
+
   }
+
 
 })
 
 
 
-/* Sidebar Navigation Hamburger Button for Mobile Devices */
+/* End Sidebar Navigation Hamburger Button for Mobile Devices */
 
 
 
