@@ -6951,7 +6951,7 @@ body.home .uw-sidebar-menu {
 /*==========  Mobile Devices  ==========*/
 @media only screen and (max-width: 768px) {
   #mobile-sidebar-links {
-    margin: -20px 0 20px 0;
+    margin: -45px 0 20px 0;
   }
   button#mobile-sidebar-menu {
     margin: 5px 0 15px;
