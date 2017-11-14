@@ -69,7 +69,7 @@ UW.Select = Backbone.View.extend({
   open : function(e)
   {
     if(this.isOpen()){
-      this.close(e);
+      this.closeWithoutAnimating();
       return false;
     }
     this.addOpenClass()
