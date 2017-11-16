@@ -5695,6 +5695,9 @@ a.uw-custom-link:hover {
     visibility: hidden;
     height: 60px;
   }
+  .page-template-big-hero .uw-body .uw-site-title {
+    visibility: hidden;
+  }
   div.container.uw-body {
     padding-top: 0;
   }

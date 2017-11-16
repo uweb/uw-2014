@@ -14,7 +14,8 @@
 	}
 ?>
 
-<h1><?php the_title(); ?></h1>
+
+
 <?php if(uw_list_pages()){ ?>
 	<div id="mobile-sidebar">
 		<button id="mobile-sidebar-menu" class="visible-xs" aria-hidden="true" tabindex="1"> 
