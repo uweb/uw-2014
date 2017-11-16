@@ -25,11 +25,13 @@
      <?php if( !empty($mobileimage) ) { ?>
     <div class="mobile-image" style="background-image: url(<?php echo $mobileimage ?>);"></div>
     <?php } ?>
+     
       <div class="container">
         <div id="hashtag" class="mask"><span><span><?php echo $banner[0] ? $banner[0] : ''; ?></span></span></div>
         <?php if(!empty($banner) && $banner[0]){ ?>
         <div id="hashtag"><span><span><?php echo $banner[0] ? $banner[0] : ''; ?></span></span></div>
         <?php } ?>
+        
         <h1 class="uw-site-title2"><?php the_title(); ?></h1>
         <span class="udub-slant"><span></span></span>
         <?php if(!empty($buttontext) && $buttontext[0]){ ?>
@@ -37,6 +39,7 @@
         <?php } ?>     
       </div>
 </div>
+
 <div class="container uw-body">
   <div class="row">
     <div class="hero-content col-md-<?php echo (($sidebar[0]!="on") ? "8" : "12" ) ?> uw-content" role='main'>
@@ -56,7 +59,7 @@
           while ( have_posts() ) : the_post(); 
 
             //the_content();
-            get_template_part( 'content', 'page' );
+            get_template_part( 'content', 'page-noheader' );
 
             // If comments are open or we have at least one comment, load up the comment template.
             if ( comments_open() || get_comments_number() ) {
@@ -82,3 +85,5 @@
 </div>
 
 <?php get_footer(); ?>
+
+<?php
