@@ -5711,6 +5711,26 @@ a.uw-custom-link:hover {
     margin-top: 0;
   }
 }
+.page-template-small-hero #mobile-relative.frontpage button.uw-mobile-menu-toggle {
+  margin-top: -25px;
+}
+.page-template-small-hero .uw-breadcrumbs {
+  margin-top: -25px;
+}
+.page-template-small-hero #mobile-relative.frontpage ul.uw-mobile-menu {
+  margin-top: -25px;
+  margin-bottom: 45px;
+}
+.page-template-big-hero #mobile-relative.frontpage button.uw-mobile-menu-toggle {
+  margin-top: -25px;
+}
+.page-template-big-hero .uw-breadcrumbs {
+  margin-top: -25px;
+}
+.page-template-big-hero #mobile-relative.frontpage ul.uw-mobile-menu {
+  margin-top: -25px;
+  margin-bottom: 45px;
+}
 .uw-breadcrumbs {
   margin: -17px 0 15px -30px;
   background-color: white;
