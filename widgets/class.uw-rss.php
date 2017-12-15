@@ -175,7 +175,8 @@ class UW_RSS extends WP_Widget
           $attr  = esc_attr(strip_tags($title));
 
           $image = ( $enclosure->link && $show_image !== 'false' ) ?
-             "<a class='widget-thumbnail' href='$link' title='$attr'><img src='$src' title='$attr' /></a>" : '';
+           //  "<a class='widget-thumbnail' href='$link' title='$attr'><img src='$src' title='$attr' /></a>" : '';
+          "<a class='widget-thumbnail' href='$link' title='$attr'><img src='$src' /></a>" : '';
 
           $date = '';
           if ( $show_date !== 'false')
