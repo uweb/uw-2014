@@ -5996,7 +5996,7 @@ span.next-page a:hover {
   color: inherit;
 }
 .uw-body-copy a {
-  text-decoration: none;
+  text-decoration: underline;
 }
 .info-box {
   width: 310px;
@@ -8768,11 +8768,11 @@ label.screen-reader {
 }
 .site-accessibility .uw-body-copy a,
 .site-accessibility .uw-sidebar a {
-  border-bottom: 1px solid #DFDFDF;
+  text-decoration: underline;
 }
 .site-accessibility .uw-body-copy a:hover,
 .site-accessibility .uw-sidebar a:hover {
-  border-bottom: 1px solid #85754d;
+  text-decoration: none;
 }
 #hero-bg {
   position: relative;
