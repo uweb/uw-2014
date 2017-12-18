@@ -60,7 +60,7 @@ if ( ! function_exists('uw_sidebar_menu') ) :
 
   function uw_sidebar_menu()
   {
-    echo sprintf( '<nav id="desktop-relative" aria-describedby="mobile menu that is not visible in the desktop version">%s</nav>', uw_list_pages() ) ;
+    echo sprintf( '<nav id="desktop-relative" aria-label="mobile menu that is not visible in the desktop version">%s</nav>', uw_list_pages() ) ;
   }
 
 endif;
@@ -69,7 +69,7 @@ if ( ! function_exists( 'uw_mobile_menu' ) ) :
 
   function uw_mobile_menu()
   {
-    echo sprintf( '<nav id="mobile-relative" aria-describedby="mobile menu">%s</nav>', uw_list_mobile_pages() ) ;
+    echo sprintf( '<nav id="mobile-relative" aria-label="mobile menu">%s</nav>', uw_list_mobile_pages() ) ;
   }
 
 endif;

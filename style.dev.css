@@ -6133,6 +6133,9 @@ img.attachment-post-thumbnail.wp-post-image.blogroll-img,
   .uw-body-copy ul {
     overflow: hidden;
   }
+  .container .uw-body a {
+    border-bottom: 1px solid #DFDFDF;
+  }
 }
 body.search-open #uwsearcharea {
   -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
@@ -8719,7 +8722,6 @@ label.screen-reader {
 .uw-body a:focus,
 .uw-body a:hover {
   color: #85754d;
-  border-bottom: 1px solid #BDBDBD;
 }
 .uw-body a:focus.uw-btn,
 .uw-body a:hover.uw-btn {

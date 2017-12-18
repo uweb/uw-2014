@@ -48,8 +48,7 @@ class UW_Iframes
     
       $iframeSrc = esc_url($iframeSrc, array('http', 'https'));
 
-      return "<iframe src=\"$iframeSrc\" width=\"{$params['width']}\" height=\"{$params['height']}\" frameborder=\"0\"></iframe>";
-
+      return "<iframe src=\"$iframeSrc\" width=\"{$params['width']}\" height=\"{$params['height']}\" style=\"border:0\"></iframe>";
   }
 
   function get_iframe_domains()

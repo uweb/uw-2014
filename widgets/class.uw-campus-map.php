@@ -29,7 +29,7 @@ class UW_Campus_Map extends WP_Widget
        $content .= "<h3 class=\"widget-title\"> $before_title $title $after_title </h3>";
 
     $content .= '<div class="uw-campus-map-widget">
-                  <iframe width="100%" height="305" src="'.self::URL.$buildingCode.'" frameborder="0"></iframe>
+                  <iframe width="100%" height="305" src="'.self::URL.$buildingCode.'" style="border:0"></iframe>
                   <a href="http://www.washington.edu/maps/#!/'.$buildingCode.'" target="_blank">View larger</a>
                 </div>';
 

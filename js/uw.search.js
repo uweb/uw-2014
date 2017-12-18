@@ -18,7 +18,7 @@ UW.Search = Backbone.View.extend({
                     '<form class="uw-search" action="<%= UW.baseUrl %>">'+
                       '<div class="search-form-wrapper">'+
                         '<label class="screen-reader" for="uw-search-bar">Enter search text</label>' +
-                        '<input id="uw-search-bar" type="search" name="s" value="" autocomplete="off" />'+
+                        '<input id="uw-search-bar" type="search" name="s" value="" autocomplete="off" placeholder="Search" />'+
                       '</div>'+
 
                       '<select id="mobile-search-select" class="visible-xs" aria-label="Search Scope">' +
@@ -28,19 +28,26 @@ UW.Search = Backbone.View.extend({
 
                       '<input type="submit" value="search" class="search" tabindex="0"/>'+
 
-                      '<div id="search-labels" class="labels hidden-xs">'+
-                        '<label class="radio">'+
-                          '<input class="radiobtn" type="radio" name="search" value="uw" data-toggle="radio" checked />'+
-                          'All the UW'+
-                        '</label>'+
+                        '<fieldset style="margin: 0; padding: 0; border: 1px; solid #ffffff;">'+
 
-                        '<label class="radio">'+
-                          '<input class="radiobtn" type="radio" name="search" value="site" data-toggle="radio" />'+
-                          'Current site'+
-                        '</label>'+
+                        '<div role="radiogroup" id="search-labels" class="labels hidden-xs">'+
+                           '<label class="radio">'+
+                             '<input role="radio" class="radiobtn" type="radio" name="search" value="uw" data-toggle="radio" checked />'+
+                             'All the UW'+
+                           '</label>'+
+ 
+                           '<label class="radio">'+
+                             '<input role="radio" class="radiobtn" type="radio" name="search" value="site" data-toggle="radio" />'+
+                             'Current site'+
+                           '</label>'+
+ 
+                         '</form>'+
+                       '</div>'+
+ 
+                     '</fieldset>'+
+  
 
-                      '</form>'+
-                    '</div>'+
+                     
                 '</div>'+
               '</div>',
 
