@@ -5994,6 +5994,7 @@ span.next-page a:hover {
 .uw-body-copy h5 a {
   border-bottom: none;
   color: inherit;
+  text-decoration: none;
 }
 .uw-body-copy a {
   text-decoration: underline;
@@ -8392,6 +8393,7 @@ a.uw-btn {
   position: relative;
   background-image: none !important;
   border-bottom: none;
+  text-decoration: none;
   margin-bottom: 25px;
   margin-right: 50px;
   z-index: 1;
@@ -9231,6 +9233,7 @@ div[id*='trumba'] iframe {
   display: inline-block;
   padding-top: 100px;
   margin-top: -85px;
+  text-decoration: none;
   -o-transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
   -webkit-transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
