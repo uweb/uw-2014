@@ -51,6 +51,7 @@ label.screen-reader {
         // We don't want buttons underlined on hover
         &.uw-btn {
             border-bottom: none;
+            text-decoration: none;
         }
     }
     a.uw-btn:focus {
@@ -126,7 +127,10 @@ label.screen-reader {
             &:hover {
                // border-bottom: 1px solid @darkgold;
                text-decoration: none;
-            }
+           }
+           &.uw-btn {
+            text-decoration: none;
         }
+    }
     }
 }

@@ -5998,6 +5998,9 @@ span.next-page a:hover {
 .uw-body-copy a {
   text-decoration: underline;
 }
+.uw-body-copy a.uw-btn {
+  text-decoration: none;
+}
 .info-box {
   width: 310px;
   float: left;
@@ -8726,6 +8729,7 @@ label.screen-reader {
 .uw-body a:focus.uw-btn,
 .uw-body a:hover.uw-btn {
   border-bottom: none;
+  text-decoration: none;
 }
 .uw-body a.uw-btn:focus {
   text-decoration: underline;
@@ -8772,6 +8776,10 @@ label.screen-reader {
 }
 .site-accessibility .uw-body-copy a:hover,
 .site-accessibility .uw-sidebar a:hover {
+  text-decoration: none;
+}
+.site-accessibility .uw-body-copy a.uw-btn,
+.site-accessibility .uw-sidebar a.uw-btn {
   text-decoration: none;
 }
 #hero-bg {
