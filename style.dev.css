@@ -6887,6 +6887,9 @@ body.home .uw-sidebar-menu {
     margin-top: -10px;
     position: relative;
   }
+  #mobile-relative.frontpage ul.uw-mobile-menu > div > ul li .menu-item-has-children a:after {
+    background: none;
+  }
   #mobile-relative.frontpage button.uw-mobile-menu-toggle {
     position: absolute;
     right: -20px;
