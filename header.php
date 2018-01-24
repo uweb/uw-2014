@@ -6,6 +6,8 @@
         <meta name="description" content="<?php bloginfo('description', 'display'); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <!--Live Tile XML file reader -->
+        <meta name="msapplication-config" content="browserconfig.xml" />
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <?php wp_head(); ?>
@@ -28,7 +30,7 @@
     <!--<![endif]-->
 
     <div id="uwsearcharea" aria-hidden="true" class="uw-search-bar-container"></div>
-   
+
    <a role="banner" aria-label="main_content" id="main-content" href="#main_content" class='screen-reader-shortcut'>Skip to main content</a>
 
     <div id="uw-container">

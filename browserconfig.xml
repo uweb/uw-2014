@@ -1,0 +1,13 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+  <msapplication>
+    <tile>
+      <square70x70logo src="assets/images/livetile-small.png"/>
+      <square150x150logo src="assets/images/livetile-medium.png"/>
+      <wide310x150logo src="assets/images/livetile-wide.png"/>
+      <square310x310logo src="assets/images/livetile-large.png"/>
+      <TileColor>#4b2e83</TileColor>
+    </tile>
+  </msapplication>
+</browserconfig>
