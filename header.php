@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!--Live Tile XML file reader -->
-        <meta name="msapplication-config" content="browserconfig.xml" />
+        <meta name="msapplication-config" content="<?php echo get_template_directory_uri() . '/browserconfig.xml' ?>" />
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <?php wp_head(); ?>
