@@ -7102,9 +7102,11 @@ img {
 }
 .wp-media-credit {
   margin-left: 5px;
-  font-weight: bold;
   font-style: italic;
   font-size: 14px;
+}
+.credit-media-italic {
+  font-style: italic;
 }
 .gallery-item .wp-caption-text {
   display: none;
@@ -7114,6 +7116,11 @@ img {
 }
 .attachment .uw-image-content img {
   padding: 90px 0 50px 0;
+}
+.wrapper p span.wp-media-credit {
+  color: #3d3d3d;
+  text-decoration: none;
+  cursor: default;
 }
 @media only screen and (max-width: 1400px) {
   .alignleft {

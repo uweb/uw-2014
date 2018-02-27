@@ -9,20 +9,18 @@ class UW_Media_Credit
   function UW_Media_Credit()
   {
 
-	add_filter( 'mce_external_plugins', array( $this, 'add_media_credit_shortcode_to_tinymce' ) );
+    add_filter( 'mce_external_plugins', array( $this, 'add_media_credit_shortcode_to_tinymce' ) );
 
     add_filter( 'image_send_to_editor', array( $this, 'mediacredit_tinymce_html'), 10, 7 );
     add_shortcode( 'mediacredit', array( $this, 'mediacredit_html' ) );
 
     add_filter( "attachment_fields_to_edit", array( $this, "image_attachment_fields_to_edit"), 100, 2);
-    add_filter( "attachment_fields_to_save", array( $this, "custom_image_attachment_fields_to_save" ), null, 2);
+    add_filter( "attachment_fields_to_save", array( $this, "custom_image_attachment_fields_to_save" ), 10, 2);
+
+
   }
 
-  function add_media_credit_shortcode_to_tinymce( $plugins )
-  {
-     $plugin_array[ 'mediacredit' ] = get_template_directory_uri() . '/assets/admin/js/media-credit.js';
-     return $plugin_array;
-  }
+
 
   /**
    * Override the editor html to include media credit even if the photo caption is empty
@@ -46,13 +44,13 @@ class UW_Media_Credit
   /**
    *
    */
-  function mediacredit_html( $attrs, $content )
+  function mediacredit_html($empty, $attrs, $content )
   {
     extract(shortcode_atts(array(
-      'id'	=> '',
-      'align'	=> '',
-      'size'	=> '',
-      'credit'	=> '',
+      'id'  => '',
+      'align' => '',
+      'size'  => '',
+      'credit'  => '',
     ), $attrs));
 
     $img    = wp_get_attachment_image_src( $id, $size );
@@ -79,10 +77,23 @@ class UW_Media_Credit
         "value" => get_post_meta($post->ID, "_media_credit", true)
       );
 
+        $form_fields["source_url"] = array(
+        "label" => _("Credit URL"),
+        "input" => "text",
+        "value" => get_post_meta( $post->ID, '_source_url', true ),
+       // 'helps' => 'Add the URL where the original image was posted',
+    ); 
+
+
       $form_fields["media_credit"]["label"] = __( "Image Credit" );
       $form_fields["media_credit"]["input"] = "text";
       $form_fields["media_credit"]["value"] = get_post_meta( $post->ID, "_media_credit", true );
-    }
+
+      $form_fields["source_url"]["label"] = __( "Credit URL" );
+      $form_fields["source_url"]["input"] = "text";
+      $form_fields["source_url"]["value"] = get_post_meta( $post->ID, "_source_url", true ); 
+
+    }   
 
     return $form_fields;
   }
@@ -91,11 +102,21 @@ class UW_Media_Credit
    * Save the media credit
    */
   function custom_image_attachment_fields_to_save($post, $attachment) {
+    
     if( isset( $attachment['media_credit'] ) )
-    {
       update_post_meta($post['ID'], '_media_credit', $attachment['media_credit']);
-    }
+
+    if( isset( $attachment['source_url'] ) )
+     update_post_meta( $post['ID'], '_source_url', esc_url($attachment['source_url'] ));
+    
     return $post;
   }
 
 }
+
+
+
+
+
+
+
