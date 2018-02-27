@@ -11494,15 +11494,15 @@ UW.QuickLinks.Collection = Backbone.Collection.extend({
        "classes": false
    }, {
        "title": "Employee Self Service",
-       "url": "http:\/\/f2.washington.edu\/fm\/payroll\/payroll\/ESS",
+       "url": "http:\/\/isc.uw.edu\/",
        "classes": false
    }, {
        "title": "Husky Card",
-       "url": "http:\/\/www.hfs.washington.edu\/huskycard\/",
+       "url": "http:\/\/hfs.uw.edu\/Husky-Card-Services\/",
        "classes": false
    }, {
        "title": "UW Bothell",
-       "url": "http:\/\/www.bothell.washington.edu\/",
+       "url": "http:\/\/www.uwb.edu\/",
        "classes": false
    }, {
        "title": "UW Tacoma",
