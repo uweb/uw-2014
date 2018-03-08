@@ -5999,7 +5999,7 @@ span.next-page a:hover {
 .uw-body-copy p a {
   text-decoration: underline;
 }
-.uw-body-copy a.uw-btn {
+.uw-body-copy p a.uw-btn {
   text-decoration: none;
 }
 .info-box {
