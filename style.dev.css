@@ -5987,6 +5987,9 @@ span.next-page a:after {
 span.next-page a:hover {
   background-color: #dfd8c2;
 }
+.uw-body-copy a {
+  text-decoration: underline;
+}
 .uw-body-copy h1 a,
 .uw-body-copy h2 a,
 .uw-body-copy h3 a,
@@ -5996,10 +5999,8 @@ span.next-page a:hover {
   color: inherit;
   text-decoration: none;
 }
-.uw-body-copy a {
-  text-decoration: underline;
-}
-.uw-body-copy a.uw-btn {
+.uw-body-copy a.uw-btn,
+.uw-body-copy .uw-widget-rss a {
   text-decoration: none;
 }
 .info-box {
@@ -8402,6 +8403,7 @@ a.uw-btn {
   z-index: 1;
   line-height: 24px;
   font-size: 16px;
+  text-decoration: none !important;
 }
 a.uw-btn.btn-sm {
   padding: 8px 14px;

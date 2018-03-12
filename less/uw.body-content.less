@@ -8,7 +8,7 @@ dd {
 	margin-bottom: 24.5px;
 }
 
-// Basic styles 
+// Basic styles
 
 hr {
 	border-top: 1px solid #EBEBEB;
@@ -121,7 +121,7 @@ a.more {
     margin: -4.5px 0 20px 0;
     font-weight: @ultra;
   }
-  
+
 }
 
 // Next link in the blog
@@ -170,6 +170,10 @@ span.next-page {
  // (doesn't include sidebar)
 
 .uw-body-copy {
+	a {
+		text-decoration: underline;
+		// border-bottom: 1px solid #D3D3D3;
+	}
 	h1 a,
 	h2 a,
 	h3 a,
@@ -179,13 +183,8 @@ span.next-page {
 		color: inherit;
 		text-decoration: none;
 	}
-	a {
-		text-decoration: underline;
-		// border-bottom: 1px solid #D3D3D3;
-		&.uw-btn {
-            text-decoration: none;
-        }
-
+	a.uw-btn, .uw-widget-rss a {
+		text-decoration: none;
 	}
 }
 
@@ -336,7 +335,7 @@ img.attachment-post-thumbnail.wp-post-image,
 
 	.widget {
 		padding: 0;
-	}	
+	}
 	.info-box {
 		margin-left: 0;
 		width: 100%;
