@@ -65,7 +65,7 @@ class UW_Media_Credit
   /**
    * Adding the custom fields to the $form_fields array
    */
-  
+
 
   function image_attachment_fields_to_edit($form_fields, $post)
   {
@@ -82,7 +82,7 @@ class UW_Media_Credit
         "input" => "text",
         "value" => get_post_meta( $post->ID, '_source_url', true ),
        // 'helps' => 'Add the URL where the original image was posted',
-    ); 
+    );
 
 
       $form_fields["media_credit"]["label"] = __( "Image Credit" );
@@ -91,9 +91,9 @@ class UW_Media_Credit
 
       $form_fields["source_url"]["label"] = __( "Credit URL" );
       $form_fields["source_url"]["input"] = "text";
-      $form_fields["source_url"]["value"] = get_post_meta( $post->ID, "_source_url", true ); 
+      $form_fields["source_url"]["value"] = get_post_meta( $post->ID, "_source_url", true );
 
-    }   
+    }
 
     return $form_fields;
   }
@@ -102,13 +102,13 @@ class UW_Media_Credit
    * Save the media credit
    */
   function custom_image_attachment_fields_to_save($post, $attachment) {
-    
+
     if( isset( $attachment['media_credit'] ) )
       update_post_meta($post['ID'], '_media_credit', $attachment['media_credit']);
 
     if( isset( $attachment['source_url'] ) )
      update_post_meta( $post['ID'], '_source_url', esc_url($attachment['source_url'] ));
-    
+
     return $post;
   }
 
