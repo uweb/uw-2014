@@ -48,9 +48,13 @@ img {
 }
 .wp-media-credit  {
 	margin-left: 5px;
-	font-weight: bold;
+	//font-weight: bold;
 	font-style: italic;
 	font-size: 14px;
+}
+
+.credit-media-italic {
+	font-style: italic;
 }
 
 
@@ -69,6 +73,16 @@ img {
 		padding: 90px 0 50px 0;
 	}
 }
+
+
+// Remove source credit url from the pop image
+
+.wrapper p span.wp-media-credit {
+	color: #3d3d3d;
+	text-decoration: none;
+	cursor: default;
+}
+
 
 
 
@@ -134,8 +148,8 @@ img {
 	.uw-overlay {
 		cursor: pointer;
 	}
-	.alignright, 
-	.alignleft, 
+	.alignright,
+	.alignleft,
 	.alignnone {
 		float: none;
 		margin: 20px 20px 20px 0px;

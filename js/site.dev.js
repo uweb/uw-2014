@@ -13060,7 +13060,6 @@ UW.Select = Backbone.View.extend({
                      '<span class="close"> Close</span>' +
                      '<img src="<%= src %>" alt="<%=alt %>" style="width:100%;" />' +
                      '<p><%= caption %></p>' +
-                     '<p><%= credit %></p>' +
                    '</div>' +
                  '</div>',
 
@@ -13155,7 +13154,9 @@ UW.Select = Backbone.View.extend({
   getAttributes: function( e )
   {
       var target = $(e.currentTarget),
-          caption = target.parent('a').siblings('.wp-caption-text').text();
+           caption = target.parent('a').siblings('.wp-caption-text').html();
+
+
 
       if (!caption){
         var gallery_parent = target.parent('a').parent('.gallery-icon')
@@ -13169,7 +13170,6 @@ UW.Select = Backbone.View.extend({
         alt : target.attr('alt'),
         rel : target.parent('a').attr('rel') ? target.parent('a').attr('rel') : '',
         caption : caption,
-        credit : target.parent('a').siblings('.wp-caption-text').find('.wp-media-credit').text()
       }
 
   }
