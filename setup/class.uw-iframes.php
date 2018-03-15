@@ -101,6 +101,7 @@ class UW_Iframes
       'myuwgiving.gifts.washington.edu',
       'cdn.knightlab.com',
       'uploads.knightlab.com',
+      'yeatmanlab.github.io',
     );
   }
 
