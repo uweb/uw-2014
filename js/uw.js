@@ -789,7 +789,7 @@ UW.YouTube.CollectionView = Backbone.View.extend({
 
     add_iFrame_api: function () {
         if (UW.$body.find('script#iFrame').length === 0){
-            UW.$body.append('<script id="iFrame" src="//www.youtube.com/player_api" type="text/javascript"></script>');
+            UW.$body.append('<script id="iFrame" title="YouTube video player" src="//www.youtube.com/player_api" type="text/javascript"></script>');
             this.add_iFrame_function();
         }
     },
@@ -954,7 +954,7 @@ UW.Vimeo = Backbone.View.extend({
   // The first one is the standard Vimeo iFrame which is used for both single and playlist driven embeds.
   // The second one is the playlist and only shows if a playlist is being called.
   templates : {
-    video    : '<iframe id="test" src="http://player.vimeo.com/video/<%= video %>/?<%= $.param( defaults ) %>"' +
+    video    : '<iframe id="test" title="Vimeo video player" src="http://player.vimeo.com/video/<%= video %>/?<%= $.param( defaults ) %>"' +
                ' width=<%= width %> height=<%= height %>'+
              //  ' frameborder=0 webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
                'style="border:0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
