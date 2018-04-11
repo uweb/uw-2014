@@ -61,7 +61,7 @@ class UW_Page_Attributes_Meta_Box
             <p><strong><?php _e('Parent') ?></strong></p>
             <label class="screen-reader-text" for="parent_id"><?php _e('Parent') ?></label>
 
-            <?php echo $pages; 
+            <?php echo $pages;
                   $parent = get_post_meta($post->ID, "parent", true);
                   wp_nonce_field( 'parent_nonce' , 'parent_name' );
             ?>
@@ -113,7 +113,7 @@ class UW_Page_Attributes_Meta_Box
 
     echo "<div class='uw-admin-template'>";
     $checked = checked( $default, 'default', false );
-    echo "<p><input type='radio' name='page_template' value='default' $checked >Default Template</input> (<a id='enchanced-preview' href='#'>preview<span><img src='" . get_stylesheet_directory_uri() . $previews['Default Template'] . "' alt='' width='300px' height='' />
+    echo "<p><input type='radio' name='page_template' value='default' $checked >Default Template</input> (<a id='enchanced-preview' href='#'>preview<span><img src='" . get_template_directory_uri() . $previews['Default Template'] . "' alt='' width='300px' height='' />
 </span></a>)</p>";
     foreach ( array_keys( $templates ) as $template )
     {
@@ -123,12 +123,12 @@ class UW_Page_Attributes_Meta_Box
       }
 
       $checked = checked( $default, $templates[ $template ], false );
-      echo "<p><input type='radio' name='page_template' value='" . $templates[ $template ] . "' $checked >$template</input> " . ( array_key_exists( $template , $previews ) ? "(<a id='enchanced-preview' href='#'>preview<span><img src='" . get_stylesheet_directory_uri() . $previews[$template] . "' alt='' width='300px' height='' />
+      echo "<p><input type='radio' name='page_template' value='" . $templates[ $template ] . "' $checked >$template</input> " . ( array_key_exists( $template , $previews ) ? "(<a id='enchanced-preview' href='#'>preview<span><img src='" . get_template_directory_uri() . $previews[$template] . "' alt='' width='300px' height='' />
 </span></a>)" : "") . "</p>";
     }
     echo "</div>";
-    if ($default === "templates/template-big-hero.php" || $default === "templates/template-small-hero.php") { 
-      if (is_super_admin()) { 
+    if ($default === "templates/template-big-hero.php" || $default === "templates/template-small-hero.php") {
+      if (is_super_admin()) {
         $banner = get_post_meta($post->ID, "banner", true);
         wp_nonce_field( 'banner_nonce' , 'banner_name' );
 
@@ -160,73 +160,73 @@ class UW_Page_Attributes_Meta_Box
         return $post_ID;
     }
 
-    if ( isset( $_POST['banner_name'] ) ) { 
+    if ( isset( $_POST['banner_name'] ) ) {
       if ( ! empty( $_POST ) && check_admin_referer( 'banner_nonce', 'banner_name') ) { //limit to only pages
         if ($post_type) {
           if(isset($_POST["bannertext"])) {
             update_post_meta($post_ID, "banner", $_POST["bannertext"]);
           } else {
-            update_post_meta($post_ID, "banner", null); 
+            update_post_meta($post_ID, "banner", null);
           }
         }
       }
     }
 
-    if ( isset( $_POST['buttontext_name'] ) ) { 
+    if ( isset( $_POST['buttontext_name'] ) ) {
       if ( ! empty( $_POST ) && check_admin_referer( 'buttontext_nonce', 'buttontext_name') ) { //limit to only pages
         if ($post_type) {
           if(isset($_POST["buttontext"])) {
             update_post_meta($post_ID, "buttontext", $_POST["buttontext"]);
           } else {
-            update_post_meta($post_ID, "buttontext", null); 
+            update_post_meta($post_ID, "buttontext", null);
           }
         }
       }
     }
 
-    if ( isset( $_POST['buttonlink_name'] ) ) { 
+    if ( isset( $_POST['buttonlink_name'] ) ) {
       if ( ! empty( $_POST ) && check_admin_referer( 'buttonlink_nonce', 'buttonlink_name') ) { //limit to only pages
         if ($post_type) {
           if(isset($_POST["buttonlink"])) {
             update_post_meta($post_ID, "buttonlink", $_POST["buttonlink"]);
           } else {
-            update_post_meta($post_ID, "buttonlink", null); 
+            update_post_meta($post_ID, "buttonlink", null);
           }
         }
       }
     }
 
-    if ( isset( $_POST['mobileimage_name'] ) ) { 
+    if ( isset( $_POST['mobileimage_name'] ) ) {
       if ( ! empty( $_POST ) && check_admin_referer( 'mobileimage_nonce', 'mobileimage_name') ) { //limit to only pages
         if ($post_type) {
           if(isset($_POST["mobileimagetext"])) {
             update_post_meta($post_ID, "mobileimage", $_POST["mobileimagetext"]);
           } else {
-            update_post_meta($post_ID, "mobileimage", null); 
+            update_post_meta($post_ID, "mobileimage", null);
           }
         }
       }
     }
 
-    if ( isset( $_POST['sidebar_name'] ) ) { 
+    if ( isset( $_POST['sidebar_name'] ) ) {
       if ( ! empty( $_POST ) && check_admin_referer( 'sidebar_nonce', 'sidebar_name') ) { //limit to only pages
         if ($post_type) {
           if(isset($_POST["sidebarcheck"])) {
             update_post_meta($post_ID, "sidebar", $_POST["sidebarcheck"]);
           } else {
-            update_post_meta($post_ID, "sidebar", null); 
+            update_post_meta($post_ID, "sidebar", null);
           }
         }
       }
     }
 
-    if ( isset( $_POST['parent_name'] ) ) { 
+    if ( isset( $_POST['parent_name'] ) ) {
       if ( ! empty( $_POST ) && check_admin_referer( 'parent_nonce', 'parent_name') ) { //limit to only pages
         if ($post_type) {
           if(isset($_POST["parentcheck"])) {
             update_post_meta($post_ID, "parent", $_POST["parentcheck"]);
           } else {
-            update_post_meta($post_ID, "parent", null); 
+            update_post_meta($post_ID, "parent", null);
           }
         }
       }
