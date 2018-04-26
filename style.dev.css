@@ -8405,7 +8405,8 @@ textarea#jp-carousel-comment-form-comment-field:focus::-webkit-input-placeholder
 .gfield_checkbox br {
   display: none;
 }
-a.uw-btn {
+a.uw-btn,
+button.uw-btn {
   padding: 11px 20px;
   text-transform: uppercase;
   background-color: #e8e3d3;
@@ -8424,7 +8425,8 @@ a.uw-btn {
   font-size: 16px;
   text-decoration: none !important;
 }
-a.uw-btn.btn-sm {
+a.uw-btn.btn-sm,
+button.uw-btn.btn-sm {
   padding: 8px 14px;
   font-size: 14px;
   font-weight: 800;
@@ -8432,11 +8434,13 @@ a.uw-btn.btn-sm {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
 }
-a.uw-btn.btn-sm:before {
+a.uw-btn.btn-sm:before,
+button.uw-btn.btn-sm:before {
   width: 43px;
   right: -43px;
 }
-a.uw-btn.btn-sm:after {
+a.uw-btn.btn-sm:after,
+button.uw-btn.btn-sm:after {
   width: 45px;
   height: 45px;
   top: 50%;
@@ -8445,57 +8449,74 @@ a.uw-btn.btn-sm:after {
   background-size: 740px;
   background-position: -32px -410px;
 }
-a.uw-btn.btn-sm.btn-left {
+a.uw-btn.btn-sm.btn-left,
+button.uw-btn.btn-sm.btn-left {
   margin-left: 43px;
 }
-a.uw-btn.btn-sm.btn-left:before {
+a.uw-btn.btn-sm.btn-left:before,
+button.uw-btn.btn-sm.btn-left:before {
   left: -43px;
   border-right: 5px solid rgba(0, 0, 0, 0.3);
   border-left: none;
 }
-a.uw-btn.btn-sm.btn-left:after {
+a.uw-btn.btn-sm.btn-left:after,
+button.uw-btn.btn-sm.btn-left:after {
   left: -43px;
   margin-top: -25px;
   transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
 }
-a.uw-btn.btn-sm.btn-play:after {
+a.uw-btn.btn-sm.btn-play:after,
+button.uw-btn.btn-sm.btn-play:after {
   background-position: -31px -466px;
 }
-a.uw-btn.btn-sm.btn-external:after {
+a.uw-btn.btn-sm.btn-external:after,
+button.uw-btn.btn-sm.btn-external:after {
   background-position: -126px -410px;
 }
-a.uw-btn.btn-sm.btn-plus:after {
+a.uw-btn.btn-sm.btn-plus:after,
+button.uw-btn.btn-sm.btn-plus:after {
   background-position: -83px -465px;
 }
 a.uw-btn:hover,
-a.uw-btn:focus {
+button.uw-btn:hover,
+a.uw-btn:focus,
+button.uw-btn:focus {
   color: #85754d;
   background-color: #f5f5f5;
 }
 a.uw-btn:hover:before,
-a.uw-btn:focus:before {
+button.uw-btn:hover:before,
+a.uw-btn:focus:before,
+button.uw-btn:focus:before {
   background-color: #613ba9;
 }
-a.uw-btn.btn-gold:hover:before {
+a.uw-btn.btn-gold:hover:before,
+button.uw-btn.btn-gold:hover:before {
   background-color: #a49161;
 }
-a.uw-btn.btn-purple {
+a.uw-btn.btn-purple,
+button.uw-btn.btn-purple {
   background-color: #4b2e83;
   color: white;
 }
 a.uw-btn.btn-purple:hover,
-a.uw-btn.btn-purple:focus {
+button.uw-btn.btn-purple:hover,
+a.uw-btn.btn-purple:focus,
+button.uw-btn.btn-purple:focus {
   background-color: #402770;
 }
-a.uw-btn.btn-purple:before {
+a.uw-btn.btn-purple:before,
+button.uw-btn.btn-purple:before {
   background-color: #402770;
 }
-a.uw-btn.btn-purple:hover:before {
+a.uw-btn.btn-purple:hover:before,
+button.uw-btn.btn-purple:hover:before {
   background-color: #201338;
 }
-a.uw-btn:after {
+a.uw-btn:after,
+button.uw-btn:after {
   content: "";
   position: absolute;
   top: 0;
@@ -8507,7 +8528,8 @@ a.uw-btn:after {
   margin-top: -28px;
   background: url(assets/svg/uw-sprite.svg) no-repeat -36px -475px transparent;
 }
-a.uw-btn:before {
+a.uw-btn:before,
+button.uw-btn:before {
   content: "";
   width: 48px;
   right: -48px;
@@ -8517,19 +8539,24 @@ a.uw-btn:before {
   background-color: #4b2e83;
   border-left: 5px solid rgba(0, 0, 0, 0.3);
 }
-a.uw-btn.btn-play:after {
+a.uw-btn.btn-play:after,
+button.uw-btn.btn-play:after {
   background-position: -36px -539px;
 }
-a.uw-btn.btn-external:after {
+a.uw-btn.btn-external:after,
+button.uw-btn.btn-external:after {
   background-position: -146px -475px;
 }
-a.uw-btn.btn-plus:after {
+a.uw-btn.btn-plus:after,
+button.uw-btn.btn-plus:after {
   background-position: -95px -539px;
 }
-a.uw-btn.btn-gold:before {
+a.uw-btn.btn-gold:before,
+button.uw-btn.btn-gold:before {
   background-color: #85754d;
 }
-a.uw-btn.btn-gold:before {
+a.uw-btn.btn-gold:before,
+button.uw-btn.btn-gold:before {
   border-left: 5px solid rgba(0, 0, 0, 0.1);
 }
 body.error404 .woof {
