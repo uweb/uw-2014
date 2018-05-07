@@ -5885,7 +5885,7 @@ a.more {
   position: relative;
 }
 a.more:after {
-  background: url(assets/svg/uw-sprite.svg) no-repeat -206px -492px;
+  background: url(/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg) no-repeat -206px -492px;
   content: "";
   position: absolute;
   right: -24px;
@@ -5974,7 +5974,7 @@ span.next-page a {
   -moz-border-radius: 0;
 }
 span.next-page a:after {
-  background: url(assets/svg/uw-sprite.svg) no-repeat -206px -492px;
+  background: url(/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg) no-repeat -206px -492px;
   content: "";
   position: absolute;
   right: 17px;
@@ -6008,17 +6008,26 @@ span.next-page a:hover {
 }
 .info-box {
   width: 310px;
-  float: left;
-  margin-right: 50px;
   margin-bottom: 50px;
-  margin-top: 20px;
-  margin-left: -150px;
+  margin-top: 10px;
+  margin-right: 40px;
+  float: left;
   padding: 30px 30px 30px;
   -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
   border-top: 6px solid #b7a57a;
   position: relative;
-  background: url('assets/images/stripes-dark-tile.svg') repeat-x 0 -88px transparent;
+  /*	width: 310px;
+	float: left;
+	margin-right: 50px;
+	margin-bottom: 50px;
+	margin-top: 20px;
+	margin-left: -150px;
+	padding: 30px 30px 30px;
+	.box-shadow(0px 1px 2px rgba(0, 0, 0, 0.2));
+	border-top: 6px solid @lightgold;
+	position: relative;
+	background: url('assets/images/stripes-dark-tile.svg') repeat-x 0 -88px transparent;    */
 }
 .info-box img {
   max-width: 100%;
@@ -6039,6 +6048,107 @@ span.next-page a:hover {
 .info-box h3,
 .info-box h4,
 .info-box h5 {
+  margin-top: 0;
+}
+.info-box.info-left {
+  width: 310px;
+  margin-bottom: 50px;
+  margin-top: 10px;
+  margin-right: 40px;
+  float: left;
+  padding: 30px 30px 30px;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  border-top: 6px solid #b7a57a;
+  position: relative;
+  background: url('assets/images/stripes-dark-tile.svg') repeat-x 0 -88px transparent;
+}
+.info-box.info-left img {
+  max-width: 100%;
+  height: auto;
+}
+.info-box.info-left:after {
+  top: auto;
+  bottom: -40px;
+}
+.info-box.info-left p,
+.info-box.info-left li,
+.info-box.info-left a {
+  font-size: 16px;
+  line-height: 1.6;
+}
+.info-box.info-left h1,
+.info-box.info-left h2,
+.info-box.info-left h3,
+.info-box.info-left h4,
+.info-box.info-left h5 {
+  margin-top: 0;
+}
+.info-box.info-right {
+  width: 310px;
+  float: right;
+  margin-bottom: 50px;
+  margin-top: 0;
+  margin-left: 40px;
+  margin-right: 0;
+  padding: 30px 30px 30px;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  border-top: 6px solid #b7a57a;
+  position: relative;
+  background: url('assets/images/stripes-dark-tile.svg') repeat-x 0 -88px transparent;
+}
+.info-box.info-right img {
+  max-width: 100%;
+  height: auto;
+}
+.info-box.info-right:after {
+  top: auto;
+  bottom: -40px;
+}
+.info-box.info-right p,
+.info-box.info-right li,
+.info-box.info-right a {
+  font-size: 16px;
+  line-height: 1.6;
+}
+.info-box.info-right h1,
+.info-box.info-right h2,
+.info-box.info-right h3,
+.info-box.info-right h4,
+.info-box.info-right h5 {
+  margin-top: 0;
+}
+.info-box.info-full {
+  width: 100%;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  padding: 30px 30px 30px;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  border-top: 6px solid #b7a57a;
+  position: relative;
+  background: url('assets/images/stripes-dark-tile.svg') repeat-x 0 -88px transparent;
+}
+.info-box.info-full img {
+  max-width: 100%;
+  height: auto;
+}
+.info-box.info-full:after {
+  top: auto;
+  bottom: -40px;
+}
+.info-box.info-full p,
+.info-box.info-full li,
+.info-box.info-full a {
+  font-size: 16px;
+  line-height: 1.6;
+}
+.info-box.info-full h1,
+.info-box.info-full h2,
+.info-box.info-full h3,
+.info-box.info-full h4,
+.info-box.info-full h5 {
   margin-top: 0;
 }
 .uw-body-copy ul.links {
@@ -6110,18 +6220,18 @@ img.attachment-post-thumbnail.wp-post-image.blogroll-img,
     padding: 10px 0 0 0px;
   }
 }
-@media only screen and (max-width: 1600px) {
-  .info-box {
-    margin-left: -50px;
-  }
-}
 @media only screen and (max-width: 767px) {
   .widget {
     padding: 0;
   }
-  .info-box {
+  .info-box,
+  .info-box.info-right,
+  .info-box.info-left {
     margin-left: 0;
     width: 100%;
+  }
+  .info-box.info-left {
+    margin-right: 0;
   }
   .uw-body-copy h1,
   .uw-body-copy h2,
