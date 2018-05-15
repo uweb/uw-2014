@@ -116,7 +116,7 @@ class UW_Blogroll extends WP_Widget
     }
 
     $posts = get_posts_sticky_first( $params );
-/*  Jessie's function Ends --------------------------------------------------- */
+/*  Jessie's function Ends ------------------------------------------------------------------------- */
 
 
     //$posts = get_posts( $params );
