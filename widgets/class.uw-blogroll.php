@@ -108,7 +108,7 @@ class UW_Blogroll extends WP_Widget
         } elseif ( ! empty($r['exclude']) )
             $r['post__not_in'] = wp_parse_id_list( $r['exclude'] );
 
-        $r['ignore_sticky_posts'] = true;
+        //$r['ignore_sticky_posts'] = true;
         $r['no_found_rows'] = true;
 
         $get_posts = new WP_Query;
