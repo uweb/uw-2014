@@ -1,4 +1,208 @@
-// Cards Widget
+// Cards Widget, Cards - Shortcode 
+
+
+// Image Cards - Shortcode
+
+.cards-shortcode {
+	margin-top: 20px;
+	width: 320px;
+	h3 {
+		font-family: @headings-font-family;
+  		font-weight: @ultra;
+  		line-height: @headings-line-height;
+  		text-transform: uppercase;
+  	}
+	.default-card {
+		background-color: #EEEADF;
+		//padding: 10% 14% 5% 14%;
+
+		//dess
+		padding: 0 14% 5% 14%;
+		text-align: left;
+		background-image: url('assets/images/stripes-dark-tile.svg');
+  		background-position: 0 140px;
+  		background-repeat: repeat-x;
+  		background-size: 35px;
+		a.uw-btn {
+  			background-color: #4B2E83;
+  			color: #FFF;
+
+  			margin-top: 40px;
+
+  			&:before {
+  				background-color: #402770;
+			}			
+		}
+		h3 {
+  			font-size: 25px;
+  			color: @purple;
+        //dess
+        position: relative;
+        top:230px;
+
+  			a {  				
+  				color: @purple;
+  			}
+		}
+		p {			
+			font-size: 16px;
+  			line-height: 1.4;
+  			padding-bottom: 10px;
+
+           //dess
+           padding-top: 85px;
+
+		}
+		p:nth-child(4) {
+	        display: none;
+	    }
+
+		.card-image {
+			display: block;
+  			width: 139%;
+ 		//	margin: -13.5% -20% 0 -19.5%; 
+      //dess
+      //	margin: -21.5% -20% 0 -19.5%;
+       margin: -70% -20% 0 -19.5%;
+
+  			height: 200px;
+		}
+	}
+	.boundless-card {
+		h3 {
+  			font-size: 30px;
+        //dess
+           position: relative;
+           z-index: 1;
+           color: white;
+
+  			a {  				
+  				color: white;
+  			}
+		}
+		.udub-slant {
+			margin: 20px 0 25px 0;
+			//dess
+			position: relative;
+			z-index: 1;
+			span {
+				height: 8px;
+  				width: 100px;
+  				background-color: @lightgold;
+			}
+		}
+		p {
+			padding-bottom: 20px;
+		}
+		.card-image {
+			position: absolute;
+			z-index: 0;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+	}
+	.enhanced-card {
+		& > span {
+			display: block;
+		}
+		h3 {
+			//dess
+			color:white;
+			z-index: 1;
+
+    		font-size: 18px;
+    		position: relative;
+    		background-color:  @purple;
+    		margin: 8px 0 20px -35px;
+    		padding: 10px 0px 10px 35px;
+    		width: 90%;
+ 			&:after {
+  				position: absolute;
+  				bottom: 0;
+  				right: -10px;
+  				top: 0;
+  				width: 40px;
+  				background-color: @purple;
+  				content: " ";
+  				display: block;
+  				.skew(-15deg, 0);
+			    z-index: -1;
+  			}
+  			a {  				
+  				color: white;
+  			}
+		}
+	}
+	.enhanced-card,
+	.boundless-card {
+		position: relative;
+		padding: 15px 35px 30px 35px;
+		& > span {
+			position: relative;
+			z-index: 0;
+		}
+		.card-image {
+			position: absolute;
+			z-index: 0;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+		p {
+			color: white;
+			font-size: 16px;
+  			line-height: 1.35;
+  			padding-right: 60px;
+  			text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+
+  			//dess
+  			position: relative;
+  			padding-bottom: 20px;
+  			//z-index: 0;
+		}
+		p:nth-child(4) {
+	        display: none;
+        }
+	}
+	.enhanced-card,
+	.default-card {
+		.udub-slant {
+			display: none;
+		}
+	}
+	.card-image {
+		.background-size(cover);
+        background-position: center center;
+	}
+
+	// Adjust buttons to be smaller
+
+	a.uw-btn.btn-sm {
+  		padding: 5px 11px;
+  		font-size: 13px;
+  		//dess
+  		margin-top:20px;
+  		&:after {
+  			right: -40px;
+  			background-size: 580px;
+  			background-position: -21px -317px;
+  		}
+  		&:before {
+  			width: 35px;
+  			right: -35px;
+  		}
+	}
+
+
+}
+
+
+
+
+// Image Cards Widget
 
 .cards-widget {
 	margin-top: 20px;
@@ -38,7 +242,7 @@
 		.card-image {
 			display: block;
   			width: 139%;
- 			margin: -13.5% -20% 0 -19.5%;
+        margin: -13.5% -20% 0 -19.5%;
   			height: 200px;
 		}
 	}
