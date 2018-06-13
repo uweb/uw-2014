@@ -20,7 +20,11 @@ class UW_Media_Credit
 
   }
 
-
+  function add_media_credit_shortcode_to_tinymce( $plugins )
+  {
+    $plugin_array[ 'mediacredit' ] = get_template_directory_uri() . '/assets/admin/js/media-credit.js';
+    return $plugin_array;
+  }
 
   /**
    * Override the editor html to include media credit even if the photo caption is empty
