@@ -15,11 +15,10 @@ jQuery(document).ready(function( $ ) {
 
   })
 
-
+  // removes a contact and automatically saves the change 
   $('body').on('click', '#sidebar .remove', function(event) {
-
-	var $this = $(this)
-        $this.closest('.peep').remove()
+        this.closest('.peep').remove();
+        $("#widget-contact-list-2-savewidget").trigger('click');
  	})
 
 
