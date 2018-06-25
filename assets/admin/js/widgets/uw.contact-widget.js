@@ -8,8 +8,8 @@ jQuery(document).ready(function( $ ) {
     var $number = $id.split("_contact-list-").pop();
 
     $(this).parent().find('.uw-contact-card-contact-group').append(
-      _.template( $('#sidebar #redirect-template').html(), { number : $number })
-    )
+      _.template( $('#sidebar #redirect-template').html() ) ( { number : $number } )
+    );
 
 
 
@@ -24,5 +24,3 @@ jQuery(document).ready(function( $ ) {
 
 
 })
-
-
