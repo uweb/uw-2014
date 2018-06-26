@@ -366,7 +366,7 @@ if ( !function_exists('uw_site_title')):
 endif;
 
 if ( !function_exists('text_cut') ):
-
+  // used in content-page-noheader.php and was also found in content-page.php 
     function text_cut($text = '', $length = 27, $dots = true) {
       global $post;
       $parent = get_post($post->post_parent);
