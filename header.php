@@ -6,6 +6,10 @@
         <meta name="description" content="<?php bloginfo('description', 'display'); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <meta name="application-name" content="University of Washington"/>
+        <meta name="msapplication-TileColor" content="#4b2e83"/>
+        <meta name="msapplication-notification" content="frequency=30;polling-uri=http://notifications.buildmypinnedsite.com/?feed=http://www.washington.edu/news/category/uw-and-the-community/feed/&amp;id=1;polling-uri2=http://notifications.buildmypinnedsite.com/?feed=http://www.washington.edu/news/category/uw-and-the-community/feed/&amp;id=2;polling-uri3=http://notifications.buildmypinnedsite.com/?feed=http://www.washington.edu/news/category/uw-and-the-community/feed/&amp;id=3;polling-uri4=http://notifications.buildmypinnedsite.com/?feed=http://www.washington.edu/news/category/uw-and-the-community/feed/&amp;id=4;polling-uri5=http://notifications.buildmypinnedsite.com/?feed=http://www.washington.edu/news/category/uw-and-the-community/feed/&amp;id=5; cycle=1"/>
+
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <?php wp_head(); ?>
@@ -28,7 +32,7 @@
     <!--<![endif]-->
 
     <div id="uwsearcharea" aria-hidden="true" class="uw-search-bar-container"></div>
-   
+
    <a role="banner" aria-label="main_content" id="main-content" href="#main_content" class='screen-reader-shortcut'>Skip to main content</a>
 
     <div id="uw-container">
