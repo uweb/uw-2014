@@ -8,10 +8,12 @@
 
         <meta name="application-name" content="Washington"/>
         <meta name="msapplication-TileColor" content="#4b2e83"/>
-	<meta name="msapplication-square70x70logo" content="assets/images/footer.jpg" />
-	<meta name="msapplication-square150x150logo" content="assets/images/footer.jpg" />
-	<meta name="msapplication-wide310x150logo" content="assets/images/footer.jpg" />
-	<meta name="msapplication-square310x310logo" content="assets/images/footer.jpg" />
+        <!-- wait for tile images to come in from design
+	      <meta name="msapplication-square70x70logo" content="insert image path" />
+	      <meta name="msapplication-square150x150logo" content="insert image path" />
+	      <meta name="msapplication-wide310x150logo" content="insert image path" />
+	      <meta name="msapplication-square310x310logo" content="insert image path" />
+      -->
         <meta name="msapplication-notification" content="frequency=30;polling-uri=http://notifications.buildmypinnedsite.com/?feed=http://www.washington.edu/news/category/uw-and-the-community/feed/&amp;id=1;polling-uri2=http://notifications.buildmypinnedsite.com/?feed=http://www.washington.edu/news/category/uw-and-the-community/feed/&amp;id=2;polling-uri3=http://notifications.buildmypinnedsite.com/?feed=http://www.washington.edu/news/category/uw-and-the-community/feed/&amp;id=3;polling-uri4=http://notifications.buildmypinnedsite.com/?feed=http://www.washington.edu/news/category/uw-and-the-community/feed/&amp;id=4;polling-uri5=http://notifications.buildmypinnedsite.com/?feed=http://www.washington.edu/news/category/uw-and-the-community/feed/&amp;id=5; cycle=1"/>
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
