@@ -8,11 +8,11 @@ class UW_Settings
         add_action('admin_menu', array($this, 'setup_sections'));
         add_action('admin_init', array($this, 'setup_options'));
     }
-    
+
     function setup_sections() {
         $this->make_setting_pages();
         $this->add_setting_sections();
-    
+
     }
 
     function setup_options() {
@@ -32,12 +32,18 @@ class UW_Settings
         register_setting('general', 'overly_long_title');
         register_setting('reading', 'show_byline_on_posts');
         register_setting('general', 'use_main_menu_on_mobile');
+        register_setting('general', 'enable_live_tile');
     }
 
     function add_settings_fields() {
         add_settings_field('overly_long_title', 'Does your site title take two lines on desktop?', array($this, 'overly_long_title_callback'), 'general');
         add_settings_field('show_byline_on_posts', 'Show bylines on single posts and archives?', array($this, 'show_byline_on_posts_callback'), 'reading');
         add_settings_field('use_main_menu_on_mobile', 'Use the main menu on mobile as default?', array($this, 'use_main_menu_on_mobile_callback'), 'general');
+        add_settings_field('enable_live_tile', 'Allow users to add your site as a Windows Live Tile?', array($this, 'enable_live_tile_callback'), 'general');
+    }
+
+    function enable_live_tile_callback() {
+      echo "<input name='enable_live_tile' type='checkbox', value='1'" . checked(1, get_option('enable_live_tile'), false) . "/>(yes if checked)";
     }
 
     function overly_long_title_callback() {
