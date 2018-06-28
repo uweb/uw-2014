@@ -5,14 +5,21 @@
     <a href="http://uw.edu" title="University of Washington Home" class="uw-wordmark" tabindex='-1' aria-hidden='true'>University of Washington</a>
   </div>
   <div class='align-right'>
-      <nav class="uw-thin-strip-nav" aria-label='role navigation'>
+      <!-- static thinstip nav links -->
+      <!-- <nav class="uw-thin-strip-nav" aria-label='role navigation'>
           <ul class="uw-thin-links">
             <li><a href="http://uw.edu/studentlife" title="Students">Students</a></li>
             <li><a href="http://uw.edu/parents" title="Parents">Parents</a></li>
             <li><a href="http://uw.edu/facultystaff" title="Faculty & Staff">Faculty & Staff</a></li>
             <li><a href="http://uw.edu/alumni" title="Alumni">Alumni</a></li>
           </ul>
+      </nav> -->
+
+      <!--Wordpress menu generated links -->
+      <nav class="uw-thin-strip-nav" aria-label='role navigation'>
+        <?php wp_nav_menu( array( 'theme_location' => 'thin-strip','container' => false,'items_wrap' => '<ul class="uw-thin-links">%3$s</ul>', ) ); ?>
       </nav>
+
       <nav id='search-quicklinks' aria-label='search and quick links'>
       <button class='uw-search' aria-owns='uwsearcharea' aria-controls='uwsearcharea' aria-expanded='false' aria-label='open search area' aria-haspopup='true'>
 <!--[if gt IE 8]><!-->

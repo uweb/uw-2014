@@ -22,6 +22,7 @@ class UW
         require_once($parent . 'class.uw-scripts.php');
         require_once($parent . 'class.uw-styles.php');
         require_once($parent . 'class.uw-dropdowns.php');
+        require_once($parent . 'class.uw-thin-strip-menu.php'); //library thinstrip
         require_once($parent . 'class.images.php');
         require_once($parent . 'class.squish_bugs.php');
         require_once($parent . 'class.filters.php');
@@ -67,6 +68,7 @@ class UW
         $this->Users             = new UW_Users;
         $this->SidebarMenuWalker = new UW_Sidebar_Menu_Walker;
         $this->Dropdowns         = new UW_Dropdowns;
+        $this->ThinStripMenu     = new UW_Thin_Strip_Menu; //thinstripmenu
         $this->Quicklinks        = new UW_QuickLinks;
         $this->Shortcodes        = new UW_Shortcodes;
         $this->MediaCredit       = new UW_Media_Credit;
@@ -81,4 +83,3 @@ class UW
         $this->Settings          = new UW_Settings;
     }
 }
- 
