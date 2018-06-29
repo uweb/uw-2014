@@ -569,7 +569,7 @@ UW.QuickLinks.Collection = Backbone.Collection.extend({
     //     {title: 'Directories', url: 'http://uw.edu/directory', classes: ['icon-directories']},
     //     {title: 'Calendar', url: 'http://uw.edu/calendar', classes: ['icon-calendar']},
     //     {title: 'Libraries', url: 'http://uw.edu/libraries', classes: ['icon-libraries']},
-    //     {title: 'MyUW', url: 'http://myuw.washington.edu', classes: ['icon-myuw']},
+    //     {title: 'MyUW', url: 'http://my.uw.edu', classes: ['icon-myuw']},
     //     {title: 'UW Today', url: 'http://uw.edu/news', classes: ['icon-uwtoday']},
     //    ],
 
@@ -754,7 +754,7 @@ UW.YouTube.Collection = Backbone.Collection.extend({
             return item.snippet;
         });
     },
-    
+
     make_view: function (type) {
         this.view = new UW.YouTube.CollectionView({collection: this});
     },
@@ -762,7 +762,7 @@ UW.YouTube.Collection = Backbone.Collection.extend({
 });
 
 UW.YouTube.CollectionView = Backbone.View.extend({
-    
+
     template : "<div class='nc-video-player'><div class='tube-wrapper'></div></div>",
     playlist_section : "<div class='vidSmall'><div class='scrollbar'><div class='track'><div class='thumb'><div class='end'></div></div></div></div><div class='viewport'><div class='vidContent overview'><ul></ul></div></div></div>",
 
@@ -836,12 +836,12 @@ UW.YouTube.CollectionView = Backbone.View.extend({
     check_all_ready: function() {
         if (this.data_ready && this.player_ready){
             this.play(this.collection.models[0].get('resourceId').videoId);
-        } 
+        }
     },
 
     //when the player changes state, this is run.  Currently stuff only happens if this is a playlist
     onStateChange: function (event) {
-        if (this.is_playlist) { 
+        if (this.is_playlist) {
             //event.data is 0 when a video finishes playing.  Find out what video we just finished, then play the next one or loop back to the beginning of the playlist
             if (event.data === 0) {
                 var video = this.$vidContent.find('.vid-active').attr('id');
@@ -894,7 +894,7 @@ UW.YouTube.Video = Backbone.Model.extend({
 
 UW.YouTube.VideoView = Backbone.View.extend({
     //template: underscore + html string here,
-    
+
     initialize: function () {
         this.render();
     },
@@ -947,7 +947,7 @@ UW.Vimeo = Backbone.View.extend({
   // List the events in the view.
   // Clicking a preview item will load that video
   events : {
-    'click .preview' : 'loadVideo', 
+    'click .preview' : 'loadVideo',
   },
 
   // The two templates necessary for the embed.

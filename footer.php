@@ -24,7 +24,7 @@
                 <li><a href="http://uw.edu/contact">Contact Us</a></li>
                 <li><a href="http://www.washington.edu/jobs">Jobs</a></li>
                 <li><a href="http://www.washington.edu/safety">Campus Safety</a></li>
-                <li><a href="http://myuw.washington.edu/">My UW</a></li>
+                <li><a href="http://my.uw.edu/">My UW</a></li>
                 <li><a href="http://www.washington.edu/rules/wac">Rules Docket</a></li>
                 <li><a href="http://www.washington.edu/online/privacy/">Privacy</a></li>
                 <li><a href="http://www.washington.edu/online/terms/">Terms</a></li>

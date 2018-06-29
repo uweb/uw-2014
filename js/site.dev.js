@@ -11462,7 +11462,7 @@ UW.QuickLinks.Collection = Backbone.Collection.extend({
 
     defaults : [{
        "title": "MyUW",
-       "url": "http:\/\/myuw.washington.edu",
+       "url": "http:\/\/my.uw.edu",
        "classes": ["icon-myuw"]
    }, {
        "title": "Calendar",
