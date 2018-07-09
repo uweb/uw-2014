@@ -3,7 +3,7 @@
 // suppresses Wordpress update notices to non-super admin
 if ( !function_exists('suppress_updates') ){
     function suppress_updates() {
-      if(!is_super_admin()) {
+      if( (!is_super_admin()) && is_multisite() ) {
         remove_action('admin_notices', 'update_nag', 3);
         remove_action('network_admin_notices', 'update_nag', 3);
       }
