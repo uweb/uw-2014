@@ -5,7 +5,9 @@ if ( !function_exists('suppress_updates') ){
     function suppress_updates() {
       if( (!is_super_admin()) && is_multisite() ) {
         remove_action('admin_notices', 'update_nag', 3);
+        remove_action('admin_notices', 'maintenance_nag', 10);
         remove_action('network_admin_notices', 'update_nag', 3);
+        remove_action('network_admin_notices', 'maintenance_nag', 10);
       }
     }
 }
