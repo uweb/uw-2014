@@ -452,7 +452,7 @@ class UW_Widget_Conditions
     return $instance;
   }
 
-  function strcasecmp_name( $a, $b )
+  public static function strcasecmp_name( $a, $b )
   {
     return strcasecmp( $a->name, $b->name );
   }
