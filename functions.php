@@ -12,7 +12,7 @@ if ( !function_exists('suppress_updates') ){
     }
 }
 
-add_action('admin_head', 'supress_updates', 1);
+add_action('admin_head', 'suppress_updates', 1);
 
 // allows child them overwriting of either whole UW object or just parts
 if (!function_exists('setup_uw_object')){
