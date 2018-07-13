@@ -32,7 +32,7 @@ class UW_RSS extends WP_Widget
     'show_date'    => true,
     'show_more'    => true,
     'show_desc'    => false,
-    'has_blurb'    => false, 
+    'has_blurb'    => false,
     'more'    => null
   );
 
@@ -69,7 +69,7 @@ class UW_RSS extends WP_Widget
   ?>
 		<p>
 		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Give the feed a title (optional):' ); ?></label>
-    <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" /> 
+    <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
 		</p>
 
 		<p>
@@ -146,9 +146,8 @@ class UW_RSS extends WP_Widget
   {
     extract( shortcode_atts( self::$SHORTCODE_DEFAULTS, $atts ) );
 
-    if ( $url == null || is_feed() ) return '';
 
-    $title = apply_filters( 'widget_title', $title );
+    if ( $url == null || is_feed() ) return '';
 
     $content = $has_blurb ? '<span></span>' : '';
 
@@ -162,6 +161,15 @@ class UW_RSS extends WP_Widget
         $rss_items = $rss->get_items(0, $maxitems);
 
         $content  .= "<ul class=\"uw-widget-rss\">";
+
+        // if $title is set then it's a shortcode, otherwise it's a widget
+        // widget sets the title in the widget function so the title only needs to be added
+        // when it's not creating a feed in the sidebar 
+        if ($title) {
+          $content .= '<' . $heading . ' class="widgettitle">' . $title . '</' . $heading . '>';
+        } else {
+          $title = apply_filters( 'widget_title', $title);
+        }
 
         foreach ( $rss_items as $index=>$item )
         {
