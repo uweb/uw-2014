@@ -5912,7 +5912,8 @@ a.more:after {
   -webkit-font-smoothing: antialiased;
 }
 .uw-body h1,
-.uw-body h2 {
+.uw-body h2,
+.uw-body .widgettitle {
   color: #4b2e83;
   display: block;
 }
