@@ -44,6 +44,13 @@ class UW_Scripts
         'admin'   => true
       ),
 
+      'custom' => array (
+        'id'      => 'custom',
+        'url'     => get_bloginfo('template_directory') . '/custom.js',
+        'deps'    => array(),
+        'admin'   => false
+      )
+
     ), $this->get_child_theme_scripts() );
 
     add_action( 'wp_enqueue_scripts', array( $this, 'uw_register_default_scripts' ) );
@@ -56,11 +63,11 @@ class UW_Scripts
 
   function uw_customizer_preview()
   {
-    // wp_enqueue_script( 
+    // wp_enqueue_script(
     //     'uw-themecustomizer',      //ID
     //     get_bloginfo('template_directory') .'/js/uw.themecustomizer.js',//URL
     //     array( 'jquery','customize-preview' ),  //dependencies
-    //     '',           //version (optional) 
+    //     '',           //version (optional)
     //     true            //Put script in footer?
     // );
     wp_enqueue_script( 'uw-themecustomize', get_bloginfo('template_directory') .'/js/uw.themecustomizer.js', array( 'jquery', 'customize-controls' ), false, true );

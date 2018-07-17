@@ -38,6 +38,12 @@ class UW_Styles
           'child'   => true
       ),
 
+      'uw-custom' => array (
+          'id'      => 'uw-custom',
+          'url'     => get_bloginfo('template_directory') . '/custom.css',
+          'deps'    => array(),
+      )
+
     );
 
     add_action( 'wp_enqueue_scripts', array( $this, 'uw_register_default_styles' ) );
