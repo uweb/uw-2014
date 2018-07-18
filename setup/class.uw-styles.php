@@ -38,10 +38,11 @@ class UW_Styles
           'child'   => true
       ),
 
-      'uw-custom' => array (
-          'id'      => 'uw-custom',
-          'url'     => get_bloginfo('template_directory') . '/custom.css',
+      'uw.custom-css' => array (
+          'id'      => 'uw.custom-css',
+          'url'     => get_bloginfo('template_directory') . '/uw.custom.css',
           'deps'    => array(),
+          'version' => '1.0',
       )
 
     );

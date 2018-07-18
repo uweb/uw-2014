@@ -44,10 +44,11 @@ class UW_Scripts
         'admin'   => true
       ),
 
-      'custom' => array (
-        'id'      => 'custom',
-        'url'     => get_bloginfo('template_directory') . '/custom.js',
+      'uw.custom' => array (
+        'id'      => 'uw.custom',
+        'url'     => get_bloginfo('template_directory') . '/uw.custom.js',
         'deps'    => array(),
+        'version' => '1.0',
         'admin'   => false
       )
 
