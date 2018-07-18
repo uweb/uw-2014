@@ -44,7 +44,7 @@ This is an overview of the custom widgets, plugins and various features it inclu
 ## Quick Start ##
  - - -
 
-Download the [UW 2014 theme](https://github.com/uweb/uw-2014/archive/master.zip) into the wp-content/themes folder of your local WordPress install. Next, log into the WordPress dashboard and go the Appearance -> Themes page. From here you can activate the UW 2014 theme. 
+Download the [UW 2014 theme](https://github.com/uweb/uw-2014/archive/master.zip) into the wp-content/themes folder of your local WordPress install. Next, log into the WordPress dashboard and go the Appearance -> Themes page. From here you can activate the UW 2014 theme.
 
 ## Bugs and feature requests ##
  - - -
@@ -73,7 +73,7 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 
 ### UW Campus Map ###
 
->Embed the location of a UW campus building on your page using the UW branded campus map. 
+>Embed the location of a UW campus building on your page using the UW branded campus map.
 
 > Options:  
 
@@ -138,7 +138,7 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 
 ### UW Twitter ###
 
-> Shows the latest tweets from a specific Twitter account. 
+> Shows the latest tweets from a specific Twitter account.
 
 > Options:  
 
@@ -157,8 +157,8 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 
 > - __Title__ : The title of the widget (_Default: Contact us_)   
 > - __Name__ : The person's name (_Default: None_)   
-> - __Title__ : The person's job title (_Default: None_) 
-> - __Phone number__ : The person's phone number (_Default: None_) 
+> - __Title__ : The person's job title (_Default: None_)
+> - __Phone number__ : The person's phone number (_Default: None_)
 > - __Email__ : The person's email (_Default: None_)   
 
 
@@ -181,7 +181,7 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 
 ### Button ###
 
->  Displays a branded call to action button. [See some examples](http://www.washington.edu/brand/html-web-components/#buttons). 
+>  Displays a branded call to action button. [See some examples](http://www.washington.edu/brand/html-web-components/#buttons).
 
 > Attributes:  
 
@@ -197,7 +197,7 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 
 ### Blogroll ###
 
->  This is a shortcode that wraps the WordPress [get\_posts](https://codex.wordpress.org/Template_Tags/get_posts) function and templates out a blogroll. Any parameter you can pass to `get_posts` will be understood along with the following. 
+>  This is a shortcode that wraps the WordPress [get\_posts](https://codex.wordpress.org/Template_Tags/get_posts) function and templates out a blogroll. Any parameter you can pass to `get_posts` will be understood along with the following.
 
 > Attributes:  
 
@@ -289,7 +289,7 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 ### Tile box ###
 
 >  Display branded tiles to structure content in elegantly. [See an example of tiles here](http://www.washington.edu/newhuskies/).  
-Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode. 
+Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
 
 > Attributes:  
 
@@ -317,17 +317,20 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
 > Attributes:  
 
 > - __name__ : __Required__ Trumba web name of the desired calendar (_Default: none_)
-> - __type__ : The Trumba spud type of the desired calendar (_Default: none_)
-> - __base__ : The Trumba teaser base url of the desired calendar (_Default: none_)
+> - __type__ : The Trumba spud type of the desired calendar. Changing the type will change how the calendar is displayed. A list of all spud types can be found [here](https://www.trumba.com/help/api/spudType_param.aspx). (_Default: none_)
+> - __base__ : The full url of the desired base calendar. This can be embedded on your site with the spud type='main' (_Default: none_)
 
-> Example:   
 ```
     [trumba name='my web name' type='desired spud type' base='teaser base url']
+```
+> Example:
+```
+    [trumba name='sea_campus' type='main' base='https://www.washington.edu/calendar']
 ```
 
 ### Twitter ###
 
->  This is a shortcode embeds a Twitter feed for a desired username. It behaves similarly to the UW Twitter Widget. 
+>  This is a shortcode embeds a Twitter feed for a desired username. It behaves similarly to the UW Twitter Widget.
 
 > Attributes:  
 
@@ -375,25 +378,25 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
 
 ### Subpage List ###
 
-> This shortcode lists out all the subpages relative to the current page. 
-> There are two views this shortcode can render: list or grid. 
+> This shortcode lists out all the subpages relative to the current page.
+> There are two views this shortcode can render: list or grid.
 > The list view displays all the subpages as anchor tags in an HTML list element.
 > The grid view displays all the subpages as boxes, with their title, excerpt and author if available.
 
-> Attributes: 
+> Attributes:
 
 > - __link__ : The text in the anchor tag that will link to the subpage (_Default: Read more_)
 > - __tilebox__ : Enable the grid layout of the subpages ( _Default: false_ )
 
 
-> Example: 
+> Example:
 ```
  [subpage-list link="More information here" tilebox=true ]
 ```
 
 ### Accordion ###
 > This is an accessible version of the accordion menu based off of Nicolas Hoffmann's [accessible jQuery accordion](http://a11y.nicolas-hoffmann.net/accordion/)
-> 
+>
 > Example:   
 ```
   [accordion name='Accessible Accordion']
@@ -406,7 +409,7 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
 
 ### Custom Menu ###
 > This shortcode pulls in a custom menu that can be created under _Dashboard > Appearance > Menus_. Icons can be added in the class field in the menu builder. View the [full set of icons](http://www.washington.edu/brand/web-2/html-web-components/web-icons/) for more information.
-> 
+>
 > Example:   
 ```
   [custommenu menu=Menu-name-here]
@@ -423,15 +426,15 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
 
 ### UW Widget Visibility ###
 
-> This feature provides granular control over where each widget appears on your site. It is based on the [JetPack Widget Visibilityj plugin](http://jetpack.me/support/widget-visibility/) and allows you to choose specific pages, authors, categories etc. to show a widget on. Follow the link for a brief tutorial on its usage. 
+> This feature provides granular control over where each widget appears on your site. It is based on the [JetPack Widget Visibilityj plugin](http://jetpack.me/support/widget-visibility/) and allows you to choose specific pages, authors, categories etc. to show a widget on. Follow the link for a brief tutorial on its usage.
 
 ### UW Media Credit ###
 
-> This feature allows images to have author credits next to them. When an image is selected in the Media Library a field for Media Credit will appear next to its other attributes. This credit will always appear after the image caption. 
+> This feature allows images to have author credits next to them. When an image is selected in the Media Library a field for Media Credit will appear next to its other attributes. This credit will always appear after the image caption.
 
 
-## Creators 
-- - - 
+## Creators
+- - -
 [Dane Odekirk](https://github.com/daneodekirk)  
 [Jon Swanson](https://github.com/swansong)  
 [Kilian Frey](https://github.com/kilianf)  
@@ -442,5 +445,5 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
 
 
 ## License
-- - - 
+- - -
 GPL-2.0+
