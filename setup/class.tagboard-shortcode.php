@@ -1,5 +1,10 @@
 <?php
 
+// Note: this feature is in progress. We don't have enough access to a tagboard account
+// with the embed feature enabled so this is on hold until we know where we can find
+// the slug value on a user's tagboard account
+
+
 class UW_TagboardShortcode
 {
 
@@ -27,16 +32,5 @@ class UW_TagboardShortcode
   }
 
 }
-
-// slug
-// layout
-// feed-type
-// post-count
-// mobile-count
-// toolbar
-
-// <div class="tagboard-embed" tgb-slug="t/435487" tgb-layout="grid" tgb-feed-type="default" tgb-post-count="50" tgb-mobile-count="50" tgb-toolbar="default"></div>
-//
-// <script src="https://static.tagboard.com/public/js/embedAdvanced.js"></script>
 
 ?>
