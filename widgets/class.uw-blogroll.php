@@ -25,7 +25,7 @@ class UW_Blogroll extends WP_Widget
   {
     $title  = empty( $instance['title'] ) ? self::NAME : esc_attr( $instance['title'] );
     $number = empty( $instance['number'] ) ? 2 : absint( $instance['number'] );
-    $read_more = $instance['read_more'];
+    $read_more = empty( $instance['read_more'] ) ? true : $instance['read_more'];
     ?>
       <p>
         <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title:', 'twentyfourteen' ); ?></label>
@@ -49,7 +49,7 @@ class UW_Blogroll extends WP_Widget
   {
 		$instance['title']  = strip_tags( $new_instance['title'] );
 		$instance['number'] = empty( $new_instance['number'] ) ? self::LIMIT : absint( $new_instance['number'] );
-    $instance['read_more'] = (bool) $new_instance['read_more'];
+    $instance['read_more'] = empty($new_instance['read_more']) ? true : (bool) $new_instance['read_more'];
     return $instance;
   }
 
