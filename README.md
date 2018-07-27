@@ -419,6 +419,23 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
 > -  __menu__ : Enter the name of the menu found in _Dashboard > Appearance > Menus_. (_Default: Main menu_)   
 
 
+### Tagboard ###
+> This shortcode embeds a Tagboard feed onto the page. Tagboards that you wish to embed should already be embeddable. You can check that your Tagboard is embeddable by visiting the Tagboard's dashboard and looking for the embed icon.
+
+>Attributes:
+
+> - __slug__ : the ID of your Tagboard. This can be found by visiting your Tagboard's dashboard and looking for the 6-digit ID at the end of the url. (_Default: none_)
+> - __layout__ : the layout of the Tagboard. Options: grid, waterfall, carousel (_Default: grid_)
+> - __post-count__ : the number of posts to display (_Default: 50_)
+> - __mobile-count__ : the number of posts to display on mobile (_Default: 50_)
+> - __toolbar__ : whether or not the toolbar is displayed. Options: default, none. (_Default: default_)
+> - __feed-type__ : auto or default. Choosing auto will only show featured posts. If toolbar="default", choosing default will allow the user to show latest posts or featured posts. (_Default: default_)
+>
+> Example:
+```
+      [tagboard slug="435487" layout="waterfall" post-count="30" mobile-count="15" toolbar="none" feed-type="auto"]
+```
+
 
 
 ## Features
