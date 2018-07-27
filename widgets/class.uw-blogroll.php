@@ -1,5 +1,7 @@
 <?php
 
+// come back to this to add the widget option to remove or keep the read more link
+
 class UW_Blogroll extends WP_Widget
 {
 
@@ -25,7 +27,7 @@ class UW_Blogroll extends WP_Widget
   {
     $title  = empty( $instance['title'] ) ? self::NAME : esc_attr( $instance['title'] );
     $number = empty( $instance['number'] ) ? 2 : absint( $instance['number'] );
-    $read_more = empty( $instance['read_more'] ) ? true : $instance['read_more'];
+    // $read_more = empty( $instance['read_more'] ) ? true : $instance['read_more'];
     ?>
       <p>
         <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title:', 'twentyfourteen' ); ?></label>
@@ -37,10 +39,10 @@ class UW_Blogroll extends WP_Widget
         <input id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" type="text" value="<?php echo esc_attr( $number ); ?>" size="3">
       </p>
 
-      <p>
+      <!-- <p>
         <label for="<?php echo esc_attr( $this->get_field_id( 'read_more' ) ); ?>"><?php _e( 'Show "Read More" Link:', 'twentyfourteen' );?></label>
         <input type="checkbox" id="<?php echo $this->get_field_id( 'read_more'  ); ?>" name="<?php echo $this->get_field_name( 'read_more' ); ?>" <?php checked($read_more, true, true); ?> />
-      </p>
+      </p> -->
 
     <?php
   }
@@ -49,7 +51,7 @@ class UW_Blogroll extends WP_Widget
   {
 		$instance['title']  = strip_tags( $new_instance['title'] );
 		$instance['number'] = empty( $new_instance['number'] ) ? self::LIMIT : absint( $new_instance['number'] );
-    $instance['read_more'] = empty($new_instance['read_more']) ? true : (bool) $new_instance['read_more'];
+    // $instance['read_more'] = (bool) $new_instance['read_more'];
     return $instance;
   }
 
@@ -65,7 +67,7 @@ class UW_Blogroll extends WP_Widget
 
     $readmore = $read_more ? '' : 'readmore=\'off\'';
 
-    echo do_shortcode( "[".self::ID." number={$number} " . $readmore . "/]");
+    echo do_shortcode( "[".self::ID." number={$number} /]");
 
     echo $args['after_widget'];
   }
