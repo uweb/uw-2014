@@ -212,10 +212,11 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 > - __mini__:  Use the miniture template instead of the default one. (_Default: false_)
 > - __category__:  The WordPress category ID to limit the results from. (_Default: None_)
 > - __category\_name__:  The WordPress category name to limit the results from. (_Default: None_)
+> - __readmore__: Choose whether to show the "Read More" link or not. Options: __on__, __off__. (_Default: on_)
 
 > Example:
 ```
-  [blogroll number=3 trim=true]
+  [blogroll number=3 trim=true readmore='off']
 ```
 
 ### iFrame ###
