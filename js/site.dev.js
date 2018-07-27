@@ -11379,6 +11379,7 @@ UW.QuickLinks = Backbone.View.extend({
 
     render : function(  )
     {
+        this.defaultLinks =  this.links.defaults
         this.quicklinks = $( _.template( this.template )({ links : this.defaultLinks ? this.defaultLinks : this.links.toJSON() }) );
         this.$container = $(this.container);
         this.$container.prepend( this.quicklinks )
