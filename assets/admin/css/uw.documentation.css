@@ -2,6 +2,9 @@
   font-family: 'Open Sans',sans-serif;
   color: rgb(89, 89, 89);
  }
+#uw-documentation {
+  max-width: 1197px;
+}
 
 #uw-documentation h3 {
   margin-top: 30px;

@@ -26,7 +26,7 @@ class UW_Documentation
   {
     // wp_enqueue_style('style', get_stylesheet_uri() );
     wp_enqueue_style( 'uw-documentation', get_template_directory_uri() . '/assets/admin/css/uw.documentation.css' , array( 'google-font-open') );
-    wp_enqueue_script( 'showdown', 'https://cdnjs.cloudflare.com/ajax/libs/showdown/0.4.0/Showdown.min.js' );
+    wp_enqueue_script( 'showdown', 'https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.min.js' );
   }
 
   function load_documentation_template()
