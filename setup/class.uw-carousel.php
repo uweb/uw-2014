@@ -140,7 +140,13 @@ class UW_Carousel {
       }
     }
 
-    $img_meta = json_encode( array_map( 'strval', $img_meta ) );
+    foreach ($img_meta as $key => $val) {
+      if ($val != null) {
+        $img_meta[$key] = strval($img_meta[$key]);
+      }
+    }
+    $img_meta = json_encode($img_meta);
+    //$img_meta = json_encode( array_map( 'strval', $img_meta ) );
 
     $attr['data-attachment-id']     = $attachment_id;
     $attr['data-orig-file']         = esc_attr( $orig_file );
