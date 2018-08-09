@@ -102,7 +102,11 @@ class UW_Iframes
       'cdn.knightlab.com',
       'uploads.knightlab.com',
       'yeatmanlab.github.io',
-      'livestream.com'
+      'livestream.com',
+      'uwphotos.smugmug.com',
+      'www.smugmug.com',
+      'smugmug.com',
+      'universityphotography.smugmug.com',
     );
   }
 
