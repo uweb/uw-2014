@@ -8405,6 +8405,9 @@ textarea#jp-carousel-comment-form-comment-field:focus::-webkit-input-placeholder
 .gfield_checkbox br {
   display: none;
 }
+button.uw-btn {
+  border: none;
+}
 a.uw-btn,
 button.uw-btn {
   padding: 11px 20px;
