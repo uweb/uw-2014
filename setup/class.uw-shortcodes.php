@@ -32,6 +32,7 @@ class UW_Shortcodes
         require_once('class.menu-shortcode.php');
 
         require_once('class.uw-custom-link.php');
+        require_once('class.tagboard-shortcode.php');
     }
 
     private function initialize()
@@ -48,5 +49,6 @@ class UW_Shortcodes
         $this->custommenu     = new UW_MenuShortcode();
 
         $this->custom_link = new UW_CustomLinks();
+        $this->tagboard = new UW_TagboardShortcode();
     }
 }
