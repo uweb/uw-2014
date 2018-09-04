@@ -40,20 +40,20 @@ class UW_Thin_Strip_Menu
         //      then set that ID as the menu-item-parent-id for each child.  Then save each child.
         foreach ( $this->menu_items as $menu_name => $menu_attributes ) {
 
-            $children = $menu_attributes['children'];
+            // $children = $menu_attributes['children'];
 
             unset( $menu_attributes['children'] );
 
 
             $parent_id = wp_update_nav_menu_item( $this->MENU_ID, $menu_item_db_id=0, $menu_attributes );
 
-            if ( $children )
-            {
-                foreach ( $children as $submenu){
-                    $submenu['menu-item-parent-id'] = $parent_id;
-                    wp_update_nav_menu_item($this->MENU_ID, $menu_item_db_id=0, $submenu);
-                }
-            }
+            // if ( $children )
+            // {
+            //     foreach ( $children as $submenu){
+            //         $submenu['menu-item-parent-id'] = $parent_id;
+            //         wp_update_nav_menu_item($this->MENU_ID, $menu_item_db_id=0, $submenu);
+            //     }
+            // }
         }
 
         $this->set_uw_menu_location();
@@ -91,7 +91,7 @@ class UW_Thin_Strip_Menu
     {
         $item['menu-item-title']    = $name;
         $item['menu-item-url']      = $url;
-        $item['menu-item-status'] = self::DEFAULT_STATUS;
+        $item['menu-item-status']   = self::DEFAULT_STATUS;
 
 
         if ( $parent )

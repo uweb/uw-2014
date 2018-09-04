@@ -56,6 +56,23 @@ if ( ! function_exists( 'uw_dropdowns') ) :
   }
 endif;
 
+if ( ! function_exists( 'uw_thinstrip') ) :
+  function uw_thinstrip()
+  {
+
+    echo '<nav class="uw-thin-strip-nav" aria-label="role navigation">';
+
+    echo  wp_nav_menu( array(
+        'theme_location'  => 'thin-strip',
+        'container'       => false,
+        'items_wrap'      => '<ul class="uw-thin-links">%3$s</ul>',
+        'depth'           => 1,
+      ) );
+
+    echo '</nav>';
+  }
+endif;
+
 if ( ! function_exists('uw_sidebar_menu') ) :
 
   function uw_sidebar_menu()
