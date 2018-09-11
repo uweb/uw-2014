@@ -81,7 +81,7 @@ class UW_Top_Posts extends WP_Widget
 
     <ul  class="popular-posts">
 
-    <?php if (is_array($popular)){ 
+    <?php if (is_array($popular)){
     foreach ( $popular as $index => $post ) : if ( $index >= $instance['items'] ) break; ?>
 
           <?php //print_r($post);
@@ -137,7 +137,7 @@ class UW_Top_Posts extends WP_Widget
 
       <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title' ); ?></label>
 
-      <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ) ?>" />
+      <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" />
 
     </p>
 
@@ -149,7 +149,7 @@ class UW_Top_Posts extends WP_Widget
 
       <?php for ( $i = 1; $i <= self::ITEMS; $i++ ) : ?>
 
-        <option value="<?php echo $i; ?>" <?php echo selected( $items, $i, false ) ?> ><?php echo $i; ?></option>
+        <option value="<?php echo $i; ?>" <?php echo selected( self::ITEMS, $i, false ) ?> ><?php echo $i; ?></option>
 
       <?php endfor; ?>
 
