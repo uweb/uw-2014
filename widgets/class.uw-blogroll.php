@@ -40,8 +40,8 @@ class UW_Blogroll extends WP_Widget
       </p>
 
       <!-- <p>
-        <label for="<?php echo esc_attr( $this->get_field_id( 'read_more' ) ); ?>"><?php _e( 'Show "Read More" Link:', 'twentyfourteen' );?></label>
-        <input type="checkbox" id="<?php echo $this->get_field_id( 'read_more'  ); ?>" name="<?php echo $this->get_field_name( 'read_more' ); ?>" <?php checked($read_more, true, true); ?> />
+        <label for="<?php //echo esc_attr( $this->get_field_id( 'read_more' ) ); ?>"><?php //_e( 'Show "Read More" Link:', 'twentyfourteen' );?></label>
+        <input type="checkbox" id="<?php //echo $this->get_field_id( 'read_more'  ); ?>" name="<?php //echo $this->get_field_name( 'read_more' ); ?>" <?php //checked($read_more, true, true); ?> />
       </p> -->
 
     <?php
