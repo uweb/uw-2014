@@ -51,7 +51,7 @@ class UW_Media_Caption
    // Extract attachment $post->ID
 
     return '<div ' . $id . 'class="wp-caption ' . esc_attr($align) . '" style="width: ' . (10 + (int) $width) . 'px">'
-    . do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '<span style="font-style:italic;">' .$credit . '</span>' . '</p></div>';
+    . do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . $credit . '</span>' . '</p></div>';
 
 
 
