@@ -13,7 +13,7 @@ class UW_YouTube
 
     function __construct()
     {
-        add_shortcode('youtube', array($this, 'youtube_handler'));        
+        add_shortcode('youtube', array($this, 'youtube_handler'));
     }
 
     function youtube_handler($atts)
@@ -21,7 +21,7 @@ class UW_YouTube
         $attributes = (object) $atts;
 
         $classes = array('uw-btn');
-            
+
         if (isset($attributes->type)){
             $type = strtolower($attributes->type);
             if (!in_array($type, $this::$types)){
@@ -40,9 +40,9 @@ class UW_YouTube
         }
 
         $el_id = 'uw-youtube-' . rand(0,100); //needs unique id.  Could set this in shortcode instead of generating
-        $max_results = intval($attributes->max_results);
+        $max_results = isset($attributes->max_results) ? intval($attributes->max_results) : 0;
         if ($max_results > 0){
-            $return = sprintf('<div id="%s" class="uw-youtube" data-uw-youtube-type="%s" data-uw-youtube="%s" data-max-results="%d"></div>', $el_id, $type, $id, $max_results);        
+            $return = sprintf('<div id="%s" class="uw-youtube" data-uw-youtube-type="%s" data-uw-youtube="%s" data-max-results="%d"></div>', $el_id, $type, $id, $max_results);
         }
         else {
             $return = sprintf('<div id="%s" class="uw-youtube" data-uw-youtube-type="%s" data-uw-youtube="%s"></div>', $el_id, $type, $id);
