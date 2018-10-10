@@ -6,7 +6,7 @@ jQuery(document).ready(function($){
     {
 
       var converter = new showdown.Converter({}),
-        // flavor  = converter.setFlavor('github'),
+        flavor  = converter.setFlavor('github'),
         text  = $('#markdown').text(),
         html  = converter.makeHtml(text);
 
