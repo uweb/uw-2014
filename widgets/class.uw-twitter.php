@@ -22,7 +22,7 @@ class UW_Widget_Twitter extends WP_Widget
   const URL            = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
   const AUTHOR_URL     = 'https://api.twitter.com/1.1/users/show.json';
   const REQUESTMETHOD  = 'GET';
-  const GETFIELD       = '?include_entities=true&include_rts=true&screen_name=%s&count=%u';
+  const GETFIELD       = '?include_entities=true&include_rts=true&screen_name=%s&count=%s';
   const RETWEET_TEXT   = '<small>Retweeted by <a href="//twitter.com/%s"> @%s</a></small>';
 
   const COUNT          = 5;
@@ -89,7 +89,7 @@ class UW_Widget_Twitter extends WP_Widget
     $tweets = $this->getLatestTweets( $name, $count );
 
     if ( ! is_array( $tweets ) ) return;
-    
+
     $output = '<div class="widget uw-twitter">';
 
     if ( ! empty( $title ) ){
@@ -110,7 +110,7 @@ class UW_Widget_Twitter extends WP_Widget
     $output = $output .    '<a class="more" href="//twitter.com/' . $name . '">More</a>';
     $output = $output .  '</div>';
     $output = $output . '</div>';
-    
+
     return $output;
   }
 
@@ -132,11 +132,13 @@ class UW_Widget_Twitter extends WP_Widget
 
       $twitter    = new TwitterAPIExchange(self::$SETTINGS);
 
-      $twitter->setGetfield( $parameters )
-              ->buildOauth(self::URL, self::REQUESTMETHOD);
+      $twitters = $twitter  ->setGetfield( $parameters )
+                            ->buildOauth(self::URL, self::REQUESTMETHOD)
+                            ->performRequest();
+        print_r($twitters);
 
-      $tweets = json_decode( $twitter->performRequest() );
-
+      $tweets = json_decode( $twitters );
+      print_r($tweets);
       foreach ($tweets as $index => $tweet)
       {
         $hasAuthor = ( count($tweet->entities->user_mentions) > 0 );
@@ -148,15 +150,13 @@ class UW_Widget_Twitter extends WP_Widget
         if ( $hasAuthor )
         {
 
-          $twitter->setGetfield( '?screen_name=' . $latest[$index]['author'] )
-                  ->buildOauth( self::AUTHOR_URL, self::REQUESTMETHOD );
+          $twitter->setGetfield( '?screen_name=' . $latest[$index]['author'] ) ->buildOauth( self::AUTHOR_URL, self::REQUESTMETHOD );
 
           $user = json_decode( $twitter->performRequest() );
 
         }
 
-        $latest[$index]['img']    = $hasAuthor ? $user->profile_image_url_https :
-                                                 $tweet->user->profile_image_url_https;
+        $latest[$index]['img']    = $hasAuthor ? $user->profile_image_url_https : $tweet->user->profile_image_url_https;
 
         $latest[$index]['text']   = $this->formatText( $tweet->text );
 
@@ -181,13 +181,9 @@ class UW_Widget_Twitter extends WP_Widget
     $text = preg_replace( '/[A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_:%&~\?\/.=]+/',
                           '<a href="\\0">\\0</a>', $text );
 
-    $text = preg_replace_callback(  '/[#]+[A-Za-z0-9-_]+/',
-                                    array( $this, 'encodeHashTag'),
-                                    $text );
+    $text = preg_replace_callback(  '/[#]+[A-Za-z0-9-_]+/', array( $this, 'encodeHashTag'), $text );
 
-    $text = preg_replace_callback(  '/[@]+[A-Za-z0-9-_]+/',
-                                    array( $this, 'normalizeScreenName'),
-                                    $text );
+    $text = preg_replace_callback(  '/[@]+[A-Za-z0-9-_]+/', array( $this, 'normalizeScreenName'), $text );
     return $text;
   }
 
