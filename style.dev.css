@@ -6824,6 +6824,10 @@ body.home .uw-sidebar-menu {
   .uw-sidebar {
     padding-top: 40px;
   }
+  .page-template-no-title .uw-sidebar-menu,
+  .page-template-no-title .uw-mobile-menu {
+    margin-top: 0;
+  }
 }
 #mobile-relative {
   display: none;

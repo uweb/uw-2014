@@ -208,7 +208,7 @@ ul.uw-mobile-menu
 		}
 		&:before {
 			width: 100px;
-			background-color: @lightgold;					
+			background-color: @lightgold;
 		}
 		&:after {
 			width: 40px;
@@ -239,5 +239,11 @@ body.home .uw-sidebar-menu {
 @media only screen and (min-width : 768px) {
 	.uw-sidebar {
 		padding-top: 40px;
+	}
+	.page-template-no-title {
+		.uw-sidebar-menu,
+		.uw-mobile-menu {
+			margin-top: 0;
+		}
 	}
 }
