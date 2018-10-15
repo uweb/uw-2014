@@ -21,13 +21,15 @@ class UW_Intro_Text extends WP_Widget
       $id = self::ID,
       $name = self::TITLE,
       $options = array(
-        'description' => __( self::DESCRIPTION ),
+        'description' => self::DESCRIPTION,
         'classname'   => self::ID
       ) );
   }
 
   function widget($args, $instance)
   {
+
+    $introContent = '';
 
     extract( $args );
 
@@ -68,3 +70,5 @@ class UW_Intro_Text extends WP_Widget
 }
 
 new UW_Intro_Text;
+
+register_widget( 'UW_Intro_Text');

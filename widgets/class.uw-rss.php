@@ -122,6 +122,10 @@ class UW_RSS extends WP_Widget
 
   function widget( $args, $instance )
   {
+    $title = '';
+    $show_date = '';
+    $items = '';
+    $url = '';
     extract( $args );
     extract( $instance );
 
@@ -144,6 +148,8 @@ class UW_RSS extends WP_Widget
 
   function uw_rss_shortcode( $atts )
   {
+
+    $url = '';
     extract( shortcode_atts( self::$SHORTCODE_DEFAULTS, $atts ) );
 
 
@@ -164,7 +170,7 @@ class UW_RSS extends WP_Widget
 
         // if $title is set then it's a shortcode, otherwise it's a widget
         // widget sets the title in the widget function so the title only needs to be added
-        // when it's not creating a feed in the sidebar 
+        // when it's not creating a feed in the sidebar
         if ($title) {
           $content .= '<' . $heading . ' class="widgettitle">' . $title . '</' . $heading . '>';
         } else {
