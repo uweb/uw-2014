@@ -17,7 +17,7 @@ class UW_Media_Caption
   // Override the caption html - original in wp-includes/media.php
   //
 
-  function add_media_credit_to_caption_shortcode_filter($val, $attr, $content = null)
+  function add_media_credit_to_caption_shortcode_filter($val, $attr, $content)
   {
     extract(shortcode_atts(array(
       'id'  => '',
