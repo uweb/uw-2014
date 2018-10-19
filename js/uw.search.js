@@ -21,7 +21,7 @@ UW.Search = Backbone.View.extend({
                         '<input id="uw-search-bar" type="search" name="s" value="" autocomplete="off" placeholder="Search" />'+
                       '</div>'+
 
-                      '<select id="mobile-search-select" class="visible-xs" aria-label="Search Scope">' +
+                      '<select id="mobile-search-select" class="visible-xs" aria-label="Search scope">' +
                         '<option value="uw" selected>All the UW</option>' +
                         '<option value="site">Current site</option>' +
                       '</select>' +
@@ -30,14 +30,16 @@ UW.Search = Backbone.View.extend({
 
                         '<fieldset style="margin: 0; padding: 0; border: 1px; solid #ffffff;">'+
 
-                        '<div role="radiogroup" id="search-labels" class="labels hidden-xs">'+
+                        '<legend id="uw-search-label">Search scope</legend>'+
+
+                        '<div id="search-labels" class="labels hidden-xs">'+
                            '<label class="radio">'+
-                             '<input role="radio" class="radiobtn" type="radio" name="search" value="uw" data-toggle="radio" checked />'+
+                             '<input class="radiobtn" type="radio" name="search" value="uw" data-toggle="radio" checked />'+
                              'All the UW'+
                            '</label>'+
  
                            '<label class="radio">'+
-                             '<input role="radio" class="radiobtn" type="radio" name="search" value="site" data-toggle="radio" />'+
+                             '<input class="radiobtn" type="radio" name="search" value="site" data-toggle="radio" />'+
                              'Current site'+
                            '</label>'+
  
