@@ -6417,6 +6417,9 @@ body.search-open #uw-container {
     transform: matrix(1, 0, 0, 1, 0, 100);
   }
 }
+#uw-search-label {
+  display: none;
+}
 ul.uw-sidebar-menu,
 ul.uw-mobile-menu {
   margin-left: 20px;
