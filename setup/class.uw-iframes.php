@@ -107,6 +107,8 @@ class UW_Iframes
       'www.smugmug.com',
       'smugmug.com',
       'universityphotography.smugmug.com',
+      'modelo.io',
+      'app.modelo.io',
     );
   }
 
