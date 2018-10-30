@@ -22,7 +22,7 @@ class UW_Widget_Twitter extends WP_Widget
   const URL            = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
   const AUTHOR_URL     = 'https://api.twitter.com/1.1/users/show.json';
   const REQUESTMETHOD  = 'GET';
-  const GETFIELD       = '?include_entities=true&include_rts=true&screen_name=%s&count=%u';
+  const GETFIELD       = '?include_entities=true&include_rts=true&screen_name=%s&count=%u&tweet_mode=extended';
   const RETWEET_TEXT   = '<small>Retweeted by <a href="//twitter.com/%s"> @%s</a></small>';
 
   const COUNT          = 5;
@@ -89,7 +89,7 @@ class UW_Widget_Twitter extends WP_Widget
     $tweets = $this->getLatestTweets( $name, $count );
 
     if ( ! is_array( $tweets ) ) return;
-    
+
     $output = '<div class="widget uw-twitter">';
 
     if ( ! empty( $title ) ){
@@ -110,7 +110,7 @@ class UW_Widget_Twitter extends WP_Widget
     $output = $output .    '<a class="more" href="//twitter.com/' . $name . '">More</a>';
     $output = $output .  '</div>';
     $output = $output . '</div>';
-    
+
     return $output;
   }
 
