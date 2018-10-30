@@ -73,7 +73,7 @@ module.exports = function(grunt) {
     notify: {
       watch: {
         options: {
-          title: 'Dun\' Grunted',
+          title: 'Task complete.',
           message: 'All is good'
         }
       }
