@@ -22,7 +22,7 @@ class UW_Widget_Twitter extends WP_Widget
   const URL            = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
   const AUTHOR_URL     = 'https://api.twitter.com/1.1/users/show.json';
   const REQUESTMETHOD  = 'GET';
-  const GETFIELD       = '?include_entities=true&include_rts=true&&tweet_mode=extended&screen_name=%s&count=%u';
+  const GETFIELD       = '?include_entities=true&tweet_mode=extended&include_rts=true&screen_name=%s&count=%u';
   const RETWEET_TEXT   = '<small>Retweeted by <a href="//twitter.com/%s"> @%s</a></small>';
 
   const COUNT          = 5;
@@ -102,7 +102,7 @@ class UW_Widget_Twitter extends WP_Widget
 
       $output = $output .    '<div class="tweet">';
       $output = $output .      '<a href="//twitter.com/' . $tweet->author . '"><img src="' . $tweet->img . '" alt="' . $tweet->author . '"/></a>';
-      $output = $output .      '<p><a href="//twitter.com/' . $tweet->author . '"><span>@' . $tweet->author . '</span></a> ' . $tweet->full_text . ' ' . $tweet->retweet . '</p>';
+      $output = $output .      '<p><a href="//twitter.com/' . $tweet->author . '"><span>@' . $tweet->author . '</span></a> ' . $tweet->text . ' ' . $tweet->retweet . '</p>';
       $output = $output .    '</div>';
 
     endforeach;
@@ -158,9 +158,20 @@ class UW_Widget_Twitter extends WP_Widget
         $latest[$index]['img']    = $hasAuthor ? $user->profile_image_url_https :
                                                  $tweet->user->profile_image_url_https;
 
-        $latest[$index]['text']   = $this->formatText( $tweet->full_text );
+        if ($retweet) {
 
-        $latest[$index]['retweet'] = $retweet ? sprintf( self::RETWEET_TEXT, $tweet->user->screen_name, $tweet->user->screen_name ) : '';
+          $latest[$index]['text']   = $this->formatText( $tweet->retweeted_status->full_text );
+
+          $latest[$index]['retweet'] = sprintf( self::RETWEET_TEXT, $tweet->user->screen_name, $tweet->user->screen_name );
+
+        } else {
+
+          $latest[$index]['text']   = $this->formatText( $tweet->full_text );
+
+          $latest[$index]['retweet'] = '';
+        }
+
+
 
 
       }
