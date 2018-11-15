@@ -19,6 +19,7 @@ jQuery(document).ready(function( $ ) {
   $('body').on('click', '.uw-contact-card-remove', function(event) {
         this.closest('.peep').remove();
         $("#widget-contact-list-2-savewidget").trigger('click');
- 	})
+  })
 
 })
+
