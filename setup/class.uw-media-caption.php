@@ -7,7 +7,7 @@
 class UW_Media_Caption
 {
 
-  function UW_Media_Caption()
+  function __construct()
   {
     add_filter( 'img_caption_shortcode', array( $this, 'add_media_credit_to_caption_shortcode_filter'), 10, 3 );
 
