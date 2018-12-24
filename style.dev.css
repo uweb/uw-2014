@@ -4665,7 +4665,6 @@ table th[class*="col-"] {
   right: 2%;
   width: 5px;
   height: 105px;
-  background: url("assets/images/youtube-player/video-overflow.png") 0 0 no-repeat;
 }
 .nc-video-player iframe {
   max-width: none !important;
