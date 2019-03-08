@@ -8722,7 +8722,7 @@ body.error404 .woof {
 .uw-footer ul.footer-links li a:after {
   content: "/";
   opacity: .5;
-  position: absolute;
+  position: relative;
   right: -14px;
   top: -2px;
 }
