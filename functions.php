@@ -25,3 +25,22 @@ if (!function_exists('setup_uw_object')){
 }
 
 $UW = setup_uw_object();
+
+// adds css for admin pages
+if (!function_exists('admin_style')) { 
+    function admin_style() {
+      wp_enqueue_style('admin-styles', get_template_directory_uri().'/less/admin.less');
+    }
+}
+
+add_action('admin_enqueue_scripts', 'admin_style');
+
+// creates iframe options page under settings menu
+if (!function_exists('setup_options_page')) {
+  function setup_options_page() {
+      require_once __DIR__.'/setup/class.uw-iframes-settings.php';
+      $iframe_options = new UW_Iframes_Settings();
+  }
+}
+
+setup_options_page();

@@ -112,7 +112,8 @@ class UW_Iframes
     );
     $iframes_settings = get_option('iframes_settings', false);
     $user_domains = isset($iframes_settings['iframes_textarea_field_0']) ? $iframes_settings['iframes_textarea_field_0'] : array();
-    $iframe_domains = array_merge($iframes_settings, $user_domains);
+    $user_domains = preg_split('/\s+/', $user_domains);
+    $iframe_domains = array_merge($iframe_domains, $user_domains);
     return $iframe_domains;
   }
 
