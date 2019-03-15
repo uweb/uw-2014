@@ -55,7 +55,7 @@ class UW_Iframes_Settings
             below to add them to the whitelist of authorized domains. One domain per line.</label>
         </p>
         <p>
-        <textarea cols='145' rows='8' name='iframes_settings[iframes_textarea_field_0]' class='large-text code'><?php if(isset($options['iframes_textarea_field_0'])) {echo $options['iframes_textarea_field_0']; }?></textarea>
+            <textarea cols='145' rows='8' name='iframes_settings[iframes_textarea_field_0]' class='large-text code'><?php if(isset($options['iframes_textarea_field_0'])) {echo $options['iframes_textarea_field_0']; }?></textarea>
         </p>
         <?php
         add_option('iframes_settings', '$options');
