@@ -47,6 +47,7 @@ class UW_Iframes_Settings
     }
     
     function iframes_textarea_field_0_render() { 
+        $options = get_option('iframes_settings');
         ?>
         <p class="iframes-textarea-label">
             <label for="iframes_settings[iframes_textarea_field_0]">
