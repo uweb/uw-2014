@@ -49,13 +49,13 @@ class UW_Iframes_Settings
     function iframes_textarea_field_0_render() { 
         $options = get_option('iframes_settings');
         ?>
-        <p class="iframes-textarea-label">
-            <label for="iframes_settings[iframes_textarea_field_0]">
+        <p class='iframes-textarea-label'>
+            <label for='iframes_settings[iframes_textarea_field_0]'>
             Iframes are only allowed from authorized domains. Enter domains 
             below to add them to the whitelist of authorized domains. One domain per line.</label>
         </p>
         <p>
-        <textarea cols='145' rows='8' name='iframes_settings[iframes_textarea_field_0]'><?php if(isset($options['iframes_textarea_field_0'])) {echo $options['iframes_textarea_field_0']; }?></textarea>
+        <textarea cols='145' rows='8' name='iframes_settings[iframes_textarea_field_0]' class='large-text code'><?php if(isset($options['iframes_textarea_field_0'])) {echo $options['iframes_textarea_field_0']; }?></textarea>
         </p>
         <?php
         add_option('iframes_settings', '$options');
@@ -67,7 +67,7 @@ class UW_Iframes_Settings
     
     function iframes_options_page() { 
         ?>
-        <div class="wrap">
+        <div class='wrap'>
         <form action='options.php' method='post'>
             <h1>iFrame Settings</h1>
             <?php
