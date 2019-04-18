@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "devDependencies": {
     "clean-css": "~2.2.7",
-    "grunt": "*",
+    "grunt": "^1.0.3",
     "grunt-contrib-concat": "*",
     "grunt-contrib-jshint": "~1.1.0",
     "grunt-contrib-less": "^0.11.4",
