@@ -44,3 +44,54 @@ if (!function_exists('setup_options_page')) {
 }
 
 setup_options_page();
+
+
+// Add infobox shortcode.
++function infobox_shortcode($atts = array(), $content = null, $tag = '') {
++    $infobox_atts = shortcode_atts(
++                                  array(
++                                     'color' => '',
++                                  ), $atts, $tag);
++ 
++    $output = '';
++  
++    $output .= '<div class="info-box">';
++
++    if (!is_null($content)) {
++        $output .= apply_filters('the_content', $content);
++    }
++
++    $output .= '</div>';
++ 
++    return $output;
++}
++
++add_shortcode( 'infobox', 'infobox_shortcode' );
++
++
++// Add infobox shortcode button to TinyMCE editor.
++add_action('init', 'infobox_shortcode_button_init');
++function infobox_shortcode_button_init() {
++
++     // Abort early if the user will never see TinyMCE
++     if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') && get_user_option('rich_editing') == 'true') {
++          return;
++     }
++     
++     add_filter("mce_external_plugins", "infobox_register_tinymce_plugin"); 
++
++     add_filter('mce_buttons', 'infobox_add_tinymce_button');
++}
++
++
++// Register the plugin
++function infobox_register_tinymce_plugin($plugin_array) {
++   $plugin_array['infobox_button'] = get_stylesheet_directory_uri() .'/js/infobox-shortcode.js';
++   return $plugin_array;
++}
++
++// Add button to the toolbar.
++function infobox_add_tinymce_button($buttons) {
++   $buttons[] = "infobox_button";
++   return $buttons;
++}
