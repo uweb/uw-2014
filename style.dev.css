@@ -7109,15 +7109,14 @@ img {
   margin-bottom: 20px;
 }
 .wp-caption-text {
-  font-size: 13px;
-  line-height: 17px;
-  margin-top: 5px;
+  font-size: 15px;
+  line-height: 22.30769231px;
+  margin-top: 15px;
 }
 .wp-media-credit {
   margin-left: 5px;
   font-style: italic;
-  font-size: 13px;
-  line-height: 17px;
+  font-size: 14px;
 }
 .credit-media-italic {
   font-style: italic;
