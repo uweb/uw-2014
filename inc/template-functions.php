@@ -415,23 +415,23 @@ if ( !function_exists('uw_meta_tags') ):
     if ( !is_singular()) //if it is not a post or a page
     return;
 
-    echo '<meta name="twitter:card" content="summary">' . PHP_EOL;
-    echo '<meta name="twitter:site" content="@uw">' . PHP_EOL;
-    echo '<meta name="twitter:creator" content="@uw">' . PHP_EOL;
-    echo '<meta name="twitter:card" content="summary_large_image">' . PHP_EOL;
-    echo '<meta property="og:title" content="' . html_entity_decode(get_the_title()) . '"/>' . PHP_EOL;
+    echo '<meta name="twitter:card" content="summary" />' . PHP_EOL;
+    echo '<meta name="twitter:site" content="@uw" />' . PHP_EOL;
+    echo '<meta name="twitter:creator" content="@uw" />' . PHP_EOL;
+    echo '<meta name="twitter:card" content="summary_large_image" />' . PHP_EOL;
+    echo '<meta property="og:title" content="' . html_entity_decode(get_the_title()) . '" />' . PHP_EOL;
     // echo '<meta property="og:type" content="article"/>' . PHP_EOL;
-    echo '<meta property="og:url" content="' . get_permalink() . '"/>' . PHP_EOL;
-    echo '<meta property="og:site_name" content="' . get_bloginfo( 'name' ) . '"/>' . PHP_EOL;
-    echo '<meta property="og:description" content="' . $fb_desc . '"/>' . PHP_EOL;
+    echo '<meta property="og:url" content="' . get_permalink() . '" />' . PHP_EOL;
+    echo '<meta property="og:site_name" content="' . get_bloginfo( 'name' ) . '" />' . PHP_EOL;
+    echo '<meta property="og:description" content="' . $fb_desc . '" />' . PHP_EOL;
     if (isset($post->type_meta) && $post->type_meta == 'article' && isset($post->author_meta) && $post->author_meta != '') { '<meta property="article:author" content="' . $post->author_meta . '" />' . PHP_EOL; }
     if(!has_post_thumbnail( $post->ID )) { //the post does not have featured image, use a default image
         $default_image = ""; //replace this with a default image on your server or an image in your media library
-        echo '<meta property="og:image" content="' . $default_image . '"/>' . PHP_EOL;
+        echo '<meta property="og:image" content="' . $default_image . '" />' . PHP_EOL;
       }
       else{
         $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full-content' );
-        echo '<meta property="og:image" content="' . esc_attr( $thumbnail_src[0] ) . '"/>' . PHP_EOL;
+        echo '<meta property="og:image" content="' . esc_attr( $thumbnail_src[0] ) . '" />' . PHP_EOL;
       }
       echo "
       " . PHP_EOL;
