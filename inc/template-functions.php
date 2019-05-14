@@ -399,7 +399,7 @@ endif;
 if ( !function_exists('uw_meta_tags') ):
   function uw_meta_tags() {
     global $post;
-    if(network_site_url() == "http://localhost/cms/" || network_site_url() == "http://cmsdev.u.washington.edu/" || network_site_url() == "http://www.washington.edu/cms/"){
+    if(network_site_url() == "http://localhost/cms/" || network_site_url() == "http://cmsdev.u.washington.edu/" || network_site_url() == "https://www.washington.edu/cms/"){
 
       if ( trim($post->post_excerpt) != '' ) {
       //If there's an excerpt that's what we'll use
