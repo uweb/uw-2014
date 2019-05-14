@@ -5,7 +5,8 @@
 
 class UW_Recent_Posts extends WP_Widget
 {
-
+  private $categories;
+  
   // Define constants for the widget id, title, description, number of items to fetch, maximum number of items to show.
   const ID    = 'uw-recent';
   const TITLE = 'UW Recent Posts';
@@ -32,8 +33,10 @@ class UW_Recent_Posts extends WP_Widget
   {
     extract( $args );
     extract( $instance );
-
-    $recent  =  wp_get_recent_posts( array( 'numberposts' => $items, 'post_status' => 'publish' ) , OBJECT );
+    if ($categories) {
+      $x = '43';
+    }
+    $recent  =  wp_get_recent_posts( array( 'numberposts' => $items, 'post_status' => 'publish', 'cat' => $x ) , OBJECT );
     $title = apply_filters( 'widget_title', $title );
      if ( empty( $recent ) ) return '';
 
@@ -131,6 +134,7 @@ class UW_Recent_Posts extends WP_Widget
     $instance[ 'items' ] = (int) $new_instance['items'];
     $instance[ 'more' ] = (bool) $new_instance['more'];
     $instance[ 'feed' ] = (bool) $new_instance['feed'];
+    $instance[ 'categories' ] = (bool) $new_instance[ 'categories' ];
     return $instance;
   }
 
@@ -180,6 +184,10 @@ class UW_Recent_Posts extends WP_Widget
 
 
     </p>
+     <p>
+      <input type="checkbox" id="<?php echo $this->get_field_id( 'categories' ); ?>" name="<?php echo $this->get_field_name( 'categories' ); ?>" <?php checked(  $categories , true, true )  ?> />
+      <label for="<?php echo $this->get_field_id( 'categories' ); ?>"><?php _e( 'Environment' ); ?></label>
+     </p>
   <?php
 
   }
