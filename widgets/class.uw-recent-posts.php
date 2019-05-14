@@ -5,7 +5,6 @@
 
 class UW_Recent_Posts extends WP_Widget
 {
-  private $categories;
   
   // Define constants for the widget id, title, description, number of items to fetch, maximum number of items to show.
   const ID    = 'uw-recent';
@@ -33,10 +32,7 @@ class UW_Recent_Posts extends WP_Widget
   {
     extract( $args );
     extract( $instance );
-    if ($categories) {
-      $x = '43';
-    }
-    $recent  =  wp_get_recent_posts( array( 'numberposts' => $items, 'post_status' => 'publish', 'cat' => $x ) , OBJECT );
+    $recent  =  wp_get_recent_posts( array( 'numberposts' => $items, 'post_status' => 'publish', 'cat' => $categories_included, 'category__not_in' => $categories_excluded ) , OBJECT );
     $title = apply_filters( 'widget_title', $title );
      if ( empty( $recent ) ) return '';
 
@@ -134,7 +130,8 @@ class UW_Recent_Posts extends WP_Widget
     $instance[ 'items' ] = (int) $new_instance['items'];
     $instance[ 'more' ] = (bool) $new_instance['more'];
     $instance[ 'feed' ] = (bool) $new_instance['feed'];
-    $instance[ 'categories' ] = (bool) $new_instance[ 'categories' ];
+    $instance['categories_included'] = isset( $new_instance['categories_included'] ) ? array_filter(array_map(function($id) { return intval($id); }, (array) $new_instance['categories_included'])) : array();
+    $instance['categories_excluded'] = isset( $new_instance['categories_excluded'] ) ? array_filter(array_map(function($id) { return intval($id); }, (array) $new_instance['categories_excluded'])) : array();
     return $instance;
   }
 
@@ -176,6 +173,7 @@ class UW_Recent_Posts extends WP_Widget
 
 
     </p>
+
      <p>
 
       <input type="checkbox" id="<?php echo $this->get_field_id( 'feed' ); ?>" name="<?php echo $this->get_field_name( 'feed' ); ?>" <?php checked(  $feed , true, true )  ?> />
@@ -184,10 +182,38 @@ class UW_Recent_Posts extends WP_Widget
 
 
     </p>
+
      <p>
-      <input type="checkbox" id="<?php echo $this->get_field_id( 'categories' ); ?>" name="<?php echo $this->get_field_name( 'categories' ); ?>" <?php checked(  $categories , true, true )  ?> />
-      <label for="<?php echo $this->get_field_id( 'categories' ); ?>"><?php _e( 'Environment' ); ?></label>
-     </p>
+
+      <?php echo 'Post categories to include: '; ?><br>
+      <?php $categories_included = isset($instance['categories_included']) ? $instance['categories_included'] : array(); ?>
+      <ul>
+        <select name="<?php echo $this->get_field_name( 'categories_included' ); ?>[]" multiple="multiple">
+          <?php foreach (get_categories() as $cat) : ?> 
+            <option value="<?php echo $cat->cat_ID ?>" <?php selected(in_array($cat->cat_ID, $categories_included)) ?>><?php echo $cat->cat_name; ?></option>
+          <?php endforeach ?>
+        </select><br>
+        <?php echo 'Hold down the CTRL (Windows) or CMD (Mac) button to select more than one item'; ?>
+      </ul>
+
+    </p>
+
+    <p>
+
+      <?php echo 'Post categories to exclude: '; ?><br>
+      <?php $categories_excluded = isset($instance['categories_excluded']) ? $instance['categories_excluded'] : array(); ?>
+      <ul>
+        <select name="<?php echo $this->get_field_name( 'categories_excluded' ); ?>[]" multiple="multiple">
+          <?php foreach (get_categories() as $cat) : ?> 
+            <option value="<?php echo $cat->cat_ID ?>" <?php selected(in_array($cat->cat_ID, $categories_excluded)) ?>><?php echo $cat->cat_name; ?></option>
+          <?php endforeach ?>
+        </select><br>
+        <?php echo 'Hold down the CTRL (Windows) or CMD (Mac) button to select more than one item'; ?>
+      </ul>
+
+    </p>
+
+
   <?php
 
   }
