@@ -185,7 +185,7 @@ class UW_Recent_Posts extends WP_Widget
 
      <p>
 
-      <?php echo 'Post categories to include: '; ?><br>
+      <?php echo 'Post categories to include: '; ?>
       <?php $categories_included = isset($instance['categories_included']) ? $instance['categories_included'] : array(); ?>
       <ul>
         <select name="<?php echo $this->get_field_name( 'categories_included' ); ?>[]" multiple="multiple">
@@ -200,7 +200,7 @@ class UW_Recent_Posts extends WP_Widget
 
     <p>
 
-      <?php echo 'Post categories to exclude: '; ?><br>
+      <?php echo 'Post categories to exclude: '; ?>
       <?php $categories_excluded = isset($instance['categories_excluded']) ? $instance['categories_excluded'] : array(); ?>
       <ul>
         <select name="<?php echo $this->get_field_name( 'categories_excluded' ); ?>[]" multiple="multiple">
