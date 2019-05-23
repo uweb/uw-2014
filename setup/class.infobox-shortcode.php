@@ -7,6 +7,17 @@ Class UW_InfoboxShortcode {
         add_shortcode( 'infobox', array($this, 'infobox_shortcode' ));
         add_filter('mce_external_plugins', array($this, 'infobox_register_tinymce_plugin')); 
         add_filter('mce_buttons', array($this, 'infobox_add_tinymce_button'));
+        // Register the infobox js script
+        wp_register_script( 'get_template_directory', get_template_directory_uri() . '/js/uw.infobox.js' );
+
+        // Localize the infobox script with new data
+        $template_url_array = array(
+            'url' => get_template_directory_uri()
+        );
+        wp_localize_script( 'get_template_directory', 'templateDirectory', $template_url_array );
+
+        // Enqueue infobox script with localized data.
+        wp_enqueue_script( 'get_template_directory' );
     }
 
     // Add infobox shortcode.

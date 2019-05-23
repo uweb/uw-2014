@@ -5,7 +5,7 @@
 
 (function() {
     tinymce.create('tinymce.plugins.infobox_plugin', {
-        init : function(ed, url) {
+        init : function(ed) {
             ed.addCommand('infobox_insert_shortcode', function() {
                 selected = tinyMCE.activeEditor.selection.getContent();
 
@@ -19,7 +19,9 @@
                 tinymce.execCommand('mceInsertContent', false, content);
             });
             
-            ed.addButton('infobox_button', {title : 'Insert infobox', cmd : 'infobox_insert_shortcode', image: url.slice(0, url.length - 3) + '/assets/images/infobox-icon.png'});
+            var url = templateDirectory.url;
+
+            ed.addButton('infobox_button', {title : 'Insert infobox', cmd : 'infobox_insert_shortcode', image: url + '/assets/images/infobox-icon.png'});
         },   
     });
 
