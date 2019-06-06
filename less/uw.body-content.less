@@ -55,7 +55,7 @@ a.more {
   position: relative;
  // display: inline-block;
   &:after {
-    background: url(assets/svg/uw-sprite.svg) no-repeat -206px -492px;
+    background: url(/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg) no-repeat -206px -492px;
     content: "";
     position: absolute;
     right: -24px;
@@ -153,7 +153,7 @@ span.next-page {
 	  -webkit-border-radius:0;
 	  -moz-border-radius:0;
 	  &:after {
-		background: url(assets/svg/uw-sprite.svg) no-repeat -206px -492px;
+		background: url(/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg) no-repeat -206px -492px;
 		content: "";
 		position: absolute;
 		right: 17px;
@@ -193,12 +193,50 @@ span.next-page {
 
 
 .info-box {
-	width: 310px;
+    width: 310px;
+	margin-bottom: 50px;
+	margin-top: 10px;
+	margin-right: 40px;
+	float:left;
+	padding: 30px 30px 30px;
+	.box-shadow(0px 1px 2px rgba(0, 0, 0, 0.2));
+	border-top: 6px solid @lightgold;
+	position: relative;
+/*	width: 310px;
 	float: left;
 	margin-right: 50px;
 	margin-bottom: 50px;
 	margin-top: 20px;
 	margin-left: -150px;
+	padding: 30px 30px 30px;
+	.box-shadow(0px 1px 2px rgba(0, 0, 0, 0.2));
+	border-top: 6px solid @lightgold;
+	position: relative;
+	background: url('assets/images/stripes-dark-tile.svg') repeat-x 0 -88px transparent;    */
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+	&:after {
+		top: auto;
+		bottom: -40px;
+	}
+	p, li, a {
+		font-size: 16px;
+		line-height: 1.6;
+	}
+	h1, h2, h3, h4, h5 {
+		margin-top: 0;
+	}
+}
+
+
+.info-box.info-left {
+    width: 310px;
+	margin-bottom: 50px;
+	margin-top: 10px;
+	margin-right: 40px;
+	float:left;
 	padding: 30px 30px 30px;
 	.box-shadow(0px 1px 2px rgba(0, 0, 0, 0.2));
 	border-top: 6px solid @lightgold;
@@ -220,6 +258,66 @@ span.next-page {
 		margin-top: 0;
 	}
 }
+
+
+ .info-box.info-right {
+    width: 310px;
+	float:right;
+	margin-bottom: 50px;
+	margin-top: 0;
+	margin-left: 40px;
+	margin-right: 0;
+	padding: 30px 30px 30px;
+	.box-shadow(0px 1px 2px rgba(0, 0, 0, 0.2));
+	border-top: 6px solid @lightgold;
+	position: relative;
+	background: url('assets/images/stripes-dark-tile.svg') repeat-x 0 -88px transparent;
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+	&:after {
+		top: auto;
+		bottom: -40px;
+	}
+	p, li, a {
+		font-size: 16px;
+		line-height: 1.6;
+	}
+	h1, h2, h3, h4, h5 {
+		margin-top: 0;
+	}
+}
+
+ .info-box.info-full {
+    width: 100%;	
+	margin-bottom: 50px;
+	margin-top: 20px;
+	padding: 30px 30px 30px;
+	.box-shadow(0px 1px 2px rgba(0, 0, 0, 0.2));
+	border-top: 6px solid @lightgold;
+	position: relative;
+	background: url('assets/images/stripes-dark-tile.svg') repeat-x 0 -88px transparent;
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+	&:after {
+		top: auto;
+		bottom: -40px;
+	}
+	p, li, a {
+		font-size: 16px;
+		line-height: 1.6;
+	}
+	h1, h2, h3, h4, h5 {
+		margin-top: 0;
+	}
+}
+
+
+
+
 .uw-body-copy ul.links {
 	overflow: visible;
 }
@@ -231,7 +329,7 @@ span.next-page {
 	a {
 //		position: relative;
 //		&:after {
-//			background: url(assets/svg/uw-sprite.svg) no-repeat -206px -492px;
+//			background: url(/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg) no-repeat -206px -492px;
 //			content: "";
 //			opacity: .4;
 //			position: absolute;
@@ -330,7 +428,7 @@ img.attachment-post-thumbnail.wp-post-image,
 
 @media only screen and (max-width : 1600px) {
 	.info-box {
-		margin-left: -50px;
+		//margin-left: -50px;
 	}
 }
 
@@ -339,9 +437,12 @@ img.attachment-post-thumbnail.wp-post-image,
 	.widget {
 		padding: 0;
 	}
-	.info-box {
+	.info-box, .info-box.info-right, .info-box.info-left {
 		margin-left: 0;
 		width: 100%;
+	}
+	.info-box.info-left {
+       margin-right: 0; 
 	}
     .uw-body-copy {
         h1,h2,h3,h4,p:first-of-type {

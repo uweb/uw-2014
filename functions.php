@@ -25,6 +25,3 @@ if (!function_exists('setup_uw_object')){
 }
 
 $UW = setup_uw_object();
-
-
-
