@@ -20,7 +20,11 @@ class UW_Media_Credit
 
   }
 
-
+  function add_media_credit_shortcode_to_tinymce( $plugins )
+  {
+    $plugin_array[ 'mediacredit' ] = get_template_directory_uri() . '/assets/admin/js/media-credit.js';
+    return $plugin_array;
+  }
 
   /**
    * Override the editor html to include media credit even if the photo caption is empty
@@ -33,12 +37,11 @@ class UW_Media_Credit
 
     $credit = get_post_meta( $id, '_media_credit', true);
     $img    = wp_get_attachment_image_src( $id, $size );
+    $width = $img[1];
+    $height = $img[2];
 
     return $credit ?
-      "<dl class='mediacredit align$align' data-credit='$credit' data-align='align$align' data-size='$size' style='width:{$img[1]}px'>
-        <dt class='mediacredit-dt'>$html</dt>
-        <dd class='wp-caption-dd'>$credit</dd>
-      </dl>" : $html;
+      '[caption id="attachment_' . $id . '" align="' . $align . '" width="' . $width . '" credit="' . $credit . '"]<a href="' . $url . '"><img src="' . $url . '" alt="' . $caption . '" width="' . $width . '" height="' . $height . '" class="size-full wp-image-' . $id . '" /></a> ' . $caption . '[/caption]' : $html;
   }
 
   /**

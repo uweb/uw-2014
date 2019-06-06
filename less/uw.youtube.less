@@ -7,7 +7,9 @@
 .tube-wrapper {
      position: relative;
      padding-bottom: 56.25%;
-     padding-top: 30px; height: 0; overflow: hidden;
+     // padding-top: 30px;
+     height: 0;
+     overflow: hidden;
 }
 .tube-wrapper iframe,
 .tube-wrapper object,
@@ -34,10 +36,10 @@
             right: 2%;
             width: 5px;
             height: 105px;
-            background: url("assets/images/youtube-player/video-overflow.png") 0 0 no-repeat;
+            // background: url("assets/images/youtube-player/video-overflow.png") 0 0 no-repeat;
         }
     }
-    iframe { 
+    iframe {
     	max-width: none !important;
     	padding: 0;
     	margin: 0;
@@ -49,8 +51,8 @@
     top: 31px;
     z-index: 0;
     border: none; }
-    
-.vidSmall { 
+
+.vidSmall {
     height: 130px;
     padding: 14px 0 0;
     margin: 0 0 5px 0;
@@ -69,8 +71,8 @@
         line-height: 1.3em;
         font-size: 12px;
         color: white;
-    }	    
-    .title { 
+    }
+    .title {
         margin: 3px 3px 0 0 ;
     }
     button {
@@ -78,7 +80,7 @@
         display: block;
         margin: 0;
         overflow: hidden;
-        position: relative; 
+        position: relative;
         padding: 0;
         width: 120px;
         &.vid-active:after {
@@ -94,10 +96,10 @@
             font-weight: @bold;
 	    }
         &.vid-active div {
-            opacity: 1;	
+            opacity: 1;
         }
         &:hover div, &:focus div {
-            opacity: 1;		        
+            opacity: 1;
         }
         &:hover .playBtn, &:focus .playBtn {
             display: none;
@@ -137,7 +139,7 @@
         list-style: none;
         cursor: pointer;
     }
-    .duration { 
+    .duration {
     	color: #B6B6B6 ;
     	background: url('assets/images/youtube-player/play-sm.png') right 2px no-repeat transparent;
     	color: #B6B6B6;
@@ -156,11 +158,11 @@
     	list-style: none;
     	position: absolute;
     	left: 0;
-    	top: 0; 
+    	top: 0;
     }
     .thumb .end,
-    .thumb { 
-    	background-color: #888888 
+    .thumb {
+    	background-color: #888888
     }
     .scrollbar {
    		display: none;
@@ -176,7 +178,7 @@
         height: 100%;
         width: 8px;
         position: relative;
-        padding: 0 1px; 
+        padding: 0 1px;
     }
     .thumb {
         height: 7px;
@@ -184,11 +186,11 @@
         cursor: pointer;
         overflow: hidden;
         position: absolute;
-        bottom: 0; 
+        bottom: 0;
         .end {
         	overflow: hidden;
         	height: 5px;
-        	width: 8px; 
+        	width: 8px;
         }
     }
     .disable { display: none }

@@ -10,7 +10,7 @@ class UW_Media_Caption
   function UW_Media_Caption()
   {
     add_filter( 'img_caption_shortcode', array( $this, 'add_media_credit_to_caption_shortcode_filter'), 10, 3 );
-  
+
   }
 
   //
@@ -29,7 +29,8 @@ class UW_Media_Caption
     ), $attr));
 
 
-    if ( 1 > (int) $width || empty($caption) )
+    // if ( 1 > (int) $width || empty($caption) )
+    if ( 1 > (int) $width )
       return $content;
 
     if ( $id ) $id = 'id="' . esc_attr($id) . '" ';
@@ -38,7 +39,7 @@ class UW_Media_Caption
     if ( $match[0] ) $credit = get_post_meta($match[0], '_media_credit', true);
     if ( $match[0] ) $source_url = get_post_meta( $match[0], "_source_url", true );
     if ( $credit ) $credit = '<span class="wp-media-credit">'. $credit . '</span>';
-  
+
   // $credit = '<a href="'. ($source_url) .'">'. $credit .'</a>';
 
     if ($source_url != '') {
@@ -46,11 +47,11 @@ class UW_Media_Caption
     }else {
       $credit = ($source_url) . $credit ;
     }
-   
+
    // Extract attachment $post->ID
 
     return '<div ' . $id . 'class="wp-caption ' . esc_attr($align) . '" style="width: ' . (10 + (int) $width) . 'px">'
-    . do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '<span style="font-style:italic;">' .$credit . '</span>' . '</p></div>';
+    . do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . $credit . '</span>' . '</p></div>';
 
 
 
@@ -59,9 +60,9 @@ class UW_Media_Caption
 
 
 
-  
 
-  
+
+
 
 
 

@@ -1,4 +1,4 @@
-<header class="uw-thinstrip">
+<header class="uw-thinstrip" role="banner">
 
   <div class="container">
     <a href="http://uw.edu" title="University of Washington Home" class="uw-patch">University of Washington</a>

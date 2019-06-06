@@ -31,21 +31,21 @@ class UW_Iframes
         return '';
 
       $iframeSrc = html_entity_decode($params['src']);
-      $iframeQueryString = parse_url($iframeSrc, PHP_URL_QUERY);	  
-      $parentQueryString = http_build_query($_GET);      
-    	 
+      $iframeQueryString = parse_url($iframeSrc, PHP_URL_QUERY);
+      $parentQueryString = http_build_query($_GET);
+
       if($iframeQueryString != '' && $parentQueryString != '')
       {
         $iframeQuery = parse_str($iframeQueryString, $iframeQueryParams);
         $parentQuery = parse_str($parentQueryString, $parentQueryParams);
         $query_merged = array_merge($iframeQueryParams, $parentQueryParams);
         $iframeSrc = str_replace($iframeQueryString, http_build_query($query_merged), $iframeSrc);
-      } 
+      }
       else if ($parentQueryString != '')
       {
         $iframeSrc .= "?" . $parentQueryString;
       }
-    
+
       $iframeSrc = esc_url($iframeSrc, array('http', 'https'));
 
       return "<iframe src=\"$iframeSrc\" width=\"{$params['width']}\" height=\"{$params['height']}\" style=\"border:0\"></iframe>";
@@ -102,6 +102,13 @@ class UW_Iframes
       'cdn.knightlab.com',
       'uploads.knightlab.com',
       'yeatmanlab.github.io',
+      'livestream.com',
+      'uwphotos.smugmug.com',
+      'www.smugmug.com',
+      'smugmug.com',
+      'universityphotography.smugmug.com',
+      'modelo.io',
+      'app.modelo.io',
     );
   }
 

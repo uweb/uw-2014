@@ -28,8 +28,8 @@
     <!--<![endif]-->
 
     <div id="uwsearcharea" aria-hidden="true" class="uw-search-bar-container"></div>
-   
-   <a role="banner" aria-label="main_content" id="main-content" href="#main_content" class='screen-reader-shortcut'>Skip to main content</a>
+
+    <a id="main-content" href="#main_content" class="screen-reader-shortcut">Skip to main content</a>
 
     <div id="uw-container">
 

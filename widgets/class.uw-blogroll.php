@@ -1,5 +1,7 @@
 <?php
 
+// come back to this to add the widget option to remove or keep the read more link
+
 class UW_Blogroll extends WP_Widget
 {
 
@@ -25,6 +27,7 @@ class UW_Blogroll extends WP_Widget
   {
     $title  = empty( $instance['title'] ) ? self::NAME : esc_attr( $instance['title'] );
     $number = empty( $instance['number'] ) ? 2 : absint( $instance['number'] );
+    // $read_more = empty( $instance['read_more'] ) ? true : $instance['read_more'];
     ?>
       <p>
         <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title:', 'twentyfourteen' ); ?></label>
@@ -36,6 +39,11 @@ class UW_Blogroll extends WP_Widget
         <input id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" type="text" value="<?php echo esc_attr( $number ); ?>" size="3">
       </p>
 
+      <!-- <p>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'read_more' ) ); ?>"><?php _e( 'Show "Read More" Link:', 'twentyfourteen' );?></label>
+        <input type="checkbox" id="<?php echo $this->get_field_id( 'read_more'  ); ?>" name="<?php echo $this->get_field_name( 'read_more' ); ?>" <?php checked($read_more, true, true); ?> />
+      </p> -->
+
     <?php
   }
 
@@ -43,7 +51,8 @@ class UW_Blogroll extends WP_Widget
   {
 		$instance['title']  = strip_tags( $new_instance['title'] );
 		$instance['number'] = empty( $new_instance['number'] ) ? self::LIMIT : absint( $new_instance['number'] );
-		return $instance;
+    // $instance['read_more'] = (bool) $new_instance['read_more'];
+    return $instance;
   }
 
   function widget( $args, $instance )
@@ -56,7 +65,9 @@ class UW_Blogroll extends WP_Widget
     echo $args['before_widget'];
     echo '<h2>' . $title .'</h2>';
 
-    echo do_shortcode( "[".self::ID." number={$number}/]");
+    $readmore = $read_more ? '' : 'readmore=\'off\'';
+
+    echo do_shortcode( "[".self::ID." number={$number} /]");
 
     echo $args['after_widget'];
   }
@@ -76,7 +87,8 @@ class UW_Blogroll extends WP_Widget
           'category'  =>  '',
           'category_name' =>  '',
           'mini'     =>  false,
-          'date'     =>  'show'
+          'date'     =>  'show',
+          'readmore' => 'on'
       ), $atts );
 
     if ( !array_key_exists('numberposts', $params ) )
@@ -86,6 +98,7 @@ class UW_Blogroll extends WP_Widget
 
     $params = (object) $params;
     $mini = $params->mini;
+    $read_more = $params->readmore;
     $html = '';
 
     foreach ( $posts as $post ) {
@@ -135,9 +148,10 @@ class UW_Blogroll extends WP_Widget
           $byline = sprintf('<small>%s%s</small>', $author_mini, $date);
         }
         $html .= sprintf("<li><a class='widget-thumbnail' href='%s'>%s</a><a class='widget-link' href='%s'>%s<span>%s</span></a></li>", $link, $image, $link, $post->post_title, $byline);
-      }
-        else {
+      } else if ($read_more == 'on') {
         $html  .= "<li><span><{$params->titletag}><a href=\"$link\">{$post->post_title}</a><p class=\"date\">{$date}</p></{$params->titletag}>{$author}<span$class>{$image}</span>{$excerpt}<p><a href=\"$link\" class=\"more\">Read more</a></p></span></li>";
+      } else {
+        $html  .= "<li><span><{$params->titletag}><a href=\"$link\">{$post->post_title}</a><p class=\"date\">{$date}</p></{$params->titletag}>{$author}<span$class>{$image}</span>{$excerpt}</span></li>";
       }
 
     }
