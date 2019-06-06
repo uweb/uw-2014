@@ -7,6 +7,7 @@ Class UW_InfoboxShortcode {
         add_shortcode( 'infobox', array($this, 'infobox_shortcode' ));
         add_filter('mce_external_plugins', array($this, 'infobox_register_tinymce_plugin')); 
         add_filter('mce_buttons', array($this, 'infobox_add_tinymce_button'));
+
         // Register the infobox js script
         wp_register_script( 'get_template_directory', get_template_directory_uri() . '/js/uw.infobox.js' );
 
@@ -33,11 +34,11 @@ Class UW_InfoboxShortcode {
         $output .= '<div class="info-box';
 
         if ($infobox_atts['alignment'] != '') {
-            if ($infobox_atts['alignment'] == 'left') {
+            if (strtolower($infobox_atts['alignment']) == 'left') {
                 $output .= ' info-left';
-            } else if ($infobox_atts['alignment'] == 'right') {
+            } else if (strtolower($infobox_atts['alignment']) == 'right') {
                 $output .= ' info-right';
-            } else if ($infobox_atts['alignment'] == 'full-width') {
+            } else if (strtolower($infobox_atts['alignment']) == 'full-width') {
                 $output .= ' info-full';
             }
         }
@@ -45,7 +46,11 @@ Class UW_InfoboxShortcode {
         $output .= '" ';
 
         if ($infobox_atts['color'] != '') {
-            $output .= 'style="border-top-color:' . esc_html__($infobox_atts['color']) . '"';
+            if (strtolower($infobox_atts['color']) == 'purple') {
+                $output .= 'style="border-top-color:#4b2e83"';
+            } elseif (strtolower($infobox_atts['color']) == 'metallic gold') {
+                $output .= 'style="border-top-color:#85754d"';
+            } 
         }
 
         $output .= '>';
@@ -59,7 +64,7 @@ Class UW_InfoboxShortcode {
         return $output;
     }
 
-    // Register the plugin
+    // Register the plugin.
     function infobox_register_tinymce_plugin($plugin_array) 
     {
        $plugin_array['infobox_button'] = get_stylesheet_directory_uri() .'/js/uw.infobox.js';
