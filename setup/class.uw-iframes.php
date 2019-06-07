@@ -53,7 +53,7 @@ class UW_Iframes
 
   function get_iframe_domains()
   {
-    $iframe_domains = array(
+    return array(
       'uw.edu',
       'washington.edu',
       'uwtv.org',
@@ -110,11 +110,6 @@ class UW_Iframes
       'modelo.io',
       'app.modelo.io',
     );
-    $iframes_settings = get_option('iframes_settings', false);
-    $user_domains = isset($iframes_settings['iframes_textarea_field_0']) ? $iframes_settings['iframes_textarea_field_0'] : array();
-    $user_domains = preg_split('/\s+/', $user_domains);
-    $iframe_domains = array_merge($iframe_domains, $user_domains);
-    return $iframe_domains;
   }
 
 
