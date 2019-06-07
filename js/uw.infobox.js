@@ -11,9 +11,9 @@
 
                 if ( selected ) {
                     // If text is selected when button is clicked, set selected text as infobox content
-                    content = '[infobox alignment="" color=""]'+ selected +'[/infobox]';
+                    content = '[infobox alignment= color= ]'+ selected +'[/infobox]';
                 } else {
-                    content = '[infobox alignment="" color=""][/infobox]';
+                    content = '[infobox alignment= color= ][/infobox]';
                 }
 
                 tinymce.execCommand('mceInsertContent', false, content);
