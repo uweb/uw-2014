@@ -30,6 +30,7 @@ class UW_Shortcodes
       //  require_once('class.tiny-shortcode.php');
         require_once('class.grid-shortcode.php');
         require_once('class.menu-shortcode.php');
+        require_once('class.infobox-shortcode.php');
 
         require_once('class.uw-custom-link.php');
         require_once('class.tagboard-shortcode.php');
@@ -47,6 +48,7 @@ class UW_Shortcodes
       //  $this->tiny           = new UW_TinyShortcode();
         $this->bootstrap      = new UW_GridShortcode();
         $this->custommenu     = new UW_MenuShortcode();
+        $this->infobox        = new UW_InfoboxShortcode();
 
         $this->custom_link = new UW_CustomLinks();
         $this->tagboard = new UW_TagboardShortcode();

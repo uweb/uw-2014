@@ -24,6 +24,7 @@ This is an overview of the custom widgets, plugins and various features it inclu
   - [Button](#button)
   - [Blogroll](#blogroll)
   - [iFrame](#iframe)
+  - [Infobox](#infobox)
   - [Intro](#intro)
   - [RSS](#rss)
   - [Tile box](#tilebox)
@@ -260,6 +261,16 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
     helperapps.gifts.washington.edu,
 ```
 
+### Infobox ###
+> Displays an infobox. [See an example of an infobox here](http://www.washington.edu/news/2019/03/20/snow-may-have-delayed-some-blooms-for-the-first-day-of-spring/). 
+> This shortcode can be wrapped around selected content by clicking the infobox button in the WordPress visual editor.
+> Attributes:
+> - __alignment__: Adjusts the alignment of the infobox. Options: __left__, __left-center__, __right__, __full-width__ (_Default: left_)
+> - __color__: The color of the top border of the infobox. Options: __gold__ or __purple__ (_Default: gold_)
+> Example:
+```
+  [infobox alignment="full-width" color="purple"]Infobox Text[/infobox]
+```
 
 ### Intro ###
 > This shortcode creates an italicized block of introduction text for the content.
