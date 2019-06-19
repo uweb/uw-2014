@@ -135,10 +135,7 @@ class UW_Widget_Twitter extends WP_Widget
       $twitters = $twitter  ->setGetfield( $parameters )
                             ->buildOauth(self::URL, self::REQUESTMETHOD)
                             ->performRequest();
-        print_r($twitters);
-
       $tweets = json_decode( $twitters );
-      print_r($tweets);
       foreach ($tweets as $index => $tweet)
       {
         $hasAuthor = ( count($tweet->entities->user_mentions) > 0 );

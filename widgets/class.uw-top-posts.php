@@ -207,6 +207,8 @@ class UW_Top_Posts extends WP_Widget
 }
 
 // Instantiate the plugin
-register_widget( 'UW_Top_Posts' );
+if(function_exists('stats_get_csv')) {
+  register_widget( 'UW_Top_Posts' );
+}
 
 endif;
