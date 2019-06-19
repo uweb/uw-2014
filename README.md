@@ -37,6 +37,10 @@ This is an overview of the custom widgets, plugins and various features it inclu
 - [Features](#features)
   - [UW Widget Visibility](#uw-widget-visiblity)
   - [UW Media Credit](#uw-media-credit)
+- [Plugin guides](#plugin-guides)
+  - [Marketo Forms](#marketo-forms)
+  - [Contact Form 7](#contact-form-7)
+    - [Preventing spam](#preventing-spam)
 - [Creators](#creators)
 - [Contributors](#contributors)
 - [License](#license)
@@ -450,6 +454,71 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
 
 > This feature allows images to have author credits next to them. When an image is selected in the Media Library a field for Media Credit will appear next to its other attributes. This credit will always appear after the image caption.
 
+## Plugin Guides
+- - -
+
+Additional plugins can be used to extend the functionality of the UW-2014 theme. A number of them can be found at the University Markeitng & Communications [Github repository](http://github.com/uweb).
+
+### Marketo Forms ###
+
+> This WordPress plugin provides content authors with two short codes they can use on their pages to invoke the Marketo Subscription widget and UW Preference Center widget.  The code for both of these widgets are JavaScript files that are provided by the Information Management team in Central Advancement.  More information about that code can be found here:  https://uwmarketo.freshdesk.com/support/solutions/articles/33000214924-how-can-i-add-a-call-out-button-on-my-website-for-people-to-sign-up-for-our-enews-
+
+#### Marketo Subscription widget
+The Marketo Subscription widget allows visitors to sign up for one or more Marketo emails/newsletters.  To place the Marketo Subscription widget on a page, use the following shortcode:
+
+```
+    [uw-subscription-form subscriptionid="1234" fromname="Department of Redundancy Department" fromemail="raddept@uw.edu" showplaceholders="true" hidelabels="true" returnurl=""]
+```
+
+All of the attributes are optional; if no attribute is supplied a default value will be used.  The attributes are:
+
+> - **subscriptionid**:  This is the ID number of your Marketo email/newsletter.  The E-Communications team can get this number for you if you do not already know it.  If you want to subscribe to more than one, you can separate ID's with a comma (eg, subscriptionid="1234,1235,1236").  The default subscription is "27."  This must be a number!
+> - **fromname**:  This is name you would like users to see in the From line of the email.  The default name is "UW Email Sign Up."
+> - **fromemail**:  This is the email address associated with the from name.  The default address is "mktosubp@uw.edu."  This must be a valid email address.
+> - **showplaceholders**:  This true/false option will show the field names inside of the form field if set to true.  The default value is false.  If set to false, it is recommended to set hidelables to false.
+> - **hidelabels**:  This true/false option will hide the labels above the form fields if set to true.  The default value is false.  If set to true, it is recommended to set showplaceholders to true.
+> - **returnurl**:  If during the subscription process, you want the user to be taken to another location, enter that here.  The default is to send the user back to the same page.  It is highly recommended not to change this unless you know what you are doing!
+
+
+#### UW Preference Center widget
+The UW Preference Center widget allows visitors to manage all of their Marketo subscriptions in one place.  To place the UW Preference Center widget on a page, use the following shortcode:
+
+```
+     [uw-preference-center preferenceid="1234" managepreferences="true" fromname="Department of Redundancy Department" fromemail="raddept@uw.edu" showheader="true"]
+```
+
+All of the attributes are optional; if no attribute is supplied a default value will be used.  The attributes are:
+
+> - **preferenceid**: This is the ID number of your Marketo organization (ie, the account under which all of your emails/newsletters live).  The E-Communications team can get this number for you if you do not already know it.  The default value is "21."
+> - **managepreferences**: This true/false value will determine if the user can manage all of their Marketo preferences through this widget.  The default value is true, and it is highly recommended to keep that value.
+> - **fromname**:  This is name you would like users to see in the From line of the email and throughout the Preference Center.  The default name is "UW Email Sign Up."
+> - **fromemail**:  This is the email address associated with the from name.  The default address is "mktosubp@uw.edu."  This must be a valid email address.
+> - **showheader**:  This true/false value will determine whether the Preference Center header is shown.  The default value is true, but you are advised to try both true and false values to determine which look may be most appropriate for your site.
+
+### Contact Form 7 ###
+
+> [Contact Form 7](https://wordpress.org/plugins/contact-form-7/) is the contributed form building plugin used by the UMAC Web Team for creating simple web forms.
+
+#### Preventing spam
+
+> Spam messages can cause headaches and security issues on any website. It's important to always enable anti-spam meausres when creating any web form. Ensure that name or email address fields are required for all forms. [Akismet](https://wordpress.org/plugins/akismet/) is highly recommended for all WordPress sites and can be used with Conact Form 7. ensure that Akismet is enabled and add the akisement:author and akisment:author_email are added to the respectives form fields, similar to the example below:
+
+```html
+&lt;p&gt;Your Name (required)&lt;br /&gt;
+    [text* your-name akismet:author] &lt;/p&gt;
+
+&lt;p&gt;Your Email (required)&lt;br /&gt;
+    [email* your-email akismet:author_email] &lt;/p&gt;
+```
+
+> Further prevention to block spam bots from submitting forms can be added with a simple quiz field appended to your form. Quizzes are required by default. Example:
+
+```
+&lt;p&gt;Spam verification (required)&lt;br /&gt;
+    [quiz quiz-134 &quot;Which of these is a color: hand, purple, grass?|purple&quot;
+    &quot;What is the capital of France?|Paris&quot;
+    &quot;Which number is larger, 43 or 16?|43&quot;]&lt;/p&gt;
+```
 
 ## Creators
 - - -

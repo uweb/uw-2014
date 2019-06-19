@@ -366,7 +366,7 @@ if ( !function_exists('uw_site_title')):
 endif;
 
 if ( !function_exists('text_cut') ):
-  // used in content-page-noheader.php and was also found in content-page.php 
+  // used in content-page-noheader.php and was also found in content-page.php
     function text_cut($text = '', $length = 27, $dots = true) {
       global $post;
       $parent = get_post($post->post_parent);
@@ -381,4 +381,61 @@ if ( !function_exists('text_cut') ):
       return $text . ( ( $dots == true && $text != '' && strlen($text_temp) > $length ) ? '...' : '');
     }
 
+endif;
+
+/**
+ * Truncates the given string at the specified length.
+ *
+ * @param string $str The input string.
+ * @param int $width The number of chars at which the string will be truncated.
+ * @return string
+ */
+if ( !function_exists('uw_social_truncate') ):
+  function uw_social_truncate($str, $width) {
+      return strtok(wordwrap($str, $width, "...\n"), "\n");
+  }
+endif;
+
+if ( !function_exists('uw_meta_tags') ):
+  function uw_meta_tags() {
+    global $post;
+    if(network_site_url() == "http://localhost/cms/" || network_site_url() == "http://cmsdev.u.washington.edu/" || network_site_url() == "https://www.washington.edu/cms/"){
+
+      if ( trim($post->post_excerpt) != '' ) {
+      //If there's an excerpt that's what we'll use
+        $fb_desc = trim($post->post_excerpt);
+      } else {
+      //If not we grab it from the content
+        $fb_desc = trim($post->post_content);
+      }
+    //Trim description
+    $fb_desc = trim( str_replace('&nbsp;', ' ', $fb_desc) ); //Non-breaking spaces are usefull on a meta description. We'll just convert them to normal spaces to really trim it
+    $fb_desc = trim(wp_strip_all_tags( strip_shortcodes( stripslashes( $fb_desc ), true ) ) );
+    $fb_desc = uw_social_truncate($fb_desc, 200);
+    if ( !is_singular()) //if it is not a post or a page
+    return;
+
+    echo '<meta name="twitter:card" content="summary" />' . PHP_EOL;
+    echo '<meta name="twitter:site" content="@uw" />' . PHP_EOL;
+    echo '<meta name="twitter:creator" content="@uw" />' . PHP_EOL;
+    echo '<meta name="twitter:card" content="summary_large_image" />' . PHP_EOL;
+    echo '<meta property="og:title" content="' . html_entity_decode(get_the_title()) . '" />' . PHP_EOL;
+    // echo '<meta property="og:type" content="article"/>' . PHP_EOL;
+    echo '<meta property="og:url" content="' . get_permalink() . '" />' . PHP_EOL;
+    echo '<meta property="og:site_name" content="' . get_bloginfo( 'name' ) . '" />' . PHP_EOL;
+    echo '<meta property="og:description" content="' . $fb_desc . '" />' . PHP_EOL;
+    if (isset($post->type_meta) && $post->type_meta == 'article' && isset($post->author_meta) && $post->author_meta != '') { '<meta property="article:author" content="' . $post->author_meta . '" />' . PHP_EOL; }
+    if(!has_post_thumbnail( $post->ID )) { //the post does not have featured image, use a default image
+        $default_image = ""; //replace this with a default image on your server or an image in your media library
+        echo '<meta property="og:image" content="' . $default_image . '" />' . PHP_EOL;
+      }
+      else{
+        $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full-content' );
+        echo '<meta property="og:image" content="' . esc_attr( $thumbnail_src[0] ) . '" />' . PHP_EOL;
+      }
+      echo "
+      " . PHP_EOL;
+    }
+  }
+  add_action( 'wp_head', 'uw_meta_tags', 5 );
 endif;

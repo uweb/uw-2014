@@ -122,7 +122,7 @@ class UW_Widget_Cards extends WP_Widget
       <div class="<?php echo $radio ?>">
 
       <div class='card-image' style='background-image:url(<?php
-        $the_image = $image_attributes = wp_get_attachment_image_src( $image, 'large' );
+        $the_image = $image_attributes = wp_get_attachment_image_src( $image, array(750, 750) );
         echo  $the_image[0]; ?>
       )'></div>
 

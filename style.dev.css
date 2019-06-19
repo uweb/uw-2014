@@ -4634,7 +4634,6 @@ table th[class*="col-"] {
 .tube-wrapper {
   position: relative;
   padding-bottom: 56.25%;
-  padding-top: 30px;
   height: 0;
   overflow: hidden;
 }
@@ -4665,7 +4664,6 @@ table th[class*="col-"] {
   right: 2%;
   width: 5px;
   height: 105px;
-  background: url("assets/images/youtube-player/video-overflow.png") 0 0 no-repeat;
 }
 .nc-video-player iframe {
   max-width: none !important;
@@ -8729,7 +8727,7 @@ body.error404 .woof {
 .uw-footer ul.footer-links li a:after {
   content: "/";
   opacity: .5;
-  position: absolute;
+  position: relative;
   right: -14px;
   top: -2px;
 }
@@ -10096,4 +10094,31 @@ pre.prettyprint ol.linenums li {
   .table-bordered td {
     border: 1px solid #ddd !important;
   }
+}
+/*
+ *  Add2Any icon overrides.
+ */
+.a2a_svg,
+.a2a_count {
+  border-radius: 0 !important;
+}
+.a2a_s_print,
+.a2a_s_a2a {
+  background-color: #4b2e83 !important;
+}
+.a2a_s_email {
+  background-color: #85754d !important;
+}
+.a2a_menu a {
+  color: #0074bb !important;
+}
+.uw-body-copy .addtoany_share_save_container {
+  margin: 30px 0 40px;
+  padding: 12px 0 10px 0;
+  border-top: 1px dotted #E2E2E2;
+  border-bottom: 1px dotted #E2E2E2;
+}
+.uw-body-copy .addtoany_list a,
+.uw-body-copy .widget .addtoany_list a {
+  padding: 0 15px 0 0;
 }
