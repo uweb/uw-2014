@@ -4447,6 +4447,186 @@ table th[class*="col-"] {
     border-bottom: 0;
   }
 }
+.uw-player {
+  margin-bottom: 80px  ;
+}
+.uw-player .video-js {
+  background-color: transparent;
+  position: relative;
+  padding: 0;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.uw-player .video-js .vjs-tech {
+  width: 100%;
+}
+.uw-player .video-js.vjs-fullscreen {
+  position: fixed;
+  overflow: hidden;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100% !important;
+  height: 100% !important;
+  _position: absolute;
+}
+.uw-player .video-js .vjs-play-control,
+.uw-player .video-js .vjs-current-time,
+.uw-player .video-js .vjs-duration,
+.uw-player .video-js .vjs-remaining-time,
+.uw-player .video-js .vjs-live-controls,
+.uw-player .video-js .vjs-progress-control,
+.uw-player .video-js .vjs-fullscreen-control,
+.uw-player .video-js .vjs-volume-control,
+.uw-player .video-js .vjs-mute-control,
+.uw-player .video-js .vjs-playback-rate,
+.uw-player .video-js .vjs-subtitles-button,
+.uw-player .video-js .vjs-captions-button,
+.uw-player .video-js .vjs-chapters-button {
+  text-indent: -1000px;
+}
+.uw-player .video-js .vjs-playback-rate,
+.uw-player .video-js .vjs-subtitles-button,
+.uw-player .video-js .vjs-captions-button,
+.uw-player .video-js .vjs-chapters-button {
+  display: none;
+}
+.uw-player .video-js .vjs-control-bar {
+  margin-top: -10px;
+  position: relative;
+  color: gray;
+  background: #4d4d4d;
+  width: 100%;
+  height: 50px;
+}
+.uw-player .video-js .vjs-control-bar .vjs-play-control {
+  position: absolute;
+  left: 10px;
+  height: 100%;
+  width: 50px;
+  background: url(assets/svg/uw-sprite.svg) no-repeat -350px -100px;
+  text-indent: -1000px;
+  -o-transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+}
+.uw-player .video-js .vjs-control-bar .vjs-progress-control {
+  position: absolute;
+  left: 80px;
+  right: 180px;
+  height: 12px;
+  width: 57%;
+  top: 18px;
+  background: lightgray;
+  border-radius: 32px;
+}
+.uw-player .video-js .vjs-control-bar .vjs-progress-control .vjs-progress-holder {
+  height: 100%;
+}
+.uw-player .video-js .vjs-control-bar .vjs-progress-control .vjs-progress-holder .vjs-load-progress {
+  background: white;
+  height: 100%;
+}
+.uw-player .video-js .vjs-control-bar .vjs-progress-control .vjs-progress-holder .vjs-seek-handle {
+  background-color: #ffd800;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  margin: -3px 0 0 1px;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  -o-transition: background-color 0.25s;
+  -webkit-transition: background-color 0.25s;
+  transition: background-color 0.25s;
+}
+.uw-player .video-js .vjs-control-bar .vjs-progress-control .vjs-progress-holder .vjs-seek-handle[style*='95.'] {
+  margin-left: 3px;
+}
+.uw-player .video-js .vjs-control-bar .vjs-progress-control .vjs-progress-holder .vjs-seek-handle[style='left: 0%;'] {
+  margin-left: -2px;
+}
+.uw-player .video-js .vjs-control-bar .vjs-progress-control .vjs-progress-holder .vjs-seek-handle:hover,
+.uw-player .video-js .vjs-control-bar .vjs-progress-control .vjs-progress-holder .vjs-seek-handle:focus {
+  background-color: #ffe033;
+}
+.uw-player .video-js .vjs-control-bar .vjs-progress-control .vjs-progress-holder .vjs-seek-handle:active {
+  background-color: #ffe033;
+}
+.uw-player .video-js .vjs-control-bar .vjs-fullscreen-control {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 100%;
+}
+.uw-player .video-js .vjs-control-bar .vjs-live-controls {
+  display: none;
+}
+.uw-player .video-js .vjs-control-bar .vjs-volume-control {
+  position: absolute;
+  right: 50px;
+  top: 0;
+  width: 50px;
+  height: 100%;
+}
+.uw-player .video-js .vjs-control-bar .vjs-current-time {
+  color: white;
+  text-indent: 0px;
+  text-align: center;
+  font-size: 17px;
+  left: 70%;
+}
+.uw-player .video-js .vjs-control-bar .vjs-current-time span {
+  display: none;
+}
+.uw-player .video-js .vjs-control-bar .vjs-duration {
+  text-indent: 0px;
+  text-align: center;
+  font-size: 17px;
+  left: 78%;
+}
+.uw-player .video-js .vjs-control-bar .vjs-duration span {
+  display: none;
+}
+.uw-player .video-js .vjs-control-bar .vjs-remaining-time {
+  display: none;
+}
+.uw-player .video-js .vjs-control-bar .vjs-time-divider {
+  color: gray;
+  font-size: 17px;
+  position: absolute;
+  top: 11px;
+  left: 77%;
+}
+.uw-player .video-js .vjs-control-bar.vjs-fade-out {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.uw-player .video-js .vjs-time-controls {
+  position: absolute;
+  height: 20px;
+  width: 50px;
+  top: 16px;
+  font: 300 13px "Open Sans", sans-serif;
+}
+.uw-player .video-js:-webkit-full-screen {
+  width: 100% !important;
+  height: 100% !important;
+}
+.uw-player .video-js:-moz-full-screen {
+  position: absolute;
+}
+.uw-player body.vjs-full-window {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  overflow-y: auto;
+}
 /*
  *  Styles for the uw youtube player
  *
@@ -7996,186 +8176,6 @@ textarea#jp-carousel-comment-form-comment-field:focus::-webkit-input-placeholder
     left: 0 !important;
     width: 100% !important;
   }
-}
-.uw-player {
-  margin-bottom: 80px  ;
-}
-.uw-player .video-js {
-  background-color: transparent;
-  position: relative;
-  padding: 0;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-.uw-player .video-js .vjs-tech {
-  width: 100%;
-}
-.uw-player .video-js.vjs-fullscreen {
-  position: fixed;
-  overflow: hidden;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100% !important;
-  height: 100% !important;
-  _position: absolute;
-}
-.uw-player .video-js .vjs-play-control,
-.uw-player .video-js .vjs-current-time,
-.uw-player .video-js .vjs-duration,
-.uw-player .video-js .vjs-remaining-time,
-.uw-player .video-js .vjs-live-controls,
-.uw-player .video-js .vjs-progress-control,
-.uw-player .video-js .vjs-fullscreen-control,
-.uw-player .video-js .vjs-volume-control,
-.uw-player .video-js .vjs-mute-control,
-.uw-player .video-js .vjs-playback-rate,
-.uw-player .video-js .vjs-subtitles-button,
-.uw-player .video-js .vjs-captions-button,
-.uw-player .video-js .vjs-chapters-button {
-  text-indent: -1000px;
-}
-.uw-player .video-js .vjs-playback-rate,
-.uw-player .video-js .vjs-subtitles-button,
-.uw-player .video-js .vjs-captions-button,
-.uw-player .video-js .vjs-chapters-button {
-  display: none;
-}
-.uw-player .video-js .vjs-control-bar {
-  margin-top: -10px;
-  position: relative;
-  color: gray;
-  background: #4d4d4d;
-  width: 100%;
-  height: 50px;
-}
-.uw-player .video-js .vjs-control-bar .vjs-play-control {
-  position: absolute;
-  left: 10px;
-  height: 100%;
-  width: 50px;
-  background: url(assets/svg/uw-sprite.svg) no-repeat -350px -100px;
-  text-indent: -1000px;
-  -o-transition: all 0.25s;
-  -webkit-transition: all 0.25s;
-  transition: all 0.25s;
-}
-.uw-player .video-js .vjs-control-bar .vjs-progress-control {
-  position: absolute;
-  left: 80px;
-  right: 180px;
-  height: 12px;
-  width: 57%;
-  top: 18px;
-  background: lightgray;
-  border-radius: 32px;
-}
-.uw-player .video-js .vjs-control-bar .vjs-progress-control .vjs-progress-holder {
-  height: 100%;
-}
-.uw-player .video-js .vjs-control-bar .vjs-progress-control .vjs-progress-holder .vjs-load-progress {
-  background: white;
-  height: 100%;
-}
-.uw-player .video-js .vjs-control-bar .vjs-progress-control .vjs-progress-holder .vjs-seek-handle {
-  background-color: #ffd800;
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  margin: -3px 0 0 1px;
-  left: 0;
-  top: 0;
-  border-radius: 50%;
-  -o-transition: background-color 0.25s;
-  -webkit-transition: background-color 0.25s;
-  transition: background-color 0.25s;
-}
-.uw-player .video-js .vjs-control-bar .vjs-progress-control .vjs-progress-holder .vjs-seek-handle[style*='95.'] {
-  margin-left: 3px;
-}
-.uw-player .video-js .vjs-control-bar .vjs-progress-control .vjs-progress-holder .vjs-seek-handle[style='left: 0%;'] {
-  margin-left: -2px;
-}
-.uw-player .video-js .vjs-control-bar .vjs-progress-control .vjs-progress-holder .vjs-seek-handle:hover,
-.uw-player .video-js .vjs-control-bar .vjs-progress-control .vjs-progress-holder .vjs-seek-handle:focus {
-  background-color: #ffe033;
-}
-.uw-player .video-js .vjs-control-bar .vjs-progress-control .vjs-progress-holder .vjs-seek-handle:active {
-  background-color: #ffe033;
-}
-.uw-player .video-js .vjs-control-bar .vjs-fullscreen-control {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50px;
-  height: 100%;
-}
-.uw-player .video-js .vjs-control-bar .vjs-live-controls {
-  display: none;
-}
-.uw-player .video-js .vjs-control-bar .vjs-volume-control {
-  position: absolute;
-  right: 50px;
-  top: 0;
-  width: 50px;
-  height: 100%;
-}
-.uw-player .video-js .vjs-control-bar .vjs-current-time {
-  color: white;
-  text-indent: 0px;
-  text-align: center;
-  font-size: 17px;
-  left: 70%;
-}
-.uw-player .video-js .vjs-control-bar .vjs-current-time span {
-  display: none;
-}
-.uw-player .video-js .vjs-control-bar .vjs-duration {
-  text-indent: 0px;
-  text-align: center;
-  font-size: 17px;
-  left: 78%;
-}
-.uw-player .video-js .vjs-control-bar .vjs-duration span {
-  display: none;
-}
-.uw-player .video-js .vjs-control-bar .vjs-remaining-time {
-  display: none;
-}
-.uw-player .video-js .vjs-control-bar .vjs-time-divider {
-  color: gray;
-  font-size: 17px;
-  position: absolute;
-  top: 11px;
-  left: 77%;
-}
-.uw-player .video-js .vjs-control-bar.vjs-fade-out {
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-.uw-player .video-js .vjs-time-controls {
-  position: absolute;
-  height: 20px;
-  width: 50px;
-  top: 16px;
-  font: 300 13px "Open Sans", sans-serif;
-}
-.uw-player .video-js:-webkit-full-screen {
-  width: 100% !important;
-  height: 100% !important;
-}
-.uw-player .video-js:-moz-full-screen {
-  position: absolute;
-}
-.uw-player body.vjs-full-window {
-  padding: 0;
-  margin: 0;
-  height: 100%;
-  overflow-y: auto;
 }
 .checkbox,
 .radio {
