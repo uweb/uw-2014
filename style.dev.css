@@ -5708,9 +5708,6 @@ a.uw-custom-link:hover {
   button.uw-mobile-menu-toggle {
     bottom: 10px;
   }
-  div.hero-content.col-md-12.uw-content {
-    margin-top: 0;
-  }
 }
 .page-template-small-hero #mobile-relative.frontpage button.uw-mobile-menu-toggle {
   margin-top: -25px;
@@ -8652,9 +8649,6 @@ body.error404 .woof {
 .uw-footer ul.footer-social li a.twitter {
   background-position: -46px -185px;
 }
-.uw-footer ul.footer-social li a.tumblr {
-  background-position: -366px -185px;
-}
 .uw-footer ul.footer-social li a.youtube {
   background-position: -138px -185px;
 }
@@ -8663,12 +8657,6 @@ body.error404 .woof {
 }
 .uw-footer ul.footer-social li a.pinterest {
   background-position: -92px -185px;
-}
-.uw-footer ul.footer-social li a.vine {
-  background-position: -230px -185px;
-}
-.uw-footer ul.footer-social li a.google {
-  background-position: -275px -185px;
 }
 .uw-footer ul.footer-social li a.instagram {
   background-position: -322px -185px;
@@ -8681,10 +8669,6 @@ body.error404 .woof {
 .uw-footer ul.footer-social li a:focus.twitter {
   background-position: -46px -225px;
 }
-.uw-footer ul.footer-social li a:hover.tumblr,
-.uw-footer ul.footer-social li a:focus.tumblr {
-  background-position: -366px -225px;
-}
 .uw-footer ul.footer-social li a:hover.youtube,
 .uw-footer ul.footer-social li a:focus.youtube {
   background-position: -138px -225px;
@@ -8696,14 +8680,6 @@ body.error404 .woof {
 .uw-footer ul.footer-social li a:hover.pinterest,
 .uw-footer ul.footer-social li a:focus.pinterest {
   background-position: -92px -225px;
-}
-.uw-footer ul.footer-social li a:hover.vine,
-.uw-footer ul.footer-social li a:focus.vine {
-  background-position: -230px -225px;
-}
-.uw-footer ul.footer-social li a:hover.google,
-.uw-footer ul.footer-social li a:focus.google {
-  background-position: -275px -225px;
 }
 .uw-footer ul.footer-social li a:hover.instagram,
 .uw-footer ul.footer-social li a:focus.instagram {
