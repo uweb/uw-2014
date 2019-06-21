@@ -200,7 +200,7 @@ if ( ! function_exists('get_uw_breadcrumbs') ) :
   {
 
     global $post;
-    $ancestors = array_reverse( get_post_ancestors( $post->ID ) );
+    $ancestors = array_reverse( get_post_ancestors( $post ) );
     $html = '<li><a href="http://uw.edu" title="University of Washington">Home</a></li>';
     $html .= '<li' . (is_front_page() ? ' class="current"' : '') . '><a href="' . home_url('/') . '" title="' . get_bloginfo('title') . '">' . get_bloginfo('title') . '</a><li>';
 
