@@ -6,7 +6,7 @@
     "clean-css": "^4.2.1",
     "grunt": "^1.0.4",
     "grunt-contrib-concat": "*",
-    "grunt-contrib-jshint": "~1.1.0",
+    "grunt-contrib-jshint": "^2.1.0",
     "grunt-contrib-less": "^2.0.0",
     "grunt-contrib-uglify": "^4.0.1",
     "grunt-contrib-watch": "*",
