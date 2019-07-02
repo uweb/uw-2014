@@ -1,13 +1,14 @@
 {
   "name": "uw",
+  "repository": "github:uweb/uw-2014",
   "version": "0.1.0",
   "devDependencies": {
-    "clean-css": "~2.2.7",
-    "grunt": "^1.0.3",
+    "clean-css": "^4.2.1",
+    "grunt": "^1.0.4",
     "grunt-contrib-concat": "*",
     "grunt-contrib-jshint": "~1.1.0",
-    "grunt-contrib-less": "^0.11.4",
-    "grunt-contrib-uglify": "^0.5.1",
+    "grunt-contrib-less": "^2.0.0",
+    "grunt-contrib-uglify": "^4.0.1",
     "grunt-contrib-watch": "*",
     "grunt-notify": "*"
   }
