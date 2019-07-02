@@ -15,7 +15,7 @@ class UW_Widget_Related_Posts extends WP_Widget
   const ITEMS = 5;
 
   // Instantiate the widget and the Jetpack_RelatedPosts class to use for gathering related posts.
-  function UW_Widget_Related_Posts()
+  function __construct()
   {
       // Possible paramters to pass to the the `get_for_post_id` function: `size`, `post_type`, `has_terms`, `date_range` and `exclude_post_ids`.
       // - By default related posts go back one year
@@ -129,7 +129,7 @@ class UW_Related_Posts
   // The priority needed to remove the actions Jetpack_RelatedPosts adds.
   const PRIORITY = 100;
 
-  function UW_Related_Posts()
+  function __construct()
   {
     // Register the widget.
     add_action( 'widgets_init', array( $this, 'register' ) );

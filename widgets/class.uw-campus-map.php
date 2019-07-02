@@ -19,6 +19,7 @@ class UW_Campus_Map extends WP_Widget
 
   function widget( $args, $instance )
   {
+    $content = '';
     extract( $args );
     extract( $instance );
 

@@ -5907,7 +5907,8 @@ a.more:after {
   -webkit-font-smoothing: antialiased;
 }
 .uw-body h1,
-.uw-body h2 {
+.uw-body h2,
+.uw-body .widgettitle {
   color: #4b2e83;
   display: block;
 }
@@ -6820,6 +6821,10 @@ body.home .uw-sidebar-menu {
 @media only screen and (min-width: 768px) {
   .uw-sidebar {
     padding-top: 40px;
+  }
+  .page-template-no-title .uw-sidebar-menu,
+  .page-template-no-title .uw-mobile-menu {
+    margin-top: 0;
   }
 }
 #mobile-relative {

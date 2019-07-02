@@ -12,7 +12,7 @@ class UW_Widget_Single_Image extends WP_Widget
 
   const DEFAULT_LINK_TEXT = 'More';
 
-  function UW_Widget_Single_Image()
+  function __construct()
   {
 		parent::__construct( $id = 'pic-text', $name = 'Single Image', $options = array( 'description' => 'Display an image with some featured text.', 'classname' => 'pic-text-widget' ) );
 

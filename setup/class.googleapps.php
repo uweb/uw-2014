@@ -25,7 +25,7 @@ class UW_GoogleApps
       extract($params);
 
       if ( $dir == 'calendar/embed' )
-  	    return '<div class="googleapps-'. $app .'"><iframe width="' . $width . '" height="' . $height . '" style="border:0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/calendar/embed?' . $query . '"></iframe></div>';
+  	    return '<div class="googleapps-'. $app .'"><iframe width="' . $width . '" height="' . $height . '" style="border:0" scrolling="no" marginheight="0" marginwidth="0" src="https://calendar.google.com/calendar/embed?' . $query . '"></iframe></div>';
 
       return '';
   }
