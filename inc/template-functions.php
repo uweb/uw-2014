@@ -399,8 +399,9 @@ endif;
 if ( !function_exists('uw_meta_tags') ):
   function uw_meta_tags() {
     global $post;
-
-    if(network_site_url() == "http://localhost/cms/" || network_site_url() == "http://cmsdev.u.washington.edu/" || network_site_url() == "https://www.washington.edu/cms/"){
+    // Get the current site's URL
+    $url = network_site_url();
+    if($url = "http://localhost/cms/" || $url = "http://cmsdev.u.washington.edu/" || $url = "https://www.washington.edu/cms/"){
 
       echo '<meta name="twitter:card" content="summary" />' . PHP_EOL;
       echo '<meta name="twitter:site" content="@uw" />' . PHP_EOL;
@@ -429,7 +430,7 @@ if ( !function_exists('uw_meta_tags') ):
       echo '<meta property="og:description" content="' . $fb_desc . '" />' . PHP_EOL;
       if (isset($post->type_meta) && $post->type_meta == 'article' && isset($post->author_meta) && $post->author_meta != '') { '<meta property="article:author" content="' . $post->author_meta . '" />' . PHP_EOL; }
       if(!has_post_thumbnail( $post->ID )) { //the post does not have featured image, use a default image
-          $default_image = ""; //replace this with a default image on your server or an image in your media library
+          $default_image = "http://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/10/2019/06/21094817/Univ-of-Washington_Memorial-Way.jpg"; //replace this with a default image on your server or an image in your media library
           echo '<meta property="og:image" content="' . $default_image . '" />' . PHP_EOL;
       }
       else{
