@@ -77,6 +77,9 @@ jQuery( function( $ ) {
       $( this ).closest( "div.widget" ).find( "a.display-options" ).click();
       $condition.find( "select.conditions-rule-major" ).val( "" ).change();
     } else {
+      var $saveOptionsButton = $(this).closest( "div.widget" ).find( "input[name=savewidget]" );
+      $saveOptionsButton.removeAttr( "disabled" );
+      $saveOptionsButton.val( "Save" );
       $condition.detach();
     }
   } ).on( "click", "div.widget-top", function() {
