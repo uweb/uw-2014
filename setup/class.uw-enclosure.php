@@ -27,10 +27,29 @@ class UW_Enclosure
   	printf(
   		'<enclosure url="%s" length="%s" type="%s" />',
   		$thumbnail['url'],
-  		filesize( path_join( $upload_dir['basedir'], $thumbnail['path'] ) ),
+  		$this->remote_file_size($thumbnail['url']),
   		get_post_mime_type( $thumbnail_id )
   	);
 
+  }
+
+  /**
+   * Get the remote file size.
+   *
+   * @see {@link http://www.w3bees.com/2013/03/get-remote-file-size-using-php.html}
+   * @author Resalat Haque
+   *
+   * @param  string $url Remote file URL.
+   * @return int         File size in bytes.
+   */
+  function remote_file_size( $url ) {
+      // Get all header information
+      $data = get_headers($url, true);
+      // Look up validity
+      if ( isset( $data['Content-Length'] ) ) {
+          // Return file size
+          return (int) $data['Content-Length'];
+      }
   }
 
 }
