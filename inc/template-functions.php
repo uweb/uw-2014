@@ -403,7 +403,7 @@ if ( !function_exists('uw_meta_tags') ):
     $url = network_site_url();
     $site_url = home_url();
     if($url = "http://localhost/cms/" || $url = "http://cms.local/" || $url = "http://cmsdev.u.washington.edu/" || $url = "https://www.washington.edu/cms/"){
-      if ($site_url == "http://cms.local/uwclimatesurvey") {
+      if ($site_url == "https://www.washington.edu/cms/uwclimatesurvey/") {
         $og_img = "https://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/164/2019/10/16193323/Campus-Climate-Survey-Social-Facebook-1200x630.jpg";
         $twitter_img = "https://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/164/2019/09/27181721/logo.png";
 
