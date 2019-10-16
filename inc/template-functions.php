@@ -402,13 +402,11 @@ if ( !function_exists('uw_meta_tags') ):
     // Get the current site's URL
     $url = network_site_url();
     $site_url = home_url();
-    if($url = "http://localhost/cms/" || $url = "http://cms.local/" || $url = "http://cmsdev.u.washington.edu/" || $url = "https://www.washington.edu/cms/"){
-      if ($site_url == "https://www.washington.edu/cms/uwclimatesurvey/") {
+    if($url = "http://localhost/cms/" || $url = "http://cms.local/" || $url = "http://cmsdev.uw.edu/" || $url = "https://www.washington.edu/cms/"){
+      if ($site_url === "https://www.washington.edu/cms/uwclimatesurvey") {
         $og_img = "https://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/164/2019/10/16193323/Campus-Climate-Survey-Social-Facebook-1200x630.jpg";
-        $twitter_img = "https://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/164/2019/09/27181721/logo.png";
 
         echo '<meta property="og:image" content="' . $og_img . '" />' . PHP_EOL;
-        echo '<meta name="twitter:image" content="' . $twitter_img . '" />' . PHP_EOL;
       }
       else if(!has_post_thumbnail( $post->ID )) { //the post does not have featured image, use a default image
           $default_image = "http://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/10/2019/06/21094817/Univ-of-Washington_Memorial-Way.jpg"; //replace this with a default image on your server or an image in your media library
@@ -425,7 +423,7 @@ if ( !function_exists('uw_meta_tags') ):
       echo '<meta name="twitter:card" content="summary_large_image" />' . PHP_EOL;
       echo '<meta property="og:title" content="' . html_entity_decode(get_the_title()) . '" />' . PHP_EOL;
       // echo '<meta property="og:type" content="article"/>' . PHP_EOL;
-      echo '<meta property="og:url" content="' . get_permalink() . '" />' . PHP_EOL;
+      echo '<meta property="og:url" content="' . $site_url . '" />' . PHP_EOL;
       echo '<meta property="og:site_name" content="' . get_bloginfo( 'name' ) . '" />' . PHP_EOL;
 
       if ( !is_singular()) //if it is not a post or a page
