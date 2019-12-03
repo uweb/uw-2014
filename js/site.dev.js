@@ -11381,6 +11381,7 @@ UW.QuickLinks = Backbone.View.extend({
 
     render : function(  )
     {
+        this.defaultLinks =  this.links.defaults
         this.quicklinks = $( _.template( this.template )({ links : this.defaultLinks ? this.defaultLinks : this.links.toJSON() }) );
         this.$container = $(this.container);
         this.$container.prepend( this.quicklinks )
@@ -11495,7 +11496,7 @@ UW.QuickLinks.Collection = Backbone.Collection.extend({
        "url": "http:\/\/itconnect.uw.edu",
        "classes": false
    }, {
-       "title": "Employee Self Service",
+       "title": "Workday\/ISC",
        "url": "http:\/\/isc.uw.edu\/",
        "classes": false
    }, {

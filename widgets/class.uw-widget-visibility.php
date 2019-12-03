@@ -37,7 +37,7 @@ class UW_Widget_Conditions
   //
   // Provided a second level of granularity for widget conditions.
   //
-  function widget_conditions_options_echo( $major = '', $minor = '' )
+  public static function widget_conditions_options_echo( $major = '', $minor = '' )
   {
     switch ( $major )
     {
@@ -239,7 +239,7 @@ class UW_Widget_Conditions
   //  @return array Modified settings.
   //
 
-  function widget_update( $instance, $new_instance, $old_instance )
+  public static function widget_update( $instance, $new_instance, $old_instance )
   {
     $conditions = array();
     $conditions['action'] = $_POST['conditions']['action'];
@@ -410,7 +410,7 @@ class UW_Widget_Conditions
           else {
             $tag = get_tag( $rule['minor'] );
 
-            if ( $tag && is_tag( $tag->slug ) )
+            if ( $tag && ! is_wp_error( $tag ) && is_tag( $tag->slug ) )
               $condition_result = true;
           }
         break;
@@ -452,7 +452,7 @@ class UW_Widget_Conditions
     return $instance;
   }
 
-  function strcasecmp_name( $a, $b )
+  public static function strcasecmp_name( $a, $b )
   {
     return strcasecmp( $a->name, $b->name );
   }

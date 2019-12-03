@@ -6,7 +6,7 @@
 class UW_Media_Credit
 {
 
-  function UW_Media_Credit()
+  function __construct()
   {
 
     add_filter( 'mce_external_plugins', array( $this, 'add_media_credit_shortcode_to_tinymce' ) );
@@ -41,7 +41,7 @@ class UW_Media_Credit
     $height = $img[2];
 
     return $credit ?
-      '[caption id="attachment_' . $id . '" align="' . $align . '" width="' . $width . '" credit="' . $credit . '"]<a href="' . $url . '"><img src="' . $url . '" alt="' . $caption . '" width="' . $width . '" height="' . $height . '" class="size-full wp-image-' . $id . '" /></a> ' . $caption . '[/caption]' : $html;
+      '[caption id="attachment_' . $id . '" align="' . $align . '" width="' . $width . '" credit="' . $credit . '"]<a href="' . $img[0] . '"><img src="' . $img[0] . '" alt="' . $caption . '" width="' . $width . '" height="' . $height . '" class="size-full wp-image-' . $id . '" /></a> ' . $caption . '[/caption]' : $html;
   }
 
   /**

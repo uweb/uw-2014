@@ -36,7 +36,7 @@ class UW_Widget_Twitter extends WP_Widget
       'consumer_secret'            => TWITTER_CONSUMER_SECRET
   );
 
-  function UW_Widget_Twitter()
+  function __construct()
   {
     parent::__construct(
       $id = self::ID,
@@ -132,11 +132,10 @@ class UW_Widget_Twitter extends WP_Widget
 
       $twitter    = new TwitterAPIExchange(self::$SETTINGS);
 
-      $twitter->setGetfield( $parameters )
-              ->buildOauth(self::URL, self::REQUESTMETHOD);
-
-      $tweets = json_decode( $twitter->performRequest() );
-
+      $twitters = $twitter  ->setGetfield( $parameters )
+                            ->buildOauth(self::URL, self::REQUESTMETHOD)
+                            ->performRequest();
+      $tweets = json_decode( $twitters );
       foreach ($tweets as $index => $tweet)
       {
         $hasAuthor = ( count($tweet->entities->user_mentions) > 0 );
@@ -148,15 +147,13 @@ class UW_Widget_Twitter extends WP_Widget
         if ( $hasAuthor )
         {
 
-          $twitter->setGetfield( '?screen_name=' . $latest[$index]['author'] )
-                  ->buildOauth( self::AUTHOR_URL, self::REQUESTMETHOD );
+          $twitter->setGetfield( '?screen_name=' . $latest[$index]['author'] ) ->buildOauth( self::AUTHOR_URL, self::REQUESTMETHOD );
 
           $user = json_decode( $twitter->performRequest() );
 
         }
 
-        $latest[$index]['img']    = $hasAuthor ? $user->profile_image_url_https :
-                                                 $tweet->user->profile_image_url_https;
+        $latest[$index]['img']    = $hasAuthor ? $user->profile_image_url_https : $tweet->user->profile_image_url_https;
 
         if ($retweet) {
 
@@ -192,13 +189,9 @@ class UW_Widget_Twitter extends WP_Widget
     $text = preg_replace( '/[A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_:%&~\?\/.=]+/',
                           '<a href="\\0">\\0</a>', $text );
 
-    $text = preg_replace_callback(  '/[#]+[A-Za-z0-9-_]+/',
-                                    array( $this, 'encodeHashTag'),
-                                    $text );
+    $text = preg_replace_callback(  '/[#]+[A-Za-z0-9-_]+/', array( $this, 'encodeHashTag'), $text );
 
-    $text = preg_replace_callback(  '/[@]+[A-Za-z0-9-_]+/',
-                                    array( $this, 'normalizeScreenName'),
-                                    $text );
+    $text = preg_replace_callback(  '/[@]+[A-Za-z0-9-_]+/', array( $this, 'normalizeScreenName'), $text );
     return $text;
   }
 

@@ -108,7 +108,7 @@ class UW_Dropdowns
         $this->add_menu_item( 'UW News', '//uw.edu/news/', $parent = 'News & Events' );
         $this->add_menu_item( 'Arts UW', 'https://artsuw.org/', $parent = 'News & Events' );
         $this->add_menu_item( 'Calendar', '//uw.edu/calendar/', $parent = 'News & Events' );
-        $this->add_menu_item( 'Columns Magazine', 'https://magazine.washington.edu/', $parent = 'News & Events' );
+        $this->add_menu_item( 'UW Magazine', 'https://magazine.washington.edu/', $parent = 'News & Events' );
         $this->add_menu_item( 'Husky sports', 'https://gohuskies.com/', $parent = 'News & Events' );
 
         // The default Research the UW dropdown.

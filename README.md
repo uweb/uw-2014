@@ -8,8 +8,8 @@ This is an overview of the custom widgets, plugins and various features it inclu
 ## Table of contents
  - - -
 
-- [Quick start](#quickstart)
-- [Bugs and feature requests](#bugsandfeaturerequests)
+- [Quick start](#quick-start)
+- [Bugs and feature requests](#bugs-and-feature-requests)
 - [Widgets](#widgets)
   - [UW Blogroll](#uw-blogroll)
   - [UW Campus Map](#uw-campus-map)
@@ -26,14 +26,14 @@ This is an overview of the custom widgets, plugins and various features it inclu
   - [iFrame](#iframe)
   - [Intro](#intro)
   - [RSS](#rss)
-  - [Tile box](#tilebox)
+  - [Tile box](#tile-box)
   - [Trumba](#trumba)
   - [Twitter](#twitter)
   - [YouTube](#youtube)
   - [Slideshow](#slideshow)
-  - [Subpage List](#subpagelist)
+  - [Subpage List](#subpage-list)
   - [Accordion](#accordion)
-  - [Custom Menu](#custommenu)
+  - [Custom Menu](#custom-menu)
 - [Features](#features)
   - [UW Widget Visibility](#uw-widget-visiblity)
   - [UW Media Credit](#uw-media-credit)
