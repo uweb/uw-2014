@@ -26,3 +26,18 @@ if (!function_exists('setup_uw_object')){
 
 $UW = setup_uw_object();
 
+// changes standard WordPress YouTube embeds to use the UW YouTube shortcode
+if ( !function_exists( 'uw_youtube_oembed_html' ) ) {
+  function uw_youtube_oembed_html( $html, $url, $attr, $post_id ) {
+    if ( strpos( $url, 'youtube.com' ) !== false ) {
+        parse_str( parse_url( $url, PHP_URL_QUERY ), $query_var_array );
+        $is_playlist = !empty( $query_var_array['list'] ) && empty( $query_var_array['v'] );
+        $youtube_type = $is_playlist ? 'playlist' : 'single';
+        $youtube_id = $is_playlist ? $query_var_array['list'] : $query_var_array['v'];
+        $html = !empty( $youtube_id ) ? sprintf( "[youtube type='%s' id='%s']", $youtube_type, $youtube_id ) : $html;
+    }
+    return $html;
+  }
+}
+
+add_filter( 'embed_oembed_html', 'uw_youtube_oembed_html', 99, 4 );
