@@ -29,7 +29,7 @@ $UW = setup_uw_object();
 // changes standard WordPress YouTube embeds to use the UW YouTube shortcode
 if ( !function_exists( 'uw_youtube_oembed_html' ) ) {
   function uw_youtube_oembed_html( $html, $url, $attr, $post_id ) {
-    if ( strpos( $url, 'youtube.com' ) !== false ) {
+    if ( strpos( $url, 'youtube.com' ) !== false || strpos( $url, 'youtu.be' ) !== false ) {
         parse_str( parse_url( $url, PHP_URL_QUERY ), $query_var_array );
         $is_playlist = !empty( $query_var_array['list'] ) && empty( $query_var_array['v'] );
         $youtube_type = $is_playlist ? 'playlist' : 'single';
