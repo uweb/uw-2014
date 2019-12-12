@@ -423,7 +423,8 @@ if ( !function_exists('uw_meta_tags') ):
       echo '<meta name="twitter:card" content="summary_large_image" />' . PHP_EOL;
       echo '<meta property="og:title" content="' . html_entity_decode(get_the_title()) . '" />' . PHP_EOL;
       // echo '<meta property="og:type" content="article"/>' . PHP_EOL;
-      echo '<meta property="og:url" content="' . get_permalink( $post->ID ) . '" />' . PHP_EOL;
+      $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+      echo '<meta property="og:url" content="' . $actual_link . '" />' . PHP_EOL;
       echo '<meta property="og:site_name" content="' . get_bloginfo( 'name' ) . '" />' . PHP_EOL;
 
       if ( !is_singular()) //if it is not a post or a page
