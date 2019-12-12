@@ -423,7 +423,7 @@ if ( !function_exists('uw_meta_tags') ):
       echo '<meta name="twitter:card" content="summary_large_image" />' . PHP_EOL;
       echo '<meta property="og:title" content="' . html_entity_decode(get_the_title()) . '" />' . PHP_EOL;
       // echo '<meta property="og:type" content="article"/>' . PHP_EOL;
-      echo '<meta property="og:url" content="' . $site_url . '" />' . PHP_EOL;
+      echo '<meta property="og:url" content="' . get_permalink( $post->ID ) . '" />' . PHP_EOL;
       echo '<meta property="og:site_name" content="' . get_bloginfo( 'name' ) . '" />' . PHP_EOL;
 
       if ( !is_singular()) //if it is not a post or a page
