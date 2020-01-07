@@ -32,6 +32,11 @@ class UW_GoogleApps
 
   function uw_google_calendar_embed_to_shortcode( $content )
   {
+
+    if ( !is_string($content) )
+      return $content;
+    
+
     if ( false === strpos( $content, '<iframe ' ) && false === strpos( $content, 'google.com/calendar' ) )
       return $content;
 
