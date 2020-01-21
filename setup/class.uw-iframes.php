@@ -109,6 +109,8 @@ class UW_Iframes
       'universityphotography.smugmug.com',
       'modelo.io',
       'app.modelo.io',
+      'webcasts.weforum.org',
+      'weforum.org',
     );
   }
 
