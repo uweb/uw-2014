@@ -24,7 +24,7 @@ class UW_SubpageList
     {
         $attributes = (object) shortcode_atts( array(
             'link'    => 'Read more',
-            'tilebox' => false
+            'tilebox' => 'false'
         ), $atts );
 
         global $post;
@@ -38,7 +38,7 @@ class UW_SubpageList
 
             $permalink = get_post_permalink($page->ID);
 
-            if (!$attributes->tilebox){
+            if ($attributes->tilebox === 'false'){
               $output = $output . sprintf("<h2><a href='%s'>%s</a></h2>", $permalink, $page->post_title);
               if (get_option('show_byline_on_posts')){
                 $output = $output . sprintf("<div class='author-info'><p class='author-desc'><small>%s</small></p></div>", get_the_author_meta('display_name', $page->post_author));
