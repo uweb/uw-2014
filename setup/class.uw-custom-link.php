@@ -3,7 +3,7 @@
 /*
  * custom_link shortcode:
  * This shortcode simply takes in the url and parameter text(link text) you desire...
- * [custom-link url="...the url you want..."] Link text [/custom-link]
+ * [customlink url="...the url you want..."] Link text [/customlink]
  * and generates a hyperlink for you with the url and the link text in it...
  * <a class="uw-custom-link" href="url you entered previously"> Link text </a>
  */
