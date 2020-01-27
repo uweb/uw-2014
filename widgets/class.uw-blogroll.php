@@ -152,7 +152,7 @@ class UW_Blogroll extends WP_Widget
                 }
                 $html .= sprintf("<li><a class='widget-thumbnail' href='%s'>%s</a><a class='widget-link' href='%s'>%s<span>%s</span></a></li>", $link, $image, $link, $post->post_title, $byline);
             } else if ($read_more == 'on') {
-                $html  .= "<li><span><{$params->titletag}><a href=\"$link\">{$post->post_title}</a><p class=\"date\">{$date}</p></{$params->titletag}>{$author}<span$class>{$image}</span>{$excerpt}<p><a href=\"$link\" class=\"more\" aria-label\"Read more about {$post->post_title}\">Read more</a></p></span></li>";
+                $html  .= "<li><span><{$params->titletag}><a href=\"$link\">{$post->post_title}</a><p class=\"date\">{$date}</p></{$params->titletag}>{$author}<span$class>{$image}</span>{$excerpt}<p><a href=\"$link\" class=\"more\" aria-label=\"Read more about {$post->post_title}\">Read more</a></p></span></li>";
             } else {
                 $html  .= "<li><span><{$params->titletag}><a href=\"$link\">{$post->post_title}</a><p class=\"date\">{$date}</p></{$params->titletag}>{$author}<span$class>{$image}</span>{$excerpt}</span></li>";
             }
