@@ -34,7 +34,7 @@ UW.YouTube.Collection = Backbone.Collection.extend({
         this.type = this.$el.data('uw-youtube-type');
         this.modest = this.$el.data('modest');
         this.resolution = this.$el.data('resolution');
-        var youtubeApiKey = apiKey.youtube ? apiKey.youtube : 'AIzaSyApmhFr5oa8bmKPcpN7bm-h0mekjkUVypU';
+        var youtubeApiKey = apiKey.network ? apiKey.network : apiKey.local;
         if (this.type == 'playlist'){
             this.max_results = 20;
             var max_results_temp = parseInt(this.$el.data('max-results'), 10);
