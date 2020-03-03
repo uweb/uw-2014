@@ -57,7 +57,7 @@ class UW_YouTube
         register_setting(
             'media',
             'youtube_api_key',
-            array($this, 'sanitize_youtube_api_key')
+            array($this, 'youtube_api_key_sanitize')
         );
 
         add_settings_section(
@@ -77,7 +77,7 @@ class UW_YouTube
     }
 
     function youtube_api_key_setting_description() {
-        echo "<p>Upload your own YouTube API key below</p>";
+        echo "<p>Upload your own YouTube API key below.</p>";
     }
 
     function youtube_api_key_input() {
@@ -87,7 +87,7 @@ class UW_YouTube
         <?php
     }
     
-    function sanitize_youtube_api_key($key) {
+    function youtube_api_key_sanitize($key) {
         return preg_replace('/[^a-zA-Z0-9_\-]/', '', $key);
     }
 
