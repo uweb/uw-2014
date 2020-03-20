@@ -413,7 +413,7 @@ if ( !function_exists('uw_meta_tags') ):
           echo '<meta property="og:image" content="' . $default_image . '" />' . PHP_EOL;
       }
       else{
-        $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full-content' );
+        $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
         echo '<meta property="og:image" content="' . esc_attr( $thumbnail_src[0] ) . '" />' . PHP_EOL;
       }
 
