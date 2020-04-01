@@ -128,7 +128,7 @@ class UW_Page_Attributes_Meta_Box
     }
     echo "</div>";
     if ($default === "templates/template-big-hero.php" || $default === "templates/template-small-hero.php") {
-      if (is_super_admin()) {
+      if (current_user_can('administrator') || current_user_can('editor')) {
         $banner = get_post_meta($post->ID, "banner", true);
         wp_nonce_field( 'banner_nonce' , 'banner_name' );
 
