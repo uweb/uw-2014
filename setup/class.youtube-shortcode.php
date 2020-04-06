@@ -77,7 +77,7 @@ class UW_YouTube
 
     function network_youtube_api_setting_update() {
         if (isset($_POST['network_youtube_api_key'])) {
-            $site_option = preg_replace('/[^a-zA-Z0-9_\-]/', '', $_POST['network_youtube_api_key']);
+            $site_option = $this->youtube_api_key_sanitize($_POST['network_youtube_api_key']);
             update_site_option('network_youtube_api_key', $site_option);
         }
     }
