@@ -112,10 +112,10 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 
 > Options:
 
-> - __Title__ : The title of the widget (_Default: None_)
-> - __Blurb__ : A small blurb that is shown before the RSS feed (_Default: None_)
-> - __RSS URL__ : The URL of the RSS feed to display (_Default: None_)
-> - __Number of items to display__ : The number of items in the RSS feed to display (_Default: 10_)
+> - **Title** : The title of the widget (_Default: None_)
+> - **Blurb** : A small blurb that is shown before the RSS feed (_Default: None_)
+> - **RSS URL** : The URL of the RSS feed to display (_Default: None_)
+> - **Number of items to display** : The number of items in the RSS feed to display (_Default: 10_)
 
 ### UW Single Image ###
 
@@ -123,11 +123,11 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 
 > Options:
 
-> - __Title__ : The title of the widget (_Default: Image Widget_)
-> - __Select an image__ : Select an  image from the WordPress  media library (_Default: None_)
-> - __Featured text__ : A small blurb that is shown below the image (_Default: None_)
-> - __Link__ : A URL for the More link text (_Default: None_)
-> - __More link__ : The text to display in the more link (_Default: Read more_)
+> - **Title** : The title of the widget (_Default: Image Widget_)
+> - **Select an image** : Select an  image from the WordPress  media library (_Default: None_)
+> - **Featured text** : A small blurb that is shown below the image (_Default: None_)
+> - **Link** : A URL for the More link text (_Default: None_)
+> - **More link** : The text to display in the more link (_Default: Read more_)
 
 ### UW Top Posts ###
 
@@ -135,8 +135,8 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 
 > Options:
 
-> - __Title__ : The title of the widget (_Default: Image Widget_)
-> - __Number of items to display__ : The number of items in the RSS feed to display (_Default: 1_)
+> - **Title** : The title of the widget (_Default: Image Widget_)
+> - **Number of items to display** : The number of items in the RSS feed to display (_Default: 1_)
 
 > _Requires JetPack to be installed_.
 
@@ -146,9 +146,9 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 
 > Options:
 
-> - __Title__ : The title of the widget (_Default: UW Twitter Feed_)
-> - __Screen name__ : The title of the widget (_Default: twitter__)
-> - __Number of tweets to show__: The number of items in the RSS feed to display (_Default: 5_)
+> - **Title** : The title of the widget (_Default: UW Twitter Feed_)
+> - **Screen name** : The title of the widget (_Default: twitter_)
+> - **Number of tweets to show**: The number of items in the RSS feed to display (_Default: 5_)
 
 > In order to have the widget display in the widgets a `TWITTER_OAUTH_TOKEN` constant must be defined in your wp-config.php file.
 > _Requires a Twitter API key_.
@@ -159,11 +159,11 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 
 > Options:
 
-> - __Title__ : The title of the widget (_Default: Contact us_)
-> - __Name__ : The person's name (_Default: None_)
-> - __Title__ : The person's job title (_Default: None_)
-> - __Phone number__ : The person's phone number (_Default: None_)
-> - __Email__ : The person's email (_Default: None_)
+> - **Title** : The title of the widget (_Default: Contact us_)
+> - **Name** : The person's name (_Default: None_)
+> - **Title** : The person's job title (_Default: None_)
+> - **Phone number** : The person's phone number (_Default: None_)
+> - **Email** : The person's email (_Default: None_)
 
 
 ### UW Image Card ###
@@ -172,12 +172,12 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 
 > Options:
 
-> - __Title__ : The title of the widget (_Default: Image Widget_)
-> - __Select an image__ : Select an image from the WordPress  media library (_Default: None_)
-> - __Featured text__ : A small blurb that is shown below or on top of the image (_Default: None_)
-> - __Link__ : A URL for the More link text (_Default: None_)
-> - __More link__ : The text to display in the more link (_Default: Read more_)
-> - __Card style__ : Choose one of three styles (_Default: None_)
+> - **Title** : The title of the widget (_Default: Image Widget_)
+> - **Select an image** : Select an image from the WordPress  media library (_Default: None_)
+> - **Featured text** : A small blurb that is shown below or on top of the image (_Default: None_)
+> - **Link** : A URL for the More link text (_Default: None_)
+> - **More link** : The text to display in the more link (_Default: Read more_)
+> - **Card style** : Choose one of three styles (_Default: None_)
 
 
 ## Shortcodes
@@ -189,10 +189,10 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 
 > Attributes:
 
-> - __color__ : The color of the button. Options: __gold__ or __gray__ (_Default: gray_)
-> - __type__: Adjusts the image of the button. Options: __plus__, __go__, __external__, __play__ (_Default: go_)
-> - __small__: Adjusts the size of the button. Options: __small__, __large__ (_Default: large_)
-> - __url__: The URL where the button links to (_Default: None_)
+> - **color** : The color of the button. Options: **gold** or **gray** (_Default: gray_)
+> - **type**: Adjusts the image of the button. Options: **plus**, **go**, **external**, **play** (_Default: go_)
+> - **small**: Adjusts the size of the button. Options: **small**, **large** (_Default: large_)
+> - **url**: The URL where the button links to (_Default: None_)
 
 > Example:
 ```
@@ -205,18 +205,18 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 
 > Attributes:
 
-> -  __excerpt__ : Choose whether to show the excerpt in the blogroll. Options: __show__, __hide__. (_Default: hide_)
-> - __trim__ : Whether or not to trim the words via WordPress [wp\_trim\_words](https://codex.wordpress.org/Function_Reference/wp_trim_words) function. Options: __true__, __false__. (_Default: _false)
-> - __image__:  Choose whether to show the featured image thumbnail. Options: __show__, __hide__. (_Default: hide_)
-> - __author__: Choose whether to show the author. Options: __show__, __hide__. (_Default: show_)
-> - __date__:  Choose whether to show the publish date. Options: __show__, __hide__. (_Default: show_)
-> - __titletag__:  The html element for the post titles. (_Default: h2_)
-> - __post\_type__:  The post type to look for.(_Default: post_)
-> - __number__:  The maximum number of results to return (_Default: 5_)
-> - __mini__:  Use the miniture template instead of the default one. (_Default: false_)
-> - __category__:  The WordPress category ID to limit the results from. (_Default: None_)
-> - __category\_name__:  The WordPress category name to limit the results from. (_Default: None_)
-> - __readmore__: Choose whether to show the "Read More" link or not. Options: __on__, __off__. (_Default: on_)
+> -  **excerpt** : Choose whether to show the excerpt in the blogroll. Options: **show**, **hide**. (_Default: hide_)
+> - **trim** : Whether or not to trim the words via WordPress [wp\_trim\_words](https://codex.wordpress.org/Function_Reference/wp_trim_words) function. Options: **true**, **false**. (_Default: _false)
+> - **image**:  Choose whether to show the featured image thumbnail. Options: **show**, **hide**. (_Default: hide_)
+> - **author**: Choose whether to show the author. Options: **show**, **hide**. (_Default: show_)
+> - **date**:  Choose whether to show the publish date. Options: **show**, **hide**. (_Default: show_)
+> - **titletag**:  The html element for the post titles. (_Default: h2_)
+> - **post\_type**:  The post type to look for.(_Default: post_)
+> - **number**:  The maximum number of results to return (_Default: 5_)
+> - **mini**:  Use the miniture template instead of the default one. (_Default: false_)
+> - **category**:  The WordPress category ID to limit the results from. (_Default: None_)
+> - **category\_name**:  The WordPress category name to limit the results from. (_Default: None_)
+> - **readmore**: Choose whether to show the "Read More" link or not. Options: **on**, **off**. (_Default: on_)
 
 > Example:
 ```
@@ -230,9 +230,9 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 
 > Attributes:
 
-> - __src__ : The source URL of the embedded iframe (_Default: none_)
-> - __height__ : The width of the embedded iframe (_Default: WordPress's embed size width setting )
-> - __width__ :  The height of the embedded iframe (_Default: WordPress's embed size height setting )
+> - **src** : The source URL of the embedded iframe (_Default: none_)
+> - **height** : The width of the embedded iframe (_Default: WordPress's embed size width setting )
+> - **width** :  The height of the embedded iframe (_Default: WordPress's embed size height setting )
 
 > Example:
 ```
@@ -278,13 +278,13 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
 
 > Attributes:
 
-> -  __url__ : The URL to parse for the RSS feed. (_Default: None_)
-> - __number__:  The maximum number of results to return (_Default: 5_)
-> - __title__:  The title for the RSS blogroll in the content (_Default: None_)
-> - __heading__:  The html element for the post titles. (_Default: h3_)
-> - __show_image__:  Choose whether to show the RSS thumbnail. Options: __true__, __false__. (_Default: true_)
-> - __show_date__:  Choose whether to show the publish date. Options: __true__, __false__. (_Default: true_)
-> - __show_more__: Choose whether to show the author. Options: __true__, __false__. (_Default: true_)
+> -  **url** : The URL to parse for the RSS feed. (_Default: None_)
+> - **number**:  The maximum number of results to return (_Default: 5_)
+> - **title**:  The title for the RSS blogroll in the content (_Default: None_)
+> - **heading**:  The html element for the post titles. (_Default: h3_)
+> - **show_image**:  Choose whether to show the RSS thumbnail. Options: **true**, **false**. (_Default: true_)
+> - **show_date**:  Choose whether to show the publish date. Options: **true**, **false**. (_Default: true_)
+> - **show_more**: Choose whether to show the author. Options: **true**, **false**. (_Default: true_)
 
 > Example:
 ```
@@ -298,9 +298,9 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
 
 > Attributes:
 
-> - __alignment__ : How the text is aligned in each tile. Options: __centered__ or __none__ (_Default: none_)
-> - __color__ : Background color of the tiles. Options: __tan__ (_Default: none_)
-> - __empty__ : (Add this to [tile], not [box]). If tile has no content, allow it to be transparent, but take up the normal amount of space. Options: __true__ (_Default: false)
+> - **alignment** : How the text is aligned in each tile. Options: **centered** or **none** (_Default: none_)
+> - **color** : Background color of the tiles. Options: **tan** (_Default: none_)
+> - **empty** : (Add this to [tile], not [box]). If tile has no content, allow it to be transparent, but take up the normal amount of space. Options: **true** (_Default: false)
 
 
 > Example:
@@ -321,9 +321,9 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
 
 > Attributes:
 
-> - __name__ : __Required__ Trumba web name of the desired calendar (_Default: none_)
-> - __type__ : The Trumba spud type of the desired calendar. Changing the type will change how the calendar is displayed. A list of all spud types can be found [here](https://www.trumba.com/help/api/spudType_param.aspx). (_Default: none_)
-> - __base__ : The full url of the desired base calendar. This can be embedded on your site with the spud type='main' (_Default: none_)
+> - **name** : **Required** Trumba web name of the desired calendar (_Default: none_)
+> - **type** : The Trumba spud type of the desired calendar. Changing the type will change how the calendar is displayed. A list of all spud types can be found [here](https://www.trumba.com/help/api/spudType_param.aspx). (_Default: none_)
+> - **base** : The full url of the desired base calendar. This can be embedded on your site with the spud type='main' (_Default: none_)
 
 ```
     [trumba name='my web name' type='desired spud type' base='teaser base url']
@@ -339,9 +339,9 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
 
 > Attributes:
 
-> - __Title__ : The title of the widget (_Default: UW Twitter Feed_)
-> - __Screen name__ : The title of the widget (_Default: twitter__)
-> - __Number of tweets to show__: The number of items in the RSS feed to display (_Default: 5_)
+> - **Title** : The title of the widget (_Default: UW Twitter Feed_)
+> - **Screen name** : The title of the widget (_Default: twitter_)
+> - **Number of tweets to show**: The number of items in the RSS feed to display (_Default: 5_)
 
 > Example:
 ```
@@ -353,13 +353,13 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
 
 ### YouTube ###
 
->  Embed a YouTube video or playlist into your post content.
+>  Embed a YouTube video or playlist into your post content. You will need to obtain a [Youtube API key](https://developers.google.com/youtube/registering_an_application) to use this feature. You can acquire one from YouTube using your UW GSuite account or get in touch with us [uweb@uw.edu](mailto:uweb@uw.edu) for assistance.
 
 > Attributes:
 
-> -  __type__ : Pick whether to display a single video or playlist. Options: __single__, __playlist__. (_Default: None_)
-> - __id__ : The youtube video or playlist id  (_Default: None_)
-> - __max-results__ (__OPTIONAL__):  The maximum number of results to return for a playlist (_Default: None_)
+> -  **type** : Pick whether to display a single video or playlist. Options: **single**, **playlist**. (_Default: None_)
+> - **id** : The youtube video or playlist id  (_Default: None_)
+> - **max-results** (**OPTIONAL**):  The maximum number of results to return for a playlist (_Default: None_)
 
 > Example:
 ```
@@ -373,8 +373,8 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
 
 > Attributes:
 
-> -  __id__ : Enter the ID of the slideshow you have created via the _Dashboard > Slideshows_. (_Default: None_)
-> - __simple__ : The youtube video or playlist id  (_Default: None_)
+> -  **id** : Enter the ID of the slideshow you have created via the _Dashboard > Slideshows_. (_Default: None_)
+> - **simple** : The youtube video or playlist id  (_Default: None_)
 
 > Example:
 ```
@@ -390,8 +390,8 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
 
 > Attributes:
 
-> - __link__ : The text in the anchor tag that will link to the subpage (_Default: Read more_)
-> - __tilebox__ : Enable the grid layout of the subpages ( _Default: false_ )
+> - **link** : The text in the anchor tag that will link to the subpage (_Default: Read more_)
+> - **tilebox** : Enable the grid layout of the subpages ( _Default: false_ )
 
 
 > Example:
@@ -421,7 +421,7 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
 ```
 > Attributes:
 
-> -  __menu__ : Enter the name of the menu found in _Dashboard > Appearance > Menus_. (_Default: Main menu_)
+> -  **menu** : Enter the name of the menu found in _Dashboard > Appearance > Menus_. (_Default: Main menu_)
 
 
 ### Tagboard ###
@@ -429,12 +429,12 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
 
 >Attributes:
 
-> - __slug__ : the ID of your Tagboard. This can be found by visiting your Tagboard's dashboard and looking for the 6-digit ID at the end of the url. (_Default: none_)
-> - __layout__ : the layout of the Tagboard. Options: grid, waterfall, carousel (_Default: grid_)
-> - __post-count__ : the number of posts to display (_Default: 50_)
-> - __mobile-count__ : the number of posts to display on mobile (_Default: 50_)
-> - __toolbar__ : whether or not the toolbar is displayed. Options: default, none. (_Default: default_)
-> - __feed-type__ : auto or default. Choosing auto will only show featured posts. If toolbar="default", choosing default will allow the user to show latest posts or featured posts. (_Default: default_)
+> - **slug** : the ID of your Tagboard. This can be found by visiting your Tagboard's dashboard and looking for the 6-digit ID at the end of the url. (_Default: none_)
+> - **layout** : the layout of the Tagboard. Options: grid, waterfall, carousel (_Default: grid_)
+> - **post-count** : the number of posts to display (_Default: 50_)
+> - **mobile-count** : the number of posts to display on mobile (_Default: 50_)
+> - **toolbar** : whether or not the toolbar is displayed. Options: default, none. (_Default: default_)
+> - **feed-type** : auto or default. Choosing auto will only show featured posts. If toolbar="default", choosing default will allow the user to show latest posts or featured posts. (_Default: default_)
 >
 > Example:
 ```
