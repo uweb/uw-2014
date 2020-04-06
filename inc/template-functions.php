@@ -33,7 +33,9 @@ if ( ! function_exists( 'uw_has_sidebar' ) ) :
 
     if ( is_404() ) return false;
 
-    return get_post_format( $post->ID ) != 'gallery' || is_archive() || is_search() || is_404();
+    $post_format = isset( $post->ID ) ? get_post_format( $post->ID ) : false;
+
+    return $post_format != 'gallery' || is_archive() || is_search() || is_404();
   }
 endif;
 
@@ -95,6 +97,8 @@ if ( ! function_exists( 'uw_list_pages') ) :
   {
     global $UW;
     global $post;
+
+    if ( !isset( $post ) ) return;
 
     $parent = get_post( $post->post_parent );
 
@@ -402,18 +406,19 @@ if ( !function_exists('uw_meta_tags') ):
     // Get the current site's URL
     $url = network_site_url();
     $site_url = home_url();
+    $has_post_thumbnail = isset( $post->ID ) ? has_post_thumbnail( $post->ID ) : false;
     if($url = "http://localhost/cms/" || $url = "http://cms.local/" || $url = "http://cmsdev.uw.edu/" || $url = "https://www.washington.edu/cms/"){
       if ($site_url === "https://www.washington.edu/cms/uwclimatesurvey") {
         $og_img = "https://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/164/2019/10/16193323/Campus-Climate-Survey-Social-Facebook-1200x630.jpg";
 
         echo '<meta property="og:image" content="' . $og_img . '" />' . PHP_EOL;
       }
-      else if(!has_post_thumbnail( $post->ID )) { //the post does not have featured image, use a default image
+      else if( !$has_post_thumbnail ) { //the post does not have featured image, use a default image
           $default_image = "http://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/10/2019/06/21094817/Univ-of-Washington_Memorial-Way.jpg"; //replace this with a default image on your server or an image in your media library
           echo '<meta property="og:image" content="' . $default_image . '" />' . PHP_EOL;
       }
       else{
-        $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full-content' );
+        $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
         echo '<meta property="og:image" content="' . esc_attr( $thumbnail_src[0] ) . '" />' . PHP_EOL;
       }
 

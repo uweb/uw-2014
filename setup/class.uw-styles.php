@@ -27,7 +27,7 @@ class UW_Styles
         'id'      => 'uw-master',
         'url'     => get_bloginfo( 'template_url' ) . '/style' . $this->dev_stylesheet() . '.css',
         'deps'    => array(),
-        'version' => '3.6'
+        'version' => wp_get_theme()->get('Version')
       ),
 
       'uw-style' => array (
