@@ -34,6 +34,7 @@ UW.YouTube.Collection = Backbone.Collection.extend({
         this.type = this.$el.data('uw-youtube-type');
         this.modest = this.$el.data('modest');
         this.resolution = this.$el.data('resolution');
+        var youtubeApiKey = apiKey.network ? apiKey.network : apiKey.local;
         if (this.type == 'playlist'){
             this.max_results = 20;
             var max_results_temp = parseInt(this.$el.data('max-results'), 10);
@@ -41,11 +42,11 @@ UW.YouTube.Collection = Backbone.Collection.extend({
                 this.max_results = max_results_temp;
             }
             this.model = UW.YouTube.PlaylistItem;
-            this.url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=' + this.youtube_id + '&key=AIzaSyApmhFr5oa8bmKPcpN7bm-h0mekjkUVypU&maxResults=' + this.max_results;
+            this.url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=' + this.youtube_id + '&key=' + youtubeApiKey + '&maxResults=' + this.max_results;
         }
         else if (this.type == 'single') {
             this.model = UW.YouTube.Video;
-            this.url = 'https://www.googleapis.com/youtube/v3/videos?part=snippet&id=' + this.youtube_id + '&key=AIzaSyApmhFr5oa8bmKPcpN7bm-h0mekjkUVypU';
+            this.url = 'https://www.googleapis.com/youtube/v3/videos?part=snippet&id=' + this.youtube_id + '&key=' + youtubeApiKey;
         }
     },
 

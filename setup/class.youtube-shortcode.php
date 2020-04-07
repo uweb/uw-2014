@@ -13,6 +13,12 @@ class UW_YouTube
 
     function __construct()
     {
+        if (is_multisite()) {
+            add_action('wpmu_options', array($this, 'network_youtube_api_setting_init'));
+            add_action('update_wpmu_options', array($this, 'network_youtube_api_setting_update'));
+        }
+        add_action('admin_init', array($this, 'youtube_api_key_setting_init'));
+        add_action('wp_enqueue_scripts', array($this, 'youtube_api_key_localize_script'));
         add_shortcode('youtube', array($this, 'youtube_handler'));
     }
 
@@ -49,5 +55,77 @@ class UW_YouTube
         }
 
         return $return;
+    }
+
+    function network_youtube_api_setting_init() {
+        if (!get_site_option('network_youtube_api_key')) {
+            add_site_option('network_youtube_api_key', '');
+        }
+        $network_key = get_site_option('network_youtube_api_key');
+        ?>
+            <h2>Youtube API Settings</h2>
+            <p>Upload your own YouTube API key below.</p>
+            <table class="form-table">
+                <tbody>
+                    <tr><th scope="row">API Key</th>
+                        <td><input name="network_youtube_api_key" type="text" class="regular-text" value="<?php echo esc_attr($network_key); ?>"></td>
+                    </tr>
+                </tbody>
+            </table>
+        <?php
+    }
+
+    function network_youtube_api_setting_update() {
+        if (isset($_POST['network_youtube_api_key'])) {
+            $site_option = $this->youtube_api_key_sanitize($_POST['network_youtube_api_key']);
+            update_site_option('network_youtube_api_key', $site_option);
+        }
+    }
+
+    function youtube_api_key_setting_init() {
+        register_setting(
+            'media',
+            'youtube_api_key',
+            array($this, 'youtube_api_key_sanitize')
+        );
+
+        add_settings_section(
+            'youtube_api_key_section',
+            'Youtube API Key',
+            array($this, 'youtube_api_key_setting_description'),
+            'media'
+        );
+
+        add_settings_field(
+            'youtube_api_key_setting',
+            'API Key',
+            array($this, 'youtube_api_key_input'),
+            'media',
+            'youtube_api_key_section'
+        );
+    }
+
+    function youtube_api_key_setting_description() {
+        echo "<p>Upload your own YouTube API key below.</p>";
+    }
+
+    function youtube_api_key_input() {
+        $option = get_option('youtube_api_key');
+        ?>
+            <input name="youtube_api_key" type="text" class="regular-text" value="<?php echo esc_attr($option); ?>" />
+        <?php
+    }
+    
+    function youtube_api_key_sanitize($key) {
+        return preg_replace('/[^a-zA-Z0-9_\-]/', '', $key);
+    }
+
+    function youtube_api_key_localize_script() {
+        $api_key = array(
+            'local'   => get_option('youtube_api_key'),
+            'network' => get_site_option('network_youtube_api_key')
+        );
+        
+        wp_localize_script('site', 'apiKey', $api_key);
     }
 }
