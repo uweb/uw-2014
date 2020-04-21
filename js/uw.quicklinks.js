@@ -12,7 +12,7 @@ UW.QuickLinks = Backbone.View.extend({
     template : '<nav id="quicklinks" aria-label="quick links" aria-hidden="true">' +
                         '<ul id="big-links">' +
                             '<% _.each( links, function( link ) { %> ' +
-                                '<% if (link.classes) { %>' +
+                                '<% if (link.classes && link.classes != "" ) { %>' +
                                     '<li>' +
                                         '<span class="<%= link.classes %>"></span>' +
                                         '<a href="<%= link.url %>" tabindex="-1"><%= link.title %></a>' +
@@ -23,7 +23,7 @@ UW.QuickLinks = Backbone.View.extend({
                         '<h3>Helpful Links</h3>' +
                         '<ul id="little-links">' +
                             '<% _.each( links, function( link ) { %> '+
-                                '<% if ( ! link.classes) { %>' +
+                                '<% if ( !link.classes || link.classes == "" ) { %>' +
                                     '<li>' +
                                         '<span class="<%= link.classes %>"></span>' +
                                         '<a href="<%= link.url %>" tabindex="-1"><%= link.title %></a>' +
@@ -63,7 +63,7 @@ UW.QuickLinks = Backbone.View.extend({
     render : function(  )
     {
         this.defaultLinks =  this.links.defaults
-        this.quicklinks = $( _.template( this.template )({ links : this.defaultLinks ? this.defaultLinks : this.links.toJSON() }) );
+        this.quicklinks = $( _.template( this.template )({ links : this.links.toJSON().length === 0 ? this.defaultLinks : this.links.toJSON() }) );
         this.$container = $(this.container);
         this.$container.prepend( this.quicklinks )
         this.$el.attr( 'aria-controls', 'quicklinks' ).attr( 'aria-owns', 'quicklinks' )
