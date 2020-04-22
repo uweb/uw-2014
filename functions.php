@@ -25,35 +25,3 @@ if (!function_exists('setup_uw_object')){
 }
 
 $UW = setup_uw_object();
-
-/**
- * Get nav menu items by location
- *
- * @param $location The menu location id
- */
-function get_nav_menu_items_by_location( $location, $args = [] ) {
-
-    // Get all locations
-    $locations = get_nav_menu_locations();
-
-    // Get object id by location
-    $object = wp_get_nav_menu_object( $locations[$location] );
-
-    // Get menu items by menu name
-    $menu_items = wp_get_nav_menu_items( $object->name, $args );
-
-    // Return menu post objects
-    return $menu_items;
-}
-
-function uw_get_quicklinks_menu() {
-    # Change 'menu' to your own navigation slug.
-    return get_nav_menu_items_by_location('quick-links');
-}
-
-add_action( 'rest_api_init', function () {
-        register_rest_route( 'uw-2014', '/quicklinks', array(
-        'methods' => 'GET',
-        'callback' => 'uw_get_quicklinks_menu',
-    ) );
-} );
