@@ -111,6 +111,7 @@ class UW_Iframes
       'app.modelo.io',
       'webcasts.weforum.org',
       'weforum.org',
+      'storymaps.arcgis.com',
     );
   }
 
