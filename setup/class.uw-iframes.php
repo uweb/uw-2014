@@ -112,7 +112,7 @@ class UW_Iframes
       'webcasts.weforum.org',
       'weforum.org',
       'storymaps.arcgis.com',
-      'h5p.org'.
+      'h5p.org',
     );
   }
 
