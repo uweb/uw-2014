@@ -141,8 +141,8 @@ class UW_Carousel {
     }
 
     foreach ($img_meta as $key => $val) {
-      if ($val != null) {
-        $img_meta[$key] = strval($img_meta[$key]);
+      if (!empty($val)) {
+        $img_meta[$key] = is_array($img_meta[$key]) ? implode(' ', $val) : strval($img_meta[$key]);
       }
     }
     $img_meta = json_encode($img_meta);
