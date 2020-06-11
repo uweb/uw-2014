@@ -43,7 +43,7 @@ if ( ! function_exists( 'uw_dropdowns') ) :
   function uw_dropdowns()
   {
 
-    echo '<nav id="dawgdrops" aria-label="Main menu"><div class="dawgdrops-inner container" role="application">';
+    echo '<nav id="dawgdrops" aria-label="Main menu"><div class="dawgdrops-inner container">';
 
     echo  wp_nav_menu( array(
             'theme_location'  => UW_Dropdowns::LOCATION,

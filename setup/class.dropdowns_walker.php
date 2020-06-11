@@ -24,7 +24,7 @@ class UW_Dropdowns_Walker_Menu extends Walker_Nav_Menu
   function start_lvl( &$output, $depth = 0, $args = array() )
   {
     if ( $depth > 0 ) return;
-		$output .= "<ul role=\"group\" id=\"menu-{$this->CURRENT}\" aria-labelledby='{$this->CURRENT}' aria-expanded=\"false\" class=\"dawgdrops-menu\">\n";
+		$output .= "<ul role=\"group\" id=\"menu-{$this->CURRENT}\" aria-labelledby='{$this->CURRENT}'class=\"dawgdrops-menu\">\n";
 	}
 
   function end_lvl( &$output, $depth = 0, $args = array() )
@@ -50,7 +50,7 @@ class UW_Dropdowns_Walker_Menu extends Walker_Nav_Menu
     $this->CURRENT = $item->post_name;
     $title = ! empty( $item->title ) ? $item->title : $item->post_title;
 
-    $controls = $depth == 0 && $item->has_children ? 'aria-controls="menu-'.$item->post_name.'" aria-expanded="false" aria-haspopup="true"' : '';
+    $controls = $depth == 0 && $item->has_children ? 'aria-controls="menu-'.$item->post_name.'"' : '';
 
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
