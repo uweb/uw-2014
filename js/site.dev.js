@@ -12449,7 +12449,8 @@ UW.Dropdowns = Backbone.View.extend({
   },
 
   elements : {
-    toplevel : '.dawgdrops-item'
+    toplevel : '.dawgdrops-item',
+    document : document,
   },
 
   keys : {
@@ -12466,18 +12467,24 @@ UW.Dropdowns = Backbone.View.extend({
 
   events : {
     'keydown .dawgdrops-menu a' : 'moveFocusInSubMenu',
-    'keydown .dawgdrops-item > a' : 'toggleSubMenu',
-    'focus .dawgdrops-item' : 'positionSubmenu',
-    'mouseenter .dawgdrops-item' : 'positionSubmenu'
+    // 'keydown .dawgdrops-item > a' : 'toggleSubMenu',
+    'keydown .dawgdrops-item > button' : 'toggleSubMenu',
+    // 'focus .dawgdrops-item' : 'positionSubmenu',
+    // 'mouseenter .dawgdrops-item' : 'positionSubmenu',
+    'mouseleave .dawgdrops-item' : 'removeAria'
   },
 
 
   initialize : function(options)
   {
-    _.bindAll( this, 'render', 'chunk', 'wrap', 'wrapChildren', 'positionSubmenu', 'toggleSubMenu' )
+    _.bindAll( this, 'render', 'chunk', 'wrap', 'wrapChildren', 'positionSubmenu', 'toggleSubMenu')
     this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
     this.$topLevelNav = this.$el.find( this.elements.toplevel )
-    this.render()
+    // this.render()
+    this.$el.on('sync', function() {
+        this.render();
+    }, this);
+    $(document).bind( 'keydown', this.keyAction );
   },
 
   render : function()
@@ -12509,22 +12516,29 @@ UW.Dropdowns = Backbone.View.extend({
       , menublock = $el.find('.menu-block')
       , shift = ( this.menuBlockWidth * ( menublock.length ) ) + position.left
       , left = shift > UW.$window.width() ? $el.outerWidth() + position.left - ( menublock.length * this.menuBlockWidth ) : position.left
+      $el.find('ul').css( { top : position.top + 58, left: left })
+      $( event.currentTarget ).siblings('ul').attr( 'aria-expanded', 'true' );
+      $el.find('a').siblings('ul').attr( 'aria-expanded', 'true' );
+      $el.addClass('current');
+  },
 
-    $el.find('ul').css( { top : position.top + 58, left: left })
+  removeAria : function( event ) {
+    var $el = $( event.currentTarget );
+    $el.find('a').siblings('ul').attr( 'aria-expanded', 'false' );
+    $el.removeClass('current');
+
   },
 
   toggleSubMenu : function( e )
   {
     switch ( e.keyCode )
     {
-
+      case this.keys.spacebar:
       case this.keys.enter :
-      case this.keys.down  :
-
-        $(e.currentTarget).attr('aria-expanded', 'true');
+      // case this.keys.down  :
+        $(".dawgdrops-item").trigger('mouseleave')
         this.currentSubMenu = $(e.currentTarget).siblings('ul')
         this.currentSubMenuAnchors = this.currentSubMenu.find('a')
-
         this.currentSubMenu
             .attr( 'aria-expanded', 'true' )
             .show()
@@ -12543,9 +12557,9 @@ UW.Dropdowns = Backbone.View.extend({
         $(e.currentTarget).parent().next().children('a').first().focus()
         return false
 
-      case this.keys.spacebar:
-        window.location.href = $(e.currentTarget).attr('href')
-        return false;
+      // case this.keys.spacebar:
+      //   window.location.href = $(e.currentTarget).attr('href')
+      //   return false;
 
     }
 
@@ -12553,6 +12567,7 @@ UW.Dropdowns = Backbone.View.extend({
 
   moveFocusInSubMenu : function(e)
   {
+
     switch ( e.keyCode ) {
 
       case this.keys.tab:
@@ -12582,6 +12597,7 @@ UW.Dropdowns = Backbone.View.extend({
         return false;
 
       case this.keys.right:
+        console.log(this.currentSubMenu);
         this.currentSubMenu.hide().parent().next().children('a').first().focus()
         this.index.submenu = 0;
         this.currentSubMenu.attr( 'aria-expanded', 'false' )
@@ -12595,7 +12611,7 @@ UW.Dropdowns = Backbone.View.extend({
 
       case this.keys.esc:
         this.currentSubMenu.attr('aria-expanded', 'false' )
-          .hide().parent().children('a').first().attr('aria-expanded', 'false').focus();
+          .hide().parent().children('button').first().attr('aria-expanded', 'false').focus();
         return false;
 
       default:
@@ -12611,8 +12627,18 @@ UW.Dropdowns = Backbone.View.extend({
 
 
     }
-  }
+  },
 
+  keyAction : function(e) {
+    switch ( e.keyCode ) {
+
+      case 27:
+        this.currentSubMenu = $('.dawgdrops-item.current ul')
+        this.currentSubMenu.attr('aria-expanded', 'false' )
+          .hide().parent().children('a').first().attr('aria-expanded', 'false').focus();
+        return false;
+    }
+  }
 })
 ;// ### UW Dropdowns
 
