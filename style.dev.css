@@ -5423,7 +5423,8 @@ a.uw-custom-link:hover {
 .dawgdrops-item a.dropdown-toggle {
   padding-right: 30px;
 }
-.dawgdrops-item a.dropdown-toggle:hover:before {
+.dawgdrops-item a.dropdown-toggle:hover:before,
+.dawgdrops-item a.dropdown-toggle:focus:before {
   background: url(assets/svg/uw-sprite.svg) no-repeat -203px -490px;
   -o-transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
@@ -5575,6 +5576,34 @@ a.uw-custom-link:hover {
     z-index: -1;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
   }
+}
+.dawgdrops-item {
+  position: relative !important;
+}
+.dawgdrops-item:hover button {
+  display: none;
+}
+.dawgdrops-item button {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  right: 5px;
+  border: none;
+  top: 14px;
+  padding: 5px;
+  background: none;
+}
+.dawgdrops-item button:focus {
+  background: url(assets/svg/uw-sprite.svg) no-repeat -354px 0px;
+  background-color: white;
+  border: 3px solid #94BFF9 !important;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 3px rgba(102, 175, 233, 0.6);
+  outline: 0 none;
+}
+.dawgdrops-item .dawgdrops-menu {
+  top: 50px;
 }
 .uw-hero-image,
 .no-uw-hero-image {
