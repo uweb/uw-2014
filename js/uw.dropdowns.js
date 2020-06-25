@@ -39,7 +39,7 @@ UW.Dropdowns = Backbone.View.extend({
     // 'keydown .dawgdrops-item > a' : 'toggleSubMenu',
     'keydown .dawgdrops-item > button' : 'toggleSubMenu',
     // 'focus .dawgdrops-item' : 'positionSubmenu',
-    // 'mouseenter .dawgdrops-item' : 'positionSubmenu',
+    'mouseenter .dawgdrops-item' : 'positionSubmenu',
     'mouseleave .dawgdrops-item' : 'removeAria'
   },
 
@@ -85,15 +85,15 @@ UW.Dropdowns = Backbone.View.extend({
       , menublock = $el.find('.menu-block')
       , shift = ( this.menuBlockWidth * ( menublock.length ) ) + position.left
       , left = shift > UW.$window.width() ? $el.outerWidth() + position.left - ( menublock.length * this.menuBlockWidth ) : position.left
-      $el.find('ul').css( { top : position.top + 58, left: left })
-      $( event.currentTarget ).siblings('ul').attr( 'aria-expanded', 'true' );
-      $el.find('a').siblings('ul').attr( 'aria-expanded', 'true' );
+      // $el.find('ul').css( { top : position.top + 58, left: left })
+      $el.find('a').siblings('ul').removeAttr('style');
+      $el.find('a').attr( 'aria-expanded', 'true' );
       $el.addClass('current');
   },
 
   removeAria : function( event ) {
     var $el = $( event.currentTarget );
-    $el.find('a').siblings('ul').attr( 'aria-expanded', 'false' );
+    $el.find('a').attr( 'aria-expanded', 'false' );
     $el.removeClass('current');
 
   },
@@ -107,13 +107,12 @@ UW.Dropdowns = Backbone.View.extend({
       // case this.keys.down  :
         $(".dawgdrops-item").trigger('mouseleave')
         this.currentSubMenu = $(e.currentTarget).siblings('ul')
-        this.currentSubMenuAnchors = this.currentSubMenu.find('a')
         this.currentSubMenu
-            .attr( 'aria-expanded', 'true' )
             .show()
           .find('a')
             .eq(0)
             .focus()
+        $(e.currentTarget).attr('aria-expanded', 'true');
 
         return false
 
@@ -166,7 +165,6 @@ UW.Dropdowns = Backbone.View.extend({
         return false;
 
       case this.keys.right:
-        console.log(this.currentSubMenu);
         this.currentSubMenu.hide().parent().next().children('a').first().focus()
         this.index.submenu = 0;
         this.currentSubMenu.attr( 'aria-expanded', 'false' )

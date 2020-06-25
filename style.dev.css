@@ -5588,8 +5588,10 @@ a.uw-custom-link:hover {
   position: absolute;
   height: 10px;
   width: 10px;
-  right: -7px;
-  top: 16px;
+  right: 8px;
+  border: none;
+  top: 17px;
+  padding: 0;
   background: none;
 }
 .dawgdrops-item button:focus {
