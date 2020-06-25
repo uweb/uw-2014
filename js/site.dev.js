@@ -12537,7 +12537,8 @@ UW.Dropdowns = Backbone.View.extend({
       case this.keys.enter :
       // case this.keys.down  :
         $(".dawgdrops-item").trigger('mouseleave')
-        this.currentSubMenu = $(e.currentTarget).siblings('ul')
+        this.currentSubMenu = $(e.currentTarget).siblings('ul');
+        this.currentSubMenuAnchors = this.currentSubMenu.find('a');
         this.currentSubMenu
             .show()
           .find('a')

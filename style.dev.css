@@ -5588,14 +5588,19 @@ a.uw-custom-link:hover {
   position: absolute;
   height: 10px;
   width: 10px;
-  right: 8px;
+  right: 5px;
   border: none;
-  top: 17px;
-  padding: 0;
+  top: 14px;
+  padding: 5px;
   background: none;
 }
 .dawgdrops-item button:focus {
-  background: url(assets/svg/uw-sprite.svg) no-repeat -353px 0px;
+  background: url(assets/svg/uw-sprite.svg) no-repeat -354px 0px;
+  background-color: white;
+  border: 3px solid #94BFF9 !important;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 3px rgba(102, 175, 233, 0.6);
+  outline: 0 none;
 }
 .dawgdrops-item .dawgdrops-menu {
   top: 50px;
