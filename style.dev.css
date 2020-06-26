@@ -5587,7 +5587,8 @@ a.uw-custom-link:hover {
   display: flex;
 }
 .dawgdrops-item.btn-myuw,
-.dawgdrops-item.menu-give-now {
+.dawgdrops-item.menu-give-now,
+.dawgdrops-item.menu-myuw-giving {
   position: inherit !important;
 }
 .dawgdrops-item:hover button {
