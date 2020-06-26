@@ -255,9 +255,12 @@
 
 //new accessibility updates
 .dawgdrops-item {
-	position: relative !important;
-	&.btn-myuw {
-		position: initial !important;
+	position: relative;
+	&:hover .dawgdrops-menu {
+		.flex-display();
+	}
+	&.btn-myuw, &.menu-give-now {
+		position: inherit !important;
 	}
 	&:hover button {
 		display: none;
@@ -286,4 +289,5 @@
 	.dawgdrops-menu {
 		top: 50px;
 	}
+
 }

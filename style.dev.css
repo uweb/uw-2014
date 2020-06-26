@@ -5578,10 +5578,17 @@ a.uw-custom-link:hover {
   }
 }
 .dawgdrops-item {
-  position: relative !important;
+  position: relative;
 }
-.dawgdrops-item.btn-myuw {
-  position: initial !important;
+.dawgdrops-item:hover .dawgdrops-menu {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+}
+.dawgdrops-item.btn-myuw,
+.dawgdrops-item.menu-give-now {
+  position: inherit !important;
 }
 .dawgdrops-item:hover button {
   display: none;

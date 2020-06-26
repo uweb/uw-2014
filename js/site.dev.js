@@ -12469,7 +12469,7 @@ UW.Dropdowns = Backbone.View.extend({
     'keydown .dawgdrops-menu a' : 'moveFocusInSubMenu',
     // 'keydown .dawgdrops-item > a' : 'toggleSubMenu',
     'keydown .dawgdrops-item > button' : 'toggleSubMenu',
-    // 'focus .dawgdrops-item' : 'positionSubmenu',
+    // 'focus .dawgdrops-item > button' : 'positionSubmenu',
     'mouseenter .dawgdrops-item' : 'positionSubmenu',
     'mouseleave .dawgdrops-item' : 'removeAria'
   },
@@ -12480,10 +12480,7 @@ UW.Dropdowns = Backbone.View.extend({
     _.bindAll( this, 'render', 'chunk', 'wrap', 'wrapChildren', 'positionSubmenu', 'toggleSubMenu')
     this.settings = _.extend( {}, this.defaults , this.$el.data() , options )
     this.$topLevelNav = this.$el.find( this.elements.toplevel )
-    // this.render()
-    this.$el.on('sync', function() {
-        this.render();
-    }, this);
+    this.render()
     $(document).bind( 'keydown', this.keyAction );
   },
 
@@ -12499,8 +12496,10 @@ UW.Dropdowns = Backbone.View.extend({
 
   wrapChildren : function( element )
   {
-    if ( $(element).find('li').length > this.chunkSize )
+    // if ( $(element).find('li').length > this.chunkSize )
         _.each( _.groupBy( $( element ).find('li'), this.chunk ), this.wrap )
+    // else
+    //   _.each( _.groupBy( $( element ).find('li'), this.chunk ), this.wrap )
   },
 
   wrap : function( elements )
@@ -12516,8 +12515,8 @@ UW.Dropdowns = Backbone.View.extend({
       , menublock = $el.find('.menu-block')
       , shift = ( this.menuBlockWidth * ( menublock.length ) ) + position.left
       , left = shift > UW.$window.width() ? $el.outerWidth() + position.left - ( menublock.length * this.menuBlockWidth ) : position.left
-      // $el.find('ul').css( { top : position.top + 58, left: left })
       $el.find('a').siblings('ul').removeAttr('style');
+      // $el.find('a').siblings('ul').css( { top : position.top + 58, left: left });
       $el.find('a').attr( 'aria-expanded', 'true' );
       $el.addClass('current');
   },
@@ -12536,7 +12535,7 @@ UW.Dropdowns = Backbone.View.extend({
       case this.keys.spacebar:
       case this.keys.enter :
       // case this.keys.down  :
-        $(".dawgdrops-item").trigger('mouseleave')
+        $(".dawgdrops-item").trigger('mouseleave');
         this.currentSubMenu = $(e.currentTarget).siblings('ul');
         this.currentSubMenuAnchors = this.currentSubMenu.find('a');
         this.currentSubMenu
@@ -12545,6 +12544,7 @@ UW.Dropdowns = Backbone.View.extend({
             .eq(0)
             .focus()
         $(e.currentTarget).attr('aria-expanded', 'true');
+        this.currentSubMenu.css('display', 'flex');
 
         return false
 
