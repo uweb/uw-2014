@@ -63,7 +63,8 @@ UW.QuickLinks = Backbone.View.extend({
     render : function(  )
     {
         this.defaultLinks =  this.links.defaults
-        this.quicklinks = $( _.template( this.template )({ links : this.defaultLinks ? this.defaultLinks : this.links.toJSON() }) );
+        console.log(this.links.toJSON);
+        this.quicklinks = $( _.template( this.template )({ links : this.links.toJSON.length === 0 ? this.defaultLinks : this.links.toJSON() }) );
         this.$container = $(this.container);
         this.$container.prepend( this.quicklinks )
         this.$el.attr( 'aria-controls', 'quicklinks' ).attr( 'aria-owns', 'quicklinks' )
@@ -146,51 +147,51 @@ UW.QuickLinks.Collection = Backbone.Collection.extend({
 
     defaults : [{
        "title": "MyUW",
-       "url": "http:\/\/my.uw.edu",
+       "url": "https:\/\/my.uw.edu",
        "classes": ["icon-myuw"]
    }, {
        "title": "Calendar",
-       "url": "http:\/\/uw.edu\/calendar",
+       "url": "https:\/\/uw.edu\/calendar",
        "classes": ["icon-calendar"]
    }, {
        "title": "Directories",
-       "url": "http:\/\/uw.edu\/directory\/",
+       "url": "https:\/\/uw.edu\/directory\/",
        "classes": ["icon-directories"]
    }, {
        "title": "Libraries",
-       "url": "http:\/\/www.lib.washington.edu\/",
+       "url": "https:\/\/www.lib.washington.edu\/",
        "classes": ["icon-libraries"]
    }, {
        "title": "UW Medicine",
-       "url": "http:\/\/www.uwmedicine.org",
+       "url": "https:\/\/www.uwmedicine.org",
        "classes": ['icon-medicine']
    }, {
        "title": "Maps",
-       "url": "http:\/\/uw.edu\/maps",
+       "url": "https:\/\/uw.edu\/maps",
        "classes": ["icon-maps"]
    }, {
        "title": "UW Today",
-       "url": "http:\/\/uw.edu\/news",
+       "url": "https:\/\/uw.edu\/news",
        "classes": ["icon-uwtoday"]
    }, {
        "title": "Computing\/IT",
-       "url": "http:\/\/itconnect.uw.edu",
+       "url": "https:\/\/itconnect.uw.edu",
        "classes": false
    }, {
        "title": "Workday\/ISC",
-       "url": "http:\/\/isc.uw.edu\/",
+       "url": "https:\/\/isc.uw.edu\/",
        "classes": false
    }, {
        "title": "Husky Card",
-       "url": "http:\/\/hfs.uw.edu\/Husky-Card-Services\/",
+       "url": "https:\/\/hfs.uw.edu\/Husky-Card-Services\/",
        "classes": false
    }, {
        "title": "UW Bothell",
-       "url": "http:\/\/www.uwb.edu\/",
+       "url": "https:\/\/www.uwb.edu\/",
        "classes": false
    }, {
        "title": "UW Tacoma",
-       "url": "http:\/\/www.tacoma.uw.edu\/",
+       "url": "https:\/\/www.tacoma.uw.edu\/",
        "classes": false
    }, {
        "title": "UW Facebook",
