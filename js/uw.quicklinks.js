@@ -63,13 +63,12 @@ UW.QuickLinks = Backbone.View.extend({
     render : function(  )
     {
         this.defaultLinks =  this.links.defaults
-        console.log(this.links.toJSON);
-        this.quicklinks = $( _.template( this.template )({ links : this.links.toJSON.length === 0 ? this.defaultLinks : this.links.toJSON() }) );
+        this.quicklinks = $( _.template( this.template )({ links : this.links.toJSON().length == 0 ? this.defaultLinks : this.links.toJSON() }) );
         this.$container = $(this.container);
-        this.$container.prepend( this.quicklinks )
-        this.$el.attr( 'aria-controls', 'quicklinks' ).attr( 'aria-owns', 'quicklinks' )
-        UW.$body.on( 'keydown', '#quicklinks a:first', this.inner_keydown )
-        UW.$body.on( 'keyup', '#quicklinks a', this.animate )
+        this.$container.prepend( this.quicklinks );
+        this.$el.attr( 'aria-controls', 'quicklinks' ).attr( 'aria-owns', 'quicklinks' );
+        UW.$body.on( 'keydown', '#quicklinks a:first', this.inner_keydown );
+        UW.$body.on( 'keyup', '#quicklinks a', this.animate );
         this.quicklinks.on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', this.transitionEnd);
     },
 
