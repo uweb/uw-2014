@@ -7,7 +7,7 @@ div.uw-slideshow
   height: 390px;
   margin: 40px 0 20px 0;
   z-index: 0;
-  
+
   > div.slide {
 
     position:absolute;
@@ -155,7 +155,7 @@ div.uw-slideshow
          width: 45px;
          height: 75px;
          position: absolute;
-         bottom: 10%;     
+         bottom: 10%;
          right: 65px;
          z-index: 20;
          opacity: .8;
@@ -206,9 +206,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
       // Adds a litte 'i' for hover
 
-      .has-text:after {   
+      .has-text:after {
         font-family: @font-family-headline;
-        font-weight: @ultra;  
+        font-weight: @ultra;
         content: "i";
         font-size: 13px;
         text-align: center;
@@ -231,7 +231,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
         background-color: transparent;
         bottom: 10%;
         width: 75px;
-        &.next, 
+        &.next,
         &.previous {
           .box-shadow(none);
           &:hover,
@@ -247,7 +247,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
             right: 95px;
           }
         }
-        &.next {          
+        &.next {
           left: auto;
           right: 5px;
           &:hover,
@@ -255,18 +255,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
             right: 0;
           }
         }
-        &.next:after, 
+        &.next:after,
         &.previous:after {
           width: 46px;
           left: 10px;
           background: url(assets/svg/uw-sprite.svg) no-repeat -55px -545px rgba(0, 0, 0, 0);
           background-size: 970px;
-        }    
-  
+        }
+
     }
     .slider-dots {
       position: relative;
-      bottom: 0;  
+      bottom: 0;
       z-index: 9999;
       text-align: center;
       margin-top: 465px;
@@ -307,10 +307,51 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
   }
 
+  &.fullwidth {
+    height: 80vh;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+
+    & > div.slide {
+      width: 100%;
+
+      a {
+        position: relative;
+        float: left;
+        width: 100%;
+        margin-right: -100%;
+
+        img {
+          width: 100%;
+          height: 80vh;
+          object-fit: cover;
+        }
+      }
+
+      div {
+        bottom: 0;
+      }
+
+      div h3 a {
+        float: none;
+        width: auto;
+        margin-right: 0;
+      }
+    }
+
+    .uw-slideshow-controls {
+      bottom: 23px;
+    }
+  }
+
 }
 
 .activeFullscreen div.uw-slideshow.photo-slider {
-  position: fixed; 
+  position: fixed;
   top: 5%;
   left: 5%;
   bottom: 5%;
@@ -386,7 +427,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
           overflow: hidden;
           height: 92.5%;
         }
-      }  
+      }
     }
   }
 }
@@ -468,7 +509,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
     padding: 20px 20px 55px;
     opacity: 1;
     width: 100%;
-    bottom: 0; 
+    bottom: 0;
     p {
       width: 100%;
     }
