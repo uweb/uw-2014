@@ -3847,6 +3847,40 @@ div.uw-slideshow.photo-slider a.fullscreen:hover {
   transform: scale(1.2, );
   transform-origin: center center;
 }
+div.uw-slideshow.fullwidth {
+  height: 80vh;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+div.uw-slideshow.fullwidth > div.slide {
+  width: 100%;
+}
+div.uw-slideshow.fullwidth > div.slide a {
+  position: relative;
+  float: left;
+  width: 100%;
+  margin-right: -100%;
+}
+div.uw-slideshow.fullwidth > div.slide a img {
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+}
+div.uw-slideshow.fullwidth > div.slide div {
+  bottom: 0;
+}
+div.uw-slideshow.fullwidth > div.slide div h3 a {
+  float: none;
+  width: auto;
+  margin-right: 0;
+}
+div.uw-slideshow.fullwidth .uw-slideshow-controls {
+  bottom: 23px;
+}
 .activeFullscreen div.uw-slideshow.photo-slider {
   position: fixed;
   top: 5%;
