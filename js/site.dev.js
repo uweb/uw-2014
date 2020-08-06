@@ -11461,6 +11461,7 @@ UW.QuickLinks.Collection = Backbone.Collection.extend({
     initialize: function ( options )
     {
         this.url = options.url;
+        this.url = options.url.replace("www.washington.edu/cms/", "www.washington.edu/");
     },
 
     defaults : [{
