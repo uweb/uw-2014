@@ -9468,6 +9468,21 @@ div[id*='trumba'] iframe {
     width: 47%;
   }
 }
+.icon-list {
+  list-style: none;
+  margin: 0;
+}
+.icon-list li {
+  float: left;
+  display: block;
+  width: 20%;
+  text-align: center;
+}
+@media screen and (max-width: 991px) {
+  .icon-list li {
+    width: 100%;
+  }
+}
 /*==========  Non-Mobile First Method  ==========*/
 /* Large Devices, Wide Screens */
 /* Medium Devices, Desktops */
