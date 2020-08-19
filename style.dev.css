@@ -3963,7 +3963,21 @@ div.uw-slideshow.fullwidth .uw-slideshow-controls {
     display: none;
   }
 }
+@media only screen and (min-width: 700px) and (max-width: 767px) {
+  div.uw-slideshow.fullwidth {
+    min-height: 550px;
+  }
+}
+@media (max-width: 699px) {
+  div.uw-slideshow.fullwidth {
+    min-height: 400px;
+  }
+}
 @media only screen and (max-width: 767px) {
+  div.uw-slideshow.fullwidth,
+  div.uw-slideshow.fullwidth > div.slide a img {
+    height: auto;
+  }
   div.uw-slideshow .uw-slideshow-controls {
     height: 45px;
     bottom: 0;
