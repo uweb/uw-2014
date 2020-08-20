@@ -113,6 +113,9 @@ class UW_Iframes
       'weforum.org',
       'storymaps.arcgis.com',
       'h5p.org',
+      'app.powerbi.com',
+      'powerbi.com',
+      'www.powerbi.com'
     );
   }
 
