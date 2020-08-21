@@ -307,6 +307,53 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
   }
 
+  &.tallerimage {
+    height: 600px;
+
+    @media screen and (min-width: 581px) and (max-width: 991px) {
+      height: 500px;
+    }
+
+    @media screen and (max-width: 580px) {
+      height: 450px;
+    }
+
+    &.photo-slider {
+      @media (min-width: 992px) and (max-width: 1200px) {
+        height: 500px;
+      }
+      &:before {
+        @media (max-width: 500px) {
+          bottom: 5%;
+        }
+        @media (min-width: 992px) and (max-width: 1200px) {
+          bottom: 10%;
+        }
+      }
+
+      &:after {
+        bottom: 10%;
+      }
+
+      .uw-slideshow-controls.next, .uw-slideshow-controls.previous {
+        bottom: 10%;
+      }
+
+      .slider-dots {
+        bottom: -100%;
+        margin-top: 0;
+
+        @media (min-width: 769px) and (max-width: 1200px) {
+          bottom: -105%;
+        }
+
+        @media (max-width: 768px) {
+          bottom: -15px;
+        }
+      }
+    }
+  }
+
   &.fullwidth {
     height: 80vh;
     width: 100vw;
@@ -340,6 +387,55 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
         float: none;
         width: auto;
         margin-right: 0;
+      }
+    }
+
+    &.photo-slider {
+      &:before {
+        @media (max-width: 500px) {
+          bottom: 16%;
+        }
+      }
+
+      &:after {
+        bottom: 72px;
+
+        @media (min-width: 768px) and (max-width: 1200px) {
+          bottom: 42px;
+        }
+
+        @media (max-width: 500px) {
+          bottom: 68px;
+        }
+      }
+
+      .uw-slideshow-controls.next, .uw-slideshow-controls.previous {
+        bottom: 70px;
+
+        @media (min-width: 769px) and (max-width: 1200px) {
+          bottom: 35px;
+        }
+
+        @media (min-width: 501px) and (max-width: 768px) {
+          bottom: 50px;
+        }
+
+        @media (max-width: 500px) {
+          bottom: 70px;
+        }
+      }
+
+      .slider-dots {
+        bottom: -100%;
+        margin-top: 0;
+
+        @media (min-width: 769px) and (max-width: 1200px) {
+          bottom: -110%;
+        }
+
+        @media (max-width: 768px) {
+          bottom: 0;
+        }
       }
     }
 
