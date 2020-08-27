@@ -13,7 +13,9 @@ class UW_Styles
 
   function __construct()
   {
-    $version = is_child_theme() ? wp_get_theme('uw-2014')->get('Version') : wp_get_theme()->get('Version');
+    $child_version = is_child_theme() ? wp_get_theme()->get('Version')  : wp_get_theme('uw-2014')->get('Version');
+    $parent_version = wp_get_theme('uw-2014')->get('Version');
+
 
     $this->STYLES = array(
 
@@ -29,14 +31,14 @@ class UW_Styles
         'id'      => 'uw-master',
         'url'     => get_bloginfo( 'template_url' ) . '/style' . $this->dev_stylesheet() . '.css',
         'deps'    => array(),
-        'version' => $version
+        'version' => $parent_version
       ),
 
       'uw-style' => array (
           'id'      => 'uw-style',
           'url'     => get_bloginfo('stylesheet_url'),
           'deps'    => array('uw-master'),
-          'version' => $version,
+          'version' => $child_version,
           'child'   => true
       ),
 
