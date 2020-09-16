@@ -16,6 +16,9 @@ class UW_Scripts
 
     $multi = is_multisite();
 
+    $parent = get_template();
+    $parent_version = wp_get_theme($parent)->get('Version');
+
     $this->SCRIPTS = array_merge( array(
 
       'jquery' => array (
@@ -30,7 +33,7 @@ class UW_Scripts
         'id'        => 'site',
         'url'       => get_bloginfo('template_directory') . '/js/site' . $this->dev_script() . '.js',
         'deps'      => array( 'backbone' ),
-        'version'   => wp_get_theme()->get('Version'),
+        'version'   => $parent_version,
         'admin'     => false,
         'style_dir' => site_url()
         // 'variables' => array( 'is_multisite' =>  $multi ),
@@ -40,7 +43,7 @@ class UW_Scripts
         'id'      => 'wp.admin',
         'url'     => get_bloginfo('template_directory') . '/assets/admin/js/admin.js',
         'deps'    => array( 'jquery' ),
-        'version' => wp_get_theme()->get('Version'),
+        'version' => $parent_version,
         'admin'   => true
       ),
 
