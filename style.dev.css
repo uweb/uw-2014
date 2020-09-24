@@ -4,7 +4,7 @@ Theme URI: https://github.com/uweb/uw-2014
 Description: The 2014 theme
 Author: UW Web Team
 Author URI: https://www.washington.edu/
-Version: 2.2.3
+Version: 2.2.5
 GitHub Theme URI: https://github.com/uweb/uw-2014
  */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
@@ -9569,6 +9569,21 @@ div[id*='trumba'] iframe {
   .icon-menu li {
     padding: 20px 0px;
     width: 47%;
+  }
+}
+.icon-list {
+  list-style: none;
+  margin: 0;
+}
+.icon-list li {
+  float: left;
+  display: block;
+  width: 20%;
+  text-align: center;
+}
+@media screen and (max-width: 991px) {
+  .icon-list li {
+    width: 100%;
   }
 }
 /*==========  Non-Mobile First Method  ==========*/

@@ -13,6 +13,12 @@ class UW_Styles
 
   function __construct()
   {
+
+    $parent = get_template();
+    $child = get_stylesheet();
+    $parent_version = wp_get_theme($parent)->get('Version');
+    $child_version = wp_get_theme($child)->get('Version');
+
     $this->STYLES = array(
 
       'google-font-open' => array(
@@ -27,14 +33,14 @@ class UW_Styles
         'id'      => 'uw-master',
         'url'     => get_bloginfo( 'template_url' ) . '/style' . $this->dev_stylesheet() . '.css',
         'deps'    => array(),
-        'version' => wp_get_theme()->get('Version')
+        'version' => $parent_version
       ),
 
       'uw-style' => array (
           'id'      => 'uw-style',
           'url'     => get_bloginfo('stylesheet_url'),
           'deps'    => array('uw-master'),
-          'version' => wp_get_theme()->get('Version'),
+          'version' => $child_version,
           'child'   => true
       ),
 
