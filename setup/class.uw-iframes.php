@@ -115,7 +115,9 @@ class UW_Iframes
       'h5p.org',
       'app.powerbi.com',
       'powerbi.com',
-      'www.powerbi.com'
+      'www.powerbi.com',
+      'acuityscheduling.com',
+      'app.acuityscheduling.com'
     );
   }
 
