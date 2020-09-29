@@ -12468,11 +12468,13 @@ UW.Dropdowns = Backbone.View.extend({
 
   events : {
     'keydown .dawgdrops-menu a' : 'moveFocusInSubMenu',
-    // 'keydown .dawgdrops-item > a' : 'toggleSubMenu',
+    // 'keydown .dawgdrops-item > button' : 'toggleSubMenu',
     'keydown .dawgdrops-item > button' : 'toggleSubMenu',
-    // 'focus .dawgdrops-item > button' : 'positionSubmenu',
+    'click .dawgdrops-item > button' : 'clickSubMenu',
+    'focus .dawgdrops-item > button' : 'positionSubmenu',
     'mouseenter .dawgdrops-item' : 'positionSubmenu',
-    'mouseleave .dawgdrops-item' : 'removeAria'
+    'mouseleave .dawgdrops-item' : 'removeAria',
+    'keydown .dawgdrops-item' : 'currentDawg',
   },
 
 
@@ -12511,6 +12513,7 @@ UW.Dropdowns = Backbone.View.extend({
   // todo: tidy up the math / variables
   positionSubmenu : function( event )
   {
+    $(".dawgdrops-item.current").trigger('mouseleave');
     var $el = $( event.currentTarget )
       , position = $el.position()
       , menublock = $el.find('.menu-block')
@@ -12518,15 +12521,30 @@ UW.Dropdowns = Backbone.View.extend({
       , left = shift > UW.$window.width() ? $el.outerWidth() + position.left - ( menublock.length * this.menuBlockWidth ) : position.left
       $el.find('a').siblings('ul').removeAttr('style');
       // $el.find('a').siblings('ul').css( { top : position.top + 58, left: left });
-      $el.find('a').attr( 'aria-expanded', 'true' );
+      $el.find('button').attr( 'aria-expanded', 'true' );
       $el.addClass('current');
   },
 
   removeAria : function( event ) {
     var $el = $( event.currentTarget );
-    $el.find('a').attr( 'aria-expanded', 'false' );
+    $el.find('button').attr( 'aria-expanded', 'false' );
     $el.removeClass('current');
 
+  },
+
+  currentDawg : function( e )
+  {
+    $(e.currentTarget).addClass('current');
+  },
+
+  clickSubMenu : function( e )
+  {
+    this.currentSubMenu = $(e.currentTarget).siblings('ul');
+    this.currentSubMenuAnchors = this.currentSubMenu.find('a');
+    this.currentSubMenu.show();
+    this.currentSubMenuAnchors.eq(0).focus();
+    $(e.currentTarget).attr('aria-expanded', 'true');
+    this.currentSubMenu.css('display', 'flex');
   },
 
   toggleSubMenu : function( e )
@@ -12591,17 +12609,15 @@ UW.Dropdowns = Backbone.View.extend({
         return false
 
       case this.keys.left:
-        this.currentSubMenu.hide().parent().prev().children('a').first().focus()
+        this.currentSubMenu.hide().parent().prev().children('button').first().focus()
         this.index.submenu = 0;
-        this.currentSubMenu.attr( 'aria-expanded', 'false' )
-          .parent().children('a').first().attr('aria-expanded', 'false')
+        this.currentSubMenu.parent().children('button').attr('aria-expanded', 'false')
         return false;
 
       case this.keys.right:
-        this.currentSubMenu.hide().parent().next().children('a').first().focus()
+        this.currentSubMenu.hide().parent().next().children('button').first().focus()
         this.index.submenu = 0;
-        this.currentSubMenu.attr( 'aria-expanded', 'false' )
-          .parent().children('a').first().attr('aria-expanded', 'false')
+        this.currentSubMenu.parent().children('button').attr('aria-expanded', 'false')
         return false;
 
       case this.keys.spacebar:
@@ -12610,8 +12626,8 @@ UW.Dropdowns = Backbone.View.extend({
         return false;
 
       case this.keys.esc:
-        this.currentSubMenu.attr('aria-expanded', 'false' )
-          .hide().parent().children('button').first().attr('aria-expanded', 'false').focus();
+        this.currentSubMenu.hide();
+          $('.dawgdrops-item.current button').attr('aria-expanded', 'false').focus();
         return false;
 
       default:
@@ -12634,8 +12650,9 @@ UW.Dropdowns = Backbone.View.extend({
 
       case 27:
         this.currentSubMenu = $('.dawgdrops-item.current ul')
-        this.currentSubMenu.attr('aria-expanded', 'false' )
-          .hide().parent().children('a').first().attr('aria-expanded', 'false').focus();
+        this.currentButton = $('.dawgdrops-item.current button')
+        this.currentSubMenu.hide();
+        this.currentButton.attr('aria-expanded', 'false').focus();
         return false;
     }
   }
