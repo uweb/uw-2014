@@ -12627,7 +12627,7 @@ UW.Dropdowns = Backbone.View.extend({
 
       case this.keys.esc:
         this.currentSubMenu.hide();
-          $('.dawgdrops-item.current button').attr('aria-expanded', 'false').focus();
+        this.currentSubMenu.parent().children('button').attr('aria-expanded', 'false').focus();
         return false;
 
       default:
