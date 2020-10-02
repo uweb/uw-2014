@@ -12627,6 +12627,7 @@ UW.Dropdowns = Backbone.View.extend({
 
       case this.keys.esc:
         this.currentSubMenu.hide();
+        this.index.submenu = 0;
         this.currentSubMenu.parent().children('button').attr('aria-expanded', 'false').focus();
         return false;
 
