@@ -117,7 +117,11 @@ class UW_Iframes
       'powerbi.com',
       'www.powerbi.com',
       'acuityscheduling.com',
-      'app.acuityscheduling.com'
+      'app.acuityscheduling.com',
+      'video.ibm.com',
+      'ibm.com',
+      'www.ustream.tv',
+      'ustream.tv',
     );
   }
 
