@@ -5683,7 +5683,8 @@ a.uw-custom-link:hover {
   }
 }
 @media only screen and (min-width: 768px) {
-  nav#dawgdrops .btn-myuw a {
+  nav#dawgdrops .btn-myuw a,
+  nav#dawgdrops .btn-givenow a {
     font-size: 18px;
     text-transform: none;
     color: #FFF;
@@ -5695,7 +5696,8 @@ a.uw-custom-link:hover {
     z-index: -1;
     overflow: hidden;
   }
-  nav#dawgdrops .btn-myuw a:after {
+  nav#dawgdrops .btn-myuw a:after,
+  nav#dawgdrops .btn-givenow a:after {
     content: "";
     display: block;
     position: absolute;
@@ -5705,10 +5707,12 @@ a.uw-custom-link:hover {
     top: 16px;
     background: url(assets/svg/person.svg) no-repeat 0 0;
   }
-  nav#dawgdrops .btn-myuw a:hover {
+  nav#dawgdrops .btn-myuw a:hover,
+  nav#dawgdrops .btn-givenow a:hover {
     color: black;
   }
-  nav#dawgdrops .btn-myuw a:before {
+  nav#dawgdrops .btn-myuw a:before,
+  nav#dawgdrops .btn-givenow a:before {
     content: "";
     display: block;
     position: absolute;
@@ -5727,6 +5731,11 @@ a.uw-custom-link:hover {
     z-index: -1;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
   }
+  nav#dawgdrops .btn-givenow a:after {
+    background: url(assets/svg/heart.svg) no-repeat 0 0;
+    width: 40px;
+    top: 20px;
+  }
 }
 .dawgdrops-item {
   position: relative;
@@ -5739,7 +5748,8 @@ a.uw-custom-link:hover {
 }
 .dawgdrops-item.btn-myuw,
 .dawgdrops-item.menu-give-now,
-.dawgdrops-item.menu-myuw-giving {
+.dawgdrops-item.menu-myuw-giving,
+.dawgdrops-item.btn-givenow {
   position: inherit !important;
 }
 .dawgdrops-item:hover button {
