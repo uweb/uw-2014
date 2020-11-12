@@ -122,7 +122,7 @@ class UW_Iframes
       'ibm.com',
       'www.ustream.tv',
       'ustream.tv',
-      'display-prod2.sprinklr.com'
+      'display-prod2.sprinklr.com',
       'sprinklr.com',
     );
   }
