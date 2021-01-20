@@ -110,6 +110,7 @@ class UW_Dropdowns
         $this->add_menu_item( 'Calendar', '//uw.edu/calendar/', $parent = 'News & Events' );
         $this->add_menu_item( 'UW Magazine', 'https://magazine.washington.edu/', $parent = 'News & Events' );
         $this->add_menu_item( 'Husky sports', 'https://gohuskies.com/', $parent = 'News & Events' );
+        $this->add_menu_item( 'Newsletter', '//uw.edu/newsletter/', $parent = 'Newsletter' );
 
         // The default Research the UW dropdown.
         $this->add_menu_item( 'Research', '//uw.edu/research/' );

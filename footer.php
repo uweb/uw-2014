@@ -27,6 +27,7 @@
                 <li><a href="http://www.washington.edu/rules/wac">Rules Docket</a></li>
                 <li><a href="http://www.washington.edu/online/privacy/">Privacy</a></li>
                 <li><a href="http://www.washington.edu/online/terms/">Terms</a></li>
+                <li><a href="http://www.washington.edu/newsletter/">Newsletter</a></li>
             </ul>
         </nav>
 
