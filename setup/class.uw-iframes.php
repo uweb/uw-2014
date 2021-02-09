@@ -124,6 +124,8 @@ class UW_Iframes
       'ustream.tv',
       'display-prod2.sprinklr.com',
       'sprinklr.com',
+      'datawrapper.dwcdn.net',
+      'dwcdn.net',
     );
   }
 
