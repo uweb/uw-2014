@@ -37,7 +37,7 @@ class UW_GoogleApps
       return $content;
     
 
-    if ( false === strpos( $content, '<iframe ' ) && false === strpos( $content, 'google.com/calendar' ) )
+    if ( false === strpos( $content, '<iframe ' ) || false === strpos( $content, 'google.com/calendar' ) )
       return $content;
 
 
