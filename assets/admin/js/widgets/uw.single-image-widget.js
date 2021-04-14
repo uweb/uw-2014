@@ -25,12 +25,12 @@ jQuery(document).ready(function( $ ) {
       frame.on('select', function(){
 
           var media = frame.state().get('selection').first().toJSON()
-            , $img  = $('<img/>').attr({
+            , $img  = $('img').attr({
               'src'   : media.url,
               'width' : '100%'
             })
 
-          $inputs.filter('.wp-get-posts-imageID').val( media.id )
+          $inputs.filter('.wp-get-posts-imageID').val( media.id ).trigger('change')
           $inputs.filter('.wp-get-posts-image').val( media.url )
 
       });

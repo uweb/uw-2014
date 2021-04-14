@@ -14,6 +14,7 @@ class UW_Documentation
 
   function __construct()
   {
+
     add_action('admin_menu', array( $this, 'add_documentation_page' ));
     add_action('admin_enqueue_scripts', array( $this, 'enqueue_markdown_script' ));
   }
@@ -22,8 +23,10 @@ class UW_Documentation
     add_menu_page( self::PAGE_TITLE, self::MENU_TITLE, self::CAPABILITY, self::SLUG, array( $this, 'load_documentation_template' ));
   }
 
-  function enqueue_markdown_script()
+  function enqueue_markdown_script( $hook )
   {
+    if( 'toplevel_page_uw-documentation' != $hook )
+       return;
     // wp_enqueue_style('style', get_stylesheet_uri() );
     wp_enqueue_style( 'uw-documentation', get_template_directory_uri() . '/assets/admin/css/uw.documentation.css' , array( 'google-font-open') );
     wp_enqueue_script( 'showdown', 'https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.min.js' );

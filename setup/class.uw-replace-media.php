@@ -50,7 +50,7 @@ class UW_Replace_Media
               // Uploading files
               var file_frame;
 
-                jQuery(".replace_media").live("click", function( event ){
+                jQuery(".replace_media").on("click", function( event ){
 
                   event.preventDefault();
 

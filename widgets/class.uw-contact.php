@@ -14,9 +14,11 @@ class UW_Widget_Contact extends WP_Widget
 
   function __construct()
   {
+    global $pagenow;
+
 		parent::__construct( $id = 'contact-list', $name = 'Contact list', $options = array( 'description' => 'Display important contact information', 'classname' => 'contact-widget' ) );
 
-    if ( is_admin() )
+    if ( is_admin() && $pagenow === 'widgets.php' )
       add_action('admin_enqueue_scripts', array( __CLASS__, 'scripts') );
   }
 
