@@ -6512,11 +6512,11 @@ img.attachment-post-thumbnail.wp-post-image.blogroll-img,
   }
 }
 body.search-open #uwsearcharea {
-  -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
-  -moz-transform: matrix(1, 0, 0, 1, 0, 0);
-  -ms-transform: matrix(1, 0, 0, 1, 0, 0);
-  -o-transform: matrix(1, 0, 0, 1, 0, 0);
-  transform: matrix(1, 0, 0, 1, 0, 0);
+  -webkit-transform: matrix(1, 0, 0, 1, 0, 24);
+  -moz-transform: matrix(1, 0, 0, 1, 0, 24);
+  -ms-transform: matrix(1, 0, 0, 1, 0, 24);
+  -o-transform: matrix(1, 0, 0, 1, 0, 24);
+  transform: matrix(1, 0, 0, 1, 0, 24);
 }
 body.search-open #uwsearcharea .uw-search-wrapper {
   -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
@@ -9102,9 +9102,12 @@ body.error404 .woof {
 @media only screen and (min-width: 993px) {
 }
 a.screen-reader-shortcut {
-  position: absolute;
+  position: relative;
   left: 6px;
   top: -99px;
+  display: block;
+  width: 170px;
+  margin-top: -29px;
 }
 a.screen-reader-shortcut:focus {
   z-index: 999;
