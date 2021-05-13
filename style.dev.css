@@ -5164,6 +5164,7 @@ a.uw-custom-link:hover {
   top: -22px;
   left: 0;
   z-index: 1;
+  color: #fff;
 }
 .uw-thinstrip .uw-patch:focus,
 .uw-thinstrip .uw-patch:hover {
@@ -5182,6 +5183,7 @@ a.uw-custom-link:hover {
   width: 330px;
   height: 24px;
   background: url(assets/svg/uw-sprite.svg) no-repeat 0 -431px transparent;
+  color: #fff;
 }
 .uw-thinstrip div.align-right {
   float: right;
@@ -8952,6 +8954,7 @@ body.error404 .woof {
   text-indent: -9999px;
   overflow: hidden;
   margin-top: 50px;
+  color: #fff;
 }
 .uw-footer .footer-wordmark:focus,
 .uw-footer .footer-wordmark:hover {
@@ -8964,13 +8967,14 @@ body.error404 .woof {
   text-indent: -99999px;
   margin: 10px 0 60px;
   opacity: 1;
+  color: #fff;
   -o-transition: opacity 0.25s;
   -webkit-transition: opacity 0.25s;
   transition: opacity 0.25s;
 }
 .uw-footer .be-boundless:hover,
 .uw-footer .be-boundless:focus {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 .uw-footer h4 {
   font-family: "Encode Sans Compressed", sans-serif;
