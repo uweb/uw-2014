@@ -5185,6 +5185,12 @@ a.uw-custom-link:hover {
   background: url(assets/svg/uw-sprite.svg) no-repeat 0 -431px transparent;
   color: #fff;
 }
+.uw-thinstrip .uw-wordmark:hover,
+.uw-thinstrip .uw-wordmark:focus {
+  text-decoration: none;
+  outline: none;
+  outline-offset: unset;
+}
 .uw-thinstrip div.align-right {
   float: right;
 }
