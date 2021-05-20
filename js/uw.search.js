@@ -17,7 +17,7 @@ UW.Search = Backbone.View.extend({
                   '<div class="center-block uw-search-wrapper">'+
                     '<form class="uw-search" action="<%= UW.baseUrl %>">'+
                       '<div class="search-form-wrapper">'+
-                        '<label class="screen-reader" for="uw-search-bar">Enter search text</label>' +
+                        '<label class="screen-reader" for="uw-search-bar">Search UW</label>' +
                         '<input id="uw-search-bar" type="search" name="s" value="" autocomplete="off" placeholder="Search" />'+
                       '</div>'+
 
@@ -37,19 +37,19 @@ UW.Search = Backbone.View.extend({
                              '<input class="radiobtn" type="radio" name="search" value="uw" data-toggle="radio" checked />'+
                              'All the UW'+
                            '</label>'+
- 
+
                            '<label class="radio">'+
                              '<input class="radiobtn" type="radio" name="search" value="site" data-toggle="radio" />'+
                              'Current site'+
                            '</label>'+
- 
+
                          '</form>'+
                        '</div>'+
- 
-                     '</fieldset>'+
-  
 
-                     
+                     '</fieldset>'+
+
+
+
                 '</div>'+
               '</div>',
 
