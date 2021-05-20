@@ -28,15 +28,15 @@
 		left: 0;
 		z-index: 1;
 		color: #fff;
-    &:focus,
-    &:hover{
-      background: url(assets/svg/uw-sprite-focus.svg) no-repeat 0 0 transparent;
-    }
-    &:before {
-      //to preload and cache hover svg
-      content: url(assets/svg/uw-sprite-focus.svg);
-      display: none;
-    }
+		// &:focus,
+		// &:hover{
+		// 	background: url(assets/svg/uw-sprite-focus.svg) no-repeat 0 0 transparent;
+		// }
+		&:before {
+			//to preload and cache hover svg
+			content: url(assets/svg/uw-sprite-focus.svg);
+			display: none;
+		}
 	}
 
 	// Wordmark
@@ -51,6 +51,23 @@
 		height: 24px;
 		background: url(assets/svg/uw-sprite.svg) no-repeat 0 -431px transparent;
 		color: #fff;
+		// &:hover, &:focus{
+		// 	text-decoration: none;
+		// 	outline: none;
+		// 	outline-offset: unset;
+		// }
+	}
+
+	a:hover,
+	a:focus {
+		// .uw-wordmark {
+		// 	text-decoration: none;
+		// 	outline: none;
+		// 	outline-offset: unset;
+		// }
+		.uw-patch {
+			background: url(assets/svg/uw-sprite-focus.svg) no-repeat 0 0 transparent;
+		}
 	}
 
   div.align-right {
@@ -155,7 +172,7 @@
                 background: url(assets/svg/uw-sprite.svg) no-repeat -451px -235px;
                 overflow: hidden;
                 &:hover,
-                &:focus {                	
+                &:focus {
                 	color: #FFF;
 					text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.54);
 					text-decoration: underline;
@@ -188,7 +205,7 @@
 
             }
         }
-    }		
+    }
     // Active state of search button
 
     .search-open .uw-thinstrip button.uw-search {
@@ -252,12 +269,7 @@
 			top: 0;
 			left: 0;
 			background-size: 470px;
-      .transition(all 0s);
-      &:hover,
-      &:focus,
-      {
-        background-size: 470px;
-      }
+			.transition(all 0s);
 		}
 		.uw-wordmark {
 			width: 155px;
@@ -269,6 +281,12 @@
 			left: 78px;
 			top: 4px;
 			background-size: 397px;
+		}
+		a:hover,
+		a:focus {
+			.uw-patch {
+				background-size: 470px;
+			}
 		}
     button {
         &.uw-quicklinks {

@@ -5166,10 +5166,6 @@ a.uw-custom-link:hover {
   z-index: 1;
   color: #fff;
 }
-.uw-thinstrip .uw-patch:focus,
-.uw-thinstrip .uw-patch:hover {
-  background: url(assets/svg/uw-sprite-focus.svg) no-repeat 0 0 transparent;
-}
 .uw-thinstrip .uw-patch:before {
   content: url(assets/svg/uw-sprite-focus.svg);
   display: none;
@@ -5184,6 +5180,10 @@ a.uw-custom-link:hover {
   height: 24px;
   background: url(assets/svg/uw-sprite.svg) no-repeat 0 -431px transparent;
   color: #fff;
+}
+.uw-thinstrip a:hover .uw-patch,
+.uw-thinstrip a:focus .uw-patch {
+  background: url(assets/svg/uw-sprite-focus.svg) no-repeat 0 0 transparent;
 }
 .uw-thinstrip div.align-right {
   float: right;
@@ -5370,10 +5370,6 @@ a.uw-custom-link:hover {
     -webkit-transition: all 0s;
     transition: all 0s;
   }
-  .uw-thinstrip .uw-patch:hover,
-  .uw-thinstrip .uw-patch:focus {
-    background-size: 470px;
-  }
   .uw-thinstrip .uw-wordmark {
     width: 155px;
     height: 34px;
@@ -5384,6 +5380,10 @@ a.uw-custom-link:hover {
     left: 78px;
     top: 4px;
     background-size: 397px;
+  }
+  .uw-thinstrip a:hover .uw-patch,
+  .uw-thinstrip a:focus .uw-patch {
+    background-size: 470px;
   }
   .uw-thinstrip button.uw-quicklinks {
     background-position: -484px -247px;

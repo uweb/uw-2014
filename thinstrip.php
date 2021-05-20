@@ -1,8 +1,10 @@
 <header class="uw-thinstrip" role="banner">
 
   <div class="container">
-    <a href="http://uw.edu" title="University of Washington Home" class="uw-patch">University of Washington</a>
-    <a href="http://uw.edu" title="University of Washington Home" class="uw-wordmark" tabindex='-1' aria-hidden='true'>University of Washington</a>
+    <a href="http://uw.edu" title="University of Washington Home">
+      <div class="uw-patch">University of Washington</div>
+      <div class="uw-wordmark">University of Washington</div>
+    </a>
   </div>
   <div class='align-right'>
       <nav class="uw-thin-strip-nav" aria-label='audience menu'>
