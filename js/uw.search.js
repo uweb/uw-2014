@@ -128,8 +128,15 @@ UW.Search = Backbone.View.extend({
   // todo: clean up
   toggleSearchFeature : function( event )
   {
-    var value = $( event.currentTarget ).find( 'input' ).val()
-    this.searchFeature = value
+    var value = '';
+		if ( 'none' == (  $( '#mobile-search-select.visible-xs' ) ).css( 'display' ) ) {
+			 value = $( event.currentTarget ).find( 'input' ).val();
+		//	this.searchFeature = value;
+		} else {
+			 value = $( event.currentTarget ).val();
+			//this.searchFeature = value;
+		}
+    this.searchFeature = value;
   },
 
   // Skip the search if it is hidden when tabbing through
@@ -163,4 +170,3 @@ UW.Search = Backbone.View.extend({
   }
 
 })
-
