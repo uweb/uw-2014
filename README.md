@@ -353,18 +353,7 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
 
 ### YouTube ###
 
->  Embed a YouTube video or playlist into your post content. You will need to obtain a [Youtube API key](https://developers.google.com/youtube/registering_an_application) to use this feature. You can acquire one from YouTube using your UW GSuite account or get in touch with us [uweb@uw.edu](mailto:uweb@uw.edu) for assistance.
-
-> Attributes:
-
-> -  **type** : Pick whether to display a single video or playlist. Options: **single**, **playlist**. (_Default: None_)
-> - **id** : The youtube video or playlist id  (_Default: None_)
-> - **max-results** (**OPTIONAL**):  The maximum number of results to return for a playlist (_Default: None_)
-
-> Example:
-```
-  [youtube type='playlist' id='PLgNkGpnjFWo9CN_HeVtujhMnUXK05iwgZ' max-results='10']
-```
+>  This shortcode has been deprecated. To embed a youtube video, Simply copy and paste the YouTube video URL to embed videos and playlists.
 
 ### Slideshow ###
 
