@@ -223,6 +223,26 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
   [blogroll number=3 trim=true readmore='off']
 ```
 
+### Google Apps/Calendar shortcode ###
+
+> The `[googleapps]` shortcode has be deprecated. Please use the `[iframe]` shortcode instead.
+
+> To migrate from the `[googleapps]` calendar shortcode to the `[iframe]` shortcode, you will need to update as follows.
+
+>  Your old Google Calendar `[googleapps]` shortcode looks like this:
+
+```
+    [googleapps domain="www" dir="calendar/embed" query="src=somenetid%40uw.edu&amp;ctz=America%2FLos_Angeles" width="500" height="500"]
+
+```
+
+> Update it to:
+
+```
+    [iframe src="https://calendar.google.com/calendar/embed?src=somenetid%40uw.edu&amp;ctz=America%2FLos_Angeles" height="500" width="500"]
+
+```
+
 ### iFrame ###
 
 >  Embed iframes into your post or page content without adjusting WordPress privileges.
