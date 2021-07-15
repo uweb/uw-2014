@@ -41,7 +41,6 @@ class UW_QuickLinks
       $this->items = wp_get_nav_menu_items( $location->term_id );
     }
 
-
     if ( $this->MULTISITE ) restore_current_blog();
 
     wp_send_json( $this->parse_menu() ) ;
@@ -49,7 +48,7 @@ class UW_QuickLinks
 
   function parse_menu()
   {
-    if ( isset($this->items) )
+    if ( !empty( $this->items ) )
       foreach( $this->items as $item )
       {
         // Only keep the necessary keys of the $item
