@@ -410,7 +410,7 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
     [section title='Example'] Section[/section]
    [/accordion]
 ```
-
+> You can link to and automatically open individual sections of the accordion by adding them them the url. Example: http://www.washington.edu/about/#ACCORDION_ID will link to and open the accordion section. Note: you will need to retrieve the accordion section ID from the code as this is automatically generated and cannot be set.
 
 ### Custom Menu ###
 > This shortcode pulls in a custom menu that can be created under _Dashboard > Appearance > Menus_. Icons can be added in the class field in the menu builder. View the [full set of icons](http://www.washington.edu/brand/web-2/html-web-components/web-icons/) for more information.
