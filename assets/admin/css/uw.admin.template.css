@@ -17,3 +17,8 @@
   margin-bottom: 10px;
   width: 100% !important;
 }
+.iframes-textarea-label {
+  line-height: 1.4em;
+  margin: .25em 0 .5em!important;
+  display: inline-block;
+}
