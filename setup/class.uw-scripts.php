@@ -54,6 +54,8 @@ class UW_Scripts
     add_action( 'wp_enqueue_scripts', array( $this, 'uw_enqueue_default_scripts' ) );
     add_action( 'admin_enqueue_scripts', array( $this, 'uw_enqueue_admin_scripts' ) );
     add_action( 'customize_controls_init', array( $this, 'uw_customizer_preview' ) );
+    remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+    remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
   }
 
