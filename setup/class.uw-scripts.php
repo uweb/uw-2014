@@ -21,18 +21,18 @@ class UW_Scripts
 
     $this->SCRIPTS = array_merge( array(
 
-      'jquery' => array (
-        'id'      => 'jquery',
-        'url'     => get_bloginfo('template_directory') . '/js/libraries/jquery.min.js',
-        'deps'    => array(),
-        'version' => '1.11.3',
-        'admin'   => false
-      ),
+      // 'jquery' => array (
+      //   'id'      => 'jquery',
+      //   'url'     => get_bloginfo('template_directory') . '/js/libraries/jquery.min.js',
+      //   'deps'    => array(),
+      //   'version' => '1.11.3',
+      //   'admin'   => false
+      // ),
 
       'site'   => array (
         'id'        => 'site',
         'url'       => get_bloginfo('template_directory') . '/js/site' . $this->dev_script() . '.js',
-        'deps'      => array( 'backbone' ),
+        'deps'      => array( 'backbone', 'jquery' ),
         'version'   => $parent_version,
         'admin'     => false,
         'style_dir' => site_url()
@@ -71,7 +71,7 @@ class UW_Scripts
 
   function uw_register_default_scripts()
   {
-      wp_deregister_script( 'jquery' );
+      // wp_deregister_script( 'jquery' );
 
       foreach ( $this->SCRIPTS as $script )
       {
