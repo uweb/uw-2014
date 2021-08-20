@@ -53,7 +53,7 @@ class UW_AccordionShortcode
             $class = 'data-accordion-opened="true"';
         }
         $output = do_shortcode( $content );
-        return sprintf( '<h2 class="js-accordion__header">%s</h2><div class="js-accordion__panel" %s>%s</div>', $section_atts['title'], $class, apply_filters( 'the_content', $output ) );
+        return sprintf( '<div class="js-accordion__panel" %s><h2 class="js-accordion__header">%s</h2>%s</div>', $class, $section_atts['title'], apply_filters( 'the_content', $output ) );
     }
 
     function subsection_handler( $atts, $content )
