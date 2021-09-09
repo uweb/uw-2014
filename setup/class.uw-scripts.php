@@ -21,14 +21,6 @@ class UW_Scripts
 
     $this->SCRIPTS = array_merge( array(
 
-      // 'jquery' => array (
-      //   'id'      => 'jquery',
-      //   'url'     => get_bloginfo('template_directory') . '/js/libraries/jquery.min.js',
-      //   'deps'    => array(),
-      //   'version' => '1.11.3',
-      //   'admin'   => false
-      // ),
-
       'site'   => array (
         'id'        => 'site',
         'url'       => get_bloginfo('template_directory') . '/js/site' . $this->dev_script() . '.js',
@@ -52,6 +44,7 @@ class UW_Scripts
     add_action( 'wp_enqueue_scripts', array( $this, 'uw_register_default_scripts' ) );
     add_action( 'wp_enqueue_scripts', array( $this, 'uw_localize_default_scripts' ) );
     add_action( 'wp_enqueue_scripts', array( $this, 'uw_enqueue_default_scripts' ) );
+    add_action( 'wp_enqueue_scripts', array( $this, 'uw_script_noconlfict_override' ) );
     add_action( 'admin_enqueue_scripts', array( $this, 'uw_enqueue_admin_scripts' ) );
     add_action( 'customize_controls_init', array( $this, 'uw_customizer_preview' ) );
 
@@ -59,19 +52,11 @@ class UW_Scripts
 
   function uw_customizer_preview()
   {
-    // wp_enqueue_script(
-    //     'uw-themecustomizer',      //ID
-    //     get_bloginfo('template_directory') .'/js/uw.themecustomizer.js',//URL
-    //     array( 'jquery','customize-preview' ),  //dependencies
-    //     '',           //version (optional)
-    //     true            //Put script in footer?
-    // );
     wp_enqueue_script( 'uw-themecustomize', get_bloginfo('template_directory') .'/js/uw.themecustomizer.js', array( 'jquery', 'customize-controls' ), false, true );
   }
 
   function uw_register_default_scripts()
   {
-      // wp_deregister_script( 'jquery' );
 
       foreach ( $this->SCRIPTS as $script )
       {
@@ -94,9 +79,6 @@ class UW_Scripts
     foreach ($this->SCRIPTS as $script )
     {
       $script = (object) $script;
-      // if (isset($script->variables)){
-      //   wp_localize_script($script->id, 'uw_ismultisite', $script->variables); //error line
-      // }
       if (isset($script->style_dir)){
         wp_localize_script($script->id, 'style_dir', $script->style_dir); //error line
       }
@@ -148,6 +130,14 @@ class UW_Scripts
   public function dev_script()
   {
     return is_user_logged_in() ? '.dev' : '';
+  }
+  
+  /**
+   * Add a line of javascript to override WordPress loading jQuery in
+   * No Conflict mode. This is to help with legacy jQuery usage.
+   */
+  function uw_script_noconlfict_override() {
+    wp_add_inline_script( 'jquery-core', '$ = jQuery;' );
   }
 
 }
