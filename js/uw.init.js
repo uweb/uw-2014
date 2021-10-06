@@ -15,7 +15,6 @@ UW.elements = {
   slideshow     : '.uw-slideshow',
   social        : '.uw-social',
   vimeo         : '.uw-vimeo',
-  youtube       : '.uw-youtube',
 //  customlink    : '.uw-custom-link'
 
 }
@@ -70,7 +69,6 @@ UW.initialize = function( $ )
   UW.slideshows = _.map( $( UW.elements.slideshow ), function( element ) { return new UW.Slideshow( { el : element }) } )
   UW.social     = _.map( $( UW.elements.social ),    function( element ) { return new UW.Social({ el : element }) } )
   UW.vimeo      = _.map( $( UW.elements.vimeo ),     function( element ) { return new UW.Vimeo({ el : element }) } )
-  UW.youtube    = _.map( $( UW.elements.youtube ),   function( element ) { return new UW.YouTube.Collection({ el: element})})
 
 
   // UW Components - These need to render after all other javascript elements are rendered on page
