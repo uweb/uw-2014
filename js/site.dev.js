@@ -11477,7 +11477,7 @@ UW.QuickLinks.Collection = Backbone.Collection.extend({
        "classes": ["icon-calendar"]
    }, {
        "title": "Directories",
-       "url": "https:\/\/uw.edu\/directory\/",
+       "url": "https:\/\/directory.uw.edu\/",
        "classes": ["icon-directories"]
    }, {
        "title": "Libraries",

@@ -4,7 +4,7 @@ Theme URI: https://github.com/uweb/uw-2014
 Description: The 2014 theme
 Author: UW Web Team
 Author URI: https://www.washington.edu/
-Version: 2.3.1
+Version: 2.3.3
 GitHub Theme URI: https://github.com/uweb/uw-2014
  */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
@@ -8758,8 +8758,8 @@ body.error404 .woof {
   background: url(assets/svg/uw-sprite-focus.svg) no-repeat 0 -434px transparent;
 }
 .uw-footer .be-boundless {
-  line-height: 64px;
-  background: url(assets/images/campaign.svg) no-repeat center top transparent;
+  line-height: 24px;
+  background: url(assets/images/boundless.png) no-repeat center top transparent;
   display: block;
   text-indent: -99999px;
   margin: 10px 0 60px;
