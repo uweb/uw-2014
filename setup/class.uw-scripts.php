@@ -27,7 +27,7 @@ class UW_Scripts
         'deps'      => array( 'backbone', 'jquery' ),
         'version'   => $parent_version,
         'admin'     => false,
-        'style_dir' => site_url()
+        'style_dir' => array( site_url() )
         // 'variables' => array( 'is_multisite' =>  $multi ),
       ),
 

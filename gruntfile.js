@@ -23,7 +23,6 @@ module.exports = function(grunt) {
           "js/uw.search.js",
           "js/uw.quicklinks.js",
           "js/uw.slideshow.js",
-          "js/uw.youtube.js",
           "js/uw.vimeo.js",
           "js/uw.radio-checkbox.js",
           "js/uw.dropdowns.js",
