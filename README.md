@@ -10,6 +10,7 @@ This is an overview of the custom widgets, plugins and various features it inclu
 
 - [Quick start](#quick-start)
 - [Bugs and feature requests](#bugs-and-feature-requests)
+- [Quicklinks](#quicklinks)
 - [Widgets](#widgets)
   - [UW Blogroll](#uw-blogroll)
   - [UW Campus Map](#uw-campus-map)
@@ -54,6 +55,23 @@ Download the [UW 2014 theme](https://github.com/uweb/uw-2014/archive/master.zip)
  - - -
 
 All bugs and feature requests can be issued at the [UW Web Team's GitHub account](https://github.com/uweb/uw-2014/issues) or emailed directly to the UW web team at [uweb@uw.edu](mailto:uweb@uw.edu).
+
+## Quicklinks ##
+
+Default quicklinks are provided in the theme if you would like them to be consistent with what is on the https://uw.edu website. To customize them, just create a menu in the **Quick Links** location. *Note: For multisites, Quick Links location will only appear on blog/site 1 and populate all other sites*.
+
+Links that have a class set containing an icon will appear at the top formatted as a larger link with an icon. Links without an icon will appear under the "Helpful Links" section.
+
+Icon class options:
+```
+icon-map
+icon-directories
+icon-calendar
+icon-libraries
+icon-medicine
+icon-myuw
+icon-uwtoday
+```
 
 ## Widgets ##
  - - -

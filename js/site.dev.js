@@ -10597,7 +10597,6 @@ UW.wpinstance = function(){
 
 UW.sources = {
   // Note: style_dir is a variable created by the Wordpress' wp_localize_script in class.uw-scripts.php
-  quicklinks : typeof(style_dir) !== 'undefined' ? style_dir + '/wp-admin/admin-ajax.php?action=quicklinks' : UW.getBaseUrl() + 'wp-admin/admin-ajax.php?action=quicklinks',
   search     : UW.getBaseUrl() + 'wp-admin/admin-ajax.php'
 }
 
@@ -10612,7 +10611,7 @@ UW.initialize = function( $ )
   // UW Utilities
   UW.dropdowns  = _.map( $( UW.elements.dropdowns ),     function( element ) { return new UW.Dropdowns({ el : element }) } )
   UW.mobilemenu = _.map( $( UW.elements.mobilemenu ),     function( element ) { return new UW.MobileMenu({ el : element }) } )
-  UW.quicklinks = _.map( $( UW.elements.quicklinks ),    function( element ) { return new UW.QuickLinks( { el : element, url : UW.sources.quicklinks }) } )
+  UW.quicklinks = _.map( $( UW.elements.quicklinks ),    function( element ) { return new UW.QuickLinks( { el : element }) } )
   UW.search     = _.map( $( UW.elements.search ),    function( element ) { return new UW.Search( { el : element } ) } )
   UW.images     = _.map( $( UW.elements.images ),    function( element ) { return new UW.Image({ el : element }) } )
 
@@ -10927,70 +10926,25 @@ UW.Search = Backbone.View.extend({
 
 UW.QuickLinks = Backbone.View.extend({
 
-    DELAY : 500,
-
-    settings : {},
-
-    // todo: the default list and these elements could be put into the php templates
     container: '#uw-container',
 
-    template : '<nav id="quicklinks" aria-label="quick links" aria-hidden="true">' +
-                        '<ul id="big-links">' +
-                            '<% _.each( links, function( link ) { %> ' +
-                                '<% if (link.classes) { %>' +
-                                    '<li>' +
-                                        '<span class="<%= link.classes %>"></span>' +
-                                        '<a href="<%= link.url %>" tabindex="-1"><%= link.title %></a>' +
-                                    '</li>' +
-                                '<% } %>' +
-                            '<% }) %>' +
-                        '</ul>' +
-                        '<h3>Helpful Links</h3>' +
-                        '<ul id="little-links">' +
-                            '<% _.each( links, function( link ) { %> '+
-                                '<% if ( ! link.classes) { %>' +
-                                    '<li>' +
-                                        '<span class="<%= link.classes %>"></span>' +
-                                        '<a href="<%= link.url %>" tabindex="-1"><%= link.title %></a>' +
-                                    '</li>' +
-                                '<% } %>' +
-                            '<% }) %>' +
-                        '</ul>' +
-                    '</nav>',
-
     events: {
-       'click'           : 'animate',
-       'touchstart'   : 'animate',
-       'keyup'         : 'animate',
-       'blur' : 'loop'
+       'click'      : 'animate',
+       'touchstart' : 'animate',
+       'keyup'      : 'animate',
+       'blur'       : 'loop'
     },
 
     initialize: function ( options ) {
-        _.bindAll( this, 'inner_keydown', 'render', 'renderDefault', 'animate', 'accessible', 'loop', 'transitionEnd' );
-
-        this.options = _.extend( {}, this.settings , options )
-
-        this.links = new UW.QuickLinks.Collection( this.options )
-
-        this.links.on( 'sync', this.render )
-
-        this.links.on( 'error', this.renderDefault )
-
-        this.links.fetch()
-    },
-
-    renderDefault : function ()
-    {
-        this.defaultLinks =  this.links.defaults
-        this.render()
+        _.bindAll( this, 'inner_keydown', 'render', 'animate', 'accessible', 'loop', 'transitionEnd' );
+        
+        this.render();
     },
 
     render : function(  )
     {
-        this.defaultLinks =  this.links.defaults
-        this.quicklinks = $( _.template( this.template )({ links : this.links.toJSON().length == 0 ? this.defaultLinks : this.links.toJSON() }) );
-        this.$container = $(this.container);
-        this.$container.prepend( this.quicklinks );
+        this.quicklinks = $( '#quicklinks' );
+        this.$container = $( this.container );
         this.$el.attr( 'aria-controls', 'quicklinks' ).attr( 'aria-owns', 'quicklinks' );
         UW.$body.on( 'keydown', '#quicklinks a:first', this.inner_keydown );
         UW.$body.on( 'keyup', '#quicklinks a', this.animate );
@@ -11055,78 +11009,6 @@ UW.QuickLinks = Backbone.View.extend({
             this.quicklinks.find('li a').first().focus();
         }
     }
-
-});
-
-UW.QuickLinks.Model = Backbone.Model.extend({});
-
-UW.QuickLinks.Collection = Backbone.Collection.extend({
-
-    model: UW.QuickLinks.Model,
-
-    initialize: function ( options )
-    {
-        this.url = options.url;
-        this.url = options.url.replace("www.washington.edu/cms/", "www.washington.edu/");
-    },
-
-    defaults : [{
-       "title": "MyUW",
-       "url": "https:\/\/my.uw.edu",
-       "classes": ["icon-myuw"]
-   }, {
-       "title": "Calendar",
-       "url": "https:\/\/uw.edu\/calendar",
-       "classes": ["icon-calendar"]
-   }, {
-       "title": "Directories",
-       "url": "https:\/\/directory.uw.edu\/",
-       "classes": ["icon-directories"]
-   }, {
-       "title": "Libraries",
-       "url": "https:\/\/www.lib.washington.edu\/",
-       "classes": ["icon-libraries"]
-   }, {
-       "title": "UW Medicine",
-       "url": "https:\/\/www.uwmedicine.org",
-       "classes": ['icon-medicine']
-   }, {
-       "title": "Maps",
-       "url": "https:\/\/uw.edu\/maps",
-       "classes": ["icon-maps"]
-   }, {
-       "title": "UW News",
-       "url": "https:\/\/uw.edu\/news",
-       "classes": ["icon-uwtoday"]
-   }, {
-       "title": "Computing\/IT",
-       "url": "https:\/\/itconnect.uw.edu",
-       "classes": false
-   }, {
-       "title": "Workday\/ISC",
-       "url": "https:\/\/isc.uw.edu\/",
-       "classes": false
-   }, {
-       "title": "Husky Card",
-       "url": "https:\/\/hfs.uw.edu\/Husky-Card-Services\/",
-       "classes": false
-   }, {
-       "title": "UW Bothell",
-       "url": "https:\/\/www.uwb.edu\/",
-       "classes": false
-   }, {
-       "title": "UW Tacoma",
-       "url": "https:\/\/www.tacoma.uw.edu\/",
-       "classes": false
-   }, {
-       "title": "UW Facebook",
-       "url": "https:\/\/www.facebook.com\/UofWA",
-       "classes": false
-   }, {
-       "title": "UW Twitter",
-       "url": "https:\/\/twitter.com\/UW",
-       "classes": false
-   }]
 
 });
 ;// ### UW Slideshow

@@ -4,63 +4,54 @@
  * UW Quicklinks
  * This will register the UW Quicklinks navigation and provide a json feed for the current quicklinks menu
  */
-class UW_QuickLinks
-{
+class UW_QuickLinks {
 
   const NAME         = 'Quick Links';
-  const LOCATION     = 'quick-links';
-  const ALLOWED_BLOG = 1;
+	const LOCATION     = 'quick-links';
+	const ALLOWED_BLOG = 1;
 
-  function __construct()
-  {
-    $this->MULTISITE = is_multisite();
+	function __construct() {
+		$this->MULTISITE = is_multisite();
 
-    if ( ! $this->MULTISITE || $this->MULTISITE && get_current_blog_id() === self::ALLOWED_BLOG )
-      add_action( 'after_setup_theme', array( $this, 'register_quick_links_menu') );
+		if ( ! $this->MULTISITE || $this->MULTISITE && get_current_blog_id() === self::ALLOWED_BLOG ) {
+			add_action( 'after_setup_theme', array( $this, 'register_quick_links_menu' ) );
+		}
+	}
 
-    add_action( 'wp_ajax_quicklinks', array( $this, 'uw_quicklinks_feed') );
-    add_action( 'wp_ajax_nopriv_quicklinks', array( $this, 'uw_quicklinks_feed') );
-  }
+	function register_quick_links_menu() {
+		register_nav_menu( self::LOCATION, __( self::NAME ) );
+	}
+	
+	public static function template_menu() {
+		if ( is_multisite() ) switch_to_blog( self::ALLOWED_BLOG );
 
-  function register_quick_links_menu()
-  {
-    register_nav_menu( self::LOCATION, __( self::NAME ) );
-  }
+		$locations = get_nav_menu_locations();
+		if ( ( isset( $locations[ self::LOCATION ] ) ) ) {
+			$items = wp_get_nav_menu_items( $locations[ self::LOCATION ] );
+		} elseif ( $location = wp_get_nav_menu_object( self::LOCATION ) ) {
+			$items = wp_get_nav_menu_items( $location->term_id );
+		}
 
-  function uw_quicklinks_feed()
-  {
-    if ( $this->MULTISITE ) switch_to_blog( self::ALLOWED_BLOG );
-
-    $locations = get_nav_menu_locations();
-    if ( ( isset( $locations[ self::LOCATION ]) ) )
-    {
-      $this->items = wp_get_nav_menu_items( $locations[ self::LOCATION ] );
-    }
-      else if ( $location = wp_get_nav_menu_object( self::LOCATION ) )
-    {
-      $this->items = wp_get_nav_menu_items( $location->term_id );
-    }
-
-    if ( $this->MULTISITE ) restore_current_blog();
-
-    wp_send_json( $this->parse_menu() ) ;
-  }
-
-  function parse_menu()
-  {
-    if ( !empty( $this->items ) )
-      foreach( $this->items as $item )
-      {
-        // Only keep the necessary keys of the $item
-        $item = array_intersect_key( (array) $item , array_fill_keys( array('ID', 'title', 'url', 'classes', 'menu_item_parent'), null ) );
-
-        if ( ! $item['classes'][0] ) $item['classes'] = false;
-
-        $menu[] = $item;
-
-      }
-
-    return isset($menu) ? $menu : array();
-  }
-
+		if ( is_multisite() ) restore_current_blog();
+		
+		$biglinks = '';
+		$littlelinks = '';
+		if ( isset( $items ) && ( is_array( $items ) || is_object($items) ) ) {
+			foreach ( $items as $index => $item ) {
+				// Only keep the necessary keys of the $item.
+				if ( ! empty( $item->classes[0] ) ) {
+					$biglinks .= '<li><span class="' . $item->classes[0] . '"></span><a href="' . $item->url . '" tabindex="-1">' . $item->title . '</a></li>';
+				} else {
+					$littlelinks .= '<li><a href="' . $item->url . '" tabindex="-1">' . $item->title . '</a></li>';
+					
+				}
+			}
+			$quicklinks = '<ul id="big-links">' . $biglinks . '</ul>';
+			$quicklinks .= '<h3>Helpful Links</h3> <ul id="little-links">' . $littlelinks . '</ul>';
+			
+			return $quicklinks;
+		} else {
+			return null;
+		}
+	}
 }

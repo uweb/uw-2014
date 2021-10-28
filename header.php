@@ -32,6 +32,8 @@
     <a id="main-content" href="#main_content" class="screen-reader-shortcut">Skip to main content</a>
 
     <div id="uw-container">
+        
+	<?php get_template_part( 'menu', 'quicklinks' ); ?>
 
     <div id="uw-container-inner">
 
