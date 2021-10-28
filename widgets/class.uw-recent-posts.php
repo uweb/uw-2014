@@ -110,10 +110,12 @@ class UW_Recent_Posts extends WP_Widget
         <?php endif; ?>
 
         <script>
-            $("a.feed").unbind('click').on("click" , function(event){
-                event.preventDefault();
-                $("p.feed").toggleClass("hide");
-                $("p.feed > input").select();
+            jQuery(function ($) {
+                $("a.feed").unbind('click').on("click" , function(event){
+                    event.preventDefault();
+                    $("p.feed").toggleClass("hide");
+                    $("p.feed > input").select();
+                });
             });
 
         </script>
