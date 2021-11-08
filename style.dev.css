@@ -5914,6 +5914,8 @@ a.uw-custom-link:hover {
   width: 25px;
   padding: 5px 0 5px 0;
   margin-right: 25px;
+  transition: none;
+  margin-bottom: 0;
 }
 .uw-breadcrumbs li:first-child a:before {
   right: -18px;
@@ -5923,6 +5925,7 @@ a.uw-custom-link:hover {
 .uw-breadcrumbs li:first-child a:hover {
   border-bottom: 1px solid #85754d;
   margin-bottom: -1px;
+  transition: none;
 }
 .uw-breadcrumbs li:first-child:after {
   top: 17px;
