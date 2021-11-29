@@ -84,6 +84,8 @@ class UW_Iframes
       'www.pgcalc.com',
       'matchinggifts.com',
       'www.matchinggifts.com',
+      'miro.com',
+      'www.miro.com',
       'embed.pac-12.com',
       'storify.com',
       'w.soundcloud.com',
