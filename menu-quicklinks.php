@@ -1,6 +1,6 @@
 <nav id="quicklinks" aria-label="quick links" aria-hidden="true">
 <?php 
-if ( UW_QuickLinks::template_menu() ):
+if ( method_exists( 'UW_QuickLinks', 'template_menu') && UW_QuickLinks::template_menu() ):
     echo UW_QuickLinks::template_menu();
 else: ?>
     <ul id="big-links"> 
