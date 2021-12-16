@@ -34,10 +34,14 @@ class UW_AccordionShortcode
 
         if ( empty( $content ) )
             return 'No content inside the accordion element. Make sure your close your accordion element. Required stucture: [accordion][section]content[/section][/accordion]';
-
+            
+            
+        $parent = get_template();
+        $parent_version = wp_get_theme($parent)->get('Version');
+        wp_enqueue_script( 'uw-accordionmodule', get_template_directory_uri() . '/js/uw.accordionmodule.js', array( 'jquery' ), $parent_version, true );
         $output = do_shortcode( $content );
         $name = !empty( $accordion_atts['name'] ) ? '<h3>' . $accordion_atts['name'] . '</h3>' : '';
-        return sprintf( '<script src="' . get_template_directory_uri() . '/js/uw.accordionmodule.js" type="text/javascript"></script><div id="uw-accordion-shortcode">%s<div class="js-accordion" data-accordion-prefix-classes="uw-accordion-shortcode">%s</div></div>', $name, $output );
+        return sprintf( '<div id="uw-accordion-shortcode">%s<div class="js-accordion" data-accordion-prefix-classes="uw-accordion-shortcode">%s</div></div>', $name, $output );
     }
 
     function section_handler( $atts, $content )
