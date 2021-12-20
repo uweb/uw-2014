@@ -4154,7 +4154,7 @@ ul.uw-select {
 ul.uw-select.open {
   background-color: #F7F7F7;
   outline: 1px solid #F7F7F7;
-  overflow: scroll;
+  overflow: auto;
   height: 355px;
   outline: 1px solid #C4C4C4;
   z-index: 9999;
@@ -4869,209 +4869,6 @@ table th[class*="col-"] {
   margin: 0;
   height: 100%;
   overflow-y: auto;
-}
-/*
- *  Styles for the uw youtube player
- *
- */
-.tube-wrapper {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-}
-.tube-wrapper iframe,
-.tube-wrapper object,
-.tube-wrapper embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.nc-video-player {
-  clear: both;
-  width: 100%;
-  background-color: #FFF;
-  position: relative;
-}
-.nc-video-player.playlist {
-  box-shadow: 1px 1px 7px #E0E0E0;
-  margin-bottom: 35px;
-  margin-top: 30px;
-}
-.nc-video-player.playlist:after {
-  content: " ";
-  position: absolute;
-  bottom: 23px;
-  right: 2%;
-  width: 5px;
-  height: 105px;
-}
-.nc-video-player iframe {
-  max-width: none !important;
-  padding: 0;
-  margin: 0;
-}
-.playBtn {
-  left: 43px;
-  position: absolute;
-  top: 31px;
-  z-index: 0;
-  border: none;
-}
-.vidSmall {
-  height: 130px;
-  padding: 14px 0 0;
-  margin: 0 0 5px 0;
-  width: 100%;
-  background: #c4c4c4;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #c4c4c4 0%, #ffffff 6%, #ffffff 100%);
-  /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c4c4c4), color-stop(6%, #ffffff), color-stop(100%, #ffffff));
-  /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #c4c4c4 0%, #ffffff 6%, #ffffff 100%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #c4c4c4 0%, #ffffff 6%, #ffffff 100%);
-  /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #c4c4c4 0%, #ffffff 6%, #ffffff 100%);
-  /* IE10+ */
-  background: linear-gradient(to bottom, #c4c4c4 0%, #ffffff 6%, #ffffff 100%);
-  /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c4c4c4', endColorstr='#ffffff', GradientType=0);
-  /* IE6-9 */
-}
-.vidSmall p {
-  display: inline-block;
-  line-height: 1.3em;
-  font-size: 12px;
-  color: white;
-}
-.vidSmall .title {
-  margin: 3px 3px 0 0 ;
-}
-.vidSmall button {
-  border: none;
-  display: block;
-  margin: 0;
-  overflow: hidden;
-  position: relative;
-  padding: 0;
-  width: 120px;
-}
-.vidSmall button.vid-active:after {
-  content: "Now Playing";
-  padding: 0px 7px;
-  background-color: #FFF;
-  position: absolute;
-  bottom: -3px;
-  left: 10px;
-  color: #4b2e83;
-  text-transform: uppercase;
-  font-size: 11px;
-  font-weight: 800;
-}
-.vidSmall button.vid-active div {
-  opacity: 1;
-}
-.vidSmall button:hover div,
-.vidSmall button:focus div {
-  opacity: 1;
-}
-.vidSmall button:hover .playBtn,
-.vidSmall button:focus .playBtn {
-  display: none;
-}
-.vidSmall button div {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  font-weight: 800;
-  color: #FFF;
-  padding: 5px 10px 5px 10px;
-  overflow: hidden;
-  background-color: #39275B;
-  background-color: rgba(57, 39, 91, 0.9);
-  opacity: 0;
-  transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -webkit-transition: opacity 0.25s ease-in-out;
-}
-.vidSmall img {
-  margin: 0;
-  padding: 0;
-}
-.vidSmall ul {
-  margin: 0px;
-  padding: 0px;
-}
-.vidSmall li {
-  float: left;
-  width: 120px;
-  margin: 0 15px 0 0 !important;
-  padding: 0;
-  background: none;
-  list-style: none;
-  cursor: pointer;
-}
-.vidSmall .duration {
-  background: url('assets/images/youtube-player/play-sm.png') right 2px no-repeat transparent;
-  color: #B6B6B6;
-  padding-right: 16px;
-  float: left;
-  margin-top: 3px;
-}
-.vidSmall .viewport {
-  height: 95px;
-  overflow: hidden;
-  position: relative;
-  width: 96%;
-  margin: 0 2%;
-}
-.vidSmall .overview {
-  list-style: none;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-.vidSmall .thumb .end,
-.vidSmall .thumb {
-  background-color: #888888;
-}
-.vidSmall .scrollbar {
-  display: none;
-  float: right;
-  margin: 0;
-  position: absolute;
-  bottom: 10px;
-  left: 2%;
-  height: 7px;
-}
-.vidSmall .track {
-  background-color: #f4f4f4;
-  height: 100%;
-  width: 8px;
-  position: relative;
-  padding: 0 1px;
-}
-.vidSmall .thumb {
-  height: 7px;
-  width: 8px;
-  cursor: pointer;
-  overflow: hidden;
-  position: absolute;
-  bottom: 0;
-}
-.vidSmall .thumb .end {
-  overflow: hidden;
-  height: 5px;
-  width: 8px;
-}
-.vidSmall .disable {
-  display: none;
 }
 /*
  *  All styles for Blogroll shortcode
@@ -6117,6 +5914,8 @@ a.uw-custom-link:hover {
   width: 25px;
   padding: 5px 0 5px 0;
   margin-right: 25px;
+  transition: none;
+  margin-bottom: 0;
 }
 .uw-breadcrumbs li:first-child a:before {
   right: -18px;
@@ -6126,6 +5925,7 @@ a.uw-custom-link:hover {
 .uw-breadcrumbs li:first-child a:hover {
   border-bottom: 1px solid #85754d;
   margin-bottom: -1px;
+  transition: none;
 }
 .uw-breadcrumbs li:first-child:after {
   top: 17px;

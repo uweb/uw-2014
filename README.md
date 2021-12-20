@@ -10,6 +10,7 @@ This is an overview of the custom widgets, plugins and various features it inclu
 
 - [Quick start](#quick-start)
 - [Bugs and feature requests](#bugs-and-feature-requests)
+- [Quicklinks](#quicklinks)
 - [Widgets](#widgets)
   - [UW Blogroll](#uw-blogroll)
   - [UW Campus Map](#uw-campus-map)
@@ -54,6 +55,23 @@ Download the [UW 2014 theme](https://github.com/uweb/uw-2014/archive/master.zip)
  - - -
 
 All bugs and feature requests can be issued at the [UW Web Team's GitHub account](https://github.com/uweb/uw-2014/issues) or emailed directly to the UW web team at [uweb@uw.edu](mailto:uweb@uw.edu).
+
+## Quicklinks ##
+
+Default quicklinks are provided in the theme if you would like them to be consistent with what is on the https://uw.edu website. To customize them, just create a menu in the **Quick Links** location. *Note: For multisites, Quick Links location will only appear on blog/site 1 and populate all other sites*.
+
+Links that have a class set containing an icon will appear at the top formatted as a larger link with an icon. Links without an icon will appear under the "Helpful Links" section.
+
+Icon class options:
+```
+icon-map
+icon-directories
+icon-calendar
+icon-libraries
+icon-medicine
+icon-myuw
+icon-uwtoday
+```
 
 ## Widgets ##
  - - -
@@ -223,6 +241,26 @@ All bugs and feature requests can be issued at the [UW Web Team's GitHub account
   [blogroll number=3 trim=true readmore='off']
 ```
 
+### Google Apps/Calendar shortcode ###
+
+> The `[googleapps]` shortcode has be deprecated. Please use the `[iframe]` shortcode instead.
+
+> To migrate from the `[googleapps]` calendar shortcode to the `[iframe]` shortcode, you will need to update as follows.
+
+>  Your old Google Calendar `[googleapps]` shortcode looks like this:
+
+```
+    [googleapps domain="www" dir="calendar/embed" query="src=somenetid%40uw.edu&amp;ctz=America%2FLos_Angeles" width="500" height="500"]
+
+```
+
+> Update it to:
+
+```
+    [iframe src="https://calendar.google.com/calendar/embed?src=somenetid%40uw.edu&amp;ctz=America%2FLos_Angeles" height="500" width="500"]
+
+```
+
 ### iFrame ###
 
 >  Embed iframes into your post or page content without adjusting WordPress privileges.
@@ -353,18 +391,7 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
 
 ### YouTube ###
 
->  Embed a YouTube video or playlist into your post content. You will need to obtain a [Youtube API key](https://developers.google.com/youtube/registering_an_application) to use this feature. You can acquire one from YouTube using your UW GSuite account or get in touch with us [uweb@uw.edu](mailto:uweb@uw.edu) for assistance.
-
-> Attributes:
-
-> -  **type** : Pick whether to display a single video or playlist. Options: **single**, **playlist**. (_Default: None_)
-> - **id** : The youtube video or playlist id  (_Default: None_)
-> - **max-results** (**OPTIONAL**):  The maximum number of results to return for a playlist (_Default: None_)
-
-> Example:
-```
-  [youtube type='playlist' id='PLgNkGpnjFWo9CN_HeVtujhMnUXK05iwgZ' max-results='10']
-```
+>  This shortcode has been deprecated. To embed a youtube video, Simply copy and paste the YouTube video URL to embed videos and playlists.
 
 ### Slideshow ###
 
@@ -410,7 +437,7 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
     [section title='Example'] Section[/section]
    [/accordion]
 ```
-
+> You can link to and automatically open individual sections of the accordion by adding them them the url. Example: http://www.washington.edu/about/#ACCORDION_ID will link to and open the accordion section. Note: you will need to retrieve the accordion section ID from the code as this is automatically generated and cannot be set.
 
 ### Custom Menu ###
 > This shortcode pulls in a custom menu that can be created under _Dashboard > Appearance > Menus_. Icons can be added in the class field in the menu builder. View the [full set of icons](http://www.washington.edu/brand/web-2/html-web-components/web-icons/) for more information.
