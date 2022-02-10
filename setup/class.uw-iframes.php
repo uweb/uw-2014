@@ -128,6 +128,7 @@ class UW_Iframes
       'sprinklr.com',
       'datawrapper.dwcdn.net',
       'dwcdn.net',
+      'rsc.csde.washington.edu',
     );
   }
 
