@@ -129,6 +129,8 @@ class UW_Iframes
       'datawrapper.dwcdn.net',
       'dwcdn.net',
       'rsc.csde.washington.edu',
+      'dsl.richmond.edu',
+      'richmond.edu',
     );
   }
 
