@@ -9,9 +9,9 @@ class UW_Dropdowns
 {
 
     const NAME              = 'White Bar';
-    const LOCATION       = 'white-bar';
-    const DISPLAY_NAME = 'Dropdowns';
-    const DEFAULT_STATUS = 'publish';
+    const LOCATION          = 'white-bar';
+    const DISPLAY_NAME      = 'Dropdowns';
+    const DEFAULT_STATUS    = 'publish';
 
     function __construct()
     {
@@ -117,7 +117,7 @@ class UW_Dropdowns
         $this->add_menu_item( 'Office of Research', '//uw.edu/research/or/', $parent = 'Research' );
         $this->add_menu_item( 'Research Lifecycle', '//uw.edu/research/myresearch-lifecycle/', $parent = 'Research' );
         $this->add_menu_item( 'Resources', '//uw.edu/research/resources/', $parent = 'Research' );
-        $this->add_menu_item( 'Collaboration', '//uw.edu/research/collaboration/', $parent = 'Research' );
+        $this->add_menu_item( 'Centers and Institutes', '//uw.edu/research/centers-and-institutes/', $parent = 'Research' );
         $this->add_menu_item( 'Stats and rankings', '//uw.edu/research/research-stats-rankings/', $parent = 'Research' );
 
         // The default Campuses the UW dropdown.
