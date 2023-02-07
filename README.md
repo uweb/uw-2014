@@ -8,43 +8,50 @@ This is an overview of the custom widgets, plugins and various features it inclu
 ## Table of contents
  - - -
 
-- [Quick start](#quick-start)
-- [Bugs and feature requests](#bugs-and-feature-requests)
-- [Quicklinks](#quicklinks)
-- [Widgets](#widgets)
-  - [UW Blogroll](#uw-blogroll)
-  - [UW Campus Map](#uw-campus-map)
-  - [UW Recent Posts](#uw-recent-posts)
-  - [UW RSS](#uw-rss)
-  - [UW Single Image ](#uw-single-image)
-  - [UW Top Posts](#uw-top-posts)
-  - [UW Twitter](#uw-twitter)
-  - [UW Contact Card](#uw-contact-card)
-  - [UW Image Card](#uw-image-card)
-- [Shortcodes](#shortcodes)
-  - [Button](#button)
-  - [Blogroll](#blogroll)
-  - [iFrame](#iframe)
-  - [Intro](#intro)
-  - [RSS](#rss)
-  - [Tile box](#tile-box)
-  - [Trumba](#trumba)
-  - [Twitter](#twitter)
-  - [YouTube](#youtube)
-  - [Slideshow](#slideshow)
-  - [Subpage List](#subpage-list)
-  - [Accordion](#accordion)
-  - [Custom Menu](#custom-menu)
-- [Features](#features)
-  - [UW Widget Visibility](#uw-widget-visiblity)
-  - [UW Media Credit](#uw-media-credit)
-- [Plugin guides](#plugin-guides)
-  - [Marketo Forms](#marketo-forms)
-  - [Contact Form 7](#contact-form-7)
-    - [Preventing spam](#preventing-spam)
-- [Creators](#creators)
-- [Contributors](#contributors)
-- [License](#license)
+- [UW 2014 Theme](#uw-2014-theme)
+  - [Table of contents](#table-of-contents)
+  - [Quick Start](#quick-start)
+  - [Bugs and feature requests](#bugs-and-feature-requests)
+  - [Quicklinks](#quicklinks)
+  - [Widgets](#widgets)
+    - [UW Blogroll](#uw-blogroll)
+    - [UW Campus Map](#uw-campus-map)
+    - [UW Recent Posts](#uw-recent-posts)
+    - [UW Related Posts](#uw-related-posts)
+    - [UW RSS](#uw-rss)
+    - [UW Single Image](#uw-single-image)
+    - [UW Top Posts](#uw-top-posts)
+    - [UW Twitter](#uw-twitter)
+    - [UW Contact Card](#uw-contact-card)
+    - [UW Image Card](#uw-image-card)
+  - [Shortcodes](#shortcodes)
+    - [Button](#button)
+    - [Blogroll](#blogroll)
+    - [Google Apps/Calendar shortcode](#google-appscalendar-shortcode)
+    - [iFrame](#iframe)
+    - [Intro](#intro)
+    - [RSS](#rss)
+    - [Tile box](#tile-box)
+    - [Trumba](#trumba)
+    - [Twitter](#twitter)
+    - [YouTube](#youtube)
+    - [Slideshow](#slideshow)
+    - [Subpage List](#subpage-list)
+    - [Accordion](#accordion)
+    - [Custom Menu](#custom-menu)
+    - [Tagboard](#tagboard)
+  - [Features](#features)
+    - [UW Widget Visibility](#uw-widget-visibility)
+    - [UW Media Credit](#uw-media-credit)
+  - [Plugin Guides](#plugin-guides)
+    - [Marketo Forms](#marketo-forms)
+      - [Marketo Subscription widget](#marketo-subscription-widget)
+      - [UW Preference Center widget](#uw-preference-center-widget)
+    - [Contact Form 7](#contact-form-7)
+      - [Preventing spam](#preventing-spam)
+  - [Creators](#creators)
+  - [Contributors](#contributors)
+  - [License](#license)
 
 ## Quick Start ##
  - - -
@@ -160,16 +167,12 @@ icon-uwtoday
 
 ### UW Twitter ###
 
-> Shows the latest tweets from a specific Twitter account.
+> Shows the latest tweets from a specific Twitter account. Leverages the official Twitter embed.
 
 > Options:
 
-> - **Title** : The title of the widget (_Default: UW Twitter Feed_)
-> - **Screen name** : The title of the widget (_Default: twitter_)
-> - **Number of tweets to show**: The number of items in the RSS feed to display (_Default: 5_)
-
-> In order to have the widget display in the widgets a `TWITTER_OAUTH_TOKEN` constant must be defined in your wp-config.php file.
-> _Requires a Twitter API key_.
+> - **Screen name** : The title of the widget (_Default: uw_)
+> - **Number of tweets to show**: The number of tweets to display (_Default: 5_)
 
 ### UW Contact Card ###
 
@@ -373,21 +376,17 @@ Each tile is setup as a series of shortcodes wrapped in `[box]` shortcode.
 
 ### Twitter ###
 
->  This is a shortcode embeds a Twitter feed for a desired username. It behaves similarly to the UW Twitter Widget.
+>  This is a shortcode embeds a Twitter feed for a desired username. It behaves similarly to the UW Twitter Widget. Leverages the official Twitter embed.
 
 > Attributes:
 
-> - **Title** : The title of the widget (_Default: UW Twitter Feed_)
-> - **Screen name** : The title of the widget (_Default: twitter_)
-> - **Number of tweets to show**: The number of items in the RSS feed to display (_Default: 5_)
+> - **Screen name** : The title of the widget (_Default: uw_)
+> - **Number of tweets to show**: The number of tweets to display (_Default: 5_)
 
 > Example:
 ```
-  [twitter title="Twitter feed" count=10 name=uw]
+  [twitter count=10 name=uw]
 ```
-
-> In order to have the shortcode display a `TWITTER_OAUTH_TOKEN` constant must be defined in your wp-config.php file.
-> _Requires a Twitter API key_.
 
 ### YouTube ###
 
