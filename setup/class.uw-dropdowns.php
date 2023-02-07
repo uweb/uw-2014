@@ -78,7 +78,7 @@ class UW_Dropdowns
         $this->add_menu_item( 'Leadership', '//uw.edu/leadership/', $parent = 'About' );
         $this->add_menu_item( 'Maps', '//uw.edu/maps/', $parent = 'About' );
         $this->add_menu_item( 'Population Health', '//uw.edu/populationhealth/', $parent = 'About' );
-        $this->add_menu_item( 'Sustainability', 'https://green.uw.edu/', $parent = 'About' );
+        $this->add_menu_item( 'Sustainability', 'https://sustainability.uw.edu/', $parent = 'About' );
         $this->add_menu_item( 'Visit', '//uw.edu/visit/', $parent = 'About' );
 
         // The default Academics dropdown.
