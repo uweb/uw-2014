@@ -70,67 +70,67 @@ class UW_Dropdowns
      {
 
         // The default About dropdown.
-        $this->add_menu_item( 'About', '//uw.edu/about/' );
-        $this->add_menu_item( 'About the UW', '//uw.edu/about/', $parent = 'About' );
-        $this->add_menu_item( 'Diversity', '//uw.edu/diversity/', $parent = 'About' );
-        $this->add_menu_item( 'Global Impact', '//uw.edu/global/', $parent = 'About' );
-        $this->add_menu_item( 'Innovation', '//uw.edu/innovation/', $parent = 'About' );
-        $this->add_menu_item( 'Leadership', '//uw.edu/leadership/', $parent = 'About' );
-        $this->add_menu_item( 'Maps', '//uw.edu/maps/', $parent = 'About' );
-        $this->add_menu_item( 'Population Health', '//uw.edu/populationhealth/', $parent = 'About' );
+        $this->add_menu_item( 'About', 'https://www.washington.edu/about/' );
+        $this->add_menu_item( 'About the UW', 'https://www.washington.edu/about/', $parent = 'About' );
+        $this->add_menu_item( 'Diversity', 'https://www.washington.edu/diversity/', $parent = 'About' );
+        $this->add_menu_item( 'Global Impact', 'https://www.washington.edu/global/', $parent = 'About' );
+        $this->add_menu_item( 'Innovation', 'https://www.washington.edu/innovation/', $parent = 'About' );
+        $this->add_menu_item( 'Leadership', 'https://www.washington.edu/leadership/', $parent = 'About' );
+        $this->add_menu_item( 'Maps', 'https://www.washington.edu/maps/', $parent = 'About' );
+        $this->add_menu_item( 'Population Health', 'https://www.washington.edu/populationhealth/', $parent = 'About' );
         $this->add_menu_item( 'Sustainability', 'https://sustainability.uw.edu/', $parent = 'About' );
-        $this->add_menu_item( 'Visit', '//uw.edu/visit/', $parent = 'About' );
+        $this->add_menu_item( 'Visit', 'https://www.washington.edu/visit/', $parent = 'About' );
 
         // The default Academics dropdown.
-        $this->add_menu_item( 'Academics', '//uw.edu/about/academics/' );
-        $this->add_menu_item( 'Academic calendar', '//uw.edu/calendar/academic/', $parent = 'Academics' );
-        $this->add_menu_item( 'Academic departments', '//uw.edu/about/academics/departments/', $parent = 'Academics' );
-        $this->add_menu_item( 'Colleges and schools', '//uw.edu/about/academics/', $parent = 'Academics' );
-        $this->add_menu_item( 'Course descriptions', '//uw.edu/students/crscat/', $parent = 'Academics' );
+        $this->add_menu_item( 'Academics', 'https://www.washington.edu/about/academics/' );
+        $this->add_menu_item( 'Academic calendar', 'https://www.washington.edu/calendar/academic/', $parent = 'Academics' );
+        $this->add_menu_item( 'Academic departments', 'https://www.washington.edu/about/academics/departments/', $parent = 'Academics' );
+        $this->add_menu_item( 'Colleges and schools', 'https://www.washington.edu/about/academics/', $parent = 'Academics' );
+        $this->add_menu_item( 'Course descriptions', 'https://www.washington.edu/students/crscat/', $parent = 'Academics' );
         $this->add_menu_item( 'Registration', 'https://registrar.washington.edu/registration/', $parent = 'Academics' );
-        $this->add_menu_item( 'Student guide', '//uw.edu/students/', $parent = 'Academics' );
-        $this->add_menu_item( 'Time schedule', '//uw.edu/students/timeschd/', $parent = 'Academics');
+        $this->add_menu_item( 'Student guide', 'https://www.washington.edu/students/', $parent = 'Academics' );
+        $this->add_menu_item( 'Time schedule', 'https://www.washington.edu/students/timeschd/', $parent = 'Academics');
 
         // the default Admissions dropdown.
-        $this->add_menu_item( 'Apply', '//uw.edu/admissions/' );
-        $this->add_menu_item( 'Admissions', '//uw.edu/admissions/', $parent = 'Apply' );
-        $this->add_menu_item( 'Financial Aid', '//uw.edu/financialaid', $parent = 'Apply' );
+        $this->add_menu_item( 'Apply', 'https://www.washington.edu/admissions/' );
+        $this->add_menu_item( 'Admissions', 'https://www.washington.edu/admissions/', $parent = 'Apply' );
+        $this->add_menu_item( 'Financial Aid', 'https://www.washington.edu/financialaid/', $parent = 'Apply' );
         $this->add_menu_item( 'Continuing education', 'https://www.pce.uw.edu/', $parent = 'Apply' );
-        $this->add_menu_item( 'Majors', 'http://www.washington.edu/uaa/advising/degree-overview/majors/list-of-undergraduate-majors/', $parent = 'Apply' );
-        $this->add_menu_item( 'Student housing', '//uw.edu/about/housing', $parent = 'Apply' );
+        $this->add_menu_item( 'Majors', 'https://www.washington.edu/uaa/advising/degree-overview/majors/list-of-undergraduate-majors/', $parent = 'Apply' );
+        $this->add_menu_item( 'Student housing', 'https://www.washington.edu/about/housing/', $parent = 'Apply' );
         $this->add_menu_item( 'Transfer students', 'https://admit.washington.edu/apply/transfer/', $parent = 'Apply' );
-        $this->add_menu_item( 'Tuition and fees', 'https://finance.uw.edu/sfs/tuition/', $parent = 'Apply' );
-        $this->add_menu_item( 'Undocumented students', '//uw.edu/admissions/undocumented/', $parent = 'Apply' );
-        $this->add_menu_item( 'UW Online', 'https://www.pce.uw.edu/online/', $parent = 'Apply' );
+        $this->add_menu_item( 'Tuition and fees', 'https://finance.uw.edu/sfs/tuition', $parent = 'Apply' );
+        $this->add_menu_item( 'Undocumented students', 'https://www.washington.edu/admissions/undocumented/', $parent = 'Apply' );
+        $this->add_menu_item( 'UW Online', 'https://www.pce.uw.edu/online', $parent = 'Apply' );
 
         // The default News dropdown.
-        $this->add_menu_item( 'News & Events', '//uw.edu/news/' );
-        $this->add_menu_item( 'UW News', '//uw.edu/news/', $parent = 'News & Events' );
-        $this->add_menu_item( 'Arts UW', 'https://artsuw.org/', $parent = 'News & Events' );
-        $this->add_menu_item( 'Calendar', '//uw.edu/calendar/', $parent = 'News & Events' );
+        $this->add_menu_item( 'News & Events', 'https://www.washington.edu/news/' );
+        $this->add_menu_item( 'UW News', 'https://www.washington.edu/news/', $parent = 'News & Events' );
+        $this->add_menu_item( 'Featured stories', 'https://www.washington.edu/boundless/', $parent = 'News & Events' );
+        $this->add_menu_item( 'Arts UW', 'https://arts.washington.edu/', $parent = 'News & Events' );
+        $this->add_menu_item( 'Calendar', 'https://www.washington.edu/calendar/', $parent = 'News & Events' );
         $this->add_menu_item( 'UW Magazine', 'https://magazine.washington.edu/', $parent = 'News & Events' );
         $this->add_menu_item( 'Husky sports', 'https://gohuskies.com/', $parent = 'News & Events' );
-        $this->add_menu_item( 'Newsletter', '//uw.edu/newsletter/', $parent = 'News & Events' );
+        $this->add_menu_item( 'Newsletter', 'https://www.washington.edu/newsletter/', $parent = 'News & Events' );
 
         // The default Research the UW dropdown.
-        $this->add_menu_item( 'Research', '//uw.edu/research/' );
-        $this->add_menu_item( 'Office of Research', '//uw.edu/research/or/', $parent = 'Research' );
-        $this->add_menu_item( 'Research Lifecycle', '//uw.edu/research/myresearch-lifecycle/', $parent = 'Research' );
-        $this->add_menu_item( 'Resources', '//uw.edu/research/resources/', $parent = 'Research' );
-        $this->add_menu_item( 'Centers and Institutes', '//uw.edu/research/centers-and-institutes/', $parent = 'Research' );
-        $this->add_menu_item( 'Stats and rankings', '//uw.edu/research/research-stats-rankings/', $parent = 'Research' );
+        $this->add_menu_item( 'Research', 'https://www.washington.edu/research/' );
+        $this->add_menu_item( 'Office of Research', 'https://www.washington.edu/research/or/', $parent = 'Research' );
+        $this->add_menu_item( 'Research Lifecycle', 'https://www.washington.edu/research/myresearch-lifecycle/', $parent = 'Research' );
+        $this->add_menu_item( 'Resources', 'https://www.washington.edu/research/resources/', $parent = 'Research' );
+        $this->add_menu_item( 'Centers and Institutes', 'https://www.washington.edu/research/centers-and-institutes/', $parent = 'Research' );
+        $this->add_menu_item( 'Stats and rankings', 'https://www.washington.edu/research/or/research-stats-rankings/', $parent = 'Research' );
 
         // The default Campuses the UW dropdown.
-        $this->add_menu_item( 'Campuses', '//uw.edu/about/' );
+        $this->add_menu_item( 'Campuses', 'https://www.washington.edu/about/' );
         $this->add_menu_item( 'Bothell', 'https://www.uwb.edu/', $parent = 'Campuses' );
-        $this->add_menu_item( 'Seattle', '//uw.edu/about/', $parent = 'Campuses' );
+        $this->add_menu_item( 'Seattle', 'https://www.washington.edu/about/', $parent = 'Campuses' );
         $this->add_menu_item( 'Tacoma', 'https://www.tacoma.uw.edu/', $parent = 'Campuses' );
 
         // The default Support the UW dropdown.
-        $this->add_menu_item( 'Give', '//uw.edu/boundless/' );
-        $this->add_menu_item( 'Give now', '//uw.edu/boundless/', $parent = 'Give' );
-        $this->add_menu_item( 'Be Boundless Campaign', '//uw.edu/boundless/about/', $parent = 'Give' );
-        $this->add_menu_item( 'Ways to give', '//uw.edu/boundless/ways-to-give/', $parent = 'Give' );
+        $this->add_menu_item( 'Give', 'https://www.washington.edu/giving/' );
+        $this->add_menu_item( 'Give now', 'https://www.washington.edu/giving/make-a-gift/', $parent = 'Give' );
+        $this->add_menu_item( 'Ways to give', 'https://www.washington.edu/giving/how-to-give/', $parent = 'Give' );
         $this->add_menu_item( 'My UW Giving', 'https://myuwgiving.gifts.washington.edu/', $parent = 'Give' );
 
 
