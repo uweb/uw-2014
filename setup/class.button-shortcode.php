@@ -50,7 +50,7 @@ class UW_Button
             array_push($classes, 'btn-sm');
         }
 
-        $class_string = implode($classes, ' ');
+        $class_string = implode(' ', $classes);
 
         return sprintf('<a class="%s %s" href="%s">%s</a>', $class_string, $color, $url, $content);
     }
