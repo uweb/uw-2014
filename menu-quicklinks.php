@@ -16,7 +16,7 @@ else: ?>
     <h3>Helpful Links</h3>
     <ul id="little-links">
         <li><span class="false"></span><a href="http://itconnect.uw.edu" tabindex="-1">Computing/IT</a></li> 
-        <li><span class="false"></span><a href="http://isc.uw.edu/" tabindex="-1">Employee Self Service</a></li> 
+        <li><span class="false"></span><a href="http://isc.uw.edu/" tabindex="-1">Workday HCM</a></li> 
         <li><span class="false"></span><a href="http://hfs.uw.edu/Husky-Card-Services/" tabindex="-1">Husky Card</a></li> 
         <li><span class="false"></span><a href="http://www.uwb.edu/" tabindex="-1">UW Bothell</a></li> 
         <li><span class="false"></span><a href="http://www.tacoma.uw.edu/" tabindex="-1">UW Tacoma</a></li> 
