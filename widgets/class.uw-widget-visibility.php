@@ -437,7 +437,7 @@ class UW_Widget_Conditions
             $condition_result = true;
           else if ( is_singular() && $term[1] && has_term( $term[1], $term[0] ) )
             $condition_result = true;
-          else if ( is_singular() && $terms & !is_wp_error( $terms ) )
+          else if ( is_singular() && $terms && !is_wp_error( $terms ) )
             $condition_result = true;
         break;
       }
