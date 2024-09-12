@@ -114,12 +114,12 @@ class UW_Dropdowns
         $this->add_menu_item( 'Newsletter', 'https://www.washington.edu/newsletter/', $parent = 'News & Events' );
 
         // The default Research the UW dropdown.
-        $this->add_menu_item( 'Research', 'https://www.washington.edu/research/' );
-        $this->add_menu_item( 'Office of Research', 'https://www.washington.edu/research/or/', $parent = 'Research' );
-        $this->add_menu_item( 'Research Lifecycle', 'https://www.washington.edu/research/myresearch-lifecycle/', $parent = 'Research' );
-        $this->add_menu_item( 'Resources', 'https://www.washington.edu/research/resources/', $parent = 'Research' );
-        $this->add_menu_item( 'Centers and Institutes', 'https://www.washington.edu/research/centers-and-institutes/', $parent = 'Research' );
-        $this->add_menu_item( 'Stats and rankings', 'https://www.washington.edu/research/or/research-stats-rankings/', $parent = 'Research' );
+		$this->add_menu_item( 'Research', 'https://research.washington.edu' );
+		$this->add_menu_item( 'Research at the UW', 'https://research.washington.edu', $parent = 'Research' );
+		$this->add_menu_item( 'Office of Research', 'https://www.washington.edu/research/', $parent = 'Research' );
+		$this->add_menu_item( 'Research Lifecycle', 'https://www.washington.edu/research/myresearch-lifecycle/', $parent = 'Research' );
+		$this->add_menu_item( 'Centers and Institutes', 'https://research.washington.edu/uw-centers-and-institutes/', $parent = 'Research' );
+		$this->add_menu_item( 'Stats and rankings', 'https://research.washington.edu/research-impact/', $parent = 'Research' );
 
         // The default Campuses the UW dropdown.
         $this->add_menu_item( 'Campuses', 'https://www.washington.edu/about/' );
