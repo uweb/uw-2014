@@ -12,6 +12,8 @@ class UW_Dropdowns
     const LOCATION          = 'white-bar';
     const DISPLAY_NAME      = 'Dropdowns';
     const DEFAULT_STATUS    = 'publish';
+    public $menu_items;
+    public $MENU_ID;
 
     function __construct()
     {

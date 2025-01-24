@@ -6,6 +6,7 @@
  */
 class UW_Iframes
 {
+  public $ALLOWED_IFRAMES;
 
   function __construct()
   {

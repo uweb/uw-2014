@@ -6,9 +6,10 @@
  */
 class UW_QuickLinks {
 
-  const NAME         = 'Quick Links';
+	const NAME         = 'Quick Links';
 	const LOCATION     = 'quick-links';
 	const ALLOWED_BLOG = 1;
+	public $MULTISITE;
 
 	function __construct() {
 		$this->MULTISITE = is_multisite();

@@ -7,6 +7,18 @@
 
 class UW_Shortcodes
 {
+    public $tile_box;
+    public $button;
+    public $youtube;
+    public $trumba;
+    public $trumba_rss;
+    public $subpage_list;
+    public $accordion;
+    public $bootstrap;
+    public $custommenu;
+    public $custom_link;
+    public $tagboard;
+    
     function __construct()
     {
         add_action( 'wp_loaded', array($this, 'run_after_wp_loads') );
