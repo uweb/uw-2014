@@ -27,7 +27,7 @@
       <?php } ?>
 
       <div class="container">
-        <div id="hashtag" class="mask"><span><span><?php echo $banner[0] ? $banner[0] : ''; ?></span></span></div>
+        <div id="hashtag" class="mask"><span><span><?php echo ( !empty($banner) && $banner[0] ) ? $banner[0] : ''; ?></span></span></div>
         <?php if(!empty($banner) && $banner[0]){ ?>
         <div id="hashtag"><span><span><?php echo $banner[0] ? $banner[0] : ''; ?></span></span></div>
         <?php } ?>
@@ -42,7 +42,7 @@
 
 <div class="container uw-body">
   <div class="row">
-    <div class="hero-content col-md-<?php echo (($sidebar[0]!="on") ? "8" : "12" ) ?> uw-content" role='main'>
+    <div class="hero-content col-md-<?php echo ((! isset( $sidebar[0] ) || 'on' !== $sidebar[0]) ? "8" : "12" ) ?> uw-content" role='main'>
 
       <?php uw_site_title(); ?>
       <?php get_template_part( 'menu', 'mobile' ); ?>
@@ -75,7 +75,7 @@
     </div>
 
     <div id="sidebar"><?php
-      if($sidebar[0]!="on"){
+      if(! isset( $sidebar[0] ) || 'on' !== $sidebar[0]){
         get_sidebar();
       }
     ?></div>

@@ -32,7 +32,10 @@ class UW_Media_Caption
 
         $id = $attr['id'] ? 'id="' . esc_attr($attr['id']) . '" ' : '';
         preg_match('/([\d]+)/', $id, $match);
-
+        
+        $credit = '';
+        $source_url = '';
+        
         if (!empty($match[0])) {
             $credit = get_post_meta($match[0], '_media_credit', true);
             $source_url = get_post_meta($match[0], '_source_url', true);

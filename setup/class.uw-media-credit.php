@@ -16,8 +16,10 @@ class UW_Media_Credit
 
     public function add_media_credit_shortcode_to_tinymce($plugins)
     {
-        $plugins['mediacredit'] = get_template_directory_uri() . '/assets/admin/js/media-credit.js';
-        return $plugins;
+        if ( is_admin() ) {
+            $plugins['mediacredit'] = get_template_directory_uri() . '/assets/admin/js/media-credit.js';
+            return $plugins;
+        }
     }
 
     /**
@@ -48,7 +50,7 @@ class UW_Media_Credit
         ), $attrs);
 
         $img = wp_get_attachment_image_src($attrs['id'], $attrs['size']);
-        $width = $img[1];
+        $width = ( !empty($img) && $img[1] ) ? $img[1] : '';
 
         if (1 > (int)$attrs['id']) {
             return '';
