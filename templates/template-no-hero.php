@@ -16,7 +16,7 @@
 
   <div class="row">
 
-    <div class="col-md-<?php echo (($sidebar[0]!="on") ? "8" : "12" ) ?> uw-content" role='main'>
+    <div class="col-md-<?php echo ((! isset( $sidebar[0] ) || 'on' !== $sidebar[0]) ? "8" : "12" ) ?> uw-content" role='main'>
 
       <?php get_template_part( 'menu', 'mobile' ); ?>
       <?php get_template_part( 'breadcrumbs' ); ?>
@@ -43,7 +43,7 @@
     </div>
 
     <div id="sidebar"> <?php 
-      if($sidebar[0]!="on"){
+      if(! isset( $sidebar[0] ) || 'on' !== $sidebar[0]){
         get_sidebar();
       }
     ?> </div>

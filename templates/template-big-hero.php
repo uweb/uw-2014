@@ -43,7 +43,7 @@
 
   <div class="row">
 
-    <div class="hero-content col-md-<?php echo (($sidebar[0]!="on") ? "8" : "12" ) ?> uw-content" role='main'>
+    <div class="hero-content col-md-<?php echo ((! isset( $sidebar[0] ) || 'on' !== $sidebar[0]) ? "8" : "12" ) ?> uw-content" role='main'>
 
       <?php uw_site_title(); ?>
       <?php get_template_part( 'menu', 'mobile' ); ?>
@@ -88,7 +88,7 @@
 
 
     <?php
-    if($sidebar[0]!="on"){ ?>
+    if(! isset( $sidebar[0] ) || 'on' !== $sidebar[0]){ ?>
       <div id="sidebar">
       <?php get_sidebar(); ?>
       </div> <?php

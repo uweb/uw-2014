@@ -20,7 +20,7 @@ class UW_Button
     {
         $attributes = (object) $atts;
 
-        $classes = array('uw-btn');
+        $classes = 'uw-btn';
 
         $btnColors = shortcode_atts( array(
             'color' => 'none',
@@ -37,7 +37,7 @@ class UW_Button
         if (isset($attributes->type)){
             $type = strtolower($attributes->type);
             if (in_array($type, $this::$types)){
-                array_push($classes, 'btn-' . $type);
+                $classes .= ' btn-' . $type;
             }
         }
 
@@ -47,10 +47,10 @@ class UW_Button
         }
 
         if (property_exists($attributes, 'small')){
-            array_push($classes, 'btn-sm');
+            $classes .= ' btn-sm';
         }
 
-        $class_string = implode(' ', $classes);
+        $class_string = $classes;
 
         return sprintf('<a class="%s %s" href="%s">%s</a>', $class_string, $color, $url, $content);
     }

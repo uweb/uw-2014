@@ -38,7 +38,7 @@ class UW_Dropdowns_Walker_Menu extends Walker_Nav_Menu
 		$output .= "$indent</ul>\n";
 	}
 
-  function display_element ($element, &$children_elements, $max_depth, $depth = 0, $args, &$output)
+  function display_element ($element, &$children_elements, $max_depth, $depth, $args, &$output)
   {
       $element->has_children = isset($children_elements[$element->ID]) && !empty($children_elements[$element->ID]);
       return parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);

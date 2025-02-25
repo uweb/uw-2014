@@ -103,6 +103,7 @@ class UW_Blogroll extends WP_Widget
         $mini = $params->mini;
         $read_more = $params->readmore;
         $html = '';
+        $excerpt = '';
 
         foreach ( $posts as $post ) {
 

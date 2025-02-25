@@ -21,6 +21,9 @@ class UW_Custom_Post {
     //    Allows for addition of an existing custom taxonomy to the custom post type
     
     public $post_label = 'Post';
+    public $name;
+    public $args;
+    public $taxonomy;
     
     function __construct($args){
         if (empty($args['name'])){

@@ -7,6 +7,31 @@
 
 class UW
 {
+    public $Install;
+    public $Scripts;
+    public $Styles;
+    public $Images;
+    public $SquishBugs;
+    public $Filters;
+    public $OEmbeds;
+    public $Mimes;
+    public $Users;
+    public $SidebarMenuWalker;
+    public $Dropdowns;
+    public $Quicklinks;
+    public $Shortcodes;
+    public $MediaCredit;
+    public $MediaCaption;
+    public $ReplaceMedia;
+    public $TinyMCE;
+    public $IFrames;
+    public $GoogleApps;
+    public $Enclosure;
+    public $Carousel;
+    public $Settings;
+    public $Fast_Facts;
+    
+    
 
     function __construct()
     {

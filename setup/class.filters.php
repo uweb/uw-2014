@@ -51,7 +51,7 @@ class UW_Filters
     add_filter('previous_posts_link_attributes', array( $this, 'posts_link_attributes_left' ) );
 
     //allow username less than 4 characters
-    add_filter( 'wpmu_validate_user_signup', 'short_user_names' );
+    add_filter( 'wpmu_validate_user_signup', array( $this, 'short_user_names' ) );
 
   }
 
@@ -160,6 +160,7 @@ class UW_Filters
     $error_name = $result[ 'errors' ]->get_error_message( 'user_name' );
     if ( empty ( $error_name )
         or $error_name !== __( 'Username must be at least 4 characters.' )
+      or $error_name !== __('Sorry, usernames must have letters too!')
     )
     {
         return $result;
