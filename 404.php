@@ -34,12 +34,12 @@
               </div>
               <div class="col-md-8 col-sm-6">
                 <ul>
-                  <li><a href="http://www.uwmedicine.org/">UW Medicine</a></li>
+                  <li><a href="https://www.uwmedicine.org/">UW Medicine</a></li>
                   <li><a href="https://www.uwb.edu/">UW Bothell</a></li>
                   <li><a href="https://www.tacoma.uw.edu">UW Tacoma</a></li>
                   <li><a href="https://gohuskies.com/">Athletics</a></li>
                   <li><a href="//uw.edu/news/?utm_source=error&utm_medium=click&utm_campaign=links&utm_term=uwnews">UW News</a></li>
-                  <li><a href="http://artsuw.org/">ArtsUW</a></li>
+                  <li><a href="https://arts.washington.edu/">ArtsUW</a></li>
                   <li><a href="https://my.uw.edu/">MyUW</a></li>
 
                 </ul>
